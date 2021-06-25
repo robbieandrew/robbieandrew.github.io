@@ -1,0 +1,16 @@
+
+d = dir ;
+
+for i=1:numel(d)
+    if numel(d(i).name)>=4 && strcmp('.jpg',d(i).name(end-3:end))
+        n = d(i).name ;
+        f = str2num(n(5:6)) ;
+        s = [9 9 '(div class="figure_box")' 10 ...
+            9 9 9 '(h4)Slide ' num2str(f) '(/h4)(div class="figure_downloads")Download: ' 10 ...
+			9 9 9 '(a href="img/GCP2014/PDF/' n(1:end-8) '.pdf")PDF (vector)(/a) | ' 10 ...
+			9 9 9 '(a href="img/GCP2014/PNG/' n(1:end-4) '.png")PNG(/a)(/div)' 10 ...
+			9 9 9 '(a href="img/GCP2014/PNG/' n(1:end-4) '.png")' 10 ...
+			9 9 9 '(img src="img/GCP2014/thumb/' n(1:end-4) '.jpg")(/a)(/div)'] ;
+        disp(s)
+    end
+end
