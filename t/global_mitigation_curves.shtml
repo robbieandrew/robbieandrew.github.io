@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+	<meta name="description" content="Professional home page of Robbie Andrew, listing research projects with links to journal articles, reports, and other publications"/> 
+	<title>Robbie Andrew: Professional home page</title>
+	<base href="https://folk.uio.no/roberan/" />
+	<!--#include virtual="../inc/head.html" -->
+  </head>
+  <body>
+    <!--#include virtual="../inc/header.html" -->
+	
+<div class="maincontainer">
+  <div class="features-container">
+    <h3>It's getting harder and harder to limit ourselves to 2&deg;C</h3>
+	<span style="font-size:150%;font-weight:bold;color:red"><em>NOTE: This web page is relatively old. The remaining carbon budget is highly uncertain. Check out my colleague Glen Peters' short thread on <a href="https://twitter.com/Peters_Glen/status/1351446872796389382">Twitter here</a>.</em></span>
+	<div class="column1-2wide">
+      <div>
+		<p style="font-size: 10pt">First published: 2016. Updated 13 November 2017, 23 April 2019, 15 January 2020.</p>
+
+		<blockquote><p>"The carbon budget for 1.5&deg;C depends on several factors, including:</p>
+		<ul><li>the likelihood with which warming will be be halted at 1.5&deg;C</li>
+			<li>the extent to which non-CO? greenhouse emissions such as methane are reduced</li>
+			<li>uncertainties in how the climate responds these emissions."</li></ul>
+		<p>Source: <a href="https://theconversation.com/the-1-5-global-warming-limit-is-not-impossible-but-without-political-action-it-soon-will-be-159297">The 1.5&deg;C global warming limit is not impossible - but without political action it soon will be</a></p></blockquote>
+		
+		<p>The road to 2&deg;C is steep; the road to 1.5&deg;C is a cliff.</p>
+		<p>While it is <a href="https://www.carbonbrief.org/limiting-global-warming-to-1-5c-is-still-possible-say-scientists" target="_blank">theoretically possible</a> that we can keep global warming under 1.5&deg;C above pre-industrial temperatures, that task is monumental. In fact, models struggle to generate future scenarios that *keep* warming below 1.5&deg;C, but can pull temperatures back under 1.5&deg;C after they have overshot that target. Even then, some of these models assume that there has been a global carbon tax in place since 2010 (there has not).</p>
+		<p>What is required is not only unheard-of cuts in global emissions of greenhouse gases (not just CO<span class="subb">2</span>), but also the development of new technologies to pull CO<span class="subb">2</span> out of the air and store it safely again ("negative" emissions).</p>
+		<p>Every year we delay devours the remaining budget. For the 1.5&deg;C case, every year that we don't cut emissions uses up more than 10% of our remaining budget. But we must not give way to panic: panic is debilitating, and we need action. Yes, the consequences of a 1.5&deg;C world aren't pretty, and we should take this extremely seriously and do our very best as a global society to avoid that. In all likelihood we won't succeed, but those efforts we make will contribute enormously in holding warming down. The consequences of warming multiply as the temperature rises, 2&deg;C is worse than 1.5&deg;C, 2.5&deg;C is worse than 2&deg;C, and so on.</p>
+		<p>The road is hard and long, but waiting is not an option.</p>
+		<div><a href="t/i/mitigation_curves_1.5C_191203.png"><img style="margin:0" src="t/i/mitigation_curves_1.5C_191203.png" width="100%"></a></div>
+		<div style="text-align:center;">Download image: <a href="t/i/mitigation_curves_1.5C_191203.png">PNG</a> | <a href="t/data/mitigation_curves_1.5C_191203_data.csv">data</a></div>
+		</br>
+		<div><a href="t/i/mitigation_curves_2.0C_191203.png"><img style="margin:0" src="t/i/mitigation_curves_2.0C_191203.png" width="100%"></a></div>
+		<div style="text-align:center;">Download image: <a href="t/i/mitigation_curves_2.0C_191203.png">PNG</a> | <a href="t/data/mitigation_curves_2.0C_191203_data.csv">data</a></div>
+		</br></br>
+		
+		<h4 id="negative">Negative Emissions</h4>
+		<p>Our remaining carbon budget to keep warming under 1.5°C is tiny. Modelling shows the 'best' way to achieve this is by actively removing CO<span class="subb">2</span> from the atmosphere: 'negative emissions'. Doing this allows more room for actual, positive emissions.</p>
+		<p>At the moment this vast cavalry of negative emissions charging to save us from ourselves is but a dream. Various technologies are being explored, as well as good, old-fashioned tree planting, but all have significant limits. It is partly this hope in future technologies &ndash;  technological optimism &ndash; that delays action.</p>
+		<p>In the animation below we use the functional form from <a href="http://dx.doi.org/10.1038/nclimate2384" target="_blank">Raupach et al., 2014</a> for positive emissions, adding residual, hard-to-mitigate emissions of 5% of the current level, and negative emissions using the ramp of a cosine function. &Sigma; indicates the cumulative emissions 2019-2100.</p>
+		<p>If this were actually possible, and the positive and negative emissions on this chart in 2100 were to continue beyond 2100, we would begin to pull the global temperature increase back under 1.5°C.</p>
+		<p>(This animation pauses for 8 seconds at the end of each loop.)</p>
+		<div><video style="margin:0" width="100%" autoplay controls loop>
+		<source src="t/i/NegEmissions_Stylised_1.5C.mp4" type="video/mp4">
+			Your browser does not support the video tag. Please upgrade!</video></div>
+		<div style="text-align:center;">Download video: <a onClick="trackGIF('NegEmissions');" href="t/i/NegEmissions_Stylised_1.5C.mp4" download="NegEmissions.mp4">MP4 video</a> | <a onClick="trackGIF('NegEmissions');" href="t/i/NegEmissions_Stylised_1.5C.gif" download="NegEmissions.gif">animated GIF</a></div></br>
+		
+		
+        <div class="abstract">
+		<h4 id="sources">Data Sources</h4>
+		<p>Historical emissions to 2017 from CDIAC/Global Carbon Project, projection to 2018 from Global Carbon Project (<a href="https://doi.org/10.5194/essd-10-2141-2018" target="_blank">Le Qu&eacute;r&eacute; et al. 2018</a>). Note that you can download the data including the mitigation curves using the 'data' links directly under the images above.</p>
+		</br>
+		<h4>Methods</h4>
+		<p>Global cumulative CO<span class="subb">2</span> emissions budgets are from the IPCC Special Report on 1.5&deg;C (<a href="https://www.ipcc.ch/site/assets/uploads/sites/2/2019/02/SR15_Chapter2_Low_Res.pdf#page=16" target="_blank">Rogelj et al 2018</a>): 420 GtCO<span class="subb">2</span> for a 66% of 1.5&deg;C and 1170 GtCO<span class="subb">2</span> for a 66% of 2&deg;C. Mitigation curves describe approximately exponential decay pathways such that the quota is never exceeded (see <a href="http://dx.doi.org/10.1038/nclimate2384" target="_blank">Raupach et al., 2014</a>). But note that these are not exponential pathways: the rate of mitigation is not the same every year. This comes from a recognition that an oil tanker cannot turn on a dime: we have enormous infrastructure (social, political, physical) that cannot be changed overnight. So these curves allow for some inertia in the early years of mitigation.</p>
+		<p>Mitigation curves are defined such that the sum of historical cumulative emissions and cumulative emissions following the mitigation curves exactly meets the global emissions quota in 2100.</p>
+		<!--<p>This analysis assumes no net-negative emissions: that is, emissions are always globally positive. Many IPCC scenarios allow global emissions to be negative before 2100. But the analysis is agnostic towards whether so-called 'gross-negative' emissions occur.</p>-->
+		<p>The remaining carbon budget has been revisited several times since the IPCC's fifth Assessment Report, and there is now quite a range. The point remains unchanged: all else equal, earlier mitigation would have been easier. With every year that global emissions don't go down, we make this significantly harder. The path &ndash; particularly to 1.5&deg;C &ndash; is very, very difficult.</p>
+		</div>
+		</br>
+		<div>
+		
+		<h4 id="history">A short history of these figures</h4>
+		<p>The idea of constaining emissions to constrain warming is not new. In 1989, for example, Florentin Krause, Wilfrid Bach, and Jon Koomey presented a figure showing theoretical pathways to stabilise global warming in their book <a href="http://www.mediafire.com/file/pzwrsyo1j89axzd/Warmingfatetowarminglimitbook.pdf" target="_blank">From Warming Fate to Warming Limit: Benchmarks for a Global Climate Convention</a>. The authors clearly laid out the link between temperature limits and carbon budgets.</p>
+		<div><a href="t/i/Krause_etal_1989_FigI.1.3.jpg"><img style="margin:0" src="t/i/Krause_etal_1989_FigI.1.3.jpg" width="80%"></a></div>
+		</br>
+		
+		<p>The concept of a carbon budget gained wider recognition with studies published in 2009 that showed that global temperature increase was approximately linearly related to the total cumulative emissions of carbon dioxide. Importantly, within certain bounds, it didn't matter what emissions were from year to year, only what their total over time was. These studies, by <a href="https://doi.org/10.1038/nature08017" target="_blank">Meinshausen et al.</a>, <a href="http://dx.doi.org/10.1038/nature08019" target="_blank">Allen et al.</a> and <a href="https://www.nature.com/articles/nature08047" target="_blank">Matthews et al.</a>, changed the conversation about limiting emissions and staying under specified global temperature increases, such as 2&deg;C.</p>
+		
+		<p>For a summary of the history of the carbon budget, see <a href="https://doi.org/10.1002/wcc.636" target="_blank">this article by Lahn</a>.
+		
+		<p>Later that same year, <a href="http://www.ccrc.unsw.edu.au/sites/default/files/Copenhagen_Diagnosis_HIGH.pdf#page=53" target="_blank">Allison et al.</a> were perhaps the first to convert this idea of a limited carbon budget to specific, idealised mitigation pathways, dependent on when emissions peaked.</p>
+		<div><a href="t/i/Allison_Fig22.png"><img style="margin:0" src="t/i/Allison_Fig22.png" width="80%"></a></div>
+		</br>
+		
+		<p>The <a href="https://en.wikipedia.org/wiki/Copenhagen_Accord" target="_blank">Copenhagen Accord</a> agreed in December 2009 was the first global agreement to explicitly include a temperature limit: 2&deg;C.</p>
+		
+		<p>In 2011, <a href="https://dx.doi.org/10.1111/j.1600-0889.2010.00521.x" target="_blank">Raupach et al.</a> published work closely studying the relationship between peak warming and cumulative emissions, developing mathematics to provide analytical solutions.</p>
+		<div><a href="t/i/Raupach2011_Fig1.png"><img style="margin:0" src="t/i/Raupach2011_Fig1.png" width="80%"></a></div>
+		</br>
+		
+		<p>In September 2014 we <a href="http://dx.doi.org/10.1038/nclimate2384" target="_blank">published work in Nature Climate Change</a> led by Mike Raupach on sharing the global carbon budget between nations, which included potential future emission pathways constrained by the shared budget. At the global level, the curves were shown in the supplementary information as Figure S4a (reproduced below). This functional form was new: rather than simply following an exponential decay, Mike's curve took into account the initial inertia associated with societal and infrastructural change.</p>
+		<div><a href="t/i/Raupach%20figS4a.png"><img style="margin:0" src="t/i/Raupach%20figS4a.png" width="80%"></a></div>
+		</br>
+
+		<p>At the same time we published <a href="http://dx.doi.org/10.1038/ngeo2248" target="_blank">parallel work in Nature Geoscience</a> summarising the carbon budgets and presenting a global emissions projection for the following six years based on forecast economic growth and continued trends in improvements in emissions intensity of the economy. At that time few thought there was anything odd about this projection.</p>
+		<div><a href="t/i/Friedlingstein fig1a.png"><img style="margin:0" src="t/i/Friedlingstein fig1a.png" width="80%"></a></div>
+		</br>
+
+		<p>In May of 2015 we combined the ideas from Raupach et al. and Friedlingstein et al. to produce a figure showing counterfactual historical and possible future emissions pathways to remain within the 2&deg;C carbon budget (figure date 4 May 2015). These counterfactuals present the a (very) theoretical idea of what would have been required if we had started global mitigation earlier. This figure, <a href="https://twitter.com/Peters_Glen/status/596210369145745408" target="_blank">tweeted by Glen Peters</a>, was quickly picked up by David Roberts at Vox for a piece entitled "<a href="http://www.vox.com/2015/5/15/8612113/truth-climate-change" target="_blank">The awful truth about climate change no one wants to admit</a>". This figure showed only fossil-fuel emissions, omitting land-use change emissions, although these were included in the calculations. It also makes no assumption about negative emissions: it shows always-positive net global emissions, which could be composed of both positive and negative emissions. That is, it presents what is required to stay within the budget, without overshoot, and therefore without requirement for net-negative emissions.</p>
+		<div><a href="t/i/global_mitigation_curves 150504.png"><img style="margin:0" src="t/i/global_mitigation_curves 150504.png" width="80%"></a></div>
+		</br>
+
+		<p>When discussion in Paris unexpectedly started to seriously include 1.5&deg;C, we hurriedly calculated the remaining carbon budget, given budgets at the time, and found that almost nothing was left (figure date 9 December 2015):</p>
+		<div><a href="t/i/swaterfall_1.5C66.png"><img style="margin:0" src="t/i/swaterfall_1.5C66.png" width="80%"></a></div>
+		</br>
+
+		<p>In late 2017, following a request from <a href="https://www.carbonbrief.org/analysis-wri-data-suggests-emissions-have-already-peaked-49-countries" target="_blank">Carbon Brief</a>, we updated the mitigation curves figure. This update included a substantial modification of the emissions forecast, given the appearance of an apparent and unexpected plateau in global emissions. Now we simply introduced a scenario: constant emissions for the next ten years (figure date 8 November 2017).</p>
+		<div><a href="t/i/mitigation_curves_171108.png"><img style="margin:0" src="t/i/mitigation_curves_171108.png" width="80%"></a></div>
+		</br>
+
+		<p>Shortly afterwards we modified the figure to show the mitigation rates (figure date 13 November 2017).</p>
+		<div><a href="t/i/global_mitigation_curves_171113.png"><img style="margin:0" src="t/i/global_mitigation_curves_171113.png" width="80%"></a></div>
+
+		<p>In December 2018 we returned to these figures and updated them using the new carbon budgets provided in the IPCC's <a href="https://www.ipcc.ch/sr15/" target="_blank">Special Report on 1.5&deg;C</a>. These figures were published alongside the Global Carbon Project's <a href="http://folk.uio.no/roberan/GCB2018.shtml" target="_blank">full 2018 Carbon Figure set</a>. While previously we had focussed on the 2&deg;C figure, there was high demand for a 1.5&deg;C version (original figure dates 5 December 2018). The reason we had largely avoided the 1.5&deg;C figure was that it was our opinion that 1.5&deg;C was unachievable when anything more than geophysical constraints were introduced, but public discourse has since turned sharply to the 1.5&deg;C target.</p>
+		<p>The mitigation rates originally shown on these figures are calculated as the average rates over the entire mitigation period to 2100. This is in fact not a particularly useful indicator of the effort involved, and it has generated some confusion, with some assuming these are exponential curves (thus having the same rate of decline each year), when they are not. At the end of the day, while the 18%/yr rate that appeared on the 1.5&deg;C figure is 'accurate', it is too easy to misinterpret and not useful for policy. But the main conclusion of the figure remains unaffected: the mitigation rates required for 1.5&deg;C are extremely high. Even another two or three years without global mitigation will only steepen these curves.</p>
+		<div><a href="t/i/mitigation_curves_1.5C_190423.png"><img style="margin:0" src="t/i/mitigation_curves_1.5C_190423.png" width="80%"></a></div>
+		<div><a href="t/i/mitigation_curves_2.0C_190423.png"><img style="margin:0" src="t/i/mitigation_curves_2.0C_190423.png" width="80%"></a></div>
+
+
+
+		</div>
+		<div>
+		</br>
+		</br>
+		<h4>Selected coverage</h4>
+		Dave Roberts, Vox, 15/5/2015: <a href="http://www.vox.com/2015/5/15/8612113/truth-climate-change" target="_blank">The awful truth about climate change no one wants to admit</a></br>
+		Zeke Hausfather & Rosamund Pearce, CarbonBrief, 2/11/2017: <a href="https://www.carbonbrief.org/analysis-wri-data-suggests-emissions-have-already-peaked-49-countries" target="_blank">Analysis: WRI data suggests emissions have already 'peaked' in 49 countries</a></br>
+		This comment on nature.com uses a figure based on the figure above: 28/6/17: <a href="https://www.nature.com/news/three-years-to-safeguard-our-climate-1.22201" target="_blank">Three years to safeguard our climate</a></br>
+		The Guardian, 17/9/2018: <a href=" https://www.theguardian.com/environment/climate-consensus-97-per-cent/2018/sep/17/california-plans-to-show-the-world-how-to-meet-the-paris-climate-target" target="_blank">California plans to show the world how to meet the Paris climate target<a></br>
+		Greta Thunberg on Instagram, 9/4/2019: <a href="https://www.instagram.com/p/BwBhZ3IhEb-/" target="_blank">Once again a reminder of what we need to do.</a></br>
+		Clayton Aldern, Grist, 14/5/20: <a href="https://grist.org/climate/flatten-the-curve-coronavirus-climate-emissions/" target="_blank">We're running out of time to flatten the curve - for climate change</a></br>
+		</br>
+		<h4>References</h4>
+		<p>Friedlingstein, P., Andrew, R.M., Rogelj, J., Peters, G.P., Canadell, J.G., Knutti, R., Luderer, G., Raupach, M.R., Schaeffer, M., van Vuuren, D.P., Qu&eacute;r&eacute;, C.L., 2014. <a href="http://dx.doi.org/10.1038/ngeo2248" target="_blank">Persistent growth of CO<span class="subb">2</span> emissions and implications for reaching climate targets</a>. Nature Geoscience 7(709&ndash;715).</p>
+		<p>Le Qu&eacute;r&eacute;, C., Andrew, R.M., and 71 other authors, 2018. <a href="https://doi.org/10.5194/essd-10-2141-2018" target="_blank">Global Carbon Budget 2018</a>. Earth System Science Data 10(2141&ndash;2194). [OPEN ACCESS]</p>
+		<p>Raupach MR, Davis SJ, Peters GP, Andrew RM, Canadell JG, Friedlingstein P, Jotzo F, Qu&eacute;r&eacute; CL 2014. <a href="http://dx.doi.org/10.1038/nclimate2384" target="_blank">Sharing a quota on cumulative carbon emissions</a>. Nature Climate Change 4(873-879).</p>
+		<p>Rogelj, J., Shindell, D., Jiang, K., Fifita, S., Forster, P., Ginzburg, V., Handa, C., Kheshgi, H., Kobayashi, S., Kriegler, E., Mundaca, L., Séférian, R., Vilariño, M.V., 2018. <a href="https://www.ipcc.ch/site/assets/uploads/sites/2/2019/02/SR15_Chapter2_Low_Res.pdf#page=16" target="_blank">Mitigation Pathways Compatible with 1.5°C in the Context of Sustainable Development</a>, in: Masson-Delmotte, V., Zhai, P., Pörtner, H.-O., Roberts, D., Skea, J., Shukla, P.R., Pirani, A., Moufouma-Okia, W., Péan, C., Pidcock, R., Connors, S., Matthews, J.B.R., Chen, Y., Zhou, X., Gomis, M.I., Lonnoy, E., Maycock, T., Tignor, M., Waterfield, T. (Eds.), Global Warming of 1.5°C. An IPCC Special Report on the impacts of global warming of 1.5°C above pre-industrial levels and related global greenhouse gas emission pathways, in the context of strengthening the global response to the threat of climate change, sustainable development, and efforts to eradicate poverty. [OPEN ACCESS]</p>
+		</br>
+		</div>
+		</div>
+</div>
+    <div class="column3">
+	  <div class="related">Related work</div>
+	  <style type="text/css">.story {opacity:1;}</style>
+	  <!--#include virtual="../inc/negative_emissions.html" -->
+	  <!--#include virtual="../inc/raupach_sharing.html" -->
+	  <!--#include virtual="../inc/friedlingstein_growth.html" -->
+	  <!--#include virtual="../inc/pathways.html" -->
+	  </div>
+  </div>
+</div>
+</br>
+<p style="text-align:center">Web design by Robbie Andrew</p>
+</body>
+</html>

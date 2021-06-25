@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+	<meta name="description" content="norway series."/> 
+	<title>A time-series of Norway's CO2 emissions</title>
+	<base href="https://folk.uio.no/roberan/" />
+	<!--#include virtual="../inc/head.html" -->
+	<meta property="og:description" content="norway series."/>
+	<meta property="og:url"content="http://folk.uio.no/roberan/t/norway_timeseries.shtml"/>
+	<meta property="og:title" content="norway series" />
+	<style>
+	@media only screen and (min-device-width : 481px) {
+		p {
+		  font-size:22px;
+		  line-height:26px;
+		}
+		.supp {
+		  font-size: 70%;
+		  line-height:normal;
+		  position:relative;
+		  top:-6px;  
+		}
+		h5 {
+		  font-size: 30px;
+		  padding-bottom:5px;
+		  padding-top:15px;
+		  margin-bottom: 10px;
+		  clear:both;
+		  font-style: normal;
+		  line-height:1.1em;
+		}
+		h4 {
+		  font-size: 30px;
+		}
+	}
+	</style>
+  </head>
+  <body>
+    <!--#include virtual="../inc/header.html" -->
+	
+<div class="maincontainer">
+  <div class="features-container">
+    <h3>A better time-series for Norway's CO<span class="subb">2</span> emissions in the Global Carbon Project</span></h3>
+	<p style="font-size: 10pt">First published: December 2019</p>
+	
+	<h5 id="introduction">Introduction</h5>
+	<p>The Global Carbon Project (GCP) has long based its CO<span class="subb">2</span> emissions dataset on the work of CDIAC, the Carbon Dioxide Information Analysis Center, whose history can be tracked back to 1973. In recent years, however, the GCP has increasingly faced questions about differences between the CO<span class="subb">2</span> emissions data it presents and those in official statements. In response to this, the GCP in 2015 began to incorporate data from developed countries' official submissions to the UNFCCC, which generally start in 1990. In the case of Norway, this led to a substantial change, because the method used by CDIAC is based on reported data that have known errors, and this resulted in large deviations from official estimates. Using the official data from 1990 made a considerable improvement for this period, but we still had a very large discontinuity in 1990 because we used the CDIAC data for the period until 1989 and official data thereafter. While SSB have earlier published estimates for years before 1990, none of these series are updated. To be able to incorporate official estimates before 1990, it was necessary not just to have total CO<span class="subb">2</span>, but a division by category: coal, oil, gas, cement, flaring.
+</p>
+	
+	<div><a href="t/i/norway_timeseries.png"><img src="t/i/norway_timeseries.png" width="100%"></a></div></br>
+
+	<h5>The Gory Details</h5>
+	
+	<p>In the Global Carbon Project's fossil emissions dataset, we prioritise matching national total emissions to officially reported estimates, where available. Developed countries report emissions annually to the UN Framework Convention for Climate Change (UNFCCC) in a format called the Common Reporting Format (CRF), following the Intergovernmental Panel on Climate Change (IPCC) guidelines. We ensure that our national totals match these for those countries, for the available data period: usually starting in 1990.</p>
+	
+	<p>Because much of our data comes from the CDIAC database, we report emissions according to which fossil fuel the carbon came from, whether or not that fuel was used as an energy source. In the CRF reports, emissions are not reported in this way, and only Energy Sector emissions are reported against which fossil fuel was combusted. For example carbon anodes used in aluminium production oxidise in the industrial process, and release carbon dioxide. In the CRFs these are reported as emissions in the aluminium production sector, but we know that these anodes are created from a mix of oil and coal products. To have a globally consistent approach, we therefore assign these emissions back to the fossil fuels the carbon originated in, and so on with other industrial process sources. The exceptions are emissions from decompositions of carbonates, such as in cement production, and we report these separately.</p>
+	
+	<p>To be clear: we don't add or subtract emissions, we simply reassign to new categories.</p>
+	
+	<p>This all means that what we report as 'oil emissions' in Norway are not the same as those reported for 'liquid fuels' in Norway's official inventory, because the latter are limited to energy uses of liquid fuels. The same applies for all other countries reporting to the UNFCCC via CRFs.</p>
+
+	<p>The Norwegian statistics office, SSB, has two datasets that are no longer updated: 09621 and 10800. Table 09621 gives total emissions for the period 1973-2008, but without a useful breakdown, while Table 10800 gives total emissions for the years 1980, 1987, and 1989-2012, including a breakdown by almost 80 source activities. The totals in these two datasets match almost perfectly, so we use 09621, which is the longer series with annual data, to set total emissions, first very slightly adjusting them up linearly to match both our estimate in 1973 the current official reported emissions in 1990.</p>
+
+	<p>Then we turn to Table 10800, assign its various emissions sources to the fuel categories, for example splitting aluminium production emissions 80% to oil and 20% to gas (this is why our 'oil' emissions are higher than those reported in 10800 for oil product combustion). But 10800 only has the three points 1980, 1987, and 1989 in the period we're trying to fill. For oil, we first lift these points slightly to match our best 1990 estimate for oil emissions, then we calculate the fraction of oil emissions in the total, and apply that ratio to fill in the missing oil points over 1973-1990. This effectively assumes that the annual variation seen in the total is partly driven in variations in oil, which seems reasonable.</p>
+
+	<p>We repeat this process for coal and gas flaring, we already have cement emissions from Andrew (2019), and then natural gas is taken as the residual from the 09261 totals.</p>
+
+	<p>The result of this gives much more reliable estimates for the trends of emissions by category during 1973-1990, even though we haven't used a full bottom-up inventory approach. While it's far from perfect, it's substantially better than what we had from the CDIAC database.</p>
+
+	<p>Norway's oil and gas production was virtually nill in the early 1970s, so the data before that time used to calculate apparent consumption should be relatively good. This means that the estimates produced by CDIAC for this earlier period are satisfactory, and indeed we're lucky that SSB's estimates start in 1973 to cover the period where apparent consumption just doesn't cut it.</p>
+
+	
+	
+<!--	<h5>References</h5>
+	<div>
+	<style>.reference {font-size:18px;text-indent: -28px;padding-left: 28px;line-height:normal;margin:0.3em}</style>
+	<p class="reference">
+	Högbom, A., 1894. Om sannolikheten för sekulära förändringar i atmosfärens kolsyrehalt. Svensk Kemisk Tidskrift VI, 169-176.</p>
+-->
+
+	
+	</br></br></br>
+	
+  </div>
+  </div>
+<div class="maincontainer">  <div class="features-container">
+	
+	
+	
+		<style type="text/css">.story {opacity:1;clear:none;float:right;width:23%;margin-left:2%;}</style>
+		
+		<!--#include virtual="../inc/cement.html" -->
+		<!--#include virtual="../inc/predict_ppm.html" -->
+		<!--#include virtual="../inc/GCP2019_figures.html" -->
+		<!--#include virtual="../inc/globalcarbon2019.html" -->
+	<div style="clear:both"></br></div>
+	
+	
+  </div>
+</div>
+</br>
+
+</body>
+</html>

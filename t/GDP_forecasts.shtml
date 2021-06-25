@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+	<meta name="description" content="Forecasts of global GDP growth."/> 
+	<title>Forecasts of global GDP growth</title>
+	<base href="https://folk.uio.no/roberan/" />
+	<!--#include virtual="../inc/head.html" -->
+	<meta property="og:description" content="Forecasts of global GDP growth."/>
+	<meta property="og:url"content="http://folk.uio.no/roberan/t/GDP_forecasts.shtml"/>
+	<meta property="og:title" content="Forecasts of global GDP growth" />
+  </head>
+  <body>
+    <!--#include virtual="../inc/header.html" -->
+	
+<div class="maincontainer">
+  <div class="features-container">
+    <h3>Forecasts of global GDP growth</span></h3>
+    <div class="column1-2wide">
+      <div>
+
+	<div class="abstract">
+	
+	<p style="font-size: 10pt">First published: 24 November 2017. Updated 26 February 2020.</p>
+	<p>Twice a year, in April and October, the International Monetary Fund (IMF) releases its <a href="https://www.imf.org/en/Publications/WEO/Issues/2017/09/19/world-economic-outlook-october-2017" target="_blank">World Economic Outlook</a> report outlining the state of the global economy, including forecasts for the current year's GDP growth and also the years ahead.</p>
+	<p>In the figure below, I've plotted all the forecasts and subsequent estimates and revised estimates of global GDP growth from all of IMF's biannual reports that I could get my hands on, starting with the one released in April 2007.</p>
+	
+	<div><a onClick="trackPNG('GDPforecasts');" href="t/i/GDP_forecasts.png"><img style="margin:0" src="t/i/GDP_forecasts.png" width="100%"></a></div>
+	</br>
+
+	<p>This is a fairly complex figure, so let me use the version below with a lot more annotation to explain things. In explaining the figure I'll just talk about the projections and estimates that have been made for the growth rate of global GDP in the year 2013.</p>
+	<p>As you can see, the IMF's first forecast of the growth rate in 2013 was made way back in 2008. In fact, 2008 is when the IMF started making six-year forecasts. Before that they forecast only the current (incomplete) year and the following year.</p>
+	<p>There are 12 forecasts in my assembled data set for the year 2013, coming from 12 different editions of the World Economic Outlook, two for each of the years 2008-2013, and these are marked by the 12 black dots on the pink line.</p>
+	<div><a onClick="trackPNG('GDPforecasts');" href="t/i/GDP_forecasts_annotated.png"><img style="margin:0" src="t/i/GDP_forecasts_annotated.png" width="100%"></a></div>
+	</br>
+	<p>In that first forecast for 2013, made before the Global Financial Crisis (GFC), expectations were for very strong growth, just shy of 5%. And why not? In 2008, when that forecast was made, forecast growth rates for 2008 had dipped down from about 5% to about 4%, but this was assumed to be an irregular blip, and growth would return to what were considered to be normal rates.</p>
+	<p>By the time October 2013 came around, the IMF's forecast for 2013 had dropped from the initial 5% to about 3%, considered respectable by today's standards, but a significant drop in expectations.</p>
+	<p>The rest of the pink line for 2013, without the dots, shows estimates made after the year had passed, as full-year data began to become available. You can see that there have been a lot more revisions for the growth rate in 2007 than in 2013, obviously since more time has passed and it has been re-estimated every six months with revised data.</p>
+	<p>So one of the things that's really interesting here is that even in the height of the GFC, the IMF was forecasting growth to return to normal levels of around 4.5% already by 2011, and forecasts for 2013 were hardly affected by the GFC, dropping only to about 4.5% when the forecast was made in October 2011.</p>
+	<p>You can see that even in October 2008, just after <a href="https://en.wikipedia.org/wiki/Lehman_Brothers" target="_blank">Lehman Brothers</a> filed for bankruptcy, the forecast growth for 2009 was 3% (the second dot on the orange line). Within six months that forecast had dropped south of -1% as the full effects of the GFC rolled out. In subsequent years this estimate has been revised upwards, and I'll discuss the possible reasons for this shortly.</p>
+	<p>What we see from 2011, and especially 2012, onwards, is that the IMF's projections have almost exclusively been revised downwards, something we <a href="https://images.nature.com/original/nature-assets/ngeo/journal/v7/n10/extref/ngeo2248-s1.pdf#page=7" target="_blank">identified in 2014</a> and the IMF themselves <a href="www.imf.org/external/pubs/ft/weo/2014/02/pdf/c1.pdf">commented on in 2014</a> (see page 39). The global economy was expected to recovery quickly from the GFC, and when another year went by without full recovery, well it would come next year. The IMF almost invariably revises its forecasts downwards. As we said in 2014, this appears to be a matter of downward pressures being more likely than upward pressures: if you assume that economies will run at a good pace, it's more likely they'll hit a major storm, or a political crisis, or a confidence slump, than that they'll find a way to sharply increase labour productivity, for example.</p>
+	
+
+	<h4>Why do past estimates get revised?</h4>
+	<p>There are at least three important reasons why global GDP growth estimates can change. First, economic production was actually higher or lower than earlier projections or estimates. Second, the sizes of some economies might be revised upwards (downwards), giving those economies' growth rates more (less) weight in the global growth rate calculation. Third, the rates used to combine GDP in different economies can be revised with a new edition of the purchasing power parity data.</p>
+	<p>The third of these is very likely to be the reason why in 2014 there were consistent upwards revisions of projections and estimates of global economic growth, seen particularly clearly in the vertical step upwards in the revised 2007 estimates (although it would be nice to get confirmation of this). But while this might be interpreted as correction of an error, it is still a revision of the estimate of global growth. It still means that global growth in 2007 was higher than was thought in 2013.</p>
+	
+	<h4>What is this PPP all about?</h4>
+	<p>Let's take a hypothetical extreme. Imagine two countries, A and B, both of which have the same GDP when measured in US dollars at market exchange rates. But now imagine that in country A everything costs only half as much as they do in country B (think wages, resource endowments, etc.). Setting aside issues of trade, and how differential costs affect productivity, that makes country A much wealthier than country B &ndash; its welfare is higher than is indicated by the US dollar value of its production. While the example is a little extreme, this is the essence of why developing countries' GDPs tend to be higher when compared using PPP rates. Market exchange rates work very well for traded goods, but they represent the comparative values of non-traded goods poorly.</p>
+	<p>Market exchange rates are updated every nanosecond in the foreign exchange markets, reflecting a real market where individuals (and computers) make decisions about how much of currency X they're willing to exchange for currency Y. But where do PPP rates come from? PPP rates aren't determined by a real market because such a market cannot exist. Remember that these rates are supposed to compare the real costs within each economy, so the only way we have of estimating these rates is actually to assemble price data from each country. In a similar way to the ensemble (or basket) of goods and services whose prices changes are used to determine inflation rates, the prices of an ensemble of goods and services for every country in the world are collected and compared, and the PPP rates are derived from this comparison.</p>
+	<p>Another way to look at this is that instead of tracking only one price &ndash; the price of the currency &ndash; we have to track the prices of hundreds of commodities in each country.</p>
+
+	<p>If you're interested, you should also check out the IMF's better <a href="https://www.imf.org/external/pubs/ft/fandd/basics/ppp.htm" target="_blank">explanation of PPP</a>, and also The Economist's famous <a href="http://www.economist.com/content/big-mac-index" target="_blank">'Big Mac Index'</a>.</p>
+
+
+		</div>
+		</div>
+</div>
+    <div class="column3">
+	  <div class="related">Related work</div>
+	  <style type="text/css">.story {opacity:1;}</style>
+	  <!--#include virtual="../inc/india_projection.html" -->
+	  <!--#include virtual="../inc/export_emissions.html" -->
+	  <!--#include virtual="../inc/friedlingstein_growth.html" -->
+	  <!--#include virtual="../inc/GCP2017_figures.html" -->
+	  </div>
+  </div>
+</div>
+</br>
+</body>
+</html>

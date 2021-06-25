@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+	<meta name="description" content="India's daily electricity generation"/> 
+	<title>India's daily electricity generation</title>
+	<base href="https://folk.uio.no/roberan/" />
+	<!--#include virtual="../inc/head.html" -->
+	<meta property="og:description" content="India's daily electricity generation"/>
+	<meta property="og:url" content="http://folk.uio.no/roberan/t/POSOCO.shtml"/>
+	<meta property="og:title" content="India's daily electricity generation" />
+ 	<link rel="stylesheet" href="css/mobile.css"/>
+	<style>p {font-size: 120%}</style>
+  </head>
+  <body>
+    <!--#include virtual="../inc/header.html" -->
+	
+<div class="maincontainer">
+  <div class="features-container">
+    <h3>India's daily electricity generation</span></h3>
+	<div class="abstract">
+
+	<p>The National Load Despatch Centre of India's Power System Operation Corporation Limited (<a href="https://posoco.in/">POSOCO</a>) publishes <a href="https://posoco.in/reports/daily-reports/">daily reports</a> of India's national, regional, and state-level electricity generation and demand.</p>
+	<p>These reports are in PDF format, one per day, with a lag of only one day. This web page makes those data available in machine-readable form as comma-separated value (csv) files in a single zip archive, with all data from April 2013. This is achieved by scraping the PDF files automatically to extract the relevant data.</p>
+	<p>Each report includes a number of tables, and those that are extracted here are Table A "Power Supply Position at All India and Regional level", table C "Power Supply Position in States", and table G "Sourcewise generation".</p>
+	<p>Note that table G, with a full breakdown of generation by type, was first included on 28 August 2017.</p>
+	<p>Because of persistent errors in the dating and filename formats of these files, some manual minor intervention is required each day, which means that there is no guarantee that this file will be updated daily.</p>
+	
+	<hr><p style="text-align:center;">Download data: <a href="public/POSOCO/POSOCO.zip">POSOCO.zip</a></p><hr></br>
+
+	<p>The following figures demonstrate some aspects of the dataset.</p>
+	
+	<div><a href="t/i/POSOCO_total_and_coal.png"><img style="margin:0" src="t/i/POSOCO_total_and_coal.png" width="100%"></a></div>
+
+	<div><a href="t/i/POSOCO_regions.png"><img style="margin:0" src="t/i/POSOCO_regions.png" width="100%"></a></div>
+
+	<div><a href="t/i/POSOCO_total_long.png"><img style="margin:0" src="t/i/POSOCO_total_long.png" width="100%"></a></div>
+
+	<div><a href="t/i/POSOCO_Delhi.png"><img style="margin:0" src="t/i/POSOCO_Delhi.png" width="100%"></a></div>
+
+	<div><a href="t/i/POSOCO_cfCEA.png"><img style="margin:0" src="t/i/POSOCO_cfCEA.png" width="100%"></a></div>
+
+	<div><a href="t/i/POSOCO_regional_hydro.png"><img style="margin:0" src="t/i/POSOCO_regional_hydro.png" width="100%"></a></div>
+
+</div>
+  </div>
+  </br>
+</div>
+
+
+</br>
+</br>
+</body>
+</html>
