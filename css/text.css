@@ -1,0 +1,488 @@
+﻿.container {
+  background-color: #ddd;
+  padding: 0px 1em 1em 1em; /* top right bottom left */
+  margin: 0px 0px 1em 0px;
+}
+
+.maincontainer {
+  margin: 1em 0px 0em 0px;
+  background-color: #fff;
+  padding: 10px 1em 0em 1em; /* top right bottom left */
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans Narrow'), local('PTSans-Narrow'), url(fonts/PT-Sans-Narrow-Regular.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url(fonts/PT-Sans-Narrow-Bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster Regular'), local('Lobster-Regular'), url(fonts/Lobster-regular.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+
+
+
+
+/* Desktops and laptops ———– */
+@media only screen and (min-device-width : 481px) {
+	.maincontainer, .container {width: 973px}
+	body {
+	  background: #ddd url('../img/bg.png') repeat 0 0;
+	  margin: 0px;
+	}
+	/* 305*3 + 24*2 + 5*2 = 973 */
+	.column1,.column2,.column3,.column1-2wide{float:left;display:inline;width:305px;margin-right:24px;margin-bottom:24px;position:relative}
+	.column1,.column1-2wide{clear:left}
+	.column3{margin-right:0}
+	.column1-2wide{width:634px}
+	.column1-2wide .column1,.column1-2wide .column2{width:305px}
+	.column1-2wide .column2{margin-right:0}
+	.column-span{margin-bottom:25px;margin-left:0}
+	.column1 .sub-feature,.column2 .sub-feature,.column3 .sub-feature,.column1-2wide .sub-feature{margin:5px 0 10px 0}
+	.column1 img,.column2 img,.column3 img,.column1-2wide img{margin:0 0 25px 0}
+	p {
+	  font-size:16px;
+	  line-height:20px;
+	  margin-right: 15px;
+	  margin-top: 0px;
+	}
+	.container {
+	  margin: 0em auto 1em auto;
+	  padding: 0px 1em 1em 1em; /* top right bottom left */
+
+	  -webkit-border-bottom-left-radius: 5px;
+	 -webkit-border-bottom-right-radius: 5px;
+		 -moz-border-bottom-left-radius: 5px;
+		-moz-border-bottom-right-radius: 5px;
+			  border-bottom-left-radius: 5px; 
+			 border-bottom-right-radius: 5px; 
+
+	  -webkit-background-clip: border-box;
+		 -moz-background-clip: border-box;
+			  background-clip: border-box;
+			 
+	  -webkit-box-shadow: 0px 0px 10px 0px #000;
+		 -moz-box-shadow: 0px 0px 10px 0px #000;
+			  box-shadow: 0px 0px 10px 0px #000;
+	}
+
+	.maincontainer {
+	  margin: 1em auto 0em auto;
+	  padding: 10px 1em 0em 1em; /* top right bottom left */
+
+	  -webkit-border-radius: 5px;
+		 -moz-border-radius: 5px;
+			  border-radius: 5px; 
+
+	  -webkit-box-shadow: 0px 0px 10px 0px #555;
+		 -moz-box-shadow: 0px 0px 10px 0px #555;
+			  box-shadow: 0px 0px 10px 0px #555;
+	}
+
+	/* IE compatibility: css3pie.com */
+	.container,.maincontainer {
+	  behavior: url(PIE.php); /* use .htc file in preference, but doesn't work on this server */
+	}
+
+}
+
+.maincontainer:after{display:block;visibility:hidden;height:0;clear:both;content:"."}
+.container {margin: 0px auto}
+
+a:link,a:visited {text-decoration:none;color:#33E}
+a:hover, a:active {text-decoration:underline;color:#333}
+
+body, p, blockquote p , h3, h4, h5{
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: #666;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+h1 {
+  font-family: 'Lobster', 'Calibri';
+  font-size: 400%;
+  font-weight: normal;
+  margin: 0;
+  color: #000;
+}
+h1 a:link, h1 a:hover, h1 a:visited, h1 a:active {color: #000;}
+h1 a:hover {text-decoration: none;}
+
+/* h3 is used for story headings */
+h3 {
+  font-size: 300%;
+/*  margin-bottom: 0.5em;*/
+  line-height: 110%;
+  margin-top:0;
+  letter-spacing:-2px;
+  font-weight:700;
+}
+
+/* h4 is used for mini-story headings */
+h4 a:link, h4 a:hover, h4 a:visited, h4 a:active {color: #666;}
+h4 a:hover {text-decoration: none}
+
+h4,.h4 {
+  font-size:150%;
+  margin:0;
+  font-weight:normal;
+  line-height:1.1em;
+}
+
+h5 a:link, h5 a:hover, h5 a:visited, h5 a:active {color: #666;}
+h5 a:hover {text-decoration: none}
+
+h5,.h5 {
+  font-size:125%;
+  margin:0;
+  font-weight:normal;
+  font-style:italic;
+  line-height:20px;
+}
+
+caption,.caption {
+	font-size: 80%;
+	font-style:italic;
+	line-height: 1em;
+	margin-left: 45px;
+	margin-top: 0;
+}
+
+a img {
+    border: 0;
+}
+
+.related {
+  font-size: 210%;
+  margin: 0 0 10px;
+  border-bottom: 1px solid #333;
+}
+
+.quote {
+  font-style: italic;
+  margin-left: 45px;
+  width: 70%;
+}
+
+/* Nicer sub- and superscript: these don't affect the line height */
+.subb {
+  font-size: 70%;
+  line-height:normal;
+}
+.supp {
+  font-size: 70%;
+  line-height:normal;
+  position:relative;
+  top:-3px;  
+}
+
+.abstract {font-size:105%}
+.title_line {font-size:100%}
+
+
+.goto {
+  font-size: 125%;
+  margin-top: 1em;
+  text-align:center;
+}
+.free {
+  font-size: 125%;
+  text-align:center;
+}
+
+.scholar_links {
+}
+
+/* Google Scholar icon */
+.ggleLink {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../img/gscholar.gif') no-repeat;
+  text-indent: -99999px;
+  margin: 2em 0 0.5em 0.5em;
+  float:right;
+}
+.ggleLink:hover {background-position: -38px 0}
+
+/* Scopus icon */
+.scopusLink {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../img/scopus32.gif') no-repeat;
+  text-indent: -99999px;
+  margin: 2em 0 0.5em 0.5em;
+  float:right;
+}
+.scopusLink:hover {background-position: -38px 0}
+
+/* ORCID icon */
+.orcidLink {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../img/orcid.png') no-repeat;
+  text-indent: -99999px;
+  margin: 2em 0 0.5em 0.5em;
+  float:right;
+}
+.orcidLink:hover {background-position: -38px 0}
+
+/* Twitter icon */
+.twitLink {
+  display: block;
+  width: 39px;
+  height: 32px;
+  background: url('../img/twitter32.png') no-repeat;
+  text-indent: -99999px;
+  margin: 2em 0 0.5em 0.5em;
+  float:right;
+}
+.twitLink:hover {background-position: -39px 0}
+
+
+/* PDF icon */
+.pdfLink {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url('../img/pdf.png') no-repeat 100%;
+  text-indent: -99999px;
+  margin: 0 0 0 0.5em;
+  border-style:solid;
+  border-width:1px;
+  border-color:#bbb
+}
+.pdfLink:hover {border-color:#000}
+
+/* Download icon */
+.dlLink {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url('../img/dl.png') no-repeat;
+  text-indent: -99999px;
+  margin: 0 0 0 0.5em;
+  border-style:solid;
+  border-width:1px;
+  border-color:#bbb
+}
+.dlLink:hover {border-color:#000}
+
+/* CITE icon */
+.citeLink {
+  display: inline-block;
+  width: 28px;
+  height: 14px;
+  background: url('../img/cite.png') no-repeat;
+  margin: 0 0 -3.3px 0.5em;
+  border-style:solid;
+  border-width:1px;
+  border-color:#bbb
+}
+.citeLink:hover {border-color:#000}
+
+/* Microsoft Academic Research icon */
+.academsLink {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../img/academs.gif') no-repeat;
+  text-indent: -99999px;
+  margin: 2em 0 0.5em 0.5em;
+  float:right;
+}
+.academsLink:hover {background-position: -38px 0}
+
+.worktype {
+  margin:4px 0 0px;
+  font-size:75%;
+/*  display: none;*/
+}
+.journal,.report,.conference,.natconference,.webpage,.freeaccess ,.notmywork,.workfig{
+  padding:0 3px 0;
+  color: #000;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+.journal {background-color: #aea}
+.report {background-color: #eaa}
+.conference {background-color: #ace}
+.natconference {background-color: #cef}
+.webpage {background-color: #ece}
+.workfig {background-color: #ff7}
+.notmywork {background-color: #333; color: #eee}
+.freeaccess {background-color: #eee; color: #333;border-style:solid;border-width:1px;border-color:#bbb}
+
+.citation {padding:0}
+.citation, .citation a{color: #000}
+.readmore{float:right}
+
+.story  {
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px; 
+          transition: background-color 0.2s;
+     -moz-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+       -o-transition: background-color 0.2s;
+opacity:0;
+clear:both;
+}
+
+.story_span {
+	float:right;
+	padding:0px;
+	margin:2px 0px 2px 0px;
+}
+
+.story:hover {
+  background-color: #f5f5f5;
+}
+
+/* These don't work in IE8 and earlier */
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+@-webkit-keyframes fadeInRight {
+	0%    { opacity:0; -webkit-transform:translateX(20px); }
+	100%  { opacity:1; -webkit-transform:translateX(0); }
+  }
+@-moz-keyframes fadeInRight {
+	0%    { opacity:0; -moz-transform:translateX(20px); }
+	100%  { opacity:1; -moz-transform:translateX(0); }
+  }
+@-o-keyframes fadeInRight {
+	0%    { opacity:0; -o-transform:translateX(20px); }
+	100%  { opacity:1; -o-transform:translateX(0); }
+  }
+@keyframes fadeInRight {
+	0%    { opacity:0; transform:translateX(20px); }
+	100%  { opacity:1; transform:translateX(0); }
+  }
+
+.ribbon-wrapper-yellow {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.ribbon-yellow {
+  font: bold 15px Sans-Serif;
+  color: #333;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 1px 0;
+  left: 4px;
+  top: 11px;
+  width: 120px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border: 1px solid #777;
+  background-color: #FFFC51;
+}
+
+.figure_box {
+  width:300px;
+  float:left;
+  margin-left:15px;
+  min-height:320px;
+}
+.figure_downloads {
+  border-top:1px solid #D4D4D4;
+  margin:3px 0px;
+  padding:5px 0px;
+}
+
+
+/* Smartphones (portrait and landscape) ———– */
+/*@media only screen and (max-device-width : 480px) {
+			p {
+			  font-size:18px;
+			  line-height:24px;
+			}
+			.supp {
+			  font-size: 70%;
+			  line-height:normal;
+			  position:relative;
+			  top:-6px;  
+			}
+			h5 {
+			  font-size: 30px;
+			  margin-bottom: 10px;
+			  clear:both;
+			  font-style: normal;
+			  line-height:1.1em;
+			}
+			h1 {
+			  font-size: 50px;
+			}
+			h3 {
+			  font-size: 30px;
+			}
+			h4 {
+			  font-size: 30px;
+			}
+			.title_line {
+			  font-size: 15px;
+			}
+			.scholar_links {visibility: hidden}
+			.story {width: 100%}
+			.novelty {
+			  font-size: 20px;
+			  font-style: italic;
+			  color: #006DC1;
+			}
+	.maincontainer, .container {width: 100%; font-size:200%}
+	.column1,.column2,.column3,.column1-2wide{display:inline;clear:left;width:100%;margin-right:0px;margin-bottom:24px}
+	.column-span{margin-bottom:25px;margin-left:0}
+	.column1 .sub-feature,.column2 .sub-feature,.column3 .sub-feature,.column1-2wide .sub-feature{margin:5px 0 10px 0}
+	.column1 img,.column2 img,.column3 img,.column1-2wide img{margin:0 0 25px 0}
+/*	p {
+	  font-size:100%;
+	}*/
+}
+
+*/
