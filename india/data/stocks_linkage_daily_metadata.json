@@ -1,0 +1,25 @@
+{
+	"fields": [
+		{
+			"name": "yymmdd",
+			"title": "Date",
+			"type": "number"
+		},
+		{
+			"name": "Raw",
+			"organisation": "Central Electricity Authority",
+			"URI": "https://npp.gov.in/dailyCoalReports",
+			"title": "Coal Stock Position for Coal Linkage Based Thermal Power Stations in the Country",
+			"source": "Daily Coal Report",
+			"units": "kt"
+		},
+		{
+			"name": "Processed",
+			"organisation": "Central Electricity Authority",
+			"URI": "https://npp.gov.in/dailyCoalReports",
+			"title": "Coal Stock Position for Coal Linkage Based Thermal Power Stations in the Country (cleaned and interpolated)",
+			"source": "Derived from Daily Coal Report",
+			"units": "kt"
+		}
+	]
+}
