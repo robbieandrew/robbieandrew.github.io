@@ -60,7 +60,7 @@
   <path id="line_y" d="M 0,53.993 v 506.187" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <g id="mk1"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#D95319" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#D95319" stroke="#FFF"/></g>
-  <g id="mk2"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#77AC30" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#77AC30" stroke="#FFF"/></g>
+  <g id="mk2"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#77AC33" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#77AC33" stroke="#FFF"/></g>
   <g id="mk3"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#EDB120" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#EDB120" stroke="#FFF"/></g>
   <g id="mk4"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#4DBEEE" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#4DBEEE" stroke="#FFF"/></g>
   <g id="mk5"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#77AC30" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#77AC30" stroke="#FFF"/></g>
@@ -194,7 +194,8 @@
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_2" class="pl pll" stroke="#77AC30" stroke-width="0.90" stroke-opacity="1.00"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#77AC33" stroke-width="0.90" stroke-opacity="1.00"/>
+    <text class="pl" transform="translate(912.0,429.1)" dy="6.5" font-size="21.60" fill="#77AC33" stroke="none">Stocks: All stations (solid)</text>
     <g>
       <g class="pl_2 marker" transform="translate(651.7,455.1)"><use xlink:href="#mk2"/><text class="dp1" y="-25">20.8</text></g>
       <g class="pl_2 marker" transform="translate(654.5,473.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">17.1</text></g>
@@ -485,6 +486,7 @@
   <g class="pl_5">
     <use xlink:href="#line_5" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_5" class="pl pll" stroke="#77AC30" stroke-width="0.90" stroke-dasharray="10 4 2 4" stroke-opacity="1.00"/>
+    <text class="pl" transform="translate(912.0,408.6)" dy="6.5" font-size="21.60" fill="#77AC30" stroke="none">Stocks: Linkages (dashed)</text>
     <g>
       <g class="pl_5 marker" transform="translate(464.2,529.2)"><use xlink:href="#mk5"/><text class="dp1" y="-25">6.1</text></g>
       <g class="pl_5 marker" transform="translate(467.0,532.9)"><use xlink:href="#mk5"/><text class="dp1" y="-25">5.4</text></g>
@@ -1671,9 +1673,7 @@
     <text class="pl" transform="translate(857.5,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2020</text>
     <text class="pl" transform="translate(890.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2021</text>
     <text class="pl" transform="translate(912.0,357.7)" dy="6.5" font-size="21.60" fill="#EDB120" stroke="none"><a href="https://www.coalindia.in/performance/physical/" target="_blank">CIL</a> production (solid)</text>
-    <text class="pl" transform="translate(912.0,408.6)" dy="6.5" font-size="21.60" fill="#77AC30" stroke="none">Stocks: Linkages (dashed)</text>
     <text class="pl" transform="translate(912.0,291.3)" dy="6.5" font-size="21.60" fill="#EDB120" stroke="none"><a href="https://www.coalindia.in/performance/physical/" target="_blank">CIL</a> despatches (dashed)</text>
-    <text class="pl" transform="translate(912.0,429.1)" dy="6.5" font-size="21.60" fill="#77AC30" stroke="none">Stocks: All stations (solid)</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly Indian coal statistics</text>
     <text class="pl" transform="translate(157.6,60.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">Latest data: June 2021</text>
 <g class="cc"><a href="https://creativecommons.org/licenses/by/4.0/">
