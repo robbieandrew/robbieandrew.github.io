@@ -17,6 +17,7 @@
   .numtip {pointer-events:none;}
   .cc {opacity:0.25;}
   .cc:hover + .CChover {display:block;}
+  #lines .pll {transition: all 0.1s ease;}
   #lines:hover .pl {opacity:0.5;}
   #lines:hover .thick {stroke-width:1;}
   #lines:hover .pl_1:hover .pl {opacity:1;}
@@ -49,11 +50,6 @@
   #lines:hover .pl_10:hover .pl {opacity:1;}
   #lines:hover .pl_10:hover .pll {stroke-width:3;}
   #lines:hover .pl_10:hover .thick {stroke-width:12;}
-  .pl {
-	-webkit-transition: all 0.1s ease;
-	-moz-transition: all 0.1s ease;
-	-o-transition: all 0.1s ease;
-  }
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
