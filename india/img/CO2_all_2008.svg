@@ -17,20 +17,24 @@
   .numtip {pointer-events:none;}
   .cc {opacity:0.25;}
   .cc:hover + .CChover {display:block;}
-  #lines .pll {transition: all 0.1s ease;}
+  #lines .pl {transition: all 0.2s ease;}
   #lines:hover .pl {opacity:0.5;}
   #lines:hover .thick {stroke-width:1;}
   #lines:hover .pl_1:hover .pl {opacity:1;}
   #lines:hover .pl_1:hover .pll {stroke-width:3;}
+  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_1:hover .thick {stroke-width:12;}
   #lines:hover .pl_2:hover .pl {opacity:1;}
   #lines:hover .pl_2:hover .pll {stroke-width:3;}
+  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_2:hover .thick {stroke-width:12;}
   #lines:hover .pl_3:hover .pl {opacity:1;}
   #lines:hover .pl_3:hover .pll {stroke-width:3;}
+  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_3:hover .thick {stroke-width:12;}
   #lines:hover .pl_4:hover .pl {opacity:1;}
   #lines:hover .pl_4:hover .pll {stroke-width:3;}
+  #lines:hover .pl_4:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_4:hover .thick {stroke-width:12;}
 </style>
 <defs>
@@ -104,7 +108,7 @@
 <g id="lines">
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pll" stroke="#666" stroke-width="0.90" stroke-opacity="1.00"/>
+    <use xlink:href="#line_1" class="pl pll" stroke="#666" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,543.7)" dy="8.1" font-size="27.00" fill="#666" stroke="none">Cement</text>
     <text class="pl" transform="translate(1053.3,545.7)" dy="5.4" font-size="18.00" fill="#666" stroke="none">30.1%</text>
     <text class="pl" transform="translate(925.2,559.9)" dy="18.0" font-size="18.00" fill="#666" stroke="none">through May</text>
@@ -277,7 +281,7 @@
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_2" class="pl pll" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#6298C6" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,517.7)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
     <text class="pl" transform="translate(1097.9,519.8)" dy="5.4" font-size="18.00" fill="#6298C6" stroke="none">4.8%</text>
     <text class="pl" transform="translate(925.2,494.8)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none">through May</text>
@@ -438,7 +442,7 @@
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_3" class="pl pll" stroke="#404040" stroke-width="0.90" stroke-opacity="1.00"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#404040" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,416.9)" dy="8.1" font-size="27.00" fill="#404040" stroke="none">Oil</text>
     <text class="pl" transform="translate(992.6,418.9)" dy="5.4" font-size="18.00" fill="#404040" stroke="none">10.0%</text>
     <text class="pl" transform="translate(925.2,433.1)" dy="18.0" font-size="18.00" fill="#404040" stroke="none">through June</text>
@@ -612,7 +616,7 @@
   </g>
   <g class="pl_4">
     <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_4" class="pl pll" stroke="#7B553E" stroke-width="0.90" stroke-opacity="1.00"/>
+    <use xlink:href="#line_4" class="pl pll" stroke="#7B553E" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,165.6)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
     <text class="pl" transform="translate(1015.5,167.6)" dy="5.4" font-size="18.00" fill="#7B553E" stroke="none">15.3%</text>
     <text class="pl" transform="translate(925.2,181.8)" dy="18.0" font-size="18.00" fill="#7B553E" stroke="none">through April</text>
