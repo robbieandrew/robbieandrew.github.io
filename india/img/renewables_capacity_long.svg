@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200.000 674.916">
 <title>Indian renewables capacity development</title>
-<desc>Created by Robbie Andrew (@robbie_andrew), CICERO Center for International Climate Research. CC-BY: Material can be freely re-used as long as you credit the author</desc>
+<desc>Created by Robbie Andrew (@robbie_andrew), CICERO Center for International Climate Research. CC-BY: Material may be freely re-used as long as you credit the author</desc>
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
-  .CChover {pointer-events:none;font-size:18.90px;display:none;stroke:#FFE347;stroke-width:30.00;stroke-opacity:1;paint-order:stroke}
   a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
@@ -16,29 +15,34 @@
   .dp2 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#FFFFFF;}
   .numtip {pointer-events:none;}
   .cc {opacity:0.25;}
-  .cc:hover + .CChover {display:block;}
+.dl_fe {background-color:#FDFFDF;display:flex;margin:auto;align-items:center}
+.dl_fe_p {font-size:20px;text-align:center;margin:3px}
+.dl_el {display:none;pointer-events:none;}
+.cc:hover + .dl_el {display:block;}
+text:hover + .dl_el {display:block;}
+  #lines .pl {transition: all 0.2s ease;}
   #lines:hover .pl {opacity:0.5;}
   #lines:hover .thick {stroke-width:1;}
   #lines:hover .pl_1:hover .pl {opacity:1;}
   #lines:hover .pl_1:hover .pll {stroke-width:3;}
+  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_1:hover .thick {stroke-width:12;}
   #lines:hover .pl_2:hover .pl {opacity:1;}
   #lines:hover .pl_2:hover .pll {stroke-width:3;}
+  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_2:hover .thick {stroke-width:12;}
   #lines:hover .pl_3:hover .pl {opacity:1;}
   #lines:hover .pl_3:hover .pll {stroke-width:3;}
+  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_3:hover .thick {stroke-width:12;}
   #lines:hover .pl_4:hover .pl {opacity:1;}
   #lines:hover .pl_4:hover .pll {stroke-width:3;}
+  #lines:hover .pl_4:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_4:hover .thick {stroke-width:12;}
   #lines:hover .pl_5:hover .pl {opacity:1;}
   #lines:hover .pl_5:hover .pll {stroke-width:3;}
+  #lines:hover .pl_5:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_5:hover .thick {stroke-width:12;}
-  .pl {
-	-webkit-transition: all 0.1s ease;
-	-moz-transition: all 0.1s ease;
-	-o-transition: all 0.1s ease;
-  }
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
@@ -131,11 +135,10 @@
 <text class="ticklabel ytl" transform="translate(128.8,264.6)">30</text>
 <text class="ticklabel ytl" transform="translate(128.8,163.3)">40</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">50 GW</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: CEA/GWEC/MNRE   &#9679;   Updated: 14 Jul 2021</text>
 <g id="lines">
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pll" stroke="#A6D854" stroke-width="2.70" stroke-opacity="1.00"/>
+    <use xlink:href="#line_1" class="pl pll" stroke="#A6D854" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,91.2)" dy="8.1" font-size="27.00" fill="#A6D854" stroke="none">Large hydro 46.3</text>
     <g>
       <g class="pl_1 marker" transform="translate(154.4,305.5)"><use xlink:href="#mk1"/><text class="dp1" y="-25">25.2</text></g>
@@ -221,7 +224,7 @@
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_2" class="pl pll" stroke="#E78AC3" stroke-width="2.70" stroke-opacity="1.00"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#E78AC3" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,131.6)" dy="8.1" font-size="27.00" fill="#E78AC3" stroke="none">Solar 42.3</text>
     <g>
       <g class="pl_2 marker" transform="translate(480.8,560.1)"><use xlink:href="#mk2"/><text class="dp1" y="-25">0.0</text></g>
@@ -283,7 +286,7 @@
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_3" class="pl pll" stroke="#8DA0CB" stroke-width="2.70" stroke-opacity="1.00"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#8DA0CB" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,457.2)" dy="8.1" font-size="27.00" fill="#8DA0CB" stroke="none">Biomass 10.2</text>
     <g>
       <g class="pl_3 marker" transform="translate(408.4,546.8)"><use xlink:href="#mk3"/><text class="dp1" y="-25">1.3</text></g>
@@ -343,7 +346,7 @@
   </g>
   <g class="pl_4">
     <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_4" class="pl pll" stroke="#FC8D62" stroke-width="2.70" stroke-opacity="1.00"/>
+    <use xlink:href="#line_4" class="pl pll" stroke="#FC8D62" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,160.4)" dy="8.1" font-size="27.00" fill="#FC8D62" stroke="none">Wind 39.5</text>
     <g>
       <g class="pl_4 marker" transform="translate(181.8,545.4)"><use xlink:href="#mk4"/><text class="dp1" y="-25">1.5</text></g>
@@ -410,7 +413,7 @@
   </g>
   <g class="pl_5">
     <use xlink:href="#line_5" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_5" class="pl pll" stroke="#66C2A5" stroke-width="2.70" stroke-opacity="1.00"/>
+    <use xlink:href="#line_5" class="pl pll" stroke="#66C2A5" stroke-width="0.90"/>
     <text class="pl" transform="translate(925.2,511.6)" dy="8.1" font-size="27.00" fill="#66C2A5" stroke="none">Small hydro 4.8</text>
     <g>
       <g class="pl_5 marker" transform="translate(408.4,539.5)"><use xlink:href="#mk5"/><text class="dp1" y="-25">2.0</text></g>
@@ -492,13 +495,25 @@
     <text class="pl" transform="translate(852.8,573.7) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2020</text>
     <text class="pl" transform="translate(889.1,573.7) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2021</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Indian renewables capacity development</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="157.6,85.0 157.6,60.7 531.6,60.7 531.6,85.0" fill="#FFF"/>
-</g>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="157.6,85.0 157.6,60.7 531.6,60.7 531.6,85.0" fill="#FFF"/>
-</g>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="157.6,85.0 157.6,60.7 531.6,60.7 531.6,85.0" fill="#FFF"/>
+    </g>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="157.6,85.0 157.6,60.7 531.6,60.7 531.6,85.0" fill="#FFF"/>
+    </g>
     <text class="pl" transform="translate(157.6,60.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">Grid-connected supply to the end of June 2021</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: <a href="https://cea.nic.in/?lang=en" target="_blank">CEA</a>/<a href="https://gwec.net/" target="_blank">GWEC</a>/<a href="https://mnre.gov.in/the-ministry/physical-progress" target="_blank">MNRE</a>   &#9679;   Updated: 19 Jul 2021</text>
+<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a></text>
+  <g class="dl_el" transform="translate(154.6,578.4)">
+    <g class="dl_el_balloon">
+      <foreignObject x="0" y="0" width="120" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:60px">
+      <p class="dl_fe_p">Find me on Twitter</p>
+      </div>
+	    </foreignObject>
+      <path stroke="#000" fill="#FDFFDF" d="M0,60H60l5,5l5,-5H120"/>
+    </g>
+  </g>
 <g class="cc"><a href="https://creativecommons.org/licenses/by/4.0/">
   <g transform="translate(116.4,652.4) scale(0.29)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -512,7 +527,16 @@
      <path d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
-</a></g>
-<text class="CChover" x="111.3" y="645.4">CC-BY: Material can be freely re-used as long as you credit the author</text>
+  </a></g>
+  <g class="dl_el" transform="translate(63.5,555.4)">
+    <g class="dl_el_balloon">
+      <foreignObject x="0" y="0" width="250" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
+      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
+      </div>
+	    </foreignObject>
+      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
+    </g>
+  </g>
 </g>
 </svg>
