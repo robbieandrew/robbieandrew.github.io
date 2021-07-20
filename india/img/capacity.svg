@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200.000 674.916">
 <title>Indian electricity capacity development</title>
-<desc>Created by Robbie Andrew (@robbie_andrew), CICERO Center for International Climate Research. CC-BY: Material can be freely re-used as long as you credit the author</desc>
+<desc>Created by Robbie Andrew (@robbie_andrew), CICERO Center for International Climate Research. CC-BY: Material may be freely re-used as long as you credit the author</desc>
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
@@ -19,6 +19,7 @@
 .dl_fe_p {font-size:20px;text-align:center;margin:3px}
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
+text:hover + .dl_el {display:block;}
   #lines .pl {transition: all 0.2s ease;}
   #lines:hover .pl {opacity:0.5;}
   #lines:hover .thick {stroke-width:1;}
@@ -130,7 +131,6 @@
 <text class="ticklabel ytl" transform="translate(128.8,275.4)">150</text>
 <text class="ticklabel ytl" transform="translate(128.8,168.7)">200</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">250 GW</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: CEA   &#9679;   Data through: June 2021</text>
 <g id="lines">
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
@@ -1215,6 +1215,18 @@
     <text class="pl" transform="translate(157.6,91.8)" dy="21.6" font-size="21.60" fill="#808080" stroke="none">Capacity utilisation for coal is ~60% today,</text>
     <text class="pl" transform="translate(157.6,118.8)" dy="21.6" font-size="21.60" fill="#808080" stroke="none">gas is ~20%, and for renewables it is ~30%.</text>
     <text class="pl" transform="translate(157.6,145.8)" dy="21.6" font-size="21.60" fill="#808080" stroke="none">Renewables here excludes large Hydro.</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: <a href="https://cea.nic.in/?lang=en" target="_blank">CEA</a>   &#9679;   Data through: June 2021</text>
+<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a></text>
+  <g class="dl_el" transform="translate(154.6,578.4)">
+    <g class="dl_el_balloon">
+      <foreignObject x="0" y="0" width="120" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:60px">
+      <p class="dl_fe_p">Find me on Twitter</p>
+      </div>
+	    </foreignObject>
+      <path stroke="#000" fill="#FDFFDF" d="M0,60H60l5,5l5,-5H120"/>
+    </g>
+  </g>
 <g class="cc"><a href="https://creativecommons.org/licenses/by/4.0/">
   <g transform="translate(116.4,652.4) scale(0.29)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -1229,11 +1241,11 @@
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
   </a></g>
-  <g class="dl_el" transform="translate(6.348400e+01,5.553509e+02)">
+  <g class="dl_el" transform="translate(63.5,555.4)">
     <g class="dl_el_balloon">
       <foreignObject x="0" y="0" width="250" height="500">
       <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
-      <p class="dl_fe_p">CC-BY: Material can be freely re-used as long as you credit the author</p>
+      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
       </div>
 	    </foreignObject>
       <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
