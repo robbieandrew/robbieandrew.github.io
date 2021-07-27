@@ -18,8 +18,8 @@
 		<text x="29.5" y="3.5" fill="#808080" font-family="Helvetica" font-size="10px" text-anchor="middle">carbonates</text>
       </g>
       <clipPath id="CEDS_clip"><rect x="540" y="175" width="120" height="60" rx="9" ry="9"/></clipPath>
-	  
-
+      <clipPath id="GCP_clip"><rect x="540" y="315" width="120" height="60" rx="9" ry="9"/></clipPath>
+      <clipPath id="PRIMAP_clip"><rect x="540" y="460" width="120" height="60" rx="9" ry="9"/></clipPath>
    </defs>
    
    <g class="main">
@@ -35,7 +35,7 @@
 	  
 	  <g class="group CEDS">
         <rect x="540" y="175" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="none" />
-		<polygon fill="#dae8fc" points="540,175 600,175 600,235 540 235" clip-path="url(#CEDS_clip)"/>
+		<polygon fill="#dae8fc" points="540,175 630,175 630,235 540 235" clip-path="url(#CEDS_clip)"/>
         <rect x="540" y="175" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
         <g fill="#000000">
           <text x="599.5" y="209.5">CEDS</text></g>
@@ -53,7 +53,9 @@
       </g>
 	  
 	  <g class="group GCP">
-        <rect x="540" y="315" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="#82b366" />
+        <rect x="540" y="315" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="none" />
+		<polygon fill="#dae8fc" points="540,315 570,315 570,375 540 375" clip-path="url(#GCP_clip)"/>
+        <rect x="540" y="315" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
         <g fill="#000000"><text x="599.5" y="349.5">GCP</text></g>
         <path class="connector" d="M 430 330 L 480 330 Q 490 330 490 340 L 490 340 Q 490 345 500 345 L 533.63 345"/>
 		<use xlink:href="#rightarrow" transform="translate(538.88,345)"/>
@@ -67,7 +69,9 @@
       </g>
 	  
 	  <g class="group PRIMAP">
-        <rect x="540" y="460" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="#82b366" />
+        <rect x="540" y="460" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="none" />
+		<polygon fill="#dae8fc" points="540,460 555,460 555,520 540 520" clip-path="url(#PRIMAP_clip)"/>
+        <rect x="540" y="460" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
         <g fill="#000000"><text x="599.5" y="494.5">PRIMAP-hist</text></g>
 		<use xlink:href="#carbonate" transform="translate(530.5,417.5)"/>
         <path class="connector" d="M 430 505 533.63 505"/>
