@@ -17,6 +17,9 @@
 	    <rect x="-0.5" y="-17.5" width="60" height="35" rx="5.25" ry="5.25" fill="#f5f5f5" stroke="#cccccc" />
 		<text x="29.5" y="3.5" fill="#808080" font-family="Helvetica" font-size="10px" text-anchor="middle">carbonates</text>
       </g>
+      <clipPath id="CEDS_clip"><rect x="540" y="175" width="120" height="60" rx="9" ry="9"/></clipPath>
+	  
+
    </defs>
    
    <g class="main">
@@ -31,16 +34,18 @@
 	  </g>
 	  
 	  <g class="group CEDS">
-        <rect x="540" y="175" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="#82b366" />
+        <rect x="540" y="175" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="none" />
+		<polygon fill="#dae8fc" points="540,175 600,175 600,235 540 235" clip-path="url(#CEDS_clip)"/>
+        <rect x="540" y="175" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
         <g fill="#000000">
           <text x="599.5" y="209.5">CEDS</text></g>
-        <path class="connector" d="M 430 475 L 430 475 Q 450 475 450 455 L 450 215 Q 450 205 460 205 L 533.63 205"/>
+        <path class="connector lighter" d="M 510 590 L 690 590 Q 700 590 700 580 L 700 215 Q 700 205 690 205 L 666.37 205"/>
         <path class="connector lighter" d="M 250 410 L 284.86 410 Q 294.86 410 294.86 400 L 294.86 380 Q 294.86 370 304.86 370 L 430 370 Q 450 370 450 350 L 450 215 Q 450 205 460 205 L 533.63 205"/>
+        <path class="connector" d="M 430 475 L 430 475 Q 450 475 450 455 L 450 215 Q 450 205 460 205 L 533.63 205"/>
         <path class="connector" d="M 430 250 L 430 250 Q 450 250 450 230 L 450 215 Q 450 205 460 205 L 533.63 205"/>
 		<use xlink:href="#rightarrow" transform="translate(538.88,205)"/>
         <path class="connector" d="M 430 315 L 430 315 Q 450 315 450 295 L 450 215 Q 450 205 460 205 L 533.63 205"/>
-        <path class="connector " d="M 250 170 L 270 170 Q 280 170 280 180 L 280 195 Q 280 205 290 205 L 533.63 205"/>
-        <path class="connector lighter" d="M 510 590 L 690 590 Q 700 590 700 580 L 700 215 Q 700 205 690 205 L 666.37 205"/>
+        <path class="connector" d="M 250 170 L 270 170 Q 280 170 280 180 L 280 195 Q 280 205 290 205 L 533.63 205"/>
 		<use xlink:href="#rightarrowlighter" transform="translate(661.12,205) rotate(180)"/>
         <path class="connector" d="M 590 147.5 L 595.02 147.51 Q 600.03 147.52 600.02 157.52 L 600.01 168.63"/>
 		<use xlink:href="#rightarrow" transform="translate(600,173.88) rotate(90)"/>
