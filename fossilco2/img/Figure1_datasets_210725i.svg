@@ -9,6 +9,8 @@
 	 .connector {fill:none;stroke:#000;stroke-miterlimit:10;pointer-events:stroke}
 	 .lighter {stroke:#888}
 	 .check {stroke:#F00}
+	 .connector {stroke-dasharray:10000; stroke-dashoffset:10000; animation: dash 5s linear forwards;}
+     @keyframes dash { to { stroke-dashoffset: 0; } }
    </style>
    <defs>
       <path id="rightarrow" d="M 0 0 L -7 3.5 L -5.25 0 L -7 -3.5 Z" fill="#000" stroke="#000" stroke-miterlimit="10" />
@@ -57,7 +59,7 @@
 		<polygon fill="#dae8fc" points="540,315 570,315 570,375 540 375" clip-path="url(#GCP_clip)"/>
         <rect x="540" y="315" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
         <g fill="#000000"><text x="599.5" y="349.5">GCP</text></g>
-        <path class="connector" d="M 430 330 L 480 330 Q 490 330 490 340 L 490 340 Q 490 345 500 345 L 533.63 345"/>
+        <path class="connector" d="M 430 330 L 480 330 Q 490 330 490 337.5 L 490 337.5 Q 490 345 500 345 L 533.63 345"/>
 		<use xlink:href="#rightarrow" transform="translate(538.88,345)"/>
         <path class="connector lighter" d="M 250 410 L 284.86 410 Q 294.86 410 294.86 400 L 294.86 380 Q 294.86 370 304.86 370 L 340 370 L 480 370 Q 490 370 490 360 L 490 352.5 Q 490 345 500 345 L 533.63 345"/>
         <path class="connector" d="M 430 490 L 480 490 Q 490 490 490 480 L 490 355 Q 490 345 500 345 L 533.63 345"/>
