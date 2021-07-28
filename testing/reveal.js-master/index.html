@@ -1,25 +1,21 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-<style>
-</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>reveal.js</title>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<style>
+	</style>
 	<link rel="stylesheet" href="css/main.css">
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
+</head>
+<body>
 <div class="theme-font-montserrat theme-color-white-blue" style="width: 100%; height: 100%;">
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 806px; left: 226px; top: 27px; height: auto;" data-name="text-c1bc25">
+                <div class="sl-block nope" data-block-type="text" style="width: 806px; left: 226px; top: 27px; height: auto;" data-name="text-c1bc25">
                     <div class="sl-block-content" style="z-index: 10; color: rgb(76, 155, 219); font-size: 40%;">
                         <h1><strong>Emissions Projections for 2020</strong></h1>
                     </div>
@@ -225,8 +221,7 @@
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -235,13 +230,14 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				plugins: [ RevealZoom, RevealNotes ],
 				width: 1280,
 				height: 720,
 				transition: "slide",
 				backgroundTransition: "slide",
-				center: false,
-				slideNumber: true
+				center: true,
+				slideNumber: true,
+				mouseWheel: true
 			});
 		</script>
 	</body>
