@@ -20,8 +20,27 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
+  #areas .pl {transition: all 0.2s ease;}
+  #areas:hover .pl {opacity:0.5;}
+  #areas:hover .thick {stroke-width:1;}
+  #areas:hover .pg_1:hover .pl {opacity:1;}
+  #areas:hover .pg_1:hover .pll {stroke-width:3;}
+  #areas:hover .pg_1:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_1:hover .thick {stroke-width:12;}
+  #areas:hover .pg_2:hover .pl {opacity:1;}
+  #areas:hover .pg_2:hover .pll {stroke-width:3;}
+  #areas:hover .pg_2:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_2:hover .thick {stroke-width:12;}
+  #areas:hover .pg_3:hover .pl {opacity:1;}
+  #areas:hover .pg_3:hover .pll {stroke-width:3;}
+  #areas:hover .pg_3:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_3:hover .thick {stroke-width:12;}
+  #areas:hover .pg_4:hover .pl {opacity:1;}
+  #areas:hover .pg_4:hover .pll {stroke-width:3;}
+  #areas:hover .pg_4:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_4:hover .thick {stroke-width:12;}
   #lines .pl {transition: all 0.2s ease;}
-  #lines:hover .pl {opacity:0.5;}
+  #lines:hover .pl {opacity:0.3;}
   #lines:hover .thick {stroke-width:1;}
   #lines:hover .pl_1:hover .pl {opacity:1;}
   #lines:hover .pl_1:hover .pll {stroke-width:3;}
@@ -287,9 +306,6 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(925.2,518.4)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
     <text class="pl" transform="translate(1097.9,520.4)" dy="5.4" font-size="18.00" fill="#6298C6" stroke="none">3.9%</text>
     <text class="pl" transform="translate(925.2,495.5)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none">through June</text>
-    <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="1073.9,525.2 1083.5,511.7 1093.1,525.2 1073.9,525.2" fill="#6298C6"/>
-    </g>
     <g>
       <g class="pl_2 marker" transform="translate(202.1,537.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">8.1</text></g>
       <g class="pl_2 marker" transform="translate(206.7,541.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">6.6</text></g>
@@ -449,9 +465,6 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(925.2,417.2)" dy="8.1" font-size="27.00" fill="#404040" stroke="none">Oil</text>
     <text class="pl" transform="translate(992.6,419.2)" dy="5.4" font-size="18.00" fill="#404040" stroke="none">9.9%</text>
     <text class="pl" transform="translate(925.2,433.4)" dy="18.0" font-size="18.00" fill="#404040" stroke="none">through June</text>
-    <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="968.6,424.0 978.2,410.5 987.8,424.0 968.6,424.0" fill="#404040"/>
-    </g>
     <g>
       <g class="pl_3 marker" transform="translate(147.7,461.9)"><use xlink:href="#mk3"/><text class="dp2" y="-25">35.2</text></g>
       <g class="pl_3 marker" transform="translate(152.3,463.0)"><use xlink:href="#mk3"/><text class="dp2" y="-25">34.8</text></g>
@@ -623,9 +636,6 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(925.2,113.7)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
     <text class="pl" transform="translate(1015.5,115.7)" dy="5.4" font-size="18.00" fill="#7B553E" stroke="none">19.0%</text>
     <text class="pl" transform="translate(925.2,129.9)" dy="18.0" font-size="18.00" fill="#7B553E" stroke="none">through April</text>
-    <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="991.5,120.5 1001.1,107.0 1010.7,120.5 991.5,120.5" fill="#7B553E"/>
-    </g>
     <g>
       <g class="pl_4 marker" transform="translate(183.9,347.3)"><use xlink:href="#mk4"/><text class="dp2" y="-25">76.2</text></g>
       <g class="pl_4 marker" transform="translate(188.4,336.3)"><use xlink:href="#mk4"/><text class="dp2" y="-25">80.1</text></g>
@@ -797,6 +807,15 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(825.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2020</text>
     <text class="pl" transform="translate(880.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2021</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly Indian fossil CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>emissions</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="991.5,120.5 1001.1,107.0 1010.7,120.5 991.5,120.5" fill="#7B553E"/>
+    </g>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="968.6,424.0 978.2,410.5 987.8,424.0 968.6,424.0" fill="#404040"/>
+    </g>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="1073.9,525.2 1083.5,511.7 1093.1,525.2 1073.9,525.2" fill="#6298C6"/>
+    </g>
 <text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: Own calculations   &#9679;   Paper DOI:<a href="https://doi.org/10.5194/essd-2020-152" target="_blank">10.5194/essd-2020-152</a></text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
