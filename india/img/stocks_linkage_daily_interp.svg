@@ -19,13 +19,6 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
-  #areas .pl {transition: all 0.2s ease;}
-  #areas:hover .pl {opacity:0.5;}
-  #areas:hover .thick {stroke-width:1;}
-  #areas:hover .pg_1:hover .pl {opacity:1;}
-  #areas:hover .pg_1:hover .pll {stroke-width:3;}
-  #areas:hover .pg_1:hover .pldlm {stroke-width:2;}
-  #areas:hover .pg_1:hover .thick {stroke-width:12;}
   #lines .pl {transition: all 0.2s ease;}
   #lines:hover .pl {opacity:0.3;}
   #lines:hover .thick {stroke-width:1;}
@@ -1085,6 +1078,7 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <g class="cc"><a href="https://creativecommons.org/licenses/by/4.0/">
+  <rect x="124.0" y="652.4" width="32" height="16" fill="#FFF" stroke="none"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
      <circle fill="none" cx="37.79" cy="28.5" r="28.84" stroke="#000" stroke-width="5.5"/>
