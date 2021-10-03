@@ -26,6 +26,7 @@
    
    <g class="main">
 	  <g class="group CAIT">
+	    <a href="http://cait.wri.org/historical">
         <rect x="540" y="60" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="#82b366" />
         <g fill="#000000">
           <text x="599.5" y="94.5">CAIT</text></g>
@@ -33,9 +34,11 @@
         <path class="connector lighter" d="M 430 170 L 480 170 Q 490 170 490 160 L 490 100 Q 490 90 500 90 L 533.63 90"/>
         <path class="connector" d="M 430 330 L 480 330 Q 490 330 490 320 L 490 100 Q 490 90 500 90 L 533.63 90"/>
 		<use xlink:href="#rightarrow" transform="translate(538.88,90)"/>
+		</a>
 	  </g>
 	  
 	  <g class="group CEDS">
+	    <a href="https://doi.org/10.5281/zenodo.3606752">
         <rect x="540" y="175" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="none" />
 		<polygon fill="#dae8fc" points="540,175 630,175 630,235 540 235" clip-path="url(#CEDS_clip)"/>
         <rect x="540" y="175" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
@@ -52,9 +55,11 @@
         <path class="connector" d="M 590 147.5 L 595.02 147.51 Q 600.03 147.52 600.02 157.52 L 600.01 168.63"/>
 		<use xlink:href="#rightarrow" transform="translate(600,173.88) rotate(90)"/>
 		<use xlink:href="#carbonate" transform="translate(530.5,147.5)"/>
+		</a>
       </g>
 	  
 	  <g class="group GCP">
+	    <a href="https://folk.universitetetioslo.no/roberan/GCB2020.shtml">
         <rect x="540" y="315" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="none" />
 		<polygon fill="#dae8fc" points="540,315 570,315 570,375 540 375" clip-path="url(#GCP_clip)"/>
         <rect x="540" y="315" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
@@ -68,9 +73,11 @@
         <path class="connector" d="M 590 417.5 L 595.02 417.51 Q 600.03 417.52 600.03 407.52 L 600.01 381.37"/>
 		<use xlink:href="#rightarrow" transform="translate(600,376.12) rotate(-90)"/>
 		<use xlink:href="#carbonate" transform="translate(530.5,417.5)"/>
+		</a>
       </g>
 	  
 	  <g class="group PRIMAP">
+	    <a href="https://doi.org/10.5281/zenodo.4479171">
         <rect x="540" y="460" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="none" />
 		<polygon fill="#dae8fc" points="540,460 555,460 555,520 540 520" clip-path="url(#PRIMAP_clip)"/>
         <rect x="540" y="460" width="120" height="60" rx="9" ry="9" fill="none" stroke="#82b366" />
@@ -85,17 +92,21 @@
         <path class="connector" d="M 510 590 L 590 590 Q 600 590 600 580 L 600 526.37"/>
 		<use xlink:href="#rightarrow" transform="translate(600,521.12) rotate(-90)"/>
 		<use xlink:href="#carbonate" transform="translate(530.5,417.5)"/>
+		</a>
 	  </g>
 	  
 	  <g class="group UNFCCC">
+	    <a href="https://unfccc.int/ghg-inventories-annex-i-parties/2021">
         <rect x="310" y="460" width="120" height="60" rx="9" ry="9" fill="#dae8fc" stroke="#6c8ebf" />
         <g fill="#000000">
           <text x="369.5" y="494.5">UNFCCC</text></g>
         <path class="connector" d="M 370 560 L 370 526.37"/>
 		<use xlink:href="#rightarrow" transform="translate(370,521.12) rotate(-90)"/>
+		</a>
 	  </g>
 
 	  <g class="group EDGAR">
+	    <a href="https://edgar.jrc.ec.europa.eu/">
         <path class="connector lighter" d="M 250 395 L 270 395 Q 280 395 280 385 L 280 260 Q 280 250 290 250 L 303.63 250"/>
         <path class="connector" d="M 250 170 L 270 170 Q 280 170 280 180 L 280 240 Q 280 250 290 250 L 303.63 250"/>
         <path class="connector" d="M 240 230 L 270 230 Q 280 230 280 240 L 280 240 Q 280 250 290 250 L 303.63 250"/>
@@ -104,9 +115,11 @@
             <text x="370" y="254" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">EDGAR</text></g>
 		<use xlink:href="#carbonate" transform="translate(180,230)"/>
 		<use xlink:href="#rightarrow" transform="translate(308.88,250)"/>
+		</a>
 	  </g>
 	  
 	  <g class="group CDIAC">
+	    <a href="https://energy.appstate.edu/research/work-areas/cdiac-appstate">
         <rect x="310" y="300" width="120" height="60" rx="9" ry="9" fill="#dae8fc" stroke="#6c8ebf" />
         <g fill="#000000">
           <text x="369.5" y="334.5">CDIAC</text></g>
@@ -114,6 +127,7 @@
         <path class="connector" d="M 240 282.5 L 250 282.5 Q 260 282.5 260 292.5 L 260 305 Q 260 315 270 315 L 303.63 315"/>
 		<use xlink:href="#rightarrow" transform="translate(308.88,315)"/>
 		<use xlink:href="#carbonate" transform="translate(180,283)"/>
+		</a>
 	  </g>
 
 <!--	  <g class="group">
@@ -130,6 +144,7 @@
 	  </g>
 	  
 	  <g class="group">
+	    <a href="https://www.eia.gov/international/data/world">
         <path class="connector" d="M 250 90 L 269.69 90 Q 279.69 90 289.69 90 L 303.63 90"/>
         <path class="connector" d="M 230 590 L 50 590 Q 40 590 40 580 L 40 100 Q 40 90 50 90 L 123.63 90"/>
         <rect x="130" y="60" width="120" height="60" rx="9" ry="9" fill="#fff2cc" stroke="#d6b656" />
@@ -138,9 +153,11 @@
         <g fill="#000000"><text x="369.5" y="94.5">EIA</text></g>
 		<use xlink:href="#rightarrow" transform="translate(308.88,90)"/>
 		<use xlink:href="#rightarrow" transform="translate(128.88,90)"/>
+		</a>
 	  </g>
 	  
 	  <g class="group">
+	    <a href="https://www.iea.org/">
         <path class="connector" d="M 75 270 L 87.62 270 Q 97.62 270 97.62 260 L 97.62 195 Q 97.62 185 107.62 185 L 123.63 185"/>
         <path class="connector" d="M 230 590 L 50 590 Q 40 590 40 580 L 40 280 Q 40 270 44.32 270 L 58.63 270"/>
         <path class="connector" d="M 250 170 L 269.69 170 Q 279.69 170 289.69 170 L 303.63 170"/>
@@ -156,9 +173,11 @@
 		<use xlink:href="#rightarrow" transform="translate(308.88,170)"/>
 		<use xlink:href="#rightarrow" transform="translate(63.88,270)"/>
 		<use xlink:href="#rightarrow" transform="translate(160,201.12) rotate(-90)"/>
+		</a>
 	  </g>
 	  
 	  <g class="group">
+	    <a href="https://unstats.un.org/unsd/energystats/">
         <rect x="130" y="307.5" width="120" height="60" rx="9" ry="9" fill="#fff2cc" stroke="#d6b656" />
         <g fill="#000000"><text x="189.5" y="342">UN stats</text></g>
         <path class="connector" d="M 160 301.13 L 160 206.37"/>
@@ -170,9 +189,11 @@
         <path class="connector" d="M 230 590 L 50 590 Q 40 590 40 580 L 40 362.5 Q 40 352.5 50 352.5 L 123.63 352.5"/>
 		<use xlink:href="#rightarrow" transform="translate(128.88,352.5)"/>
 		<use xlink:href="#rightarrow" transform="translate(63.88,270)"/>
+		</a>
 	  </g>
 	  
 	  <g class="group">
+	    <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html">
         <path class="connector" d="M 250 425 L 269.69 425 Q 279.69 425 289.69 425 L 303.63 425"/>
         <path class="connector" d="M 230 590 L 50 590 Q 40 590 40 580 L 40 420 Q 40 410 50 410 L 123.63 410"/>
         <rect x="130" y="380" width="120" height="60" rx="9" ry="9" fill="#fff2cc" stroke="#d6b656" />
@@ -181,6 +202,7 @@
         <g fill="#000000"><text x="369.5" y="414.5">BP</text></g>
 		<use xlink:href="#rightarrow" transform="translate(128.88,410)"/>
 		<use xlink:href="#rightarrow" transform="translate(308.88,425)"/>
+		</a>
       </g>
 
 	  <g>
