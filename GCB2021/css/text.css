@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans Narrow'), local('PTSans-Narrow'), url(fonts/PT-Sans-Narrow-Regular.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url(fonts/PT-Sans-Narrow-Bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+.figbox {
+  margin-left:15px;
+  margin-right:15px;
+  margin-bottom:25px;
+}
+.figdl {
+  border-top:1px solid #D4D4D4;
+  margin:3px 0px;
+  padding:5px 0px;
+}
+.slidenum{
+  font-family:'PT Sans Narrow',sans-serif;
+  font-size:150%;
+  color:#666;
+}
+
+h1,h2,h3,p {
+  text-align:center;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left:auto;
+  margin-right:auto;
+  max-width:1000px;
+  display:block;
+}
+	
+.fig {
+  max-width:800px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.subb {font-size: 70%;line-height:normal;}
+.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;}
+
+h3, h4, h5{
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: #666;
+}
+
+h3 {
+  font-size: 300%;
+  margin-top:0;
+  margin-bottom:0;
+  letter-spacing:-2px;
+  font-weight:700;
+}
+
+.dlbutton {
+  font-size:90%;
+  margin-top:0.4em;
+  margin-bottom:0.4em;
+}
