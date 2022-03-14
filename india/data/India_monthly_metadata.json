@@ -256,14 +256,424 @@
 			"units": "million standard cubic metres"
 		},
 		{
-			"name": "CEM.PRD.OEA",
-			"title": "Cement production",
-			"type": "number",
-			"organisation": "Office of the Economic Advisor",
-			"source": "Eight Core Industries",
-			"URI": "https://eaindustry.nic.in/",
+			"name": "COL.HRD.PRD.CIL.REV",
+			"organisation": "Coal India Limited",
+			"source": "Provisional production and offtake performances of CIL and it's subsidiaries companies",
+			"units": "millions of tonnes",
 			"geography": "India",
-			"units": "thousands of tonnes"
+			"URI": "https://www.coalindia.in/en-us/performance/physical.aspx",
+			"type": "number",
+			"title": "Revised CIL hard coal production"
+		},
+		{
+			"name": "COL.HRD.DES.CIL.REV",
+			"organisation": "Coal India Limited",
+			"source": "Provisional production and offtake performances of CIL and it's subsidiaries companies",
+			"units": "millions of tonnes",
+			"geography": "India",
+			"URI": "https://www.coalindia.in/en-us/performance/physical.aspx",
+			"type": "number",
+			"title": "Revised CIL hard coal despatch"
+		},
+		{
+			"name": "COL.HRD.PRD.CIL.PRV",
+			"organisation": "Coal India Limited",
+			"source": "Provisional production and offtake performances of CIL and it's subsidiaries companies",
+			"units": "millions of tonnes",
+			"geography": "India",
+			"URI": "https://www.coalindia.in/en-us/performance/physical.aspx",
+			"type": "number",
+			"title": "Provisional CIL hard coal production"
+		},
+		{
+			"name": "COL.HRD.DES.CIL.PRV",
+			"organisation": "Coal India Limited",
+			"source": "Provisional production and offtake performances of CIL and it's subsidiaries companies",
+			"units": "millions of tonnes",
+			"geography": "India",
+			"URI": "https://www.coalindia.in/en-us/performance/physical.aspx",
+			"type": "number",
+			"title": "Provisional CIL hard coal despatch"
+		},
+		{
+			"name": "COL.HRD.PRD.SCCL.PRV",
+			"organisation": "Singareni Collieries Company Limited",
+			"source": "Provisional Production and Dispatches Performance of SCCL",
+			"units": "millions of tonnes",
+			"geography": "India",
+			"URI": "https://scclmines.com/scclnew/performance_production.asp",
+			"type": "number",
+			"title": "Provisional SCCL hard coal production"
+		},
+		{
+			"name": "COL.HRD.DES.SCCL.PRV",
+			"organisation": "Singareni Collieries Company Limited",
+			"source": "Provisional Production and Dispatches Performance of SCCL",
+			"units": "millions of tonnes",
+			"geography": "India",
+			"URI": "https://scclmines.com/scclnew/performance_production.asp",
+			"type": "number",
+			"title": "Provisional SCCL hard coal despatch"
+		},
+		{
+			"name": "COL.HRD.PRD.SCCL.REV",
+			"organisation": "Singareni Collieries Company Limited",
+			"source": "Provisional Production and Dispatches Performance of SCCL",
+			"units": "millions of tonnes",
+			"geography": "India",
+			"URI": "https://scclmines.com/scclnew/performance_production.asp",
+			"type": "number",
+			"title": "Revised SCCL hard coal production"
+		},
+		{
+			"name": "COL.HRD.DES.SCCL.REV",
+			"organisation": "Singareni Collieries Company Limited",
+			"source": "Provisional Production and Dispatches Performance of SCCL",
+			"units": "millions of tonnes",
+			"geography": "India",
+			"URI": "https://scclmines.com/scclnew/performance_production.asp",
+			"type": "number",
+			"title": "Revised SCCL hard coal despatch"
+		},
+		{
+			"name": "COL.HRD.IMP.CIS",
+			"type": "number",
+			"organisation": "Directorate General of Commercial Intelligence and Statistics",
+			"source": "Foreign Trade Data Dissemination Portal",
+			"URI": "http://14.98.253.4/",
+			"geography": "India",
+			"units": "millions of tonnes",
+			"title": "Coal imports"
+		},
+		{
+			"name": "COL.HRD.EXP.CIS",
+			"type": "number",
+			"organisation": "Directorate General of Commercial Intelligence and Statistics",
+			"source": "Foreign Trade Data Dissemination Portal",
+			"URI": "http://14.98.253.4/",
+			"geography": "India",
+			"units": "millions of tonnes",
+			"title": "Coal exports"
+		},
+		{
+			"name": "COL.HRD.IMP.COK.DOC",
+			"type": "number",
+			"organisation": "Department of Commerce",
+			"source": "System On India's Monthly Trade",
+			"URI": "https://commerce-app.gov.in/meidb/Default.asp",
+			"geography": "India",
+			"units": "Millions of tonnes",
+			"title": "Coal imports: coking coal"
+		},
+		{
+			"name": "COL.HRD.IMP.STM.DOC",
+			"type": "number",
+			"organisation": "Department of Commerce",
+			"source": "System On India's Monthly Trade",
+			"URI": "https://commerce-app.gov.in/meidb/Default.asp",
+			"geography": "India",
+			"units": "Millions of tonnes",
+			"title": "Coal imports: steam coal"
+		},
+		{
+			"name": "COL.HRD.IMP.TOT.DOC",
+			"type": "number",
+			"organisation": "Department of Commerce",
+			"source": "System On India's Monthly Trade",
+			"URI": "https://commerce-app.gov.in/meidb/Default.asp",
+			"geography": "India",
+			"units": "Millions of tonnes",
+			"title": "Coal imports: total"
+		},
+		{
+			"name": "COL.HRD.PRD.PRV",
+			"title": "Provisional hard coal production",
+			"type": "number",
+			"organisation": "Ministry of Mines",
+			"source": "Press Releases",
+			"URI": "https://pib.gov.in/allRel.aspx",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.LIG.PRD.PRV",
+			"title": "Provisional lignite production",
+			"type": "number",
+			"organisation": "Ministry of Mines",
+			"source": "Press Releases",
+			"URI": "https://pib.gov.in/allRel.aspx",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.HRD.PRD.REV",
+			"title": "Revised hard coal production",
+			"type": "number",
+			"organisation": "Indian Bureau of Mines",
+			"source": "Monthly statistics of mineral production",
+			"URI": "https://ibm.gov.in/?c=pages&m=index&id=497",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.LIG.PRD.REV",
+			"title": "Revised lignite production",
+			"type": "number",
+			"organisation": "Indian Bureau of Mines",
+			"source": "Monthly statistics of mineral production",
+			"URI": "https://ibm.gov.in/?c=pages&m=index&id=497",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.HRD.PRD.UNS",
+			"title": "Hard coal production",
+			"type": "number",
+			"organisation": "United Nations",
+			"source": "Monthly Bulletin of Statistics Online",
+			"URI": "https://unstats.un.org/unsd/mbs/app/DataSearchTable.aspx",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.LIG.PRD.UNS",
+			"title": "Lignite production",
+			"type": "number",
+			"organisation": "United Nations",
+			"source": "Monthly Bulletin of Statistics Online",
+			"URI": "https://unstats.un.org/unsd/mbs/app/DataSearchTable.aspx",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.HRD.PRD.CAP.CAB",
+			"title": "Provisional captive coal production",
+			"type": "number",
+			"organisation": "Ministry of Coal",
+			"source": "Monthly Summary to Cabinet",
+			"URI": "https://coal.nic.in/content/monthly-summary-cabinet",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.HRD.PRD.CIL.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal production: CIL mines"
+		},
+		{
+			"name": "COL.HRD.PRD.SCCL.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal production: SCCL mines"
+		},
+		{
+			"name": "COL.HRD.PRD.CAP.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal production: Captive mines"
+		},
+		{
+			"name": "COL.HRD.PRD.OTH.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal production: Others mines"
+		},
+		{
+			"name": "COL.HRD.PRD.TOT.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal production: Total mines"
+		},
+		{
+			"name": "COL.HRD.DES.CIL.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal despatch: CIL mines"
+		},
+		{
+			"name": "COL.HRD.DES.SCCL.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal despatch: SCCL mines"
+		},
+		{
+			"name": "COL.HRD.DES.CAP.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal despatch: Captive mines"
+		},
+		{
+			"name": "COL.HRD.DES.OTH.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal despatch: Others mines"
+		},
+		{
+			"name": "COL.HRD.DES.TOT.MCL",
+			"organisation": "Ministry of Coal",
+			"URI": "http://coal.nic.in/major-statistics/production-and-supplies",
+			"units": "millions of tonnes",
+			"type": "number",
+			"geography": "India",
+			"source": "Production And Supplies",
+			"title": "Hard coal despatch: Total mines"
+		},
+		{
+			"name": "COL.HRD.CON.PWR.ALL",
+			"URI": "http://cea.nic.in/monthlycoal.html",
+			"source": "Monthly Coal Statement of Thermal Power Stations",
+			"organisation": "Central Electricity Authority",
+			"geography": "India",
+			"units": "millions of tonnes",
+			"type": "number",
+			"title": "Coal consumption at all utility power stations"
+		},
+		{
+			"name": "COL.HRD.IMP.PWR.ALL",
+			"title": "Receipt of imported coal at all utility power stations",
+			"type": "number",
+			"organisation": "Central Electricity Authority",
+			"source": "Monthly Coal Statement of Thermal Power Stations",
+			"URI": "http://cea.nic.in/monthlycoal.html",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.HRD.STC.PWR.LNK",
+			"title": "Coal stock changes at linkage power stations",
+			"type": "number",
+			"organisation": "Central Electricity Authority",
+			"source": "Daily Coal Report",
+			"URI": "https://npp.gov.in/dailyCoalReports",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.HRD.STC.PWR.ALL",
+			"title": "Coal stock changes at all utility power stations",
+			"type": "number",
+			"organisation": "Central Electricity Authority",
+			"source": "Coal Statement",
+			"URI": "http://cea.nic.in/monthlycoal.html",
+			"geography": "India",
+			"units": "millions of tonnes"
+		},
+		{
+			"name": "COL.HRD.PRD.PCS",
+			"source": "Provisional Coal Statistics",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/20-provisional-coal-statistics",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Provisional hard coal production"
+		},
+		{
+			"name": "COL.HRD.DES.PCS",
+			"source": "Provisional Coal Statistics",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/20-provisional-coal-statistics",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Provisional hard coal despatch"
+		},
+		{
+			"name": "COL.LIG.PRD.PCS",
+			"source": "Provisional Coal Statistics",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/20-provisional-coal-statistics",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Provisional lignite production"
+		},
+		{
+			"name": "COL.LIG.DES.PCS",
+			"source": "Provisional Coal Statistics",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/20-provisional-coal-statistics",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Provisional lignite despatch"
+		},
+		{
+			"name": "COL.HRD.PRD.CDR",
+			"source": "Coal Directory",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/16-coal-directory",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Revised hard coal production"
+		},
+		{
+			"name": "COL.HRD.DES.CDR",
+			"source": "Coal Directory",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/16-coal-directory",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Revised hard coal despatch"
+		},
+		{
+			"name": "COL.LIG.PRD.CDR",
+			"source": "Coal Directory",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/16-coal-directory",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Revised lignite production"
+		},
+		{
+			"name": "COL.LIG.DES.CDR",
+			"source": "Coal Directory",
+			"URI": "http://www.coalcontroller.gov.in/pages/display/16-coal-directory",
+			"units": "millions of tonnes",
+			"type": "number",
+			"organisation": "Coal Controller's Organization",
+			"geography": "India",
+			"title": "Revised lignite despatch"
 		},
 		{
 			"name": "COL.HRD.PRD.CIL.REV",
