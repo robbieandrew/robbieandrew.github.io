@@ -261,15 +261,7 @@ a img {
 .readmore{float:right}
 
 .story  {
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px; 
-          transition: background-color 0.2s;
-     -moz-transition: background-color 0.2s;
-  -webkit-transition: background-color 0.2s;
-       -o-transition: background-color 0.2s;
-/* opacity:0; */
-clear:both;
+padding:30px;
 }
 
 .story_span {
@@ -358,52 +350,3 @@ clear:both;
 }
 
 
-/* Smartphones (portrait and landscape) ———– */
-/*@media only screen and (max-device-width : 480px) {
-			p {
-			  font-size:18px;
-			  line-height:24px;
-			}
-			.supp {
-			  font-size: 70%;
-			  line-height:normal;
-			  position:relative;
-			  top:-6px;  
-			}
-			h5 {
-			  font-size: 30px;
-			  margin-bottom: 10px;
-			  clear:both;
-			  font-style: normal;
-			  line-height:1.1em;
-			}
-			h1 {
-			  font-size: 50px;
-			}
-			h3 {
-			  font-size: 30px;
-			}
-			h4 {
-			  font-size: 30px;
-			}
-			.title_line {
-			  font-size: 15px;
-			}
-			.scholar_links {visibility: hidden}
-			.story {width: 100%}
-			.novelty {
-			  font-size: 20px;
-			  font-style: italic;
-			  color: #006DC1;
-			}
-	.maincontainer, .container {width: 100%; font-size:200%}
-	.column1,.column2,.column3,.column1-2wide{display:inline;clear:left;width:100%;margin-right:0px;margin-bottom:24px}
-	.column-span{margin-bottom:25px;margin-left:0}
-	.column1 .sub-feature,.column2 .sub-feature,.column3 .sub-feature,.column1-2wide .sub-feature{margin:5px 0 10px 0}
-	.column1 img,.column2 img,.column3 img,.column1-2wide img{margin:0 0 25px 0}
-/*	p {
-	  font-size:100%;
-	}*/
-}
-
-*/
