@@ -1,22 +1,835 @@
 <!doctype html>
-<html style="height:100%;margin:0">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="-1">
-    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Pre-processing App History Panel</title>
-    <!-- Load css -->
-    <link rel="stylesheet" href="release/index-css.css"/>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>GCB2022</title>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	h1 {font-size:70%;font-family:'Playfair Display',serif;font-weight:700}
+	.fsbuttond {position:absolute;width:200px;left:1150px;height:50px;top:0px}
+	.fsbutton {font-size:12px;border:1px;background-color:#DDD;border-radius: 4px;}
+	.slidetitle {width: 806px; left: 226px; top: 0px; height: auto;color: #3D6F9E;}
+	.sidetextd {height: auto; width: 450px; left: 10px; top: 172px;}
+	.sidetext {text-align:left;color: #3D6F9E; }
+	.undertextd {height: auto; width: 1120px; left: 80px; top: 648px;font-size: 100%;color: #3D6F9E;}
+	.gcplogo {width: 180.507px; height: 81.889px; left: 0px; top: 0px; min-width: 1px; min-height: 1px;}
+	</style>
 </head>
-<body style="height:100%">
-<div id="widgetContainer"/>
+<body>
+<div class="theme-font-playfair theme-color-white-blue" style="width: 100%; height: 100%;">
+    <div class="reveal">
+        <div class="slides">
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block" style="width: 806px; left: 226px; top: 0px; height: auto;color: #3D6F9E;"><div class="sl-block-content" style="font-size: 20%;"><h1>Press ? for navigation help</h1></div></div>
+      <div class="sl-block nope" style="width: 806px; left: 226px; top: 250px; height: auto;color: #3D6F9E;"><div class="sl-block-content" style="font-size: 100%;"><h1>Global Carbon Budget</br><span style="font-size:150%">2022</span></h1></div></div>
+      <div class="sl-block" style="width: 361.14px; height: 163.8px; left: 0px; top: 0px; min-width: 1px; min-height: 1px;" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Selected slides from the full powerpoint <a href="https://www.globalcarbonproject.org/carbonbudget/22/presentation.htm" target="_blank" style="text-decoration:underline">available here</a></br>
+          To download figures for use in your own presentations, <a href="https://robbieandrew.github.io/GCB2022/" target="_blank" style="text-decoration:underline">visit this page</a></br>
+		  <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>		
 
-<!-- Load dojo -->
-<script src="release/preprocessing/dojoConfig-release-global.js"></script>
-<script src="release/bundle.index.js"></script>
 
-</body>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Atmospheric CO<sub>2</sub> concentration</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s53_AtmosConc.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The global CO<sub>2</sub> concentration increased from ~277 ppm in 1750 to 417.2 ppm in 2022 (up 51%)</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Globally averaged surface atmospheric CO<sub>2</sub> concentration. Data from: <a href="http://www.esrl.noaa.gov/gmd/ccgg/trends/" target="_blank">NOAA-ESRL</a> after 1980; <br>the Scripps Institution of Oceanography before 1980</br>Source: <a href="http://www.esrl.noaa.gov/gmd/ccgg/trends/" target="_blank">NOAA-ESRL</a>; Scripps Institution of Oceanography; <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Anthropogenic perturbation of the global carbon cycle</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/CarbonCycle2021.CO2.1_withlogo.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Perturbation of the global carbon cycle caused by anthropogenic activities, global annual average for the decade 2012&ndash;2021 (GtCO<sub>2</sub>/yr)</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>The budget imbalance is the difference between the estimated emissions and sinks.</br>Source: <a href="http://www.esrl.noaa.gov/gmd/ccgg/trends/" target="_blank">NOAA-ESRL</a>; <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; Canadell et al 2021 (IPCC AR6 WG1 Chapter 5); <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Global Fossil CO<sub>2</sub> Emissions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s09_FossilFuel_and_Cement_emissions_1990.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Global fossil CO<sub>2</sub> emissions: 37.1 &plusmn; 2 GtCO<sub>2</sub> in 2021, 63% over 1990. Projection for 2022: 37.5 &plusmn; 2 GtCO<sub>2</sub>, 1.0% [0.1% to +1.9%] higher than 2021.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>When including cement carbonation, the 2021 and 2022 estimates amount to 36.3 &plusmn; 2 GtCO<sub>2</sub> and 36.6 &plusmn; 2 GtCO<sub>2</sub> respectively <br>The 2022 projection is based on preliminary data and modelling.</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Emissions Projections for 2022</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s11_Projections.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Global fossil CO<sub>2</sub> emissions are projected to increase by 1.0% [0.1% to 1.9%] in 2022</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>The 2022 projections are based on preliminary data and modelling.</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> emissions growth: 2020&ndash;2022</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s80_siamese_waterfall_regions.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Emissions are expected to decrease in China and the EU in 2022, and increase in USA, India and the combined rest of the world (Others)</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Figure shows the top four countries contributing to emissions changes<br>International shipping and aviation are included in &#8220Others&#8221</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Land-use change emissions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s39_LandUse_Change_emissions.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Land-use change emissions are 4.5 &plusmn; 2.6 GtCO<sub>2</sub> per year for 2012-2021, and show a negative trend in the last two decades, but estimates are still highly uncertain. Projection for 2022: 3.9 &plusmn; 2.6 GtCO<sub>2</sub></p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Estimates from three bookkeeping models</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Land-use change emissions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s99_ELUC_IDN_COD_BRA.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Combined land-use change emissions from Brazil, the Democratic Republic of the Congo, and Indonesia make up over 50% of the global net land-use change emissions</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>The peak in Indonesia in 1997 was the Indonesian peat fires<br>Estimates from three bookkeeping models</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Forecast of global atmospheric CO<sub>2</sub> concentration</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/GLO_forecast_221107.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The global atmospheric CO<sub>2</sub> concentration is forecast to average 417 parts per million (ppm) in 2022, increasing by 2.5 ppm</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; Global Carbon Budget 2022</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Mauna Loa atmospheric CO<sub>2</sub></h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/MLO_weekly.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Atmospheric CO<sub>2</sub> concentration has increased every single year,<br>including in 2020, despite the drop in fossil CO<sub>2</sub> emissions, because of continued emissions</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: Tans and Keeling 2020; <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; Global Carbon Budget 2022</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Global Fossil CO<sub>2</sub> Emissions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s09_FossilFuel_and_Cement_emissions_1959.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Global fossil CO<sub>2</sub> emissions have risen steadily over the last decades. Emissions are set to grow again in 2022.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>When including cement carbonation, the 2022 estimate is 36.6 &plusmn; 2 GtCO<sub>2</sub>.<br>The 2022 projection is based on preliminary data and modelling.</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Global Fossil CO<sub>2</sub> Emissions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s20thC_changes_FossilCO2_abs_221111.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>For the last 100 years, it has generally taken a crisis to drive global emissions reductions.<br>To stabilise temperatures, intentional, planned, sustained global reductions must begin.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>The 2022 projection is based on preliminary data and modelling.</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Top emitters: Fossil CO<sub>2</sub> Emissions to 2021</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/AbsEmissions_selected_CHN-USA-EU27-IND-RUS-JPN.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The top six emitters in 2021 covered 67% of global emissions<br>China 31%, United States 14%, EU27 8%, India 7%, Russia 5%, and Japan 3%</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>International aviation and maritime shipping (bunker fuels) contributed 2.8% of global emissions in 2021.</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Top emitters: Fossil CO<sub>2</sub> Emissions per capita to 2021</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/PerCapEmissions_selected_CHN-USA-EU27-IND-RUS-JPN.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Countries have a broad range of per capita emissions reflecting their national circumstances</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> emissions &ndash; Kaya decomposition</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s60_KayaFigures_WLD_growth.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Globally, decarbonisation and declines in energy per GDP are largely responsible for the reduced growth rate in emissions over the last decade. 2020 was a clear outlier with a severe decline in GDP.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Historical cumulative fossil CO<sub>2</sub> emissions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s70_Cumulative_finalyear.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The USA and EU have the highest accumulated fossil CO<sub>2</sub> emissions since 1850, but China is not far behind.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Calculated using territorial emissions.</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> Emissions by source</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s20_Coal_Oil_Gas_Cement_WLD.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Share of global fossil CO<sub>2</sub> emissions in 2021: coal (40%), oil (32%), gas (21%), cement (5%), flaring and others (2%, not shown). Projection by fuel type is based on monthly data (GCP analysis).</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> emissions growth: 2020&ndash;2022</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s81_siamese_waterfall_categories.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Global emissions in 2021 rebounded strongly from their 2020 drop across all categories. In 2022 oil continues to recover, natural gas is down because of supply constraints, and coal is up.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> Emissions by source</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s16a_CO2growthbars.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Emissions by category from 2000 to 2021, with growth rates indicated for the more recent period of 2016 to 2021. Coal use has declined since 2014, and both coal and oil declined sharply in the pandemic year 2020.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Energy use by source</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s22_EnergyLines_wBio__EJ.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Consumption of energy from fossil sources bounced back in 2021, but oil is still subdued. Renewable energy continued to grow, but needs to grow even faster to replace fossil energy consumption.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>This figure shows &#8220primary energy&#8221 using the BP substitution method<br>(non-fossil sources are scaled up by an assumed fossil efficiency of approximately 0.38)</br>Source: <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html" target="_blank">BP 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> Emissions in China</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s20_Coal_Oil_Gas_Cement_CHN_withForecast.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Annual emissions in China are expected to be about the same in 2022 as in 2021, as COVID-19 lockdowns continue and the property market is slowing sharply</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> Emissions in USA</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s20_Coal_Oil_Gas_Cement_USA_withForecast.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The USA&#8217;s emissions from coal are expected to drop again in 2022, as the transition to natural gas continues. Emissions from oil are still below 2019&#8217;s level.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: EIA 2020; <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> Emissions in the European Union</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s20_Coal_Oil_Gas_Cement_EU27_withForecast.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The EU&#8217;s emissions from natural gas have dropped sharply in 2022 due to supply constraints. Use of coal has increased to fill the gap, but this is expected to be temporary. Oil continued to recover from the pandemic, albeit slowly.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> Emissions in India</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s20_Coal_Oil_Gas_Cement_IND_withForecast.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>India&#8217;s emissions continue to grow sharply in 2022, with coal returning to its pre-pandemic trend. Natural gas supplies are constrained, but these form a very small share of India&#8217;s energy supply.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Fossil CO<sub>2</sub> Emissions in Rest of World</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s20_Coal_Oil_Gas_Cement_ROW_withForecast.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>In the Rest of the World, emissions from coal grow slightly while natural gas declines on high prices. Oil, which here includes internationship transport, remains below 2019 levels.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>The Rest of the World is the global total less China, US, EU, and India. It also includes international aviation and maritime shipping.</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Cement carbonation sink</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s99_CementEmissions_and_Carbonation.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The production of cement results in &#8216;process&#8217; emissions of CO<sub>2</sub> from the chemical reaction. During its lifetime, cement slowly absorbs CO<sub>2</sub> from the atmosphere.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Total global emissions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s40_FF_emissions_and_LandUse_change_tot.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Total global emissions: 41.1 &plusmn; 3.3 GtCO<sub>2</sub> in 2021, 49% over 1990. Percentage land-use change: 41% in 1960, 11% averaged 2012&ndash;2021.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Land-use change estimates from three bookkeeping models, using fire-based variability from 1997</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Global carbon budget</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s45_Global_Sources_and_Sinks.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Carbon emissions are partitioned among the atmosphere and carbon sinks on land and in the ocean. The &#8220imbalance&#8221 between total emissions and total sinks is an active area of research.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Ocean sink</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/Figure10_SOCEAN.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The ocean carbon sink, estimated by Global Ocean Biogeochemical Models and observation-based data products, continues to increase 10.5 &plusmn; 1.5 GtCO<sub>2</sub>/yr for 2012&ndash;2021 and 10.6 &plusmn; 1.5 GtCO<sub>2</sub>/yr in 2021</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://www.socat.info/" target="_blank">SOCATv2022</a>; <a href="https://doi.org/10.5194/essd-8-383-2016" target="_blank">Bakker et al 2016</a>; <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Terrestrial sink</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/Figure8_SLAND.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The land carbon sink, estimated by Dynamic Global Vegetation Models, was 11.4 &plusmn; 2.3 GtCO<sub>2</sub>/yr during 2012&ndash;2021 and 12.6 &plusmn; 3.3 GtCO<sub>2</sub>/yr in 2021. The total CO<sub>2</sub> fluxes on land (including land-use change) are also constrained by atmospheric inversions.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Land and ocean sinks &ndash; Effects of CO<sub>2</sub> vs climate change</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="">
+          <img src="img/jpg\Figure11_process_maps.jpg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Process models suggest that increasing atmospheric CO<sub>2</sub> drives the land and ocean sinks while climate change reduces the carbon sinks; the climate effect is largest in tropical and semi-arid land ecosystems.<br>Globally during the 2012-2021 decade, climate change reduced the land sink by ~17% and the ocean sink by ~4%</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Land and ocean sinks &ndash; Estimates from atmospheric inversions</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="">
+          <img src="img/png\Figure12_inversions_with_GCB_land_ocean_20221012_v7.png" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Atmospheric CO<sub>2</sub> inversions allow to estimate the land and ocean carbon fluxes, independently from the land and ocean process-based models estimates, confirming the global carbon budget estimates of the land and ocean partitioning of anthropogenic CO<sub>2</sub></p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Remaining carbon budget imbalance</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/Figure4_BIM.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Large and unexplained variability in the global carbon balance caused by uncertainty and understanding hinder independent verification of reported CO<sub>2</sub> emissions</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>The budget imbalance is the carbon left after adding independent estimates for total emissions, minus the<br>atmospheric growth rate and estimates for the land and ocean carbon sinks using models constrained by observations</br>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Global carbon budget</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/s52_Waterfall_sources_and_sinks_1850.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The cumulative contributions to the global carbon budget from 1850. The carbon imbalance represents the gap in our current understanding of sources & sinks.</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Remaining carbon budget</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/RemainingCarbonBudget.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>The remaining carbon budget  to limit global warming to 1.5&#176;C , 1.7&#176;C and 2&#176;C is 380 GtCO<sub>2</sub>, 730 GtCO<sub>2</sub>, and 1230 GtCO<sub>2</sub> respectively, equivalent to 9, 18 and 30 years from 2023. 2495 GtCO<sub>2</sub> have been emitted since 1850</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>The remaining carbon budgets are updated from IPCC AR6 WG1 Chapter 5 by removing additional historical emissions since 1 January 2020. Quantities are subject to additional uncertainties e.g., future mitigation choices of non-CO<sub>2</sub> emissions.</br>Source: IPCC AR6 WG1; <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; Global Carbon Budget 2022</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="fsbuttond"><button class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block nope slidetitle"><div class="sl-block-content" style="font-size: 70%;"><h1>Remaining carbon budget</h1></div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+      <div class="sl-block" data-block-type="image" style="width: 800px; height: 450px; left: 480px; top: 144px;" data-block-id="">
+        <div class="sl-block-content" style="" data-inline-svg="true">
+          <object type="image/svg+xml" data="img/svgi/linearpathways.svg" style="" data-natural-width="1200" data-natural-height="675">
+          </object>
+        </div>
+      </div>
+      <div class="sl-block sidetextd" data-block-type="text">
+        <div class="sl-block-content sidetext" style=" font-family:'Playfair Display',serif;"><p>Global CO<sub>2</sub> emissions must reach zero to limit global warming</p></div>
+      </div>
+      <div class="sl-block undertextd" data-block-type="text">
+        <div class="sl-block-content" style="font-size: 64%;font-family:'Playfair Display',serif;font-style: italic">
+          <p>Source: <a href="https://doi.org/10.5194/essd-14-4811-2022" target="_blank">Friedlingstein et al 2022</a>; <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">Global Carbon Project 2022</a></p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section>
+      <div class="fsbuttond"><button id="goFS" class="fsbutton">Fullscreen</button></div>
+      <div class="sl-block" style="width: 806px; left: 226px; top: 0px; height: auto;color: #3D6F9E;"><div class="sl-block-content" style="font-size: 50%;"><h1>Contributors</h1></div></div>
+      <div class="sl-block" style="width: 806px; left: 226px; top: 75px; height: auto;color: #3D6F9E;"><div class="sl-block-content" style="font-family:'Playfair Display',serif;font-size: 70%;">
+		<b>P Friedlingstein</b> UK | <b>M O'Sullivan</b> UK | <b>MW Jones</b> UK | <b>RM Andrew</b> Norway</br>
+		<b>L Gregor</b> Switzerland | <b>J Hauck</b> Germany | <b>C Le Qu&eacute;r&eacute;</b> UK | <b>IT Luijkx</b> Netherlands | <b>GP Peters</b> Norway | <b>A Olsen</b> Norway | <b>W Peters</b> Netherlands | <b>J Pongratz</b> Germany | <b>C Schwingshackl</b> Germany | <b>S Sitch</b> UK | JG Canadell</b> Australia | <b>P Ciais</b> France | <b>RB Jackson</b> USA</br></div></div><div></div>
+	  <div class="sl-block" style="width: 900px; left: 179px; top: 250px; height: auto;color: #888888;"><div class="sl-block-content" style="font-family:'Playfair Display',serif;font-size: 60%;">
+		<b>SR Alin</b> USA | <b>R Alkama</b> Italy | <b>A Arneth</b> Germany | <b>VK Arora</b> Canada | <b>NR Bates</b> Bermuda | <b>M Becker</b> Norway | <b>N Bellouin</b> UK | <b>HC Bittig</b> Germany | <b>L Bopp</b> France | <b>F Chevallier</b> France | <b>LP Chini</b> USA | <b>M Cronin</b> Ireland | <b>W Evans</b> Canada | <b>S Falk</b> Germany | <b>RA Feely</b> USA | <b>T Gasser</b> Austria | <b>M Gehlen</b> France | <b>T Gkritzalis</b> Belgium | <b>L Gloege</b> USA | <b>G Grassi</b> Italy | <b>N Gruber</b> Switzerland | <b>&Ouml; G&uuml;rses</b> Germany | <b>I Harris</b> UK| <b>M Hefner</b> USA | <b>RA Houghton</b> USA | <b>GC Hurtt</b> USA | <b>Y Iida</b> Japan | <b>T Ilyina</b> Germany | <b>AK Jain</b> USA | <b>A Jersild</b> Germany | <b>K Kadono</b> Japan | <b>E Kato</b> Japan | <b>D Kennedy</b> USA | <b>K Klein Goldewijk</b> Netherlands | <b>J Knauer</b> Australia | <b>JI Korsbakken</b> Norway | <b>P Landsch&uuml;tzer</b> Germany | <b>N Lef&egrave;vre</b> France | <b>K Lindsay</b> USA | <b>J Liu</b> USA | <b>Z Liu</b> China | <b>G Marland</b> USA | <b>N Mayot</b> UK | <b>MJ McGrath</b> France | <b>N Metzl</b> France | <b>NM Monacci</b> USA | <b>DR Munro</b> USA | <b>SI Nakaoka</b> Japan | <b>Y Niwa</b> Japan | <b>K O'Brien</b> USA | <b>T Ono</b> Japan | <b>PI Palmer</b> UK | <b>N Pan</b> USA | <b>D Pierrot</b> USA | <b>K Pocock</b> USA | <b>B Poulter</b> USA | <b>L Resplandy</b> USA | <b>E Robertson</b> UK | <b>C R&ouml;denbeck</b> Germany | <b>C Rodriguez</b> USA | <b>TM Rosan</b> UK | <b>J Schwinger</b> Norway | <b>R S&eacute;f&eacute;rian</b> France | <b>JD Schutler</b> UK | <b>I Skeljvan</b> Norway | <b>T Steinhoff</b> Germany| <b>Q Sun</b> Switzerland | <b>AJ Sutton</b> USA | <b>C Sweeney</b> USA | <b>S Takao</b> Japan | <b>T Tanhua</b> Germany | <b>PP Tans</b> USA | <b>X Tian</b> China | <b>H Tian</b> USA | <b>B Tilbrook</b> Australia | <b>H Tsujino</b> Japan | <b>F Tubiello</b> Italy | <b>GR van der Werf</b> Netherlands | <b>AP Walker</b> USA | <b>R Wanninkhof</b> USA | <b>C Whitehead</b> USA | <b>A Willstrand Wranne</b> Sweden | <b>R Wright</b> UK | <b>W Yuan</b> China | <b>C Yue</b> France | <b>X Yue</b> China | <b>S Zaehle</b> Germany | <b>J Zeng</b> Japan | <b>B Zheng</b> China
+      </div></div>
+      <div class="sl-block gcplogo" data-block-type="image">
+        <a class="sl-block-content" href="https://www.globalcarbonproject.org/" target="_blank"><img type="image/svg+xml" src="img/GCPlogo.svg" data-natural-width="1338" data-natural-height="607" data-lazy-loaded=""></object></a>
+      </div>
+    </section>				
+        </div>
+
+    </div>
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes ],
+				width: 1280,
+				height: 720,
+				transition: "slide",
+				backgroundTransition: "slide",
+				center: true,
+				slideNumber: true,
+				mouseWheel: true
+			});
+		</script>
+		<script>
+			var goFS = document.getElementsByClassName("fsbutton");
+			for (var i=0, len=goFS.length|0; i<len; i=i+1|0) {
+				goFS[i].addEventListener("click", function() {
+					if (!document.fullscreenElement) {
+						document.body.requestFullscreen();
+					} else {
+						document.exitFullscreen();
+					}}, false);
+			}
+		</script>
+		
+	</body>
 </html>
