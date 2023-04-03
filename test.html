@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>Country Pictures</title>
+<style>
+#countryList {
+  position: absolute;
+  z-index: 1;
+}
+
+#countryList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+#countryList li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#countryList li:hover {
+  background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+<h1>Robbie Andrew</h1>
+<p>This new website is still under construction. Current themes are:</p>
+<ul>
+<li><a href="GCB2022/index.html">GCB 2022</a>: Figures and data from the 2022 edition of the Global Carbon Budget</li>
+<li><a href="EV/index.html">EVs</a>: Electric vehicles and biofuels in Norway</li>
+<li><a href="india/index.html">India</a>: Frequently updated data and figures on India's energy and CO2 emissions</li>
+<li><a href="ppm/index.html">ppm</a>: Atmospheric conentration of CO2</li>
+<li><a href="USA/index.html">USA</a>: EIA's estimates of US fossil CO2 emissions</li>
+</ul>
+<p>And the old web site is still <a href="https://folk.uio.no/roberan">available here</a>.</p>
+<input type="text" id="countryInput" placeholder="Enter country name">
+<ul id="countryList"></ul>
+<img id="picture" style="display:none" src="" alt="Country picture">
+<script>
+function searchCountry() {
+  const input = document.getElementById('countryInput').value.toLowerCase();
+
+  const countryPictures = {
+    'united states': 'usa.jpg',
+    'us': 'usa.jpg',
+    'usa': 'USA/img/EIA_CDD_cumulative_anomaly.png',
+    'united states of america': 'usa.jpg',
+    'united kingdom': 'uk.jpg',
+    'uk': 'uk.jpg',
+    'great britain': 'uk.jpg',
+    'britain': 'uk.jpg',
+    'england': 'uk.jpg',
+    'germany': 'germany.jpg',
+    'deutschland': 'germany.jpg',
+    // Add more country name variations and picture file names here
+  };
+
+  const matchingCountries = Object.keys(countryPictures).filter((country) =>
+    country.includes(input)
+  );
+
+  const countryList = document.getElementById('countryList');
+  if (!input || !matchingCountries.length) {
+    countryList.innerHTML = '';
+    document.getElementById('picture').style.display = 'none';
+    return;
+  }
+
+  const list = document.createElement('ul');
+  matchingCountries.forEach((country) => {
+    const li = document.createElement('li');
+    li.textContent = country;
+    li.addEventListener('click', () => {
+      const pictureFile = countryPictures[country];
+      document.getElementById('picture').setAttribute('src', pictureFile);
+      document.getElementById('picture').style.display = 'block';
+      countryList.innerHTML = '';
+    });
+    list.appendChild(li);
+  });
+  countryList.innerHTML = '';
+  countryList.appendChild(list);
+}
+
+const input = document.getElementById('countryInput');
+input.addEventListener('input', searchCountry);
+
+</script>
+</body>
+</html>
