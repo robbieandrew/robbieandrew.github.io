@@ -19,8 +19,19 @@
 <body>
   <main>
     <p><a href="https://folk.universitetetioslo.no/roberan/RobbieAndrew.shtml">Robbie Andrew</a>, CICERO Center for International Climate Research</p>
-	<h1>Indian energy and emissions data</h1>
-	<p>Last update: 29 April 2023</p>
+	<h1 style="margin-bottom:0px">Indian energy and emissions data</h1>
+	<p style="margin-top:2px>Last update: 29 April 2023</p>
+	<p>Jump to section: 
+	<a href="https://robbieandrew.github.io/india/index.html#activity" target="_self">Activity data</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#coal_imports" target="_self">Coal imports</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#capacity" target="_self">Power capacity</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#daily_power" target="_self">Daily power</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#state_power" target="_self">State-level</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#coal_stocks" target="_self">Coal stocks</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#climate_data" target="_self">Climate</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#vehicles" target="_self">Vehicle sales</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#emissions" target="_self">Emissions</a>
+	</p>
 
 	<div style="text-align:center;">
 	  <span onclick="toggleShow('citation')">Suggested citation: <span style="text-decoration:underline;">show</span></span> | <span onclick="toggleShow('academicarticle')">Peer-reviewed article: <span style="text-decoration:underline;">show</span></span>
@@ -109,7 +120,7 @@
 
 	<p>The figures here show just some examples of the data present in the CSV files.</p>
 	
-	<h2>Monthly activity data</h2>
+	<h2 id="activity">Monthly activity data</h2>
 	<p>143 monthly time series in one file.</p>
 	<p>These monthly data cover coal, oil, natural gas, cement production, and more, and are collated from many different sources as described in the JSON metadata file.</p>
 	<p><a href="data/India_monthly_data.csv">CSV data file</a> | <a href="data/India_monthly_metadata.json">JSON metadata file</a> | <a href="data/India_monthly_data.zip">Zip archive (both files)</a></p>
@@ -132,7 +143,7 @@
 		</div>
     </div>
 
-	<h2>Monthly coal import data</h2>
+	<h2 id="coal_imports">Monthly coal import data</h2>
 	<p>Monthly imports of coal by HS code and country (top 16 countries and total) in tonnes.</p>
 	<p><a href="data/india_coal_imports_data.csv">CSV data file</a> | <a href="data/india_coal_imports_metadata.json">JSON metadata file</a> | <a href="data/india_coal_imports_data.zip">Zip archive (both files)</a></p>
 	</div>
@@ -151,7 +162,7 @@
 		</div>
     </div>	
 	
-	<h2>National electricity capacity data</h2>
+	<h2 id="capacity">National electricity capacity data</h2>
 	<p><a href="data/India_capacity_data.csv">CSV data file</a></p>
 	<div class="pure-g">
 	  <div class="pure-u-1 pure-u-lg-1-2">
@@ -188,7 +199,7 @@
 		</div>
     </div>
 
-	<h2>Daily electricity generation data</h2>
+	<h2 id="daily_power">Daily electricity generation data</h2>
 	<p>There are two sources of daily electricity generation data. POSOCO covers the national grid, while CEA has a slightly broader coverage and therefore shows higher numbers. However, CEA data have not been published in some periods during the pandemic.</p>
 	<div class="pure-g">
 	  <div class="pure-u-1 pure-u-lg-1-2">
@@ -209,7 +220,7 @@
 	</div>
 	
 	
-	<h2>State electricity capacity and generation data</h2>
+	<h2 id="state_power">State electricity capacity and generation data</h2>
 	<p>See also <a href="https://zenodo.org/record/4542834">https://zenodo.org/record/4542834</a>.</p>
 	<p><a href="data/India_capacity_conventional_detail.csv">Conventional capacity CSV data file</a> | <a href="data/India_generation_conventional_detail.csv">Conventional generation CSV data file</a> | <a href="data/India_capacity_renewable_detail.csv">Renewables capacity CSV data file</a></p>
 	<div class="pure-g">
@@ -225,7 +236,7 @@
 	
 	
 	
-	<h2>CEA: Daily linkage station coal stocks</h2>
+	<h2 id="coal_stocks">CEA: Daily linkage station coal stocks</h2>
 	<p>The raw data include many gaps and a number of implausible spikes. The CSV file here includes both the raw data and a processed series that fills gaps and removes spikes. For details, see <a href="https://essd.copernicus.org/articles/12/2411/2020/essd-12-2411-2020-supplement.pdf#page=8">my paper from 2020</a>.</p>
 	<p><a href="data/stocks_linkage_daily_data.csv">CSV data file</a> | <a href="data/stocks_linkage_daily_metadata.json">JSON metadata file</a> | <a href="data/stocks_linkage_daily_data.zip">Zip archive (both files)</a></p>
 	<object data="img/stocks_linkage_daily_interp.svg" type="image/svg+xml" class="fig"></object>
@@ -266,7 +277,7 @@
     </div>
 	
 	
-	<h2>Monthly CO<span class="subb">2</span> emissions</h2>
+	<h2 id="emissions">Monthly CO<span class="subb">2</span> emissions</h2>
 	<p>These are my estimates based on the activity data presented above and using the method described in detail in the paper.</p>
 	<p><a href="data/india_co2_emissions_data.csv">CSV data file</a> | <a href="data/india_co2_emissions_metadata.json">JSON metadata file</a> | <a href="data/india_co2_emissions_data.zip">Zip archive (both files)</a></p>
 	<object data="img/CO2_all_2008.svg" type="image/svg+xml" class="fig"></object>
