@@ -4,6 +4,7 @@
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
+  a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
   .ticklabel {font-size:27.00px;fill:#808080;stroke:none}
@@ -17,12 +18,82 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
+  #areas .pl {transition: all 0.2s ease;}
+  #areas:hover .pl {opacity:0.5;}
+  #areas:hover .thick {stroke-width:1;}
+  #areas:hover .pg_1:hover .pl {opacity:1;}
+  #areas:hover .pg_1:hover .pll {stroke-width:3;}
+  #areas:hover .pg_1:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_1:hover .thick {stroke-width:12;}
+  #areas:hover .pg_2:hover .pl {opacity:1;}
+  #areas:hover .pg_2:hover .pll {stroke-width:3;}
+  #areas:hover .pg_2:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_2:hover .thick {stroke-width:12;}
+  #areas:hover .pg_3:hover .pl {opacity:1;}
+  #areas:hover .pg_3:hover .pll {stroke-width:3;}
+  #areas:hover .pg_3:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_3:hover .thick {stroke-width:12;}
+  #areas:hover .pg_4:hover .pl {opacity:1;}
+  #areas:hover .pg_4:hover .pll {stroke-width:3;}
+  #areas:hover .pg_4:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_4:hover .thick {stroke-width:12;}
+  #areas:hover .pg_5:hover .pl {opacity:1;}
+  #areas:hover .pg_5:hover .pll {stroke-width:3;}
+  #areas:hover .pg_5:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_5:hover .thick {stroke-width:12;}
+  #areas:hover .pg_6:hover .pl {opacity:1;}
+  #areas:hover .pg_6:hover .pll {stroke-width:3;}
+  #areas:hover .pg_6:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_6:hover .thick {stroke-width:12;}
+  #areas:hover .pg_7:hover .pl {opacity:1;}
+  #areas:hover .pg_7:hover .pll {stroke-width:3;}
+  #areas:hover .pg_7:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_7:hover .thick {stroke-width:12;}
+  #areas:hover .pg_8:hover .pl {opacity:1;}
+  #areas:hover .pg_8:hover .pll {stroke-width:3;}
+  #areas:hover .pg_8:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_8:hover .thick {stroke-width:12;}
+  #lines .pl {transition: all 0.2s ease;}
+  #lines:hover .pl {opacity:0.3;}
+  #lines:hover .thick {stroke-width:1;}
+  #lines:hover .pl_1:hover .pl {opacity:1;}
+  #lines:hover .pl_1:hover .pll {stroke-width:3;}
+  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_1:hover .thick {stroke-width:12;}
+  #lines:hover .pl_2:hover .pl {opacity:1;}
+  #lines:hover .pl_2:hover .pll {stroke-width:3;}
+  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_2:hover .thick {stroke-width:12;}
+  #lines:hover .pl_3:hover .pl {opacity:1;}
+  #lines:hover .pl_3:hover .pll {stroke-width:3;}
+  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_3:hover .thick {stroke-width:12;}
+  #lines:hover .pl_4:hover .pl {opacity:1;}
+  #lines:hover .pl_4:hover .pll {stroke-width:3;}
+  #lines:hover .pl_4:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_4:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
+  <g id="mk1"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#262626" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#262626" stroke="#FFF"/></g>
+  <g id="mk2"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#262626" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#262626" stroke="#FFF"/></g>
+  <g id="mk3"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#262626" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#262626" stroke="#FFF"/></g>
+  <g id="mk4"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#262626" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#262626" stroke="#FFF"/></g>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
+  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="754.9,535.3 754.9,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
+  </symbol>
+  <symbol id="line_2" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="602.6,536.1 602.6,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
+  </symbol>
+  <symbol id="line_3" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="450.2,543.2 450.2,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
+  </symbol>
+  <symbol id="line_4" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="297.9,545.6 297.9,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
+  </symbol>
 </defs>
 <g id="main">
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
@@ -81,51 +152,81 @@ text:hover + .dl_el {display:block;}
     <polygon class="pl" points="-618.9,587.2 -616.0,587.2 -616.0,587.2 -613.1,587.2 -613.1,587.2 -610.1,587.2 -610.1,587.2 -607.2,587.2 -607.2,587.2 -604.3,587.2 -604.3,587.2 -601.4,587.2 -601.4,587.2 -598.4,587.2 -598.4,587.2 -595.5,587.2 -595.5,587.2 -592.6,587.2 -592.6,587.2 -589.6,587.2 -589.6,587.2 -586.7,587.2 -586.7,587.2 -583.8,587.2 -583.8,587.2 -580.8,587.2 -580.8,587.2 -577.9,587.2 -577.9,587.2 -575.0,587.2 -575.0,587.2 -572.1,587.2 -572.1,587.2 -569.1,587.2 -569.1,587.2 -566.2,587.2 -566.2,587.2 -563.3,587.2 -563.3,587.2 -560.3,587.2 -560.3,587.2 -557.4,587.2 -557.4,587.2 -554.5,587.2 -554.5,587.2 -551.6,587.2 -551.6,587.2 -548.6,587.2 -548.6,587.2 -545.7,587.2 -545.7,587.2 -542.8,587.2 -542.8,587.2 -539.8,587.2 -539.8,587.2 -536.9,587.2 -536.9,587.2 -534.0,587.2 -534.0,587.2 -531.1,587.2 -531.1,587.2 -528.1,587.2 -528.1,587.2 -525.2,587.2 -525.2,587.1 -522.3,587.1 -522.3,586.9 -519.3,586.9 -519.3,586.9 -516.4,586.9 -516.4,586.5 -513.5,586.5 -513.5,586.3 -510.5,586.3 -510.5,586.3 -507.6,586.3 -507.6,585.3 -504.7,585.3 -504.7,586.1 -501.8,586.1 -501.8,586.5 -498.8,586.5 -498.8,586.9 -495.9,586.9 -495.9,587.1 -493.0,587.1 -493.0,587.1 -490.0,587.1 -490.0,586.3 -487.1,586.3 -487.1,585.3 -484.2,585.3 -484.2,585.6 -481.3,585.6 -481.3,586.9 -478.3,586.9 -478.3,586.5 -475.4,586.5 -475.4,584.7 -472.5,584.7 -472.5,586.6 -469.5,586.6 -469.5,586.5 -466.6,586.5 -466.6,586.1 -463.7,586.1 -463.7,586.1 -460.8,586.1 -460.8,586.4 -457.8,586.4 -457.8,587.0 -454.9,587.0 -454.9,587.1 -452.0,587.1 -452.0,586.9 -449.0,586.9 -449.0,586.5 -446.1,586.5 -446.1,586.8 -443.2,586.8 -443.2,587.1 -440.2,587.1 -440.2,586.9 -437.3,586.9 -437.3,586.7 -434.4,586.7 -434.4,586.7 -431.5,586.7 -431.5,586.9 -428.5,586.9 -428.5,587.0 -425.6,587.0 -425.6,586.9 -422.7,586.9 -422.7,586.9 -419.7,586.9 -419.7,586.5 -416.8,586.5 -416.8,586.6 -413.9,586.6 -413.9,586.8 -411.0,586.8 -411.0,586.9 -408.0,586.9 -408.0,586.6 -405.1,586.6 -405.1,586.3 -402.2,586.3 -402.2,586.3 -399.2,586.3 -399.2,586.3 -396.3,586.3 -396.3,585.9 -393.4,585.9 -393.4,586.7 -390.4,586.7 -390.4,587.1 -387.5,587.1 -387.5,586.9 -384.6,586.9 -384.6,586.5 -381.7,586.5 -381.7,586.3 -378.7,586.3 -378.7,586.7 -375.8,586.7 -375.8,586.2 -372.9,586.2 -372.9,586.3 -369.9,586.3 -369.9,586.7 -367.0,586.7 -367.0,586.6 -364.1,586.6 -364.1,586.3 -361.2,586.3 -361.2,585.9 -358.2,585.9 -358.2,586.4 -355.3,586.4 -355.3,586.2 -352.4,586.2 -352.4,586.6 -349.4,586.6 -349.4,586.6 -346.5,586.6 -346.5,586.1 -343.6,586.1 -343.6,586.3 -340.7,586.3 -340.7,586.4 -337.7,586.4 -337.7,586.3 -334.8,586.3 -334.8,586.6 -331.9,586.6 -331.9,586.1 -328.9,586.1 -328.9,586.2 -326.0,586.2 -326.0,586.8 -323.1,586.8 -323.1,586.9 -320.1,586.9 -320.1,586.9 -317.2,586.9 -317.2,587.2 -314.3,587.2 -314.3,586.8 -311.4,586.8 -311.4,587.1 -308.4,587.1 -308.4,586.4 -305.5,586.4 -305.5,586.4 -302.6,586.4 -302.6,586.3 -299.6,586.3 -299.6,585.8 -296.7,585.8 -296.7,585.4 -293.8,585.4 -293.8,585.7 -290.9,585.7 -290.9,586.0 -287.9,586.0 -287.9,585.8 -285.0,585.8 -285.0,585.4 -282.1,585.4 -282.1,586.7 -279.1,586.7 -279.1,586.2 -276.2,586.2 -276.2,586.0 -273.3,586.0 -273.3,586.3 -270.4,586.3 -270.4,586.4 -267.4,586.4 -267.4,586.5 -264.5,586.5 -264.5,586.8 -261.6,586.8 -261.6,586.8 -258.6,586.8 -258.6,586.7 -255.7,586.7 -255.7,586.1 -252.8,586.1 -252.8,586.2 -249.8,586.2 -249.8,586.3 -246.9,586.3 -246.9,586.1 -244.0,586.1 -244.0,586.4 -241.1,586.4 -241.1,586.0 -238.1,586.0 -238.1,586.0 -235.2,586.0 -235.2,586.5 -232.3,586.5 -232.3,586.6 -229.3,586.6 -229.3,586.2 -226.4,586.2 -226.4,586.3 -223.5,586.3 -223.5,586.0 -220.6,586.0 -220.6,586.3 -217.6,586.3 -217.6,585.9 -214.7,585.9 -214.7,585.8 -211.8,585.8 -211.8,586.0 -208.8,586.0 -208.8,586.2 -205.9,586.2 -205.9,586.7 -203.0,586.7 -203.0,586.6 -200.0,586.6 -200.0,587.0 -197.1,587.0 -197.1,586.9 -194.2,586.9 -194.2,586.9 -191.3,586.9 -191.3,586.5 -188.3,586.5 -188.3,582.8 -185.4,582.8 -185.4,584.4 -182.5,584.4 -182.5,584.0 -179.5,584.0 -179.5,585.0 -176.6,585.0 -176.6,582.6 -173.7,582.6 -173.7,586.0 -170.8,586.0 -170.8,582.6 -167.8,582.6 -167.8,581.7 -164.9,581.7 -164.9,586.4 -162.0,586.4 -162.0,585.1 -159.0,585.1 -159.0,585.8 -156.1,585.8 -156.1,584.0 -153.2,584.0 -153.2,585.0 -150.3,585.0 -150.3,586.1 -147.3,586.1 -147.3,586.4 -144.4,586.4 -144.4,586.6 -141.5,586.6 -141.5,586.5 -138.5,586.5 -138.5,586.4 -135.6,586.4 -135.6,585.9 -132.7,585.9 -132.7,583.7 -129.7,583.7 -129.7,584.9 -126.8,584.9 -126.8,584.9 -123.9,584.9 -123.9,585.9 -121.0,585.9 -121.0,586.7 -118.0,586.7 -118.0,586.0 -115.1,586.0 -115.1,584.5 -112.2,584.5 -112.2,585.7 -109.2,585.7 -109.2,585.0 -106.3,585.0 -106.3,586.3 -103.4,586.3 -103.4,586.5 -100.5,586.5 -100.5,585.4 -97.5,585.4 -97.5,586.2 -94.6,586.2 -94.6,585.0 -91.7,585.0 -91.7,584.5 -88.7,584.5 -88.7,583.5 -85.8,583.5 -85.8,585.1 -82.9,585.1 -82.9,585.1 -80.0,585.1 -80.0,585.7 -77.0,585.7 -77.0,585.7 -74.1,585.7 -74.1,585.9 -71.2,585.9 -71.2,585.5 -68.2,585.5 -68.2,584.9 -65.3,584.9 -65.3,583.8 -62.4,583.8 -62.4,583.9 -59.4,583.9 -59.4,586.1 -56.5,586.1 -56.5,586.3 -53.6,586.3 -53.6,586.6 -50.7,586.6 -50.7,585.3 -47.7,585.3 -47.7,584.7 -44.8,584.7 -44.8,585.1 -41.9,585.1 -41.9,586.0 -38.9,586.0 -38.9,585.8 -36.0,585.8 -36.0,585.6 -33.1,585.6 -33.1,584.2 -30.2,584.2 -30.2,584.6 -27.2,584.6 -27.2,583.3 -24.3,583.3 -24.3,583.6 -21.4,583.6 -21.4,584.0 -18.4,584.0 -18.4,584.6 -15.5,584.6 -15.5,585.3 -12.6,585.3 -12.6,585.9 -9.6,585.9 -9.6,585.4 -6.7,585.4 -6.7,584.1 -3.8,584.1 -3.8,585.2 -0.9,585.2 -0.9,585.2 2.1,585.2 2.1,584.9 5.0,584.9 5.0,586.6 7.9,586.6 7.9,585.8 10.9,585.8 10.9,583.3 13.8,583.3 13.8,583.4 16.7,583.4 16.7,585.7 19.6,585.7 19.6,586.0 22.6,586.0 22.6,583.2 25.5,583.2 25.5,583.6 28.4,583.6 28.4,585.8 31.4,585.8 31.4,585.5 34.3,585.5 34.3,584.5 37.2,584.5 37.2,583.3 40.1,583.3 40.1,585.7 43.1,585.7 43.1,585.9 46.0,585.9 46.0,585.9 48.9,585.9 48.9,585.5 51.9,585.5 51.9,581.7 54.8,581.7 54.8,585.5 57.7,585.5 57.7,584.9 60.7,584.9 60.7,585.0 63.6,585.0 63.6,583.6 66.5,583.6 66.5,586.2 69.4,586.2 69.4,586.0 72.4,586.0 72.4,584.7 75.3,584.7 75.3,584.5 78.2,584.5 78.2,584.6 81.2,584.6 81.2,585.0 84.1,585.0 84.1,584.8 87.0,584.8 87.0,579.4 89.9,579.4 89.9,578.3 92.9,578.3 92.9,583.0 95.8,583.0 95.8,580.7 98.7,580.7 98.7,579.7 101.7,579.7 101.7,583.2 104.6,583.2 104.6,585.5 107.5,585.5 107.5,584.2 110.4,584.2 110.4,583.6 113.4,583.6 113.4,583.6 116.3,583.6 116.3,582.3 119.2,582.3 119.2,582.9 122.2,582.9 122.2,579.4 125.1,579.4 125.1,581.8 128.0,581.8 128.0,581.4 131.0,581.4 131.0,582.8 133.9,582.8 133.9,579.6 136.8,579.6 136.8,575.8 139.7,575.8 139.7,583.6 142.7,583.6 142.7,583.6 145.6,583.6 145.6,582.5 148.5,582.5 148.5,583.0 151.5,583.0 151.5,579.7 154.4,579.7 154.4,577.3 157.3,577.3 157.3,579.9 160.2,579.9 160.2,579.8 163.2,579.8 163.2,577.9 166.1,577.9 166.1,578.5 169.0,578.5 169.0,578.8 172.0,578.8 172.0,579.3 174.9,579.3 174.9,579.4 177.8,579.4 177.8,580.8 180.8,580.8 180.8,583.0 183.7,583.0 183.7,580.7 186.6,580.7 186.6,584.2 189.5,584.2 189.5,580.4 192.5,580.4 192.5,581.2 195.4,581.2 195.4,582.2 198.3,582.2 198.3,583.3 201.3,583.3 201.3,582.0 204.2,582.0 204.2,582.0 207.1,582.0 207.1,582.8 210.0,582.8 210.0,582.2 213.0,582.2 213.0,580.2 215.9,580.2 215.9,582.3 218.8,582.3 218.8,582.6 221.8,582.6 221.8,582.6 224.7,582.6 224.7,583.7 227.6,583.7 227.6,583.1 230.5,583.1 230.5,583.2 233.5,583.2 233.5,582.8 236.4,582.8 236.4,582.3 239.3,582.3 239.3,583.8 242.3,583.8 242.3,582.7 245.2,582.7 245.2,582.5 248.1,582.5 248.1,582.0 251.1,582.0 251.1,581.0 254.0,581.0 254.0,580.6 256.9,580.6 256.9,582.9 259.8,582.9 259.8,583.0 262.8,583.0 262.8,583.1 265.7,583.1 265.7,582.9 268.6,582.9 268.6,579.5 271.6,579.5 271.6,584.6 274.5,584.6 274.5,582.5 277.4,582.5 277.4,583.1 280.3,583.1 280.3,574.6 283.3,574.6 283.3,583.1 286.2,583.1 286.2,580.6 289.1,580.6 289.1,579.9 292.1,579.9 292.1,586.6 295.0,586.6 295.0,584.9 297.9,584.9 297.9,582.6 300.8,582.6 300.8,582.2 303.8,582.2 303.8,580.9 306.7,580.9 306.7,576.7 309.6,576.7 309.6,579.7 312.6,579.7 312.6,576.6 315.5,576.6 315.5,576.9 318.4,576.9 318.4,575.4 321.4,575.4 321.4,581.9 324.3,581.9 324.3,580.5 327.2,580.5 327.2,580.6 330.1,580.6 330.1,578.8 333.1,578.8 333.1,576.1 336.0,576.1 336.0,584.2 338.9,584.2 338.9,584.4 341.9,584.4 341.9,583.4 344.8,583.4 344.8,581.8 347.7,581.8 347.7,581.6 350.6,581.6 350.6,581.5 353.6,581.5 353.6,581.8 356.5,581.8 356.5,576.4 359.4,576.4 359.4,580.7 362.4,580.7 362.4,576.2 365.3,576.2 365.3,578.3 368.2,578.3 368.2,578.7 371.2,578.7 371.2,580.4 374.1,580.4 374.1,581.5 377.0,581.5 377.0,581.9 379.9,581.9 379.9,582.3 382.9,582.3 382.9,581.1 385.8,581.1 385.8,580.4 388.7,580.4 388.7,579.8 391.7,579.8 391.7,579.8 394.6,579.8 394.6,578.9 397.5,578.9 397.5,578.9 400.4,578.9 400.4,577.9 403.4,577.9 403.4,577.8 406.3,577.8 406.3,577.6 409.2,577.6 409.2,577.4 412.2,577.4 412.2,577.7 415.1,577.7 415.1,579.3 418.0,579.3 418.0,578.5 420.9,578.5 420.9,575.0 423.9,575.0 423.9,578.7 426.8,578.7 426.8,579.6 429.7,579.6 429.7,579.8 432.7,579.8 432.7,580.5 435.6,580.5 435.6,579.2 438.5,579.2 438.5,579.4 441.5,579.4 441.5,577.4 444.4,577.4 444.4,581.7 447.3,581.7 447.3,582.5 450.2,582.5 450.2,582.0 453.2,582.0 453.2,582.3 456.1,582.3 456.1,580.7 459.0,580.7 459.0,579.4 462.0,579.4 462.0,582.2 464.9,582.2 464.9,582.2 467.8,582.2 467.8,579.3 470.7,579.3 470.7,574.0 473.7,574.0 473.7,582.6 476.6,582.6 476.6,580.7 479.5,580.7 479.5,582.3 482.5,582.3 482.5,579.7 485.4,579.7 485.4,582.5 488.3,582.5 488.3,584.3 491.2,584.3 491.2,583.4 494.2,583.4 494.2,582.9 497.1,582.9 497.1,576.5 500.0,576.5 500.0,583.7 503.0,583.7 503.0,581.5 505.9,581.5 505.9,580.0 508.8,580.0 508.8,580.3 511.8,580.3 511.8,577.3 514.7,577.3 514.7,579.0 517.6,579.0 517.6,577.5 520.5,577.5 520.5,577.2 523.5,577.2 523.5,571.9 526.4,571.9 526.4,580.7 529.3,580.7 529.3,577.1 532.3,577.1 532.3,577.1 535.2,577.1 535.2,576.3 538.1,576.3 538.1,577.6 541.0,577.6 541.0,576.5 544.0,576.5 544.0,575.0 546.9,575.0 546.9,576.2 549.8,576.2 549.8,577.0 552.8,577.0 552.8,575.9 555.7,575.9 555.7,576.9 558.6,576.9 558.6,575.9 561.6,575.9 561.6,572.4 564.5,572.4 564.5,577.9 567.4,577.9 567.4,578.0 570.3,578.0 570.3,576.9 573.3,576.9 573.3,574.9 576.2,574.9 576.2,577.4 579.1,577.4 579.1,576.0 582.1,576.0 582.1,574.8 585.0,574.8 585.0,573.7 587.9,573.7 587.9,576.1 590.8,576.1 590.8,577.2 593.8,577.2 593.8,571.8 596.7,571.8 596.7,575.8 599.6,575.8 599.6,580.6 602.6,580.6 602.6,575.2 605.5,575.2 605.5,575.5 608.4,575.5 608.4,577.3 611.3,577.3 611.3,574.5 614.3,574.5 614.3,575.1 617.2,575.1 617.2,577.2 620.1,577.2 620.1,575.3 623.1,575.3 623.1,576.7 626.0,576.7 626.0,577.9 628.9,577.9 628.9,577.6 631.9,577.6 631.9,574.2 634.8,574.2 634.8,571.3 637.7,571.3 637.7,572.8 640.6,572.8 640.6,572.6 643.6,572.6 643.6,583.0 646.5,583.0 646.5,579.3 649.4,579.3 649.4,575.7 652.4,575.7 652.4,579.1 655.3,579.1 655.3,577.5 658.2,577.5 658.2,578.5 661.1,578.5 661.1,578.8 664.1,578.8 664.1,578.8 667.0,578.8 667.0,581.2 669.9,581.2 669.9,580.6 672.9,580.6 672.9,578.2 675.8,578.2 675.8,577.3 678.7,577.3 678.7,580.9 681.6,580.9 681.6,582.3 684.6,582.3 684.6,581.3 687.5,581.3 687.5,581.3 690.4,581.3 690.4,582.1 693.4,582.1 693.4,580.5 696.3,580.5 696.3,575.2 699.2,575.2 699.2,575.9 702.2,575.9 702.2,575.8 705.1,575.8 705.1,577.4 708.0,577.4 708.0,578.3 710.9,578.3 710.9,580.0 713.9,580.0 713.9,580.2 716.8,580.2 716.8,582.9 719.7,582.9 719.7,583.4 722.7,583.4 722.7,582.5 725.6,582.5 725.6,577.7 728.5,577.7 728.5,578.3 731.4,578.3 731.4,582.0 734.4,582.0 734.4,582.7 737.3,582.7 737.3,580.2 740.2,580.2 740.2,577.7 743.2,577.7 743.2,576.2 746.1,576.2 746.1,572.6 749.0,572.6 749.0,566.6 752.0,566.6 752.0,556.8 754.9,556.8 754.9,587.0 757.8,587.0 757.8,587.1 760.7,587.1 760.7,586.9 763.7,586.9 763.7,586.6 766.6,586.6 766.6,586.2 769.5,586.2 769.5,586.2 772.5,586.2 772.5,585.3 775.4,585.3 775.4,584.1 778.3,584.1 778.3,580.1 781.2,580.1 781.2,582.5 784.2,582.5 784.2,582.7 787.1,582.7 787.1,581.2 790.0,581.2 790.0,577.1 793.0,577.1 793.0,585.1 795.9,585.1 795.9,582.5 798.8,582.5 798.8,580.5 801.7,580.5 801.7,579.6 804.7,579.6 804.7,587.2 -618.9,587.2" stroke="none" stroke-width="0.9000"  fill="#D95319" clip-path="url(#axis_clip)"/>
   </g>
 </g>
-<polyline class="pl" points="297.9,545.6 297.9,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
-<polyline class="pl" points="450.2,543.2 450.2,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
-<polyline class="pl" points="602.6,536.1 602.6,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
-<polyline class="pl" points="754.9,535.3 754.9,54.0" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15" fill="none" />
-<text transform="translate(221.8,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2019</text>
-<text transform="translate(374.1,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2020</text>
-<text transform="translate(526.4,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2021</text>
-<text transform="translate(678.7,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2022</text>
-<text transform="translate(831.0,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2023</text>
-<text transform="translate(921.9,40.5)" dy="0.0" font-size="18.00" fill="#808080" stroke="none">Brand / HQ</text>
-<text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Weekly sales of new electric passenger cars in Norway</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,298.6 928.9,275.9 957.9,275.9 957.9,298.6" fill="#D95319"/>
+<g id="lines">
+  <g class="pl_1">
+    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_1" class="pl pll" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15"/>
+    <g>
+      <g class="pl_1 marker" transform="translate(754.9,535.3)"><use xlink:href="#mk1"/><text class="dp2" y="-25">1361.1</text></g>
+      <g class="pl_1 marker" transform="translate(754.9,54.0)"><use xlink:href="#mk1"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
+  </g>
+  <g class="pl_2">
+    <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15"/>
+    <g>
+      <g class="pl_2 marker" transform="translate(602.6,536.1)"><use xlink:href="#mk2"/><text class="dp2" y="-25">1341.1</text></g>
+      <g class="pl_2 marker" transform="translate(602.6,54.0)"><use xlink:href="#mk2"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
+  </g>
+  <g class="pl_3">
+    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15"/>
+    <g>
+      <g class="pl_3 marker" transform="translate(450.2,543.2)"><use xlink:href="#mk3"/><text class="dp2" y="-25">1155.1</text></g>
+      <g class="pl_3 marker" transform="translate(450.2,54.0)"><use xlink:href="#mk3"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
+  </g>
+  <g class="pl_4">
+    <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_4" class="pl pll" stroke="#262626" stroke-width="0.90" stroke-opacity="0.15"/>
+    <g>
+      <g class="pl_4 marker" transform="translate(297.9,545.6)"><use xlink:href="#mk4"/><text class="dp2" y="-25">1091.1</text></g>
+      <g class="pl_4 marker" transform="translate(297.9,54.0)"><use xlink:href="#mk4"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
+  </g>
 </g>
-<text transform="translate(966.3,288.6)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Korea</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,268.0 928.9,245.2 957.9,245.2 957.9,268.0" fill="#EDB120"/>
-</g>
-<text transform="translate(966.3,258.0)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">China</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,237.4 928.9,214.6 957.9,214.6 957.9,237.4" fill="#7E2F8E"/>
-</g>
-<text transform="translate(966.3,227.3)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Japan</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,206.7 928.9,183.9 957.9,183.9 957.9,206.7" fill="#78ADE4"/>
-</g>
-<text transform="translate(966.3,196.7)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Volkswagen</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,176.1 928.9,153.3 957.9,153.3 957.9,176.1" fill="#488FD6"/>
-</g>
-<text transform="translate(966.3,166.0)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Audi</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,145.4 928.9,122.6 957.9,122.6 957.9,145.4" fill="#1E73C9"/>
-</g>
-<text transform="translate(966.3,135.4)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Other Europe</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,114.8 928.9,92.0 957.9,92.0 957.9,114.8" fill="#A9E4AC"/>
-</g>
-<text transform="translate(966.3,104.7)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Tesla</text>
-<g stroke="none" stroke-width="0.9000"  >
-  <polygon points="928.9,84.1 928.9,61.4 957.9,61.4 957.9,84.1" fill="#4AAD4F"/>
-</g>
-<text transform="translate(966.3,74.1)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Other USA</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbie_andrew   &#9679;   Data: Statens Vegvesen   &#9679;   Data through week 17 of 2023</text>
-<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"></text>
+    <text class="pl" transform="translate(221.8,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2019</text>
+    <text class="pl" transform="translate(374.1,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2020</text>
+    <text class="pl" transform="translate(526.4,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2021</text>
+    <text class="pl" transform="translate(678.7,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2022</text>
+    <text class="pl" transform="translate(831.0,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2023</text>
+    <text class="pl" transform="translate(921.9,40.5)" dy="0.0" font-size="18.00" fill="#808080" stroke="none">Brand / HQ</text>
+    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Weekly sales of new electric passenger cars in Norway</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,298.6 928.9,275.9 957.9,275.9 957.9,298.6" fill="#D95319"/>
+    </g>
+    <text class="pl" transform="translate(966.3,288.6)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Korea</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,268.0 928.9,245.2 957.9,245.2 957.9,268.0" fill="#EDB120"/>
+    </g>
+    <text class="pl" transform="translate(966.3,258.0)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">China</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,237.4 928.9,214.6 957.9,214.6 957.9,237.4" fill="#7E2F8E"/>
+    </g>
+    <text class="pl" transform="translate(966.3,227.3)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Japan</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,206.7 928.9,183.9 957.9,183.9 957.9,206.7" fill="#78ADE4"/>
+    </g>
+    <text class="pl" transform="translate(966.3,196.7)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Volkswagen</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,176.1 928.9,153.3 957.9,153.3 957.9,176.1" fill="#488FD6"/>
+    </g>
+    <text class="pl" transform="translate(966.3,166.0)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Audi</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,145.4 928.9,122.6 957.9,122.6 957.9,145.4" fill="#1E73C9"/>
+    </g>
+    <text class="pl" transform="translate(966.3,135.4)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Other Europe</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,114.8 928.9,92.0 957.9,92.0 957.9,114.8" fill="#A9E4AC"/>
+    </g>
+    <text class="pl" transform="translate(966.3,104.7)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Tesla</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="928.9,84.1 928.9,61.4 957.9,61.4 957.9,84.1" fill="#4AAD4F"/>
+    </g>
+    <text class="pl" transform="translate(966.3,74.1)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Other USA</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: Statens Vegvesen   &#9679;   Data through week 17 of 2023</text>
+<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
       <foreignObject x="0" y="0" width="120" height="500">
@@ -137,6 +238,7 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <g>
+<a href="https://creativecommons.org/licenses/by/4.0/">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -150,6 +252,33 @@ text:hover + .dl_el {display:block;}
      <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
+  </a>
 </g>
+  <g class="dl_el" transform="translate(69.1,548.4)">
+    <g class="dl_el_balloon">
+      <foreignObject x="0" y="0" width="250" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
+      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
+      </div>
+	    </foreignObject>
+      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
+    </g>
+  </g>
+    <g>
+      <g class="pl_1 marker" transform="translate(754.9,535.3)"><use xlink:href="#mk1"/><text class="dp2" y="-25">1361.1</text></g>
+      <g class="pl_1 marker" transform="translate(754.9,54.0)"><use xlink:href="#mk1"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
+    <g>
+      <g class="pl_2 marker" transform="translate(602.6,536.1)"><use xlink:href="#mk2"/><text class="dp2" y="-25">1341.1</text></g>
+      <g class="pl_2 marker" transform="translate(602.6,54.0)"><use xlink:href="#mk2"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
+    <g>
+      <g class="pl_3 marker" transform="translate(450.2,543.2)"><use xlink:href="#mk3"/><text class="dp2" y="-25">1155.1</text></g>
+      <g class="pl_3 marker" transform="translate(450.2,54.0)"><use xlink:href="#mk3"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
+    <g>
+      <g class="pl_4 marker" transform="translate(297.9,545.6)"><use xlink:href="#mk4"/><text class="dp2" y="-25">1091.1</text></g>
+      <g class="pl_4 marker" transform="translate(297.9,54.0)"><use xlink:href="#mk4"/><text class="dp2" y="-25">14000.0</text></g>
+    </g>
 </g>
 </svg>
