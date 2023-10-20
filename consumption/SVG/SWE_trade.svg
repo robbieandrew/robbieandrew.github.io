@@ -6,7 +6,7 @@
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
-  .ticklabel {font-size:27.00px;fill:#808080;stroke:none}
+  .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
   .ytl {text-anchor:end;}
   .dp1 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#000000;}
   .dp2 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#FFFFFF;}
@@ -228,21 +228,22 @@ text:hover + .dl_el {display:block;}
   <circle cx="798.4" cy="363.8" r="3.6"/>
   <circle cx="820.2" cy="288.1" r="3.6"/>
 </g>
-<polyline class="pl" points="537.3,341.7 559.0,474.6 580.8,400.0 602.6,275.0 624.3,342.2 646.1,336.0 667.8,380.1 689.6,408.1 711.4,412.6 733.1,408.4 754.9,385.8 776.6,443.2 798.4,469.7" stroke="#A2142F" stroke-width="2.70" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="537.3,339.8 559.0,473.6 580.8,399.9 602.6,274.4 624.3,338.8 646.1,329.4 667.8,375.1 689.6,407.7 711.4,407.9 733.1,405.4 754.9,380.7 776.6,434.2 798.4,454.7 820.2,406.1" stroke="#A2142F" stroke-width="2.70" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
 <g class="pl" fill="#A2142F" stroke="none" stroke-width="2.700" clip-path="url(#axis_clip)">
-  <circle cx="537.3" cy="341.7" r="3.6"/>
-  <circle cx="559.0" cy="474.6" r="3.6"/>
-  <circle cx="580.8" cy="400.0" r="3.6"/>
-  <circle cx="602.6" cy="275.0" r="3.6"/>
-  <circle cx="624.3" cy="342.2" r="3.6"/>
-  <circle cx="646.1" cy="336.0" r="3.6"/>
-  <circle cx="667.8" cy="380.1" r="3.6"/>
-  <circle cx="689.6" cy="408.1" r="3.6"/>
-  <circle cx="711.4" cy="412.6" r="3.6"/>
-  <circle cx="733.1" cy="408.4" r="3.6"/>
-  <circle cx="754.9" cy="385.8" r="3.6"/>
-  <circle cx="776.6" cy="443.2" r="3.6"/>
-  <circle cx="798.4" cy="469.7" r="3.6"/>
+  <circle cx="537.3" cy="339.8" r="3.6"/>
+  <circle cx="559.0" cy="473.6" r="3.6"/>
+  <circle cx="580.8" cy="399.9" r="3.6"/>
+  <circle cx="602.6" cy="274.4" r="3.6"/>
+  <circle cx="624.3" cy="338.8" r="3.6"/>
+  <circle cx="646.1" cy="329.4" r="3.6"/>
+  <circle cx="667.8" cy="375.1" r="3.6"/>
+  <circle cx="689.6" cy="407.7" r="3.6"/>
+  <circle cx="711.4" cy="407.9" r="3.6"/>
+  <circle cx="733.1" cy="405.4" r="3.6"/>
+  <circle cx="754.9" cy="380.7" r="3.6"/>
+  <circle cx="776.6" cy="434.2" r="3.6"/>
+  <circle cx="798.4" cy="454.7" r="3.6"/>
+  <circle cx="820.2" cy="406.1" r="3.6"/>
 </g>
 <g class="pl" fill="#666" stroke="none" stroke-width="2.700" clip-path="url(#axis_clip)">
 </g>
@@ -254,14 +255,14 @@ text:hover + .dl_el {display:block;}
 </g>
 <text transform="translate(925.2,249.2)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">EXIOBASE 3.8.2</text>
 <text transform="translate(925.2,275.1)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">WIOD2016</text>
-<text transform="translate(925.2,223.3)" dy="8.1" font-size="27.00" fill="#EDB120" stroke="none">OECDv2</text>
-<text transform="translate(925.2,197.4)" dy="8.1" font-size="27.00" fill="#7E2F8E" stroke="none">Eora 199.082</text>
+<text transform="translate(925.2,223.2)" dy="8.1" font-size="27.00" fill="#EDB120" stroke="none">OECDv2</text>
+<text transform="translate(925.2,197.3)" dy="8.1" font-size="27.00" fill="#7E2F8E" stroke="none">Eora 199.082</text>
 <text transform="translate(925.2,326.9)" dy="8.1" font-size="27.00" fill="#77AC30" stroke="none">FIGARO April 2022</text>
 <text transform="translate(925.2,301.0)" dy="8.1" font-size="27.00" fill="#4DBEEE" stroke="none">GCB 2023v26</text>
-<text transform="translate(925.2,469.7)" dy="8.1" font-size="27.00" fill="#A2142F" stroke="none">SCB (official)</text>
+<text transform="translate(925.2,406.1)" dy="8.1" font-size="27.00" fill="#A2142F" stroke="none">SCB 2023 (official)</text>
 <text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Net CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>emissions in trade: Sweden</text>
 <text transform="translate(157.6,60.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">Positive values indicate net CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>imports in trade.</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbie_andrew</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbie_andrew</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
