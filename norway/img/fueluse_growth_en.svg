@@ -7,7 +7,7 @@
   a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
-  .ticklabel {font-size:27.00px;fill:#808080;stroke:none}
+  .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
   .ytl {text-anchor:end;}
   .dp1 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#000000;}
   .dp2 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#FFFFFF;}
@@ -34,7 +34,7 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="147.7,161.6 152.3,180.3 156.5,150.6 161.1,170.8 165.6,174.0 170.2,226.3 174.7,190.7 179.3,239.3 183.9,240.9 188.4,166.6 193.0,168.4 197.5,155.9 202.1,160.0 206.7,179.1 210.9,154.4 215.5,174.7 220.0,246.3 224.6,238.8 229.1,206.7 233.7,190.5 238.3,225.1 242.8,186.9 247.4,181.4 251.9,155.1 256.5,157.0 261.1,175.6 265.4,155.7 270.0,114.3 274.5,175.0 279.1,161.1 283.5,161.6 288.1,189.7 292.7,235.6 297.2,182.6 301.8,130.5 306.3,166.3 310.9,173.8 315.5,226.6 319.7,196.8 324.3,211.1 328.8,175.1 333.4,221.7 337.9,99.4 342.5,185.4 347.1,239.4 351.6,187.3 356.2,182.5 360.7,156.0 365.3,154.9 369.9,196.9 374.1,138.5 378.7,164.9 383.2,243.0 387.8,197.1 392.3,139.7 396.9,165.6 401.5,162.8 406.0,130.7 410.6,158.7 415.1,129.6 419.7,133.9 424.3,177.6 428.5,134.9 433.1,148.1 437.6,145.9 442.2,144.6 446.7,139.2 451.3,147.5 455.9,162.2 460.4,129.2 465.0,149.0 469.5,81.1 474.1,119.1 478.7,144.2 483.0,125.6 487.6,144.2 492.1,141.7 496.7,192.9 501.1,128.7 505.7,168.3 510.3,241.1 514.8,133.5 519.4,134.9 523.9,119.3 528.5,118.8 533.1,164.4 537.3,122.4 541.9,129.7 546.4,145.6 551.0,172.0 555.5,124.3 560.1,144.1 564.7,164.1 569.2,127.1 573.8,150.4 578.3,130.0 582.9,113.4 587.5,161.0 591.7,121.8 596.3,146.4 600.8,191.9 605.4,163.7 609.9,128.3 614.5,132.6 619.1,202.9 623.6,139.6 628.2,144.2 632.7,131.9 637.3,129.1 641.9,170.2 646.1,132.9 650.7,144.9 655.2,159.3 659.8,194.6 664.3,148.1 668.9,143.2 673.5,169.8 678.0,133.8 682.6,144.9 687.1,120.0 691.7,126.9 696.3,159.1 700.6,127.0 705.2,137.1 709.7,149.7 714.3,203.0 718.7,160.3 723.3,172.6 727.9,224.1 732.4,228.5 737.0,209.9 741.5,180.5 746.1,174.9 750.7,220.7 754.9,181.4 759.5,204.1 764.0,245.6 768.6,242.2 773.1,177.8 777.7,195.1 782.3,236.4 786.8,204.2 791.4,218.7 795.9,194.4 800.5,190.4 805.1,232.5 809.3,208.8 813.9,225.1 818.4,219.4 823.0,223.8 827.5,177.2 832.1,178.2 836.7,240.1 841.2,198.2 845.8,207.6 850.3,185.7 854.9,194.2 859.5,229.6 863.7,187.2 868.3,189.4 872.8,218.1 877.4,235.8 881.9,182.0" stroke="#0072BD" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="147.7,161.6 152.3,180.3 156.5,150.6 161.1,170.8 165.6,174.0 170.2,226.3 174.7,190.7 179.3,239.3 183.9,240.9 188.4,166.6 193.0,168.4 197.5,155.9 202.1,160.0 206.7,179.1 210.9,154.4 215.5,174.7 220.0,246.3 224.6,238.8 229.1,206.7 233.7,190.5 238.3,225.1 242.8,186.9 247.4,181.4 251.9,155.1 256.5,157.0 261.1,175.6 265.4,155.7 270.0,114.3 274.5,175.0 279.1,161.1 283.5,161.6 288.1,189.7 292.7,235.6 297.2,182.6 301.8,130.5 306.3,166.3 310.9,173.8 315.5,226.6 319.7,196.8 324.3,211.1 328.8,175.1 333.4,221.7 337.9,99.4 342.5,185.4 347.1,239.4 351.6,187.3 356.2,182.5 360.7,156.0 365.3,154.9 369.9,196.9 374.1,138.5 378.7,164.9 383.2,243.0 387.8,197.1 392.3,139.7 396.9,165.6 401.5,162.8 406.0,130.7 410.6,158.7 415.1,129.6 419.7,133.9 424.3,177.6 428.5,134.9 433.1,148.1 437.6,145.9 442.2,144.6 446.7,139.2 451.3,147.5 455.9,162.2 460.4,129.2 465.0,149.0 469.5,81.1 474.1,119.1 478.7,144.2 483.0,125.6 487.6,144.2 492.1,141.7 496.7,192.9 501.1,128.7 505.7,168.3 510.3,241.1 514.8,133.5 519.4,134.9 523.9,119.3 528.5,118.8 533.1,164.4 537.3,122.4 541.9,129.7 546.4,145.6 551.0,172.0 555.5,124.3 560.1,144.1 564.7,164.1 569.2,127.1 573.8,150.4 578.3,130.0 582.9,113.4 587.5,161.0 591.7,121.8 596.3,146.4 600.8,191.9 605.4,163.7 609.9,128.3 614.5,132.6 619.1,202.9 623.6,139.6 628.2,144.2 632.7,131.9 637.3,129.1 641.9,170.2 646.1,132.9 650.7,144.9 655.2,159.3 659.8,194.6 664.3,148.1 668.9,143.2 673.5,169.8 678.0,133.8 682.6,144.9 687.1,120.0 691.7,126.9 696.3,159.1 700.6,127.0 705.2,137.1 709.7,149.7 714.3,203.0 718.7,160.3 723.3,172.6 727.9,224.1 732.4,228.5 737.0,209.9 741.5,180.5 746.1,174.9 750.7,220.7 754.9,181.4 759.5,204.1 764.0,245.6 768.6,242.2 773.1,177.8 777.7,195.1 782.3,236.4 786.8,204.2 791.4,218.7 795.9,194.4 800.5,190.4 805.1,232.5 809.3,208.8 813.9,225.1 818.4,219.4 823.0,223.8 827.5,177.2 832.1,178.2 836.7,240.1 841.2,198.2 845.8,207.6 850.3,185.7 854.9,194.2 859.5,229.6 863.7,187.2 868.3,189.4 872.8,218.1 877.4,235.8 881.9,182.0 886.5,189.5" stroke="#0072BD" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -252,6 +252,7 @@ text:hover + .dl_el {display:block;}
       <g class="pl_1 marker" transform="translate(872.8,218.1)"><use xlink:href="#mk1"/><text class="dp2" y="-25">13.5</text></g>
       <g class="pl_1 marker" transform="translate(877.4,235.8)"><use xlink:href="#mk1"/><text class="dp2" y="-25">12.8</text></g>
       <g class="pl_1 marker" transform="translate(881.9,182.0)"><use xlink:href="#mk1"/><text class="dp2" y="-25">14.9</text></g>
+      <g class="pl_1 marker" transform="translate(886.5,189.5)"><use xlink:href="#mk1"/><text class="dp2" y="-25">14.6</text></g>
     </g>
   </g>
 </g>
@@ -272,75 +273,75 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly natural gas use in Norwegian oil &amp; gas extraction</text>
     <text class="pl" transform="translate(172.8,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">178</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="144.6,281.8 152.4,292.8 160.2,281.8 144.6,281.8" fill="#54B547"/>
+      <polygon class="pl" points="144.2,282.7 152.0,293.7 159.7,282.7 144.2,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(164.1,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">2.8%</text>
+    <text class="pl" transform="translate(163.6,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">2.8%</text>
     <text class="pl" transform="translate(227.2,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">175</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="199.0,281.8 206.8,292.8 214.6,281.8 199.0,281.8" fill="#54B547"/>
+      <polygon class="pl" points="198.6,282.7 206.4,293.7 214.1,282.7 198.6,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(218.5,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">1.6%</text>
+    <text class="pl" transform="translate(218.0,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">1.6%</text>
     <text class="pl" transform="translate(281.6,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">186</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="253.4,292.8 261.2,281.8 269.0,292.8 253.4,292.8" fill="#F60"/>
+      <polygon class="pl" points="253.0,293.7 260.8,282.7 268.5,293.7 253.0,293.7" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(272.9,289.1)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">6.4%</text>
+    <text class="pl" transform="translate(272.4,290.0)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">6.4%</text>
     <text class="pl" transform="translate(336.0,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">176</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="307.8,281.8 315.6,292.8 323.4,281.8 307.8,281.8" fill="#54B547"/>
+      <polygon class="pl" points="307.4,282.7 315.2,293.7 322.9,282.7 307.4,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(327.3,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">5.0%</text>
+    <text class="pl" transform="translate(326.8,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">5.0%</text>
     <text class="pl" transform="translate(390.4,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">187</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="362.2,292.8 370.0,281.8 377.8,292.8 362.2,292.8" fill="#F60"/>
+      <polygon class="pl" points="361.8,293.7 369.6,282.7 377.3,293.7 361.8,293.7" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(381.7,289.1)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">6.1%</text>
+    <text class="pl" transform="translate(381.2,290.0)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">6.1%</text>
     <text class="pl" transform="translate(444.8,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">199</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="416.6,292.8 424.4,281.8 432.2,292.8 416.6,292.8" fill="#F60"/>
+      <polygon class="pl" points="416.2,293.7 424.0,282.7 431.7,293.7 416.2,293.7" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(436.1,289.1)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">6.1%</text>
+    <text class="pl" transform="translate(435.6,290.0)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">6.1%</text>
     <text class="pl" transform="translate(499.2,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">195</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="471.0,281.8 478.8,292.8 486.6,281.8 471.0,281.8" fill="#54B547"/>
+      <polygon class="pl" points="470.6,282.7 478.4,293.7 486.1,282.7 470.6,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(490.5,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">2.3%</text>
+    <text class="pl" transform="translate(490.0,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">2.3%</text>
     <text class="pl" transform="translate(553.6,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">199</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="525.4,292.8 533.2,281.8 541.0,292.8 525.4,292.8" fill="#F60"/>
+      <polygon class="pl" points="525.0,293.7 532.8,282.7 540.5,293.7 525.0,293.7" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(544.9,289.1)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">2.3%</text>
+    <text class="pl" transform="translate(544.4,290.0)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">2.3%</text>
     <text class="pl" transform="translate(608.0,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">195</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="579.8,281.8 587.6,292.8 595.4,281.8 579.8,281.8" fill="#54B547"/>
+      <polygon class="pl" points="579.4,282.7 587.2,293.7 594.9,282.7 579.4,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(599.3,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">1.7%</text>
+    <text class="pl" transform="translate(598.8,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">1.7%</text>
     <text class="pl" transform="translate(662.4,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">195</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="634.2,281.8 642.0,292.8 649.8,281.8 634.2,281.8" fill="#54B547"/>
+      <polygon class="pl" points="633.8,282.7 641.6,293.7 649.3,282.7 633.8,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(653.7,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">0.3%</text>
+    <text class="pl" transform="translate(653.2,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">0.3%</text>
     <text class="pl" transform="translate(716.8,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">183</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="688.6,281.8 696.4,292.8 704.2,281.8 688.6,281.8" fill="#54B547"/>
+      <polygon class="pl" points="688.2,282.7 696.0,293.7 703.7,282.7 688.2,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(708.1,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">6.1%</text>
+    <text class="pl" transform="translate(707.6,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">6.1%</text>
     <text class="pl" transform="translate(771.2,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">167</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="743.0,281.8 750.8,292.8 758.6,281.8 743.0,281.8" fill="#54B547"/>
+      <polygon class="pl" points="742.6,282.7 750.4,293.7 758.1,282.7 742.6,282.7" fill="#54B547"/>
     </g>
-    <text class="pl" transform="translate(762.5,289.1)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">8.7%</text>
+    <text class="pl" transform="translate(762.0,290.0)" dy="4.9" font-size="16.20" fill="#54B547" stroke="none">8.7%</text>
     <text class="pl" transform="translate(825.6,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">167</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="797.4,292.8 805.2,281.8 813.0,292.8 797.4,292.8" fill="#F60"/>
+      <polygon class="pl" points="797.0,293.7 804.8,282.7 812.5,293.7 797.0,293.7" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(816.9,289.1)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">0.2%</text>
+    <text class="pl" transform="translate(816.4,290.0)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">0.2%</text>
     <text class="pl" transform="translate(880.0,270.0)" dy="5.8" font-size="19.44" fill="#0072BD" stroke="none" text-anchor="middle">So far</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="851.8,292.8 859.6,281.8 867.4,292.8 851.8,292.8" fill="#F60"/>
+      <polygon class="pl" points="851.4,293.7 859.2,282.7 866.9,293.7 851.4,293.7" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(871.3,289.1)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">1.7%</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: DISKOS   &#9679;   Data through July 2023</text>
+    <text class="pl" transform="translate(870.8,290.0)" dy="4.9" font-size="16.20" fill="#F60" stroke="none">1.0%</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: DISKOS   &#9679;   Data through August 2023</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
@@ -543,6 +544,7 @@ text:hover + .dl_el {display:block;}
       <g class="pl_1 marker" transform="translate(872.8,218.1)"><use xlink:href="#mk1"/><text class="dp2" y="-25">13.5</text></g>
       <g class="pl_1 marker" transform="translate(877.4,235.8)"><use xlink:href="#mk1"/><text class="dp2" y="-25">12.8</text></g>
       <g class="pl_1 marker" transform="translate(881.9,182.0)"><use xlink:href="#mk1"/><text class="dp2" y="-25">14.9</text></g>
+      <g class="pl_1 marker" transform="translate(886.5,189.5)"><use xlink:href="#mk1"/><text class="dp2" y="-25">14.6</text></g>
     </g>
 </g>
 </svg>
