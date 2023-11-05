@@ -4,10 +4,9 @@
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
-  a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
-  .ticklabel {font-size:27.00px;fill:#808080;stroke:none}
+  .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
   .ytl {text-anchor:end;}
   .dp1 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#000000;}
   .dp2 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#FFFFFF;}
@@ -22,14 +21,6 @@ text:hover + .dl_el {display:block;}
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
-  <g id="mk1"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#FFF" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#FFF" stroke="#FFF"/></g>
-  <g id="mk2"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#E2BE8B" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#E2BE8B" stroke="#FFF"/></g>
-  <g id="mk3"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#FFD527" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#FFD527" stroke="#FFF"/></g>
-  <g id="mk4"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#9ED44A" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#9ED44A" stroke="#FFF"/></g>
-  <g id="mk5"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#E481BD" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#E481BD" stroke="#FFF"/></g>
-  <g id="mk6"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#8498C6" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#8498C6" stroke="#FFF"/></g>
-  <g id="mk7"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#FC8458" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#FC8458" stroke="#FFF"/></g>
-  <g id="mk8"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#5CBC9D" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#5CBC9D" stroke="#FFF"/></g>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
 </defs>
@@ -226,24 +217,24 @@ text:hover + .dl_el {display:block;}
   <polygon points="221.8,587.2 221.8,454.6 277.1,454.6 277.1,587.2 221.8,587.2"/>
   <polygon points="291.0,587.2 291.0,454.6 346.4,454.6 346.4,587.2 291.0,587.2"/>
 </g>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Norway: Origins of biofuel feedstocks</text>
-    <text class="pl" transform="translate(130.0,78.3)" dy="0.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">million</text>
-    <text class="pl" transform="translate(130.0,78.3)" dy="18.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">litres</text>
-    <text class="pl" transform="translate(945.6,474.9)" dy="8.1" font-size="27.00" fill="#5CBC9D" stroke="none">USA</text>
-    <text class="pl" transform="translate(945.6,348.4)" dy="8.1" font-size="27.00" fill="#FC8458" stroke="none">EU</text>
-    <text class="pl" transform="translate(945.6,322.5)" dy="8.1" font-size="27.00" fill="#8498C6" stroke="none">Indonesia</text>
-    <text class="pl" transform="translate(945.6,296.6)" dy="8.1" font-size="27.00" fill="#E481BD" stroke="none">China</text>
-    <text class="pl" transform="translate(945.6,270.7)" dy="8.1" font-size="27.00" fill="#9ED44A" stroke="none">Malaysia</text>
-    <text class="pl" transform="translate(945.6,244.8)" dy="8.1" font-size="27.00" fill="#FFD527" stroke="none">Russia</text>
-    <text class="pl" transform="translate(945.6,218.9)" dy="8.1" font-size="27.00" fill="#E2BE8B" stroke="none">Others</text>
-<polyline class="pl" points="910.8,333.8 912.4,333.9 913.8,334.0 915.2,334.2 916.4,334.6 917.6,335.0 918.8,335.4 919.8,335.9 920.8,336.5 921.7,337.2 922.7,337.8 923.5,338.5 924.4,339.2 925.2,340.0 926.0,340.7 926.8,341.5 927.6,342.2 928.4,343.0 929.3,343.7 930.1,344.4 931.1,345.1 932.0,345.7 933.0,346.3 934.0,346.8 935.2,347.3 936.4,347.7 937.6,348.0 939.0,348.2 940.4,348.4 942.0,348.4" stroke="#FC8458" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,301.9 912.4,302.0 913.8,302.2 915.2,302.5 916.4,303.0 917.6,303.5 918.8,304.2 919.8,304.9 920.8,305.7 921.7,306.6 922.7,307.6 923.5,308.6 924.4,309.6 925.2,310.6 926.0,311.7 926.8,312.8 927.6,313.8 928.4,314.9 929.3,315.9 930.1,316.9 931.1,317.8 932.0,318.7 933.0,319.5 934.0,320.2 935.2,320.9 936.4,321.5 937.6,321.9 939.0,322.3 940.4,322.5 942.0,322.5" stroke="#8498C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,286.7 912.4,286.7 913.8,286.8 915.2,287.0 916.4,287.2 917.6,287.4 918.8,287.8 919.8,288.1 920.8,288.5 921.7,288.9 922.7,289.4 923.5,289.9 924.4,290.4 925.2,290.9 926.0,291.4 926.8,291.9 927.6,292.4 928.4,292.9 929.3,293.4 930.1,293.9 931.1,294.3 932.0,294.8 933.0,295.2 934.0,295.5 935.2,295.8 936.4,296.1 937.6,296.3 939.0,296.5 940.4,296.6 942.0,296.6" stroke="#E481BD" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,268.3 912.4,268.3 913.8,268.3 915.2,268.4 916.4,268.4 917.6,268.5 918.8,268.5 919.8,268.6 920.8,268.7 921.7,268.8 922.7,269.0 923.5,269.1 924.4,269.2 925.2,269.3 926.0,269.4 926.8,269.6 927.6,269.7 928.4,269.8 929.3,269.9 930.1,270.1 931.1,270.2 932.0,270.3 933.0,270.4 934.0,270.5 935.2,270.5 936.4,270.6 937.6,270.7 939.0,270.7 940.4,270.7 942.0,270.7" stroke="#9ED44A" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,261.1 912.4,261.1 913.8,260.9 915.2,260.7 916.4,260.3 917.6,259.9 918.8,259.3 919.8,258.8 920.8,258.1 921.7,257.4 922.7,256.7 923.5,255.9 924.4,255.1 925.2,254.2 926.0,253.4 926.8,252.6 927.6,251.7 928.4,250.9 929.3,250.1 930.1,249.3 931.1,248.6 932.0,247.9 933.0,247.2 934.0,246.6 935.2,246.1 936.4,245.7 937.6,245.3 939.0,245.0 940.4,244.9 942.0,244.8" stroke="#FFD527" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,250.3 912.4,250.2 913.8,249.9 915.2,249.3 916.4,248.7 917.6,247.8 918.8,246.8 919.8,245.7 920.8,244.4 921.7,243.1 922.7,241.7 923.5,240.2 924.4,238.6 925.2,237.0 926.0,235.4 926.8,233.8 927.6,232.2 928.4,230.6 929.3,229.0 930.1,227.5 931.1,226.1 932.0,224.8 933.0,223.5 934.0,222.4 935.2,221.4 936.4,220.5 937.6,219.9 939.0,219.3 940.4,219.0 942.0,218.9" stroke="#E2BE8B" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<text transform="translate(157.6,666.1)" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a>   &#9679;   Data: Milj&#248;direktoratet</text>
-<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" target="_blank">@robbie_andrew</a></text>
+<text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Norway: Origins of biofuel feedstocks</text>
+<text transform="translate(130.0,78.3)" dy="0.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">million</text>
+<text transform="translate(130.0,78.3)" dy="18.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">litres</text>
+<text transform="translate(945.6,474.9)" dy="8.1" font-size="27.00" fill="#5CBC9D" stroke="none">USA</text>
+<text transform="translate(945.6,348.5)" dy="8.1" font-size="27.00" fill="#FC8458" stroke="none">EU</text>
+<text transform="translate(945.6,322.6)" dy="8.1" font-size="27.00" fill="#8498C6" stroke="none">Indonesia</text>
+<text transform="translate(945.6,296.6)" dy="8.1" font-size="27.00" fill="#E481BD" stroke="none">China</text>
+<text transform="translate(945.6,270.7)" dy="8.1" font-size="27.00" fill="#9ED44A" stroke="none">Malaysia</text>
+<text transform="translate(945.6,244.8)" dy="8.1" font-size="27.00" fill="#FFD527" stroke="none">Russia</text>
+<text transform="translate(945.6,218.8)" dy="8.1" font-size="27.00" fill="#E2BE8B" stroke="none">Others</text>
+<polyline class="pl" points="910.8,333.8 912.4,333.9 913.8,334.0 915.2,334.2 916.4,334.6 917.6,335.0 918.8,335.4 919.8,336.0 920.8,336.5 921.7,337.2 922.7,337.8 923.5,338.5 924.4,339.3 925.2,340.0 926.0,340.8 926.8,341.5 927.6,342.3 928.4,343.0 929.3,343.8 930.1,344.5 931.1,345.2 932.0,345.8 933.0,346.4 934.0,346.9 935.2,347.4 936.4,347.8 937.6,348.1 939.0,348.3 940.4,348.5 942.0,348.5" stroke="#FC8458" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,301.9 912.4,302.0 913.8,302.2 915.2,302.5 916.4,303.0 917.6,303.5 918.8,304.2 919.8,304.9 920.8,305.8 921.7,306.6 922.7,307.6 923.5,308.6 924.4,309.6 925.2,310.6 926.0,311.7 926.8,312.8 927.6,313.8 928.4,314.9 929.3,315.9 930.1,316.9 931.1,317.8 932.0,318.7 933.0,319.6 934.0,320.3 935.2,321.0 936.4,321.5 937.6,322.0 939.0,322.3 940.4,322.5 942.0,322.6" stroke="#8498C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,286.7 912.4,286.7 913.8,286.8 915.2,287.0 916.4,287.2 917.6,287.4 918.8,287.8 919.8,288.1 920.8,288.5 921.7,288.9 922.7,289.4 923.5,289.9 924.4,290.4 925.2,290.9 926.0,291.4 926.8,291.9 927.6,292.4 928.4,292.9 929.3,293.4 930.1,293.9 931.1,294.4 932.0,294.8 933.0,295.2 934.0,295.5 935.2,295.9 936.4,296.1 937.6,296.3 939.0,296.5 940.4,296.6 942.0,296.6" stroke="#E481BD" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,268.3 912.4,268.3 913.8,268.3 915.2,268.4 916.4,268.4 917.6,268.5 918.8,268.5 919.8,268.6 920.8,268.7 921.7,268.8 922.7,268.9 923.5,269.1 924.4,269.2 925.2,269.3 926.0,269.4 926.8,269.6 927.6,269.7 928.4,269.8 929.3,269.9 930.1,270.0 931.1,270.2 932.0,270.3 933.0,270.4 934.0,270.4 935.2,270.5 936.4,270.6 937.6,270.6 939.0,270.7 940.4,270.7 942.0,270.7" stroke="#9ED44A" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,261.1 912.4,261.1 913.8,260.9 915.2,260.7 916.4,260.3 917.6,259.9 918.8,259.3 919.8,258.7 920.8,258.1 921.7,257.4 922.7,256.6 923.5,255.9 924.4,255.1 925.2,254.2 926.0,253.4 926.8,252.5 927.6,251.7 928.4,250.9 929.3,250.1 930.1,249.3 931.1,248.5 932.0,247.8 933.0,247.2 934.0,246.6 935.2,246.1 936.4,245.6 937.6,245.3 939.0,245.0 940.4,244.8 942.0,244.8" stroke="#FFD527" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,250.3 912.4,250.2 913.8,249.9 915.2,249.3 916.4,248.7 917.6,247.8 918.8,246.8 919.8,245.7 920.8,244.4 921.7,243.1 922.7,241.6 923.5,240.1 924.4,238.6 925.2,237.0 926.0,235.4 926.8,233.7 927.6,232.1 928.4,230.5 929.3,229.0 930.1,227.5 931.1,226.0 932.0,224.7 933.0,223.4 934.0,222.3 935.2,221.3 936.4,220.5 937.6,219.8 939.0,219.3 940.4,218.9 942.0,218.8" stroke="#E2BE8B" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbie_andrew   &#9679;   Data: Milj&#248;direktoratet</text>
+<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
       <foreignObject x="0" y="0" width="120" height="500">
@@ -255,7 +246,6 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -269,92 +259,6 @@ text:hover + .dl_el {display:block;}
      <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
-  </a>
 </g>
-  <g class="dl_el" transform="translate(69.1,548.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="250" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
-      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
-    </g>
-  </g>
-    <g>
-      <g class="pl_1 marker" transform="translate(180.2,450.8)"><use xlink:href="#mk1"/><text class="dp1" y="-25">179.0</text></g>
-      <g class="pl_1 marker" transform="translate(249.5,454.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">174.0</text></g>
-      <g class="pl_1 marker" transform="translate(318.7,454.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">174.0</text></g>
-    </g>
-    <g>
-      <g class="pl_2 marker" transform="translate(387.9,577.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">12.4</text></g>
-      <g class="pl_2 marker" transform="translate(457.2,532.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">71.4</text></g>
-      <g class="pl_2 marker" transform="translate(526.4,523.2)"><use xlink:href="#mk2"/><text class="dp1" y="-25">84.0</text></g>
-      <g class="pl_2 marker" transform="translate(595.6,536.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">66.2</text></g>
-      <g class="pl_2 marker" transform="translate(664.9,463.3)"><use xlink:href="#mk2"/><text class="dp1" y="-25">162.6</text></g>
-      <g class="pl_2 marker" transform="translate(734.1,529.2)"><use xlink:href="#mk2"/><text class="dp1" y="-25">76.2</text></g>
-      <g class="pl_2 marker" transform="translate(803.3,547.1)"><use xlink:href="#mk2"/><text class="dp1" y="-25">52.6</text></g>
-      <g class="pl_2 marker" transform="translate(872.6,567.3)"><use xlink:href="#mk2"/><text class="dp1" y="-25">26.1</text></g>
-    </g>
-    <g>
-      <g class="pl_3 marker" transform="translate(387.9,583.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">4.3</text></g>
-      <g class="pl_3 marker" transform="translate(457.2,585.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">1.7</text></g>
-      <g class="pl_3 marker" transform="translate(526.4,577.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">12.1</text></g>
-      <g class="pl_3 marker" transform="translate(595.6,558.8)"><use xlink:href="#mk3"/><text class="dp1" y="-25">37.3</text></g>
-      <g class="pl_3 marker" transform="translate(664.9,573.2)"><use xlink:href="#mk3"/><text class="dp1" y="-25">18.4</text></g>
-      <g class="pl_3 marker" transform="translate(734.1,567.1)"><use xlink:href="#mk3"/><text class="dp1" y="-25">26.3</text></g>
-      <g class="pl_3 marker" transform="translate(803.3,578.3)"><use xlink:href="#mk3"/><text class="dp1" y="-25">11.6</text></g>
-      <g class="pl_3 marker" transform="translate(872.6,585.4)"><use xlink:href="#mk3"/><text class="dp1" y="-25">2.4</text></g>
-    </g>
-    <g>
-      <g class="pl_4 marker" transform="translate(387.9,585.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">2.0</text></g>
-      <g class="pl_4 marker" transform="translate(457.2,562.3)"><use xlink:href="#mk4"/><text class="dp1" y="-25">32.6</text></g>
-      <g class="pl_4 marker" transform="translate(526.4,573.5)"><use xlink:href="#mk4"/><text class="dp1" y="-25">17.9</text></g>
-      <g class="pl_4 marker" transform="translate(595.6,581.9)"><use xlink:href="#mk4"/><text class="dp1" y="-25">7.0</text></g>
-      <g class="pl_4 marker" transform="translate(664.9,558.2)"><use xlink:href="#mk4"/><text class="dp1" y="-25">38.0</text></g>
-      <g class="pl_4 marker" transform="translate(734.1,586.9)"><use xlink:href="#mk4"/><text class="dp1" y="-25">0.4</text></g>
-      <g class="pl_4 marker" transform="translate(803.3,582.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">6.0</text></g>
-      <g class="pl_4 marker" transform="translate(872.6,574.7)"><use xlink:href="#mk4"/><text class="dp1" y="-25">16.4</text></g>
-    </g>
-    <g>
-      <g class="pl_5 marker" transform="translate(387.9,587.2)"><use xlink:href="#mk5"/><text class="dp1" y="-25">0.0</text></g>
-      <g class="pl_5 marker" transform="translate(457.2,584.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">3.4</text></g>
-      <g class="pl_5 marker" transform="translate(526.4,587.2)"><use xlink:href="#mk5"/><text class="dp1" y="-25">0.0</text></g>
-      <g class="pl_5 marker" transform="translate(595.6,565.1)"><use xlink:href="#mk5"/><text class="dp1" y="-25">29.0</text></g>
-      <g class="pl_5 marker" transform="translate(664.9,563.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">31.0</text></g>
-      <g class="pl_5 marker" transform="translate(734.1,582.9)"><use xlink:href="#mk5"/><text class="dp1" y="-25">5.7</text></g>
-      <g class="pl_5 marker" transform="translate(803.3,547.1)"><use xlink:href="#mk5"/><text class="dp1" y="-25">52.6</text></g>
-      <g class="pl_5 marker" transform="translate(872.6,562.9)"><use xlink:href="#mk5"/><text class="dp1" y="-25">31.9</text></g>
-    </g>
-    <g>
-      <g class="pl_6 marker" transform="translate(387.9,587.2)"><use xlink:href="#mk6"/><text class="dp1" y="-25">0.0</text></g>
-      <g class="pl_6 marker" transform="translate(457.2,477.1)"><use xlink:href="#mk6"/><text class="dp1" y="-25">144.5</text></g>
-      <g class="pl_6 marker" transform="translate(526.4,347.3)"><use xlink:href="#mk6"/><text class="dp1" y="-25">314.9</text></g>
-      <g class="pl_6 marker" transform="translate(595.6,509.9)"><use xlink:href="#mk6"/><text class="dp1" y="-25">101.4</text></g>
-      <g class="pl_6 marker" transform="translate(664.9,533.4)"><use xlink:href="#mk6"/><text class="dp1" y="-25">70.6</text></g>
-      <g class="pl_6 marker" transform="translate(734.1,585.3)"><use xlink:href="#mk6"/><text class="dp1" y="-25">2.4</text></g>
-      <g class="pl_6 marker" transform="translate(803.3,579.8)"><use xlink:href="#mk6"/><text class="dp1" y="-25">9.7</text></g>
-      <g class="pl_6 marker" transform="translate(872.6,581.0)"><use xlink:href="#mk6"/><text class="dp1" y="-25">8.1</text></g>
-    </g>
-    <g>
-      <g class="pl_7 marker" transform="translate(387.9,469.7)"><use xlink:href="#mk7"/><text class="dp1" y="-25">154.2</text></g>
-      <g class="pl_7 marker" transform="translate(457.2,463.7)"><use xlink:href="#mk7"/><text class="dp1" y="-25">162.1</text></g>
-      <g class="pl_7 marker" transform="translate(526.4,471.9)"><use xlink:href="#mk7"/><text class="dp1" y="-25">151.4</text></g>
-      <g class="pl_7 marker" transform="translate(595.6,472.7)"><use xlink:href="#mk7"/><text class="dp1" y="-25">150.3</text></g>
-      <g class="pl_7 marker" transform="translate(664.9,468.6)"><use xlink:href="#mk7"/><text class="dp1" y="-25">155.6</text></g>
-      <g class="pl_7 marker" transform="translate(734.1,522.6)"><use xlink:href="#mk7"/><text class="dp1" y="-25">84.8</text></g>
-      <g class="pl_7 marker" transform="translate(803.3,506.5)"><use xlink:href="#mk7"/><text class="dp1" y="-25">106.0</text></g>
-      <g class="pl_7 marker" transform="translate(872.6,529.6)"><use xlink:href="#mk7"/><text class="dp1" y="-25">75.6</text></g>
-    </g>
-    <g>
-      <g class="pl_8 marker" transform="translate(387.9,579.5)"><use xlink:href="#mk8"/><text class="dp1" y="-25">10.1</text></g>
-      <g class="pl_8 marker" transform="translate(457.2,558.5)"><use xlink:href="#mk8"/><text class="dp1" y="-25">37.7</text></g>
-      <g class="pl_8 marker" transform="translate(526.4,504.8)"><use xlink:href="#mk8"/><text class="dp1" y="-25">108.2</text></g>
-      <g class="pl_8 marker" transform="translate(595.6,516.0)"><use xlink:href="#mk8"/><text class="dp1" y="-25">93.4</text></g>
-      <g class="pl_8 marker" transform="translate(664.9,453.9)"><use xlink:href="#mk8"/><text class="dp1" y="-25">174.9</text></g>
-      <g class="pl_8 marker" transform="translate(734.1,349.5)"><use xlink:href="#mk8"/><text class="dp1" y="-25">312.0</text></g>
-      <g class="pl_8 marker" transform="translate(803.3,337.8)"><use xlink:href="#mk8"/><text class="dp1" y="-25">327.4</text></g>
-      <g class="pl_8 marker" transform="translate(872.6,362.6)"><use xlink:href="#mk8"/><text class="dp1" y="-25">294.8</text></g>
-    </g>
 </g>
 </svg>
