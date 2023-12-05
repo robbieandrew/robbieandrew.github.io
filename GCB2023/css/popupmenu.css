@@ -1,0 +1,51 @@
+/* Derived from http://codepen.io/philhoyt/pen/ujHzd */
+#dl_drop ul {
+	list-style:none;
+	position:relative;
+	float:right;
+	margin:0;
+	padding:0;
+}
+#dl_drop ul a {
+	display:block;
+	color:#333;
+	text-decoration:none;
+	padding:0 15px;
+}
+#dl_drop ul li {
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+}
+#dl_drop ul li:hover {
+	background:#B0C8E8
+}
+#dl_drop ul ul {
+	display:none;
+	position:absolute;
+	top:100%;
+	right:0;
+	background:#fff;
+	padding:0;
+	border:1px solid black;
+}
+#dl_drop ul ul li {
+	float:none;
+	width:150px;
+}
+#dl_drop ul ul a:hover {
+	color:#fff;
+	background:#1C57AF;
+}
+#dl_drop ul ul a {
+	line-height:120%;
+	padding:10px 15px;
+}
+#dl_drop ul ul ul {
+	top:0;
+	left:100%;
+}
+#dl_drop ul li:hover > ul {
+	display:block
+}
