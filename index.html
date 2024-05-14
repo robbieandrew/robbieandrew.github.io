@@ -1,18 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+
+<style>
+.parent {
+	display: grid;
+	justify-content:center;
+	align-items:center;
+	column-gap: 10px;
+	row-gap: 1em;
+}
+
+@media screen and (min-width: 970px) {
+	.parent {
+		grid-template-columns: 320px 320px 320px;
+	}
+}
+@media screen and (min-width: 650px) and (max-width: 969px) {
+	.parent {
+		grid-template-columns: 320px 320px;
+	}
+}
+
+.card {
+	height: 200px;
+	width: 260px;
+	background: #FFF;
+	border: 1px solid #FAFAFA;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	padding: 0.5em 1em 0.5em 1em;
+	font-family: Tahoma, sans-serif;
+	font-size: 1.2rem;
+	cursor: pointer;
+	position: relative;
+	transition: box-shadow 0.2s;
+}
+
+.card:hover {
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card p {
+	z-index: 10;
+	margin: 0;
+}
+
+.view {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	opacity: 0;
+}
+.subb {font-size: 70%;line-height:normal;}
+.heading {text-align: center; font-family: Tahoma, sans-serif; margin: 10px;}
+</style>
+
+</head>
+
 <body>
-<h1>Robbie Andrew</h1>
-<p>This new website is still under construction. Current themes are:</p>
-<ul>
-<li><a href="GCB2023/index.html">GCB 2023</a>: Figures and data from the 2023 edition of the Global Carbon Budget</li>
-<li><a href="EV/index.html">EVs</a>: Electric vehicles and biofuels in Norway</li>
-<li><a href="india/index.html">India</a>: Frequently updated data and figures on India's energy and CO2 emissions</li>
-<li><a href="ppm/index.html">ppm</a>: Atmospheric concentration of CO2</li>
-<li><a href="USA/index.html">USA</a>: EIA's estimates of US fossil CO2 emissions</li>
-<li><a href="china/index.html">China</a>: Selected charts</li>
-<li><a href="newzealand/index.html">New Zealand</a>: Selected charts</li>
-<li><a href="consumption/index.html">Consumption-based emissions</a>: Comparison of estimates from different datasets</li>
-</ul>
-<p>And the old web site is still <a href="https://folk.uio.no/roberan">available here</a>.</p>
+
+<p class="heading" style="font-size: 30px;">Robbie Andrew</p>
+<p class="heading" >CICERO Center for International Climate Research, Oslo, Norway</p>
+<br>
+
+<div class ="parent">
+
+<div class="card">
+  <img loading="lazy" width="100%" src="EV/img/bilsalg.png">
+  <p>Norway EV sales and related data</p>
+  <a class = "view" href = "https://robbieandrew.github.io/EV">View</a>
+</div>
+<div class="card">
+  <img loading="lazy" width="100%" src="india/img/monthly_coal_full.png">
+	<p>Indian energy and emissions data</p>
+	<a class = "view" href = "https://robbieandrew.github.io/india">View</a>
+</div>
+<div class="card">
+  <img loading="lazy" width="100%" src="GCB2023/PNG/s11_2023_FossilFuel_and_Cement_emissions_1990.png">
+	<p>Figures from the Global Carbon Budget 2023</p>
+	<a class = "view" href = "https://robbieandrew.github.io/GCB2023">View</a>
+</div>
+<div class="card">
+  <img loading="lazy" width="100%" src="ppm/img/MLO_weeklyGW.png">
+	<p>Atmospheric concentration of CO<span class="subb">2</span></p>
+	<a class = "view" href = "https://robbieandrew.github.io/ppm">View</a>
+</div>
+<div class="card">
+  <img loading="lazy" width="100%" src="USA/img/EIAprojection_lines_deseas.png">
+	<p>EIA's estimates of US fossil CO<span class="subb">2</span> emissions</p>
+	<a class = "view" href = "https://robbieandrew.github.io/USA">View</a>
+</div>
+<div class="card">
+  <img loading="lazy" width="100%" src="newzealand/img/NZL_qtr_CO2_all.png">
+	<p>New Zealand</p>
+	<a class = "view" href = "https://robbieandrew.github.io/newzealand">View</a>
+</div>
+<div class="card">
+  <img loading="lazy" width="100%" src="consumption/PNG/AUS_cons.png">
+	<p>Comparisons of consumption-based emissions</p>
+	<a class = "view" href = "https://robbieandrew.github.io/consumption">View</a>
+</div>
+<div class="card">
+  <img loading="lazy" width="100%" src="china/img/CHN_growth.png">
+	<p>China energy and CO<span class="subb">2</span> emissions information</p>
+	<a class = "view" href = "https://robbieandrew.github.io/china">View</a>
+</div>
+
+</div>
+
+<br>
+<p style="text-align: center; font-family: Tahoma, sans-serif;">My old website with previous work is still available <a href="https://folk.uio.no/roberan">here</a>.</p>
+
 </body>
-</html>
