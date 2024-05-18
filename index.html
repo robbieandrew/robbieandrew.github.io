@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .parent {
 	display: grid;
@@ -12,14 +12,19 @@
 	row-gap: 1em;
 }
 
-@media screen and (min-width: 970px) {
+@media only screen and (max-width: 649px) {
 	.parent {
-		grid-template-columns: 320px 320px 320px;
+		grid-template-columns: 320px;
 	}
 }
-@media screen and (min-width: 650px) and (max-width: 969px) {
+@media only screen and (min-width: 650px) {
 	.parent {
 		grid-template-columns: 320px 320px;
+	}
+}
+@media only screen and (min-width: 970px) {
+	.parent {
+		grid-template-columns: 320px 320px 320px;
 	}
 }
 
@@ -81,7 +86,7 @@
 	<a class = "view" href = "https://robbieandrew.github.io/india">View</a>
 </div>
 <div class="card">
-  <img width="100%" src="GCB2023/PNG/s11_2023_FossilFuel_and_Cement_emissions_1990.png">
+  <img width="100%" src="GCB2023/PNG/thumb/s11_2023_FossilFuel_and_Cement_emissions_1990.webp">
 	<p>Figures from the Global Carbon Budget 2023</p>
 	<a class = "view" href = "https://robbieandrew.github.io/GCB2023">View</a>
 </div>
@@ -91,7 +96,7 @@
 	<a class = "view" href = "https://robbieandrew.github.io/ppm">View</a>
 </div>
 <div class="card">
-  <img width="100%" src="USA/img/EIAprojection_lines_deseas.png">
+  <img width="100%" src="USA/img/EIAprojection_lines_deseas.webp">
 	<p>EIA's estimates of US fossil CO<span class="subb">2</span> emissions</p>
 	<a class = "view" href = "https://robbieandrew.github.io/USA">View</a>
 </div>
@@ -101,17 +106,17 @@
 	<a class = "view" href = "https://robbieandrew.github.io/newzealand">View</a>
 </div>
 <div class="card">
-  <img width="100%" src="consumption/PNG/AUS_cons.png">
+  <img width="100%" src="consumption/PNG/thumb/AUS_cons.webp">
 	<p>Comparisons of consumption-based emissions</p>
 	<a class = "view" href = "https://robbieandrew.github.io/consumption">View</a>
 </div>
 <div class="card">
-  <img width="100%" src="china/img/CHN_growth.png">
+  <img width="100%" src="china/img/CHN_growth.webp">
 	<p>China energy and CO<span class="subb">2</span> emissions information</p>
 	<a class = "view" href = "https://robbieandrew.github.io/china">View</a>
 </div>
 <div class="card">
-  <img width="100%" src="norway/img/thermal_power_gen_norway.png">
+  <img width="100%" src="norway/img/thermal_power_gen_norway.webp">
 	<p>Norway energy and emissions</p>
 	<a class = "view" href = "https://robbieandrew.github.io/norway">View</a>
 </div>
@@ -126,7 +131,7 @@
 	<a class = "view" href = "https://zenodo.org/doi/10.5281/zenodo.831454">View</a>
 </div>
 <div class="card">
-  <img width="100%" src="GCB2023/PNG/s25_2023_Top_FF_emitters_abs.png">
+  <img width="100%" src="GCB2023/PNG/thumb/s25_2023_Top_FF_emitters_abs.webp">
 	<p>Data: The GCP's fossil CO<span class="subb">2</span> emissions dataset</p>
 	<a class = "view" href = "https://zenodo.org/doi/10.5281/zenodo.5569234">View</a>
 </div>
