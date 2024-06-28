@@ -52,6 +52,10 @@
 <script>
 let countryData = {};
 let flatCountryData = [];
+const IMAGE_PATH = 'https://robbieandrew.github.io/GCB2023/SVG/ctry/';
+const IMAGE_TYPES = [
+	{ prefix: 's20_Coal_Oil_Gas_Cement', extension: 'svg'}
+];
 
 // Fetch the JSON data
 fetch('https://robbieandrew.github.io/data/countryData.json')
@@ -61,6 +65,7 @@ fetch('https://robbieandrew.github.io/data/countryData.json')
 	flatCountryData = Object.entries(countryData).map(
 		([code, data]) => ({
 			mainName: code,
+			isoCode: data.isoCode,
 			variants: [code.toLowerCase(), ...data.variants.map(v => v.toLowerCase())]
 			})
 		);
@@ -81,19 +86,39 @@ function debounce(func, wait) {
   };
 }
 
-function displayCountryImages(countryCode) {
+function displayCountryImages(isoCode) {
   const imageContainer = document.getElementById("countryImages");
   imageContainer.innerHTML = ''; // Clear previous images
 
-  const countryImages = countryData[countryCode].images;
+  IMAGE_TYPES.forEach(({ prefix, extension }) => {
+    const imageElement = extension === 'svg' ? document.createElement("object") : document.createElement("img");
+    
+    imageElement.style.width = "600px"; // Set a default width, adjust as needed
+    imageElement.style.margin = "10px";
+    
+    const imagePath = `${IMAGE_PATH}${prefix}_${isoCode}.${extension}`;
+    
+    if (extension === 'svg') {
+      imageElement.data = imagePath;
+      imageElement.type = "image/svg+xml";
+      imageElement.className = "fig";
+      imageElement.onerror = () => {
+        console.error(`Failed to load SVG: ${imagePath}`);
+        imageElement.remove(); // Remove the failed object from DOM
+      };
+    } else {
+      imageElement.src = imagePath;
+      imageElement.alt = `${isoCode} Image ${prefix}`;
+      imageElement.onerror = () => {
+        console.error(`Failed to load image: ${imagePath}`);
+        imageElement.remove(); // Remove the failed image from DOM
+      };
+    }
 
-  countryImages.forEach(image => {
-    const img = document.createElement("img");
-    img.src = image.src;
-    img.alt = image.alt;
-    img.style.width = "200px"; // Set a default width, adjust as needed
-    img.style.margin = "10px";
-    imageContainer.appendChild(img);
+    // Log attempt to load image
+    console.log(`Attempting to load: ${imagePath}`);
+
+    imageContainer.appendChild(imageElement);
   });
 }
 
@@ -192,11 +217,11 @@ function autocomplete(inp) {
   }, 300);
 
   function selectItem(item) {
-    inp.value = item.mainName;
+    inp.value = `${item.mainName} (${item.isoCode})`;
     closeDropdown();
-    displayCountryImages(item.mainName);
+    displayCountryImages(item.isoCode);
   }
-
+  
   function closeDropdown() {
     const listContainer = document.getElementById("autocomplete-list");
     listContainer.innerHTML = '';
