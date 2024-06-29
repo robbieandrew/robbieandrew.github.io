@@ -66,7 +66,7 @@ fetch('https://robbieandrew.github.io/data/countryData.json')
 		([code, data]) => ({
 			mainName: code,
 			isoCode: data.isoCode,
-			variants: [code.toLowerCase(), ...data.variants.map(v => v.toLowerCase())]
+			variants: [code, ...data.variants]
 			})
 		);
     // Initialize autocomplete after data is loaded
