@@ -129,6 +129,22 @@ function downloadSVGasPNG(svgObject) {
   img.src = svgUrl;
 }
 
+function addDownloadLink(svgObject) {
+  const container = svgObject.parentNode;
+  // Create the link
+  const downloadLink = document.createElement('a');
+  downloadLink.href = '#';
+  downloadLink.textContent = 'Download as PNG';
+  downloadLink.className = 'download-link';
+  // Add click event
+  downloadLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    downloadSVGasPNG(svgObject);
+  });
+  // Append the link after the SVG object
+  container.appendChild(downloadLink);
+}
+
 function displayCountryImages(isoCode) {
   const imageContainer = document.getElementById("countryImages");
   imageContainer.innerHTML = ''; // Clear previous images
@@ -163,34 +179,16 @@ function displayCountryImages(isoCode) {
     const wrapperDiv = document.createElement("div");
     wrapperDiv.className = "image-container";
     wrapperDiv.appendChild(imageElement);
-    if (extension === 'svg') {
-	  const dn_button = document.createElement("button");
-	  dn_button.className = "download-button";
-	  dn_button.innerHTML = 'Download as PNG';
-      wrapperDiv.appendChild(dn_button);
-	};
-	
+
     console.log(`Attempting to load: ${imagePath}`);
 	// Add the new element to the page inside the container
     imageContainer.appendChild(wrapperDiv);
-	
-	// Add download button event listener for all buttons
-	document.querySelectorAll('.download-button').forEach(button => {
-	  button.addEventListener('click', function() {
-	    console.log('button clicked!');
-		const container = this.closest('.image-container');
-		const svgObject = container.querySelector('.svg-object');
-		// Ensure the SVG is loaded before calling the download function
-		if (svgObject.contentDocument) {
-	      console.log('calling download function!');
-		  downloadSVGasPNG(svgObject);
-		} else {
-		  // If the SVG is not (fully) loaded, wait until it is then call the download function
-	      console.log('Waiting for SVG to load!');
-		  svgObject.addEventListener('load', () => downloadSVGasPNG(svgObject));
-		}
-	  });
+
+	// Add a download link for every SVG on the page
+	document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+	  svgObject.addEventListener('load', () => addDownloadLink(svgObject));
 	});
+	
   });
 }
 
