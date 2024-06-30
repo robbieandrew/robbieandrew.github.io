@@ -173,10 +173,13 @@ function autocomplete(inp) {
         const mainNameLower = item.mainName.toLowerCase();
         const matchIndex = mainNameLower.indexOf(lowerInput);
         if (matchIndex >= 0) {
-          mainNameSpan.innerHTML = 
-            item.mainName.substring(0, matchIndex) +
-            `<strong>${item.mainName.substr(matchIndex, lowerInput.length)}</strong>` +
-            item.mainName.substring(matchIndex + lowerInput.length);
+		  const beforeMatch = item.mainName.substring(0, matchIndex);
+		  const match = item.mainName.substr(matchIndex, inputValue.length);
+		  const afterMatch = item.mainName.substring(matchIndex + inputValue.length);
+		  console.log(`beforeMatch: ${beforeMatch}`);
+		  console.log(`match: ${match}`);
+		  console.log(`afterMatch: ${afterMatch}`);
+		  mainNameSpan.innerHTML = `${beforeMatch}<strong>${match}</strong>${afterMatch}`;
         } else {
           mainNameSpan.textContent = item.mainName;
         }
@@ -188,11 +191,15 @@ function autocomplete(inp) {
         variantSpan.style.marginLeft = '0.5em';
         
         // Highlight matching part in variant
-        const variantMatchIndex = item.matchedVariant.indexOf(lowerInput);
-        variantSpan.innerHTML = 
-          `(${item.matchedVariant.substring(0, variantMatchIndex)}` +
-          `<strong>${item.matchedVariant.substr(variantMatchIndex, lowerInput.length)}</strong>` +
-          `${item.matchedVariant.substring(variantMatchIndex + lowerInput.length)})`;
+		const variantMatchIndex = item.matchedVariant.toLowerCase().indexOf(lowerInput);
+		if (variantMatchIndex >= 0) {
+		  const beforeMatch = item.matchedVariant.substring(0, variantMatchIndex);
+		  const match = item.matchedVariant.substr(variantMatchIndex, inputValue.length);
+		  const afterMatch = item.matchedVariant.substring(variantMatchIndex + inputValue.length);
+		  variantSpan.innerHTML = `(${beforeMatch}<strong>${match}</strong>${afterMatch})`;
+		} else {
+		  variantSpan.textContent = `(${item.matchedVariant})`;
+		}
         
         // Append both to the div
         div.appendChild(mainNameSpan);
