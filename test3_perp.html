@@ -107,10 +107,10 @@ function downloadSVGasPNG(svgObject) {
   // Create an image from the SVG
   const img = new Image();
   img.onload = function() {
-	// Set white background
+	// First draw a white background
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    // Draw the image on the canvas
+    // Then draw the image on the canvas
     ctx.drawImage(img, 0, 0);
     DOMURL.revokeObjectURL(svgUrl);
     
