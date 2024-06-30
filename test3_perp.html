@@ -33,13 +33,17 @@
 }
 
 .autocomplete-active {
-  background-color: DodgerBlue !important; 
+  background-color: #1E90FF !important; 
   color: #ffffff; 
 }
 
 .autocomplete-active {
-  background-color: DodgerBlue !important; 
+  background-color: #1E90FF !important; 
   color: #ffffff; 
+}
+
+.download-PNG {
+  font-family: sans-serif;  
 }
 </style>
 </head>
@@ -93,7 +97,7 @@ function downloadSVGasPNG(svgObject) {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   
-  // Set canvas dimensions to match the SVG
+  // Set canvas dimensions, maintaining aspect ratio
   const svgRect = svg.getBoundingClientRect();
   canvas.width = 1024;
   canvas.height = svgRect.height/svgRect.width*canvas.width;
@@ -135,7 +139,7 @@ function addDownloadLink(svgObject) {
   const downloadLink = document.createElement('a');
   downloadLink.href = '#';
   downloadLink.textContent = 'Download as PNG';
-  downloadLink.className = 'download-link';
+  downloadLink.className = 'download-PNG';
   // Add click event
   downloadLink.addEventListener('click', (e) => {
     e.preventDefault();
