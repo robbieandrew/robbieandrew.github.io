@@ -78,6 +78,7 @@ fetch('https://robbieandrew.github.io/data/countryData.json')
   })
   .catch(error => console.error('Error loading country data:', error));
 
+// Reduce the number of times the search function is called, especially for fast typers
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -188,7 +189,7 @@ function displayCountryImages(isoCode) {
 	// Add the new element to the page inside the container
     imageContainer.appendChild(wrapperDiv);
 
-	// Add a download link for every SVG on the page
+	// Add a PNG download link for every SVG on the page
 	document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
 	  svgObject.addEventListener('load', () => addDownloadLink(svgObject));
 	});
