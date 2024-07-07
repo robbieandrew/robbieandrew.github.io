@@ -22,60 +22,51 @@ fetch('https://robbieandrew.github.io/data/countryData.json')
   })
   .catch(error => console.error('Error loading country data:', error));
 
-// Reduce the number of times the search function is called, especially for fast typers
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
 function downloadSVGasPNG(svgObject) {
-  const svg = svgObject.contentDocument.querySelector('svg');
-  
-  // Create a canvas element
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-  
-  // Set canvas dimensions, maintaining aspect ratio
-  const svgRect = svg.getBoundingClientRect();
-  canvas.width = 1024;
-  canvas.height = svgRect.height/svgRect.width*canvas.width;
-  
-  // Convert SVG to a data URL
-  const svgData = new XMLSerializer().serializeToString(svg);
-  const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
-  const DOMURL = window.URL || window.webkitURL || window;
-  const svgUrl = DOMURL.createObjectURL(svgBlob);
-  
-  // Create an image from the SVG
-  const img = new Image();
-  img.onload = function() {
-	// First draw a white background
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    // Then draw the image on the canvas
-    ctx.drawImage(img, 0, 0);
-    DOMURL.revokeObjectURL(svgUrl);
-    
-    // Convert canvas to PNG and initiate download
-    canvas.toBlob(function(blob) {
-      const url = DOMURL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${svgObject.getAttribute('data').split('/').pop().replace('.svg', '')}.png`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      DOMURL.revokeObjectURL(url);
-    }, 'image/png');
-  };
-  img.src = svgUrl;
+  try {
+	  const svg = svgObject.contentDocument.querySelector('svg');
+	  
+	  // Create a canvas element
+	  const canvas = document.createElement('canvas');
+	  const ctx = canvas.getContext('2d');
+	  
+	  // Set canvas dimensions, maintaining aspect ratio
+	  const svgRect = svg.getBoundingClientRect();
+	  canvas.width = 1024;
+	  canvas.height = svgRect.height/svgRect.width*canvas.width;
+	  
+	  // Convert SVG to a data URL
+	  const svgData = new XMLSerializer().serializeToString(svg);
+	  const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+	  const DOMURL = window.URL || window.webkitURL || window;
+	  const svgUrl = DOMURL.createObjectURL(svgBlob);
+	  
+	  // Create an image from the SVG
+	  const img = new Image();
+	  img.onload = function() {
+		// First draw a white background
+		ctx.fillStyle = 'white';
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		// Then draw the image on the canvas
+		ctx.drawImage(img, 0, 0);
+		DOMURL.revokeObjectURL(svgUrl);
+		
+		// Convert canvas to PNG and initiate download
+		canvas.toBlob(function(blob) {
+		  const url = DOMURL.createObjectURL(blob);
+		  const a = document.createElement('a');
+		  a.href = url;
+		  a.download = `${svgObject.getAttribute('data').split('/').pop().replace('.svg', '')}.png`;
+		  document.body.appendChild(a);
+		  a.click();
+		  document.body.removeChild(a);
+		  DOMURL.revokeObjectURL(url);
+		}, 'image/png');
+	  };
+	  img.src = svgUrl;
+  } catch (error) {
+	  console.warn("Unable to access SVG content! (Are you running locally?",error);
+  }
 }
 
 function addDownloadLink(svgObject) {
@@ -102,7 +93,7 @@ function displayCountryImages(isoCode) {
     // if the file has extension svg, create an object, else create an img
     const imageElement = extension === 'svg' ? document.createElement("object") : document.createElement("img");
     
-    imageElement.style.width = "600px"; // Set a default width, adjust as needed
+    imageElement.style.width = "600px";
     imageElement.style.margin = "10px";
     
     const imagePath = `${IMAGE_PATH}${prefix}_${isoCode}.${extension}`;
@@ -111,18 +102,14 @@ function displayCountryImages(isoCode) {
       imageElement.data = imagePath;
       imageElement.type = "image/svg+xml";
       imageElement.className = "svg-object";
-      imageElement.onerror = () => {
-        console.error(`Failed to load SVG: ${imagePath}`);
-        imageElement.remove(); // Remove the failed object from DOM
-      };
     } else {
       imageElement.src = imagePath;
       imageElement.alt = `${isoCode} Image ${prefix}`;
-      imageElement.onerror = () => {
-        console.error(`Failed to load image: ${imagePath}`);
-        imageElement.remove(); // Remove the failed image from DOM
-      };
     }
+    imageElement.onerror = () => {
+      console.error(`Failed to load image: ${imagePath}`);
+      imageElement.remove(); // Remove the failed image from DOM
+    };
 
 	// Create a new div to wrap the image
     const wrapperDiv = document.createElement("div");
@@ -141,6 +128,8 @@ function displayCountryImages(isoCode) {
   });
 }
 
+// Autocompletion code -----------------------------------------
+
 function scoreMatch(variant, input) {
   const lowerVariant = variant.toLowerCase();
   const lowerInput = input.toLowerCase();
@@ -151,6 +140,19 @@ function scoreMatch(variant, input) {
     return 50 - lowerVariant.indexOf(lowerInput); // Prioritize earlier matches
   }
   return 0; // No match
+}
+
+// Reduce the number of times the search function is called, especially for fast typers
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
 
 function autocomplete(inp) {
