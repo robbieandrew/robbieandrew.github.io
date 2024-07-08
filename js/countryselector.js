@@ -258,6 +258,7 @@ function autocomplete(inp) {
   function closeDropdown() {
     const listContainer = document.getElementById("autocomplete-list");
     listContainer.innerHTML = '';
+    listContainer.style.display = 'none';
     currentFocus = -1;
   }
 
