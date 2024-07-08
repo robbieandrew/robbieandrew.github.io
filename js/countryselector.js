@@ -14,7 +14,7 @@ fetch('https://robbieandrew.github.io/data/countryData.json')
 		([code, data]) => ({
 			mainName: code,
 			isoCode: data.isoCode,
-			variants: [code, ...data.variants]
+			variants: [code, data.isoCode, ...data.variants]
 			})
 		);
     // Initialize autocomplete after data is loaded
@@ -160,8 +160,16 @@ function autocomplete(inp) {
   let currentFocus = -1;
   
   const showResults = debounce((inputValue) => {
+    const listContainer = document.getElementById("autocomplete-list");
+
+	// Clear the list and hide it if the input is empty
+	  if (!inputValue.trim()) {
+		listContainer.innerHTML = '';
+		listContainer.style.display = 'none';
+		return;
+	  }
+
     const lowerInput = inputValue.toLowerCase();
-    
     // Score and sort the matches
     const scoredMatches = flatCountryData
       .map(item => {
@@ -176,12 +184,12 @@ function autocomplete(inp) {
       .sort((a, b) => b.score - a.score)
       .slice(0, MAX_RESULTS);
 
-    const listContainer = document.getElementById("autocomplete-list");
     listContainer.innerHTML = '';
     currentFocus = -1;
 
     if (scoredMatches.length > 0) {
-      const fragment = document.createDocumentFragment();
+      listContainer.style.display = 'block';
+	  const fragment = document.createDocumentFragment();
       scoredMatches.forEach((item, index) => {
         const div = document.createElement("div");
         div.setAttribute('data-index', index);
