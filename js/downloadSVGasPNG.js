@@ -2,6 +2,8 @@
 function downloadSVGasPNG(svgObject) {
   try {
 	  const svg = svgObject.contentDocument.querySelector('svg');
+	  
+	  // Make a copy (clone) of the SVG object so we can manipulate it
 	  const clonedSvg = svg.cloneNode(true);
 	  
 	  // Remove foreignObject elements from the clone. These are seen by the browser as cross-origin, and cause conversion to fail.
@@ -14,7 +16,7 @@ function downloadSVGasPNG(svgObject) {
 	  
 	  // Set canvas dimensions, maintaining aspect ratio
 	  const svgRect = svg.getBoundingClientRect();
-	  canvas.width = 1024;
+	  canvas.width = 1852;
 	  // Maintain aspect ratio
 	  canvas.height = svgRect.height/svgRect.width*canvas.width;
 	  
