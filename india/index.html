@@ -133,27 +133,27 @@
 	<div class="pure-g">
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/monthly_coal_full.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/monthly_coal_full.svg" target="_self">Enlarge this figure</a> | <a href="img/monthly_coal_full.png" target="_self">View as PNG</a></p>
+		<p><a href="img/monthly_coal_full.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/monthly_petrcons_tonnes.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/monthly_petrcons_tonnes.svg" target="_self">Enlarge this figure</a> | <a href="img/monthly_petrcons_tonnes.png" target="_self">View as PNG</a></p>
+		<p><a href="img/monthly_petrcons_tonnes.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/quarterly_GDP_growth.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/quarterly_GDP_growth.svg" target="_self">Enlarge this figure</a> | <a href="img/quarterly_GDP_growth.png" target="_self">View as PNG</a></p>
+		<p><a href="img/quarterly_GDP_growth.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/generation_shares.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/generation_shares.svg" target="_self">Enlarge this figure</a> | <a href="img/generation_shares.png" target="_self">View as PNG</a></p>
+		<p><a href="img/generation_shares.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/monthly_gas.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/monthly_gas.svg" target="_self">Enlarge this figure</a> | <a href="img/monthly_gas.png" target="_self">View as PNG</a></p>
+		<p><a href="img/monthly_gas.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/gas_consumption.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/gas_consumption.svg" target="_self">Enlarge this figure</a> | <a href="img/gas_consumption.png" target="_self">View as PNG</a></p>
+		<p><a href="img/gas_consumption.svg" target="_self">Enlarge this figure</a></p>
 		</div>
     </div>
 
@@ -362,6 +362,13 @@ function toggleShow(divname) {
     x.style.display = "none";
   }
 }
+</script>
+<script src="../js/downloadSVGasPNG.js"></script>
+<script>
+  // Add a PNG download link for every SVG on the page
+  document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+    svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+  });
 </script>
 
 </body>
