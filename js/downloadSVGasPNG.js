@@ -15,13 +15,13 @@ function downloadSVGasPNG(svgObject) {
 
 	  // Set canvas dimensions, maintaining aspect ratio
 	  const svgRect = svg.getBoundingClientRect();
-	  const width = Math.round(rect.width);
-	  const height = Math.round(rect.height);
+	  const width = Math.round(svgRect.width);
+	  const height = Math.round(svgRect.height);
 	  
 	  const scale = 2;
 	  canvas.width = 1852 * scale;
 	  // Maintain aspect ratio
-	  canvas.height = svgRect.height/svgRect.width*canvas.width;
+	  canvas.height = Math.round(svgRect.height/svgRect.width*canvas.width);
 	  
 	  const ctx = canvas.getContext('2d');
 	  
