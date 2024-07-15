@@ -2,6 +2,11 @@
 function downloadSVGasPNG(svgObject) {
   try {
 	  const svg = svgObject.contentDocument.querySelector('svg');
+	  const clonedSvg = svg.cloneNode(true);
+	  
+	  // Remove foreignObject elements from the clone. These are seen by the browser as cross-origin, and cause conversion to fail.
+      const foreignObjects = clonedSvg.querySelectorAll('foreignObject');
+      foreignObjects.forEach(fo => fo.remove());
 	  
 	  // Create a canvas element
 	  const canvas = document.createElement('canvas');
@@ -14,7 +19,7 @@ function downloadSVGasPNG(svgObject) {
 	  canvas.height = svgRect.height/svgRect.width*canvas.width;
 	  
 	  // Convert SVG to a data URL
-	  const svgData = new XMLSerializer().serializeToString(svg);
+	  const svgData = new XMLSerializer().serializeToString(clonedSvg);
 	  const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
 	  const DOMURL = window.URL || window.webkitURL || window;
 	  const svgUrl = DOMURL.createObjectURL(svgBlob);
@@ -26,7 +31,7 @@ function downloadSVGasPNG(svgObject) {
 		ctx.fillStyle = 'white';
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 		// Then draw the image on the canvas
-		ctx.drawImage(img, 0, 0);
+		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 		DOMURL.revokeObjectURL(svgUrl);
 		
 		// Convert canvas to PNG and initiate download
