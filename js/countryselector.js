@@ -22,53 +22,6 @@ fetch('https://robbieandrew.github.io/data/countryData.json')
   })
   .catch(error => console.error('Error loading country data:', error));
 
-function downloadSVGasPNG(svgObject) {
-  try {
-	  const svg = svgObject.contentDocument.querySelector('svg');
-	  
-	  // Create a canvas element
-	  const canvas = document.createElement('canvas');
-	  const ctx = canvas.getContext('2d');
-	  
-	  // Set canvas dimensions, maintaining aspect ratio
-	  const svgRect = svg.getBoundingClientRect();
-	  canvas.width = 1024;
-	  canvas.height = svgRect.height/svgRect.width*canvas.width;
-	  
-	  // Convert SVG to a data URL
-	  const svgData = new XMLSerializer().serializeToString(svg);
-	  const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
-	  const DOMURL = window.URL || window.webkitURL || window;
-	  const svgUrl = DOMURL.createObjectURL(svgBlob);
-	  
-	  // Create an image from the SVG
-	  const img = new Image();
-	  img.onload = function() {
-		// First draw a white background
-		ctx.fillStyle = 'white';
-		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		// Then draw the image on the canvas
-		ctx.drawImage(img, 0, 0);
-		DOMURL.revokeObjectURL(svgUrl);
-		
-		// Convert canvas to PNG and initiate download
-		canvas.toBlob(function(blob) {
-		  const url = DOMURL.createObjectURL(blob);
-		  const a = document.createElement('a');
-		  a.href = url;
-		  a.download = `${svgObject.getAttribute('data').split('/').pop().replace('.svg', '')}.png`;
-		  document.body.appendChild(a);
-		  a.click();
-		  document.body.removeChild(a);
-		  DOMURL.revokeObjectURL(url);
-		}, 'image/png');
-	  };
-	  img.src = svgUrl;
-  } catch (error) {
-	  console.warn("Unable to access SVG content! (Are you running locally?",error);
-  }
-}
-
 function addDownloadLink(svgObject) {
   const container = svgObject.parentNode;
   // Create the link

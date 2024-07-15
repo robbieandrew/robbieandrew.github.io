@@ -6,21 +6,18 @@ function downloadSVGasPNG(svgObject) {
 	  // Make a copy (clone) of the SVG object so we can manipulate it
 	  const clonedSvg = svg.cloneNode(true);
 	  
-	  // Remove foreignObject elements from the clone. These are seen by the browser as cross-origin, and cause conversion to fail.
+	  // Remove any foreignObject elements from the clone. These are seen by the browser as cross-origin, and cause conversion (toBlob) to fail.
       const foreignObjects = clonedSvg.querySelectorAll('foreignObject');
       foreignObjects.forEach(fo => fo.remove());
 	  
-	  // Create a canvas element (raster)
+	  // Create a canvas element (bitmap)
 	  const canvas = document.createElement('canvas');
 
-	  // Set canvas dimensions, maintaining aspect ratio
-	  const svgRect = svg.getBoundingClientRect();
-	  const width = Math.round(svgRect.width);
-	  const height = Math.round(svgRect.height);
-	  
+	  // To improve antialiasing in the final render, first convert to raster at double the desired resolution before later scaling down again
 	  const scale = 2;
 	  canvas.width = 1852 * scale;
 	  // Maintain aspect ratio
+	  const svgRect = svg.getBoundingClientRect();
 	  canvas.height = Math.round(svgRect.height/svgRect.width*canvas.width);
 	  
 	  const ctx = canvas.getContext('2d');
@@ -31,7 +28,7 @@ function downloadSVGasPNG(svgObject) {
 	  const DOMURL = window.URL || window.webkitURL || window;
 	  const svgUrl = DOMURL.createObjectURL(svgBlob);
 	  
-	  // Create an image from the SVG
+	  // Create a bitmap from the SVG
 	  const img = new Image();
 	  img.onload = function() {
 		// First draw a white background
@@ -69,7 +66,7 @@ function downloadSVGasPNG(svgObject) {
 	  };
 	  img.src = svgUrl;
   } catch (error) {
-	  console.warn("Unable to access SVG content! (Are you running locally?",error);
+	  console.warn("Unable to access SVG content! (Are you running locally?)",error);
   }
 }
 
@@ -79,7 +76,7 @@ function createDownloadLink(svgObject) {
   downloadLink.href = '#';
   downloadLink.textContent = 'Download as PNG';
   downloadLink.className = 'download-PNG';
-  // Add click event
+  // Add click event handler
   downloadLink.addEventListener('click', (e) => {
     e.preventDefault(); // prevent browser trying to navigate to https://.../#
     downloadSVGasPNG(svgObject);
