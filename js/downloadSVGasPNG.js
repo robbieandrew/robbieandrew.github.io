@@ -10,15 +10,20 @@ function downloadSVGasPNG(svgObject) {
       const foreignObjects = clonedSvg.querySelectorAll('foreignObject');
       foreignObjects.forEach(fo => fo.remove());
 	  
-	  // Create a canvas element
+	  // Create a canvas element (raster)
 	  const canvas = document.createElement('canvas');
-	  const ctx = canvas.getContext('2d');
-	  
+
 	  // Set canvas dimensions, maintaining aspect ratio
 	  const svgRect = svg.getBoundingClientRect();
-	  canvas.width = 1852;
+	  const width = Math.round(rect.width);
+	  const height = Math.round(rect.height);
+	  
+	  const scale = 2;
+	  canvas.width = 1852 * scale;
 	  // Maintain aspect ratio
 	  canvas.height = svgRect.height/svgRect.width*canvas.width;
+	  
+	  const ctx = canvas.getContext('2d');
 	  
 	  // Convert SVG to a data URL
 	  const svgData = new XMLSerializer().serializeToString(clonedSvg);
@@ -36,8 +41,22 @@ function downloadSVGasPNG(svgObject) {
 		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 		DOMURL.revokeObjectURL(svgUrl);
 		
+		let finalCanvas;
+		if (scale === 1) {
+			finalCanvas = canvas;
+		} else {
+		  // Create a smaller canvas for the final output
+		  finalCanvas = document.createElement('canvas');
+          finalCanvas.width = canvas.width / scale;
+          finalCanvas.height = canvas.height / scale;
+          const finalCtx = finalCanvas.getContext('2d');
+          // Draw the high-resolution canvas onto the smaller canvas
+          finalCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 
+                         0, 0, finalCanvas.width, finalCanvas.height);
+		}
+		
 		// Convert canvas to PNG and initiate download
-		canvas.toBlob(function(blob) {
+		finalCanvas.toBlob(function(blob) {
 		  const url = DOMURL.createObjectURL(blob);
 		  const a = document.createElement('a');
 		  a.href = url;
