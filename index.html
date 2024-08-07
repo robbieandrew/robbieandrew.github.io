@@ -3,66 +3,10 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/cards.css">
 <style>
-.parent {
-	display: grid;
-	justify-content:center;
-	align-items:center;
-	column-gap: 10px;
-	row-gap: 1em;
-}
-
-@media only screen and (max-width: 649px) {
-	.parent {
-		grid-template-columns: 320px;
-	}
-}
-@media only screen and (min-width: 650px) {
-	.parent {
-		grid-template-columns: 320px 320px;
-	}
-}
-@media only screen and (min-width: 970px) {
-	.parent {
-		grid-template-columns: 320px 320px 320px;
-	}
-}
-
-.card {
-	height: 200px;
-	width: 260px;
-	background: #FFF;
-	border: 1px solid #FAFAFA;
-	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
-	border-radius: 20px;
-	padding: 0.5em 1em 0.5em 1em;
-	font-family: Tahoma, sans-serif;
-	font-size: 1.2rem;
-	cursor: pointer;
-	position: relative;
-	transition: box-shadow 0.2s;
-}
-
-.card:hover {
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-.card p {
-	z-index: 10;
-	margin: 0;
-}
-
-.view {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 1;
-	opacity: 0;
-}
-.subb {font-size: 70%;line-height:normal;}
-.heading {text-align: center; font-family: Tahoma, sans-serif; margin: 10px;}
+  .subb {font-size: 70%;line-height:normal;}
+  .heading {text-align: center; font-family: Tahoma, sans-serif; margin: 10px;}
 </style>
 
 </head>
@@ -109,6 +53,11 @@
   <img width="100%" src="consumption/PNG/thumb/AUS_cons.webp">
 	<p>Comparisons of consumption-based emissions</p>
 	<a class = "view" href = "https://robbieandrew.github.io/consumption">View</a>
+</div>
+<div class="card">
+  <img width="100%" src="EU/img/EU_monthly_CO2.webp">
+	<p>European Union CO<span class="subb">2</span> emissions</p>
+	<a class = "view" href = "https://robbieandrew.github.io/EU">View</a>
 </div>
 <div class="card">
   <img width="100%" src="china/img/CHN_growth.webp">
