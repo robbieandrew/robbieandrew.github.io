@@ -37,9 +37,6 @@ text:hover + .dl_el {display:block;}
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
-  <g id="mk1"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#6298C6" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#6298C6" stroke="#FFF"/></g>
-  <g id="mk2"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#404040" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#404040" stroke="#FFF"/></g>
-  <g id="mk3"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#7B553E" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#7B553E" stroke="#FFF"/></g>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="mk_x" d="M-5,-5L5,5M-5,5L5,-5"/>
@@ -115,16 +112,6 @@ text:hover + .dl_el {display:block;}
       <use xlink:href="#mk_x" transform="translate(764.4,273.2) scale(1.1)" />
       <use xlink:href="#mk_x" transform="translate(859.6,271.3) scale(1.1)" />
     </g>
-    <g>
-      <g class="pl_1 marker" transform="translate(193.2,271.3)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1777.4</text></g>
-      <g class="pl_1 marker" transform="translate(288.4,268.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1792.4</text></g>
-      <g class="pl_1 marker" transform="translate(383.6,272.1)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1772.7</text></g>
-      <g class="pl_1 marker" transform="translate(478.8,271.7)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1775.0</text></g>
-      <g class="pl_1 marker" transform="translate(574.0,273.0)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1767.6</text></g>
-      <g class="pl_1 marker" transform="translate(669.2,272.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1770.0</text></g>
-      <g class="pl_1 marker" transform="translate(764.4,273.2)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1766.4</text></g>
-      <g class="pl_1 marker" transform="translate(859.6,271.3)"><use xlink:href="#mk1"/><text class="dp1" y="-25">1777.6</text></g>
-    </g>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
@@ -148,16 +135,6 @@ text:hover + .dl_el {display:block;}
       <use xlink:href="#mk_x" transform="translate(764.4,446.7) scale(1.1)" />
       <use xlink:href="#mk_x" transform="translate(859.6,451.2) scale(1.1)" />
     </g>
-    <g>
-      <g class="pl_2 marker" transform="translate(193.2,458.5)"><use xlink:href="#mk2"/><text class="dp2" y="-25">723.8</text></g>
-      <g class="pl_2 marker" transform="translate(288.4,458.1)"><use xlink:href="#mk2"/><text class="dp2" y="-25">726.0</text></g>
-      <g class="pl_2 marker" transform="translate(383.6,456.4)"><use xlink:href="#mk2"/><text class="dp2" y="-25">735.7</text></g>
-      <g class="pl_2 marker" transform="translate(478.8,459.6)"><use xlink:href="#mk2"/><text class="dp2" y="-25">718.0</text></g>
-      <g class="pl_2 marker" transform="translate(574.0,454.3)"><use xlink:href="#mk2"/><text class="dp2" y="-25">747.5</text></g>
-      <g class="pl_2 marker" transform="translate(669.2,450.4)"><use xlink:href="#mk2"/><text class="dp2" y="-25">769.7</text></g>
-      <g class="pl_2 marker" transform="translate(764.4,446.7)"><use xlink:href="#mk2"/><text class="dp2" y="-25">790.4</text></g>
-      <g class="pl_2 marker" transform="translate(859.6,451.2)"><use xlink:href="#mk2"/><text class="dp2" y="-25">765.3</text></g>
-    </g>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
@@ -180,16 +157,6 @@ text:hover + .dl_el {display:block;}
       <use xlink:href="#mk_x" transform="translate(669.2,185.4) scale(1.1)" />
       <use xlink:href="#mk_x" transform="translate(764.4,186.4) scale(1.1)" />
       <use xlink:href="#mk_x" transform="translate(859.6,186.1) scale(1.1)" />
-    </g>
-    <g>
-      <g class="pl_3 marker" transform="translate(193.2,185.1)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2262.5</text></g>
-      <g class="pl_3 marker" transform="translate(288.4,185.9)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2257.8</text></g>
-      <g class="pl_3 marker" transform="translate(383.6,183.7)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2270.1</text></g>
-      <g class="pl_3 marker" transform="translate(478.8,182.5)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2276.7</text></g>
-      <g class="pl_3 marker" transform="translate(574.0,185.4)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2260.5</text></g>
-      <g class="pl_3 marker" transform="translate(669.2,185.4)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2260.5</text></g>
-      <g class="pl_3 marker" transform="translate(764.4,186.4)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2255.1</text></g>
-      <g class="pl_3 marker" transform="translate(859.6,186.1)"><use xlink:href="#mk3"/><text class="dp2" y="-25">2256.9</text></g>
     </g>
   </g>
 </g>
@@ -235,8 +202,8 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(924.0,492.7)"  font-size="18.00" fill="#808080" stroke="none">
       <tspan x="0" y="-4.7">Total forecast</tspan><tspan x="0" y="15.5">growth rate for 2024</tspan>
     </text>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Changing &#60;a href="https://www.eia.gov/international/data/world/other-statistics/emissions-by-fuel" target="_blank" style="fill:#808080"&#62;EIA&#60;/a&#62; forecasts for US CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>emissions in 2024</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a>   &#9679;   Data: <a href="https://www.eia.gov/international/data/world/other-statistics/emissions-by-fuel" target="_blank" style="fill:#BFBFBF">EIA</a></text>
+    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Changing EIA forecasts for US CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>emissions in 2024</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a>   &#9679;   Data: EIA</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
