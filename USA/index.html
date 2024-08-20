@@ -7,7 +7,7 @@
   <base target="_blank">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
-  <title>EIA's estimates of US fossil CO2 emissions</title>
+  <title>US energy and CO2 emissions information</title>
   <style>
     h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
 	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
@@ -19,8 +19,9 @@
 <body>
   <main>
     <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
-	
-	<h1>EIA's estimates of US fossil CO<span class="subb">2</span> emissions</h1>
+
+	<h1>US energy and CO<span class="subb">2</span> emissions information</h1>
+	<h2>EIA's estimates of US fossil CO<span class="subb">2</span> emissions</h1>
 
 	<p>Updated monthly</p>
 	<p>Click on any figure to show fullscreen</p>
@@ -80,7 +81,19 @@
 		</div>
     </div>
 	
-	<h1>Monthly car sales data</h1>
+	<h2>Power plant fleet</h1>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/US_coalpower_retirements.svg" type="image/svg+xml" class="fig"></object>
+		<p><a href="img/US_coalpower_retirements.svg" target="_self">Enlarge this figure</a></p>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/US_coalpower_operating.svg" type="image/svg+xml" class="fig"></object>
+		<p><a href="img/US_coalpower_operating.svg" target="_self">Enlarge this figure</a></p>
+		</div>
+	</div>
+	
+	<h2>Monthly car sales data</h1>
 	<div class="pure-g">
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	  <a href="img/USAcarsales_abs_stacked.png"><img loading="lazy" class="pure-img" src="img/USAcarsales_abs_stacked.png" title="Click for high-res PNG"></a>
@@ -88,6 +101,14 @@
 	</div>
     <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
   </main>
+<script src="../js/downloadSVGasPNG.js"></script>
+<script>
+  // Add a PNG download link for every SVG on the page
+  document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+    svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+  });
+</script>
+
 </body>
 
 </html>
