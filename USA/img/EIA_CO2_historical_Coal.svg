@@ -4,7 +4,6 @@
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
-  a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
   .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
@@ -18,35 +17,12 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
-  #lines .pl {transition: all 0.2s ease;}
-  #lines:hover .pl {opacity:0.3;}
-  #lines:hover .thick {stroke-width:1;}
-  #lines:hover .pl_1:hover .pl {opacity:1;}
-  #lines:hover .pl_1:hover .pll {stroke-width:3;}
-  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_1:hover .thick {stroke-width:12;}
-  #lines:hover .pl_2:hover .pl {opacity:1;}
-  #lines:hover .pl_2:hover .pll {stroke-width:3;}
-  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_2:hover .thick {stroke-width:12;}
-  #lines:hover .pl_3:hover .pl {opacity:1;}
-  #lines:hover .pl_3:hover .pll {stroke-width:3;}
-  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_3:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
-  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="561.0,300.9 630.3,297.3" stroke="#8F664A" stroke-width="2.70" stroke-dasharray="10" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
-  </symbol>
-  <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-  </symbol>
-  <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,300.4 214.8,498.5 284.1,543.0 353.3,558.1 422.5,541.7 491.8,364.8 561.0,300.9" stroke="#8F664A" stroke-width="2.70" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
-  </symbol>
 </defs>
 <g id="main">
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
@@ -101,36 +77,26 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel ytl" transform="translate(128.8,195.4)">100</text>
 <text class="ticklabel ytl" transform="translate(128.8,128.7)">110</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">120 Mt</text>
-    <g stroke="none" stroke-width="0.9000" fill-opacity="0.20" clip-path="url(#axis_clip)">
-      <polygon class="pl" points="145.6,379.8 214.8,483.2 284.1,459.9 353.3,534.9 422.5,502.8 491.8,408.7 561.0,277.9 630.3,284.6 699.5,401.7 768.7,454.7 838.0,453.3 907.2,428.1 907.2,277.3 838.0,292.2 768.7,344.2 699.5,229.2 630.3,123.1 561.0,120.1 491.8,224.4 422.5,312.7 353.3,394.9 284.1,260.6 214.8,223.4 145.6,119.4" fill="#8F664A"/>
-    </g>
-<g id="lines">
-  <g class="pl_1">
-    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pll" stroke="#8F664A" stroke-width="2.70" stroke-dasharray="10"/>
-  </g>
-  <g class="pl_2">
-    <g class="pl pll" fill="#8F664A" stroke="#8F664A" stroke-width="0.900">
-      <circle cx="561.0" cy="300.9" r="5.4" />
-    </g>
-  </g>
-  <g class="pl_3">
-    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_3" class="pl pll" stroke="#8F664A" stroke-width="2.70"/>
-  </g>
+<g stroke="none" stroke-width="0.9000" fill-opacity="0.20" clip-path="url(#axis_clip)">
+  <polygon points="145.6,379.8 214.8,483.2 284.1,459.9 353.3,534.9 422.5,502.8 491.8,408.7 561.0,277.9 630.3,284.6 699.5,401.7 768.7,454.7 838.0,453.3 907.2,428.1 907.2,277.3 838.0,292.2 768.7,344.2 699.5,229.2 630.3,123.1 561.0,120.1 491.8,224.4 422.5,312.7 353.3,394.9 284.1,260.6 214.8,223.4 145.6,119.4" fill="#8F664A"/>
 </g>
-    <text class="pl" transform="translate(571.7,307.5)" dy="21.6" font-size="21.60" fill="#8F664A" stroke="none">2024</text>
-    <text class="pl" transform="translate(641.0,290.8)" dy="5.4" font-size="18.00" fill="#8F664A" stroke="none">forecast for August</text>
+<polyline class="pl" points="145.6,300.4 214.8,498.5 284.1,543.0 353.3,558.1 422.5,541.7 491.8,364.8 561.0,300.9" stroke="#8F664A" stroke-width="2.70" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<g class="pl" fill="#8F664A" stroke="#8F664A" stroke-width="0.900">
+  <circle cx="561.0" cy="300.9" r="5.4" />
+</g>
+<text transform="translate(571.7,307.5)" dy="21.6" font-size="21.60" fill="#8F664A" stroke="none">2024</text>
+<polyline class="pl" points="561.0,300.9 630.3,297.3" stroke="#8F664A" stroke-width="2.70" stroke-dasharray="10" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<text transform="translate(641.0,290.8)" dy="5.4" font-size="18.00" fill="#8F664A" stroke="none">forecast for August</text>
 <polyline class="pl" points="966.2,277.3 966.2,277.3 966.2,277.3 966.3,277.3 966.3,277.3 966.4,277.3 966.6,277.3 966.7,277.3 966.9,277.3 967.0,277.4 967.2,277.4 967.4,277.4 967.6,277.4 967.9,277.5 968.1,277.5 968.4,277.6 968.6,277.6 968.9,277.7 969.2,277.8 969.4,277.9 969.7,278.0 970.0,278.1 970.3,278.2 970.6,278.3 970.9,278.5 971.2,278.6 971.5,278.8 971.8,278.9 972.1,279.1 972.4,279.3 972.7,279.5 973.0,279.8 973.3,280.0 973.5,280.3 973.8,280.6 974.0,280.9 974.3,281.2 974.5,281.5 974.7,281.9 974.9,282.2 975.1,282.6 975.3,283.0 975.4,283.5 975.6,283.9 975.7,284.4 975.8,284.9 975.9,285.4 975.9,286.0 976.0,286.5 976.0,287.1" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="966.2,428.1 966.2,428.1 966.2,428.1 966.3,428.1 966.3,428.1 966.4,428.1 966.6,428.1 966.7,428.1 966.9,428.0 967.0,428.0 967.2,428.0 967.4,428.0 967.6,427.9 967.9,427.9 968.1,427.9 968.4,427.8 968.6,427.7 968.9,427.7 969.2,427.6 969.4,427.5 969.7,427.4 970.0,427.3 970.3,427.2 970.6,427.1 970.9,426.9 971.2,426.8 971.5,426.6 971.8,426.4 972.1,426.3 972.4,426.0 972.7,425.8 973.0,425.6 973.3,425.4 973.5,425.1 973.8,424.8 974.0,424.5 974.3,424.2 974.5,423.9 974.7,423.5 974.9,423.1 975.1,422.7 975.3,422.3 975.4,421.9 975.6,421.5 975.7,421.0 975.8,420.5 975.9,420.0 975.9,419.4 976.0,418.9 976.0,418.3" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="976.0,362.5 976.0,362.5 976.0,362.5 976.0,362.4 976.0,362.3 976.0,362.2 976.0,362.1 976.0,362.0 976.0,361.8 976.1,361.6 976.1,361.4 976.1,361.2 976.1,361.0 976.2,360.8 976.2,360.6 976.3,360.3 976.3,360.0 976.4,359.8 976.5,359.5 976.6,359.2 976.7,358.9 976.8,358.6 976.9,358.3 977.0,358.0 977.1,357.7 977.3,357.4 977.5,357.1 977.6,356.8 977.8,356.6 978.0,356.3 978.2,356.0 978.5,355.7 978.7,355.4 979.0,355.1 979.3,354.9 979.6,354.6 979.9,354.4 980.2,354.2 980.6,354.0 980.9,353.7 981.3,353.6 981.7,353.4 982.2,353.2 982.6,353.1 983.1,353.0 983.6,352.9 984.1,352.8 984.7,352.7 985.2,352.7 985.8,352.7" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="976.0,342.9 976.0,342.9 976.0,342.9 976.0,343.0 976.0,343.1 976.0,343.2 976.0,343.3 976.0,343.4 976.0,343.6 976.1,343.7 976.1,343.9 976.1,344.1 976.1,344.4 976.2,344.6 976.2,344.8 976.3,345.1 976.3,345.3 976.4,345.6 976.5,345.9 976.6,346.2 976.7,346.4 976.8,346.7 976.9,347.0 977.0,347.3 977.1,347.6 977.3,347.9 977.5,348.2 977.6,348.5 977.8,348.8 978.0,349.1 978.2,349.4 978.5,349.7 978.7,350.0 979.0,350.2 979.3,350.5 979.6,350.7 979.9,351.0 980.2,351.2 980.6,351.4 980.9,351.6 981.3,351.8 981.7,352.0 982.2,352.1 982.6,352.3 983.1,352.4 983.6,352.5 984.1,352.6 984.7,352.6 985.2,352.7 985.8,352.7" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="976.0,287.1 976.0,342.9" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="976.0,418.3 976.0,362.5" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-    <text class="pl" transform="translate(995.6,352.7)" dy="5.4" font-size="18.00" fill="#808080" stroke="none">Range for 2019&#8211;2023</text>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly US CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>emissions: Coal</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a>   &#9679;   Data: <a href="https://www.eia.gov/international/data/world/other-statistics/emissions-by-fuel" target="_blank" style="fill:#BFBFBF">EIA</a></text>
-<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a></text>
+<text transform="translate(995.6,352.7)" dy="5.4" font-size="18.00" fill="#808080" stroke="none">Range for 2019&#8211;2023</text>
+<text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly US CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>emissions: Coal</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbie_andrew   &#9679;   Data: EIA</text>
+<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
       <foreignObject x="0" y="0" width="120" height="500">
@@ -142,7 +108,6 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -156,17 +121,6 @@ text:hover + .dl_el {display:block;}
      <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
-  </a>
 </g>
-  <g class="dl_el" transform="translate(69.1,548.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="250" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
-      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
-    </g>
-  </g>
 </g>
 </svg>
