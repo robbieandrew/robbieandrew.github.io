@@ -27,44 +27,55 @@
 	<div class="pure-g">
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/fuelsales.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/fuelsales.svg" target="_self">Enlarge this figure</a> | <a href="img/fuelsales.png" target="_self">View as PNG</a></p>
+		<p><a href="img/fuelsales.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/fueluse_oilgas.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/fueluse_oilgas.svg" target="_self">Enlarge this figure</a> | <a href="img/fueluse_oilgas.png" target="_self">View as PNG</a></p>
+		<p><a href="img/fueluse_oilgas.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/production_by_field.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/production_by_field.svg" target="_self">Enlarge this figure</a> | <a href="img/production_by_field.png" target="_self">View as PNG</a></p>
+		<p><a href="img/production_by_field.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/flaring_by_site.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/flaring_by_site.svg" target="_self">Enlarge this figure</a> | <a href="img/flaring_by_site.png" target="_self">View as PNG</a></p>
+		<p><a href="img/flaring_by_site.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/production_oilgas.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/production_oilgas.svg" target="_self">Enlarge this figure</a> | <a href="img/production_oilgas.png" target="_self">View as PNG</a></p>
+		<p><a href="img/production_oilgas.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/norskoljegassCO2.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/norskoljegassCO2.svg" target="_self">Enlarge this figure</a> | <a href="img/norskoljegassCO2.png" target="_self">View as PNG</a></p>
+		<p><a href="img/norskoljegassCO2.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/havbase_CO2_lines.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/havbase_CO2_lines.svg" target="_self">Enlarge this figure</a> | <a href="img/havbase_CO2_lines.png" target="_self">View as PNG</a></p>
-		</div>
-	  <div class="pure-u-1 pure-u-lg-1-2">
-	    <object data="img/NorskOljeGassUtslipp_2030.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/NorskOljeGassUtslipp_2030.svg" target="_self">Enlarge this figure</a> | <a href="img/NorskOljeGassUtslipp_2030.png" target="_self">View as PNG</a></p>
+		<p><a href="img/havbase_CO2_lines.svg" target="_self">Enlarge this figure</a></p>
 		</div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <object data="img/thermal_power_gen_norway.svg" type="image/svg+xml" class="fig"></object>
-		<p><a href="img/thermal_power_gen_norway.svg" target="_self">Enlarge this figure</a> | <a href="img/thermal_power_gen_norway.png" target="_self">View as PNG</a></p>
+		<p><a href="img/thermal_power_gen_norway.svg" target="_self">Enlarge this figure</a></p>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/NorskOljeGassUtslipp_2030.svg" type="image/svg+xml" class="fig"></object>
+		<p><a href="img/NorskOljeGassUtslipp_2030.svg" target="_self">Enlarge this figure</a></p>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/oljeprognoser_en.svg" type="image/svg+xml" class="fig"></object>
+		<p><a href="img/oljeprognoser_en.svg" target="_self">Enlarge this figure</a></p>
 		</div>
     </div>
 
     <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
   </main>
+<script src="../js/downloadSVGasPNG.js"></script>
+<script>
+  // Add a PNG download link for every SVG on the page
+  document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+    svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+  });
+</script>
 </body>
 
 </html>
