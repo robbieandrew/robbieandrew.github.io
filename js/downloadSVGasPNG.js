@@ -98,7 +98,8 @@ function replacePNGlink(svgObject) {
 
   const nextSibling = svgObject.nextElementSibling;
   
-  if (nextSibling && nextSibling.tagName.toLowerCase() === 'p') {
+//  if (nextSibling && nextSibling.tagName.toLowerCase() === 'p') {
+  if (nextSibling && nextSibling.matches('p, div')) {
     const links = nextSibling.querySelectorAll('a');
     for (const link of links) {
       if (link.innerHTML.trim() === 'View as PNG') {
