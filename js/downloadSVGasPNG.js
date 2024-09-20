@@ -103,7 +103,7 @@ function replacePNGlink(svgObject) {
     const links = nextSibling.querySelectorAll('a');
     for (const link of links) {
       if (link.innerHTML.trim() === 'Download as PNG') {
-		return ;
+		return ; // already exists
 	  }
       if (link.innerHTML.trim() === 'View as PNG') {
         link.parentNode.replaceChild(downloadLink, link);
