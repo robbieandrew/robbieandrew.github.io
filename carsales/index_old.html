@@ -17,65 +17,6 @@
 	.details {width:85%;text-align:center;font-size:70%}
 	.options {width:85%;text-align:center;font-size:70%;margin-top:5px;margin-bottom:25px}
   </style>
-<style>
-.selector-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 20px;
-}
-
-.button-group {
-  position: relative;
-  padding: 15px 10px;
-}
-
-/* Top and bottom lines */
-.button-group::before,
-.button-group::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: black;
-}
-
-.button-group::before {
-  top: 0;
-}
-
-.button-group::after {
-  bottom: 0;
-}
-
-/* Vertical lines on sides */
-.button-group {
-  background-image: 
-    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px)),
-    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px));
-  background-position: left, right;
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-}
-
-.frequency-button, .format-button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: 2px solid #007bff;
-  background-color: white;
-  color: #007bff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.frequency-button.active, .format-button.active {
-  background-color: #007bff;
-  color: white;
-}
-</style>
 </head>
 
 <body>
@@ -84,18 +25,7 @@
 
 	<h1>Collected vehicle registration data</h1>
 
-<div class="selector-container">
-  <div class="button-group frequency-selector-container">
-    <button class="frequency-button" data-frequency="monthly">Monthly</button>
-    <button class="frequency-button" data-frequency="quarterly">Quarterly</button>
-    <button class="frequency-button" data-frequency="half-yearly">Half-yearly</button>
-    <button class="frequency-button" data-frequency="annual">Annual</button>
-  </div>
-  <div class="button-group format-selector-container">
-    <button class="format-button active" data-format="relative">Relative</button>
-    <button class="format-button" data-format="absolute">Absolute</button>
-  </div>
-</div>
+	<h2>Monthly car sales data</h1>
 	<div class="pure-g">
 	
 	
@@ -196,71 +126,6 @@
   document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
     svgObject.addEventListener('load', () => replacePNGlink(svgObject));
   });
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const frequencyButtons = document.querySelectorAll('.frequency-button');
-  const formatButtons = document.querySelectorAll('.format-button');
-  const chartContainers = document.querySelectorAll('.pure-u-1.pure-u-lg-1-3');
-  
-  // Set default active buttons
-  frequencyButtons[0].classList.add('active');
-  formatButtons[0].classList.add('active');
-
-  function updateCharts() {
-    const activeFrequency = document.querySelector('.frequency-button.active').getAttribute('data-frequency');
-    const activeFormat = document.querySelector('.format-button.active').getAttribute('data-format');
-    
-    chartContainers.forEach(container => {
-      const country = container.querySelector('.countrytitle').textContent
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g, '');
-      const objectElement = container.querySelector('object');
-      const links = container.querySelectorAll('.options a');
-      
-      const formatSuffix = activeFormat === 'absolute' ? '_abs' : '';
-      const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
-      const newCsvPath = `data/${country}_carsales_${activeFrequency}${formatSuffix}.csv`;
-      
-      // Update the object element
-      objectElement.setAttribute('data', newSvgPath);
-      
-      // Update the links
-      links.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href.includes('.svg')) {
-          link.setAttribute('href', newSvgPath);
-        } else if (href.includes('.csv')) {
-          link.setAttribute('href', newCsvPath);
-        }
-      });
-    });
-  }
-
-  function setActiveButton(buttons, clickedButton) {
-    buttons.forEach(btn => btn.classList.remove('active'));
-    clickedButton.classList.add('active');
-  }
-
-  frequencyButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      setActiveButton(frequencyButtons, this);
-      updateCharts();
-    });
-  });
-
-  formatButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      setActiveButton(formatButtons, this);
-      updateCharts();
-    });
-  });
-
-  // Initial chart update
-  updateCharts();
-});
 </script>
 
 </body>
