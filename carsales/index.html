@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const formatSuffix = activeFormat === 'absolute' ? '_abs' : '';
       const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
-      const newCsvPath = `data/${country}_carsales_${activeFrequency}${formatSuffix}.csv`;
+      const newCsvPath = `data/${country}_carsales_${activeFrequency}.csv`;
       
       // Update the object element
       objectElement.setAttribute('data', newSvgPath);
