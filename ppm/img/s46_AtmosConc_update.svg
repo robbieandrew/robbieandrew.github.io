@@ -20,11 +20,19 @@ text:hover + .dl_el {display:block;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
+  <path id="line_y" d="M 0,53.993 v 533.183" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
 </defs>
 <g id="main">
+<use xlink:href="#line_y" transform="translate(145.6,0)"/>
+<use xlink:href="#line_y" transform="translate(262.8,0)"/>
+<use xlink:href="#line_y" transform="translate(379.9,0)"/>
+<use xlink:href="#line_y" transform="translate(497.1,0)"/>
+<use xlink:href="#line_y" transform="translate(614.3,0)"/>
+<use xlink:href="#line_y" transform="translate(731.4,0)"/>
+<use xlink:href="#line_y" transform="translate(848.6,0)"/>
 <use xlink:href="#line_x" transform="translate(0,542.7)"/>
 <use xlink:href="#line_x" transform="translate(0,453.9)"/>
 <use xlink:href="#line_x" transform="translate(0,365.0)"/>
@@ -72,7 +80,7 @@ text:hover + .dl_el {display:block;}
       <tspan x="0" y="-6.6">Seasonally</tspan><tspan x="0" y="21.7">corrected trend</tspan>
     </text>
 <text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Atmospheric CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>concentration: Global average</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbie_andrew   &#9679;   Data: Scripps/NOAA-ESRL   &#9679;   Updated: 6 October 2024</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbie_andrew   &#9679;   Data: Scripps/NOAA-ESRL   &#9679;   Updated: 15 October 2024</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
