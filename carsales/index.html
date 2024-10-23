@@ -94,6 +94,7 @@
   <div class="button-group format-selector-container">
     <button class="format-button active" data-format="relative">Relative</button>
     <button class="format-button" data-format="absolute">Absolute</button>
+    <button class="format-button" data-format="line">Line</button>
   </div>
 </div>
 	<div class="pure-g">
@@ -316,7 +317,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const objectElement = container.querySelector('object');
       const links = container.querySelectorAll('.options a');
       
-      const formatSuffix = activeFormat === 'absolute' ? '_abs' : '';
+      const formatSuffix = activeFormat === 'absolute' ? '_abs' :
+						   activeFormat === 'line' ? '_line' : '';
       const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
       const newCsvPath = `data/${country}_carsales_${activeFrequency}.csv`;
       
