@@ -44,13 +44,13 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="162.4,471.0 196.6,463.0 230.8,446.9 266.2,464.2 301.5,448.6 336.9,450.5 372.2,463.1 408.2,459.3 443.5,461.1 478.9,476.0 514.2,480.7 549.6,501.6 585.5,561.2 620.2,564.7 654.8,563.5 690.1,562.1 725.4,562.8 760.6,562.9 795.9,565.5 831.7,560.1" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="162.4,471.0 196.6,463.0 230.8,446.9 266.2,464.2 301.5,448.6 336.9,450.5 372.2,463.1 408.2,459.3 443.5,461.1 478.9,476.0 514.2,480.7 549.6,501.6 585.5,561.2 620.2,564.7 654.8,563.5 690.1,562.1 725.4,562.8 760.6,562.9 795.9,565.5 831.7,560.1 867.0,563.6" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="162.4,303.2 196.6,322.1 230.8,287.4 266.2,297.8 301.5,268.4 336.9,321.0 372.2,320.2 408.2,275.5 443.5,301.6 478.9,265.0 514.2,294.1 549.6,316.1 585.5,165.1 620.2,224.0 654.8,205.7 690.1,185.8 725.4,166.7 760.6,191.9 795.9,211.4 831.7,162.4" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="162.4,303.2 196.6,322.1 230.8,287.4 266.2,297.8 301.5,268.4 336.9,321.0 372.2,320.2 408.2,275.5 443.5,301.6 478.9,265.0 514.2,294.1 549.6,316.1 585.5,165.1 620.2,224.0 654.8,205.7 690.1,185.8 725.4,166.7 760.6,191.9 795.9,211.4 831.7,162.4 867.0,170.3" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="162.4,187.0 196.6,197.9 230.8,147.1 266.2,174.8 301.5,129.8 336.9,184.3 372.2,196.1 408.2,147.6 443.5,175.6 478.9,153.9 514.2,187.7 549.6,230.5 585.5,138.7 620.2,201.4 654.8,180.6 690.1,159.3 725.4,140.7 760.6,166.3 795.9,187.9 831.7,133.6" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="162.4,187.0 196.6,197.9 230.8,147.1 266.2,174.8 301.5,129.8 336.9,184.3 372.2,196.1 408.2,147.6 443.5,175.6 478.9,153.9 514.2,187.7 549.6,230.5 585.5,138.7 620.2,201.4 654.8,180.6 690.1,159.3 725.4,140.7 760.6,166.3 795.9,187.9 831.7,133.6 867.0,144.7" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -86,7 +86,7 @@ text:hover + .dl_el {display:block;}
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#77AC30" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,560.1)" dy="8.1" font-size="27.00" fill="#77AC30" stroke="none">Biodiesel</text>
+    <text class="pl" transform="translate(925.2,563.6)" dy="8.1" font-size="27.00" fill="#77AC30" stroke="none">Biodiesel</text>
     <g class="pl pll" fill="#77AC30" stroke="none" stroke-width="1.800">
       <circle cx="162.4" cy="471.0" r="2.7" />
       <circle cx="196.6" cy="463.0" r="2.7" />
@@ -108,6 +108,7 @@ text:hover + .dl_el {display:block;}
       <circle cx="760.6" cy="562.9" r="2.7" />
       <circle cx="795.9" cy="565.5" r="2.7" />
       <circle cx="831.7" cy="560.1" r="2.7" />
+      <circle cx="867.0" cy="563.6" r="2.7" />
     </g>
     <g>
       <g class="pl_1 marker" transform="translate(162.4,471.0)"><use xlink:href="#mk1"/><text class="dp1" y="-25">130.7</text></g>
@@ -130,12 +131,13 @@ text:hover + .dl_el {display:block;}
       <g class="pl_1 marker" transform="translate(760.6,562.9)"><use xlink:href="#mk1"/><text class="dp1" y="-25">27.3</text></g>
       <g class="pl_1 marker" transform="translate(795.9,565.5)"><use xlink:href="#mk1"/><text class="dp1" y="-25">24.4</text></g>
       <g class="pl_1 marker" transform="translate(831.7,560.1)"><use xlink:href="#mk1"/><text class="dp1" y="-25">30.5</text></g>
+      <g class="pl_1 marker" transform="translate(867.0,563.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">26.5</text></g>
     </g>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#D95319" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,162.4)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Fossil diesel</text>
+    <text class="pl" transform="translate(925.2,170.5)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Fossil diesel</text>
     <g class="pl pll" fill="#D95319" stroke="none" stroke-width="1.800">
       <circle cx="162.4" cy="303.2" r="2.7" />
       <circle cx="196.6" cy="322.1" r="2.7" />
@@ -157,6 +159,7 @@ text:hover + .dl_el {display:block;}
       <circle cx="760.6" cy="191.9" r="2.7" />
       <circle cx="795.9" cy="211.4" r="2.7" />
       <circle cx="831.7" cy="162.4" r="2.7" />
+      <circle cx="867.0" cy="170.3" r="2.7" />
     </g>
     <g>
       <g class="pl_2 marker" transform="translate(162.4,303.2)"><use xlink:href="#mk2"/><text class="dp2" y="-25">319.6</text></g>
@@ -179,12 +182,13 @@ text:hover + .dl_el {display:block;}
       <g class="pl_2 marker" transform="translate(760.6,191.9)"><use xlink:href="#mk2"/><text class="dp2" y="-25">444.8</text></g>
       <g class="pl_2 marker" transform="translate(795.9,211.4)"><use xlink:href="#mk2"/><text class="dp2" y="-25">422.8</text></g>
       <g class="pl_2 marker" transform="translate(831.7,162.4)"><use xlink:href="#mk2"/><text class="dp2" y="-25">478.0</text></g>
+      <g class="pl_2 marker" transform="translate(867.0,170.3)"><use xlink:href="#mk2"/><text class="dp2" y="-25">469.1</text></g>
     </g>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#0072BD" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,133.6)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Total diesel (low blend)</text>
+    <text class="pl" transform="translate(925.2,144.6)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Total diesel (low blend)</text>
     <g class="pl pll" fill="#0072BD" stroke="none" stroke-width="1.800">
       <circle cx="162.4" cy="187.0" r="2.7" />
       <circle cx="196.6" cy="197.9" r="2.7" />
@@ -206,6 +210,7 @@ text:hover + .dl_el {display:block;}
       <circle cx="760.6" cy="166.3" r="2.7" />
       <circle cx="795.9" cy="187.9" r="2.7" />
       <circle cx="831.7" cy="133.6" r="2.7" />
+      <circle cx="867.0" cy="144.7" r="2.7" />
     </g>
     <g>
       <g class="pl_3 marker" transform="translate(162.4,187.0)"><use xlink:href="#mk3"/><text class="dp2" y="-25">450.3</text></g>
@@ -228,11 +233,12 @@ text:hover + .dl_el {display:block;}
       <g class="pl_3 marker" transform="translate(760.6,166.3)"><use xlink:href="#mk3"/><text class="dp2" y="-25">473.7</text></g>
       <g class="pl_3 marker" transform="translate(795.9,187.9)"><use xlink:href="#mk3"/><text class="dp2" y="-25">449.3</text></g>
       <g class="pl_3 marker" transform="translate(831.7,133.6)"><use xlink:href="#mk3"/><text class="dp2" y="-25">510.4</text></g>
+      <g class="pl_3 marker" transform="translate(867.0,144.7)"><use xlink:href="#mk3"/><text class="dp2" y="-25">497.9</text></g>
     </g>
   </g>
 </g>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Sweden's supply of diesel</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a>   &#9679;   Data: SCB   &#9679;   Units: million litres   &#9679;   Data through August 2024</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a>   &#9679;   Data: SCB   &#9679;   Units: million litres   &#9679;   Data through September 2024</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://twitter.com/robbie_andrew" style="fill:#BFBFBF" target="_blank">@robbie_andrew</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
