@@ -48,6 +48,7 @@ text:hover + .dl_el {display:block;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
+  <path id="line_y" d="M 0,53.993 v 533.183" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <g id="mk1"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#A2142F" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#A2142F" stroke="#FFF"/></g>
   <g id="mk2"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#4DBEEE" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#4DBEEE" stroke="#FFF"/></g>
@@ -78,6 +79,13 @@ text:hover + .dl_el {display:block;}
   </symbol>
 </defs>
 <g id="main">
+<use xlink:href="#line_y" transform="translate(145.6,0)"/>
+<use xlink:href="#line_y" transform="translate(257.6,0)"/>
+<use xlink:href="#line_y" transform="translate(369.6,0)"/>
+<use xlink:href="#line_y" transform="translate(481.6,0)"/>
+<use xlink:href="#line_y" transform="translate(593.6,0)"/>
+<use xlink:href="#line_y" transform="translate(705.6,0)"/>
+<use xlink:href="#line_y" transform="translate(817.6,0)"/>
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
 <use xlink:href="#line_x" transform="translate(0,498.3)"/>
 <use xlink:href="#line_x" transform="translate(0,409.4)"/>
