@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Collected vehicle registration data</title>
+  <link rel="stylesheet" href="css/carsales.css">
+</head>
+
+<body>
+  <main>
+    <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
+
+	<h1>Collected vehicle registration data</h1>
+	<p>Download <a href="data/all_carsales_monthly.csv">all monthly data in one file</a>.</p>
+
+<div class="selector-container">
+  <div class="button-group frequency-selector-container">
+    <button class="frequency-button" data-frequency="monthly">Monthly</button>
+    <button class="frequency-button" data-frequency="quarterly">Quarterly</button>
+    <button class="frequency-button" data-frequency="half-yearly">Half-yearly</button>
+    <button class="frequency-button" data-frequency="annual">Annual</button>
+  </div>
+  <div class="button-group format-selector-container">
+    <button class="format-button active" data-format="relative">Relative</button>
+    <button class="format-button" data-format="absolute">Absolute</button>
+    <button class="format-button" data-format="line">Line</button>
+  </div>
+<div class="selector">
+  <label for="countrySelector">Select Countries:</label>
+  <select id="countrySelector" multiple>
+  </select>
+</div>
+</div>
+	<div class="pure-g">
+	</div>
+    <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
+  </main>
+  
+<script src="../js/downloadSVGasPNG.js"></script>
+
+
+<script>
+
+function updateCharts() {
+    const chartContainers = document.querySelectorAll('.pure-u-1.pure-u-lg-1-3');
+    const activeFrequency = document.querySelector('.frequency-button.active').getAttribute('data-frequency');
+    const activeFormat = document.querySelector('.format-button.active').getAttribute('data-format');
+    
+    chartContainers.forEach(container => {
+      const country = container.querySelector('.countrytitle').textContent
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '');
+      const objectElement = container.querySelector('object');
+      const links = container.querySelectorAll('.options a');
+      
+      const formatSuffix = activeFormat === 'absolute' ? '_abs' :
+						   activeFormat === 'line' ? '_line' : '';
+      const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
+      const newCsvPath = `data/${country}_carsales_${activeFrequency}.csv`;
+      
+      // Update the object element
+      objectElement.setAttribute('data', newSvgPath);
+      
+      // Update the links
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.includes('.svg')) {
+          link.setAttribute('href', newSvgPath);
+        } else if (href.includes('.csv')) {
+          link.setAttribute('href', newCsvPath);
+        }
+      });
+    });
+  }
+  
+function filterListen() {
+  const frequencyButtons = document.querySelectorAll('.frequency-button');
+  const formatButtons = document.querySelectorAll('.format-button');
+  
+  function setActiveButton(buttons, clickedButton) {
+    buttons.forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+  }
+  
+  console.log('setting active buttons')
+  // Set default active buttons
+  frequencyButtons[0].classList.add('active');
+  formatButtons[0].classList.add('active');
+
+
+  frequencyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      setActiveButton(frequencyButtons, this);
+      updateCharts();
+    });
+  });
+
+  formatButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      setActiveButton(formatButtons, this);
+      updateCharts();
+    });
+  });
+
+  // Initial chart update
+  updateCharts();
+}
+
+function makeCountrySelector() {
+  const graphContainer = document.querySelectorAll('.country');
+  const selectElement = document.getElementById('countrySelector');
+
+  const countries = new Set();
+
+  // Collect unique country names
+  graphContainer.forEach(graph => {
+    countries.add(graph.dataset.country);
+  });
+
+  // Add "All" option first
+  selectElement.innerHTML += `<option value="all" selected>All</option>`;
+
+  // Populate the select list dynamically
+  countries.forEach(country => {
+    selectElement.innerHTML += `<option value="${country}">${country}</option>`;
+  });
+
+  // Filter graphs based on selection
+  selectElement.addEventListener('change', function() {
+    const selectedOptions = Array.from(this.selectedOptions).map(option => option.value);
+    const countries = document.querySelectorAll('.country');
+
+    countries.forEach(country => {
+      if (selectedOptions.includes('all') || selectedOptions.includes(country.dataset.country)) {
+        country.style.display = 'block';
+      } else {
+        country.style.display = 'none';
+      }
+    });
+
+    // Ensure "All" behaves properly
+    if (selectedOptions.length > 1 && selectedOptions.includes('all')) {
+      this.querySelector('option[value="all"]').selected = false;
+    }
+    
+    if (selectedOptions.length === 0) {
+      this.querySelector('option[value="all"]').selected = true;
+      countries.forEach(c => c.style.display = 'block');
+    }
+	// Ensure that all countries' charts are based on the current filters
+	updateCharts();
+  });
+};
+
+
+function fakeFetch() {
+            return new Promise((resolve) => {
+                // Simulate fetching JSON data (from the script tag in this case)
+                const jsonData = JSON.parse(document.getElementById('json-data').textContent);
+                resolve(jsonData); // Resolve the promise with the JSON data
+            });
+        }
+function makeCountryDiv(entry) {
+        const countryName = entry.country;
+        const countryId = countryName.toLowerCase().replace(/\s+/g, '');  // Lowercase and remove spaces
+
+        // Generate paths for SVG and CSV
+        const svgPath = `img/${countryId}_carsales_monthly.svg`;
+        const csvPath = `data/${countryId}_carsales_monthly.csv`;
+
+        // Create country graph container
+        const countryDiv = document.createElement('div');
+        countryDiv.className = 'pure-u-1 pure-u-lg-1-3 country';
+        countryDiv.setAttribute('data-country', countryName);
+
+        // Add country title
+        countryDiv.innerHTML += `<div class="countrytitle">${countryName}</div>`;
+
+        // Build the details section dynamically
+        let detailsHtml = '<div class="details">';
+        if (entry.dedicatedPage) {
+          detailsHtml += `<a href="${entry.dedicatedPage}">Dedicated page</a> | `;
+        }
+        if (entry.sources) {
+          detailsHtml += `Data: `;
+          entry.sources.forEach((source, index) => {
+            detailsHtml += `<a href="${source.url}">${source.name}</a>`;
+            if (index < entry.sources.length - 1) {
+              detailsHtml += ' ';
+            }
+          });
+        }
+        detailsHtml += '</div>';
+        countryDiv.innerHTML += detailsHtml;
+
+        // Embed the SVG graph
+        countryDiv.innerHTML += `
+          <object data="${svgPath}" type="image/svg+xml" class="fig"></object>
+        `;
+
+        // Add options (enlarge and download)
+        countryDiv.innerHTML += `
+          <div class="options">
+            <a href="${svgPath}" target="_self">Enlarge this figure</a> |
+            <a href="${csvPath}">Download data</a>
+          </div>
+        `;
+	return countryDiv;
+}
+
+function populateCountries() {
+//  fetch('data.json')
+//    .then(response => response.json())
+	fakeFetch()
+    .then(data => {
+      const graphContainer = document.querySelector('.pure-g');
+
+	  // Sort countries by name
+	  data.sort((a, b) => a.country.localeCompare(b.country));
+
+      data.forEach(entry => {
+        // Append to main graph container
+        graphContainer.appendChild(makeCountryDiv(entry));
+      });
+	  makeCountrySelector();
+	  filterListen();
+      // Add a PNG download link for every SVG on the page
+      document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+        svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+      });
+    })
+    .catch(error => console.error('Error loading JSON:', error));
+};
+
+// Fetch JSON and generate HTML dynamically
+window.onload = function() {
+	populateCountries();
+};
+</script>
+
+ <script id="json-data" type="application/json">
+[
+  {
+    "country": "Norway",
+    "dedicatedPage": "https://robbieandrew.github.io/EV/",
+    "sources": [
+      {"name": "source 1", "url": "https://hotell.difi.no/?dataset=vegvesen/kjoretoyinfo2"},
+      {"name": "source 2", "url": "https://ofv.no/"}
+    ]
+  },
+  {
+    "country": "Sweden",
+    "sources": [
+      {"name": "Data source", "url": "https://www.trafa.se/vagtrafik/fordon/"}
+    ]
+  },
+  {
+    "country": "China",
+    "sources": [
+      {"name": "Data source", "url": "http://www.cpcaauto.com/search.php?types=search&page=1&keywords=%E3%80%90%E6%9C%88%E5%BA%A6%E5%88%86%E6%9E%90%E3%80%91"}
+    ]
+  },
+  {
+    "country": "Japan",
+    "sources": [
+      {"name": "Data source", "url": "https://www.jada.or.jp/pages/342/"}
+    ]
+  },
+  {
+    "country": "USA",
+    "sources": [
+      {"name": "Data source", "url": "https://www.anl.gov/esia/reference/light-duty-electric-drive-vehicles-monthly-sales-updates-historical-data"}
+    ]
+  },
+  {
+    "country": "Canada",
+    "sources": [
+      {"name": "Data source", "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2010002401"}
+    ]
+  },
+  {
+    "country": "Denmark",
+    "sources": [
+      {"name": "source 1", "url": "https://statbank.dk/BIL6"},
+      {"name": "source 2", "url": "https://statbank.dk/BIL51"}
+    ]
+  },
+  {
+    "country": "Iceland",
+    "sources": [
+      {"name": "Data source", "url": "https://bifreidatolur.samgongustofa.is/index.html#nyskraningar"}
+    ]
+  },
+  {
+    "country": "Finland",
+    "sources": [
+      {"name": "Data source", "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/search/?searchquery=merek"}
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "sources": [
+      {"name": "Data source", "url": "https://duurzamemobiliteit.databank.nl/viewer"}
+    ]
+  },
+  {
+    "country": "France",
+    "sources": [
+      {"name": "Data source", "url": "https://www.statistiques.developpement-durable.gouv.fr/publicationweb/670"}
+    ]
+  },
+  {
+    "country": "Germany",
+    "sources": [
+      {"name": "source 1", "url": "https://elektromobilitaetsmonitor.de/"},
+      {"name": "source 2", "url": "https://www.kba.de/DE/Statistik/Fahrzeuge/Neuzulassungen/MonatlicheNeuzulassungen/monatl_neuzulassungen_node.html"}
+    ]
+  },
+  {
+    "country": "Switzerland",
+    "sources": [
+      {"name": "source 1", "url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/katalog.assetdetail.32466294.html"},
+      {"name": "source 2", "url": "https://www.bfs.admin.ch/bfs/en/home/statistics/catalogue.assetdetail.30445369.html"}
+    ]
+  },
+  {
+    "country": "United Kingdom",
+    "sources": [
+      {"name": "Data source", "url": "https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-tables"}
+    ]
+  },
+  {
+    "country": "United Kingdom SMMT",
+    "sources": [
+      {"name": "Data source", "url": "https://www.smmt.co.uk/category/news/registrations/cars/"}
+    ]
+  },
+  {
+    "country": "Spain",
+    "sources": [
+      {"name": "Data source", "url": "https://www.dgt.es/menusecundario/dgt-en-cifras/dgt-en-cifras-resultados/dgt-en-cifras-detalle/Microdatos-de-Matriculaciones-de-Vehiculos-mensual/"}
+    ]
+  },
+  {
+    "country": "Poland",
+    "sources": [
+      {"name": "Data source", "url": "https://www.pzpm.org.pl/en/Automotive-market/FIRST-REGISTRATIONS-PZPM-CEP/Passenger-Cars-Light-Commercial-Vehicles"}
+    ]
+  },
+  {
+    "country": "Italy",
+    "sources": [
+      {"name": "source 1", "url": "https://github.com/pogechi/UNRAE-Italy-carsales/tree/main"},
+      {"name": "source 2", "url": "https://unrae.it/dati-statistici/immatricolazioni"}
+    ]
+  },
+  {
+    "country": "Czechia",
+    "sources": [
+      {"name": "Data source", "url": "https://www.sda-cia.cz/repository-volnedostupna?lang=CZ"}
+    ]
+  },
+  {
+    "country": "Austria",
+    "sources": [
+      {"name": "Data source", "url": "https://www.statistik.at/statistiken/tourismus-und-verkehr/fahrzeuge/kfz-neuzulassungen"}
+    ]
+  },
+  {
+    "country": "Ireland",
+    "sources": [
+      {"name": "Data source", "url": "https://stats.beepbeep.ie/"}
+    ]
+  },
+  {
+    "country": "Luxembourg",
+    "sources": [
+      {"name": "Data source", "url": "https://lustat.statec.lu/vis?lc=en&pg=0&df[ds]=ds-release&df[id]=DF_D6122&df[ag]=LU1"}
+    ]
+  },
+  {
+    "country": "Thailand",
+    "sources": [
+      {"name": "Data source", "url": "https://data.thaiauto.or.th/auto/auto-stat/auto-registration/stat-auto-registration-energy-menu.html"}
+    ]
+  },
+  {
+    "country": "New Zealand",
+    "sources": [
+      {"name": "Data source", "url": "https://www.transport.govt.nz/statistics-and-insights/fleet-statistics/light-motor-vehicle-registrations/"}
+    ]
+  },
+  {
+    "country": "Turkey",
+    "sources": [
+      {"name": "Data source", "url": "https://data.tuik.gov.tr/Kategori/GetKategori?p=Ulastirma-ve-Haberlesme-112"}
+    ]
+  },
+  {
+    "country": "Mexico",
+    "sources": [
+      {"name": "Data source", "url": "https://www.inegi.org.mx/datosprimarios/iavl/#datos_abiertos"}
+    ]
+  },
+  {
+    "country": "Brazil",
+    "sources": [
+      {"name": "Data source", "url": "https://anfavea.com.br/site/edicoes-em-excel/"}
+    ]
+  },
+  {
+    "country": "Colombia",
+    "sources": [
+      {"name": "Data source", "url": "https://www.andi.com.co/Home/"}
+    ]
+  },
+  {
+    "country": "Uruguay",
+    "sources": [
+      {"name": "Data source", "url": "https://www.acau.com.uy//index"}
+    ]
+  },
+  {
+    "country": "Israel",
+    "sources": [
+      {"name": "source 1", "url": "https://www.car-importers.org.il/Rishuy_en/private"},
+      {"name": "source 2", "url": "https://comtradeplus.un.org/"}
+    ]
+  },
+  {
+    "country": "India",
+    "sources": [
+      {"name": "Data source", "url": "https://vahan.parivahan.gov.in/vahan4dashboard"}
+    ]
+  },
+  {
+    "country": "Indonesia",
+    "sources": [
+      {"name": "Data source", "url": "https://files.gaikindo.or.id/index.php"}
+    ]
+  }
+]
+</script>
+</body>
+
+</html>
