@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Collected vehicle registration data</title>
+  <style>
+    h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
+	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
+	.subb {font-size: 70%;line-height:normal;}
+	.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;}
+	.countrytitle {width:85%;text-align:center;font-size:120%}
+	.details {width:85%;text-align:center;font-size:70%}
+	.options {width:85%;text-align:center;font-size:70%;margin-top:5px;margin-bottom:25px}
+  </style>
+<style>
+.selector-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  position: relative;
+  padding: 15px 10px;
+}
+
+/* Top and bottom lines */
+.button-group::before,
+.button-group::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: black;
+}
+
+.button-group::before {
+  top: 0;
+}
+
+.button-group::after {
+  bottom: 0;
+}
+
+/* Vertical lines on sides */
+.button-group {
+  background-image: 
+    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px)),
+    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px));
+  background-position: left, right;
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+}
+
+.frequency-button, .format-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.frequency-button.active, .format-button.active {
+  background-color: #007bff;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+  <main>
+    <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
+
+	<h1>Collected vehicle registration data</h1>
+	<p>Download <a href="data/all_carsales_monthly.csv">all monthly data in one file</a>.</p>
+<div class="selector-container">
+  <div class="button-group frequency-selector-container">
+    <button class="frequency-button" data-frequency="monthly">Monthly</button>
+    <button class="frequency-button" data-frequency="quarterly">Quarterly</button>
+    <button class="frequency-button" data-frequency="half-yearly">Half-yearly</button>
+    <button class="frequency-button" data-frequency="annual">Annual</button>
+  </div>
+  <div class="button-group format-selector-container">
+    <button class="format-button active" data-format="relative">Relative</button>
+    <button class="format-button" data-format="absolute">Absolute</button>
+    <button class="format-button" data-format="line">Line</button>
+  </div>
+</div>
+	<div class="pure-g">
+	
+	
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Norway</div>
+		<div class="details"><a href="https://robbieandrew.github.io/EV/">Dedicated page</a> | Data: <a href="https://hotell.difi.no/?dataset=vegvesen/kjoretoyinfo2">source 1</a> <a href="https://ofv.no/">source 2</a></div>
+	    <object data="img/norway_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/norway_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/norway_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Sweden</div>
+		<div class="details"><a href="https://www.trafa.se/vagtrafik/fordon/">Data source</a></div>
+	    <object data="img/sweden_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/sweden_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/sweden_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">China</div>
+		<div class="details"><a href="http://www.cpcaauto.com/search.php?types=search&page=1&keywords=%E3%80%90%E6%9C%88%E5%BA%A6%E5%88%86%E6%9E%90%E3%80%91">Data source</a></div>
+	    <object data="img/china_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/china_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/china_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Japan</div>
+		<div class="details"><a href="https://www.jada.or.jp/pages/342/">Data source</a></div>
+	    <object data="img/japan_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/japan_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/japan_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">USA</div>
+		<div class="details"><a href="https://www.anl.gov/esia/reference/light-duty-electric-drive-vehicles-monthly-sales-updates-historical-data">Data source</a></div>
+	    <object data="img/usa_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/usa_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/usa_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Canada</div>
+		<div class="details"><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2010002401">Data source</a></div>
+	    <object data="img/canada_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/canada_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/canada_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Denmark</div>
+		<div class="details">Data <a href="https://statbank.dk/BIL6">source 1</a> | <a href="https://statbank.dk/BIL51">source 2</a></div>
+	    <object data="img/denmark_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/denmark_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/denmark_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Iceland</div>
+		<div class="details"><a href="https://bifreidatolur.samgongustofa.is/index.html#nyskraningar">Data source</a></div>
+	    <object data="img/iceland_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/iceland_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/iceland_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Finland</div>
+		<div class="details"><a href="https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/search/?searchquery=merek">Data source</a></div>
+	    <object data="img/finland_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/finland_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/finland_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Netherlands</div>
+		<div class="details"><a href="https://duurzamemobiliteit.databank.nl/viewer">Data source</a></div>
+	    <object data="img/netherlands_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/netherlands_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/netherlands_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">France</div>
+		<div class="details"><a href="https://www.statistiques.developpement-durable.gouv.fr/publicationweb/670">Data source</a></div>
+	    <object data="img/france_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/france_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/france_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Germany</div>
+		<div class="details">Data <a href="https://elektromobilitaetsmonitor.de/">source 1</a> | <a href="https://www.kba.de/DE/Statistik/Fahrzeuge/Neuzulassungen/MonatlicheNeuzulassungen/monatl_neuzulassungen_node.html">source 2</a></div>
+	    <object data="img/germany_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/germany_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/germany_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Switzerland</div>
+		<div class="details">Data <a href="https://www.bfs.admin.ch/bfs/de/home/statistiken/katalog.assetdetail.32466294.html">source 1</a> | <a href="https://www.bfs.admin.ch/bfs/en/home/statistics/catalogue.assetdetail.30445369.html">source 2</a></div>
+	    <object data="img/switzerland_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/switzerland_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/switzerland_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">United Kingdom</div>
+		<div class="details"><a href="https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-tables">Data source</a></div>
+	    <object data="img/unitedkingdom_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/unitedkingdom_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/unitedkingdom_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">United Kingdom SMMT</div>
+		<div class="details"><a href="https://www.smmt.co.uk/category/news/registrations/cars/">Data source</a></div>
+	    <object data="img/unitedkingdomsmmt_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/unitedkingdomsmmt_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/unitedkingdomsmmt_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Spain</div>
+		<div class="details"><a href="https://www.dgt.es/menusecundario/dgt-en-cifras/dgt-en-cifras-resultados/dgt-en-cifras-detalle/Microdatos-de-Matriculaciones-de-Vehiculos-mensual/">Data source</a></div>
+	    <object data="img/spain_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/spain_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/spain_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Poland</div>
+		<div class="details"><a href="https://www.pzpm.org.pl/en/Automotive-market/FIRST-REGISTRATIONS-PZPM-CEP/Passenger-Cars-Light-Commercial-Vehicles">Data source</a></div>
+	    <object data="img/poland_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/poland_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/poland_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Italy</div>
+		<div class="details">Data <a href="https://github.com/pogechi/UNRAE-Italy-carsales/tree/main">source 1</a> | <a href="https://unrae.it/dati-statistici/immatricolazioni">source 2</a></div>
+	    <object data="img/italy_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/italy_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/italy_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Czechia</div>
+		<div class="details"><a href="https://www.sda-cia.cz/repository-volnedostupna?lang=CZ">Data source</a></div>
+	    <object data="img/czechia_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/czechia_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/czechia_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Austria</div>
+		<div class="details"><a href="https://www.statistik.at/statistiken/tourismus-und-verkehr/fahrzeuge/kfz-neuzulassungen">Data source</a></div>
+	    <object data="img/austria_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/austria_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/austria_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Ireland</div>
+		<div class="details"><a href="https://stats.beepbeep.ie/">Data source</a></div>
+	    <object data="img/ireland_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/ireland_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/ireland_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Luxembourg</div>
+		<div class="details"><a href="https://lustat.statec.lu/vis?lc=en&pg=0&df[ds]=ds-release&df[id]=DF_D6122&df[ag]=LU1">Data source</a></div>
+	    <object data="img/luxembourg_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/luxembourg_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/luxembourg_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Thailand</div>
+		<div class="details"><a href="https://data.thaiauto.or.th/auto/auto-stat/auto-registration/stat-auto-registration-energy-menu.html">Data source</a></div>
+	    <object data="img/thailand_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/thailand_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/thailand_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">New Zealand</div>
+		<div class="details"><a href="https://www.transport.govt.nz/statistics-and-insights/fleet-statistics/light-motor-vehicle-registrations/">Data source</a></div>
+	    <object data="img/newzealand_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/newzealand_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/newzealand_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Turkey</div>
+		<div class="details"><a href="https://data.tuik.gov.tr/Kategori/GetKategori?p=Ulastirma-ve-Haberlesme-112">Data source</a></div>
+	    <object data="img/turkey_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/turkey_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/turkey_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Mexico</div>
+		<div class="details"><a href="https://www.inegi.org.mx/datosprimarios/iavl/#datos_abiertos">Data source</a></div>
+	    <object data="img/mexico_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/mexico_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/mexico_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Brazil</div>
+		<div class="details"><a href="https://anfavea.com.br/site/edicoes-em-excel/">Data source</a></div>
+	    <object data="img/brazil_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/brazil_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/brazil_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Colombia</div>
+		<div class="details"><a href="https://www.andi.com.co/Home/">Data source</a></div>
+	    <object data="img/colombia_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/colombia_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/colombia_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Uruguay</div>
+		<div class="details"><a href="https://www.acau.com.uy//index">Data source</a></div>
+	    <object data="img/uruguay_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/uruguay_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/uruguay_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Israel</div>
+		<div class="details">Data <a href="https://www.car-importers.org.il/Rishuy_en/private">source 1</a> | <a href="https://comtradeplus.un.org/">source 2</a></div>
+	    <object data="img/israel_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/israel_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/israel_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">India</div>
+		<div class="details"><a href="https://vahan.parivahan.gov.in/vahan4dashboard">Data source</a></div>
+	    <object data="img/india_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/india_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/india_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Indonesia</div>
+		<div class="details"><a href="https://files.gaikindo.or.id/index.php">Data source</a></div>
+	    <object data="img/indonesia_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/indonesia_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/indonesia_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <div class="countrytitle">Malaysia</div>
+		<div class="details"><a href="https://data.gov.my/data-catalogue/registration_transactions_car">Data source</a></div>
+	    <object data="img/malaysia_carsales_monthly.svg" type="image/svg+xml" class="fig"></object>
+		<div class="options"><a href="img/malaysia_carsales_monthly.svg" target="_self">Enlarge this figure</a> | <a href="data/malaysia_carsales_monthly.csv">Download data</a></div>
+        </div>
+		
+		
+	</div>
+    <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
+  </main>
+<script src="../js/downloadSVGasPNG.js"></script>
+<script>
+  // Add a PNG download link for every SVG on the page
+  document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+    svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+  });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const frequencyButtons = document.querySelectorAll('.frequency-button');
+  const formatButtons = document.querySelectorAll('.format-button');
+  const chartContainers = document.querySelectorAll('.pure-u-1.pure-u-lg-1-3');
+  
+  // Set default active buttons
+  frequencyButtons[0].classList.add('active');
+  formatButtons[0].classList.add('active');
+
+  function updateCharts() {
+    const activeFrequency = document.querySelector('.frequency-button.active').getAttribute('data-frequency');
+    const activeFormat = document.querySelector('.format-button.active').getAttribute('data-format');
+    
+    chartContainers.forEach(container => {
+      const country = container.querySelector('.countrytitle').textContent
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '');
+      const objectElement = container.querySelector('object');
+      const links = container.querySelectorAll('.options a');
+      
+      const formatSuffix = activeFormat === 'absolute' ? '_abs' :
+						   activeFormat === 'line' ? '_line' : '';
+      const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
+      const newCsvPath = `data/${country}_carsales_${activeFrequency}.csv`;
+      
+      // Update the object element
+      objectElement.setAttribute('data', newSvgPath);
+      
+      // Update the links
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.includes('.svg')) {
+          link.setAttribute('href', newSvgPath);
+        } else if (href.includes('.csv')) {
+          link.setAttribute('href', newCsvPath);
+        }
+      });
+    });
+  }
+
+  function setActiveButton(buttons, clickedButton) {
+    buttons.forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+  }
+
+  frequencyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      setActiveButton(frequencyButtons, this);
+      updateCharts();
+    });
+  });
+
+  formatButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      setActiveButton(formatButtons, this);
+      updateCharts();
+    });
+  });
+
+  // Initial chart update
+  updateCharts();
+});
+</script>
+
+</body>
+
+</html>
