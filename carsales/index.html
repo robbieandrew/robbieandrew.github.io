@@ -39,11 +39,11 @@
     <button class="format-button" data-format="absolute">Absolute</button>
     <button class="format-button" data-format="line">Line</button>
   </div>
-<!--<div class="selector">
+<div class="selector">
   <label for="countrySelector">Select Countries:</label>
   <select id="countrySelector" multiple>
   </select>
-</div>-->
+</div>
 </div>
 	<div class="pure-g">
 	</div>
@@ -237,7 +237,7 @@ function populateCountries() {
         graphContainer.appendChild(makeCountryDiv(entry));
       });
 // Disabled for now
-//	  makeCountrySelector();
+	  makeCountrySelector();
 	  filterListen();
       // Add a PNG download link for every SVG on the page
       document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
