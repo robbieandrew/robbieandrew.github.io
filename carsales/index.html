@@ -40,7 +40,7 @@
     <button class="format-button" data-format="line">Line</button>
   </div>
 <div class="selector">
-  <label for="countrySelector">Select Countries:</label>
+  <label for="countrySelector">Select Countries (<span id="selectedCount">0</span>/<span id="totalCount">0</span>)</label>
   <select id="countrySelector" multiple>
   </select>
 </div>
@@ -86,7 +86,7 @@ function updateCharts() {
         }
       });
     });
-  }
+}
   
 function filterListen() {
   const frequencyButtons = document.querySelectorAll('.frequency-button');
@@ -138,6 +138,25 @@ function makeCountrySelector() {
   countries.forEach(country => {
     selectElement.innerHTML += `<option value="${country}">${country}</option>`;
   });
+
+  const selectedCountSpan = document.getElementById("selectedCount");
+  const totalCountSpan = document.getElementById("totalCount");
+  // Calculate total countries dynamically (excluding "All" option)
+  const totalCountries = countrySelector.options.length - 1;
+  totalCountSpan.textContent = totalCountries;
+  countrySelector.addEventListener("change", function() {
+    const selectedOptions = Array.from(countrySelector.selectedOptions);
+    const isAllSelected = selectedOptions.some(option => option.value === "all");
+    if (isAllSelected) {
+      // Show full count if "All" is selected
+      selectedCountSpan.textContent = totalCountries;
+    } else {
+      // Otherwise, count normally
+      selectedCountSpan.textContent = selectedOptions.length;
+    }
+  });
+  // Initialize the count to n (Since 'All' is the default)
+  selectedCountSpan.textContent = totalCountries;
 
   // Filter graphs based on selection
   selectElement.addEventListener('change', function() {
