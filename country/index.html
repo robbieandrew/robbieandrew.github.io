@@ -99,62 +99,88 @@ function searchCountry() {
 }
 
 function loadCountryImages(isoCode) {
-  const imageContainer = document.getElementById("imageContainer");
-  imageContainer.innerHTML = ""; // Clear previous images
+  const CACHE_KEY = "imageCache"; // Key for localStorage
+  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
 
+  let cachedData = localStorage.getItem(CACHE_KEY);
+  let imageData = cachedData ? JSON.parse(cachedData) : { data: {}, timestamps: {} };
+  let now = Date.now();
+
+  if (imageData.data[isoCode] && now - (imageData.timestamps[isoCode] || 0) < CACHE_DURATION) {
+    console.log(`Using cached images for ${isoCode}`);
+    displayImages(isoCode, imageData.data);
+  } else {
+    console.log(`Fetching new images for ${isoCode}`);
+    fetchGitHubImages(isoCode)
+      .then((newImages) => {
+        if (newImages) {
+          // Merge new data into cache
+          imageData.data[isoCode] = newImages;
+          imageData.timestamps[isoCode] = now;
+          localStorage.setItem(CACHE_KEY, JSON.stringify(imageData));
+
+          displayImages(isoCode, imageData.data);
+        }
+      })
+      .catch((error) => console.error("Error fetching images:", error));
+  }
+}
+
+function fetchGitHubImages(isoCode) {
   const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img/${isoCode}`;
 
-  fetch(githubApiUrl)
+  return fetch(githubApiUrl)
     .then(response => response.json())
     .then(files => {
       if (!Array.isArray(files)) {
         console.error("Invalid response from GitHub API:", files);
-        return;
+        return null;
       }
 
-      const imageFiles = files
-        .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only image files
-        .map(file => file.download_url); // Get the direct raw URL
+      return files
+        .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
+        .map(file => file.download_url); // Get direct URLs
+    });
+}
 
-      if (imageFiles.length === 0) {
-        console.error("No images found for", isoCode);
-        return;
-      }
+function displayImages(isoCode, imageData) {
+  const imageContainer = document.getElementById("imageContainer");
+  imageContainer.innerHTML = ""; // Clear previous images
 
-      // Display images
-      imageFiles.forEach(image => {
-        const div = document.createElement("div");
-        div.className = "pure-u-1 pure-u-lg-1-2"; // Ensures proper placement
+  if (!imageData[isoCode] || imageData[isoCode].length === 0) {
+    console.error(`No images found for ${isoCode}`);
+    return;
+  }
 
-        if (image.endsWith(".svg")) {
-          // Use <object> tag for SVG files to preserve interactivity
-          const object = document.createElement("object");
-          object.data = image;
-          object.type = "image/svg+xml";
-          object.className = "fig";
+  imageData[isoCode].forEach(image => {
+    const div = document.createElement("div");
+    div.className = "pure-u-1 pure-u-lg-1-2";
 
-          const p = document.createElement("p");
-          const link = document.createElement("a");
-          link.href = image;
-          link.target = "_self";
-          link.textContent = "Enlarge this figure";
-          p.appendChild(link);
+    if (image.endsWith(".svg")) {
+      const object = document.createElement("object");
+      object.data = image;
+      object.type = "image/svg+xml";
+      object.className = "fig";
 
-          div.appendChild(object);
-          div.appendChild(p);
-        } else {
-          // Use <img> tag for raster image files
-          const img = document.createElement("img");
-          img.src = image;
-          img.style.width = "200px"; // Adjust as needed
+      const p = document.createElement("p");
+      const link = document.createElement("a");
+      link.href = image;
+      link.target = "_self";
+      link.textContent = "Enlarge this figure";
+      p.appendChild(link);
 
-          div.appendChild(img);
-        }
+      div.appendChild(object);
+      div.appendChild(p);
+    } else {
+      const img = document.createElement("img");
+      img.src = image;
+      img.style.width = "200px";
 
-        imageContainer.appendChild(div);
-      });
-    })
-    .catch(error => console.error("Error loading images:", error));
+      div.appendChild(img);
+    }
+
+    imageContainer.appendChild(div);
+  });
 }
 
 
