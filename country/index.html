@@ -99,8 +99,8 @@ function searchCountry() {
 }
 
 function loadCountryImages(isoCode) {
-  const CACHE_KEY = "imageCache"; // Key for localStorage
-  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
+  const CACHE_KEY = "imageCache";
+  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 
   let cachedData = localStorage.getItem(CACHE_KEY);
   let imageData = cachedData ? JSON.parse(cachedData) : { data: {}, timestamps: {} };
@@ -112,17 +112,20 @@ function loadCountryImages(isoCode) {
   } else {
     console.log(`Fetching new images for ${isoCode}`);
     fetchGitHubImages(isoCode)
-      .then((newImages) => {
+      .then(newImages => {
         if (newImages) {
-          // Merge new data into cache
           imageData.data[isoCode] = newImages;
           imageData.timestamps[isoCode] = now;
           localStorage.setItem(CACHE_KEY, JSON.stringify(imageData));
-
           displayImages(isoCode, imageData.data);
+        } else {
+          displayErrorMessage(`No images available for ${isoCode}`);
         }
       })
-      .catch((error) => console.error("Error fetching images:", error));
+      .catch(error => {
+        console.error("Error loading images:", error);
+        displayErrorMessage("An error occurred while fetching images.");
+      });
   }
 }
 
@@ -130,19 +133,41 @@ function fetchGitHubImages(isoCode) {
   const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img/${isoCode}`;
 
   return fetch(githubApiUrl)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error(`No images found for ${isoCode} (folder missing)`);
+        } else {
+          throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+        }
+      }
+      return response.json();
+    })
     .then(files => {
       if (!Array.isArray(files)) {
-        console.error("Invalid response from GitHub API:", files);
-        return null;
+        throw new Error("Invalid API response format.");
       }
 
-      return files
+      const imageUrls = files
         .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
-        .map(file => `https://robbieandrew.github.io/country/img/${isoCode}/${file.name}`); // Construct GitHub Pages URL
+        .map(file => `https://robbieandrew.github.io/country/img/${isoCode}/${file.name}`);
+
+      if (imageUrls.length === 0) {
+        throw new Error(`No valid images found in ${isoCode} folder.`);
+      }
+
+      return imageUrls;
+    })
+    .catch(error => {
+      console.error(error.message);
+      return null; // Return null to indicate failure
     });
 }
 
+function displayErrorMessage(message) {
+  const imageContainer = document.getElementById("imageContainer");
+  imageContainer.innerHTML = `<p style="color: red;">${message}</p>`;
+}
 
 function displayImages(isoCode, imageData) {
   const imageContainer = document.getElementById("imageContainer");
