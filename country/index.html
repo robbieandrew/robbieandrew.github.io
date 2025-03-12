@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>US energy and CO2 emissions information</title>
+  <script src="../js/html-include.js"></script>
+  <style>
+    h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
+	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
+	.subb {font-size: 70%;line-height:normal;}
+	.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;  
+#countryList {
+  position: absolute;
+  z-index: 1;
+}
+
+#countryList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+#countryList li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#countryList li:hover {
+  background-color: #f5f5f5;
+}
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+
+	<h1>US energy and CO<span class="subb">2</span> emissions information</h1>
+	<h2>EIA's estimates of US fossil CO<span class="subb">2</span> emissions</h1>
+
+	<p>Updated monthly</p>
+	<p>Data source: US Energy Information Administration <a href="https://www.eia.gov/outlooks/steo/">Short-Term Energy Outlook</a></p>
+
+	<input type="text" id="countryInput" placeholder="Enter country name">
+	<div id="countryList"></div>
+	<div id="imageContainer" class="pure-g">
+    </div>
+
+	
+    <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
+  </main>
+
+<script src="../js/downloadSVGasPNG.js"></script>
+<script>
+  // Add a PNG download link for every SVG on the page
+  document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+    svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+  });
+
+const countriesData = [
+  // List of countries with alternative names and their ISO codes
+  { names: ["United States", "US", "USA", "United States of America"], iso: "USA" },
+  { names: ["United Kingdom", "UK", "Great Britain", "Britain", "England"], iso: "GBR" },
+  { names: ["Germany", "Deutschland"], iso: "DEU" }
+];
+
+// Add event listener to input field to trigger search on user input
+document.getElementById("countryInput").addEventListener("input", searchCountry);
+
+function searchCountry() {
+  const input = document.getElementById("countryInput");
+  const countryList = document.getElementById("countryList");
+  countryList.innerHTML = ""; // Clear previous search results
+
+  if (!input.value) return; // Exit if input is empty
+
+  // Find countries that match the input based on alternative names
+  const matchingCountries = countriesData.filter(country =>
+    country.names.some(name => name.toLowerCase().includes(input.value.toLowerCase()))
+  );
+
+  if (!matchingCountries.length) return; // Exit if no matches are found
+
+  const list = document.createElement("ul");
+  matchingCountries.forEach(country => {
+    const li = document.createElement("li");
+    li.textContent = country.names[0]; // Display primary name of the country
+    li.addEventListener("click", () => {
+      input.value = country.names[0]; // Set the input field to the primary name
+      countryList.innerHTML = ""; // Hide the country list
+      loadCountryImages(country.iso); // Load images
+    });
+    list.appendChild(li);
+  });
+  
+  countryList.appendChild(list); // Display the matching results
+}
+
+function loadCountryImages(isoCode) {
+  const imageContainer = document.getElementById("imageContainer");
+  imageContainer.innerHTML = ""; // Clear previous images
+
+  // Fetch directory contents for the selected country's ISO folder
+  fetch(`./${isoCode}/`)
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+      const links = [...doc.querySelectorAll("a")].map(a => a.href);
+      
+      // Filter to get only image files (JPG, PNG, GIF, SVG)
+      const imageFiles = links.filter(link => link.match(/\.(jpg|png|gif|svg)$/i));
+
+      imageFiles.forEach(image => {
+        const div = document.createElement("div");
+        div.className = "pure-u-1 pure-u-lg-1-2"; // Ensures proper placement
+
+        if (image.endsWith(".svg")) {
+          // Use <object> tag for SVG files to preserve interactivity
+          const object = document.createElement("object");
+          object.data = image;
+          object.type = "image/svg+xml";
+          object.className = "fig";
+          
+          const p = document.createElement("p");
+          const link = document.createElement("a");
+          link.href = image;
+          link.target = "_self";
+          link.textContent = "Enlarge this figure";
+          p.appendChild(link);
+          
+          div.appendChild(object);
+          div.appendChild(p);
+        } else {
+          // Use <img> tag for raster image files
+          const img = document.createElement("img");
+          img.src = image;
+          img.style.width = "200px"; // Adjust as needed
+          
+          div.appendChild(img);
+        }
+
+        imageContainer.appendChild(div);
+      });
+    })
+    .catch(error => console.error("Error loading images:", error));
+}
+</script>
+
+</body>
+
+</html>
