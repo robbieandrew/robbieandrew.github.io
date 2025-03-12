@@ -139,9 +139,10 @@ function fetchGitHubImages(isoCode) {
 
       return files
         .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
-        .map(file => file.download_url); // Get direct URLs
+        .map(file => `https://robbieandrew.github.io/country/img/${isoCode}/${file.name}`); // Construct GitHub Pages URL
     });
 }
+
 
 function displayImages(isoCode, imageData) {
   const imageContainer = document.getElementById("imageContainer");
@@ -158,7 +159,7 @@ function displayImages(isoCode, imageData) {
 
     if (image.endsWith(".svg")) {
       const object = document.createElement("object");
-      object.data = image;
+      object.setAttribute('data', image);
       object.type = "image/svg+xml";
       object.className = "fig";
 
