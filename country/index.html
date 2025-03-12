@@ -24,6 +24,8 @@
       padding: 0;
       background-color: #fff;
       border: 1px solid #ccc;
+	  padding-inline-start:0px;
+	  margin-block-start:0px;
     }
     #countryList li {
       padding: 5px 10px;
@@ -41,15 +43,17 @@
 
 	<h1>Country energy and emissions charts</h1>
 	
-<div style="display:block;width:200px;margin:0 auto;">
-	<input type="text" id="countryInput" placeholder="Enter country name">
-	<ul id="countryList"></ul>
-</div>
-	<div id="imageContainer" class="pure-g">
-    </div>
+    <div style="display:block;width:200px;margin:0 auto;">
+	  <input type="text" id="countryInput" placeholder="Enter country name">
+	  <ul id="countryList"></ul>
+      </div>
+
+    <div id="imageContainer" class="pure-g">
+      </div>
 
 	
-    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p>
+	  </div>
   </main>
 
 <script src="../js/downloadSVGasPNG.js"></script>
@@ -129,6 +133,7 @@ function loadCountryImages(isoCode) {
   }
 }
 
+// Because I cannot get a directory listing of, e.g., robbieandrew.github.io/country/img/DEU, I instead get the list of files in that folder using GitHub's API.
 function fetchGitHubImages(isoCode) {
   const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img/${isoCode}`;
 
@@ -150,6 +155,7 @@ function fetchGitHubImages(isoCode) {
 
       const imageUrls = files
         .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
+		// Generate a URL to access the file via the webpage, rather than github.com
         .map(file => `https://robbieandrew.github.io/country/img/${isoCode}/${file.name}`);
 
       if (imageUrls.length === 0) {
@@ -166,7 +172,7 @@ function fetchGitHubImages(isoCode) {
 
 function displayErrorMessage(message) {
   const imageContainer = document.getElementById("imageContainer");
-  imageContainer.innerHTML = `<p style="color: red;">${message}</p>`;
+  imageContainer.innerHTML = `<p class="pure-u-1" style="color: red;">${message}</p>`;
 }
 
 function displayImages(isoCode, imageData) {
@@ -207,6 +213,11 @@ function displayImages(isoCode, imageData) {
 
     imageContainer.appendChild(div);
   });
+  
+  // Add a PNG download link for every SVG on the page
+    document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+      svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+    });
 }
 
 
