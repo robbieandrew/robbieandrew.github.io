@@ -64,12 +64,12 @@
     svgObject.addEventListener('load', () => replacePNGlink(svgObject));
   });
 
-const countriesData = [
-  // List of countries with alternative names and their ISO codes
-  { names: ["United States", "US", "USA", "United States of America"], iso: "USA" },
-  { names: ["United Kingdom", "UK", "Great Britain", "Britain", "England"], iso: "GBR" },
-  { names: ["Germany", "Deutschland"], iso: "DEU" }
-];
+// Load country data from external JSON file
+let countriesData = [];
+fetch("countries.json")
+  .then(response => response.json())
+  .then(data => countriesData = data)
+  .catch(error => console.error("Error loading country data:", error));
 
 // Add event listener to input field to trigger search on user input
 document.getElementById("countryInput").addEventListener("input", searchCountry);
@@ -108,7 +108,7 @@ function loadCountryImages(isoCode) {
   imageContainer.innerHTML = ""; // Clear previous images
 
   // Fetch directory contents for the selected country's ISO folder
-  fetch(`./${isoCode}/`)
+  fetch(`./img/${isoCode}/`)
     .then(response => response.text())
     .then(html => {
       const parser = new DOMParser();
