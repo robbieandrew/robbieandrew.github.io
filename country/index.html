@@ -22,7 +22,6 @@
     #countryList ul {
       list-style: none;
       padding: 0;
-      margin: 0;
       background-color: #fff;
       border: 1px solid #ccc;
     }
@@ -40,14 +39,12 @@
   <main>
     <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
 
-	<h1>US energy and CO<span class="subb">2</span> emissions information</h1>
-	<h2>EIA's estimates of US fossil CO<span class="subb">2</span> emissions</h1>
-
-	<p>Updated monthly</p>
-	<p>Data source: US Energy Information Administration <a href="https://www.eia.gov/outlooks/steo/">Short-Term Energy Outlook</a></p>
-
+	<h1>Country energy and emissions charts</h1>
+	
+<div style="display:block;width:200px;margin:0 auto;">
 	<input type="text" id="countryInput" placeholder="Enter country name">
 	<ul id="countryList"></ul>
+</div>
 	<div id="imageContainer" class="pure-g">
     </div>
 
@@ -64,7 +61,7 @@
 
 // Load country data from external JSON file
 let countriesData = [];
-fetch("countries.json")
+fetch("https://robbieandrew.github.io/country/countries.json")
   .then(response => response.json())
   .then(data => countriesData = data)
   .catch(error => console.error("Error loading country data:", error));
@@ -105,25 +102,27 @@ function loadCountryImages(isoCode) {
   const imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = ""; // Clear previous images
 
-  // Fetch directory contents for the selected country's ISO folder
-//  fetch(`./img/${isoCode}/`)
-//    .then(response => response.text())
-  fetch(`https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img/${isoCode}/`)
-    .then(response => response.json())
-    .then(data => {
-      const fileNames = data.map(item => item.name);
-      console.log(fileNames);
-	  return fileNames
-    })
+  const githubUrl = `https://github.com/robbieandrew/robbieandrew.github.io/tree/master/country/img/${isoCode}`;
+
+  fetch(githubUrl)
+    .then(response => response.text())
     .then(html => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
-      const links = [...doc.querySelectorAll("a")].map(a => a.href);
-      
-      // Filter to get only image files (JPG, PNG, GIF, SVG)
-      const imageFiles = links.filter(link => link.match(/\.(jpg|png|gif|svg)$/i));
 
-      imageFiles.forEach(image => {
+      // Extract file links from GitHub directory listing
+      const links = [...doc.querySelectorAll("a")]
+        .map(a => a.href)
+        .filter(href => href.match(/\.(jpg|png|gif|svg)$/i)) // Filter for image files
+        .map(href => href.replace("blob/", "").replace("github.com", "raw.githubusercontent.com")); // Convert GitHub UI links to raw file URLs
+
+      if (links.length === 0) {
+        console.error("No images found for", isoCode);
+        return;
+      }
+
+      // Display images
+      links.forEach(image => {
         const div = document.createElement("div");
         div.className = "pure-u-1 pure-u-lg-1-2"; // Ensures proper placement
 
@@ -133,14 +132,14 @@ function loadCountryImages(isoCode) {
           object.data = image;
           object.type = "image/svg+xml";
           object.className = "fig";
-          
+
           const p = document.createElement("p");
           const link = document.createElement("a");
           link.href = image;
           link.target = "_self";
           link.textContent = "Enlarge this figure";
           p.appendChild(link);
-          
+
           div.appendChild(object);
           div.appendChild(p);
         } else {
@@ -148,7 +147,7 @@ function loadCountryImages(isoCode) {
           const img = document.createElement("img");
           img.src = image;
           img.style.width = "200px"; // Adjust as needed
-          
+
           div.appendChild(img);
         }
 
@@ -157,6 +156,7 @@ function loadCountryImages(isoCode) {
     })
     .catch(error => console.error("Error loading images:", error));
 }
+
 </script>
 
 </body>
