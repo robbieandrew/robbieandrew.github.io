@@ -54,7 +54,7 @@
     </div>
 
 	
-    <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
   </main>
 
 <script src="../js/downloadSVGasPNG.js"></script>
@@ -108,8 +108,15 @@ function loadCountryImages(isoCode) {
   imageContainer.innerHTML = ""; // Clear previous images
 
   // Fetch directory contents for the selected country's ISO folder
-  fetch(`./img/${isoCode}/`)
-    .then(response => response.text())
+//  fetch(`./img/${isoCode}/`)
+//    .then(response => response.text())
+  fetch(`https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img/${isoCode}/`)
+    .then(response => response.json())
+    .then(data => {
+      const fileNames = data.map(item => item.name);
+      console.log(fileNames);
+	  return fileNames
+    })
     .then(html => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
