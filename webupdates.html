@@ -48,9 +48,9 @@
             const lines = text.trim().split('\n');
             const tbody = document.getElementById('table-body');
             
-			for (let i = lines.length - 1; i >= 0; i--) {
-				const record = JSON.parse(lines[i]);
-                const row = document.createElement('tr');
+			lines.reverse().forEach(line => {
+				const record = JSON.parse(line);                
+				const row = document.createElement('tr');
                 
                 const timestamp = document.createElement('td');
                 timestamp.textContent = new Date(record.timestamp).toLocaleString('en-GB', {day: 'numeric',month: 'long',year: 'numeric',hour: '2-digit',minute: '2-digit',second: '2-digit'});
