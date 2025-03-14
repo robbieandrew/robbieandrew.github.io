@@ -48,8 +48,8 @@
             const lines = text.trim().split('\n');
             const tbody = document.getElementById('table-body');
             
-            lines.forEach(line => {
-                const record = JSON.parse(line);
+			for (let i = lines.length - 1; i >= 0; i--) {
+				const record = JSON.parse(lines[i]);
                 const row = document.createElement('tr');
                 
                 const timestamp = document.createElement('td');
