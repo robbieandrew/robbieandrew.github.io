@@ -61,7 +61,10 @@
                 row.appendChild(event);
                 
                 const files = document.createElement('td');
-                files.innerHTML = record.files.map(file => `<div>${file}</div>`).join('');
+                files.innerHTML = record.files.map(file => {
+                    const filename = file.split('/').pop(); // Extract filename from path
+                    return `<div><a href="${file}" target="_blank">${filename}</a></div>`;
+                }).join('');
                 row.appendChild(files);
                 
                 const url = document.createElement('td');
