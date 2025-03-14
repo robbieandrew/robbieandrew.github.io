@@ -58,11 +58,6 @@
 
 <script src="../js/downloadSVGasPNG.js"></script>
 <script>
-  // Add a PNG download link for every SVG on the page
-  document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-    svgObject.addEventListener('load', () => replacePNGlink(svgObject));
-  });
-
 // Load country data from external JSON file
 let countriesData = [];
 fetch("https://robbieandrew.github.io/country/countries.json")
