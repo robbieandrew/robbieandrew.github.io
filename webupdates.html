@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDJSON Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: calc(100% - 40px);
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f0f8ff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Event</th>
+                <th>Files</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <script>
+        async function loadNDJSON() {
+            const response = await fetch('webupdates.json');
+            const text = await response.text();
+            const lines = text.trim().split('\n');
+            const tbody = document.getElementById('table-body');
+            
+            lines.forEach(line => {
+                const record = JSON.parse(line);
+                const row = document.createElement('tr');
+                
+                const timestamp = document.createElement('td');
+                timestamp.textContent = new Date(record.timestamp).toLocaleString();
+                row.appendChild(timestamp);
+                
+                const event = document.createElement('td');
+                event.textContent = record.event;
+                row.appendChild(event);
+                
+                const files = document.createElement('td');
+                files.innerHTML = record.files.map(file => `<div>${file}</div>`).join('');
+                row.appendChild(files);
+                
+                const url = document.createElement('td');
+                url.innerHTML = `<a href="${record.URL}" target="_blank">${record.URL}</a>`;
+                row.appendChild(url);
+                
+                tbody.appendChild(row);
+            });
+        }
+        
+        loadNDJSON();
+    </script>
+</body>
+</html>
