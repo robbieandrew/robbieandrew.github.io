@@ -266,6 +266,22 @@
   document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
     svgObject.addEventListener('load', () => replacePNGlink(svgObject));
   });
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('object[type="image/svg+xml"]').forEach(obj => {
+        obj.addEventListener("load", function () {
+            let svgDoc = obj.contentDocument;
+            if (svgDoc) {
+                let titleElement = svgDoc.querySelector("title");
+                if (titleElement) {
+                    let titleText = titleElement.textContent.trim();
+                    obj.setAttribute("data-title", titleText);
+                }
+            }
+        });
+    });
+});
+
 </script>
 </body>
 
