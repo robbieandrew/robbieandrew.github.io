@@ -260,29 +260,30 @@
 	</div>
     <p><a href="https://robbieandrew.github.io/">Index</a> | <a href="http://folk.uio.no/roberan/">Robbie Andrew, CICERO</a> | <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">Contact me</a></p>
   </main>
+
+
 <script src="../js/downloadSVGasPNG.js"></script>
 <script>
-  // Add a PNG download link for every SVG on the page
-  document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-    svgObject.addEventListener('load', () => replacePNGlink(svgObject));
-  });
-  
   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('object[type="image/svg+xml"]').forEach(obj => {
-        obj.addEventListener("load", function () {
-            let svgDoc = obj.contentDocument;
-            if (svgDoc) {
-                let titleElement = svgDoc.querySelector("title");
-                if (titleElement) {
-                    let titleText = titleElement.textContent.trim();
-                    obj.setAttribute("data-title", titleText);
-                }
-            }
-        });
-    });
-});
-
+    document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+	  svgObject.addEventListener("load", function () {
+		// Add a PNG download link for every SVG on the page
+        replacePNGlink(svgObject);
+		// Insert every SVG's title element text as data-title in the object, for better visibility to search engines
+        let svgDoc = svgObject.contentDocument;
+        if (svgDoc) {
+          let titleElement = svgDoc.querySelector("title");
+          if (titleElement) {
+            let titleText = titleElement.textContent.trim();
+            svgObject.setAttribute("data-title", titleText);
+          }
+        }
+	  });
+	});
+  });
 </script>
+
+
 </body>
 
 </html>
