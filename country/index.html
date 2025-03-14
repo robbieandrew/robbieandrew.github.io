@@ -98,6 +98,7 @@ function searchCountry() {
 }
 
 function loadCountryImages(isoCode) {
+  // caching is to prevent issues with too much use of the github.com API
   const CACHE_KEY = "imageCache";
   const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 
