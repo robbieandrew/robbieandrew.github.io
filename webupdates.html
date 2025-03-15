@@ -33,6 +33,7 @@
             <tr>
                 <th>Timestamp</th>
                 <th>Event</th>
+				<th>Folder</th>
                 <th>Files</th>
                 <th>Page</th>
             </tr>
@@ -58,7 +59,7 @@
 				// Insert separator row if date changes
 				if (lastDate && lastDate !== currentDate) {
 					const separatorRow = document.createElement('tr');
-					separatorRow.innerHTML = `<td colspan="4" style="background-color: #f0f0f0; height: 7px;"></td>`;
+					separatorRow.innerHTML = `<td colspan="5" style="background-color: #f0f0f0; height: 7px;"></td>`;
 					tbody.appendChild(separatorRow);
 				}
 
@@ -72,6 +73,11 @@
                 event.textContent = record.event;
                 row.appendChild(event);
                 
+                const folder = document.createElement('td');
+				// Display folder if available, otherwise leave blank
+                folder.textContent = record.folder ? record.folder : ""; 
+                row.appendChild(folder);
+
                 const files = document.createElement('td');
                 files.innerHTML = record.files.map(file => {
                     const filename = file.split('/').pop(); // Extract filename from path
