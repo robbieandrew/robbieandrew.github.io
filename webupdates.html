@@ -48,8 +48,20 @@
             const lines = text.trim().split('\n');
             const tbody = document.getElementById('table-body');
             
+			let lastDate = null; // Track the last processed date
+
 			lines.reverse().forEach(line => {
 				const record = JSON.parse(line);                
+				const fullDate = new Date(record.timestamp);
+				const currentDate = fullDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+				// Insert separator row if date changes
+				if (lastDate && lastDate !== currentDate) {
+					const separatorRow = document.createElement('tr');
+					separatorRow.innerHTML = `<td colspan="4" style="border-top: 3px solid black;"></td>`;
+					tbody.appendChild(separatorRow);
+				}
+
 				const row = document.createElement('tr');
                 
                 const timestamp = document.createElement('td');
@@ -72,6 +84,8 @@
                 row.appendChild(url);
                 
                 tbody.appendChild(row);
+				
+				lastDate = currentDate; // Update last processed date
             });
         }
         
