@@ -40,6 +40,10 @@
     <button class="format-button" data-format="absolute">Absolute</button>
     <button class="format-button" data-format="line">Line</button>
   </div>
+<div class="button-group sort-selector-container">
+  <button class="sort-button active" data-sort="alphabetical">Alphabetical</button>
+  <button class="sort-button" data-sort="bev-share">BEV Share</button>
+</div>
 <div class="selector">
   <label for="countrySelector">Select Countries (<span id="selectedCount">0</span>/<span id="totalCount">0</span>)</label>
   <select id="countrySelector" multiple>
@@ -266,9 +270,61 @@ function populateCountries() {
     .catch(error => console.error('Error loading JSON:', error));
 };
 
+function sortCountries(method) {
+  const graphContainer = document.querySelector('.pure-g');
+  const countryDivs = Array.from(graphContainer.children);
+
+  if (method === 'bev-share') {
+    countryDivs.sort((a, b) => {
+      const countryA = a.getAttribute('data-country');
+      const countryB = b.getAttribute('data-country');
+      return (bevShareData[countryB] || 0) - (bevShareData[countryA] || 0);
+    });
+  } else {
+    countryDivs.sort((a, b) => {
+      return a.getAttribute('data-country').localeCompare(b.getAttribute('data-country'));
+    });
+  }
+
+  countryDivs.forEach(div => graphContainer.appendChild(div));
+}
+
+function setupSortButtons() {
+  const sortButtons = document.querySelectorAll('.sort-button');
+
+  function setActiveSortButton(clickedButton) {
+    sortButtons.forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+    sortCountries(clickedButton.getAttribute('data-sort'));
+  }
+
+  sortButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      setActiveSortButton(this);
+    });
+  });
+
+  // Default sorting (Alphabetical)
+  sortCountries('alphabetical');
+}
+
+let bevShareData = {};
+
+// Fetch BEV share data
+fetch('https://robbieandrew.github.io/carsales/data/latest_bev_share.json')
+  .then(response => response.json())
+  .then(data => {
+    bevShareData = data.reduce((acc, item) => {
+      acc[item.country] = item.BEVshare;
+      return acc;
+    }, {});
+  })
+  .catch(error => console.error('Error loading BEV share data:', error));
+
 // Fetch JSON and generate HTML dynamically
 window.onload = function() {
 	populateCountries();
+	setupSortButtons();
 };
 </script>
 
