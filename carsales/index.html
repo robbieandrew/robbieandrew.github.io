@@ -246,6 +246,8 @@ function makeCountryDiv(entry) {
 }
 
 function populateCountries() {
+  // The data.json file is critical: it determines which countries are shown, and includes additional metadata
+  // on source(s) and any dedicated web page for the country.
   fetch('https://robbieandrew.github.io/carsales/data.json')
     .then(response => response.json())
 //	fakeFetch() // can replace previous two lines
