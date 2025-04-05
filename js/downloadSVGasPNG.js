@@ -239,6 +239,8 @@ function replacePNGlink(svgObject) {
 	nextSibling.appendChild(copyLink);
   } else {
     container.appendChild(downloadLink);
+    const separator2 = document.createTextNode(' | ');
+    nextSibling.appendChild(separator2);
 	container.appendChild(copyLink);
   }
 }
