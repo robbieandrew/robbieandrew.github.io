@@ -59,10 +59,10 @@ function copySVGasPNG(svgObject, anchorElement) {
   renderSVGtoPNGBlob(svgObject, async (blob) => {
     try {
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-      showToastBelowElement('Copied to clipboard as PNG!');
+      showToastBelowElement(anchorElement,'Copied to clipboard as PNG!');
     } catch (err) {
       console.error('Clipboard write failed', err);
-      showToastBelowElement('Failed to copy image to clipboard.');
+      showToastBelowElement(anchorElement,'Failed to copy image to clipboard.');
     }
   });
 }
