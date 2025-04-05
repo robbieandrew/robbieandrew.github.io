@@ -55,14 +55,14 @@ function renderSVGtoPNGBlob(svgObject, callback) {
   }
 }
 
-function copySVGasPNG(svgObject) {
+function copySVGasPNG(svgObject, anchorElement) {
   renderSVGtoPNGBlob(svgObject, async (blob) => {
     try {
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-      showToast('Copied to clipboard as PNG!');
+      showToastBelowElement('Copied to clipboard as PNG!');
     } catch (err) {
       console.error('Clipboard write failed', err);
-      showToast('Failed to copy image to clipboard.');
+      showToastBelowElement('Failed to copy image to clipboard.');
     }
   });
 }
@@ -81,76 +81,37 @@ function downloadSVGasPNG(svgObject) {
   });
 }
 
-/*function downloadSVGasPNG(svgObject) {
-  try {
-	  const svg = svgObject.contentDocument.querySelector('svg');
-	  
-	  // Make a copy (clone) of the SVG object so we can manipulate it
-	  const clonedSvg = svg.cloneNode(true);
-	  
-	  // Remove any foreignObject elements from the clone. These are seen by the browser as cross-origin, and cause conversion (toBlob) to fail.
-      const foreignObjects = clonedSvg.querySelectorAll('foreignObject');
-      foreignObjects.forEach(fo => fo.remove());
-	  
-	  // Create a canvas element (bitmap)
-	  const canvas = document.createElement('canvas');
+function showToastBelowElement(anchorElement, message, duration = 2000) {
+  const rect = anchorElement.getBoundingClientRect();
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
 
-	  // To improve antialiasing in the final render, first convert to raster at double the desired resolution before later scaling down again
-	  const scale = 2;
-	  canvas.width = 1852 * scale;
-	  // Maintain aspect ratio
-	  const svgRect = svg.getBoundingClientRect();
-	  canvas.height = Math.round(svgRect.height/svgRect.width*canvas.width);
-	  
-	  const ctx = canvas.getContext('2d');
-	  
-	  // Convert SVG to a data URL
-	  const svgData = new XMLSerializer().serializeToString(clonedSvg);
-	  const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
-	  const DOMURL = window.URL || window.webkitURL || window;
-	  const svgUrl = DOMURL.createObjectURL(svgBlob);
-	  
-	  // Create a bitmap from the SVG
-	  const img = new Image();
-	  img.onload = function() {
-		// First draw a white background
-		ctx.fillStyle = 'white';
-		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		// Then draw the image on the canvas
-		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-		DOMURL.revokeObjectURL(svgUrl);
-		
-		let finalCanvas;
-		if (scale === 1) {
-			finalCanvas = canvas;
-		} else {
-		  // Create a smaller canvas for the final output
-		  finalCanvas = document.createElement('canvas');
-          finalCanvas.width = canvas.width / scale;
-          finalCanvas.height = canvas.height / scale;
-          const finalCtx = finalCanvas.getContext('2d');
-          // Draw the high-resolution canvas onto the smaller canvas
-          finalCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 
-                         0, 0, finalCanvas.width, finalCanvas.height);
-		}
-		
-		// Convert canvas to PNG and initiate download
-		finalCanvas.toBlob(function(blob) {
-		  const url = DOMURL.createObjectURL(blob);
-		  const a = document.createElement('a');
-		  a.href = url;
-		  a.download = `${svgObject.getAttribute('data').split('/').pop().replace('.svg', '')}.png`;
-		  document.body.appendChild(a);
-		  a.click();
-		  document.body.removeChild(a);
-		  DOMURL.revokeObjectURL(url);
-		}, 'image/png');
-	  };
-	  img.src = svgUrl;
-  } catch (error) {
-	  console.warn("Unable to access SVG content! (Are you running locally?)",error);
-  }
-}*/
+  const toast = document.createElement('div');
+  toast.textContent = message;
+  toast.style.position = 'absolute';
+  toast.style.left = `${rect.left + scrollLeft}px`;
+  toast.style.top = `${rect.bottom + scrollTop + 4}px`; // 4px spacing below the element
+  toast.style.background = 'rgba(0,0,0,0.85)';
+  toast.style.color = 'white';
+  toast.style.padding = '0.4rem 0.8rem';
+  toast.style.borderRadius = '6px';
+  toast.style.fontSize = '0.85rem';
+  toast.style.boxShadow = '0 2px 6px rgba(0,0,0,0.25)';
+  toast.style.zIndex = 10000;
+  toast.style.opacity = '0';
+  toast.style.transition = 'opacity 0.2s ease';
+
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    toast.style.opacity = '1';
+  });
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    setTimeout(() => document.body.removeChild(toast), 300);
+  }, duration);
+}
+
 
 function showToast(message, duration = 2000) {
   const toast = document.createElement('div');
@@ -198,7 +159,7 @@ function createCopyLink(svgObject) {
   copyLink.className = 'copy-PNG';
   copyLink.addEventListener('click', (e) => {
     e.preventDefault();
-    copySVGasPNG(svgObject);
+    copySVGasPNG(svgObject, copyLink);
   });
   return copyLink;
 }
