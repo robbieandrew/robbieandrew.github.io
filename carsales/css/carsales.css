@@ -76,27 +76,29 @@
     padding: 8px 16px; /* Adjust button padding for smaller screens */
     font-size: 14px;   /* Reduce font size */
   }
-
   .button-group {
     padding: 10px; /* Less padding around button group */
   }
-
   .selector-container {
     gap: 20px;  /* Reduce the gap between buttons on smaller screens */
+  }
+  #countrySelector {
+    height: 20px;
   }
 }
 /* For screens smaller than 480px (mobile phones) */
 @media screen and (max-width: 480px) {
   .frequency-button, .format-button, .sort-button {
-    padding: 6px 12px; /* Even smaller padding for mobile */
+    padding: 4px 8px; /* Even smaller padding for mobile */
     font-size: 12px;   /* Reduce font size more for mobile */
   }
-
   .button-group {
-    padding: 8px; /* Smaller padding for button group */
+    padding: 4px; /* Smaller padding for button group */
   }
-
   .selector-container {
     gap: 10px; /* Further reduce gap for mobile screens */
+  }
+  #countrySelector {
+    height: 20px;
   }
 }
