@@ -70,3 +70,33 @@
   overflow-y: auto;
 }
 
+/* For screens smaller than 768px (tablet and mobile) */
+@media screen and (max-width: 768px) {
+  .frequency-button, .format-button, .sort-button {
+    padding: 8px 16px; /* Adjust button padding for smaller screens */
+    font-size: 14px;   /* Reduce font size */
+  }
+
+  .button-group {
+    padding: 10px; /* Less padding around button group */
+  }
+
+  .selector-container {
+    gap: 20px;  /* Reduce the gap between buttons on smaller screens */
+  }
+}
+/* For screens smaller than 480px (mobile phones) */
+@media screen and (max-width: 480px) {
+  .frequency-button, .format-button, .sort-button {
+    padding: 6px 12px; /* Even smaller padding for mobile */
+    font-size: 12px;   /* Reduce font size more for mobile */
+  }
+
+  .button-group {
+    padding: 8px; /* Smaller padding for button group */
+  }
+
+  .selector-container {
+    gap: 10px; /* Further reduce gap for mobile screens */
+  }
+}
