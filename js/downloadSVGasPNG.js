@@ -67,21 +67,21 @@ function copySVGasPNG(svgObject) {
   });
 }
 
-// function downloadSVGasPNG(svgObject) {
-//  renderSVGtoPNGBlob(svgObject, (blob) => {
-//    const DOMURL = window.URL || window.webkitURL || window;
-//    const url = DOMURL.createObjectURL(blob);
-//    const a = document.createElement('a');
-//    a.href = url;
-//    a.download = `${svgObject.getAttribute('data').split('/').pop().replace('.svg', '')}.png`;
-//    document.body.appendChild(a);
-//    a.click();
-//    document.body.removeChild(a);
-//    DOMURL.revokeObjectURL(url);
-//  });
-//}
-
 function downloadSVGasPNG(svgObject) {
+  renderSVGtoPNGBlob(svgObject, (blob) => {
+    const DOMURL = window.URL || window.webkitURL || window;
+    const url = DOMURL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${svgObject.getAttribute('data').split('/').pop().replace('.svg', '')}.png`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    DOMURL.revokeObjectURL(url);
+  });
+}
+
+/*function downloadSVGasPNG(svgObject) {
   try {
 	  const svg = svgObject.contentDocument.querySelector('svg');
 	  
@@ -150,7 +150,7 @@ function downloadSVGasPNG(svgObject) {
   } catch (error) {
 	  console.warn("Unable to access SVG content! (Are you running locally?)",error);
   }
-}
+}*/
 
 function showToast(message, duration = 2000) {
   const toast = document.createElement('div');
