@@ -68,6 +68,29 @@ fetch("https://robbieandrew.github.io/country/countries.json")
 // Add event listener to input field to trigger search on user input
 document.getElementById("countryInput").addEventListener("input", searchCountry);
 
+// Add event listener to input field to allow pressing Enter to select the first result
+document.getElementById("countryInput").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    const inputValue = this.value.toLowerCase();
+    const firstMatch = countriesData.find(country =>
+      country.names.some(name => name.toLowerCase().includes(inputValue))
+    );
+    if (firstMatch) {
+      handleCountrySelection(firstMatch);
+    }
+  }
+});
+
+// Respond to selection from the search results
+function handleCountrySelection(country) {
+  const input = document.getElementById("countryInput");
+  const countryList = document.getElementById("countryList");
+  
+  input.value = country.names[0]; // Set the input field to the primary name
+  countryList.innerHTML = ""; // Hide the country list
+  loadCountryImages(country.iso); // Load images
+}
+
 function searchCountry() {
   const input = document.getElementById("countryInput");
   const countryList = document.getElementById("countryList");
@@ -86,11 +109,7 @@ function searchCountry() {
   matchingCountries.forEach(country => {
     const li = document.createElement("li");
     li.textContent = country.names[0]; // Display primary name of the country
-    li.addEventListener("click", () => {
-      input.value = country.names[0]; // Set the input field to the primary name
-      countryList.innerHTML = ""; // Hide the country list
-      loadCountryImages(country.iso); // Load images
-    });
+    li.addEventListener("click", () => handleCountrySelection(country));
     list.appendChild(li);
   });
   
@@ -128,6 +147,7 @@ function loadCountryImages(isoCode) {
       });
   }
 }
+
 
 // Because I cannot get a directory listing of, e.g., robbieandrew.github.io/country/img/DEU, I instead get the list of files in that folder using GitHub's API, then map the path back to github.io.
 function fetchGitHubImages(isoCode) {
