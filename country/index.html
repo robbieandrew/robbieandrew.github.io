@@ -34,6 +34,9 @@
     #countryList li:hover {
       background-color: #f5f5f5;
     }
+    #countryList li.highlighted {
+      background-color: #f5f5f5;
+    }
   </style>
 </head>
 
@@ -58,31 +61,11 @@
 
 <script src="../js/downloadSVGasPNG.js"></script>
 <script>
-// Load country data from external JSON file
-/*
-let countriesData = [];
-fetch("https://robbieandrew.github.io/country/countries.json")
-  .then(response => response.json())
-  .then(data => countriesData = data)
-  .catch(error => console.error("Error loading country data:", error));
+// Track the highlighted item in the search results
+let highlightedIndex = 0;
 
-// Add event listener to input field to trigger search on user input
-document.getElementById("countryInput").addEventListener("input", searchCountry);
-
-// Add event listener to input field to allow pressing Enter to select the first result
-document.getElementById("countryInput").addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    const inputValue = this.value.toLowerCase();
-    const firstMatch = countriesData.find(country =>
-      country.names.some(name => name.toLowerCase().includes(inputValue))
-    );
-    if (firstMatch) {
-      handleCountrySelection(firstMatch);
-    }
-  }
-});
-*/
 window.addEventListener("DOMContentLoaded", () => {
+  // Load the full list of all countries, then the list of available countries (the list of ISO subfolders), and filter the pare the full list down to match available countries. The full list, in countries.json, gives us the link between the ISO and alternative names for each country.
   Promise.all([
     fetch("https://robbieandrew.github.io/country/countries.json").then(res => res.json()),
     getCachedImageFolders()
@@ -91,37 +74,38 @@ window.addEventListener("DOMContentLoaded", () => {
     countriesData = allCountries.filter(country =>
       availableISOs.includes(country.iso.toUpperCase())
     );
-
-    console.log("Countries with matching folders:", countriesData);
-
-    // Add search and Enter listeners now that data is ready
+	
+    // Add search and arrow/enter listeners now that data is ready
     const input = document.getElementById("countryInput");
-
     input.addEventListener("input", searchCountry);
 
-    input.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        const inputValue = this.value.toLowerCase();
-        const firstMatch = countriesData.find(country =>
-          country.names.some(name => name.toLowerCase().includes(inputValue))
-        );
-        if (firstMatch) {
-          handleCountrySelection(firstMatch);
-        }
-      }
+	input.addEventListener("keydown", function (event) {
+	  const items = document.querySelectorAll("#countryList li");
+	  if (event.key === "ArrowDown") {
+		event.preventDefault();
+		if (items.length > 0) {
+		  highlightedIndex = (highlightedIndex + 1) % items.length;
+		  updateHighlight();
+		}
+	  } else if (event.key === "ArrowUp") {
+		event.preventDefault();
+		if (items.length > 0) {
+		  highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+		  updateHighlight();
+		}
+	  } else if (event.key === "Enter") {
+		event.preventDefault();
+		if (items.length > 0) {
+		  items[highlightedIndex].click(); // Triggers the click handler
+		}
+	  }
     });
   })
   .catch(error => {
     console.error("Error initializing app:", error);
-    document.getElementById("imageContainer").innerHTML =
-      `<p style="color:red;">Unable to load country list. Please try again later.</p>`;
+    displayErrorMessage("Unable to load country list. Please try again later.");
   });
 });
-
-
-
-
-
 
 // Respond to selection from the search results
 function handleCountrySelection(country) {
@@ -133,32 +117,43 @@ function handleCountrySelection(country) {
   loadCountryImages(country.iso); // Load images
 }
 
+/* searchCountry
+Perform search based on the current input. 
+*/
 function searchCountry() {
   const input = document.getElementById("countryInput");
   const countryList = document.getElementById("countryList");
-  countryList.innerHTML = ""; // Clear previous search results
+  countryList.innerHTML = "";
+  highlightedIndex = 0;
 
-  if (!input.value) return; // Exit if input is empty
+  if (!input.value) return;
 
-  // Find countries that match the input based on alternative names
+  // case-insensitive matching
   const matchingCountries = countriesData.filter(country =>
     country.names.some(name => name.toLowerCase().includes(input.value.toLowerCase()))
   );
 
-  if (!matchingCountries.length) return; // Exit if no matches are found
+  if (!matchingCountries.length) return;
 
   const list = document.createElement("ul");
-  matchingCountries.forEach(country => {
+
+  matchingCountries.forEach((country, index) => {
     const li = document.createElement("li");
-    li.textContent = country.names[0]; // Display primary name of the country
+    li.textContent = country.names[0];
+    li.dataset.index = index;
     li.addEventListener("click", () => handleCountrySelection(country));
     list.appendChild(li);
   });
-  
-  countryList.appendChild(list); // Display the matching results
+
+  countryList.appendChild(list);
+
+  // Highlight the first item
+  updateHighlight();
 }
 
-// 
+/* getCachedImageFolders
+Get the list of image sub-folders (ISO codes), which indicates which countries we have images for. This list is cached to prevent too many calls to api.github.com.
+*/ 
 function getCachedImageFolders() {
   const CACHE_KEY = "imageFolderList";
   const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
@@ -198,7 +193,9 @@ function getCachedImageFolders() {
 }
 
 
-// loadCountryImages
+/* loadCountryImages
+Obtains the URLs of all images for the given country, and displays them on the page. The list of images is obtained from api.github.com and cached, to prevent calling the API too often.
+*/
 function loadCountryImages(isoCode) {
   // caching is to prevent issues with too much use of the github.com API
   const CACHE_KEY = "imageCache";
@@ -320,6 +317,12 @@ function displayImages(isoCode, imageData) {
     });
 }
 
+function updateHighlight() {
+  const items = document.querySelectorAll("#countryList li");
+  items.forEach((item, index) => {
+    item.classList.toggle("highlighted", index === highlightedIndex);
+  });
+}
 
 </script>
 
