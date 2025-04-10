@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Country page</title>
+  <script src="../js/html-include.js"></script>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+  <main>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+
+	<h1>Norway site-level oil and gas charts</h1>
+	
+	<div class="input-wrapper">
+<!---    <div style="display:block;width:200px;margin:0 auto;"> -->
+	  <input type="text" id="countryInput" placeholder="Enter facility name">
+<svg class="trace-border" viewBox="0 0 200 40" preserveAspectRatio="none">
+    <rect x="1" y="1" width="198" height="38" rx="4" ry="4" />
+  </svg>	  <ul id="countryList"></ul>
+      </div>
+
+    <div id="imageContainer" class="pure-g">
+      </div>
+
+	
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p>
+	  </div>
+  </main>
+
+<script src="../js/downloadSVGasPNG.js"></script>
+<script>
+// Track the highlighted item in the search results
+let highlightedIndex = 0;
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('countryInput').focus();
+  // Load the full list of all countries, then the list of available countries (the list of ISO subfolders), and filter the pare the full list down to match available countries. The full list, in countries.json, gives us the link between the ISO and alternative names for each country.
+  Promise.all([
+    fetch("https://robbieandrew.github.io/norway/oilgas/sites.json").then(res => res.json()),
+    getCachedImageFolders()
+  ])
+  .then(([allCountries, availableISOs]) => {
+    countriesData = allCountries.filter(country =>
+      availableISOs.includes(country.npdID)
+    );
+	
+    // Add search and arrow/enter listeners now that data is ready
+    const input = document.getElementById("countryInput");
+    input.addEventListener("input", searchCountry);
+
+	input.addEventListener("keydown", function (event) {
+	  const items = document.querySelectorAll("#countryList li");
+	  if (event.key === "ArrowDown") {
+		event.preventDefault();
+		if (items.length > 0) {
+		  highlightedIndex = (highlightedIndex + 1) % items.length;
+		  updateHighlight();
+		}
+	  } else if (event.key === "ArrowUp") {
+		event.preventDefault();
+		if (items.length > 0) {
+		  highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+		  updateHighlight();
+		}
+	  } else if (event.key === "Enter") {
+		event.preventDefault();
+		if (items.length > 0) {
+		  items[highlightedIndex].click(); // Triggers the click handler
+		}
+	  }
+    });
+  })
+  .catch(error => {
+    console.error("Error initializing app:", error);
+    displayErrorMessage("Unable to load country list. Please try again later.");
+  });
+});
+
+// Respond to selection from the search results
+function handleCountrySelection(country) {
+  const input = document.getElementById("countryInput");
+  const countryList = document.getElementById("countryList");
+  
+  input.value = country.names[0]; // Set the input field to the primary name
+  countryList.innerHTML = ""; // Hide the country list
+  loadCountryImages(country.npdID); // Load images
+}
+
+/* searchCountry
+Perform search based on the current input. 
+*/
+function searchCountry() {
+  const input = document.getElementById("countryInput");
+  const countryList = document.getElementById("countryList");
+  countryList.innerHTML = "";
+  highlightedIndex = 0;
+
+  if (!input.value) return;
+
+  // case-insensitive matching
+  const matchingCountries = countriesData.filter(country =>
+    country.names.some(name => name.toLowerCase().includes(input.value.toLowerCase()))
+  );
+
+  if (!matchingCountries.length) return;
+
+  const list = document.createElement("ul");
+
+  matchingCountries.forEach((country, index) => {
+    const li = document.createElement("li");
+    li.textContent = country.names[0];
+    li.dataset.index = index;
+    li.addEventListener("click", () => handleCountrySelection(country));
+    list.appendChild(li);
+  });
+
+  countryList.appendChild(list);
+
+  // Highlight the first item
+  updateHighlight();
+}
+
+/* getCachedImageFolders
+Get the list of image sub-folders (ISO codes), which indicates which countries we have images for. This list is cached to prevent too many calls to api.github.com.
+*/ 
+function getCachedImageFolders() {
+  const CACHE_KEY = "imageFolderList";
+  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
+  const now = Date.now();
+
+  const cached = localStorage.getItem(CACHE_KEY);
+  if (cached) {
+    const { folders, timestamp } = JSON.parse(cached);
+    if (now - timestamp < CACHE_DURATION) {
+      return Promise.resolve(folders);
+    }
+  }
+
+  const apiUrl = "https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/norway/oilgas/img";
+
+  return fetch(apiUrl)
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to fetch folder list");
+      return res.json();
+    })
+    .then(data => {
+      const folderNames = data
+        .filter(item => item.type === "dir")
+        .map(item => item.name.toUpperCase());
+
+      localStorage.setItem(CACHE_KEY, JSON.stringify({
+        folders: folderNames,
+        timestamp: now
+      }));
+
+      return folderNames;
+    })
+    .catch(err => {
+      console.error("Error fetching image folders:", err);
+      return []; // fallback: empty list
+    });
+}
+
+
+/* loadCountryImages
+Obtains the URLs of all images for the given country, and displays them on the page. The list of images is obtained from api.github.com and cached, to prevent calling the API too often.
+*/
+function loadCountryImages(npdID) {
+  // caching is to prevent issues with too much use of the github.com API
+  const CACHE_KEY = "imageCache";
+  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
+
+  let cachedData = localStorage.getItem(CACHE_KEY);
+  let imageData = cachedData ? JSON.parse(cachedData) : { data: {}, timestamps: {} };
+  let now = Date.now();
+
+  if (imageData.data[npdID] && now - (imageData.timestamps[npdID] || 0) < CACHE_DURATION) {
+    console.log(`Using cached images for ${npdID}`);
+    displayImages(npdID, imageData.data);
+  } else {
+    console.log(`Fetching new images for ${npdID}`);
+    fetchGitHubImages(npdID)
+      .then(newImages => {
+        if (newImages) {
+          imageData.data[npdID] = newImages;
+          imageData.timestamps[npdID] = now;
+          localStorage.setItem(CACHE_KEY, JSON.stringify(imageData));
+          displayImages(npdID, imageData.data);
+        } else {
+          displayErrorMessage(`No images available for ${npdID}`);
+        }
+      })
+      .catch(error => {
+        console.error("Error loading images:", error);
+        displayErrorMessage("An error occurred while fetching images.");
+      });
+  }
+}
+
+
+// Get the list of all images (specifically their URLs) in the country's subfolder
+// Because I cannot get a directory listing of, e.g., robbieandrew.github.io/country/img/DEU, I instead get the list of files in that folder using GitHub's API, then map the path back to github.io.
+function fetchGitHubImages(npdID) {
+  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/norway/oilgas/img/${npdID}`;
+
+  return fetch(githubApiUrl)
+    .then(response => {
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error(`No images found for ${npdID} (folder missing)`);
+        } else {
+          throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+        }
+      }
+      return response.json();
+    })
+    .then(files => {
+      if (!Array.isArray(files)) {
+        throw new Error("Invalid API response format.");
+      }
+
+      const imageUrls = files
+        .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
+		// Generate a URL to access the file via the webpage, rather than github.com
+        .map(file => `https://robbieandrew.github.io/norway/oilgas/img/${npdID}/${file.name}`);
+
+      if (imageUrls.length === 0) {
+        throw new Error(`No valid images found in ${npdID} folder.`);
+      }
+
+      return imageUrls;
+    })
+    .catch(error => {
+      console.error(error.message);
+      return null; // Return null to indicate failure
+    });
+}
+
+function displayErrorMessage(message) {
+  const imageContainer = document.getElementById("imageContainer");
+  imageContainer.innerHTML = `<p class="pure-u-1" style="color: red;">${message}</p>`;
+}
+
+function displayImages(npdID, imageData) {
+  const imageContainer = document.getElementById("imageContainer");
+  imageContainer.innerHTML = ""; // Clear previous images
+
+  if (!imageData[npdID] || imageData[npdID].length === 0) {
+    console.error(`No images found for ${npdID}`);
+    return;
+  }
+
+  imageData[npdID].forEach(image => {
+    const div = document.createElement("div");
+    div.className = "pure-u-1 pure-u-lg-1-3";
+
+    if (image.endsWith(".svg")) {
+      const object = document.createElement("object");
+      object.setAttribute('data', image);
+      object.type = "image/svg+xml";
+      object.className = "fig";
+
+      const p = document.createElement("p");
+      const link = document.createElement("a");
+      link.href = image;
+      link.target = "_self";
+      link.textContent = "Enlarge this figure";
+      p.appendChild(link);
+
+      div.appendChild(object);
+      div.appendChild(p);
+    } else {
+      const img = document.createElement("img");
+      img.src = image;
+      img.style.width = "200px";
+
+      div.appendChild(img);
+    }
+
+    imageContainer.appendChild(div);
+  });
+  
+  // Add a PNG download link for every SVG on the page
+    document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
+      svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+    });
+}
+
+function updateHighlight() {
+  const items = document.querySelectorAll("#countryList li");
+  items.forEach((item, index) => {
+    item.classList.toggle("highlighted", index === highlightedIndex);
+  });
+}
+
+</script>
+
+</body>
+
+</html>

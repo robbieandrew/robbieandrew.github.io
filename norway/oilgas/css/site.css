@@ -1,0 +1,76 @@
+    h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
+	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
+	.subb {font-size: 70%;line-height:normal;}
+	.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;}
+    
+	#countryList {
+      position: absolute;
+      z-index: 1;
+	  padding-inline-start:0px;
+	  margin-block-start:0px;
+    }
+    #countryList ul {
+      list-style: none;
+      padding: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+    #countryList li {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    #countryList li:hover {
+      background-color: #f5f5f5;
+    }
+    #countryList li.highlighted {
+      background-color: #f5f5f5;
+    }
+	
+.input-wrapper {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+}
+
+#countryInput {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.trace-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.trace-border rect {
+  fill: none;
+  stroke: #007BFF;
+  stroke-width: 6;
+  stroke-dasharray: 25 250; /* 25 is the line, 190 is the gap */
+  stroke-dashoffset: 0;
+  animation: dash-trace 2s linear forwards;
+  rx: 4;
+  ry: 4;
+}
+
+@keyframes dash-trace {
+  from {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: -400; /* ~ perimeter of the rect */
+    opacity: 0;
+  }
+}
+
+	
+  
