@@ -139,6 +139,7 @@ function getCachedImageFolders() {
   if (cached) {
     const { folders, timestamp } = JSON.parse(cached);
     if (now - timestamp < CACHE_DURATION) {
+      console.log("Using cached folder list");
       return Promise.resolve(folders);
     }
   }
