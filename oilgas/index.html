@@ -132,7 +132,7 @@ Get the list of image sub-folders (ISO codes), which indicates which countries w
 */ 
 function getCachedImageFolders() {
   const CACHE_KEY = "imageFolderList";
-  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
+  const CACHE_DURATION = 1 * 60 * 1000; // 30 minutes
   const now = Date.now();
 
   const cached = localStorage.getItem(CACHE_KEY);
