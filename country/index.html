@@ -51,6 +51,8 @@ window.addEventListener("DOMContentLoaded", () => {
       availableISOs.includes(country.iso.toUpperCase())
     );
 	
+	 console.log("Available countries:", countriesData);
+	
     // Add search and arrow/enter listeners now that data is ready
     const input = document.getElementById("countryInput");
     input.addEventListener("input", searchCountry);
@@ -131,7 +133,7 @@ function searchCountry() {
 Get the list of image sub-folders (ISO codes), which indicates which countries we have images for. This list is cached to prevent too many calls to api.github.com.
 */ 
 function getCachedImageFolders() {
-  const CACHE_KEY = "imageFolderList";
+  const CACHE_KEY = "imageFolderList_country";
   const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
   const now = Date.now();
 
@@ -139,6 +141,7 @@ function getCachedImageFolders() {
   if (cached) {
     const { folders, timestamp } = JSON.parse(cached);
     if (now - timestamp < CACHE_DURATION) {
+      console.log("Using cached folder list");
       return Promise.resolve(folders);
     }
   }

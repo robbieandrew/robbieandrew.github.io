@@ -131,7 +131,7 @@ function searchCountry() {
 Get the list of image sub-folders (ISO codes), which indicates which countries we have images for. This list is cached to prevent too many calls to api.github.com.
 */ 
 function getCachedImageFolders() {
-  const CACHE_KEY = "imageFolderList";
+  const CACHE_KEY = "imageFolderList_oilgas";
   const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
   const now = Date.now();
 
