@@ -43,21 +43,13 @@ text:hover + .dl_el {display:block;}
   </symbol>
 </defs>
 <g id="main">
-<use xlink:href="#line_x" transform="translate(0,587.2)"/>
 <use xlink:href="#line_x" transform="translate(0,511.0)"/>
-<use xlink:href="#line_x" transform="translate(0,434.8)"/>
 <use xlink:href="#line_x" transform="translate(0,358.7)"/>
-<use xlink:href="#line_x" transform="translate(0,282.5)"/>
 <use xlink:href="#line_x" transform="translate(0,206.3)"/>
-<use xlink:href="#line_x" transform="translate(0,130.2)"/>
 <use xlink:href="#line_x" transform="translate(0,54.0)"/>
-<use xlink:href="#tick_y" transform="translate(0,587.2)"/>
 <use xlink:href="#tick_y" transform="translate(0,511.0)"/>
-<use xlink:href="#tick_y" transform="translate(0,434.8)"/>
 <use xlink:href="#tick_y" transform="translate(0,358.7)"/>
-<use xlink:href="#tick_y" transform="translate(0,282.5)"/>
 <use xlink:href="#tick_y" transform="translate(0,206.3)"/>
-<use xlink:href="#tick_y" transform="translate(0,130.2)"/>
 <use xlink:href="#tick_y" transform="translate(0,54.0)"/>
 <use xlink:href="#tick_x" transform="translate(156.8,0)"/>
 <use xlink:href="#tick_x" transform="translate(268.8,0)"/>
@@ -74,13 +66,9 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel xtl" transform="translate(604.8,629.0)" text-anchor="middle">2010</text>
 <text class="ticklabel xtl" transform="translate(716.8,629.0)" text-anchor="middle">2015</text>
 <text class="ticklabel xtl" transform="translate(828.8,629.0)" text-anchor="middle">2020</text>
-<text class="ticklabel ytl" transform="translate(128.8,595.3)">-1.4</text>
-<text class="ticklabel ytl" transform="translate(128.8,519.1)">-1.2</text>
-<text class="ticklabel ytl" transform="translate(128.8,442.9)">-1</text>
-<text class="ticklabel ytl" transform="translate(128.8,366.8)">-0.8</text>
-<text class="ticklabel ytl" transform="translate(128.8,290.6)">-0.6</text>
-<text class="ticklabel ytl" transform="translate(128.8,214.4)">-0.4</text>
-<text class="ticklabel ytl" transform="translate(128.8,138.3)">-0.2</text>
+<text class="ticklabel ytl" transform="translate(128.8,519.1)">-0.00012</text>
+<text class="ticklabel ytl" transform="translate(128.8,366.8)">-0.00008</text>
+<text class="ticklabel ytl" transform="translate(128.8,214.4)">-0.00004</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">0 Mt</text>
 <g stroke="#000" stroke-width="0.90" fill="#A6D854"  clip-path="url(#axis_clip)">
 </g>
@@ -212,10 +200,6 @@ text:hover + .dl_el {display:block;}
   <g class="pl_2 marker" transform="translate(873.6,375.6)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-0.0</text></g>
   <g class="pl_2 marker" transform="translate(896.0,394.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-0.0</text></g>
 </g>
-    <text class="pl" transform="translate(945.6,60.8)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Change in living biomass</text>
-    <text class="pl" transform="translate(945.6,388.8)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Litter (net)</text>
-<polyline class="pl" points="910.8,135.9 912.4,135.6 913.8,134.9 915.2,133.6 916.4,132.0 917.6,130.0 918.8,127.6 919.8,124.9 920.8,121.9 921.7,118.7 922.7,115.3 923.5,111.7 924.4,108.0 925.2,104.2 926.0,100.3 926.8,96.4 927.6,92.5 928.4,88.7 929.3,85.0 930.1,81.4 931.1,78.0 932.0,74.8 933.0,71.8 934.0,69.1 935.2,66.7 936.4,64.7 937.6,63.1 939.0,61.8 940.4,61.1 942.0,60.8" stroke="#66C2A5" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,394.9 912.4,394.9 913.8,394.8 915.2,394.7 916.4,394.6 917.6,394.4 918.8,394.2 919.8,394.0 920.8,393.8 921.7,393.5 922.7,393.2 923.5,392.9 924.4,392.6 925.2,392.3 926.0,392.0 926.8,391.7 927.6,391.4 928.4,391.1 929.3,390.8 930.1,390.5 931.1,390.2 932.0,390.0 933.0,389.7 934.0,389.5 935.2,389.3 936.4,389.2 937.6,389.0 939.0,388.9 940.4,388.9 942.0,388.8" stroke="#8DA0CB" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: Malta</text>
     <text class="pl" transform="translate(130.0,81.6)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
 <g id="lines">
@@ -262,7 +246,13 @@ text:hover + .dl_el {display:block;}
       <circle cx="604.8" cy="374.6" r="5.4" />
       <circle cx="828.8" cy="517.6" r="5.4" />
     </g>
-<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: <a href="https://unfccc.int/ghg-inventories-annex-i-parties/2021" target="_blank" style="fill:#BFBFBF">UNFCCC</a> (2025)</text>
+    <text class="pl" transform="translate(945.6,405.0)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
+    <text class="pl" transform="translate(945.6,60.2)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Change in living biomass</text>
+    <text class="pl" transform="translate(945.6,308.9)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Litter (net)</text>
+<polyline class="pl" points="910.8,572.3 912.4,571.7 913.8,570.1 915.2,567.3 916.4,563.7 917.6,559.1 918.8,553.8 919.8,547.8 920.8,541.2 921.7,534.0 922.7,526.4 923.5,518.4 924.4,510.1 925.2,501.6 926.0,493.0 926.8,484.4 927.6,475.7 928.4,467.3 929.3,459.0 930.1,451.0 931.1,443.4 932.0,436.2 933.0,429.6 934.0,423.5 935.2,418.2 936.4,413.7 937.6,410.0 939.0,407.3 940.4,405.6 942.0,405.0" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,135.9 912.4,135.6 913.8,134.9 915.2,133.6 916.4,132.0 917.6,129.9 918.8,127.5 919.8,124.8 920.8,121.8 921.7,118.5 922.7,115.1 923.5,111.5 924.4,107.7 925.2,103.9 926.0,100.0 926.8,96.1 927.6,92.2 928.4,88.4 929.3,84.6 930.1,81.0 931.1,77.5 932.0,74.3 933.0,71.3 934.0,68.6 935.2,66.2 936.4,64.1 937.6,62.5 939.0,61.2 940.4,60.5 942.0,60.2" stroke="#66C2A5" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,394.9 912.4,394.6 913.8,393.7 915.2,392.3 916.4,390.4 917.6,388.1 918.8,385.4 919.8,382.3 920.8,378.9 921.7,375.2 922.7,371.3 923.5,367.1 924.4,362.9 925.2,358.5 926.0,354.1 926.8,349.7 927.6,345.2 928.4,340.9 929.3,336.6 930.1,332.5 931.1,328.6 932.0,324.9 933.0,321.5 934.0,318.4 935.2,315.7 936.4,313.3 937.6,311.5 939.0,310.1 940.4,309.2 942.0,308.9" stroke="#8DA0CB" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: UNFCCC (2025)</text>
 <g>
 <a href="https://creativecommons.org/licenses/by/4.0/">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
