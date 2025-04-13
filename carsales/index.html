@@ -163,6 +163,7 @@ function makeCountrySelector() {
   // Initialize the count to n (Since 'All' is the default)
   selectedCountSpan.textContent = totalCountries;
 
+/*
   // Filter graphs based on selection
   selectElement.addEventListener('change', function() {
     const selectedOptions = Array.from(this.selectedOptions).map(option => option.value);
@@ -188,6 +189,41 @@ function makeCountrySelector() {
 	// Ensure that all countries' charts are based on the current filters
 	updateCharts();
   });
+*/
+selectElement.addEventListener('change', function () {
+  let selectedOptions = Array.from(this.selectedOptions).map(option => option.value);
+
+  // If "All" and others are selected, deselect "All"
+  if (selectedOptions.length > 1 && selectedOptions.includes('all')) {
+    this.querySelector('option[value="all"]').selected = false;
+    selectedOptions = selectedOptions.filter(value => value !== 'all');
+  }
+
+  const countries = document.querySelectorAll('.country');
+
+  if (selectedOptions.length === 0) {
+    // If nothing selected, default back to "All"
+    this.querySelector('option[value="all"]').selected = true;
+    selectedOptions = ['all'];
+  }
+
+  countries.forEach(country => {
+    if (selectedOptions.includes('all') || selectedOptions.includes(country.dataset.country)) {
+      country.style.display = 'block';
+    } else {
+      country.style.display = 'none';
+    }
+  });
+
+  // Update chart content
+  updateCharts();
+
+  // Update count display
+  const selectedCountSpan = document.getElementById("selectedCount");
+  const totalCount = countrySelector.options.length - 1;
+  selectedCountSpan.textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
+});
+
 };
 
 // Used to fetch JSON data from embedded script element while testing offline

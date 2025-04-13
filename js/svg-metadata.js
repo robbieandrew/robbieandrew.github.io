@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const svgDoc = obj.contentDocument;
         if (!svgDoc) return;
 
+		// Use a Set to retain only unique strings
         const texts = new Set();
 
         // 1. Get the <title> if it exists
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Skip if has class ticklabel ytl (vertical ticks)
           if (classList.contains("ticklabel") && classList.contains("ytl")) return;
 
-          // Skip if class starts with dp (e.g., dp1, dp2)
+          // Skip if class starts with dp (e.g., dp1, dp2) = datatips
           for (const cls of classList) {
             if (cls.startsWith("dp")) return;
           }
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const rawText = textEl.textContent?.trim();
           if (!rawText) return;
 
-          // Optional: filter out purely numeric or trivial values
+          // Filter out purely numeric or trivial values
           if (/^[\d.,%]+$/.test(rawText)) return;
 
           texts.add(rawText);
