@@ -12,13 +12,8 @@
   <base target="_blank">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="../css/general.css">
   <title>Indian energy and emissions data</title>
-  <style>
-    h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
-	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
-	.subb {font-size: 70%;line-height:normal;}
-	.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;  
-  </style>
 </head>
 
 <body>
@@ -344,15 +339,8 @@
   </main>
   
 <script>
-  var currentDate = new Date();
-  var day = currentDate.getDate();
-  var months = ["January", "February", "March", "April", "May", "June", 
-              "July", "August", "September", "October", "November", "December"];
-  var monthIndex = currentDate.getMonth(); // get the zero-based month index
-  var monthName = months[monthIndex]; // use the index to get the corresponding month name
-  var year = currentDate.getFullYear();
-  var dateString = day + " " + monthName + " " + year;
-  document.getElementById("current-date").innerHTML = dateString;
+  document.getElementById("current-date").innerHTML =
+    new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
 </script>
 <script>
 function toggleShow(divname) {
@@ -365,6 +353,7 @@ function toggleShow(divname) {
 }
 </script>
 <script src="../js/downloadSVGasPNG.js"></script>
+<script src="../js/svg-metadata.js"></script>
 <script>
   // Add a PNG download link for every SVG on the page
   document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
