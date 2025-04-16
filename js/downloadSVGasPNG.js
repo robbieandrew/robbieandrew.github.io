@@ -112,30 +112,13 @@ function showToastBelowElement(anchorElement, message, duration = 2000) {
   }, duration);
 }
 
-
-function showToast(message, duration = 2000) {
-  const toast = document.createElement('div');
-  toast.textContent = message;
-  toast.style.position = 'fixed';
-  toast.style.bottom = '1rem';
-  toast.style.right = '1rem';
-  toast.style.background = 'rgba(0,0,0,0.8)';
-  toast.style.color = 'white';
-  toast.style.padding = '0.5rem 1rem';
-  toast.style.borderRadius = '6px';
-  toast.style.zIndex = 10000;
-  toast.style.fontSize = '0.9rem';
-  toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-  toast.style.opacity = '0';
-  toast.style.transition = 'opacity 0.3s ease';
-
-  document.body.appendChild(toast);
-  requestAnimationFrame(() => toast.style.opacity = '1');
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    setTimeout(() => document.body.removeChild(toast), 300);
-  }, duration);
+function createEnlargeLink(image) {
+  const enlargeLink = document.createElement('a');
+  enlargeLink.href = image;
+  enlargeLink.target = "_self";
+  enlargeLink.textContent = "Enlarge this figure";
+  enlargeLink.className = 'simple-button';
+  return enlargeLink;
 }
 
 function createDownloadLink(svgObject) {
@@ -143,7 +126,7 @@ function createDownloadLink(svgObject) {
   const downloadLink = document.createElement('a');
   downloadLink.href = '#';
   downloadLink.textContent = 'Download as PNG';
-  downloadLink.className = 'download-PNG';
+  downloadLink.className = 'simple-button';
   // Add click event handler
   downloadLink.addEventListener('click', (e) => {
     e.preventDefault(); // prevent browser trying to navigate to https://.../#
@@ -156,7 +139,7 @@ function createCopyLink(svgObject) {
   const copyLink = document.createElement('a');
   copyLink.href = '#';
   copyLink.textContent = 'Copy to clipboard';
-  copyLink.className = 'copy-PNG';
+  copyLink.className = 'simple-button';
   copyLink.addEventListener('click', (e) => {
     e.preventDefault();
     copySVGasPNG(svgObject, copyLink);

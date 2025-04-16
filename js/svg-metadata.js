@@ -1,3 +1,5 @@
+/* Create an invisible metadata element directly under each SVG object that provides a semicolon-separated list of all the text objects in the SVG image. The hope is that will assist search engines understand the page content.
+*/
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("object[type='image/svg+xml']").forEach(obj => {
     obj.addEventListener("load", () => {

@@ -271,11 +271,8 @@ function displayImages(isoCode, imageData) {
       object.className = "fig";
 
       const p = document.createElement("p");
-      const link = document.createElement("a");
-      link.href = image;
-      link.target = "_self";
-      link.textContent = "Enlarge this figure";
-      p.appendChild(link);
+	  const enlargeLink = createEnlargeLink(image);
+      p.appendChild(enlargeLink);
 
       div.appendChild(object);
       div.appendChild(p);
