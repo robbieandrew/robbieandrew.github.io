@@ -3,7 +3,6 @@
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
-  a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
   .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
@@ -17,30 +16,12 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
-  #lines .pl {transition: all 0.2s ease;}
-  #lines:hover .pl {opacity:0.3;}
-  #lines:hover .thick {stroke-width:1;}
-  #lines:hover .pl_1:hover .pl {opacity:1;}
-  #lines:hover .pl_1:hover .pll {stroke-width:3;}
-  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_1:hover .thick {stroke-width:12;}
-  #lines:hover .pl_2:hover .pl {opacity:1;}
-  #lines:hover .pl_2:hover .pll {stroke-width:3;}
-  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_2:hover .thick {stroke-width:12;}
-  #lines:hover .pl_3:hover .pl {opacity:1;}
-  #lines:hover .pl_3:hover .pll {stroke-width:3;}
-  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_3:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
-  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="157.1,252.0 180.2,278.5 203.3,285.4 226.4,270.2 249.5,286.1 272.5,279.5 295.6,284.5 318.7,295.0 341.8,295.4 364.8,298.2 387.9,249.8 411.0,318.6 434.1,362.6 457.2,380.1 480.2,382.3 503.3,390.9 526.4,393.2 549.5,316.4 572.6,398.5 595.6,442.6 618.7,429.0 641.8,479.2 664.9,471.4 688.0,482.5 711.0,485.6 734.1,482.4 757.2,359.3 780.3,499.7 803.3,495.1 826.4,488.8 849.5,491.5 872.6,415.6 895.7,490.7" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
-  </symbol>
 </defs>
 <g id="main">
 <use xlink:href="#line_x" transform="translate(0,520.5)"/>
@@ -424,64 +405,58 @@ text:hover + .dl_el {display:block;}
   <g class="pl_2 marker" transform="translate(872.6,530.4)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-0.0</text></g>
   <g class="pl_2 marker" transform="translate(895.7,531.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-0.0</text></g>
 </g>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: Cyprus</text>
-    <text class="pl" transform="translate(130.0,148.3)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
-<g id="lines">
-  <g class="pl_1">
-    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pldl" stroke="#000" stroke-width="5.40"/>
-  </g>
+<text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: Cyprus</text>
+<text transform="translate(130.0,148.3)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
+<polyline class="pl" points="157.1,252.0 180.2,278.5 203.3,285.4 226.4,270.2 249.5,286.1 272.5,279.5 295.6,284.5 318.7,295.0 341.8,295.4 364.8,298.2 387.9,249.8 411.0,318.6 434.1,362.6 457.2,380.1 480.2,382.3 503.3,390.9 526.4,393.2 549.5,316.4 572.6,398.5 595.6,442.6 618.7,429.0 641.8,479.2 664.9,471.4 688.0,482.5 711.0,485.6 734.1,482.4 757.2,359.3 780.3,499.7 803.3,495.1 826.4,488.8 849.5,491.5 872.6,415.6 895.7,490.7" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="180.2" cy="278.5" r="2.2" />
+  <circle cx="203.3" cy="285.4" r="2.2" />
+  <circle cx="226.4" cy="270.2" r="2.2" />
+  <circle cx="249.5" cy="286.1" r="2.2" />
+  <circle cx="272.5" cy="279.5" r="2.2" />
+  <circle cx="295.6" cy="284.5" r="2.2" />
+  <circle cx="318.7" cy="295.0" r="2.2" />
+  <circle cx="341.8" cy="295.4" r="2.2" />
+  <circle cx="364.8" cy="298.2" r="2.2" />
+  <circle cx="411.0" cy="318.6" r="2.2" />
+  <circle cx="434.1" cy="362.6" r="2.2" />
+  <circle cx="457.2" cy="380.1" r="2.2" />
+  <circle cx="480.2" cy="382.3" r="2.2" />
+  <circle cx="503.3" cy="390.9" r="2.2" />
+  <circle cx="526.4" cy="393.2" r="2.2" />
+  <circle cx="549.5" cy="316.4" r="2.2" />
+  <circle cx="572.6" cy="398.5" r="2.2" />
+  <circle cx="595.6" cy="442.6" r="2.2" />
+  <circle cx="641.8" cy="479.2" r="2.2" />
+  <circle cx="664.9" cy="471.4" r="2.2" />
+  <circle cx="688.0" cy="482.5" r="2.2" />
+  <circle cx="711.0" cy="485.6" r="2.2" />
+  <circle cx="734.1" cy="482.4" r="2.2" />
+  <circle cx="757.2" cy="359.3" r="2.2" />
+  <circle cx="780.3" cy="499.7" r="2.2" />
+  <circle cx="803.3" cy="495.1" r="2.2" />
+  <circle cx="826.4" cy="488.8" r="2.2" />
+  <circle cx="872.6" cy="415.6" r="2.2" />
+  <circle cx="895.7" cy="490.7" r="2.2" />
 </g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="180.2" cy="278.5" r="2.2" />
-      <circle cx="203.3" cy="285.4" r="2.2" />
-      <circle cx="226.4" cy="270.2" r="2.2" />
-      <circle cx="249.5" cy="286.1" r="2.2" />
-      <circle cx="272.5" cy="279.5" r="2.2" />
-      <circle cx="295.6" cy="284.5" r="2.2" />
-      <circle cx="318.7" cy="295.0" r="2.2" />
-      <circle cx="341.8" cy="295.4" r="2.2" />
-      <circle cx="364.8" cy="298.2" r="2.2" />
-      <circle cx="411.0" cy="318.6" r="2.2" />
-      <circle cx="434.1" cy="362.6" r="2.2" />
-      <circle cx="457.2" cy="380.1" r="2.2" />
-      <circle cx="480.2" cy="382.3" r="2.2" />
-      <circle cx="503.3" cy="390.9" r="2.2" />
-      <circle cx="526.4" cy="393.2" r="2.2" />
-      <circle cx="549.5" cy="316.4" r="2.2" />
-      <circle cx="572.6" cy="398.5" r="2.2" />
-      <circle cx="595.6" cy="442.6" r="2.2" />
-      <circle cx="641.8" cy="479.2" r="2.2" />
-      <circle cx="664.9" cy="471.4" r="2.2" />
-      <circle cx="688.0" cy="482.5" r="2.2" />
-      <circle cx="711.0" cy="485.6" r="2.2" />
-      <circle cx="734.1" cy="482.4" r="2.2" />
-      <circle cx="757.2" cy="359.3" r="2.2" />
-      <circle cx="780.3" cy="499.7" r="2.2" />
-      <circle cx="803.3" cy="495.1" r="2.2" />
-      <circle cx="826.4" cy="488.8" r="2.2" />
-      <circle cx="872.6" cy="415.6" r="2.2" />
-      <circle cx="895.7" cy="490.7" r="2.2" />
-    </g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="157.1" cy="252.0" r="5.4" />
-      <circle cx="387.9" cy="249.8" r="5.4" />
-      <circle cx="618.7" cy="429.0" r="5.4" />
-      <circle cx="849.5" cy="491.5" r="5.4" />
-    </g>
-    <text class="pl" transform="translate(945.6,487.5)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
-    <text class="pl" transform="translate(945.6,233.2)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Losses</text>
-    <text class="pl" transform="translate(945.6,383.2)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Gains</text>
-    <text class="pl" transform="translate(945.6,508.2)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Dead wood (net)</text>
-    <text class="pl" transform="translate(945.6,529.0)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Litter (net)</text>
-    <text class="pl" transform="translate(945.6,549.7)" dy="6.5" font-size="21.60" fill="#A6D854" stroke="none">Mineral Soils (net)</text>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="157.1" cy="252.0" r="5.4" />
+  <circle cx="387.9" cy="249.8" r="5.4" />
+  <circle cx="618.7" cy="429.0" r="5.4" />
+  <circle cx="849.5" cy="491.5" r="5.4" />
+</g>
+<text transform="translate(945.6,487.5)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
+<text transform="translate(945.6,233.2)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Losses</text>
+<text transform="translate(945.6,383.2)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Gains</text>
+<text transform="translate(945.6,508.2)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Dead wood (net)</text>
+<text transform="translate(945.6,529.0)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Litter (net)</text>
+<text transform="translate(945.6,549.7)" dy="6.5" font-size="21.60" fill="#A6D854" stroke="none">Mineral Soils (net)</text>
 <polyline class="pl" points="910.8,490.7 912.4,490.7 913.8,490.6 915.2,490.6 916.4,490.5 917.6,490.4 918.8,490.3 919.8,490.2 920.8,490.1 921.7,490.0 922.7,489.8 923.5,489.7 924.4,489.5 925.2,489.3 926.0,489.2 926.8,489.0 927.6,488.8 928.4,488.7 929.3,488.5 930.1,488.4 931.1,488.2 932.0,488.1 933.0,488.0 934.0,487.9 935.2,487.8 936.4,487.7 937.6,487.6 939.0,487.5 940.4,487.5 942.0,487.5" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="910.8,521.3 912.4,521.3 913.8,521.1 915.2,520.9 916.4,520.6 917.6,520.3 918.8,519.9 919.8,519.4 920.8,518.9 921.7,518.3 922.7,517.7 923.5,517.1 924.4,516.4 925.2,515.8 926.0,515.1 926.8,514.4 927.6,513.8 928.4,513.1 929.3,512.4 930.1,511.8 931.1,511.2 932.0,510.7 933.0,510.2 934.0,509.7 935.2,509.3 936.4,508.9 937.6,508.6 939.0,508.4 940.4,508.3 942.0,508.2" stroke="#8DA0CB" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="910.8,530.7 912.4,530.7 913.8,530.7 915.2,530.7 916.4,530.6 917.6,530.6 918.8,530.5 919.8,530.5 920.8,530.4 921.7,530.3 922.7,530.2 923.5,530.2 924.4,530.1 925.2,530.0 926.0,529.9 926.8,529.8 927.6,529.7 928.4,529.6 929.3,529.5 930.1,529.4 931.1,529.4 932.0,529.3 933.0,529.2 934.0,529.2 935.2,529.1 936.4,529.0 937.6,529.0 939.0,529.0 940.4,529.0 942.0,529.0" stroke="#E78AC3" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="910.8,531.7 912.4,531.7 913.8,531.9 915.2,532.2 916.4,532.6 917.6,533.1 918.8,533.7 919.8,534.3 920.8,535.0 921.7,535.8 922.7,536.6 923.5,537.5 924.4,538.4 925.2,539.3 926.0,540.2 926.8,541.1 927.6,542.1 928.4,543.0 929.3,543.9 930.1,544.7 931.1,545.6 932.0,546.3 933.0,547.0 934.0,547.7 935.2,548.3 936.4,548.7 937.6,549.1 939.0,549.4 940.4,549.6 942.0,549.7" stroke="#A6D854" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: UNFCCC (2024)</text>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -495,17 +470,6 @@ text:hover + .dl_el {display:block;}
      <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
-  </a>
 </g>
-  <g class="dl_el" transform="translate(69.1,548.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="250" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
-      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
-    </g>
-  </g>
 </g>
 </svg>
