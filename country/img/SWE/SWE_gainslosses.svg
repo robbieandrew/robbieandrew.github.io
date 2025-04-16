@@ -3,7 +3,6 @@
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
-  a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
   .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
@@ -17,30 +16,12 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
-  #lines .pl {transition: all 0.2s ease;}
-  #lines:hover .pl {opacity:0.3;}
-  #lines:hover .thick {stroke-width:1;}
-  #lines:hover .pl_1:hover .pl {opacity:1;}
-  #lines:hover .pl_1:hover .pll {stroke-width:3;}
-  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_1:hover .thick {stroke-width:12;}
-  #lines:hover .pl_2:hover .pl {opacity:1;}
-  #lines:hover .pl_2:hover .pll {stroke-width:3;}
-  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_2:hover .thick {stroke-width:12;}
-  #lines:hover .pl_3:hover .pl {opacity:1;}
-  #lines:hover .pl_3:hover .pll {stroke-width:3;}
-  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_3:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
-  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="156.8,534.4 179.2,527.6 201.6,522.3 224.0,498.2 246.4,496.9 268.8,495.1 291.2,508.4 313.6,507.8 336.0,516.7 358.4,513.6 380.8,521.6 403.2,530.3 425.6,525.7 448.0,512.1 470.4,487.0 492.8,473.6 515.2,498.7 537.6,506.1 560.0,504.0 582.4,519.2 604.8,526.9 627.2,519.2 649.6,512.2 672.0,511.8 694.4,495.8 716.8,486.1 739.2,457.2 761.6,423.2 784.0,392.6 806.4,377.8 828.8,366.7 851.2,339.3 873.6,335.8 896.0,340.1" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
-  </symbol>
 </defs>
 <g id="main">
 <use xlink:href="#line_x" transform="translate(0,520.5)"/>
@@ -105,42 +86,6 @@ text:hover + .dl_el {display:block;}
   <polygon points="842.2,69.3 842.2,120.6 860.2,120.6 860.2,69.3 842.2,69.3"/>
   <polygon points="864.6,67.7 864.6,120.6 882.6,120.6 882.6,67.7 864.6,67.7"/>
   <polygon points="887.0,67.4 887.0,120.6 905.0,120.6 905.0,67.4 887.0,67.4"/>
-</g>
-<g>
-  <g class="pl_2 marker" transform="translate(156.8,97.7)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(179.2,97.7)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(201.6,97.7)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(224.0,97.7)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(246.4,97.7)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(268.8,97.5)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(291.2,97.5)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(313.6,97.5)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(336.0,97.5)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(358.4,97.4)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.0</text></g>
-  <g class="pl_2 marker" transform="translate(380.8,97.3)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.0</text></g>
-  <g class="pl_2 marker" transform="translate(403.2,97.3)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.0</text></g>
-  <g class="pl_2 marker" transform="translate(425.6,97.2)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.0</text></g>
-  <g class="pl_2 marker" transform="translate(448.0,97.0)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.1</text></g>
-  <g class="pl_2 marker" transform="translate(470.4,97.3)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.0</text></g>
-  <g class="pl_2 marker" transform="translate(492.8,97.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(515.2,97.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.9</text></g>
-  <g class="pl_2 marker" transform="translate(537.6,98.1)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.8</text></g>
-  <g class="pl_2 marker" transform="translate(560.0,98.4)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.7</text></g>
-  <g class="pl_2 marker" transform="translate(582.4,98.9)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.5</text></g>
-  <g class="pl_2 marker" transform="translate(604.8,98.8)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.6</text></g>
-  <g class="pl_2 marker" transform="translate(627.2,99.8)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.3</text></g>
-  <g class="pl_2 marker" transform="translate(649.6,100.3)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.1</text></g>
-  <g class="pl_2 marker" transform="translate(672.0,100.2)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.1</text></g>
-  <g class="pl_2 marker" transform="translate(694.4,99.6)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.3</text></g>
-  <g class="pl_2 marker" transform="translate(716.8,99.1)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.5</text></g>
-  <g class="pl_2 marker" transform="translate(739.2,98.9)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.5</text></g>
-  <g class="pl_2 marker" transform="translate(761.6,98.1)"><use xlink:href="#mk1"/><text class="dp1" y="-25">6.8</text></g>
-  <g class="pl_2 marker" transform="translate(784.0,97.0)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.1</text></g>
-  <g class="pl_2 marker" transform="translate(806.4,96.2)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.3</text></g>
-  <g class="pl_2 marker" transform="translate(828.8,95.9)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.4</text></g>
-  <g class="pl_2 marker" transform="translate(851.2,95.0)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.7</text></g>
-  <g class="pl_2 marker" transform="translate(873.6,94.2)"><use xlink:href="#mk1"/><text class="dp1" y="-25">7.9</text></g>
-  <g class="pl_2 marker" transform="translate(896.0,94.0)"><use xlink:href="#mk1"/><text class="dp1" y="-25">8.0</text></g>
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#E78AC3"  clip-path="url(#axis_clip)">
   <polygon points="147.8,580.0 147.8,435.8 165.8,435.8 165.8,580.0 147.8,580.0"/>
@@ -286,207 +231,57 @@ text:hover + .dl_el {display:block;}
   <polygon points="864.6,130.8 864.6,120.6 882.6,120.6 882.6,130.8 864.6,130.8"/>
   <polygon points="887.0,146.8 887.0,120.6 905.0,120.6 905.0,146.8 887.0,146.8"/>
 </g>
-<g>
-  <g class="pl_2 marker" transform="translate(156.8,252.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-39.6</text></g>
-  <g class="pl_2 marker" transform="translate(179.2,254.5)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-40.2</text></g>
-  <g class="pl_2 marker" transform="translate(201.6,242.5)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-36.6</text></g>
-  <g class="pl_2 marker" transform="translate(224.0,232.7)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-33.6</text></g>
-  <g class="pl_2 marker" transform="translate(246.4,233.0)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-33.7</text></g>
-  <g class="pl_2 marker" transform="translate(268.8,235.2)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-34.4</text></g>
-  <g class="pl_2 marker" transform="translate(291.2,241.8)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-36.4</text></g>
-  <g class="pl_2 marker" transform="translate(313.6,238.1)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-35.3</text></g>
-  <g class="pl_2 marker" transform="translate(336.0,239.8)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-35.8</text></g>
-  <g class="pl_2 marker" transform="translate(358.4,236.8)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-34.8</text></g>
-  <g class="pl_2 marker" transform="translate(380.8,238.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-35.4</text></g>
-  <g class="pl_2 marker" transform="translate(403.2,230.1)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-32.8</text></g>
-  <g class="pl_2 marker" transform="translate(425.6,232.3)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-33.5</text></g>
-  <g class="pl_2 marker" transform="translate(448.0,224.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-31.2</text></g>
-  <g class="pl_2 marker" transform="translate(470.4,212.3)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-27.5</text></g>
-  <g class="pl_2 marker" transform="translate(492.8,201.3)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-24.2</text></g>
-  <g class="pl_2 marker" transform="translate(515.2,220.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-30.0</text></g>
-  <g class="pl_2 marker" transform="translate(537.6,223.3)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-30.8</text></g>
-  <g class="pl_2 marker" transform="translate(560.0,231.3)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-33.2</text></g>
-  <g class="pl_2 marker" transform="translate(582.4,241.2)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-36.2</text></g>
-  <g class="pl_2 marker" transform="translate(604.8,239.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-35.7</text></g>
-  <g class="pl_2 marker" transform="translate(627.2,229.8)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-32.8</text></g>
-  <g class="pl_2 marker" transform="translate(649.6,222.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-30.6</text></g>
-  <g class="pl_2 marker" transform="translate(672.0,220.0)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-29.8</text></g>
-  <g class="pl_2 marker" transform="translate(694.4,215.5)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-28.5</text></g>
-  <g class="pl_2 marker" transform="translate(716.8,219.9)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-29.8</text></g>
-  <g class="pl_2 marker" transform="translate(739.2,199.8)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-23.8</text></g>
-  <g class="pl_2 marker" transform="translate(761.6,176.5)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-16.8</text></g>
-  <g class="pl_2 marker" transform="translate(784.0,158.8)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-11.5</text></g>
-  <g class="pl_2 marker" transform="translate(806.4,150.7)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-9.0</text></g>
-  <g class="pl_2 marker" transform="translate(828.8,138.6)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-5.4</text></g>
-  <g class="pl_2 marker" transform="translate(851.2,126.0)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-1.6</text></g>
-  <g class="pl_2 marker" transform="translate(873.6,125.7)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-1.5</text></g>
-  <g class="pl_2 marker" transform="translate(896.0,133.7)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-3.9</text></g>
+<text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: Sweden</text>
+<text transform="translate(130.0,148.3)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
+<polyline class="pl" points="156.8,534.4 179.2,527.6 201.6,522.3 224.0,498.2 246.4,496.9 268.8,495.1 291.2,508.4 313.6,507.8 336.0,516.7 358.4,513.6 380.8,521.6 403.2,530.3 425.6,525.7 448.0,512.1 470.4,487.0 492.8,473.6 515.2,498.7 537.6,506.1 560.0,504.0 582.4,519.2 604.8,526.9 627.2,519.2 649.6,512.2 672.0,511.8 694.4,495.8 716.8,486.1 739.2,457.2 761.6,423.2 784.0,392.6 806.4,377.8 828.8,366.7 851.2,339.3 873.6,335.8 896.0,340.1" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="179.2" cy="527.6" r="2.2" />
+  <circle cx="201.6" cy="522.3" r="2.2" />
+  <circle cx="224.0" cy="498.2" r="2.2" />
+  <circle cx="246.4" cy="496.9" r="2.2" />
+  <circle cx="268.8" cy="495.1" r="2.2" />
+  <circle cx="291.2" cy="508.4" r="2.2" />
+  <circle cx="313.6" cy="507.8" r="2.2" />
+  <circle cx="336.0" cy="516.7" r="2.2" />
+  <circle cx="358.4" cy="513.6" r="2.2" />
+  <circle cx="403.2" cy="530.3" r="2.2" />
+  <circle cx="425.6" cy="525.7" r="2.2" />
+  <circle cx="448.0" cy="512.1" r="2.2" />
+  <circle cx="470.4" cy="487.0" r="2.2" />
+  <circle cx="492.8" cy="473.6" r="2.2" />
+  <circle cx="515.2" cy="498.7" r="2.2" />
+  <circle cx="537.6" cy="506.1" r="2.2" />
+  <circle cx="560.0" cy="504.0" r="2.2" />
+  <circle cx="582.4" cy="519.2" r="2.2" />
+  <circle cx="627.2" cy="519.2" r="2.2" />
+  <circle cx="649.6" cy="512.2" r="2.2" />
+  <circle cx="672.0" cy="511.8" r="2.2" />
+  <circle cx="694.4" cy="495.8" r="2.2" />
+  <circle cx="716.8" cy="486.1" r="2.2" />
+  <circle cx="739.2" cy="457.2" r="2.2" />
+  <circle cx="761.6" cy="423.2" r="2.2" />
+  <circle cx="784.0" cy="392.6" r="2.2" />
+  <circle cx="806.4" cy="377.8" r="2.2" />
+  <circle cx="851.2" cy="339.3" r="2.2" />
+  <circle cx="873.6" cy="335.8" r="2.2" />
+  <circle cx="896.0" cy="340.1" r="2.2" />
 </g>
-<g>
-  <g class="pl_2 marker" transform="translate(156.8,399.1)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-4.4</text></g>
-  <g class="pl_2 marker" transform="translate(179.2,400.5)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-3.6</text></g>
-  <g class="pl_2 marker" transform="translate(201.6,385.9)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-6.5</text></g>
-  <g class="pl_2 marker" transform="translate(224.0,364.1)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-5.8</text></g>
-  <g class="pl_2 marker" transform="translate(246.4,363.7)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-5.5</text></g>
-  <g class="pl_2 marker" transform="translate(268.8,365.2)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-4.6</text></g>
-  <g class="pl_2 marker" transform="translate(291.2,378.5)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-4.6</text></g>
-  <g class="pl_2 marker" transform="translate(313.6,374.3)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-5.6</text></g>
-  <g class="pl_2 marker" transform="translate(336.0,380.1)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-6.3</text></g>
-  <g class="pl_2 marker" transform="translate(358.4,376.0)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-6.9</text></g>
-  <g class="pl_2 marker" transform="translate(380.8,381.8)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-7.6</text></g>
-  <g class="pl_2 marker" transform="translate(403.2,377.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-11.4</text></g>
-  <g class="pl_2 marker" transform="translate(425.6,377.7)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-10.1</text></g>
-  <g class="pl_2 marker" transform="translate(448.0,363.7)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-10.6</text></g>
-  <g class="pl_2 marker" transform="translate(470.4,340.8)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-11.1</text></g>
-  <g class="pl_2 marker" transform="translate(492.8,320.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-11.6</text></g>
-  <g class="pl_2 marker" transform="translate(515.2,351.3)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-9.3</text></g>
-  <g class="pl_2 marker" transform="translate(537.6,359.0)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-9.9</text></g>
-  <g class="pl_2 marker" transform="translate(560.0,371.8)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-9.0</text></g>
-  <g class="pl_2 marker" transform="translate(582.4,389.4)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-8.3</text></g>
-  <g class="pl_2 marker" transform="translate(604.8,389.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-9.3</text></g>
-  <g class="pl_2 marker" transform="translate(627.2,374.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-10.7</text></g>
-  <g class="pl_2 marker" transform="translate(649.6,360.7)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-10.8</text></g>
-  <g class="pl_2 marker" transform="translate(672.0,354.8)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-10.6</text></g>
-  <g class="pl_2 marker" transform="translate(694.4,344.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-10.3</text></g>
-  <g class="pl_2 marker" transform="translate(716.8,348.0)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-8.6</text></g>
-  <g class="pl_2 marker" transform="translate(739.2,311.1)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-9.6</text></g>
-  <g class="pl_2 marker" transform="translate(761.6,269.1)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-11.0</text></g>
-  <g class="pl_2 marker" transform="translate(784.0,236.7)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-11.9</text></g>
-  <g class="pl_2 marker" transform="translate(806.4,220.9)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-12.0</text></g>
-  <g class="pl_2 marker" transform="translate(828.8,200.4)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-13.1</text></g>
-  <g class="pl_2 marker" transform="translate(851.2,174.9)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-13.1</text></g>
-  <g class="pl_2 marker" transform="translate(873.6,172.8)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-12.6</text></g>
-  <g class="pl_2 marker" transform="translate(896.0,182.6)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-10.7</text></g>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="156.8" cy="534.4" r="5.4" />
+  <circle cx="380.8" cy="521.6" r="5.4" />
+  <circle cx="604.8" cy="526.9" r="5.4" />
+  <circle cx="828.8" cy="366.7" r="5.4" />
 </g>
-<g>
-  <g class="pl_2 marker" transform="translate(156.8,424.7)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.3</text></g>
-  <g class="pl_2 marker" transform="translate(179.2,420.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(201.6,415.6)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(224.0,391.6)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(246.4,390.4)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(268.8,388.8)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(291.2,402.2)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(313.6,401.3)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(336.0,409.7)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.6</text></g>
-  <g class="pl_2 marker" transform="translate(358.4,407.4)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(380.8,415.3)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(403.2,424.1)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(425.6,419.8)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(448.0,407.4)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.6</text></g>
-  <g class="pl_2 marker" transform="translate(470.4,385.4)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.3</text></g>
-  <g class="pl_2 marker" transform="translate(492.8,367.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.5</text></g>
-  <g class="pl_2 marker" transform="translate(515.2,391.3)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.7</text></g>
-  <g class="pl_2 marker" transform="translate(537.6,402.0)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.0</text></g>
-  <g class="pl_2 marker" transform="translate(560.0,410.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-2.8</text></g>
-  <g class="pl_2 marker" transform="translate(582.4,427.5)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.1</text></g>
-  <g class="pl_2 marker" transform="translate(604.8,431.3)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.2</text></g>
-  <g class="pl_2 marker" transform="translate(627.2,421.0)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.2</text></g>
-  <g class="pl_2 marker" transform="translate(649.6,408.5)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.6</text></g>
-  <g class="pl_2 marker" transform="translate(672.0,403.9)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-4.1</text></g>
-  <g class="pl_2 marker" transform="translate(694.4,391.6)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.8</text></g>
-  <g class="pl_2 marker" transform="translate(716.8,387.5)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-3.2</text></g>
-  <g class="pl_2 marker" transform="translate(739.2,358.2)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-4.5</text></g>
-  <g class="pl_2 marker" transform="translate(761.6,322.4)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-5.0</text></g>
-  <g class="pl_2 marker" transform="translate(784.0,292.1)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-4.7</text></g>
-  <g class="pl_2 marker" transform="translate(806.4,278.5)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-5.3</text></g>
-  <g class="pl_2 marker" transform="translate(828.8,262.7)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-5.6</text></g>
-  <g class="pl_2 marker" transform="translate(851.2,237.6)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-5.7</text></g>
-  <g class="pl_2 marker" transform="translate(873.6,235.2)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-6.1</text></g>
-  <g class="pl_2 marker" transform="translate(896.0,239.3)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-6.3</text></g>
-</g>
-<g>
-  <g class="pl_2 marker" transform="translate(156.8,507.9)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(179.2,501.2)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(201.6,495.9)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(224.0,471.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(246.4,470.6)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(268.8,469.0)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(291.2,482.4)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(313.6,481.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(336.0,490.5)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.7</text></g>
-  <g class="pl_2 marker" transform="translate(358.4,487.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(380.8,495.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.7</text></g>
-  <g class="pl_2 marker" transform="translate(403.2,504.6)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.7</text></g>
-  <g class="pl_2 marker" transform="translate(425.6,500.2)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(448.0,487.5)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.5</text></g>
-  <g class="pl_2 marker" transform="translate(470.4,463.3)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.1</text></g>
-  <g class="pl_2 marker" transform="translate(492.8,447.9)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.5</text></g>
-  <g class="pl_2 marker" transform="translate(515.2,472.4)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-21.6</text></g>
-  <g class="pl_2 marker" transform="translate(537.6,481.4)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-20.9</text></g>
-  <g class="pl_2 marker" transform="translate(560.0,484.2)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.2</text></g>
-  <g class="pl_2 marker" transform="translate(582.4,500.2)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-18.7</text></g>
-  <g class="pl_2 marker" transform="translate(604.8,506.1)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.3</text></g>
-  <g class="pl_2 marker" transform="translate(627.2,496.1)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.3</text></g>
-  <g class="pl_2 marker" transform="translate(649.6,486.5)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.8</text></g>
-  <g class="pl_2 marker" transform="translate(672.0,485.0)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-20.3</text></g>
-  <g class="pl_2 marker" transform="translate(694.4,470.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-20.0</text></g>
-  <g class="pl_2 marker" transform="translate(716.8,463.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.6</text></g>
-  <g class="pl_2 marker" transform="translate(739.2,436.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.1</text></g>
-  <g class="pl_2 marker" transform="translate(761.6,403.5)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.4</text></g>
-  <g class="pl_2 marker" transform="translate(784.0,373.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.8</text></g>
-  <g class="pl_2 marker" transform="translate(806.4,361.3)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.5</text></g>
-  <g class="pl_2 marker" transform="translate(828.8,348.7)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-20.2</text></g>
-  <g class="pl_2 marker" transform="translate(851.2,323.5)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-20.1</text></g>
-  <g class="pl_2 marker" transform="translate(873.6,322.0)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-20.0</text></g>
-  <g class="pl_2 marker" transform="translate(896.0,326.8)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-19.9</text></g>
-</g>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: Sweden</text>
-    <text class="pl" transform="translate(130.0,148.3)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
-<g id="lines">
-  <g class="pl_1">
-    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pldl" stroke="#000" stroke-width="5.40"/>
-  </g>
-</g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="179.2" cy="527.6" r="2.2" />
-      <circle cx="201.6" cy="522.3" r="2.2" />
-      <circle cx="224.0" cy="498.2" r="2.2" />
-      <circle cx="246.4" cy="496.9" r="2.2" />
-      <circle cx="268.8" cy="495.1" r="2.2" />
-      <circle cx="291.2" cy="508.4" r="2.2" />
-      <circle cx="313.6" cy="507.8" r="2.2" />
-      <circle cx="336.0" cy="516.7" r="2.2" />
-      <circle cx="358.4" cy="513.6" r="2.2" />
-      <circle cx="403.2" cy="530.3" r="2.2" />
-      <circle cx="425.6" cy="525.7" r="2.2" />
-      <circle cx="448.0" cy="512.1" r="2.2" />
-      <circle cx="470.4" cy="487.0" r="2.2" />
-      <circle cx="492.8" cy="473.6" r="2.2" />
-      <circle cx="515.2" cy="498.7" r="2.2" />
-      <circle cx="537.6" cy="506.1" r="2.2" />
-      <circle cx="560.0" cy="504.0" r="2.2" />
-      <circle cx="582.4" cy="519.2" r="2.2" />
-      <circle cx="627.2" cy="519.2" r="2.2" />
-      <circle cx="649.6" cy="512.2" r="2.2" />
-      <circle cx="672.0" cy="511.8" r="2.2" />
-      <circle cx="694.4" cy="495.8" r="2.2" />
-      <circle cx="716.8" cy="486.1" r="2.2" />
-      <circle cx="739.2" cy="457.2" r="2.2" />
-      <circle cx="761.6" cy="423.2" r="2.2" />
-      <circle cx="784.0" cy="392.6" r="2.2" />
-      <circle cx="806.4" cy="377.8" r="2.2" />
-      <circle cx="851.2" cy="339.3" r="2.2" />
-      <circle cx="873.6" cy="335.8" r="2.2" />
-      <circle cx="896.0" cy="340.1" r="2.2" />
-    </g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="156.8" cy="534.4" r="5.4" />
-      <circle cx="380.8" cy="521.6" r="5.4" />
-      <circle cx="604.8" cy="526.9" r="5.4" />
-      <circle cx="828.8" cy="366.7" r="5.4" />
-    </g>
-    <text class="pl" transform="translate(945.6,343.8)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
-    <text class="pl" transform="translate(945.6,94.0)" dy="6.5" font-size="21.60" fill="#A6D854" stroke="none">Organic Soils (net)</text>
-    <text class="pl" transform="translate(945.6,133.7)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Change in living biomass</text>
-    <text class="pl" transform="translate(945.6,182.6)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Dead wood (net)</text>
-    <text class="pl" transform="translate(945.6,239.3)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Litter (net)</text>
-    <text class="pl" transform="translate(945.6,323.1)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Mineral Soils (net)</text>
+<text transform="translate(945.6,343.8)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
+<text transform="translate(945.6,94.0)" dy="6.5" font-size="21.60" fill="#A6D854" stroke="none">Organic Soils (net)</text>
+<text transform="translate(945.6,133.7)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Change in living biomass</text>
+<text transform="translate(945.6,182.6)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Dead wood (net)</text>
+<text transform="translate(945.6,239.3)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Litter (net)</text>
+<text transform="translate(945.6,323.1)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Mineral Soils (net)</text>
 <polyline class="pl" points="910.8,340.1 912.4,340.1 913.8,340.2 915.2,340.2 916.4,340.3 917.6,340.4 918.8,340.5 919.8,340.7 920.8,340.8 921.7,341.0 922.7,341.1 923.5,341.3 924.4,341.5 925.2,341.7 926.0,341.9 926.8,342.1 927.6,342.2 928.4,342.4 929.3,342.6 930.1,342.8 931.1,343.0 932.0,343.1 933.0,343.3 934.0,343.4 935.2,343.5 936.4,343.6 937.6,343.7 939.0,343.8 940.4,343.8 942.0,343.8" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="910.8,326.8 912.4,326.8 913.8,326.7 915.2,326.7 916.4,326.6 917.6,326.5 918.8,326.4 919.8,326.2 920.8,326.1 921.7,325.9 922.7,325.8 923.5,325.6 924.4,325.4 925.2,325.2 926.0,325.0 926.8,324.8 927.6,324.6 928.4,324.5 929.3,324.3 930.1,324.1 931.1,323.9 932.0,323.8 933.0,323.6 934.0,323.5 935.2,323.4 936.4,323.3 937.6,323.2 939.0,323.1 940.4,323.1 942.0,323.1" stroke="#E78AC3" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: UNFCCC (2025)</text>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -500,17 +295,6 @@ text:hover + .dl_el {display:block;}
      <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
-  </a>
 </g>
-  <g class="dl_el" transform="translate(69.1,548.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="250" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
-      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
-    </g>
-  </g>
 </g>
 </svg>
