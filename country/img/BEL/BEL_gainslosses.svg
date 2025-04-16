@@ -3,7 +3,6 @@
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
-  a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
   .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
@@ -17,30 +16,12 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
-  #lines .pl {transition: all 0.2s ease;}
-  #lines:hover .pl {opacity:0.3;}
-  #lines:hover .thick {stroke-width:1;}
-  #lines:hover .pl_1:hover .pl {opacity:1;}
-  #lines:hover .pl_1:hover .pll {stroke-width:3;}
-  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_1:hover .thick {stroke-width:12;}
-  #lines:hover .pl_2:hover .pl {opacity:1;}
-  #lines:hover .pl_2:hover .pll {stroke-width:3;}
-  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_2:hover .thick {stroke-width:12;}
-  #lines:hover .pl_3:hover .pl {opacity:1;}
-  #lines:hover .pl_3:hover .pll {stroke-width:3;}
-  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_3:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
-  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="156.8,481.6 179.2,481.9 201.6,482.3 224.0,482.6 246.4,482.9 268.8,483.2 291.2,483.6 313.6,483.9 336.0,484.2 358.4,512.0 380.8,515.1 403.2,519.0 425.6,500.5 448.0,503.6 470.4,506.8 492.8,509.9 515.2,513.1 537.6,516.3 560.0,519.4 582.4,522.6 604.8,525.5 627.2,531.2 649.6,537.1 672.0,505.6 694.4,505.7 716.8,476.6 739.2,505.8 761.6,506.3 784.0,499.6 806.4,478.6 828.8,484.4 851.2,490.1 873.6,491.2 896.0,491.1" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
-  </symbol>
 </defs>
 <g id="main">
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
@@ -443,65 +424,59 @@ text:hover + .dl_el {display:block;}
   <g class="pl_2 marker" transform="translate(873.6,485.6)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-0.1</text></g>
   <g class="pl_2 marker" transform="translate(896.0,484.9)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-0.1</text></g>
 </g>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: Belgium</text>
-    <text class="pl" transform="translate(130.0,81.6)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
-<g id="lines">
-  <g class="pl_1">
-    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pldl" stroke="#000" stroke-width="5.40"/>
-  </g>
+<text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: Belgium</text>
+<text transform="translate(130.0,81.6)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
+<polyline class="pl" points="156.8,481.6 179.2,481.9 201.6,482.3 224.0,482.6 246.4,482.9 268.8,483.2 291.2,483.6 313.6,483.9 336.0,484.2 358.4,512.0 380.8,515.1 403.2,519.0 425.6,500.5 448.0,503.6 470.4,506.8 492.8,509.9 515.2,513.1 537.6,516.3 560.0,519.4 582.4,522.6 604.8,525.5 627.2,531.2 649.6,537.1 672.0,505.6 694.4,505.7 716.8,476.6 739.2,505.8 761.6,506.3 784.0,499.6 806.4,478.6 828.8,484.4 851.2,490.1 873.6,491.2 896.0,491.1" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="179.2" cy="481.9" r="2.2" />
+  <circle cx="201.6" cy="482.3" r="2.2" />
+  <circle cx="224.0" cy="482.6" r="2.2" />
+  <circle cx="246.4" cy="482.9" r="2.2" />
+  <circle cx="268.8" cy="483.2" r="2.2" />
+  <circle cx="291.2" cy="483.6" r="2.2" />
+  <circle cx="313.6" cy="483.9" r="2.2" />
+  <circle cx="336.0" cy="484.2" r="2.2" />
+  <circle cx="358.4" cy="512.0" r="2.2" />
+  <circle cx="403.2" cy="519.0" r="2.2" />
+  <circle cx="425.6" cy="500.5" r="2.2" />
+  <circle cx="448.0" cy="503.6" r="2.2" />
+  <circle cx="470.4" cy="506.8" r="2.2" />
+  <circle cx="492.8" cy="509.9" r="2.2" />
+  <circle cx="515.2" cy="513.1" r="2.2" />
+  <circle cx="537.6" cy="516.3" r="2.2" />
+  <circle cx="560.0" cy="519.4" r="2.2" />
+  <circle cx="582.4" cy="522.6" r="2.2" />
+  <circle cx="627.2" cy="531.2" r="2.2" />
+  <circle cx="649.6" cy="537.1" r="2.2" />
+  <circle cx="672.0" cy="505.6" r="2.2" />
+  <circle cx="694.4" cy="505.7" r="2.2" />
+  <circle cx="716.8" cy="476.6" r="2.2" />
+  <circle cx="739.2" cy="505.8" r="2.2" />
+  <circle cx="761.6" cy="506.3" r="2.2" />
+  <circle cx="784.0" cy="499.6" r="2.2" />
+  <circle cx="806.4" cy="478.6" r="2.2" />
+  <circle cx="851.2" cy="490.1" r="2.2" />
+  <circle cx="873.6" cy="491.2" r="2.2" />
+  <circle cx="896.0" cy="491.1" r="2.2" />
 </g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="179.2" cy="481.9" r="2.2" />
-      <circle cx="201.6" cy="482.3" r="2.2" />
-      <circle cx="224.0" cy="482.6" r="2.2" />
-      <circle cx="246.4" cy="482.9" r="2.2" />
-      <circle cx="268.8" cy="483.2" r="2.2" />
-      <circle cx="291.2" cy="483.6" r="2.2" />
-      <circle cx="313.6" cy="483.9" r="2.2" />
-      <circle cx="336.0" cy="484.2" r="2.2" />
-      <circle cx="358.4" cy="512.0" r="2.2" />
-      <circle cx="403.2" cy="519.0" r="2.2" />
-      <circle cx="425.6" cy="500.5" r="2.2" />
-      <circle cx="448.0" cy="503.6" r="2.2" />
-      <circle cx="470.4" cy="506.8" r="2.2" />
-      <circle cx="492.8" cy="509.9" r="2.2" />
-      <circle cx="515.2" cy="513.1" r="2.2" />
-      <circle cx="537.6" cy="516.3" r="2.2" />
-      <circle cx="560.0" cy="519.4" r="2.2" />
-      <circle cx="582.4" cy="522.6" r="2.2" />
-      <circle cx="627.2" cy="531.2" r="2.2" />
-      <circle cx="649.6" cy="537.1" r="2.2" />
-      <circle cx="672.0" cy="505.6" r="2.2" />
-      <circle cx="694.4" cy="505.7" r="2.2" />
-      <circle cx="716.8" cy="476.6" r="2.2" />
-      <circle cx="739.2" cy="505.8" r="2.2" />
-      <circle cx="761.6" cy="506.3" r="2.2" />
-      <circle cx="784.0" cy="499.6" r="2.2" />
-      <circle cx="806.4" cy="478.6" r="2.2" />
-      <circle cx="851.2" cy="490.1" r="2.2" />
-      <circle cx="873.6" cy="491.2" r="2.2" />
-      <circle cx="896.0" cy="491.1" r="2.2" />
-    </g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="156.8" cy="481.6" r="5.4" />
-      <circle cx="380.8" cy="515.1" r="5.4" />
-      <circle cx="604.8" cy="525.5" r="5.4" />
-      <circle cx="828.8" cy="484.4" r="5.4" />
-    </g>
-    <text class="pl" transform="translate(945.6,511.1)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
-    <text class="pl" transform="translate(945.6,141.0)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Losses</text>
-    <text class="pl" transform="translate(945.6,306.7)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Gains</text>
-    <text class="pl" transform="translate(945.6,449.0)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Dead wood (net)</text>
-    <text class="pl" transform="translate(945.6,469.7)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Litter (net)</text>
-    <text class="pl" transform="translate(945.6,490.4)" dy="6.5" font-size="21.60" fill="#A6D854" stroke="none">Mineral Soils (net)</text>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="156.8" cy="481.6" r="5.4" />
+  <circle cx="380.8" cy="515.1" r="5.4" />
+  <circle cx="604.8" cy="525.5" r="5.4" />
+  <circle cx="828.8" cy="484.4" r="5.4" />
+</g>
+<text transform="translate(945.6,511.1)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
+<text transform="translate(945.6,141.0)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Losses</text>
+<text transform="translate(945.6,306.7)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Gains</text>
+<text transform="translate(945.6,449.0)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Dead wood (net)</text>
+<text transform="translate(945.6,469.7)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Litter (net)</text>
+<text transform="translate(945.6,490.4)" dy="6.5" font-size="21.60" fill="#A6D854" stroke="none">Mineral Soils (net)</text>
 <polyline class="pl" points="910.8,491.1 912.4,491.1 913.8,491.3 915.2,491.7 916.4,492.1 917.6,492.6 918.8,493.3 919.8,494.0 920.8,494.8 921.7,495.7 922.7,496.6 923.5,497.5 924.4,498.5 925.2,499.6 926.0,500.6 926.8,501.6 927.6,502.7 928.4,503.7 929.3,504.7 930.1,505.6 931.1,506.5 932.0,507.4 933.0,508.2 934.0,508.9 935.2,509.6 936.4,510.1 937.6,510.5 939.0,510.9 940.4,511.1 942.0,511.1" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="910.8,470.9 912.4,470.9 913.8,470.6 915.2,470.3 916.4,469.8 917.6,469.2 918.8,468.5 919.8,467.7 920.8,466.8 921.7,465.9 922.7,464.9 923.5,463.9 924.4,462.8 925.2,461.7 926.0,460.5 926.8,459.4 927.6,458.3 928.4,457.1 929.3,456.1 930.1,455.0 931.1,454.0 932.0,453.1 933.0,452.2 934.0,451.4 935.2,450.7 936.4,450.1 937.6,449.6 939.0,449.3 940.4,449.1 942.0,449.0" stroke="#8DA0CB" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="910.8,473.3 912.4,473.3 913.8,473.3 915.2,473.2 916.4,473.2 917.6,473.1 918.8,472.9 919.8,472.8 920.8,472.7 921.7,472.5 922.7,472.3 923.5,472.2 924.4,472.0 925.2,471.8 926.0,471.6 926.8,471.4 927.6,471.2 928.4,471.1 929.3,470.9 930.1,470.7 931.1,470.5 932.0,470.4 933.0,470.2 934.0,470.1 935.2,470.0 936.4,469.9 937.6,469.8 939.0,469.8 940.4,469.7 942.0,469.7" stroke="#E78AC3" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="910.8,484.9 912.4,484.9 913.8,485.0 915.2,485.1 916.4,485.2 917.6,485.3 918.8,485.5 919.8,485.7 920.8,485.9 921.7,486.2 922.7,486.4 923.5,486.7 924.4,487.0 925.2,487.2 926.0,487.5 926.8,487.8 927.6,488.1 928.4,488.4 929.3,488.6 930.1,488.9 931.1,489.2 932.0,489.4 933.0,489.6 934.0,489.8 935.2,490.0 936.4,490.1 937.6,490.3 939.0,490.4 940.4,490.4 942.0,490.4" stroke="#A6D854" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: UNFCCC (2025)</text>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
@@ -515,17 +490,6 @@ text:hover + .dl_el {display:block;}
      <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
-  </a>
 </g>
-  <g class="dl_el" transform="translate(69.1,548.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="250" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
-      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
-    </g>
-  </g>
 </g>
 </svg>
