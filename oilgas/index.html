@@ -10,6 +10,7 @@
   <title>Norway site-level oil and gas charts</title>
   <script src="../js/html-include.js"></script>
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="../css/general.css">
 </head>
 
 <body>
@@ -273,10 +274,10 @@ function displayImages(npdID, imageData) {
       link.href = image;
       link.target = "_self";
       link.textContent = "Enlarge this figure";
-      p.appendChild(link);
+//      p.appendChild(link);
 
       div.appendChild(object);
-      div.appendChild(p);
+//      div.appendChild(p);
     } else {
       const img = document.createElement("img");
       img.src = image;
@@ -291,6 +292,11 @@ function displayImages(npdID, imageData) {
   // Add a PNG download link for every SVG on the page
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
       svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
+		// Add a class to the parent div
+        let container = svgObject.closest("div");
+        if (container) {
+          container.classList.add("figure-group");
+        }
     });
 }
 

@@ -146,6 +146,7 @@ function createEnlargeLink2(svgObject) {
   enlargeLink.className = 'simple-button';
   return enlargeLink;
 }
+
 function createCopyLink(svgObject) {
   const copyLink = document.createElement('a');
   copyLink.href = '#';
@@ -216,6 +217,10 @@ function addSVGbuttons(svgObject) {
     container.insertBefore(linkContainer, svgObject.nextSibling);
   }
 
+  // Add a class to the button group to allow styling
+  linkContainer.classList.add("svg-button-group");
+
+  // Add buttons, but only if they're not already there
   let hasDownload = false;
   let hasCopy = false;
   let hasEnlarge = false;

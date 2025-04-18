@@ -4,6 +4,7 @@
 		// Add a PNG download link for every SVG on the page
         addSVGbuttons(svgObject);
 		addSVGmetadata(svgObject);
+		
 		// Insert every SVG's title element text as data-title in the object, for better visibility to search engines
         let svgDoc = svgObject.contentDocument;
         if (svgDoc) {
@@ -13,6 +14,14 @@
             svgObject.setAttribute("data-title", titleText);
           }
         }
+
+		// Add a class to the parent div
+        let container = svgObject.closest("div");
+        if (container) {
+          container.classList.add("figure-group");
+        }
+
+
 	  });
 	});
   });

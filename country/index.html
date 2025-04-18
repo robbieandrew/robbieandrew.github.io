@@ -292,6 +292,11 @@ function displayImages(isoCode, imageData) {
     // Add a PNG download link for every SVG on the page
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
       svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
+		// Add a class to the parent div
+        let container = svgObject.closest("div");
+        if (container) {
+          container.classList.add("figure-group");
+        }
     });
 }
 

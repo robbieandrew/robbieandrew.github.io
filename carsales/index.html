@@ -275,9 +275,7 @@ function makeCountryDiv(entry) {
 
         // Add options (enlarge and download)
         countryDiv.innerHTML += `
-          <p>
-			<a href="${csvPath}" class="simple-button">Download data</a>
-          </p>
+          <p><a href="${csvPath}" class="simple-button" download>Download data</a></p>
         `;
 	return countryDiv;
 }
@@ -304,6 +302,11 @@ function populateCountries() {
       // Add a PNG download link for every SVG on the page
       document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
         svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
+		// Add a class to the parent div
+        let container = svgObject.closest("div");
+        if (container) {
+          container.classList.add("figure-group");
+        }
       });
     })
     .catch(error => console.error('Error loading JSON:', error));
