@@ -2,7 +2,8 @@
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
 	  svgObject.addEventListener("load", function () {
 		// Add a PNG download link for every SVG on the page
-        replacePNGlink(svgObject);
+        addSVGbuttons(svgObject);
+		addSVGmetadata(svgObject);
 		// Insert every SVG's title element text as data-title in the object, for better visibility to search engines
         let svgDoc = svgObject.contentDocument;
         if (svgDoc) {

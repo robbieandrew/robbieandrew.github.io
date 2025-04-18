@@ -275,8 +275,8 @@ function makeCountryDiv(entry) {
         // Add options (enlarge and download)
         countryDiv.innerHTML += `
           <div class="options">
-            <a href="${svgPath}" target="_self">Enlarge this figure</a> |
-            <a href="${csvPath}">Download data</a>
+            <a href="${svgPath}" target="_self" class="simple-button">Enlarge this figure</a> |
+            <a href="${csvPath}" class="simple-button">Download data</a>
           </div>
         `;
 	return countryDiv;
@@ -303,7 +303,7 @@ function populateCountries() {
 	  filterListen();
       // Add a PNG download link for every SVG on the page
       document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-        svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+        svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
       });
     })
     .catch(error => console.error('Error loading JSON:', error));

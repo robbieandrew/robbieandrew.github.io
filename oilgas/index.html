@@ -230,7 +230,7 @@ function fetchGitHubImages(npdID) {
       const imageUrls = files
         .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
 		// Generate a URL to access the file via the webpage, rather than github.com
-        .map(file => `https://robbieandrew.github.io/oilgas/img/${npdID}/${file.name}`);
+        .map(file => `img/${npdID}/${file.name}`);
 
       if (imageUrls.length === 0) {
         throw new Error(`No valid images found in ${npdID} folder.`);
@@ -290,7 +290,7 @@ function displayImages(npdID, imageData) {
   
   // Add a PNG download link for every SVG on the page
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-      svgObject.addEventListener('load', () => replacePNGlink(svgObject));
+      svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
     });
 }
 

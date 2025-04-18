@@ -89,7 +89,6 @@ function showToastBelowElement(anchorElement, message, duration = 2000) {
   const toast = document.createElement('div');
   toast.textContent = message;
   toast.style.position = 'absolute';
-  toast.style.left = `${rect.left + scrollLeft}px`;
   toast.style.top = `${rect.bottom + scrollTop + 4}px`; // 4px spacing below the element
   toast.style.background = 'rgba(0,0,0,0.85)';
   toast.style.color = 'white';
@@ -100,6 +99,12 @@ function showToastBelowElement(anchorElement, message, duration = 2000) {
   toast.style.zIndex = 10000;
   toast.style.opacity = '0';
   toast.style.transition = 'opacity 0.2s ease';
+
+//  toast.style.left = `${rect.left + scrollLeft}px`; // left-aligned with element above
+  const anchorCenter = rect.left + scrollLeft + (rect.width / 2);
+  toast.style.left = `${anchorCenter}px`;
+  toast.style.transform = 'translateX(-50%)';
+  toast.style.textAlign = 'center';
 
   document.body.appendChild(toast);
   requestAnimationFrame(() => {
@@ -122,12 +127,10 @@ function createEnlargeLink(image) {
 }
 
 function createDownloadLink(svgObject) {
-  // Create the link
   const downloadLink = document.createElement('a');
   downloadLink.href = '#';
   downloadLink.textContent = 'Download as PNG';
   downloadLink.className = 'simple-button';
-  // Add click event handler
   downloadLink.addEventListener('click', (e) => {
     e.preventDefault(); // prevent browser trying to navigate to https://.../#
     downloadSVGasPNG(svgObject);
@@ -135,6 +138,14 @@ function createDownloadLink(svgObject) {
   return downloadLink;
 }
 
+function createEnlargeLink2(svgObject) {
+  const enlargeLink = document.createElement('a');
+  const imageURL = svgObject.data;
+  enlargeLink.href = imageURL ;
+  enlargeLink.textContent = 'Enlarge this figure';
+  enlargeLink.className = 'simple-button';
+  return enlargeLink;
+}
 function createCopyLink(svgObject) {
   const copyLink = document.createElement('a');
   copyLink.href = '#';
@@ -154,6 +165,7 @@ function createCopyLink(svgObject) {
 	  b. If there is no such link, append the new link within the existing <p> tag
 	  c. If there is no <p> tag following the SVG object, simply append the new download link within the parent of the SVG object.
 */
+/*
 function replacePNGlink(svgObject) {
   const container = svgObject.parentNode;
   // Append the link after the SVG object
@@ -162,7 +174,6 @@ function replacePNGlink(svgObject) {
   
   const nextSibling = svgObject.nextElementSibling;
   
-//  if (nextSibling && nextSibling.tagName.toLowerCase() === 'p') {
   if (nextSibling && nextSibling.matches('p, div')) {
     const links = nextSibling.querySelectorAll('a');
     for (const link of links) {
@@ -186,6 +197,63 @@ function replacePNGlink(svgObject) {
     const separator2 = document.createTextNode(' | ');
     nextSibling.appendChild(separator2);
 	container.appendChild(copyLink);
+  }
+}
+*/
+function addSVGbuttons(svgObject) {
+  const container = svgObject.parentNode;
+  let linkContainer = svgObject.nextElementSibling;
+
+  // Create the download and copy links
+  const downloadLink = createDownloadLink(svgObject);
+  const copyLink = createCopyLink(svgObject);
+  const enlargeLink = createEnlargeLink2(svgObject);
+  const separator = document.createTextNode(' | ');
+
+  // Ensure the link container (p or div) exists
+  if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
+    linkContainer = document.createElement('p');
+    container.insertBefore(linkContainer, svgObject.nextSibling);
+  }
+
+  let hasDownload = false;
+  let hasCopy = false;
+  let hasEnlarge = false;
+  const links = linkContainer.querySelectorAll('a');
+
+  // Check for existing links
+  for (const link of links) {
+    if (link.textContent.trim() === 'Download as PNG') {
+      hasDownload = true;
+    } else if (link.textContent.trim() === 'Copy as PNG') {
+      hasCopy = true;
+    } else if (link.textContent.trim() === 'Enlarge this figure') {
+      hasEnlarge = true;
+    } else if (link.textContent.trim() === 'View as PNG') {
+      linkContainer.replaceChild(downloadLink, link);
+      hasDownload = true;
+    }
+  }
+
+  if (!hasEnlarge) {
+//    if (linkContainer.children.length > 0) {
+//      linkContainer.appendChild(separator.cloneNode(true));
+//    }
+    linkContainer.appendChild(enlargeLink);
+  }
+
+  if (!hasDownload) {
+//    if (linkContainer.children.length > 0) {
+//      linkContainer.appendChild(separator.cloneNode(true));
+//    }
+    linkContainer.appendChild(downloadLink);
+  }
+
+  if (!hasCopy) {
+//    if (linkContainer.children.length > 0) {
+//      linkContainer.appendChild(separator.cloneNode(true));
+//    }
+    linkContainer.appendChild(copyLink);
   }
 }
 
