@@ -1,0 +1,522 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200.000 674.916">
+<title>Annual Fossil CO2 Emissions in Switzerland</title>
+<style type="text/css">
+  #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
+         fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
+  a:hover {text-decoration: underline;}
+  .gcplogo {font-family:Ubuntu, Helvetica, sans-serif;}
+  .marker {stroke-opacity:0;fill-opacity:0;}
+  .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
+  .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
+  .ytl {text-anchor:end;}
+  .dp1 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#000000;}
+  .dp2 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#FFFFFF;}
+  .numtip {pointer-events:none;}
+  .cc {opacity:0.25;}
+.dl_fe {background-color:#FDFFDF;display:flex;margin:auto;align-items:center}
+.dl_fe_p {font-size:20px;text-align:center;margin:3px}
+.dl_el {display:none;pointer-events:none;}
+.cc:hover + .dl_el {display:block;}
+text:hover + .dl_el {display:block;}
+  #lines .pl {transition: all 0.2s ease;}
+  #lines:hover .pl {opacity:0.3;}
+  #lines:hover .thick {stroke-width:1;}
+  #lines:hover .pl_1:hover .pl {opacity:1;}
+  #lines:hover .pl_1:hover .pll {stroke-width:3;}
+  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_1:hover .thick {stroke-width:12;}
+  #lines:hover .pl_2:hover .pl {opacity:1;}
+  #lines:hover .pl_2:hover .pll {stroke-width:3;}
+  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_2:hover .thick {stroke-width:12;}
+  #lines:hover .pl_3:hover .pl {opacity:1;}
+  #lines:hover .pl_3:hover .pll {stroke-width:3;}
+  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_3:hover .thick {stroke-width:12;}
+  #lines:hover .pl_4:hover .pl {opacity:1;}
+  #lines:hover .pl_4:hover .pll {stroke-width:3;}
+  #lines:hover .pl_4:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_4:hover .thick {stroke-width:12;}
+  #lines:hover .pl_5:hover .pl {opacity:1;}
+  #lines:hover .pl_5:hover .pll {stroke-width:3;}
+  #lines:hover .pl_5:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_5:hover .thick {stroke-width:12;}
+  #lines:hover .pl_6:hover .pl {opacity:1;}
+  #lines:hover .pl_6:hover .pll {stroke-width:3;}
+  #lines:hover .pl_6:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_6:hover .thick {stroke-width:12;}
+  #lines:hover .pl_7:hover .pl {opacity:1;}
+  #lines:hover .pl_7:hover .pll {stroke-width:3;}
+  #lines:hover .pl_7:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_7:hover .thick {stroke-width:12;}
+  #lines:hover .pl_8:hover .pl {opacity:1;}
+  #lines:hover .pl_8:hover .pll {stroke-width:3;}
+  #lines:hover .pl_8:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_8:hover .thick {stroke-width:12;}
+  #lines:hover .pl_9:hover .pl {opacity:1;}
+  #lines:hover .pl_9:hover .pll {stroke-width:3;}
+  #lines:hover .pl_9:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_9:hover .thick {stroke-width:12;}
+  #lines:hover .pl_10:hover .pl {opacity:1;}
+  #lines:hover .pl_10:hover .pll {stroke-width:3;}
+  #lines:hover .pl_10:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_10:hover .thick {stroke-width:12;}
+  #lines:hover .pl_11:hover .pl {opacity:1;}
+  #lines:hover .pl_11:hover .pll {stroke-width:3;}
+  #lines:hover .pl_11:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_11:hover .thick {stroke-width:12;}
+  #lines:hover .pl_12:hover .pl {opacity:1;}
+  #lines:hover .pl_12:hover .pll {stroke-width:3;}
+  #lines:hover .pl_12:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_12:hover .thick {stroke-width:12;}
+</style>
+<defs>
+  <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
+  <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
+  <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
+  <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
+  <linearGradient id="gcpgradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#8CC63F;stop-opacity:1"/>
+    <stop offset="100%" style="stop-color:#24AAE1;stop-opacity:1"/>
+  </linearGradient>
+  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="140.5,581.3 150.7,580.7 160.9,579.3 171.2,578.9 181.4,577.7 191.6,576.3 201.8,574.5 212.0,572.9 222.3,572.1 232.5,574.1 242.7,571.1 252.9,569.0 263.2,565.6 273.4,564.8 283.6,565.7 293.8,561.3 304.1,563.0 314.3,561.3 324.5,562.1 334.7,561.3 344.9,560.0 355.2,558.4 365.4,555.9 375.6,553.0 385.8,552.7 396.1,555.8 406.3,564.7 416.5,566.0 426.7,565.4 437.0,565.1 447.2,563.7 457.4,561.8 467.6,561.3 477.8,562.7 488.1,562.8 498.3,562.3 508.5,561.8 518.7,561.1 529.0,559.7 539.2,557.7 549.4,554.7 559.6,556.3 569.8,560.2 580.1,561.9 590.3,564.3 600.5,561.9 610.7,563.3 621.0,565.7 631.2,567.9 641.4,567.9 651.6,567.9 661.9,566.5 672.1,566.1 682.3,566.9 692.5,567.4 702.7,566.2 713.0,565.0 723.2,565.0 733.4,564.6 743.6,564.9 753.9,565.0 764.1,563.7 774.3,564.1 784.5,565.5 794.7,565.2 805.0,564.6 815.2,566.6 825.4,566.0 835.6,566.1 845.9,566.3 856.1,566.4 866.3,567.1 876.5,566.4 886.8,567.0 897.0,567.0" stroke="#666" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_2" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="140.5,587.2 150.7,587.2 160.9,587.2 171.2,587.2 181.4,587.2 191.6,587.2 201.8,587.2 212.0,587.2 222.3,587.2 232.5,587.2 242.7,587.2 252.9,587.2 263.2,587.2 273.4,587.2 283.6,587.2 293.8,587.2 304.1,587.2 314.3,587.2 324.5,587.1 334.7,586.9 344.9,586.9 355.2,586.2 365.4,584.7 375.6,584.1 385.8,583.0 396.1,578.2 406.3,572.8 416.5,572.2 426.7,570.0 437.0,568.3 447.2,566.1 457.4,563.1 467.6,561.2 477.8,559.8 488.1,557.1 498.3,553.6 508.5,552.0 518.7,551.1 529.0,548.6 539.2,548.3 549.4,544.9 559.6,539.8 569.8,534.2 580.1,531.6 590.3,529.0 600.5,529.9 610.7,524.3 621.0,519.0 631.2,521.2 641.4,519.3 651.6,516.8 661.9,517.0 672.1,514.1 682.3,515.4 692.5,511.3 702.7,508.8 713.0,506.7 723.2,508.8 733.4,510.8 743.6,505.9 753.9,509.3 764.1,500.1 774.3,509.8 784.5,502.6 794.7,498.3 805.0,509.9 815.2,504.7 825.4,500.5 835.6,501.0 845.9,505.9 856.1,503.5 866.3,506.3 876.5,499.1 886.8,514.2 897.0,519.7" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_3" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="140.5,554.6 150.7,552.1 160.9,549.3 171.2,545.3 181.4,542.2 191.6,530.5 201.8,518.9 212.0,496.0 222.3,494.5 232.5,478.1 242.7,475.3 252.9,452.3 263.2,434.4 273.4,392.8 283.6,346.0 293.8,334.7 304.1,297.2 314.3,274.5 324.5,251.2 334.7,206.3 344.9,181.4 355.2,155.0 365.4,130.7 375.6,119.9 385.8,80.6 396.1,137.9 406.3,159.9 416.5,142.0 426.7,140.0 437.0,127.5 447.2,159.2 457.4,161.3 467.6,191.8 477.8,218.2 488.1,180.2 498.3,195.7 508.5,189.8 518.7,158.1 529.0,185.5 539.2,179.6 549.4,201.0 559.6,151.4 569.8,126.0 580.1,124.3 590.3,152.2 600.5,165.2 610.7,160.5 621.0,152.3 631.2,159.7 641.4,141.8 651.6,146.7 661.9,160.2 672.1,145.8 682.3,162.5 692.5,151.9 702.7,148.7 713.0,146.1 723.2,149.4 733.4,172.8 743.6,160.2 753.9,170.0 764.1,162.6 774.3,201.4 784.5,191.0 794.7,184.3 805.0,221.4 815.2,229.9 825.4,228.8 835.6,240.2 845.9,250.5 856.1,253.9 866.3,280.3 876.5,269.5 886.8,289.9 897.0,285.5" stroke="#404040" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_4" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="140.5,522.2 150.7,504.7 160.9,483.8 171.2,501.2 181.4,516.4 191.6,502.1 201.8,503.0 212.0,485.8 222.3,480.3 232.5,511.9 242.7,513.9 252.9,503.8 263.2,514.7 273.4,511.4 283.6,497.3 293.8,524.4 304.1,533.5 314.3,543.9 324.5,553.8 334.7,557.9 344.9,559.1 355.2,561.0 365.4,569.4 375.6,571.4 385.8,572.2 396.1,574.5 406.3,577.8 416.5,578.2 426.7,575.7 437.0,576.5 447.2,576.4 457.4,571.6 467.6,563.9 477.8,564.5 488.1,563.5 498.3,562.9 508.5,562.9 518.7,566.3 529.0,567.7 539.2,570.4 549.4,570.5 559.6,569.4 569.8,572.5 580.1,576.3 590.3,577.9 600.5,577.7 610.7,577.5 621.0,580.2 631.2,581.1 641.4,581.8 651.6,581.7 661.9,579.4 672.1,579.2 682.3,580.0 692.5,579.9 702.7,580.0 713.0,579.5 723.2,578.9 733.4,578.2 743.6,578.9 753.9,579.5 764.1,579.3 774.3,579.8 784.5,580.4 794.7,580.1 805.0,579.9 815.2,580.4 825.4,580.8 835.6,581.1 845.9,581.4 856.1,582.0 866.3,582.2 876.5,582.1 886.8,581.9 897.0,581.9" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+</defs>
+<g id="main">
+<use xlink:href="#line_x" transform="translate(0,587.2)"/>
+<use xlink:href="#line_x" transform="translate(0,498.3)"/>
+<use xlink:href="#line_x" transform="translate(0,409.4)"/>
+<use xlink:href="#line_x" transform="translate(0,320.6)"/>
+<use xlink:href="#line_x" transform="translate(0,231.7)"/>
+<use xlink:href="#line_x" transform="translate(0,142.9)"/>
+<use xlink:href="#line_x" transform="translate(0,54.0)"/>
+<use xlink:href="#tick_y" transform="translate(0,587.2)"/>
+<use xlink:href="#tick_y" transform="translate(0,498.3)"/>
+<use xlink:href="#tick_y" transform="translate(0,409.4)"/>
+<use xlink:href="#tick_y" transform="translate(0,320.6)"/>
+<use xlink:href="#tick_y" transform="translate(0,231.7)"/>
+<use xlink:href="#tick_y" transform="translate(0,142.9)"/>
+<use xlink:href="#tick_y" transform="translate(0,54.0)"/>
+<use xlink:href="#tick_x" transform="translate(150.7,0)"/>
+<use xlink:href="#tick_x" transform="translate(252.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(355.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(457.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(559.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(661.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(764.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(897.0,0)"/>
+<polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
+<g class="gcplogo" transform="translate(1130.4,30.0)" stroke="" stroke-width="50">
+<a href="https://www.globalcarbonproject.org" target="_blank">
+  <text font-size="10.80" text-anchor="end" transform="translate(-10.0,0)"><tspan dx="2.00 2.00 2.00 2.00 2.00 2.00">GLOBAL</tspan></text>  <text font-size="10.80" transform="translate(0.0,0)"><tspan dx="2.00 2.00 2.00 2.00 2.00 2.00">CARBON</tspan></text>  <text font-size="8.10" font-weight="lighter" transform="translate(8.0,8.0)"><tspan dx="2.00 2.00 2.00 2.00 2.00 2.00 2.00">project</tspan></text><g transform="matrix(15.00,-36.30,-36.30,-15.00,5.00,10.00)">
+  <path d="M0.292,0.378C0.026,0.268 -0.101,-0.038 0.009,-0.304C0.012,-0.311 0.015,-0.317 0.018,-0.323C-0.072,-0.079 0.047,0.195 0.289,0.295C0.538,0.398 0.823,0.28 0.926,0.031C1.016,-0.187 0.937,-0.432 0.75,-0.559C0.976,-0.431 1.077,-0.151 0.975,0.095C0.865,0.362 0.559,0.489 0.292,0.378Z" style="fill:url(#gcpgradient);fill-rule:nonzero;"/></g>
+</a>
+</g>
+<text class="ticklabel xtl" transform="translate(150.7,629.0)" text-anchor="middle">1950</text>
+<text class="ticklabel xtl" transform="translate(252.9,629.0)" text-anchor="middle">1960</text>
+<text class="ticklabel xtl" transform="translate(355.2,629.0)" text-anchor="middle">1970</text>
+<text class="ticklabel xtl" transform="translate(457.4,629.0)" text-anchor="middle">1980</text>
+<text class="ticklabel xtl" transform="translate(559.6,629.0)" text-anchor="middle">1990</text>
+<text class="ticklabel xtl" transform="translate(661.9,629.0)" text-anchor="middle">2000</text>
+<text class="ticklabel xtl" transform="translate(764.1,629.0)" text-anchor="middle">2010</text>
+<text class="ticklabel xtl" transform="translate(897.0,629.0)" text-anchor="middle">2023</text>
+<text class="ticklabel ytl" transform="translate(128.8,595.3)">0</text>
+<text class="ticklabel ytl" transform="translate(128.8,506.4)">2</text>
+<text class="ticklabel ytl" transform="translate(128.8,417.5)">4</text>
+<text class="ticklabel ytl" transform="translate(128.8,328.7)">6</text>
+<text class="ticklabel ytl" transform="translate(128.8,239.8)">8</text>
+<text class="ticklabel ytl" transform="translate(128.8,151.0)">10</text>
+<text class="ticklabel ytl" transform="translate(128.8,62.1)">12 Mt C</text>
+<g id="lines">
+  <g class="pl_1">
+    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_1" class="pl pldl" stroke="#666" stroke-width="5.40"/>
+    <text class="pl" transform="translate(925.2,561.3)" dy="8.1" font-size="27.00" fill="#666" stroke="none">Cement 0.5</text>
+    <g class="pl pldlm" fill="#FFF" stroke="#666" stroke-width="0.900">
+      <circle cx="150.7" cy="580.7" r="5.4" />
+      <circle cx="252.9" cy="569.0" r="5.4" />
+      <circle cx="355.2" cy="558.4" r="5.4" />
+      <circle cx="457.4" cy="561.8" r="5.4" />
+      <circle cx="559.6" cy="556.3" r="5.4" />
+      <circle cx="661.9" cy="566.5" r="5.4" />
+      <circle cx="764.1" cy="563.7" r="5.4" />
+      <circle cx="866.3" cy="567.1" r="5.4" />
+    </g>
+    <g class="pl pldlm" fill="#FFF" stroke="#666" stroke-width="0.900">
+      <circle cx="160.9" cy="579.3" r="2.2" />
+      <circle cx="171.2" cy="578.9" r="2.2" />
+      <circle cx="181.4" cy="577.7" r="2.2" />
+      <circle cx="191.6" cy="576.3" r="2.2" />
+      <circle cx="201.8" cy="574.5" r="2.2" />
+      <circle cx="212.0" cy="572.9" r="2.2" />
+      <circle cx="222.3" cy="572.1" r="2.2" />
+      <circle cx="232.5" cy="574.1" r="2.2" />
+      <circle cx="242.7" cy="571.1" r="2.2" />
+      <circle cx="263.2" cy="565.6" r="2.2" />
+      <circle cx="273.4" cy="564.8" r="2.2" />
+      <circle cx="283.6" cy="565.7" r="2.2" />
+      <circle cx="293.8" cy="561.3" r="2.2" />
+      <circle cx="304.1" cy="563.0" r="2.2" />
+      <circle cx="314.3" cy="561.3" r="2.2" />
+      <circle cx="324.5" cy="562.1" r="2.2" />
+      <circle cx="334.7" cy="561.3" r="2.2" />
+      <circle cx="344.9" cy="560.0" r="2.2" />
+      <circle cx="365.4" cy="555.9" r="2.2" />
+      <circle cx="375.6" cy="553.0" r="2.2" />
+      <circle cx="385.8" cy="552.7" r="2.2" />
+      <circle cx="396.1" cy="555.8" r="2.2" />
+      <circle cx="406.3" cy="564.7" r="2.2" />
+      <circle cx="416.5" cy="566.0" r="2.2" />
+      <circle cx="426.7" cy="565.4" r="2.2" />
+      <circle cx="437.0" cy="565.1" r="2.2" />
+      <circle cx="447.2" cy="563.7" r="2.2" />
+      <circle cx="467.6" cy="561.3" r="2.2" />
+      <circle cx="477.8" cy="562.7" r="2.2" />
+      <circle cx="488.1" cy="562.8" r="2.2" />
+      <circle cx="498.3" cy="562.3" r="2.2" />
+      <circle cx="508.5" cy="561.8" r="2.2" />
+      <circle cx="518.7" cy="561.1" r="2.2" />
+      <circle cx="529.0" cy="559.7" r="2.2" />
+      <circle cx="539.2" cy="557.7" r="2.2" />
+      <circle cx="549.4" cy="554.7" r="2.2" />
+      <circle cx="569.8" cy="560.2" r="2.2" />
+      <circle cx="580.1" cy="561.9" r="2.2" />
+      <circle cx="590.3" cy="564.3" r="2.2" />
+      <circle cx="600.5" cy="561.9" r="2.2" />
+      <circle cx="610.7" cy="563.3" r="2.2" />
+      <circle cx="621.0" cy="565.7" r="2.2" />
+      <circle cx="631.2" cy="567.9" r="2.2" />
+      <circle cx="641.4" cy="567.9" r="2.2" />
+      <circle cx="651.6" cy="567.9" r="2.2" />
+      <circle cx="672.1" cy="566.1" r="2.2" />
+      <circle cx="682.3" cy="566.9" r="2.2" />
+      <circle cx="692.5" cy="567.4" r="2.2" />
+      <circle cx="702.7" cy="566.2" r="2.2" />
+      <circle cx="713.0" cy="565.0" r="2.2" />
+      <circle cx="723.2" cy="565.0" r="2.2" />
+      <circle cx="733.4" cy="564.6" r="2.2" />
+      <circle cx="743.6" cy="564.9" r="2.2" />
+      <circle cx="753.9" cy="565.0" r="2.2" />
+      <circle cx="774.3" cy="564.1" r="2.2" />
+      <circle cx="784.5" cy="565.5" r="2.2" />
+      <circle cx="794.7" cy="565.2" r="2.2" />
+      <circle cx="805.0" cy="564.6" r="2.2" />
+      <circle cx="815.2" cy="566.6" r="2.2" />
+      <circle cx="825.4" cy="566.0" r="2.2" />
+      <circle cx="835.6" cy="566.1" r="2.2" />
+      <circle cx="845.9" cy="566.3" r="2.2" />
+      <circle cx="856.1" cy="566.4" r="2.2" />
+      <circle cx="876.5" cy="566.4" r="2.2" />
+      <circle cx="886.8" cy="567.0" r="2.2" />
+      <circle cx="897.0" cy="567.0" r="2.2" />
+    </g>
+    <text class="pl" transform="translate(1099.0,561.9)" dy="5.4" font-size="18.00" fill="#666" stroke="none">nc</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="1075.0,559.9 1094.2,559.9 1094.2,562.6 1075.0,562.6" fill="#666"/>
+    </g>
+  </g>
+  <g class="pl_2">
+    <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_2" class="pl pldl" stroke="#6298C6" stroke-width="5.40"/>
+    <text class="pl" transform="translate(925.2,519.7)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Gas 1.5</text>
+    <g class="pl pldlm" fill="#FFF" stroke="#6298C6" stroke-width="0.900">
+      <circle cx="150.7" cy="587.2" r="5.4" />
+      <circle cx="252.9" cy="587.2" r="5.4" />
+      <circle cx="355.2" cy="586.2" r="5.4" />
+      <circle cx="457.4" cy="563.1" r="5.4" />
+      <circle cx="559.6" cy="539.8" r="5.4" />
+      <circle cx="661.9" cy="517.0" r="5.4" />
+      <circle cx="764.1" cy="500.1" r="5.4" />
+      <circle cx="866.3" cy="506.3" r="5.4" />
+    </g>
+    <g class="pl pldlm" fill="#FFF" stroke="#6298C6" stroke-width="0.900">
+      <circle cx="160.9" cy="587.2" r="2.2" />
+      <circle cx="171.2" cy="587.2" r="2.2" />
+      <circle cx="181.4" cy="587.2" r="2.2" />
+      <circle cx="191.6" cy="587.2" r="2.2" />
+      <circle cx="201.8" cy="587.2" r="2.2" />
+      <circle cx="212.0" cy="587.2" r="2.2" />
+      <circle cx="222.3" cy="587.2" r="2.2" />
+      <circle cx="232.5" cy="587.2" r="2.2" />
+      <circle cx="242.7" cy="587.2" r="2.2" />
+      <circle cx="263.2" cy="587.2" r="2.2" />
+      <circle cx="273.4" cy="587.2" r="2.2" />
+      <circle cx="283.6" cy="587.2" r="2.2" />
+      <circle cx="293.8" cy="587.2" r="2.2" />
+      <circle cx="304.1" cy="587.2" r="2.2" />
+      <circle cx="314.3" cy="587.2" r="2.2" />
+      <circle cx="324.5" cy="587.1" r="2.2" />
+      <circle cx="334.7" cy="586.9" r="2.2" />
+      <circle cx="344.9" cy="586.9" r="2.2" />
+      <circle cx="365.4" cy="584.7" r="2.2" />
+      <circle cx="375.6" cy="584.1" r="2.2" />
+      <circle cx="385.8" cy="583.0" r="2.2" />
+      <circle cx="396.1" cy="578.2" r="2.2" />
+      <circle cx="406.3" cy="572.8" r="2.2" />
+      <circle cx="416.5" cy="572.2" r="2.2" />
+      <circle cx="426.7" cy="570.0" r="2.2" />
+      <circle cx="437.0" cy="568.3" r="2.2" />
+      <circle cx="447.2" cy="566.1" r="2.2" />
+      <circle cx="467.6" cy="561.2" r="2.2" />
+      <circle cx="477.8" cy="559.8" r="2.2" />
+      <circle cx="488.1" cy="557.1" r="2.2" />
+      <circle cx="498.3" cy="553.6" r="2.2" />
+      <circle cx="508.5" cy="552.0" r="2.2" />
+      <circle cx="518.7" cy="551.1" r="2.2" />
+      <circle cx="529.0" cy="548.6" r="2.2" />
+      <circle cx="539.2" cy="548.3" r="2.2" />
+      <circle cx="549.4" cy="544.9" r="2.2" />
+      <circle cx="569.8" cy="534.2" r="2.2" />
+      <circle cx="580.1" cy="531.6" r="2.2" />
+      <circle cx="590.3" cy="529.0" r="2.2" />
+      <circle cx="600.5" cy="529.9" r="2.2" />
+      <circle cx="610.7" cy="524.3" r="2.2" />
+      <circle cx="621.0" cy="519.0" r="2.2" />
+      <circle cx="631.2" cy="521.2" r="2.2" />
+      <circle cx="641.4" cy="519.3" r="2.2" />
+      <circle cx="651.6" cy="516.8" r="2.2" />
+      <circle cx="672.1" cy="514.1" r="2.2" />
+      <circle cx="682.3" cy="515.4" r="2.2" />
+      <circle cx="692.5" cy="511.3" r="2.2" />
+      <circle cx="702.7" cy="508.8" r="2.2" />
+      <circle cx="713.0" cy="506.7" r="2.2" />
+      <circle cx="723.2" cy="508.8" r="2.2" />
+      <circle cx="733.4" cy="510.8" r="2.2" />
+      <circle cx="743.6" cy="505.9" r="2.2" />
+      <circle cx="753.9" cy="509.3" r="2.2" />
+      <circle cx="774.3" cy="509.8" r="2.2" />
+      <circle cx="784.5" cy="502.6" r="2.2" />
+      <circle cx="794.7" cy="498.3" r="2.2" />
+      <circle cx="805.0" cy="509.9" r="2.2" />
+      <circle cx="815.2" cy="504.7" r="2.2" />
+      <circle cx="825.4" cy="500.5" r="2.2" />
+      <circle cx="835.6" cy="501.0" r="2.2" />
+      <circle cx="845.9" cy="505.9" r="2.2" />
+      <circle cx="856.1" cy="503.5" r="2.2" />
+      <circle cx="876.5" cy="499.1" r="2.2" />
+      <circle cx="886.8" cy="514.2" r="2.2" />
+      <circle cx="897.0" cy="519.7" r="2.2" />
+    </g>
+    <text class="pl" transform="translate(1053.7,521.7)" dy="5.4" font-size="18.00" fill="#6298C6" stroke="none">7.4%</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="1029.7,512.9 1039.3,526.4 1048.9,512.9 1029.7,512.9" fill="#6298C6"/>
+    </g>
+  </g>
+  <g class="pl_3">
+    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_3" class="pl pldl" stroke="#404040" stroke-width="5.40"/>
+    <text class="pl" transform="translate(925.2,285.5)" dy="8.1" font-size="27.00" fill="#404040" stroke="none">Oil 6.8</text>
+    <g class="pl pldlm" fill="#FFF" stroke="#404040" stroke-width="0.900">
+      <circle cx="150.7" cy="552.1" r="5.4" />
+      <circle cx="252.9" cy="452.3" r="5.4" />
+      <circle cx="355.2" cy="155.0" r="5.4" />
+      <circle cx="457.4" cy="161.3" r="5.4" />
+      <circle cx="559.6" cy="151.4" r="5.4" />
+      <circle cx="661.9" cy="160.2" r="5.4" />
+      <circle cx="764.1" cy="162.6" r="5.4" />
+      <circle cx="866.3" cy="280.3" r="5.4" />
+    </g>
+    <g class="pl pldlm" fill="#FFF" stroke="#404040" stroke-width="0.900">
+      <circle cx="160.9" cy="549.3" r="2.2" />
+      <circle cx="171.2" cy="545.3" r="2.2" />
+      <circle cx="181.4" cy="542.2" r="2.2" />
+      <circle cx="191.6" cy="530.5" r="2.2" />
+      <circle cx="201.8" cy="518.9" r="2.2" />
+      <circle cx="212.0" cy="496.0" r="2.2" />
+      <circle cx="222.3" cy="494.5" r="2.2" />
+      <circle cx="232.5" cy="478.1" r="2.2" />
+      <circle cx="242.7" cy="475.3" r="2.2" />
+      <circle cx="263.2" cy="434.4" r="2.2" />
+      <circle cx="273.4" cy="392.8" r="2.2" />
+      <circle cx="283.6" cy="346.0" r="2.2" />
+      <circle cx="293.8" cy="334.7" r="2.2" />
+      <circle cx="304.1" cy="297.2" r="2.2" />
+      <circle cx="314.3" cy="274.5" r="2.2" />
+      <circle cx="324.5" cy="251.2" r="2.2" />
+      <circle cx="334.7" cy="206.3" r="2.2" />
+      <circle cx="344.9" cy="181.4" r="2.2" />
+      <circle cx="365.4" cy="130.7" r="2.2" />
+      <circle cx="375.6" cy="119.9" r="2.2" />
+      <circle cx="385.8" cy="80.6" r="2.2" />
+      <circle cx="396.1" cy="137.9" r="2.2" />
+      <circle cx="406.3" cy="159.9" r="2.2" />
+      <circle cx="416.5" cy="142.0" r="2.2" />
+      <circle cx="426.7" cy="140.0" r="2.2" />
+      <circle cx="437.0" cy="127.5" r="2.2" />
+      <circle cx="447.2" cy="159.2" r="2.2" />
+      <circle cx="467.6" cy="191.8" r="2.2" />
+      <circle cx="477.8" cy="218.2" r="2.2" />
+      <circle cx="488.1" cy="180.2" r="2.2" />
+      <circle cx="498.3" cy="195.7" r="2.2" />
+      <circle cx="508.5" cy="189.8" r="2.2" />
+      <circle cx="518.7" cy="158.1" r="2.2" />
+      <circle cx="529.0" cy="185.5" r="2.2" />
+      <circle cx="539.2" cy="179.6" r="2.2" />
+      <circle cx="549.4" cy="201.0" r="2.2" />
+      <circle cx="569.8" cy="126.0" r="2.2" />
+      <circle cx="580.1" cy="124.3" r="2.2" />
+      <circle cx="590.3" cy="152.2" r="2.2" />
+      <circle cx="600.5" cy="165.2" r="2.2" />
+      <circle cx="610.7" cy="160.5" r="2.2" />
+      <circle cx="621.0" cy="152.3" r="2.2" />
+      <circle cx="631.2" cy="159.7" r="2.2" />
+      <circle cx="641.4" cy="141.8" r="2.2" />
+      <circle cx="651.6" cy="146.7" r="2.2" />
+      <circle cx="672.1" cy="145.8" r="2.2" />
+      <circle cx="682.3" cy="162.5" r="2.2" />
+      <circle cx="692.5" cy="151.9" r="2.2" />
+      <circle cx="702.7" cy="148.7" r="2.2" />
+      <circle cx="713.0" cy="146.1" r="2.2" />
+      <circle cx="723.2" cy="149.4" r="2.2" />
+      <circle cx="733.4" cy="172.8" r="2.2" />
+      <circle cx="743.6" cy="160.2" r="2.2" />
+      <circle cx="753.9" cy="170.0" r="2.2" />
+      <circle cx="774.3" cy="201.4" r="2.2" />
+      <circle cx="784.5" cy="191.0" r="2.2" />
+      <circle cx="794.7" cy="184.3" r="2.2" />
+      <circle cx="805.0" cy="221.4" r="2.2" />
+      <circle cx="815.2" cy="229.9" r="2.2" />
+      <circle cx="825.4" cy="228.8" r="2.2" />
+      <circle cx="835.6" cy="240.2" r="2.2" />
+      <circle cx="845.9" cy="250.5" r="2.2" />
+      <circle cx="856.1" cy="253.9" r="2.2" />
+      <circle cx="876.5" cy="269.5" r="2.2" />
+      <circle cx="886.8" cy="289.9" r="2.2" />
+      <circle cx="897.0" cy="285.5" r="2.2" />
+    </g>
+    <text class="pl" transform="translate(1037.5,287.5)" dy="5.4" font-size="18.00" fill="#404040" stroke="none">1.5%</text>
+    <text class="pl" transform="translate(925.2,262.5)" dy="0.0" font-size="19.80" fill="#404040" stroke="none">Mt C in 2023</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="1013.5,292.2 1023.1,278.7 1032.7,292.2 1013.5,292.2" fill="#404040"/>
+    </g>
+  </g>
+  <g class="pl_4">
+    <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_4" class="pl pldl" stroke="#7B553E" stroke-width="5.40"/>
+    <text class="pl" transform="translate(925.2,587.2)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal 0.1</text>
+    <g class="pl pldlm" fill="#FFF" stroke="#7B553E" stroke-width="0.900">
+      <circle cx="150.7" cy="504.7" r="5.4" />
+      <circle cx="252.9" cy="503.8" r="5.4" />
+      <circle cx="355.2" cy="561.0" r="5.4" />
+      <circle cx="457.4" cy="571.6" r="5.4" />
+      <circle cx="559.6" cy="569.4" r="5.4" />
+      <circle cx="661.9" cy="579.4" r="5.4" />
+      <circle cx="764.1" cy="579.3" r="5.4" />
+      <circle cx="866.3" cy="582.2" r="5.4" />
+    </g>
+    <g class="pl pldlm" fill="#FFF" stroke="#7B553E" stroke-width="0.900">
+      <circle cx="160.9" cy="483.8" r="2.2" />
+      <circle cx="171.2" cy="501.2" r="2.2" />
+      <circle cx="181.4" cy="516.4" r="2.2" />
+      <circle cx="191.6" cy="502.1" r="2.2" />
+      <circle cx="201.8" cy="503.0" r="2.2" />
+      <circle cx="212.0" cy="485.8" r="2.2" />
+      <circle cx="222.3" cy="480.3" r="2.2" />
+      <circle cx="232.5" cy="511.9" r="2.2" />
+      <circle cx="242.7" cy="513.9" r="2.2" />
+      <circle cx="263.2" cy="514.7" r="2.2" />
+      <circle cx="273.4" cy="511.4" r="2.2" />
+      <circle cx="283.6" cy="497.3" r="2.2" />
+      <circle cx="293.8" cy="524.4" r="2.2" />
+      <circle cx="304.1" cy="533.5" r="2.2" />
+      <circle cx="314.3" cy="543.9" r="2.2" />
+      <circle cx="324.5" cy="553.8" r="2.2" />
+      <circle cx="334.7" cy="557.9" r="2.2" />
+      <circle cx="344.9" cy="559.1" r="2.2" />
+      <circle cx="365.4" cy="569.4" r="2.2" />
+      <circle cx="375.6" cy="571.4" r="2.2" />
+      <circle cx="385.8" cy="572.2" r="2.2" />
+      <circle cx="396.1" cy="574.5" r="2.2" />
+      <circle cx="406.3" cy="577.8" r="2.2" />
+      <circle cx="416.5" cy="578.2" r="2.2" />
+      <circle cx="426.7" cy="575.7" r="2.2" />
+      <circle cx="437.0" cy="576.5" r="2.2" />
+      <circle cx="447.2" cy="576.4" r="2.2" />
+      <circle cx="467.6" cy="563.9" r="2.2" />
+      <circle cx="477.8" cy="564.5" r="2.2" />
+      <circle cx="488.1" cy="563.5" r="2.2" />
+      <circle cx="498.3" cy="562.9" r="2.2" />
+      <circle cx="508.5" cy="562.9" r="2.2" />
+      <circle cx="518.7" cy="566.3" r="2.2" />
+      <circle cx="529.0" cy="567.7" r="2.2" />
+      <circle cx="539.2" cy="570.4" r="2.2" />
+      <circle cx="549.4" cy="570.5" r="2.2" />
+      <circle cx="569.8" cy="572.5" r="2.2" />
+      <circle cx="580.1" cy="576.3" r="2.2" />
+      <circle cx="590.3" cy="577.9" r="2.2" />
+      <circle cx="600.5" cy="577.7" r="2.2" />
+      <circle cx="610.7" cy="577.5" r="2.2" />
+      <circle cx="621.0" cy="580.2" r="2.2" />
+      <circle cx="631.2" cy="581.1" r="2.2" />
+      <circle cx="641.4" cy="581.8" r="2.2" />
+      <circle cx="651.6" cy="581.7" r="2.2" />
+      <circle cx="672.1" cy="579.2" r="2.2" />
+      <circle cx="682.3" cy="580.0" r="2.2" />
+      <circle cx="692.5" cy="579.9" r="2.2" />
+      <circle cx="702.7" cy="580.0" r="2.2" />
+      <circle cx="713.0" cy="579.5" r="2.2" />
+      <circle cx="723.2" cy="578.9" r="2.2" />
+      <circle cx="733.4" cy="578.2" r="2.2" />
+      <circle cx="743.6" cy="578.9" r="2.2" />
+      <circle cx="753.9" cy="579.5" r="2.2" />
+      <circle cx="774.3" cy="579.8" r="2.2" />
+      <circle cx="784.5" cy="580.4" r="2.2" />
+      <circle cx="794.7" cy="580.1" r="2.2" />
+      <circle cx="805.0" cy="579.9" r="2.2" />
+      <circle cx="815.2" cy="580.4" r="2.2" />
+      <circle cx="825.4" cy="580.8" r="2.2" />
+      <circle cx="835.6" cy="581.1" r="2.2" />
+      <circle cx="845.9" cy="581.4" r="2.2" />
+      <circle cx="856.1" cy="582.0" r="2.2" />
+      <circle cx="876.5" cy="582.1" r="2.2" />
+      <circle cx="886.8" cy="581.9" r="2.2" />
+      <circle cx="897.0" cy="581.9" r="2.2" />
+    </g>
+    <text class="pl" transform="translate(1060.2,587.9)" dy="5.4" font-size="18.00" fill="#7B553E" stroke="none">nc</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="1036.2,585.8 1055.4,585.8 1055.4,588.5 1036.2,588.5" fill="#7B553E"/>
+    </g>
+  </g>
+</g>
+    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Annual Fossil CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>Emissions in Switzerland</text>
+    <text class="pl" transform="translate(157.6,60.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">Total emissions growth in 2023: -0.2%</text>
+<text transform="translate(160.2,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://www.globalcarbonproject.org" target="_blank" style="fill:#BFBFBF">Global Carbon Project</a></text>
+<g>
+<a href="https://creativecommons.org/licenses/by/4.0/">
+  <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
+  <g transform="translate(124.0,652.4) scale(0.24)">
+  <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
+     <circle fill="none" cx="37.79" cy="28.5" r="28.84" stroke="#BFBFBF" stroke-width="5.5"/>
+     <path fill="#BFBFBF" d="M37.16,23.19 l-4.29,2.23c-0.458-0.951-1.02-1.62-1.69-2c-0.667-0.38-1.29-0.571-1.86-0.571c-2.86,0-4.29,1.89-4.29,5.66 c0,1.71,0.36,3.08,1.09,4.11c0.724,1.03,1.79,1.54,3.2,1.54c1.87,0,3.18-0.915,3.94-2.74l3.94,2 c-0.838,1.56-2,2.79-3.49,3.69c-1.48,0.896-3.12,1.34-4.91,1.34c-2.86,0-5.16-0.875-6.92-2.63 c-1.75-1.75-2.63-4.19-2.63-7.31c0-3.05,0.886-5.47,2.66-7.26c1.77-1.79,4.01-2.69,6.72-2.69 C32.6,18.56,35.44,20.1,37.16,23.19z
+              M55.61,23.19l-4.23,2.23c-0.457-0.951-1.02-1.62-1.69-2 c-0.668-0.38-1.31-0.571-1.91-0.571c-2.86,0-4.29,1.89-4.29,5.66c0,1.71,0.363,3.08,1.09,4.11 c0.723,1.03,1.79,1.54,3.2,1.54c1.87,0,3.18-0.915,3.94-2.74l4,2c-0.875,1.56-2.06,2.79-3.54,3.69 c-1.49,0.9-3.11,1.34-4.86,1.34c-2.9,0-5.21-0.875-6.94-2.63c-1.74-1.75-2.6-4.19-2.6-7.31 c0-3.05,0.885-5.47,2.66-7.26c1.77-1.79,4.01-2.69,6.71-2.69C51.12,18.56,53.944,20.1,55.61,23.19z"/>
+  </g></g>
+  <g transform="translate(140.2,652.4) scale(0.24)">
+  <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
+     <circle fill="none" cx="37.79" cy="28.5" r="28.84" stroke="#BFBFBF" stroke-width="5.5"/>
+     <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
+              M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
+  </g></g>
+  </a>
+</g>
+  <g class="dl_el" transform="translate(69.1,562.4)">
+    <g class="dl_el_balloon">
+      <foreignObject x="0" y="0" width="250" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
+      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
+      </div>
+	    </foreignObject>
+      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
+    </g>
+  </g>
+</g>
+</svg>
