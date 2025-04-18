@@ -275,10 +275,9 @@ function makeCountryDiv(entry) {
 
         // Add options (enlarge and download)
         countryDiv.innerHTML += `
-          <div class="options">
-            <a href="${svgPath}" target="_self" class="simple-button">Enlarge this figure</a> |
-            <a href="${csvPath}" class="simple-button">Download data</a>
-          </div>
+          <p>
+			<a href="${csvPath}" class="simple-button">Download data</a>
+          </p>
         `;
 	return countryDiv;
 }
