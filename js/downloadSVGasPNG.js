@@ -81,6 +81,13 @@ function downloadSVGasPNG(svgObject) {
   });
 }
 
+function isIOSorIPadOS() {
+  return (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.userAgent.includes("Macintosh") && 'ontouchend' in document)
+  );
+}
+
 function showToastBelowElement(anchorElement, message, duration = 2000) {
   const rect = anchorElement.getBoundingClientRect();
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -166,41 +173,6 @@ function createCopyLink(svgObject) {
 	  b. If there is no such link, append the new link within the existing <p> tag
 	  c. If there is no <p> tag following the SVG object, simply append the new download link within the parent of the SVG object.
 */
-/*
-function replacePNGlink(svgObject) {
-  const container = svgObject.parentNode;
-  // Append the link after the SVG object
-  const downloadLink = createDownloadLink(svgObject);
-  const copyLink = createCopyLink(svgObject);
-  
-  const nextSibling = svgObject.nextElementSibling;
-  
-  if (nextSibling && nextSibling.matches('p, div')) {
-    const links = nextSibling.querySelectorAll('a');
-    for (const link of links) {
-      if (link.innerHTML.trim() === 'Download as PNG') {
-		return ; // already exists
-	  }
-      if (link.innerHTML.trim() === 'View as PNG') {
-        link.parentNode.replaceChild(downloadLink, link);
-        return;
-      }
-    }
-    // If the specific <a> tag is not found, append new content to the <p> tag
-    const separator1 = document.createTextNode(' | ');
-    const separator2 = document.createTextNode(' | ');
-    nextSibling.appendChild(separator1);
-    nextSibling.appendChild(downloadLink);
-    nextSibling.appendChild(separator2);
-	nextSibling.appendChild(copyLink);
-  } else {
-    container.appendChild(downloadLink);
-    const separator2 = document.createTextNode(' | ');
-    nextSibling.appendChild(separator2);
-	container.appendChild(copyLink);
-  }
-}
-*/
 function addSVGbuttons(svgObject) {
   const container = svgObject.parentNode;
   let linkContainer = svgObject.nextElementSibling;
@@ -209,7 +181,6 @@ function addSVGbuttons(svgObject) {
   const downloadLink = createDownloadLink(svgObject);
   const copyLink = createCopyLink(svgObject);
   const enlargeLink = createEnlargeLink2(svgObject);
-  const separator = document.createTextNode(' | ');
 
   // Ensure the link container (p or div) exists
   if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
@@ -241,23 +212,12 @@ function addSVGbuttons(svgObject) {
   }
 
   if (!hasEnlarge) {
-//    if (linkContainer.children.length > 0) {
-//      linkContainer.appendChild(separator.cloneNode(true));
-//    }
     linkContainer.appendChild(enlargeLink);
   }
-
   if (!hasDownload) {
-//    if (linkContainer.children.length > 0) {
-//      linkContainer.appendChild(separator.cloneNode(true));
-//    }
     linkContainer.appendChild(downloadLink);
   }
-
-  if (!hasCopy) {
-//    if (linkContainer.children.length > 0) {
-//      linkContainer.appendChild(separator.cloneNode(true));
-//    }
+  if (!hasCopy && !isIOSorIPadOS()) {
     linkContainer.appendChild(copyLink);
   }
 }
