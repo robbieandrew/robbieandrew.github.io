@@ -34,13 +34,16 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   background-color: #93D4FF;
 }
 
-.figure-group {
-  transition: background-color 0.3s ease;
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  border-radius: 8px;
-}
-.figure-group:has(.svg-button-group a:hover) {
-  background-color: #F4F4F4;
-  border: 1px solid #333;
+@media (hover: hover) and (pointer: fine) {
+/* Only enable this hover effect on devices that aren't touch */
+	.figure-group {
+	  transition: background-color 0.3s ease;
+	  border: 1px solid transparent;
+	  box-sizing: border-box;
+	  border-radius: 8px;
+	}
+	.figure-group:has(.svg-button-group a:hover) {
+	  background-color: #F4F4F4;
+	  border: 1px solid #333;
+	}
 }
