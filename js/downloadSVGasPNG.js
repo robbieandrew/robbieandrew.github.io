@@ -201,7 +201,7 @@ function addSVGbuttons(svgObject) {
   for (const link of links) {
     if (link.textContent.trim() === 'Download as PNG') {
       hasDownload = true;
-    } else if (link.textContent.trim() === 'Copy as PNG') {
+    } else if (link.textContent.trim() === 'Copy to clipboard') {
       hasCopy = true;
     } else if (link.textContent.trim() === 'Enlarge this figure') {
       hasEnlarge = true;
