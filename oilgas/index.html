@@ -27,6 +27,8 @@
 	  <ul id="countryList"></ul>
       </div>
 
+	<div id="factpagesLink" class="factpages-link"></div>
+
     <div id="imageContainer" class="pure-g">
       </div>
 
@@ -42,6 +44,8 @@ let highlightedIndex = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById('countryInput').focus();
+  // Note repeated mention of 'countries' here, since some of the code was copied from another page. Here countries really means 'sites'.
+  
   // Load the full list of all countries, then the list of available countries (the list of ISO subfolders), and filter the pare the full list down to match available countries. The full list, in countries.json, gives us the link between the ISO and alternative names for each country.
   Promise.all([
     fetch("https://robbieandrew.github.io/oilgas/sites.json").then(res => res.json()),
@@ -178,7 +182,8 @@ function loadCountryImages(npdID) {
   // caching is to prevent issues with too much use of the github.com API
   const CACHE_KEY = "imageCache";
   const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
-
+  const factpagesLink = document.getElementById("factpagesLink");
+  
   let cachedData = localStorage.getItem(CACHE_KEY);
   let imageData = cachedData ? JSON.parse(cachedData) : { data: {}, timestamps: {} };
   let now = Date.now();
@@ -204,6 +209,8 @@ function loadCountryImages(npdID) {
         displayErrorMessage("An error occurred while fetching images.");
       });
   }
+  // Create and display the factpages link
+  factpagesLink.innerHTML = `<a href="https://factpages.sodir.no/en/field/PageView/All/${npdID}" target="_blank">View site details on NOD FactPages</a>`; 
 }
 
 
