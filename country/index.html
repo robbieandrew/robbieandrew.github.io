@@ -52,6 +52,18 @@ window.addEventListener("DOMContentLoaded", () => {
 	
 	console.log("Available countries:", countriesData);
 	
+    // Check if a country is specified in the URL as a query string (e.g. ?country=DEU)
+    const urlParams = new URLSearchParams(window.location.search);
+    const isoFromURL = urlParams.get("country");
+    if (isoFromURL) {
+      const matched = countriesData.find(c => c.iso.toUpperCase() === isoFromURL.toUpperCase());
+      if (matched) {
+        document.getElementById("countryInput").value = matched.names[0];
+        loadCountryImages(matched.iso);
+      }
+    }
+	
+	
     // Add search and arrow/enter listeners now that data are ready
     const input = document.getElementById("countryInput");
 	// The "input" event is triggered whenever the text in the input box is changed. When that happens, call the searchCountry function.
@@ -99,6 +111,11 @@ function handleCountrySelection(country) {
   
   input.value = country.names[0]; // Set the input field to the primary name
   countryList.innerHTML = ""; // Hide the country list (search results)
+
+  // Update the browser URL to reflect the selected country
+  const newUrl = `${window.location.pathname}?country=${country.iso}`;
+  window.history.pushState({ path: newUrl }, '', newUrl);
+
   loadCountryImages(country.iso); // Load images
 }
 
