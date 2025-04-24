@@ -124,14 +124,14 @@ function showToastBelowElement(anchorElement, message, duration = 2000) {
   }, duration);
 }
 
-function createEnlargeLink(image) {
+/*function createEnlargeLink(image) {
   const enlargeLink = document.createElement('a');
   enlargeLink.href = image;
   enlargeLink.target = "_self";
   enlargeLink.textContent = "Enlarge this figure";
   enlargeLink.className = 'simple-button';
   return enlargeLink;
-}
+}*/
 
 function createDownloadLink(svgObject) {
   const downloadLink = document.createElement('a');
@@ -145,12 +145,22 @@ function createDownloadLink(svgObject) {
   return downloadLink;
 }
 
-function createEnlargeLink2(svgObject) {
+function createEnlargeLink(svgObject) {
   const enlargeLink = document.createElement('a');
   const imageURL = svgObject.data;
-  enlargeLink.href = imageURL ;
+  enlargeLink.href = '#' ;
   enlargeLink.textContent = 'Enlarge this figure';
   enlargeLink.className = 'simple-button';
+  enlargeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const currentURL = svgObject.data;
+
+    if (currentURL) {
+      window.open(currentURL, '_blank');
+    } else {
+      console.warn('SVG object has no data URL to open.');
+    }
+  });
   return enlargeLink;
 }
 
@@ -162,6 +172,35 @@ function createCopyLink(svgObject) {
   copyLink.addEventListener('click', (e) => {
     e.preventDefault();
     copySVGasPNG(svgObject, copyLink);
+  });
+  return copyLink;
+}
+
+function createAltTextLink(svgObject) {
+  const copyLink = document.createElement('a');
+  const svgDoc = svgObject.contentDocument;
+
+  if (!svgDoc) return null;
+  const titleEl = svgDoc.querySelector("title");
+  if (!titleEl) return null;
+
+  copyLink.href = '#';
+  copyLink.textContent = 'Alt';
+  copyLink.className = 'simple-button';
+  copyLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const titleText = titleEl.textContent.trim() || "Untitled graph";
+    const copyText = `Graph showing: ${titleText}`;
+
+    navigator.clipboard.writeText(copyText)
+      .then(() => {
+		showToastBelowElement(copyLink,'Copied simple alt text to clipboard!');
+        console.log("Copied to clipboard:", copyText);
+      })
+      .catch(err => {
+        showToastBelowElement(copyLink,'Failed to alt text to clipboard.');
+        console.error("Failed to copy:", err);
+      });
   });
   return copyLink;
 }
@@ -180,7 +219,8 @@ function addSVGbuttons(svgObject) {
   // Create the download and copy links
   const downloadLink = createDownloadLink(svgObject);
   const copyLink = createCopyLink(svgObject);
-  const enlargeLink = createEnlargeLink2(svgObject);
+  const enlargeLink = createEnlargeLink(svgObject);
+  const alttextLink = createAltTextLink(svgObject);
 
   // Ensure the link container (p or div) exists
   if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
@@ -195,6 +235,7 @@ function addSVGbuttons(svgObject) {
   let hasDownload = false;
   let hasCopy = false;
   let hasEnlarge = false;
+  let hasALT = false ;
   const links = linkContainer.querySelectorAll('a');
 
   // Check for existing links
@@ -208,7 +249,9 @@ function addSVGbuttons(svgObject) {
     } else if (link.textContent.trim() === 'View as PNG') {
       linkContainer.replaceChild(downloadLink, link);
       hasDownload = true;
-    }
+    } else if (link.textContent.trim() === 'ALT') {
+	  hasALT = true;
+	}
   }
 
   if (!hasEnlarge) {
@@ -219,6 +262,9 @@ function addSVGbuttons(svgObject) {
   }
   if (!hasCopy && !isIOSorIPadOS()) {
     linkContainer.appendChild(copyLink);
+  }
+  if (!hasALT) {
+    linkContainer.appendChild(alttextLink);
   }
 }
 
