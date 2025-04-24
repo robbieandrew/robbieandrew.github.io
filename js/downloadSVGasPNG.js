@@ -249,7 +249,7 @@ function addSVGbuttons(svgObject) {
     } else if (link.textContent.trim() === 'View as PNG') {
       linkContainer.replaceChild(downloadLink, link);
       hasDownload = true;
-    } else if (link.textContent.trim() === 'ALT') {
+    } else if (link.textContent.trim() === 'Alt') {
 	  hasALT = true;
 	}
   }
