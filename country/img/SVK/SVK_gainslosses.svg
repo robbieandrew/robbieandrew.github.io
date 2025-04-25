@@ -19,11 +19,20 @@ text:hover + .dl_el {display:block;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
+  <path id="line_y" d="M 0,53.993 v 533.183" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
 </defs>
 <g id="main">
+<use xlink:href="#line_y" transform="translate(156.8,0)"/>
+<use xlink:href="#line_y" transform="translate(268.8,0)"/>
+<use xlink:href="#line_y" transform="translate(380.8,0)"/>
+<use xlink:href="#line_y" transform="translate(492.8,0)"/>
+<use xlink:href="#line_y" transform="translate(604.8,0)"/>
+<use xlink:href="#line_y" transform="translate(716.8,0)"/>
+<use xlink:href="#line_y" transform="translate(828.8,0)"/>
+<use xlink:href="#line_y" transform="translate(896.0,0)"/>
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
 <use xlink:href="#line_x" transform="translate(0,453.9)"/>
 <use xlink:href="#line_x" transform="translate(0,320.6)"/>
@@ -41,6 +50,7 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_x" transform="translate(604.8,0)"/>
 <use xlink:href="#tick_x" transform="translate(716.8,0)"/>
 <use xlink:href="#tick_x" transform="translate(828.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(896.0,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
 <text class="ticklabel xtl" transform="translate(156.8,629.0)" text-anchor="middle">1990</text>
 <text class="ticklabel xtl" transform="translate(268.8,629.0)" text-anchor="middle">1995</text>
@@ -49,14 +59,19 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel xtl" transform="translate(604.8,629.0)" text-anchor="middle">2010</text>
 <text class="ticklabel xtl" transform="translate(716.8,629.0)" text-anchor="middle">2015</text>
 <text class="ticklabel xtl" transform="translate(828.8,629.0)" text-anchor="middle">2020</text>
+<text class="ticklabel xtl" transform="translate(896.0,629.0)" text-anchor="middle">23</text>
 <text class="ticklabel ytl" transform="translate(128.8,595.3)">-20</text>
 <text class="ticklabel ytl" transform="translate(128.8,462.0)">-10</text>
 <text class="ticklabel ytl" transform="translate(128.8,328.7)">0</text>
 <text class="ticklabel ytl" transform="translate(128.8,195.4)">10</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">20 Mt</text>
-<g stroke="#000" stroke-width="0.90" fill="#FFD92F"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#87AC55"  clip-path="url(#axis_clip)">
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#FC8D62"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#834B8E"  clip-path="url(#axis_clip)">
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#D5AF54"  clip-path="url(#axis_clip)">
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#D97B53"  clip-path="url(#axis_clip)">
   <polygon points="147.8,203.8 147.8,320.6 165.8,320.6 165.8,203.8 147.8,203.8"/>
   <polygon points="170.2,221.9 170.2,320.6 188.2,320.6 188.2,221.9 170.2,221.9"/>
   <polygon points="192.6,231.0 192.6,320.6 210.6,320.6 210.6,231.0 192.6,231.0"/>
@@ -92,9 +107,9 @@ text:hover + .dl_el {display:block;}
   <polygon points="864.6,149.4 864.6,320.6 882.6,320.6 882.6,149.4 864.6,149.4"/>
   <polygon points="887.0,160.0 887.0,320.6 905.0,320.6 905.0,160.0 887.0,160.0"/>
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#FFD92F"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#3988BD"  clip-path="url(#axis_clip)">
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#A6D854"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#87AC55"  clip-path="url(#axis_clip)">
   <polygon points="147.8,548.1 147.8,535.5 165.8,535.5 165.8,548.1 147.8,548.1"/>
   <polygon points="170.2,548.0 170.2,535.6 188.2,535.6 188.2,548.0 170.2,548.0"/>
   <polygon points="192.6,549.4 192.6,537.2 210.6,537.2 210.6,549.4 192.6,549.4"/>
@@ -130,7 +145,7 @@ text:hover + .dl_el {display:block;}
   <polygon points="864.6,585.0 864.6,583.5 882.6,583.5 882.6,585.0 864.6,585.0"/>
   <polygon points="887.0,574.6 887.0,573.1 905.0,573.1 905.0,574.6 887.0,574.6"/>
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#E78AC3"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#834B8E"  clip-path="url(#axis_clip)">
   <polygon points="147.8,535.5 147.8,531.9 165.8,531.9 165.8,535.5 147.8,535.5"/>
   <polygon points="170.2,535.6 170.2,532.1 188.2,532.1 188.2,535.6 170.2,535.6"/>
   <polygon points="192.6,537.2 192.6,533.7 210.6,533.7 210.6,537.2 192.6,537.2"/>
@@ -166,7 +181,7 @@ text:hover + .dl_el {display:block;}
   <polygon points="864.6,583.5 864.6,582.9 882.6,582.9 882.6,583.5 864.6,583.5"/>
   <polygon points="887.0,573.1 887.0,572.5 905.0,572.5 905.0,573.1 887.0,573.1"/>
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#8DA0CB"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#D5AF54"  clip-path="url(#axis_clip)">
   <polygon points="147.8,531.9 147.8,524.1 165.8,524.1 165.8,531.9 147.8,531.9"/>
   <polygon points="170.2,532.1 170.2,524.3 188.2,524.3 188.2,532.1 170.2,532.1"/>
   <polygon points="192.6,533.7 192.6,525.9 210.6,525.9 210.6,533.7 192.6,533.7"/>
@@ -202,7 +217,9 @@ text:hover + .dl_el {display:block;}
   <polygon points="864.6,582.9 864.6,574.9 882.6,574.9 882.6,582.9 864.6,582.9"/>
   <polygon points="887.0,572.5 887.0,564.5 905.0,564.5 905.0,572.5 887.0,572.5"/>
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#66C2A5"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#D97B53"  clip-path="url(#axis_clip)">
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#3988BD"  clip-path="url(#axis_clip)">
   <polygon points="147.8,524.1 147.8,320.6 165.8,320.6 165.8,524.1 147.8,524.1"/>
   <polygon points="170.2,524.3 170.2,320.6 188.2,320.6 188.2,524.3 170.2,524.3"/>
   <polygon points="192.6,525.9 192.6,320.6 210.6,320.6 210.6,525.9 192.6,525.9"/>
@@ -280,17 +297,17 @@ text:hover + .dl_el {display:block;}
   <circle cx="828.8" cy="409.1" r="5.4" />
 </g>
 <text transform="translate(945.6,414.1)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
-<text transform="translate(945.6,240.3)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Losses</text>
-<text transform="translate(945.6,442.6)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Gains</text>
-<text transform="translate(945.6,545.7)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Dead wood (net)</text>
-<text transform="translate(945.6,566.5)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Litter (net)</text>
-<text transform="translate(945.6,587.2)" dy="6.5" font-size="21.60" fill="#A6D854" stroke="none">Mineral Soils (net)</text>
-<polyline class="pl" points="910.8,568.5 912.4,568.4 913.8,568.2 915.2,567.8 916.4,567.3 917.6,566.7 918.8,566.0 919.8,565.2 920.8,564.2 921.7,563.3 922.7,562.2 923.5,561.2 924.4,560.0 925.2,558.9 926.0,557.7 926.8,556.5 927.6,555.4 928.4,554.2 929.3,553.1 930.1,552.0 931.1,550.9 932.0,550.0 933.0,549.1 934.0,548.3 935.2,547.5 936.4,546.9 937.6,546.4 939.0,546.0 940.4,545.8 942.0,545.7" stroke="#8DA0CB" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,572.8 912.4,572.7 913.8,572.7 915.2,572.6 916.4,572.4 917.6,572.3 918.8,572.1 919.8,571.8 920.8,571.6 921.7,571.3 922.7,571.0 923.5,570.7 924.4,570.4 925.2,570.1 926.0,569.8 926.8,569.4 927.6,569.1 928.4,568.8 929.3,568.5 930.1,568.2 931.1,567.9 932.0,567.6 933.0,567.4 934.0,567.2 935.2,567.0 936.4,566.8 937.6,566.6 939.0,566.5 940.4,566.5 942.0,566.5" stroke="#E78AC3" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,573.8 912.4,573.9 913.8,574.0 915.2,574.2 916.4,574.5 917.6,574.9 918.8,575.3 919.8,575.8 920.8,576.3 921.7,576.9 922.7,577.5 923.5,578.1 924.4,578.8 925.2,579.5 926.0,580.2 926.8,580.9 927.6,581.5 928.4,582.2 929.3,582.9 930.1,583.5 931.1,584.1 932.0,584.7 933.0,585.2 934.0,585.7 935.2,586.1 936.4,586.5 937.6,586.8 939.0,587.0 940.4,587.1 942.0,587.2" stroke="#A6D854" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<text transform="translate(945.6,240.3)" dy="6.5" font-size="21.60" fill="#D97B53" stroke="none">Living biomass (losses)</text>
+<text transform="translate(945.6,442.6)" dy="6.5" font-size="21.60" fill="#3988BD" stroke="none">Living biomass (gains)</text>
+<text transform="translate(945.6,545.7)" dy="6.5" font-size="21.60" fill="#D5AF54" stroke="none">Dead wood (net)</text>
+<text transform="translate(945.6,566.5)" dy="6.5" font-size="21.60" fill="#834B8E" stroke="none">Litter (net)</text>
+<text transform="translate(945.6,587.2)" dy="6.5" font-size="21.60" fill="#87AC55" stroke="none">Mineral Soils (net)</text>
+<polyline class="pl" points="910.8,568.5 912.4,568.4 913.8,568.2 915.2,567.8 916.4,567.3 917.6,566.7 918.8,566.0 919.8,565.2 920.8,564.2 921.7,563.3 922.7,562.2 923.5,561.2 924.4,560.0 925.2,558.9 926.0,557.7 926.8,556.5 927.6,555.4 928.4,554.2 929.3,553.1 930.1,552.0 931.1,550.9 932.0,550.0 933.0,549.1 934.0,548.3 935.2,547.5 936.4,546.9 937.6,546.4 939.0,546.0 940.4,545.8 942.0,545.7" stroke="#D5AF54" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,572.8 912.4,572.7 913.8,572.7 915.2,572.6 916.4,572.4 917.6,572.3 918.8,572.1 919.8,571.8 920.8,571.6 921.7,571.3 922.7,571.0 923.5,570.7 924.4,570.4 925.2,570.1 926.0,569.8 926.8,569.4 927.6,569.1 928.4,568.8 929.3,568.5 930.1,568.2 931.1,567.9 932.0,567.6 933.0,567.4 934.0,567.2 935.2,567.0 936.4,566.8 937.6,566.6 939.0,566.5 940.4,566.5 942.0,566.5" stroke="#834B8E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,573.8 912.4,573.9 913.8,574.0 915.2,574.2 916.4,574.5 917.6,574.9 918.8,575.3 919.8,575.8 920.8,576.3 921.7,576.9 922.7,577.5 923.5,578.1 924.4,578.8 925.2,579.5 926.0,580.2 926.8,580.9 927.6,581.5 928.4,582.2 929.3,582.9 930.1,583.5 931.1,584.1 932.0,584.7 933.0,585.2 934.0,585.7 935.2,586.1 936.4,586.5 937.6,586.8 939.0,587.0 940.4,587.1 942.0,587.2" stroke="#87AC55" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: UNFCCC (2025)</text>
 <g>
-  <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
+  <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
      <circle fill="none" cx="37.79" cy="28.5" r="28.84" stroke="#BFBFBF" stroke-width="5.5"/>

@@ -3,7 +3,6 @@
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
-  a:hover {text-decoration: underline;}
   .marker {stroke-opacity:0;fill-opacity:0;}
   .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
   .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
@@ -17,32 +16,19 @@
 .dl_el {display:none;pointer-events:none;}
 .cc:hover + .dl_el {display:block;}
 text:hover + .dl_el {display:block;}
-  #lines .pl {transition: all 0.2s ease;}
-  #lines:hover .pl {opacity:0.3;}
-  #lines:hover .thick {stroke-width:1;}
-  #lines:hover .pl_1:hover .pl {opacity:1;}
-  #lines:hover .pl_1:hover .pll {stroke-width:3;}
-  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_1:hover .thick {stroke-width:12;}
-  #lines:hover .pl_2:hover .pl {opacity:1;}
-  #lines:hover .pl_2:hover .pll {stroke-width:3;}
-  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_2:hover .thick {stroke-width:12;}
-  #lines:hover .pl_3:hover .pl {opacity:1;}
-  #lines:hover .pl_3:hover .pll {stroke-width:3;}
-  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_3:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
+  <path id="line_y" d="M 0,53.993 v 533.183" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
-  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="168.0,380.5 840.0,584.6 884.8,573.4" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
-  </symbol>
 </defs>
 <g id="main">
+<use xlink:href="#line_y" transform="translate(168.0,0)"/>
+<use xlink:href="#line_y" transform="translate(392.0,0)"/>
+<use xlink:href="#line_y" transform="translate(616.0,0)"/>
+<use xlink:href="#line_y" transform="translate(884.8,0)"/>
 <use xlink:href="#line_x" transform="translate(0,527.9)"/>
 <use xlink:href="#line_x" transform="translate(0,409.4)"/>
 <use xlink:href="#line_x" transform="translate(0,291.0)"/>
@@ -56,87 +42,65 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_x" transform="translate(168.0,0)"/>
 <use xlink:href="#tick_x" transform="translate(392.0,0)"/>
 <use xlink:href="#tick_x" transform="translate(616.0,0)"/>
-<use xlink:href="#tick_x" transform="translate(840.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(884.8,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
 <text class="ticklabel xtl" transform="translate(168.0,629.0)" text-anchor="middle">2005</text>
 <text class="ticklabel xtl" transform="translate(392.0,629.0)" text-anchor="middle">2010</text>
 <text class="ticklabel xtl" transform="translate(616.0,629.0)" text-anchor="middle">2015</text>
-<text class="ticklabel xtl" transform="translate(840.0,629.0)" text-anchor="middle">2020</text>
+<text class="ticklabel xtl" transform="translate(884.8,629.0)" text-anchor="middle">2021</text>
 <text class="ticklabel ytl" transform="translate(128.8,536.0)">-800</text>
 <text class="ticklabel ytl" transform="translate(128.8,417.5)">-600</text>
 <text class="ticklabel ytl" transform="translate(128.8,299.1)">-400</text>
 <text class="ticklabel ytl" transform="translate(128.8,180.6)">-200</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">0 Mt</text>
-<g stroke="#000" stroke-width="0.90" fill="#A6D854"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#834B8E"  clip-path="url(#axis_clip)">
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#A6D854"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#D5AF54"  clip-path="url(#axis_clip)">
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#E78AC3"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#D97B53"  clip-path="url(#axis_clip)">
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#3988BD"  clip-path="url(#axis_clip)">
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#834B8E"  clip-path="url(#axis_clip)">
   <polygon points="150.1,380.3 150.1,329.9 185.9,329.9 185.9,380.3 150.1,380.3"/>
   <polygon points="822.1,584.2 822.1,501.7 857.9,501.7 857.9,584.2 822.1,584.2"/>
   <polygon points="866.9,573.1 866.9,496.9 902.7,496.9 902.7,573.1 866.9,573.1"/>
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#8DA0CB"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#D5AF54"  clip-path="url(#axis_clip)">
   <polygon points="150.1,329.9 150.1,315.6 185.9,315.6 185.9,329.9 150.1,329.9"/>
   <polygon points="822.1,501.7 822.1,473.9 857.9,473.9 857.9,501.7 822.1,501.7"/>
   <polygon points="866.9,496.9 866.9,469.6 902.7,469.6 902.7,496.9 866.9,496.9"/>
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#FC8D62"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#D97B53"  clip-path="url(#axis_clip)">
   <polygon points="150.1,315.6 150.1,310.2 185.9,310.2 185.9,315.6 150.1,315.6"/>
   <polygon points="822.1,473.9 822.1,465.8 857.9,465.8 857.9,473.9 822.1,473.9"/>
   <polygon points="866.9,469.6 866.9,461.4 902.7,461.4 902.7,469.6 866.9,469.6"/>
 </g>
-<g stroke="#000" stroke-width="0.90" fill="#66C2A5"  clip-path="url(#axis_clip)">
+<g stroke="#000" stroke-width="0.90" fill="#3988BD"  clip-path="url(#axis_clip)">
   <polygon points="150.1,310.2 150.1,54.0 185.9,54.0 185.9,310.2 150.1,310.2"/>
   <polygon points="822.1,465.8 822.1,54.0 857.9,54.0 857.9,465.8 822.1,465.8"/>
   <polygon points="866.9,461.4 866.9,54.0 902.7,54.0 902.7,461.4 866.9,461.4"/>
 </g>
-<g>
-  <g class="pl_2 marker" transform="translate(168.0,182.1)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-432.5</text></g>
-  <g class="pl_2 marker" transform="translate(840.0,259.9)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-695.0</text></g>
-  <g class="pl_2 marker" transform="translate(884.8,257.7)"><use xlink:href="#mk5"/><text class="dp1" y="-25">-687.7</text></g>
+<text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: China</text>
+<text transform="translate(130.0,81.6)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
+<polyline class="pl" points="168.0,380.5 840.0,584.6 884.8,573.4" stroke="#000" stroke-width="5.40" fill="none" clip-path="url(#axis_clip)"/>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="168.0" cy="380.5" r="2.2" />
+  <circle cx="884.8" cy="573.4" r="2.2" />
 </g>
-<g>
-  <g class="pl_2 marker" transform="translate(168.0,312.9)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-9.0</text></g>
-  <g class="pl_2 marker" transform="translate(840.0,469.8)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-13.8</text></g>
-  <g class="pl_2 marker" transform="translate(884.8,465.5)"><use xlink:href="#mk4"/><text class="dp1" y="-25">-13.9</text></g>
+<g class="pl" fill="#FFF" stroke="#000" stroke-width="0.900">
+  <circle cx="840.0" cy="584.6" r="5.4" />
 </g>
-<g>
-  <g class="pl_2 marker" transform="translate(168.0,322.7)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-24.3</text></g>
-  <g class="pl_2 marker" transform="translate(840.0,487.8)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-47.0</text></g>
-  <g class="pl_2 marker" transform="translate(884.8,483.3)"><use xlink:href="#mk3"/><text class="dp1" y="-25">-46.2</text></g>
-</g>
-<g>
-  <g class="pl_2 marker" transform="translate(168.0,355.1)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-85.0</text></g>
-  <g class="pl_2 marker" transform="translate(840.0,543.0)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-139.2</text></g>
-  <g class="pl_2 marker" transform="translate(884.8,535.0)"><use xlink:href="#mk2"/><text class="dp1" y="-25">-128.5</text></g>
-</g>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions and removals on forest land: China</text>
-    <text class="pl" transform="translate(130.0,81.6)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
-<g id="lines">
-  <g class="pl_1">
-    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pldl" stroke="#000" stroke-width="5.40"/>
-  </g>
-</g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="168.0" cy="380.5" r="2.2" />
-      <circle cx="884.8" cy="573.4" r="2.2" />
-    </g>
-    <g class="pl pldlm" fill="#FFF" stroke="#000" stroke-width="0.900">
-      <circle cx="840.0" cy="584.6" r="5.4" />
-    </g>
-    <text class="pl" transform="translate(945.6,573.4)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
-    <text class="pl" transform="translate(945.6,257.7)" dy="6.5" font-size="21.60" fill="#66C2A5" stroke="none">Change in living biomass</text>
-    <text class="pl" transform="translate(945.6,464.0)" dy="6.5" font-size="21.60" fill="#FC8D62" stroke="none">Dead wood (net)</text>
-    <text class="pl" transform="translate(945.6,484.7)" dy="6.5" font-size="21.60" fill="#8DA0CB" stroke="none">Litter (net)</text>
-    <text class="pl" transform="translate(945.6,535.0)" dy="6.5" font-size="21.60" fill="#E78AC3" stroke="none">Mineral Soils (net)</text>
-<polyline class="pl" points="910.8,465.5 912.4,465.5 913.8,465.5 915.2,465.4 916.4,465.4 917.6,465.4 918.8,465.3 919.8,465.3 920.8,465.2 921.7,465.2 922.7,465.1 923.5,465.0 924.4,464.9 925.2,464.9 926.0,464.8 926.8,464.7 927.6,464.6 928.4,464.6 929.3,464.5 930.1,464.4 931.1,464.4 932.0,464.3 933.0,464.2 934.0,464.2 935.2,464.1 936.4,464.1 937.6,464.1 939.0,464.0 940.4,464.0 942.0,464.0" stroke="#FC8D62" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,483.3 912.4,483.3 913.8,483.3 915.2,483.3 916.4,483.3 917.6,483.4 918.8,483.4 919.8,483.5 920.8,483.5 921.7,483.6 922.7,483.7 923.5,483.7 924.4,483.8 925.2,483.9 926.0,484.0 926.8,484.0 927.6,484.1 928.4,484.2 929.3,484.3 930.1,484.3 931.1,484.4 932.0,484.5 933.0,484.5 934.0,484.6 935.2,484.6 936.4,484.7 937.6,484.7 939.0,484.7 940.4,484.7 942.0,484.7" stroke="#8DA0CB" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<text transform="translate(945.6,573.4)" dy="6.5" font-size="21.60" fill="#000" stroke="none">Total (net)</text>
+<text transform="translate(945.6,257.7)" dy="6.5" font-size="21.60" fill="#3988BD" stroke="none">Change in living biomass</text>
+<text transform="translate(945.6,464.0)" dy="6.5" font-size="21.60" fill="#D97B53" stroke="none">Dead wood (net)</text>
+<text transform="translate(945.6,484.7)" dy="6.5" font-size="21.60" fill="#D5AF54" stroke="none">Litter (net)</text>
+<text transform="translate(945.6,535.0)" dy="6.5" font-size="21.60" fill="#834B8E" stroke="none">Mineral Soils (net)</text>
+<polyline class="pl" points="910.8,465.5 912.4,465.5 913.8,465.5 915.2,465.4 916.4,465.4 917.6,465.4 918.8,465.3 919.8,465.3 920.8,465.2 921.7,465.2 922.7,465.1 923.5,465.0 924.4,464.9 925.2,464.9 926.0,464.8 926.8,464.7 927.6,464.6 928.4,464.6 929.3,464.5 930.1,464.4 931.1,464.4 932.0,464.3 933.0,464.2 934.0,464.2 935.2,464.1 936.4,464.1 937.6,464.1 939.0,464.0 940.4,464.0 942.0,464.0" stroke="#D97B53" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,483.3 912.4,483.3 913.8,483.3 915.2,483.3 916.4,483.3 917.6,483.4 918.8,483.4 919.8,483.5 920.8,483.5 921.7,483.6 922.7,483.7 923.5,483.7 924.4,483.8 925.2,483.9 926.0,484.0 926.8,484.0 927.6,484.1 928.4,484.2 929.3,484.3 930.1,484.3 931.1,484.4 932.0,484.5 933.0,484.5 934.0,484.6 935.2,484.6 936.4,484.7 937.6,484.7 939.0,484.7 940.4,484.7 942.0,484.7" stroke="#D5AF54" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: UNFCCC (2024)</text>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
-  <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none"/>
+  <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
      <circle fill="none" cx="37.79" cy="28.5" r="28.84" stroke="#BFBFBF" stroke-width="5.5"/>
@@ -149,17 +113,6 @@ text:hover + .dl_el {display:block;}
      <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
               M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
   </g></g>
-  </a>
 </g>
-  <g class="dl_el" transform="translate(69.1,548.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="250" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
-      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
-    </g>
-  </g>
 </g>
 </svg>
