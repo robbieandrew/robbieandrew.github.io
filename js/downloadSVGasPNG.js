@@ -177,33 +177,88 @@ function createCopyLink(svgObject) {
 }
 
 function createAltTextLink(svgObject) {
-  const copyLink = document.createElement('a');
+  const altLink = document.createElement('a');
   const svgDoc = svgObject.contentDocument;
 
   if (!svgDoc) return null;
   const titleEl = svgDoc.querySelector("title");
   if (!titleEl) return null;
 
-  copyLink.href = '#';
-  copyLink.textContent = 'Alt';
-  copyLink.className = 'simple-button';
-  copyLink.addEventListener('click', (e) => {
+  altLink.href = '#';
+  altLink.textContent = 'Alt';
+  altLink.className = 'simple-button';
+  altLink.addEventListener('click', (e) => {
     e.preventDefault();
     const titleText = titleEl.textContent.trim() || "Untitled graph";
-    const copyText = `Graph showing: ${titleText}`;
+    const altText = `Graph showing: ${titleText}`;
 
-    navigator.clipboard.writeText(copyText)
+    navigator.clipboard.writeText(altText)
       .then(() => {
-		showToastBelowElement(copyLink,'Copied simple alt text to clipboard!');
-        console.log("Copied to clipboard:", copyText);
+		showToastBelowElement(altLink,'Copied simple alt text to clipboard!');
+        console.log("Copied to clipboard:", altText);
       })
       .catch(err => {
-        showToastBelowElement(copyLink,'Failed to alt text to clipboard.');
+        showToastBelowElement(altLink,'Failed to alt text to clipboard.');
         console.error("Failed to copy:", err);
       });
   });
-  return copyLink;
+  return altLink;
 }
+
+// Only implemented for country/index.html
+function createDataDownloadLink(svgObject) {
+  const svgURL = svgObject.data;
+  if (!svgURL) {
+    console.log("SVG object has no data URL.");
+    return null;
+  }
+
+  const urlParts = svgURL.split('/');
+
+  const imgIndex = urlParts.indexOf('img');
+  if (imgIndex === -1 || imgIndex + 1 >= urlParts.length) {
+    console.log("URL does not contain the correct '/img/' path or isoCode is missing.");
+    return null;
+  }
+  const isoCode = urlParts[imgIndex + 1]; // The element immediately following 'img' is the isoCode
+
+  if (typeof availableDataFiles === 'undefined' || !Array.isArray(availableDataFiles)) {
+//    console.log(`No data file list available for ${isoCode}. Skipping data link.`);
+    return null;
+  }
+
+  const baseName = svgURL.split('/').pop().replace('.svg', '');
+  const candidateFilenames = [`${baseName}.csv`, `${baseName}_data.csv`];
+
+  for (const name of candidateFilenames) {
+    if (availableDataFiles.includes(name)) {
+      const dataFilePath = `data/${isoCode}/${name}`;
+      console.log(`Data file found: ${dataFilePath}`);
+
+      const link = document.createElement('a');
+      link.href = "#";
+	  link.className = 'simple-button';
+      link.textContent = 'Download data';
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const hiddenLink = document.createElement('a');
+        hiddenLink.href = dataFilePath;
+        hiddenLink.download = name;
+        document.body.appendChild(hiddenLink);
+        hiddenLink.click();
+        document.body.removeChild(hiddenLink);
+      });
+
+      return link;
+    }
+  }
+
+//  console.log(`No matching data file found for: ${baseName}`);
+  return null;
+}
+
+
 
 /* Given an SVG object,
    1. Create a link that will generate a PNG file and download it
@@ -221,6 +276,7 @@ function addSVGbuttons(svgObject) {
   const copyLink = createCopyLink(svgObject);
   const enlargeLink = createEnlargeLink(svgObject);
   const alttextLink = createAltTextLink(svgObject);
+  const dataLink = createDataDownloadLink(svgObject);
 
   // Ensure the link container (p or div) exists
   if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
@@ -236,35 +292,25 @@ function addSVGbuttons(svgObject) {
   let hasCopy = false;
   let hasEnlarge = false;
   let hasALT = false ;
+  let hasData = false ;
   const links = linkContainer.querySelectorAll('a');
 
   // Check for existing links
   for (const link of links) {
-    if (link.textContent.trim() === 'Download as PNG') {
-      hasDownload = true;
-    } else if (link.textContent.trim() === 'Copy to clipboard') {
-      hasCopy = true;
-    } else if (link.textContent.trim() === 'Enlarge this figure') {
-      hasEnlarge = true;
-    } else if (link.textContent.trim() === 'View as PNG') {
+    if (link.textContent.trim() === 'Download as PNG') hasDownload = true;
+    else if (link.textContent.trim() === 'Copy to clipboard') hasCopy = true;
+    else if (link.textContent.trim() === 'Enlarge this figure') hasEnlarge = true;
+    else if (link.textContent.trim() === 'View as PNG') {
       linkContainer.replaceChild(downloadLink, link);
       hasDownload = true;
-    } else if (link.textContent.trim() === 'Alt') {
-	  hasALT = true;
-	}
+    } else if (link.textContent.trim() === 'Alt') hasALT = true;
+	else if (text === 'Download data') hasData = true;
   }
 
-  if (!hasEnlarge) {
-    linkContainer.appendChild(enlargeLink);
-  }
-  if (!hasDownload) {
-    linkContainer.appendChild(downloadLink);
-  }
-  if (!hasCopy && !isIOSorIPadOS()) {
-    linkContainer.appendChild(copyLink);
-  }
-  if (!hasALT) {
-    linkContainer.appendChild(alttextLink);
-  }
+  if (dataLink && !hasData) linkContainer.appendChild(dataLink);
+  if (!hasEnlarge) linkContainer.appendChild(enlargeLink);
+  if (!hasDownload) linkContainer.appendChild(downloadLink);
+  if (!hasCopy && !isIOSorIPadOS()) linkContainer.appendChild(copyLink);
+  if (!hasALT) linkContainer.appendChild(alttextLink);
 }
 

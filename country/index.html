@@ -38,6 +38,7 @@
 <script src="../js/downloadSVGasPNG.js"></script>
 <script>
 let highlightedIndex = 0; // Track the highlighted item in the search results
+let availableDataFiles = [];
 
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById('countryInput').focus();
@@ -61,6 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (matched) {
         document.getElementById("countryInput").value = matched.names[0];
         loadCountryImages(matched.iso);
+		loadCountryDataFiles(matched.iso);
       }
     }
 	
@@ -105,6 +107,17 @@ function updateHighlight() {
   });
 }
 
+function loadCountryDataFiles(isoCode) {
+  fetchGitHubDataFiles(isoCode)
+    .then(dataFiles => {
+      availableDataFiles = dataFiles;
+	  console.log(`Full list of data files found for ${isoCode}: ${availableDataFiles}`);
+    })
+    .catch(error => {
+      console.error("Failed to initialize SVGs:", error);
+    });
+}
+
 // Respond to selection from the search results
 function handleCountrySelection(country) {
   const input = document.getElementById("countryInput");
@@ -118,6 +131,7 @@ function handleCountrySelection(country) {
   window.history.pushState({ path: newUrl }, '', newUrl);
 
   loadCountryImages(country.iso); // Load images
+  loadCountryDataFiles(country.iso);
 }
 
 /* searchCountry
@@ -268,6 +282,35 @@ function fetchGitHubImages(isoCode) {
     .catch(error => {
       console.error(error.message);
       return null; // Return null to indicate failure
+    });
+}
+
+function fetchGitHubDataFiles(isoCode) {
+  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/data/${isoCode}`;
+
+  return fetch(githubApiUrl)
+    .then(response => {
+      if (!response.ok) {
+        if (response.status === 404) {
+          return []; // No data folder for this ISO, not an error
+        } else {
+          throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+        }
+      }
+      return response.json();
+    })
+    .then(files => {
+      if (!Array.isArray(files)) {
+        throw new Error("Invalid API response format.");
+      }
+
+      return files
+        .filter(file => file.name.endsWith(".csv"))
+        .map(file => file.name); // Just the filenames
+    })
+    .catch(error => {
+      console.error(error.message);
+      return []; // Safe fallback
     });
 }
 
