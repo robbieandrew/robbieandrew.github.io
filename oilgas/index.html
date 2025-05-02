@@ -27,7 +27,7 @@
 	  <ul id="countryList"></ul>
       </div>
 
-	<div id="factpagesLink" class="factpages-link"></div>
+	<div id="factpagesLink"></div>
 
     <div id="imageContainer" class="pure-g">
       </div>
@@ -210,7 +210,7 @@ function loadCountryImages(npdID) {
       });
   }
   // Create and display the factpages link
-  factpagesLink.innerHTML = `<a href="https://factpages.sodir.no/en/field/PageView/All/${npdID}" target="_blank">View site details on NOD FactPages</a>`; 
+  factpagesLink.innerHTML = `<p class="svg-button-group"><a href="https://factpages.sodir.no/en/field/PageView/All/${npdID}" class="simple-button" target="_blank">View site details on NOD FactPages</a></p>`; 
 }
 
 
