@@ -1,4 +1,5 @@
 
+
 function renderSVGtoPNGBlob(svgObject, callback) {
   try {
     const svg = svgObject.contentDocument.querySelector('svg');
@@ -230,6 +231,11 @@ function createDataDownloadLink(svgObject) {
   const baseName = svgURL.split('/').pop().replace('.svg', '');
   const candidateFilenames = [`${baseName}.csv`, `${baseName}_data.csv`];
 
+  if (availableDataFiles.length === 0) {
+    console.log("createDataDownloadLink: availableDataFiles is empty!");
+	return null;
+  }
+  
   for (const name of candidateFilenames) {
     if (availableDataFiles.includes(name)) {
       const dataFilePath = `data/${isoCode}/${name}`;

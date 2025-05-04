@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +22,11 @@
 	<h1>Country energy and emissions charts</h1>
 	
 	<div class="input-wrapper">
-	  <input type="text" id="countryInput" placeholder="Enter country name">
+	  <input type="text" id="id_siteInput" placeholder="Enter country name">
 	  <svg class="trace-border" viewBox="0 0 200 40" preserveAspectRatio="none">
 		<rect x="1" y="1" width="198" height="38" rx="4" ry="4" />
 	  </svg>
-	  <ul id="countryList"></ul>
+	  <ul id="id_siteList"></ul>
       </div>
 
     <div id="imageContainer" class="pure-g">
@@ -35,45 +36,49 @@
     <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
   </main>
 
+<script src="../js/findDataFiles.js"></script>
 <script src="../js/downloadSVGasPNG.js"></script>
 <script>
 let highlightedIndex = 0; // Track the highlighted item in the search results
 let availableDataFiles = [];
 
-window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById('countryInput').focus();
+window.addEventListener("DOMContentLoaded", async () => {
+  document.getElementById('id_siteInput').focus();
   // Load the full list of all countries, then the list of available countries (the list of ISO subfolders), and filter to pare the full list down to match available countries. The full list, in countries.json, gives us the link between the ISO and alternative names for each country.
-  Promise.all([
-    fetch("https://robbieandrew.github.io/country/countries.json").then(res => res.json()),
-    getCachedImageFolders()
-  ])
-  .then(([allCountries, availableISOs]) => {
-    countriesData = allCountries.filter(country =>
-      availableISOs.includes(country.iso.toUpperCase())
+  try {
+    const [allSites, availableISOs] = await Promise.all([
+      fetch("https://robbieandrew.github.io/country/countries.json").then(res => res.json()),
+      getCachedImageFolders("country/img")
+    ]);
+  
+    sitesData = allSites.filter(site =>
+      availableISOs.includes(site.iso.toUpperCase())
     );
 	
-	console.log("Available countries:", countriesData);
+	console.log("Available countries:", sitesData);
 	
     // Check if a country is specified in the URL as a query string (e.g. ?country=DEU)
     const urlParams = new URLSearchParams(window.location.search);
     const isoFromURL = urlParams.get("country");
     if (isoFromURL) {
-      const matched = countriesData.find(c => c.iso.toUpperCase() === isoFromURL.toUpperCase());
+      const matched = sitesData.find(c => c.iso.toUpperCase() === isoFromURL.toUpperCase());
       if (matched) {
-        document.getElementById("countryInput").value = matched.names[0];
-        loadCountryImages(matched.iso);
-		loadCountryDataFiles(matched.iso);
+        document.getElementById("id_siteInput").value = matched.names[0];
+		const loaded = await loadSiteDataFiles(matched.iso, "country/data");
+		if (loaded) {
+		  loadSiteImages(matched.iso, "country/img");
+		}
       }
     }
 	
 	
     // Add search and arrow/enter listeners now that data are ready
-    const input = document.getElementById("countryInput");
-	// The "input" event is triggered whenever the text in the input box is changed. When that happens, call the searchCountry function.
-    input.addEventListener("input", searchCountry);
+    const input = document.getElementById("id_siteInput");
+	// The "input" event is triggered whenever the text in the input box is changed. When that happens, call the searchSites function.
+    input.addEventListener("input", searchSites);
 	// Then handle keystrokes
 	input.addEventListener("keydown", function (event) {
-	  const items = document.querySelectorAll("#countryList li");
+	  const items = document.querySelectorAll("#id_siteList li");
 	  if (event.key === "ArrowDown") {
 		event.preventDefault();
 		if (items.length > 0) {
@@ -93,273 +98,63 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 	  }
     });
-  })
-  .catch(error => {
-    console.error("Error initializing app:", error);
+  } catch (err) {
+    console.error("Initialization error:", err);
     displayErrorMessage("Unable to load country list. Please try again later.");
-  });
+  }
+
 });
 
-function updateHighlight() {
-  const items = document.querySelectorAll("#countryList li");
-  items.forEach((item, index) => {
-    item.classList.toggle("highlighted", index === highlightedIndex);
-  });
-}
-
-function loadCountryDataFiles(isoCode) {
-  fetchGitHubDataFiles(isoCode)
-    .then(dataFiles => {
-      availableDataFiles = dataFiles;
-	  console.log(`Full list of data files found for ${isoCode}: ${availableDataFiles}`);
-    })
-    .catch(error => {
-      console.error("Failed to initialize SVGs:", error);
-    });
-}
-
 // Respond to selection from the search results
-function handleCountrySelection(country) {
-  const input = document.getElementById("countryInput");
-  const countryList = document.getElementById("countryList");
+async function handleSiteSelection(site,arg_name) {
+  const input = document.getElementById("id_siteInput");
+  const id_siteList = document.getElementById("id_siteList");
   
-  input.value = country.names[0]; // Set the input field to the primary name
-  countryList.innerHTML = ""; // Hide the country list (search results)
+  input.value = site.names[0]; // Set the input field to the primary name
+  id_siteList.innerHTML = ""; // Hide the country list (search results)
 
   // Update the browser URL to reflect the selected country
-  const newUrl = `${window.location.pathname}?country=${country.iso}`;
+  const newUrl = `${window.location.pathname}?${arg_name}=${site.iso}`;
   window.history.pushState({ path: newUrl }, '', newUrl);
 
-  loadCountryImages(country.iso); // Load images
-  loadCountryDataFiles(country.iso);
-}
+  const loaded = await loadSiteDataFiles(site.iso, "country/data");
+  if (loaded) {
+    loadSiteImages(site.iso, "country/img");
+  }}
 
-/* searchCountry
-   Perform search based on the current input. 
-*/
-function searchCountry() {
-  const input = document.getElementById("countryInput");
-  const countryList = document.getElementById("countryList");
-  countryList.innerHTML = "";
+function searchSites() {
+  const input = document.getElementById("id_siteInput");
+  const id_siteList = document.getElementById("id_siteList");
+  id_siteList.innerHTML = "";
   highlightedIndex = 0;
 
   if (!input.value) return;
 
   // case-insensitive matching
-  const matchingCountries = countriesData.filter(country =>
-    country.names.some(name => name.toLowerCase().includes(input.value.toLowerCase()))
+  const matchingSites = sitesData.filter(site =>
+    site.names.some(name => name.toLowerCase().includes(input.value.toLowerCase()))
   );
 
-  if (!matchingCountries.length) return;
+  if (!matchingSites.length) return;
 
   const list = document.createElement("ul");
 
-  matchingCountries.forEach((country, index) => {
+  matchingSites.forEach((site, index) => {
     const li = document.createElement("li");
-    li.textContent = country.names[0];
+    li.textContent = site.names[0];
     li.dataset.index = index;
-    li.addEventListener("click", () => handleCountrySelection(country));
+    li.addEventListener("click", () => handleSiteSelection(site,"country").catch(console.error));
     list.appendChild(li);
   });
 
-  countryList.appendChild(list);
+  id_siteList.appendChild(list);
 
   // Highlight the first item
   updateHighlight();
 }
 
-/* getCachedImageFolders
-   Get the list of image sub-folders (ISO codes), which indicates which countries we have images for. This list is cached to prevent too many calls to api.github.com.
-*/ 
-function getCachedImageFolders() {
-  const CACHE_KEY = "imageFolderList_country";
-  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
-  const now = Date.now();
-
-  const cached = localStorage.getItem(CACHE_KEY);
-  if (cached) {
-    const { folders, timestamp } = JSON.parse(cached);
-    if (now - timestamp < CACHE_DURATION) {
-      console.log("Using cached folder list");
-      return Promise.resolve(folders);
-    }
-  }
-
-  const apiUrl = "https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img";
-
-  return fetch(apiUrl)
-    .then(res => {
-      if (!res.ok) throw new Error("Failed to fetch folder list");
-      return res.json();
-    })
-    .then(data => {
-      const folderNames = data
-        .filter(item => item.type === "dir")
-        .map(item => item.name.toUpperCase());
-
-      localStorage.setItem(CACHE_KEY, JSON.stringify({
-        folders: folderNames,
-        timestamp: now
-      }));
-
-      return folderNames;
-    })
-    .catch(err => {
-      console.error("Error fetching image folders:", err);
-      return []; // fallback: empty list
-    });
-}
 
 
-/* loadCountryImages
-Obtains the URLs of all images for the given country, and displays them on the page. The list of images is obtained from api.github.com and cached, to prevent calling the API too often.
-*/
-function loadCountryImages(isoCode) {
-  // caching is to prevent issues with too much use of the github.com API
-  const CACHE_KEY = "imageCache";
-  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
-
-  let cachedData = localStorage.getItem(CACHE_KEY);
-  let imageData = cachedData ? JSON.parse(cachedData) : { data: {}, timestamps: {} };
-  let now = Date.now();
-
-  if (imageData.data[isoCode] && now - (imageData.timestamps[isoCode] || 0) < CACHE_DURATION) {
-    console.log(`Using cached images for ${isoCode}`);
-    displayImages(isoCode, imageData.data);
-  } else {
-    console.log(`Fetching new images for ${isoCode}`);
-    fetchGitHubImages(isoCode)
-      .then(newImages => {
-        if (newImages) {
-          imageData.data[isoCode] = newImages;
-          imageData.timestamps[isoCode] = now;
-          localStorage.setItem(CACHE_KEY, JSON.stringify(imageData));
-          displayImages(isoCode, imageData.data);
-        } else {
-          displayErrorMessage(`No images available for ${isoCode}`);
-        }
-      })
-      .catch(error => {
-        console.error("Error loading images:", error);
-        displayErrorMessage("An error occurred while fetching images.");
-      });
-  }
-}
-
-/* fetchGitHubImages
-   Get the list of all images (specifically their URLs) in the country's subfolder
-   Because I cannot get a directory listing of, e.g., robbieandrew.github.io/country/img/DEU, I instead get the list of files in that folder using GitHub's API, then map the path back to github.io. */
-function fetchGitHubImages(isoCode) {
-  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img/${isoCode}`;
-
-  return fetch(githubApiUrl)
-    .then(response => {
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error(`No images found for ${isoCode} (folder missing)`);
-        } else {
-          throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
-        }
-      }
-      return response.json();
-    })
-    .then(files => {
-      if (!Array.isArray(files)) {
-        throw new Error("Invalid API response format.");
-      }
-
-      const imageUrls = files
-        .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
-		// Generate a URL to access the file via the webpage, rather than github.com
-        .map(file => `img/${isoCode}/${file.name}`);
-
-      if (imageUrls.length === 0) {
-        throw new Error(`No valid images found in ${isoCode} folder.`);
-      }
-
-      return imageUrls;
-    })
-    .catch(error => {
-      console.error(error.message);
-      return null; // Return null to indicate failure
-    });
-}
-
-function fetchGitHubDataFiles(isoCode) {
-  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/data/${isoCode}`;
-
-  return fetch(githubApiUrl)
-    .then(response => {
-      if (!response.ok) {
-        if (response.status === 404) {
-          return []; // No data folder for this ISO, not an error
-        } else {
-          throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
-        }
-      }
-      return response.json();
-    })
-    .then(files => {
-      if (!Array.isArray(files)) {
-        throw new Error("Invalid API response format.");
-      }
-
-      return files
-        .filter(file => file.name.endsWith(".csv"))
-        .map(file => file.name); // Just the filenames
-    })
-    .catch(error => {
-      console.error(error.message);
-      return []; // Safe fallback
-    });
-}
-
-function displayErrorMessage(message) {
-  const imageContainer = document.getElementById("imageContainer");
-  imageContainer.innerHTML = `<p class="pure-u-1" style="color: red;">${message}</p>`;
-}
-
-function displayImages(isoCode, imageData) {
-  const imageContainer = document.getElementById("imageContainer");
-  imageContainer.innerHTML = ""; // Remove previous images
-
-  if (!imageData[isoCode] || imageData[isoCode].length === 0) {
-    console.error(`No images found for ${isoCode}`);
-    return;
-  }
-
-  imageData[isoCode].forEach(image => {
-    const div = document.createElement("div");
-    div.className = "pure-u-1 pure-u-lg-1-3";
-
-    if (image.endsWith(".svg")) {
-      const object = document.createElement("object");
-      object.setAttribute('data', image);
-      object.type = "image/svg+xml";
-      object.className = "fig";
-
-      div.appendChild(object);
-    } else {
-      const img = document.createElement("img");
-      img.src = image;
-      img.style.width = "200px";
-
-      div.appendChild(img);
-    }
-
-    imageContainer.appendChild(div);
-  });
-  
-    // Add a PNG download link for every SVG on the page
-    document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-      svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
-		// Add a class to the parent div
-        let container = svgObject.closest("div");
-        if (container) {
-          container.classList.add("figure-group");
-        }
-    });
-}
 
 </script>
 
