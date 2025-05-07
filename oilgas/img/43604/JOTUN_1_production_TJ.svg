@@ -32,10 +32,6 @@ text:hover + .dl_el {display:block;}
   #lines:hover .pl_3:hover .pll {stroke-width:3;}
   #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_3:hover .thick {stroke-width:12;}
-  #lines:hover .pl_4:hover .pl {opacity:1;}
-  #lines:hover .pl_4:hover .pll {stroke-width:3;}
-  #lines:hover .pl_4:hover .pldlm {stroke-width:2;}
-  #lines:hover .pl_4:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
@@ -46,11 +42,9 @@ text:hover + .dl_el {display:block;}
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-  </symbol>
-  <symbol id="line_3" viewBox="0 0 1200.000 674.916">
     <polyline class="pl pll" points="148.6,131.1 154.9,206.5 161.1,194.3 167.4,237.2 173.8,217.8 180.1,196.9 186.5,188.6 192.9,193.7 199.3,295.3 205.6,203.3 212.0,388.5 218.3,523.9 224.8,560.2" stroke="#D95319" fill="none" />
   </symbol>
-  <symbol id="line_4" viewBox="0 0 1200.000 674.916">
+  <symbol id="line_3" viewBox="0 0 1200.000 674.916">
     <polyline class="pl pll" points="148.6,560.2 154.9,560.2 161.1,559.7 167.4,556.8 173.8,559.4 180.1,558.6 186.5,559.2 192.9,560.2 199.3,560.0 205.6,557.7 212.0,560.2 218.3,560.2 224.8,560.2 230.9,560.2 237.1,560.2 243.5,560.2 249.8,560.2 256.2,560.2 262.6,560.2" stroke="#0072BD" fill="none" />
   </symbol>
 </defs>
@@ -102,21 +96,17 @@ text:hover + .dl_el {display:block;}
 <g id="lines">
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_1" class="pl pll" stroke="#77AC30" stroke-width="0.90"/>
+    <use xlink:href="#line_1" class="pl pll" stroke="#7E2F8E" stroke-width="0.90"/>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_2" class="pl pll" stroke="#7E2F8E" stroke-width="2.70"/>
-  </g>
-  <g class="pl_3">
-    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_3" class="pl pll" stroke="#D95319" stroke-width="0.90"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#D95319" stroke-width="0.90"/>
     <text class="pl" transform="translate(945.6,534.3)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Oil</text>
 <polyline class="pl" points="910.8,560.2 912.4,560.1 913.8,559.8 915.2,559.4 916.4,558.8 917.6,558.1 918.8,557.3 919.8,556.4 920.8,555.4 921.7,554.2 922.7,553.1 923.5,551.8 924.4,550.5 925.2,549.2 926.0,547.9 926.8,546.6 927.6,545.2 928.4,543.9 929.3,542.6 930.1,541.4 931.1,540.2 932.0,539.1 933.0,538.1 934.0,537.1 935.2,536.3 936.4,535.6 937.6,535.1 939.0,534.6 940.4,534.4 942.0,534.3" stroke="#D95319" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
-  <g class="pl_4">
-    <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_4" class="pl pll" stroke="#0072BD" stroke-width="0.90"/>
+  <g class="pl_3">
+    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#0072BD" stroke-width="0.90"/>
     <text class="pl" transform="translate(945.6,560.2)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Natural gas</text>
   </g>
 </g>
