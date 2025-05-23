@@ -69,6 +69,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 		const loaded = await loadSiteDataFiles(matched.npdID, "oilgas/data");
 		if (loaded) {
 		  loadSiteImages(matched.npdID, "oilgas/img");
+		  addLinkToFactPages(matched.npdID);
 		}
       }
     }
@@ -107,7 +108,12 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 });
 
+function addLinkToFactPages(npdID) {
+  const factpagesLink = document.getElementById("factpagesLink");
 
+  // Create and display the factpages link
+  factpagesLink.innerHTML = `<p class="svg-button-group"><a href="https://factpages.sodir.no/en/field/PageView/All/${npdID}" class="simple-button" target="_blank">View site details on NOD FactPages</a></p>`; 
+}
 
 // Respond to selection from the search results
 async function handleSiteSelection(site,arg_name) {
@@ -124,7 +130,9 @@ async function handleSiteSelection(site,arg_name) {
   const loaded = await loadSiteDataFiles(site.npdID, "oilgas/data");
   if (loaded) {
     loadSiteImages(site.npdID, "oilgas/img");
-  }}
+	addLinkToFactPages(site.npdID);
+  }
+}
 
 /* searchCountry
 Perform search based on the current input. 
