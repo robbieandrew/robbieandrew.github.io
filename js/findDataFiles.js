@@ -206,13 +206,22 @@ function displayImages(siteCode, imageData) {
   });
   
     // Add a PNG download link for every SVG on the page
+	let warnedAboutMissingJS = false;
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-      svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
-		// Add a class to the parent div
-        let container = svgObject.closest("div");
-        if (container) {
-          container.classList.add("figure-group");
-        }
+      svgObject.addEventListener('load', () => {
+		addSVGbuttons(svgObject);
+		if (typeof addSVGmetadata === 'function') {
+		  addSVGmetadata(svgObject);
+		} else if (!warnedAboutMissingJS) {
+          console.warn("addSVGmetadata is not defined (include svg-metadata.js!)");
+          warnedAboutMissingJS = true;
+		}
+	  });
+	  // Add a class to the parent div
+      let container = svgObject.closest("div");
+      if (container) {
+        container.classList.add("figure-group");
+      }
     });
 }
 
