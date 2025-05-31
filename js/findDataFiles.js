@@ -185,7 +185,7 @@ function displayImages(siteCode, imageData) {
 
   imageData[siteCode].forEach(image => {
     const div = document.createElement("div");
-    div.className = "pure-u-1 pure-u-lg-1-3";
+    div.className = "pure-u-1 pure-u-md-1-2 pure-u-lg-1-3";
 
     if (image.endsWith(".svg")) {
       const object = document.createElement("object");
