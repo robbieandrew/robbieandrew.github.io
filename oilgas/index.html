@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   // Load the full list of all countries, then the list of available countries (the list of ISO subfolders), and filter to pare the full list down to match available countries. The full list, in countries.json, gives us the link between the ISO and alternative names for each country.
   try {
     const [allSites, availableISOs] = await Promise.all([
-      fetch("https://robbieandrew.github.io/oilgas/sites.json").then(res => res.json()),
+      fetch("sites.json").then(res => res.json()),
       getCachedImageFolders("oilgas/img")
     ]);
   
