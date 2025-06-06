@@ -21,7 +21,7 @@
 }
 
 /* Top and bottom lines */
-.button-group::before,
+/*.button-group::before,
 .button-group::after {
   content: '';
   position: absolute;
@@ -29,7 +29,7 @@
   right: 0;
   height: 2px;
   background-color: black;
-}
+}*/
 
 .button-group::before {
   top: 0;
@@ -41,17 +41,17 @@
 
 /* Vertical lines on sides */
 .button-group {
-  background-image: 
+/*  background-image: 
     linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px)),
     linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px));
   background-position: left, right;
   background-size: 2px 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 
 .frequency-button, .format-button, .sort-button {
-  padding: 10px 20px;
-  margin: 5px;
+  padding: 8px 12px;
+  margin: 0px;
   border: 2px solid #007bff;
   background-color: white;
   color: #007bff;
