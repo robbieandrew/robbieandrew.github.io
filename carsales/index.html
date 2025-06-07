@@ -252,12 +252,22 @@ function makeCountryDiv(entry) {
         }
         if (entry.sources) {
           detailsHtml += `Data: `;
-          entry.sources.forEach((source, index) => {
-            detailsHtml += `<a href="${source.url}">${source.name}</a>`;
-            if (index < entry.sources.length - 1) {
-              detailsHtml += ' ';
-            }
-          });
+//          entry.sources.forEach((source, index) => {
+//          detailsHtml += `<a href="${source.url}">${source.name}</a>`;
+//            if (index < entry.sources.length - 1) {
+//              detailsHtml += ' ';
+//            }
+//          });
+		  entry.sources.forEach((source, index) => {
+		    detailsHtml += `<a href="${source.url}">${source.name}</a>`;
+		    if (source.geofenced) {
+			  detailsHtml += ' (geofenced)';
+		    }
+		    if (index < entry.sources.length - 1) {
+			  detailsHtml += ' ';
+		    }
+		  });
+
         }
         detailsHtml += '</div>';
         countryDiv.innerHTML += detailsHtml;
