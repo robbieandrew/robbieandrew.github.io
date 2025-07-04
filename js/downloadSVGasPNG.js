@@ -180,11 +180,14 @@ function createCopyLink(svgObject) {
 function createAltTextLink(svgObject) {
   const altLink = document.createElement('a');
   const svgDoc = svgObject.contentDocument;
+  const svgURL = svgObject.data;
 
   if (!svgDoc) return null;
   const titleEl = svgDoc.querySelector("title");
-  if (!titleEl) return null;
-
+  if (!titleEl) {
+	  console.error("SVG object has no 'title' element: ",svgURL.split('/').pop());
+	  return null;
+  }
   altLink.href = '#';
   altLink.textContent = 'Alt';
   altLink.className = 'simple-button';
@@ -264,6 +267,44 @@ function createDataDownloadLink(svgObject) {
   return null;
 }
 
+/*function createSimpleDataDownloadLink(svgObject) {
+  const svgURL = svgObject.data;
+  if (!svgURL) {
+    console.log("SVG object has no data URL.");
+    return null;
+  }
+
+  const fileName = svgURL.split('/').pop(); // Remove path to leave filename
+  const csvname = fileName.replace('.svg', '.csv');
+  const dataFilePath = `data/${csvname}`;
+
+  fetch(dataFilePath, { method: 'HEAD' }).then(response => {
+    if (response.ok) {
+      const link = document.createElement('a');
+      link.href = "#";
+      link.className = 'simple-button';
+      link.textContent = 'Download data';
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const hiddenLink = document.createElement('a');
+        hiddenLink.href = dataFilePath;
+        hiddenLink.download = `${csvname}`;
+        document.body.appendChild(hiddenLink);
+        hiddenLink.click();
+        document.body.removeChild(hiddenLink);
+      });
+	  return link ;
+    } else {
+//      console.log(`Data file not found: ${dataFilePath}`);
+      return null ;
+    }
+  }).catch(err => {
+    console.log(`Error checking data file: ${err}`);
+    return null ;
+  });
+}*/
+
 
 
 /* Given an SVG object,
@@ -283,6 +324,7 @@ function addSVGbuttons(svgObject) {
   const enlargeLink = createEnlargeLink(svgObject);
   const alttextLink = createAltTextLink(svgObject);
   const dataLink = createDataDownloadLink(svgObject);
+//  const dataLinkSimple = createSimpleDataDownloadLink(svgObject);
 
   // Ensure the link container (p or div) exists
   if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
@@ -314,10 +356,16 @@ function addSVGbuttons(svgObject) {
 	else if (linktext === 'Download data') hasData = true;
   }
 
-  if (dataLink && !hasData) linkContainer.appendChild(dataLink);
-  if (!hasEnlarge) linkContainer.appendChild(enlargeLink);
-  if (!hasDownload) linkContainer.appendChild(downloadLink);
-  if (!hasCopy && !isIOSorIPadOS()) linkContainer.appendChild(copyLink);
-  if (!hasALT) linkContainer.appendChild(alttextLink);
+  if (!hasData) {
+    if (dataLink) linkContainer.appendChild(dataLink);
+//	else if (dataLinkSimple) {
+//		console.log("Adding dataLinkSimple");
+//		linkContainer.appendChild(dataLinkSimple);
+//	}
+  }
+  if (!hasEnlarge && enlargeLink) linkContainer.appendChild(enlargeLink);
+  if (!hasDownload && downloadLink) linkContainer.appendChild(downloadLink);
+  if (!hasCopy && !isIOSorIPadOS() && copyLink) linkContainer.appendChild(copyLink);
+  if (!hasALT && alttextLink) linkContainer.appendChild(alttextLink);
 }
 

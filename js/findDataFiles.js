@@ -13,7 +13,19 @@ async function loadSiteDataFiles(siteCode, partialPath) {
     const dataFiles = await fetchGitHubDataFiles(siteCode, partialPath);
     availableDataFiles = dataFiles;
     console.log(`Full list of data files found for ${siteCode}: ${availableDataFiles}`);
-    return true; // Optional: indicate success
+    return true;
+  } catch (error) {
+    console.error("Failed to initialize SVGs:", error);
+    return false;
+  }
+}
+
+async function loadStandardDataFiles(partialPath) {
+  try {
+    const dataFiles = await fetchGitHubDataFiles("data", partialPath);
+    availableDataFiles = dataFiles;
+    console.log(`Full list of data files found for ${partialPath}: ${availableDataFiles}`);
+    return true;
   } catch (error) {
     console.error("Failed to initialize SVGs:", error);
     return false;
