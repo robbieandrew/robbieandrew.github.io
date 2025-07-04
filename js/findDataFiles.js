@@ -11,9 +11,14 @@ function updateHighlight() {
 async function loadSiteDataFiles(siteCode, partialPath) {
   try {
     const dataFiles = await fetchGitHubDataFiles(siteCode, partialPath);
-    availableDataFiles = dataFiles;
-    console.log(`Full list of data files found for ${siteCode}: ${availableDataFiles}`);
-    return true;
+	if (dataFiles) {
+      availableDataFiles = dataFiles;
+      console.log(`Full list of data files found for ${siteCode}: ${availableDataFiles}`);
+      return true;
+	} else {
+      console.log("No data files found");
+	  return false;
+	}
   } catch (error) {
     console.error("Failed to initialize SVGs:", error);
     return false;
