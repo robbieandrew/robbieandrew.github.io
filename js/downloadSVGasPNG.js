@@ -224,10 +224,18 @@ function createDataDownloadLink(svgObject) {
     console.log("URL does not contain the correct '/img/' path or isoCode is missing.");
     return null;
   }
-  const isoCode = urlParts[imgIndex + 1]; // The element immediately following 'img' is the isoCode
 
+  // if the svg file is located at, e.g. img/POL/POL_monthlyCO2.svg, then extract 'POL/' as the isoCode
+  let isoCode ;
+  if (urlParts.length-imgIndex === 3) {
+    isoCode = urlParts[imgIndex + 1] + "/" ; // The element immediately following 'img' is the isoCode
+  }
+  else {
+	isoCode = "" ;
+  }
+  
   if (typeof availableDataFiles === 'undefined' || !Array.isArray(availableDataFiles)) {
-//    console.log(`No data file list available for ${isoCode}. Skipping data link.`);
+    // No data file list available. Skipping data link.
     return null;
   }
 
@@ -241,7 +249,7 @@ function createDataDownloadLink(svgObject) {
   
   for (const name of candidateFilenames) {
     if (availableDataFiles.includes(name)) {
-      const dataFilePath = `data/${isoCode}/${name}`;
+      const dataFilePath = `data/${isoCode}${name}`;
       console.log(`Data file found: ${dataFilePath}`);
 
       const link = document.createElement('a');

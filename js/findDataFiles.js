@@ -20,18 +20,6 @@ async function loadSiteDataFiles(siteCode, partialPath) {
   }
 }
 
-async function loadStandardDataFiles(partialPath) {
-  try {
-    const dataFiles = await fetchGitHubDataFiles("data", partialPath);
-    availableDataFiles = dataFiles;
-    console.log(`Full list of data files found for ${partialPath}: ${availableDataFiles}`);
-    return true;
-  } catch (error) {
-    console.error("Failed to initialize SVGs:", error);
-    return false;
-  }
-}
-
 function fetchGitHubDataFiles(siteCode,partialPath) {
   const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
 
@@ -40,7 +28,7 @@ function fetchGitHubDataFiles(siteCode,partialPath) {
       if (!response.ok) {
 	    console.log(response.status)
         if (response.status === 404) {
-		  console.log("404 error")
+		  console.log("404 error: data folder not found")
           return []; // No data folder for this ISO, not an error
         } else {
           throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
