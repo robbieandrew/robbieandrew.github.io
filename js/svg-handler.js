@@ -1,4 +1,9 @@
-  document.addEventListener("DOMContentLoaded", function () {
+  let availableDataFiles = [];
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const url_path = window.location.pathname;
+    const parts = url_path.startsWith('/') ? url_path.substring(1).split('/') : url_path.split('/');
+	const loaded = await loadSiteDataFiles("data",parts[0]);
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
 	  svgObject.addEventListener("load", function () {
 		// Add a PNG download link for every SVG on the page

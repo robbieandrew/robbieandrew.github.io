@@ -21,6 +21,7 @@ async function loadSiteDataFiles(siteCode, partialPath) {
 }
 
 function fetchGitHubDataFiles(siteCode,partialPath) {
+  console.log("Looking for data files under: ",partialPath)
   const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
 
   return fetch(githubApiUrl)
