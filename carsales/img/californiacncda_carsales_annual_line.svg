@@ -47,10 +47,10 @@ text:hover + .dl_el {display:block;}
     <polyline class="pl pll" points="145.6,552.7 221.8,551.5 297.9,550.7 374.1,546.6 450.2,536.2 526.4,534.9 602.6,535.6 678.7,515.5 754.9,488.0 831.0,464.0 907.2,462.3" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,530.9 221.8,530.2 297.9,533.5 374.1,536.6 450.2,539.3 526.4,533.7 602.6,527.9 678.7,510.4 754.9,513.7 831.0,510.4 907.2,494.6" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,552.6 221.8,553.2 297.9,551.8 374.1,548.8 450.2,544.3 526.4,548.5 602.6,553.4 678.7,544.7 754.9,547.5 831.0,545.1 907.2,544.8" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,552.6 221.8,553.2 297.9,551.8 374.1,548.8 450.2,544.3 526.4,548.5 602.6,553.4 678.7,544.7 754.9,547.5 831.0,545.1 907.2,544.8" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,530.9 221.8,530.2 297.9,533.5 374.1,536.6 450.2,539.3 526.4,533.7 602.6,527.9 678.7,510.4 754.9,513.7 831.0,510.4 907.2,494.6" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_4" viewBox="0 0 1200.000 674.916">
     <polyline class="pl pll" points="145.6,136.7 221.8,86.4 297.9,76.1 374.1,90.5 450.2,114.2 526.4,144.6 602.6,208.9 678.7,200.3 754.9,269.3 831.0,271.7 907.2,293.7" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
@@ -94,25 +94,7 @@ text:hover + .dl_el {display:block;}
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_2" class="pl pll" stroke="#919452" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,494.6)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-plugin hybrid</text>
-    <g class="pl pll" fill="#919452" stroke="none" stroke-width="1.800">
-      <circle cx="145.6" cy="530.9" r="2.7" />
-      <circle cx="221.8" cy="530.2" r="2.7" />
-      <circle cx="297.9" cy="533.5" r="2.7" />
-      <circle cx="374.1" cy="536.6" r="2.7" />
-      <circle cx="450.2" cy="539.3" r="2.7" />
-      <circle cx="526.4" cy="533.7" r="2.7" />
-      <circle cx="602.6" cy="527.9" r="2.7" />
-      <circle cx="678.7" cy="510.4" r="2.7" />
-      <circle cx="754.9" cy="513.7" r="2.7" />
-      <circle cx="831.0" cy="510.4" r="2.7" />
-      <circle cx="907.2" cy="494.6" r="2.7" />
-    </g>
-  </g>
-  <g class="pl_3">
-    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_3" class="pl pll" stroke="#77AC30" stroke-width="1.80"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#77AC30" stroke-width="1.80"/>
     <text class="pl" transform="translate(925.2,544.8)" dy="7.6" font-size="25.20" fill="#77AC30" stroke="none">Plugin hybrid</text>
     <g class="pl pll" fill="#77AC30" stroke="none" stroke-width="1.800">
       <circle cx="145.6" cy="552.6" r="2.7" />
@@ -126,6 +108,24 @@ text:hover + .dl_el {display:block;}
       <circle cx="754.9" cy="547.5" r="2.7" />
       <circle cx="831.0" cy="545.1" r="2.7" />
       <circle cx="907.2" cy="544.8" r="2.7" />
+    </g>
+  </g>
+  <g class="pl_3">
+    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#919452" stroke-width="1.80"/>
+    <text class="pl" transform="translate(925.2,494.6)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-plugin hybrid</text>
+    <g class="pl pll" fill="#919452" stroke="none" stroke-width="1.800">
+      <circle cx="145.6" cy="530.9" r="2.7" />
+      <circle cx="221.8" cy="530.2" r="2.7" />
+      <circle cx="297.9" cy="533.5" r="2.7" />
+      <circle cx="374.1" cy="536.6" r="2.7" />
+      <circle cx="450.2" cy="539.3" r="2.7" />
+      <circle cx="526.4" cy="533.7" r="2.7" />
+      <circle cx="602.6" cy="527.9" r="2.7" />
+      <circle cx="678.7" cy="510.4" r="2.7" />
+      <circle cx="754.9" cy="513.7" r="2.7" />
+      <circle cx="831.0" cy="510.4" r="2.7" />
+      <circle cx="907.2" cy="494.6" r="2.7" />
     </g>
   </g>
   <g class="pl_4">
