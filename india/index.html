@@ -267,14 +267,14 @@
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <a href="img/india_halfdeg.png"><img loading="lazy" class="pure-img" src="img/india_halfdeg.png" title="Click for high-res PNG"></a>
 	    </div>
-	  <div class="pure-u-1 pure-u-lg-1-2">
-	    <video class="pure-img" width="100%" autoplay muted loop controls><source src="img/india_halfdeg.mp4" type="video/mp4"></video>
+	  <div class="pure-u-1 pure-u-lg-1-2" id="vid_temperature">
+	    <!--<video class="pure-img" width="100%" autoplay muted loop controls><source src="img/india_halfdeg.mp4" type="video/mp4"></video>-->
 	    </div>
 	  <div class="pure-u-1 pure-u-lg-1-2">
 	    <a href="img/india_rainfall.png"><img loading="lazy" class="pure-img" src="img/india_rainfall.png" title="Click for high-res PNG"></a>
 	    </div>
-	  <div class="pure-u-1 pure-u-lg-1-2">
-	    <video class="pure-img" width="100%" autoplay muted loop controls><source src="img/india_rainfall.mp4" type="video/mp4"></video>
+	  <div class="pure-u-1 pure-u-lg-1-2" id="vid_rainfall">
+	    <!--<video class="pure-img" width="100%" autoplay muted loop controls><source src="img/india_rainfall.mp4" type="video/mp4"></video>-->
 	    </div>
     </div>
 	
@@ -324,6 +324,33 @@ function toggleShow(divname) {
     x.style.display = "none";
   }
 }
+</script>
+<script>
+window.addEventListener('load', () => {
+  const videos = [
+    { id: 'vid_temperature', src: 'img/india_halfdeg.mp4' },
+    { id: 'vid_rainfall', src: 'img/india_rainfall.mp4' }
+  ];
+
+  videos.forEach(item => {
+    const container = document.getElementById(item.id);
+
+    const video = document.createElement('video');
+    video.className = 'pure-img';
+    video.width = '100%';
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.controls = true;
+
+    const source = document.createElement('source');
+    source.src = item.src;
+    source.type = 'video/mp4';
+
+    video.appendChild(source);
+    container.appendChild(video);
+  });
+});
 </script>
 <script src="../js/findDataFiles.js"></script>
 <script src="../js/downloadSVGasPNG.js"></script>
