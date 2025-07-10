@@ -44,16 +44,16 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="169.4,559.9 217.0,559.2 264.6,559.0 312.2,552.8 359.8,556.1 407.4,557.0 455.0,535.8 502.6,525.1 550.2,521.0 597.8,427.9 645.4,438.6 693.0,478.4 740.6,394.7 788.2,442.3" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="169.4,559.9 217.0,559.2 264.6,559.0 312.2,552.8 359.8,556.1 407.4,557.0 455.0,535.8 502.6,525.1 550.2,521.0 597.8,427.9 645.4,438.6 693.0,478.4 740.6,394.7 788.2,442.3 835.8,449.8" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="169.4,538.0 217.0,551.0 264.6,546.6 312.2,523.0 359.8,557.3 407.4,535.5 455.0,541.4 502.6,533.6 550.2,531.5 597.8,512.8 645.4,519.5 693.0,537.0 740.6,539.5 788.2,555.3" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="169.4,538.0 217.0,551.0 264.6,546.6 312.2,523.0 359.8,557.3 407.4,535.5 455.0,541.4 502.6,533.6 550.2,531.5 597.8,512.8 645.4,519.5 693.0,537.0 740.6,539.5 788.2,555.3 835.8,499.5" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="169.4,490.5 217.0,498.9 264.6,445.4 312.2,422.8 359.8,535.3 407.4,429.9 455.0,482.2 502.6,454.3 550.2,487.3 597.8,490.1 645.4,451.1 693.0,475.3 740.6,443.8 788.2,427.1" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="169.4,490.5 217.0,498.9 264.6,445.4 312.2,422.8 359.8,535.3 407.4,429.9 455.0,482.2 502.6,454.3 550.2,487.3 597.8,490.1 645.4,451.1 693.0,475.3 740.6,443.8 788.2,427.1 835.8,378.1" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_4" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="169.4,145.6 217.0,243.1 264.6,202.9 312.2,265.3 359.8,313.0 407.4,245.8 455.0,201.0 502.6,311.3 550.2,250.4 597.8,251.9 645.4,96.2 693.0,346.4 740.6,208.3 788.2,331.4" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="169.4,145.6 217.0,243.1 264.6,202.9 312.2,265.3 359.8,313.0 407.4,245.8 455.0,201.0 502.6,311.3 550.2,250.4 597.8,251.9 645.4,96.2 693.0,346.4 740.6,208.3 788.2,331.4 835.8,239.8" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -68,8 +68,7 @@ text:hover + .dl_el {display:block;}
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#6298C6" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,447.2)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
-<polyline class="pl" points="910.8,442.3 911.9,442.4 913.0,442.4 914.0,442.5 914.9,442.6 915.8,442.7 916.6,442.9 917.4,443.1 918.1,443.3 918.8,443.5 919.5,443.7 920.1,443.9 920.7,444.2 921.3,444.4 921.9,444.7 922.5,444.9 923.1,445.2 923.7,445.4 924.3,445.6 924.9,445.9 925.6,446.1 926.3,446.3 927.0,446.5 927.8,446.7 928.6,446.8 929.5,447.0 930.4,447.1 931.4,447.2 932.5,447.2 933.6,447.2" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(925.2,449.8)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
     <g class="pl pll" fill="#6298C6" stroke="none" stroke-width="1.800">
       <circle cx="169.4" cy="559.9" r="2.7" />
       <circle cx="217.0" cy="559.2" r="2.7" />
@@ -85,12 +84,13 @@ text:hover + .dl_el {display:block;}
       <circle cx="693.0" cy="478.4" r="2.7" />
       <circle cx="740.6" cy="394.7" r="2.7" />
       <circle cx="788.2" cy="442.3" r="2.7" />
+      <circle cx="835.8" cy="449.8" r="2.7" />
     </g>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#77AC30" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,555.3)" dy="7.6" font-size="25.20" fill="#77AC30" stroke="none">Plugin hybrid</text>
+    <text class="pl" transform="translate(925.2,499.5)" dy="7.6" font-size="25.20" fill="#77AC30" stroke="none">Plugin hybrid</text>
     <g class="pl pll" fill="#77AC30" stroke="none" stroke-width="1.800">
       <circle cx="169.4" cy="538.0" r="2.7" />
       <circle cx="217.0" cy="551.0" r="2.7" />
@@ -106,13 +106,13 @@ text:hover + .dl_el {display:block;}
       <circle cx="693.0" cy="537.0" r="2.7" />
       <circle cx="740.6" cy="539.5" r="2.7" />
       <circle cx="788.2" cy="555.3" r="2.7" />
+      <circle cx="835.8" cy="499.5" r="2.7" />
     </g>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#919452" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,422.2)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-plugin hybrid</text>
-<polyline class="pl" points="910.8,427.1 911.9,427.0 913.0,427.0 914.0,426.9 914.9,426.8 915.8,426.7 916.6,426.5 917.4,426.3 918.1,426.1 918.8,425.9 919.5,425.7 920.1,425.5 920.7,425.2 921.3,425.0 921.9,424.7 922.5,424.5 923.1,424.2 923.7,424.0 924.3,423.8 924.9,423.5 925.6,423.3 926.3,423.1 927.0,422.9 927.8,422.7 928.6,422.6 929.5,422.4 930.4,422.3 931.4,422.2 932.5,422.2 933.6,422.2" stroke="#919452" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(925.2,378.1)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-plugin hybrid</text>
     <g class="pl pll" fill="#919452" stroke="none" stroke-width="1.800">
       <circle cx="169.4" cy="490.5" r="2.7" />
       <circle cx="217.0" cy="498.9" r="2.7" />
@@ -128,12 +128,13 @@ text:hover + .dl_el {display:block;}
       <circle cx="693.0" cy="475.3" r="2.7" />
       <circle cx="740.6" cy="443.8" r="2.7" />
       <circle cx="788.2" cy="427.1" r="2.7" />
+      <circle cx="835.8" cy="378.1" r="2.7" />
     </g>
   </g>
   <g class="pl_4">
     <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_4" class="pl pll" stroke="#7B553E" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,331.4)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">ICE</text>
+    <text class="pl" transform="translate(925.2,239.8)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">ICE</text>
     <g class="pl pll" fill="#7B553E" stroke="none" stroke-width="1.800">
       <circle cx="169.4" cy="145.6" r="2.7" />
       <circle cx="217.0" cy="243.1" r="2.7" />
@@ -149,6 +150,7 @@ text:hover + .dl_el {display:block;}
       <circle cx="693.0" cy="346.4" r="2.7" />
       <circle cx="740.6" cy="208.3" r="2.7" />
       <circle cx="788.2" cy="331.4" r="2.7" />
+      <circle cx="835.8" cy="239.8" r="2.7" />
     </g>
   </g>
 </g>
@@ -161,7 +163,7 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(764.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2024</text>
     <text class="pl" transform="translate(859.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Israeli new passenger car sales/imports by type: Half-Yearly</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: I-via / UN COMTRADE   &#9679;   Imports through 2022   &#9679;   Through May 2025</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: I-via / UN COMTRADE   &#9679;   Net imports before 2023   &#9679;   Through June 2025</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
