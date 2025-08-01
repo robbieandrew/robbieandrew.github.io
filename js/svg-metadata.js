@@ -4,6 +4,13 @@ function addSVGmetadata(svgObject) {
 	const svgDoc = svgObject.contentDocument;
 	if (!svgDoc) return;
 
+    // Check if the metadata span already exists as the next sibling
+	const container = svgObject.parentNode;
+    const existingMetadata = container.querySelector('.chart-metadata');
+    if (existingMetadata) {
+      return; // If it exists, do nothing and exit the function.
+    }
+	
 	// Use a Set to retain only unique strings
 	const texts = new Set();
 
