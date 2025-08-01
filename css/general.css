@@ -47,3 +47,27 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
 	  border: 1px solid #333;
 	}
 }
+
+.discreet-btn {
+  /* Positions the button relative to the viewport */
+  position: absolute;
+  top: 10px; /* Distance from the top of the window */
+  right: 10px; /* Distance from the right of the window */
+  
+  /* Styling to make it discreet */
+  background-color: #f0f0f0; /* Light gray background */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Spacing inside the button */
+  font-size: 12px; /* Smaller font size */
+  cursor: pointer; /* Changes mouse to a pointer on hover */
+  
+  /* Hides the button until the user hovers over the area */
+  opacity: 0.1; 
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+/* Hover effect */
+.discreet-btn:hover {
+  opacity: 1; /* Button becomes fully visible on hover */
+}

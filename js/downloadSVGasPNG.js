@@ -277,7 +277,24 @@ function createDataDownloadLink(svgObject) {
 */
 function addSVGbuttons(svgObject) {
   const container = svgObject.parentNode;
-  let linkContainer = svgObject.nextElementSibling;
+  // let linkContainer = svgObject.nextElementSibling;
+  let linkContainer = container.querySelector('.svg-button-group');
+  
+  if (!linkContainer || !linkContainer.matches('p') || !linkContainer.classList.contains('svg-button-group')) {
+    // If it doesn't exist, create a new one
+    linkContainer = document.createElement('p');
+    linkContainer.classList.add("svg-button-group");
+    container.insertBefore(linkContainer, svgObject.nextSibling);
+    }
+
+/*  // Ensure the link container (p or div) exists
+  if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
+    linkContainer = document.createElement('p');
+    container.insertBefore(linkContainer, svgObject.nextSibling);
+  }
+
+  // Add a class to the button group to allow styling
+  linkContainer.classList.add("svg-button-group");*/
 
   // Create the download and copy links
   const downloadLink = createDownloadLink(svgObject);
@@ -285,15 +302,6 @@ function addSVGbuttons(svgObject) {
   const enlargeLink = createEnlargeLink(svgObject);
   const alttextLink = createAltTextLink(svgObject);
   const dataLink = createDataDownloadLink(svgObject);
-
-  // Ensure the link container (p or div) exists
-  if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
-    linkContainer = document.createElement('p');
-    container.insertBefore(linkContainer, svgObject.nextSibling);
-  }
-
-  // Add a class to the button group to allow styling
-  linkContainer.classList.add("svg-button-group");
 
   // Add buttons, but only if they're not already there
   let hasDownload = false;
@@ -323,3 +331,21 @@ function addSVGbuttons(svgObject) {
   if (!hasALT && alttextLink) linkContainer.appendChild(alttextLink);
 }
 
+function reloadSVGs() {
+  // Get all object tags with the class "fig"
+  const svgObjects = document.querySelectorAll('object.fig');
+
+  svgObjects.forEach(obj => {
+    // Get the original URL
+    const originalData = obj.getAttribute('data');
+
+    // Check if the URL already has a cache-busting parameter
+    const url = new URL(originalData, window.location.href);
+
+    // Append a new timestamp parameter to the URL
+    url.searchParams.set('v', new Date().getTime());
+
+    // Update the data attribute, which forces a reload
+    obj.setAttribute('data', url.toString());
+  });
+}

@@ -211,7 +211,7 @@ function displayImages(siteCode, imageData) {
     imageContainer.appendChild(div);
   });
   
-    // Add a PNG download link for every SVG on the page
+    // Add a buttons for every SVG on the page
 	let warnedAboutMissingJS = false;
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
       svgObject.addEventListener('load', () => {
