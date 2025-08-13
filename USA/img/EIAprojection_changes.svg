@@ -40,13 +40,13 @@ text:hover + .dl_el {display:block;}
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="mk_x" d="M-4,-4L4,4M-4,4L4,-4" vector-effect="non-scaling-stroke"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="209.1,270.5 336.0,269.9 462.9,265.4 589.9,269.1 716.8,268.8 843.7,267.5" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="193.2,270.5 288.4,269.9 383.6,265.4 478.8,269.1 574.0,268.8 669.2,267.5 764.4,267.7 859.6,267.4" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="209.1,184.9 336.0,184.9 462.9,186.6 589.9,191.1 716.8,186.9 843.7,187.3" stroke="#404040" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="193.2,184.9 288.4,184.9 383.6,186.6 478.8,191.1 574.0,186.9 669.2,187.3 764.4,187.9 859.6,186.2" stroke="#404040" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="209.1,455.9 336.0,450.3 462.9,448.6 589.9,447.5 716.8,449.3 843.7,449.3" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="193.2,455.9 288.4,450.3 383.6,448.6 478.8,447.5 574.0,449.3 669.2,449.3 764.4,447.7 859.6,446.2" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -64,19 +64,23 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_y" transform="translate(0,231.7)"/>
 <use xlink:href="#tick_y" transform="translate(0,142.9)"/>
 <use xlink:href="#tick_y" transform="translate(0,54.0)"/>
-<use xlink:href="#tick_x" transform="translate(209.1,0)"/>
-<use xlink:href="#tick_x" transform="translate(336.0,0)"/>
-<use xlink:href="#tick_x" transform="translate(462.9,0)"/>
-<use xlink:href="#tick_x" transform="translate(589.9,0)"/>
-<use xlink:href="#tick_x" transform="translate(716.8,0)"/>
-<use xlink:href="#tick_x" transform="translate(843.7,0)"/>
+<use xlink:href="#tick_x" transform="translate(193.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(288.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(383.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(478.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(574.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(669.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(764.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(859.6,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
-<text class="ticklabel xtl" transform="translate(209.1,629.0)" text-anchor="middle">Jan</text>
-<text class="ticklabel xtl" transform="translate(336.0,629.0)" text-anchor="middle">Feb</text>
-<text class="ticklabel xtl" transform="translate(462.9,629.0)" text-anchor="middle">Mar</text>
-<text class="ticklabel xtl" transform="translate(589.9,629.0)" text-anchor="middle">Apr</text>
-<text class="ticklabel xtl" transform="translate(716.8,629.0)" text-anchor="middle">May</text>
-<text class="ticklabel xtl" transform="translate(843.7,629.0)" text-anchor="middle">Jun</text>
+<text class="ticklabel xtl" transform="translate(193.2,629.0)" text-anchor="middle">Jan</text>
+<text class="ticklabel xtl" transform="translate(288.4,629.0)" text-anchor="middle">Feb</text>
+<text class="ticklabel xtl" transform="translate(383.6,629.0)" text-anchor="middle">Mar</text>
+<text class="ticklabel xtl" transform="translate(478.8,629.0)" text-anchor="middle">Apr</text>
+<text class="ticklabel xtl" transform="translate(574.0,629.0)" text-anchor="middle">May</text>
+<text class="ticklabel xtl" transform="translate(669.2,629.0)" text-anchor="middle">Jun</text>
+<text class="ticklabel xtl" transform="translate(764.4,629.0)" text-anchor="middle">Jul</text>
+<text class="ticklabel xtl" transform="translate(859.6,629.0)" text-anchor="middle">Aug</text>
 <text class="ticklabel ytl" transform="translate(128.8,595.3)">0</text>
 <text class="ticklabel ytl" transform="translate(128.8,506.4)">500</text>
 <text class="ticklabel ytl" transform="translate(128.8,417.5)">1000</text>
@@ -88,92 +92,112 @@ text:hover + .dl_el {display:block;}
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#6298C6" stroke-width="2.70"/>
-    <text class="pl" transform="translate(925.2,267.5)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural Gas</text>
-    <text class="pl" transform="translate(843.7,254.0)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1799</text>
-    <text class="pl" transform="translate(716.8,255.3)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1791</text>
-    <text class="pl" transform="translate(589.9,255.6)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1790</text>
-    <text class="pl" transform="translate(462.9,251.9)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1810</text>
-    <text class="pl" transform="translate(336.0,256.4)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1785</text>
-    <text class="pl" transform="translate(209.1,257.0)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1782</text>
+    <text class="pl" transform="translate(925.2,267.4)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural Gas</text>
+    <text class="pl" transform="translate(859.6,253.9)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1799</text>
+    <text class="pl" transform="translate(764.4,254.2)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1798</text>
+    <text class="pl" transform="translate(669.2,254.0)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1799</text>
+    <text class="pl" transform="translate(574.0,255.3)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1791</text>
+    <text class="pl" transform="translate(478.8,255.6)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1790</text>
+    <text class="pl" transform="translate(383.6,251.9)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1810</text>
+    <text class="pl" transform="translate(288.4,256.4)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1785</text>
+    <text class="pl" transform="translate(193.2,257.0)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none" text-anchor="middle">1782</text>
     <g class="pl pll" fill="none" stroke="#6298C6" stroke-width="2.700">
-      <use xlink:href="#mk_x" transform="translate(209.1,270.5) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(336.0,269.9) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(462.9,265.4) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(589.9,269.1) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(716.8,268.8) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(843.7,267.5) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(193.2,270.5) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(288.4,269.9) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(383.6,265.4) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(478.8,269.1) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(574.0,268.8) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(669.2,267.5) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(764.4,267.7) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(859.6,267.4) scale(1.1)" />
     </g>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#404040" stroke-width="2.70"/>
-    <text class="pl" transform="translate(925.2,187.3)" dy="8.1" font-size="27.00" fill="#404040" stroke="none">Oil</text>
-    <text class="pl" transform="translate(843.7,173.8)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2250</text>
-    <text class="pl" transform="translate(716.8,173.4)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2252</text>
-    <text class="pl" transform="translate(589.9,177.6)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2228</text>
-    <text class="pl" transform="translate(462.9,173.1)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2254</text>
-    <text class="pl" transform="translate(336.0,171.4)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2263</text>
-    <text class="pl" transform="translate(209.1,171.4)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2264</text>
+    <text class="pl" transform="translate(925.2,186.2)" dy="8.1" font-size="27.00" fill="#404040" stroke="none">Oil</text>
+    <text class="pl" transform="translate(859.6,172.7)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2256</text>
+    <text class="pl" transform="translate(764.4,174.4)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2247</text>
+    <text class="pl" transform="translate(669.2,173.8)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2250</text>
+    <text class="pl" transform="translate(574.0,173.4)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2252</text>
+    <text class="pl" transform="translate(478.8,177.6)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2228</text>
+    <text class="pl" transform="translate(383.6,173.1)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2254</text>
+    <text class="pl" transform="translate(288.4,171.4)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2263</text>
+    <text class="pl" transform="translate(193.2,171.4)" dy="0.0" font-size="18.00" fill="#404040" stroke="none" text-anchor="middle">2264</text>
     <g class="pl pll" fill="none" stroke="#404040" stroke-width="2.700">
-      <use xlink:href="#mk_x" transform="translate(209.1,184.9) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(336.0,184.9) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(462.9,186.6) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(589.9,191.1) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(716.8,186.9) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(843.7,187.3) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(193.2,184.9) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(288.4,184.9) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(383.6,186.6) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(478.8,191.1) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(574.0,186.9) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(669.2,187.3) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(764.4,187.9) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(859.6,186.2) scale(1.1)" />
     </g>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#7B553E" stroke-width="2.70"/>
-    <text class="pl" transform="translate(925.2,449.3)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
-    <text class="pl" transform="translate(843.7,435.8)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">776</text>
-    <text class="pl" transform="translate(716.8,435.8)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">776</text>
-    <text class="pl" transform="translate(589.9,434.0)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">786</text>
-    <text class="pl" transform="translate(462.9,435.1)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">779</text>
-    <text class="pl" transform="translate(336.0,436.8)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">770</text>
-    <text class="pl" transform="translate(209.1,442.4)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">738</text>
+    <text class="pl" transform="translate(925.2,446.2)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
+    <text class="pl" transform="translate(859.6,432.7)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">793</text>
+    <text class="pl" transform="translate(764.4,434.2)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">785</text>
+    <text class="pl" transform="translate(669.2,435.8)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">776</text>
+    <text class="pl" transform="translate(574.0,435.8)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">776</text>
+    <text class="pl" transform="translate(478.8,434.0)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">786</text>
+    <text class="pl" transform="translate(383.6,435.1)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">779</text>
+    <text class="pl" transform="translate(288.4,436.8)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">770</text>
+    <text class="pl" transform="translate(193.2,442.4)" dy="0.0" font-size="18.00" fill="#7B553E" stroke="none" text-anchor="middle">738</text>
     <g class="pl pll" fill="none" stroke="#7B553E" stroke-width="2.700">
-      <use xlink:href="#mk_x" transform="translate(209.1,455.9) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(336.0,450.3) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(462.9,448.6) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(589.9,447.5) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(716.8,449.3) scale(1.1)" />
-      <use xlink:href="#mk_x" transform="translate(843.7,449.3) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(193.2,455.9) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(288.4,450.3) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(383.6,448.6) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(478.8,447.5) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(574.0,449.3) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(669.2,449.3) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(764.4,447.7) scale(1.1)" />
+      <use xlink:href="#mk_x" transform="translate(859.6,446.2) scale(1.1)" />
     </g>
   </g>
 </g>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="176.6,544.0 186.2,530.5 195.8,544.0 176.6,544.0" fill="#F60"/>
+      <polygon class="pl" points="160.7,544.0 170.3,530.5 179.9,544.0 160.7,544.0" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(200.6,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">0.8%</text>
+    <text class="pl" transform="translate(184.7,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">0.8%</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="303.5,544.0 313.1,530.5 322.7,544.0 303.5,544.0" fill="#F60"/>
+      <polygon class="pl" points="255.9,544.0 265.5,530.5 275.1,544.0 255.9,544.0" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(327.5,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.6%</text>
+    <text class="pl" transform="translate(279.9,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.6%</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="430.4,544.0 440.0,530.5 449.6,544.0 430.4,544.0" fill="#F60"/>
+      <polygon class="pl" points="351.1,544.0 360.7,530.5 370.3,544.0 351.1,544.0" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(454.4,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.9%</text>
+    <text class="pl" transform="translate(375.1,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.9%</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="557.4,544.0 567.0,530.5 576.6,544.0 557.4,544.0" fill="#F60"/>
+      <polygon class="pl" points="446.3,544.0 455.9,530.5 465.5,544.0 446.3,544.0" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(581.4,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.1%</text>
+    <text class="pl" transform="translate(470.3,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.1%</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="684.3,544.0 693.9,530.5 703.5,544.0 684.3,544.0" fill="#F60"/>
+      <polygon class="pl" points="541.5,544.0 551.1,530.5 560.7,544.0 541.5,544.0" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(708.3,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.4%</text>
+    <text class="pl" transform="translate(565.5,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.4%</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="811.2,544.0 820.8,530.5 830.4,544.0 811.2,544.0" fill="#F60"/>
+      <polygon class="pl" points="636.7,544.0 646.3,530.5 655.9,544.0 636.7,544.0" fill="#F60"/>
     </g>
-    <text class="pl" transform="translate(835.2,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.4%</text>
-<polyline class="pl" points="960.0,593.9 960.0,594.0 960.0,594.0 960.0,594.2 960.0,594.3 959.9,594.6 959.9,594.8 959.8,595.2 959.7,595.5 959.5,595.9 959.3,596.3 959.1,596.8 958.8,597.3 958.5,597.8 958.1,598.3 957.7,598.9 957.2,599.5 956.6,600.1 956.0,600.7 955.3,601.4 954.5,602.0 953.7,602.7 952.7,603.4 951.7,604.0 950.6,604.7 949.3,605.4 948.0,606.1 946.6,606.8 945.0,607.4 943.4,608.1 941.6,608.7 939.7,609.4 937.6,610.0 935.5,610.6 933.2,611.2 930.7,611.8 928.2,612.3 925.4,612.8 922.6,613.3 919.5,613.8 916.3,614.2 913.0,614.6 909.5,615.0 905.8,615.3 901.9,615.5 897.8,615.8 893.6,616.0 889.2,616.1 884.5,616.2 879.7,616.2" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="887.5,622.0 879.7,616.2 887.1,609.9" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(660.7,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.4%</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="731.9,544.0 741.5,530.5 751.1,544.0 731.9,544.0" fill="#F60"/>
+    </g>
+    <text class="pl" transform="translate(755.9,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.5%</text>
+    <g stroke="none" stroke-width="0.9000"  >
+      <polygon class="pl" points="827.1,544.0 836.7,530.5 846.3,544.0 827.1,544.0" fill="#F60"/>
+    </g>
+    <text class="pl" transform="translate(851.1,539.3)" dy="5.4" font-size="18.00" fill="#F60" stroke="none">1.9%</text>
+<polyline class="pl" points="960.0,593.9 960.0,594.0 960.0,594.0 960.0,594.2 960.0,594.3 959.9,594.6 959.9,594.8 959.8,595.2 959.7,595.5 959.6,595.9 959.5,596.3 959.3,596.8 959.1,597.3 958.8,597.8 958.5,598.3 958.2,598.9 957.8,599.5 957.3,600.1 956.8,600.7 956.2,601.4 955.6,602.0 954.9,602.7 954.2,603.4 953.3,604.0 952.4,604.7 951.4,605.4 950.4,606.1 949.2,606.8 948.0,607.4 946.6,608.1 945.2,608.7 943.7,609.4 942.1,610.0 940.3,610.6 938.5,611.2 936.5,611.8 934.5,612.3 932.3,612.8 930.0,613.3 927.5,613.8 925.0,614.2 922.3,614.6 919.4,615.0 916.5,615.3 913.4,615.5 910.1,615.8 906.7,616.0 903.2,616.1 899.5,616.2 895.6,616.2" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="903.4,622.0 895.6,616.2 902.9,609.9" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <text class="pl" transform="translate(924.0,580.4)"  font-size="18.00" fill="#808080" stroke="none">
       <tspan x="0" y="-20.2">Month in which</tspan><tspan x="0" y="0.0">forecast was made</tspan>
     </text>
-<polyline class="pl" points="912.0,492.7 911.9,492.7 911.7,492.7 911.3,492.7 910.7,492.7 910.0,492.7 909.2,492.7 908.2,492.8 907.1,492.8 905.9,492.9 904.6,492.9 903.2,493.0 901.7,493.1 900.1,493.2 898.5,493.3 896.7,493.5 894.9,493.6 893.1,493.8 891.1,494.0 889.2,494.3 887.2,494.5 885.1,494.8 883.1,495.1 881.0,495.5 878.9,495.9 876.8,496.3 874.7,496.7 872.7,497.2 870.6,497.7 868.6,498.3 866.6,498.9 864.6,499.5 862.7,500.2 860.8,500.9 859.0,501.7 857.3,502.5 855.6,503.4 854.0,504.3 852.5,505.3 851.1,506.3 849.8,507.4 848.6,508.5 847.5,509.7 846.6,510.9 845.7,512.2 845.0,513.6 844.5,515.0 844.1,516.5 843.8,518.1 843.7,519.7" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="851.5,513.9 843.7,519.7 839.8,510.8" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="912.0,492.7 911.9,492.7 911.7,492.7 911.4,492.7 911.0,492.7 910.5,492.7 909.8,492.7 909.1,492.8 908.3,492.8 907.3,492.9 906.3,492.9 905.3,493.0 904.1,493.1 902.9,493.2 901.6,493.3 900.3,493.5 898.9,493.6 897.5,493.8 896.0,494.0 894.5,494.3 892.9,494.5 891.4,494.8 889.8,495.1 888.2,495.5 886.6,495.9 885.0,496.3 883.4,496.7 881.8,497.2 880.2,497.7 878.7,498.3 877.1,498.9 875.6,499.5 874.1,500.2 872.7,500.9 871.3,501.7 870.0,502.5 868.7,503.4 867.5,504.3 866.3,505.3 865.3,506.3 864.3,507.4 863.3,508.5 862.5,509.7 861.8,510.9 861.1,512.2 860.6,513.6 860.2,515.0 859.9,516.5 859.7,518.1 859.6,519.7" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="867.0,513.5 859.6,519.7 855.2,511.1" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <text class="pl" transform="translate(924.0,492.7)"  font-size="18.00" fill="#808080" stroke="none">
       <tspan x="0" y="-4.7">Total forecast</tspan><tspan x="0" y="15.5">growth rate for 2025</tspan>
     </text>
