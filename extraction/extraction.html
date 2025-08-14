@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@robbie_andrew">
+    <meta name="twitter:title" content="National Extraction-based Emissions">
+    <meta name="twitter:description" content="Estimated national emissions from fossil fuels allocated to country of extraction.">
+    <meta name="twitter:image" content="https://robbieandrew.github.io/GCB2023/extraction/extraction_based_emissions.png">  
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Extraction-based emissions accounts</title>
+  <style>
+    h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
+	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
+	.subb {font-size: 70%;line-height:normal;}
+	.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;  
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+	
+	<h1>National Extraction-based Emissions</h1>
+	<p>This is an initial draft release of annual national emissions accounts based on extracted fossil fuels: emissions from oxidation of the fuels are allocated to the country that extracted them regardless of where in the world oxidation occurs. These can be seen a complement to territorial and consumption-based emissions (as well as emissions aligned with National Accounts).</p>
+	<p>Estimates are derived from data published by the <a href="https://www.energyinst.org/statistical-review">Energy Institute</a> and by <a href="https://doi.org/10.1016/j.fuel.2014.10.030">Mohr et al. (2014)</a>. In general only the larger producers of fossil fuels are included in the dataset, but more will be added in future releases. Where available, national emissions are reported from 1850, while the per capita series starts in 1950. These start years may be pushed back to earlier periods in future releases. The final year of data is 2024.</p>
+	<p>As an initial draft release, there are some issues with the estimates. For example, in some years the global total is less than the sum of the individual countries reported. Further, while the global totals are in general very close to the territorial emissions estimates in <a href="https://zenodo.org/doi/10.5281/zenodo.5569234">GCP's fossil CO<span class="subb">2</span> dataset</a>, there are some divergences. These things will be worked on as time permits.</p>
+
+	<h2>National emissions</h2>
+	<p><a href="extraction_emissions_2024_data.csv">CSV data file</a> | <a href="extraction/extraction_emissions_2024_metadata.json">JSON metadata file</a></p>
+	<h2>Per capita emissions</h2>
+	<p><a href="extraction_emissions_percapita_2024_data.csv">CSV data file</a> | <a href="extraction_emissions_percapita_2024_metadata.json">JSON metadata file</a></p>
+
+	<div>
+	<object data="extraction_based_emissions_2024.svg" type="image/svg+xml" class="fig"></object>
+	<p><a href="extraction_based_emissions_2024.svg" target="_self">Enlarge this figure</a> | <a href="extraction_based_emissions_2024.png" target="_self">View as PNG</a></p>
+	</div>
+
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+  </main>
+</body>
+
+</html>
