@@ -64,6 +64,8 @@ text:hover + .dl_el {display:block;}
   <polygon points="617.8,524.1 617.8,352.6 739.6,352.6 739.6,524.1 617.8,524.1"/>
   <polygon points="770.1,453.0 770.1,414.8 892.0,414.8 892.0,453.0 770.1,453.0"/>
 </g>
+<g stroke="#000" stroke-width="0.90" fill="#404040"  clip-path="url(#axis_clip)">
+</g>
 <g stroke="#000" stroke-width="0.90" fill="#EDB021"  clip-path="url(#axis_clip)">
   <polygon points="160.8,317.9 160.8,320.6 282.7,320.6 282.7,317.9 160.8,317.9"/>
   <polygon points="313.2,94.0 313.2,95.8 435.0,95.8 435.0,94.0 313.2,94.0"/>
@@ -74,6 +76,10 @@ text:hover + .dl_el {display:block;}
 <g stroke="#000" stroke-width="0.90" fill="#598C1A"  clip-path="url(#axis_clip)">
   <polygon points="160.8,517.0 160.8,516.1 282.7,516.1 282.7,517.0 160.8,517.0"/>
   <polygon points="313.2,95.8 313.2,98.4 435.0,98.4 435.0,95.8 313.2,95.8"/>
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#BF4D4D"  clip-path="url(#axis_clip)">
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#0073BF"  clip-path="url(#axis_clip)">
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#6298C6"  clip-path="url(#axis_clip)">
   <polygon points="160.8,516.1 160.8,364.1 282.7,364.1 282.7,516.1 160.8,516.1"/>
@@ -89,12 +95,22 @@ text:hover + .dl_el {display:block;}
   <polygon points="617.8,349.0 617.8,320.6 739.6,320.6 739.6,349.0 617.8,349.0"/>
   <polygon points="770.1,298.4 770.1,320.6 892.0,320.6 892.0,298.4 770.1,298.4"/>
 </g>
-    <text class="pl" transform="translate(945.6,309.5)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
-    <text class="pl" transform="translate(945.6,365.9)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
-    <text class="pl" transform="translate(945.6,410.5)" dy="8.1" font-size="27.00" fill="#EDB021" stroke="none">Solar</text>
-    <text class="pl" transform="translate(945.6,436.4)" dy="8.1" font-size="27.00" fill="#666" stroke="none">Other</text>
-<polyline class="pl" points="910.8,413.0 912.4,413.0 913.8,413.0 915.2,412.9 916.4,412.9 917.6,412.8 918.8,412.7 919.8,412.6 920.8,412.5 921.7,412.4 922.7,412.3 923.5,412.2 924.4,412.1 925.2,411.9 926.0,411.8 926.8,411.7 927.6,411.6 928.4,411.4 929.3,411.3 930.1,411.2 931.1,411.1 932.0,411.0 933.0,410.9 934.0,410.8 935.2,410.7 936.4,410.6 937.6,410.6 939.0,410.5 940.4,410.5 942.0,410.5" stroke="#EDB021" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,433.9 912.4,433.9 913.8,433.9 915.2,434.0 916.4,434.0 917.6,434.1 918.8,434.2 919.8,434.3 920.8,434.4 921.7,434.5 922.7,434.6 923.5,434.7 924.4,434.8 925.2,434.9 926.0,435.1 926.8,435.2 927.6,435.3 928.4,435.5 929.3,435.6 930.1,435.7 931.1,435.8 932.0,435.9 933.0,436.0 934.0,436.1 935.2,436.2 936.4,436.3 937.6,436.3 939.0,436.4 940.4,436.4 942.0,436.4" stroke="#666" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(945.6,259.9)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
+    <text class="pl" transform="translate(945.6,389.4)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
+    <text class="pl" transform="translate(945.6,363.5)" dy="8.1" font-size="27.00" fill="#0073BF" stroke="none">Hydro</text>
+    <text class="pl" transform="translate(945.6,337.6)" dy="8.1" font-size="27.00" fill="#BF4D4D" stroke="none">Nuclear</text>
+    <text class="pl" transform="translate(945.6,311.7)" dy="8.1" font-size="27.00" fill="#598C1A" stroke="none">Wind</text>
+    <text class="pl" transform="translate(945.6,415.3)" dy="8.1" font-size="27.00" fill="#EDB021" stroke="none">Solar</text>
+    <text class="pl" transform="translate(945.6,285.8)" dy="8.1" font-size="27.00" fill="#404040" stroke="none">Oil</text>
+    <text class="pl" transform="translate(945.6,441.2)" dy="8.1" font-size="27.00" fill="#666" stroke="none">Other</text>
+<polyline class="pl" points="910.8,309.5 912.4,309.3 913.8,308.8 915.2,308.0 916.4,306.9 917.6,305.6 918.8,304.0 919.8,302.2 920.8,300.2 921.7,298.1 922.7,295.9 923.5,293.5 924.4,291.0 925.2,288.5 926.0,286.0 926.8,283.4 927.6,280.9 928.4,278.3 929.3,275.9 930.1,273.5 931.1,271.3 932.0,269.1 933.0,267.2 934.0,265.4 935.2,263.8 936.4,262.5 937.6,261.4 939.0,260.6 940.4,260.1 942.0,259.9" stroke="#7B553E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,365.9 912.4,366.0 913.8,366.2 915.2,366.6 916.4,367.1 917.6,367.8 918.8,368.5 919.8,369.4 920.8,370.3 921.7,371.3 922.7,372.4 923.5,373.5 924.4,374.7 925.2,375.8 926.0,377.1 926.8,378.3 927.6,379.5 928.4,380.7 929.3,381.8 930.1,383.0 931.1,384.0 932.0,385.0 933.0,386.0 934.0,386.8 935.2,387.6 936.4,388.2 937.6,388.7 939.0,389.1 940.4,389.3 942.0,389.4" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,320.6 912.4,320.7 913.8,321.2 915.2,321.9 916.4,322.8 917.6,324.0 918.8,325.3 919.8,326.9 920.8,328.6 921.7,330.4 922.7,332.4 923.5,334.4 924.4,336.6 925.2,338.7 926.0,340.9 926.8,343.2 927.6,345.4 928.4,347.6 929.3,349.7 930.1,351.7 931.1,353.7 932.0,355.5 933.0,357.2 934.0,358.8 935.2,360.1 936.4,361.3 937.6,362.2 939.0,362.9 940.4,363.4 942.0,363.5" stroke="#0073BF" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,320.6 912.4,320.6 913.8,320.8 915.2,321.1 916.4,321.5 917.6,321.9 918.8,322.5 919.8,323.1 920.8,323.8 921.7,324.5 922.7,325.3 923.5,326.1 924.4,326.9 925.2,327.8 926.0,328.7 926.8,329.5 927.6,330.4 928.4,331.3 929.3,332.1 930.1,332.9 931.1,333.7 932.0,334.4 933.0,335.1 934.0,335.7 935.2,336.3 936.4,336.7 937.6,337.1 939.0,337.4 940.4,337.6 942.0,337.6" stroke="#BF4D4D" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,320.6 912.4,320.6 913.8,320.5 915.2,320.3 916.4,320.1 917.6,319.9 918.8,319.6 919.8,319.3 920.8,318.9 921.7,318.6 922.7,318.1 923.5,317.7 924.4,317.3 925.2,316.8 926.0,316.4 926.8,315.9 927.6,315.5 928.4,315.0 929.3,314.6 930.1,314.2 931.1,313.8 932.0,313.4 933.0,313.0 934.0,312.7 935.2,312.4 936.4,312.2 937.6,312.0 939.0,311.8 940.4,311.8 942.0,311.7" stroke="#598C1A" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,413.0 912.4,413.0 913.8,413.0 915.2,413.1 916.4,413.1 917.6,413.2 918.8,413.3 919.8,413.3 920.8,413.4 921.7,413.5 922.7,413.6 923.5,413.8 924.4,413.9 925.2,414.0 926.0,414.1 926.8,414.2 927.6,414.3 928.4,414.5 929.3,414.6 930.1,414.7 931.1,414.8 932.0,414.9 933.0,415.0 934.0,415.1 935.2,415.2 936.4,415.2 937.6,415.3 939.0,415.3 940.4,415.3 942.0,415.3" stroke="#EDB021" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,320.6 912.4,320.5 913.8,320.1 915.2,319.5 916.4,318.8 917.6,317.8 918.8,316.7 919.8,315.5 920.8,314.1 921.7,312.6 922.7,311.0 923.5,309.4 924.4,307.7 925.2,305.9 926.0,304.1 926.8,302.3 927.6,300.5 928.4,298.7 929.3,297.0 930.1,295.4 931.1,293.8 932.0,292.3 933.0,290.9 934.0,289.7 935.2,288.6 936.4,287.6 937.6,286.9 939.0,286.3 940.4,285.9 942.0,285.8" stroke="#404040" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,433.9 912.4,433.9 913.8,434.0 915.2,434.1 916.4,434.3 917.6,434.5 918.8,434.7 919.8,435.0 920.8,435.3 921.7,435.6 922.7,435.9 923.5,436.3 924.4,436.6 925.2,437.0 926.0,437.4 926.8,437.8 927.6,438.1 928.4,438.5 929.3,438.9 930.1,439.2 931.1,439.6 932.0,439.9 933.0,440.2 934.0,440.4 935.2,440.7 936.4,440.9 937.6,441.0 939.0,441.1 940.4,441.2 942.0,441.2" stroke="#666" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Annual changes in Puerto Rico's power generation</text>
 <text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: EMBER</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>

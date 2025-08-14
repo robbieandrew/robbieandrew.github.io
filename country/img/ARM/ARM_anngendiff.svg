@@ -63,9 +63,13 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel ytl" transform="translate(128.8,195.4)">0.4</text>
 <text class="ticklabel ytl" transform="translate(128.8,128.7)">0.6</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">0.8 TWh</text>
+<g stroke="#000" stroke-width="0.90" fill="#404040"  clip-path="url(#axis_clip)">
+</g>
 <g stroke="#000" stroke-width="0.90" fill="#EDB021"  clip-path="url(#axis_clip)">
   <polygon points="617.8,273.9 617.8,320.6 739.6,320.6 739.6,273.9 617.8,273.9"/>
   <polygon points="770.1,180.6 770.1,210.6 892.0,210.6 892.0,180.6 770.1,180.6"/>
+</g>
+<g stroke="#000" stroke-width="0.90" fill="#598C1A"  clip-path="url(#axis_clip)">
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#BF4D4D"  clip-path="url(#axis_clip)">
   <polygon points="160.8,97.3 160.8,283.9 282.7,283.9 282.7,97.3 160.8,97.3"/>
@@ -86,10 +90,18 @@ text:hover + .dl_el {display:block;}
   <polygon points="617.8,370.6 617.8,320.6 739.6,320.6 739.6,370.6 617.8,370.6"/>
   <polygon points="770.1,387.2 770.1,320.6 892.0,320.6 892.0,387.2 770.1,387.2"/>
 </g>
-    <text class="pl" transform="translate(925.2,353.9)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
-    <text class="pl" transform="translate(925.2,293.9)" dy="8.1" font-size="27.00" fill="#0073BF" stroke="none">Hydro</text>
-    <text class="pl" transform="translate(925.2,238.9)" dy="8.1" font-size="27.00" fill="#BF4D4D" stroke="none">Nuclear</text>
-    <text class="pl" transform="translate(925.2,195.6)" dy="8.1" font-size="27.00" fill="#EDB021" stroke="none">Solar</text>
+<g stroke="#000" stroke-width="0.90" fill="#7B553E"  clip-path="url(#axis_clip)">
+</g>
+    <text class="pl" transform="translate(945.6,335.2)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
+    <text class="pl" transform="translate(945.6,361.1)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
+    <text class="pl" transform="translate(945.6,283.4)" dy="8.1" font-size="27.00" fill="#0073BF" stroke="none">Hydro</text>
+    <text class="pl" transform="translate(945.6,238.9)" dy="8.1" font-size="27.00" fill="#BF4D4D" stroke="none">Nuclear</text>
+    <text class="pl" transform="translate(945.6,309.3)" dy="8.1" font-size="27.00" fill="#598C1A" stroke="none">Wind</text>
+    <text class="pl" transform="translate(945.6,195.6)" dy="8.1" font-size="27.00" fill="#EDB021" stroke="none">Solar</text>
+<polyline class="pl" points="910.8,320.6 912.4,320.6 913.8,320.8 915.2,321.0 916.4,321.3 917.6,321.7 918.8,322.2 919.8,322.7 920.8,323.3 921.7,323.9 922.7,324.6 923.5,325.3 924.4,326.0 925.2,326.8 926.0,327.5 926.8,328.3 927.6,329.0 928.4,329.8 929.3,330.5 930.1,331.2 931.1,331.9 932.0,332.5 933.0,333.1 934.0,333.6 935.2,334.0 936.4,334.4 937.6,334.8 939.0,335.0 940.4,335.2 942.0,335.2" stroke="#7B553E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,353.9 912.4,353.9 913.8,354.0 915.2,354.1 916.4,354.3 917.6,354.5 918.8,354.7 919.8,355.0 920.8,355.2 921.7,355.6 922.7,355.9 923.5,356.2 924.4,356.6 925.2,357.0 926.0,357.3 926.8,357.7 927.6,358.1 928.4,358.4 929.3,358.8 930.1,359.1 931.1,359.5 932.0,359.8 933.0,360.1 934.0,360.3 935.2,360.5 936.4,360.7 937.6,360.9 939.0,361.0 940.4,361.1 942.0,361.1" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,293.9 912.4,293.9 913.8,293.8 915.2,293.6 916.4,293.4 917.6,293.1 918.8,292.8 919.8,292.4 920.8,292.0 921.7,291.5 922.7,291.0 923.5,290.5 924.4,290.0 925.2,289.5 926.0,288.9 926.8,288.4 927.6,287.8 928.4,287.3 929.3,286.8 930.1,286.3 931.1,285.8 932.0,285.4 933.0,284.9 934.0,284.6 935.2,284.2 936.4,283.9 937.6,283.7 939.0,283.5 940.4,283.4 942.0,283.4" stroke="#0073BF" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,320.6 912.4,320.5 913.8,320.4 915.2,320.2 916.4,320.0 917.6,319.7 918.8,319.3 919.8,318.9 920.8,318.5 921.7,318.0 922.7,317.5 923.5,316.9 924.4,316.4 925.2,315.8 926.0,315.2 926.8,314.7 927.6,314.1 928.4,313.5 929.3,312.9 930.1,312.4 931.1,311.9 932.0,311.4 933.0,311.0 934.0,310.5 935.2,310.2 936.4,309.9 937.6,309.6 939.0,309.5 940.4,309.3 942.0,309.3" stroke="#598C1A" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Annual changes in Armenia's power generation</text>
 <text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: EMBER</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
