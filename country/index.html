@@ -12,6 +12,12 @@
   <link rel="stylesheet" href="css/country.css">
   <link rel="stylesheet" href="../css/general.css">
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  .see-also {
+    text-align: center;
+    margin: 1em 0;
+  }
+  </style>
 </head>
 
 <body>
@@ -45,7 +51,7 @@ let seeAlsoData = [];
 
 async function loadSeeAlsoData() {
   try {
-    seeAlsoData = await fetch("country/seealso.json").then(res => res.json());
+    seeAlsoData = await fetch("seealso.json").then(res => res.json());
   } catch (e) {
     console.error("Could not load seeAlso data:", e);
   }
@@ -70,7 +76,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     // Check if a country is specified in the URL as a query string (e.g. ?country=DEU)
     const urlParams = new URLSearchParams(window.location.search);
     const isoFromURL = urlParams.get("country");
-    if (isoFromURL) {
+/*    if (isoFromURL) {
       const matched = sitesData.find(c => c.iso.toUpperCase() === isoFromURL.toUpperCase());
       if (matched) {
         document.getElementById("id_siteInput").value = matched.names[0];
@@ -79,7 +85,14 @@ window.addEventListener("DOMContentLoaded", async () => {
 		  loadSiteImages(matched.iso, "country/img");
 		}
       }
-    }
+    }*/
+if (isoFromURL) {
+  const matched = sitesData.find(c => c.iso.toUpperCase() === isoFromURL.toUpperCase());
+  if (matched) {
+    document.getElementById("id_siteInput").value = matched.names[0];
+    await handleSiteSelection(matched, "country");
+  }
+}
 	
 	
     // Add search and arrow/enter listeners now that data are ready
