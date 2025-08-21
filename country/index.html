@@ -27,7 +27,7 @@
 	  </svg>
 	  <ul id="id_siteList"></ul>
       </div>
-
+	<div id="seeAlso" class="see-also"></div>
     <div id="imageContainer" class="pure-g">
       </div>
 
@@ -41,6 +41,15 @@
 <script>
 let highlightedIndex = 0; // Track the highlighted item in the search results
 let availableDataFiles = [];
+let seeAlsoData = [];
+
+async function loadSeeAlsoData() {
+  try {
+    seeAlsoData = await fetch("country/seealso.json").then(res => res.json());
+  } catch (e) {
+    console.error("Could not load seeAlso data:", e);
+  }
+}
 
 window.addEventListener("DOMContentLoaded", async () => {
   document.getElementById('id_siteInput').focus();
@@ -54,8 +63,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     sitesData = allSites.filter(site =>
       availableISOs.includes(site.iso.toUpperCase())
     );
-	
 	console.log("Available countries:", sitesData);
+	
+	await loadSeeAlsoData();
 	
     // Check if a country is specified in the URL as a query string (e.g. ?country=DEU)
     const urlParams = new URLSearchParams(window.location.search);
@@ -109,6 +119,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 async function handleSiteSelection(site,arg_name) {
   const input = document.getElementById("id_siteInput");
   const id_siteList = document.getElementById("id_siteList");
+  const seeAlsoDiv = document.getElementById("seeAlso");
   
   input.value = site.names[0]; // Set the input field to the primary name
   id_siteList.innerHTML = ""; // Hide the country list (search results)
@@ -116,6 +127,14 @@ async function handleSiteSelection(site,arg_name) {
   // Update the browser URL to reflect the selected country
   const newUrl = `${window.location.pathname}?${arg_name}=${site.iso}`;
   window.history.pushState({ path: newUrl }, '', newUrl);
+
+  // Update seeAlso div
+  const match = seeAlsoData.find(item => item.iso.toUpperCase() === site.iso.toUpperCase());
+  if (match) {
+    seeAlsoDiv.innerHTML = `See also: <a href="${match.url}" target="_blank">dedicated page for ${site.names[0]}</a>`;
+  } else {
+    seeAlsoDiv.innerHTML = "";
+  }
 
   const loaded = await loadSiteDataFiles(site.iso, "country/data");
   if (loaded) {
