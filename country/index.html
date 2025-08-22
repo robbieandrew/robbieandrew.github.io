@@ -51,7 +51,7 @@ let seeAlsoData = [];
 
 async function loadSeeAlsoData() {
   try {
-    seeAlsoData = await fetch("seealso.json").then(res => res.json());
+    seeAlsoData = await fetch("./seealso.json").then(res => res.json());
   } catch (e) {
     console.error("Could not load seeAlso data:", e);
   }
