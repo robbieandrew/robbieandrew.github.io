@@ -86,13 +86,13 @@ window.addEventListener("DOMContentLoaded", async () => {
 		}
       }
     }*/
-if (isoFromURL) {
-  const matched = sitesData.find(c => c.iso.toUpperCase() === isoFromURL.toUpperCase());
-  if (matched) {
-    document.getElementById("id_siteInput").value = matched.names[0];
-    await handleSiteSelection(matched, "country");
-  }
-}
+	if (isoFromURL) {
+	  const matched = sitesData.find(c => c.iso.toUpperCase() === isoFromURL.toUpperCase());
+	  if (matched) {
+		document.getElementById("id_siteInput").value = matched.names[0];
+		await handleSiteSelection(matched, "country");
+	  }
+	}
 	
 	
     // Add search and arrow/enter listeners now that data are ready
@@ -154,7 +154,7 @@ async function handleSiteSelection(site,arg_name) {
     loadSiteImages(site.iso, "country/img");
   }}
 
-function searchSites() {
+/*function searchSites() {
   const input = document.getElementById("id_siteInput");
   const id_siteList = document.getElementById("id_siteList");
   id_siteList.innerHTML = "";
@@ -183,7 +183,53 @@ function searchSites() {
 
   // Highlight the first item
   updateHighlight();
+}*/
+
+function searchSites() {
+  const input = document.getElementById("id_siteInput");
+  const id_siteList = document.getElementById("id_siteList");
+  id_siteList.innerHTML = "";
+  highlightedIndex = 0;
+
+  if (!input.value) return;
+
+  const lowerInput = input.value.toLowerCase();
+
+  // Filter matching sites
+  let matchingSites = sitesData.filter(site =>
+    site.names.some(name => name.toLowerCase().includes(lowerInput))
+  );
+
+  if (!matchingSites.length) return;
+
+  // Sort matches: names that start with input first, then alphabetically
+  matchingSites.sort((a, b) => {
+    const aStarts = a.names.some(name => name.toLowerCase().startsWith(lowerInput));
+    const bStarts = b.names.some(name => name.toLowerCase().startsWith(lowerInput));
+
+    if (aStarts && !bStarts) return -1; // a comes first
+    if (!aStarts && bStarts) return 1;  // b comes first
+
+    // If both start (or both don't), sort alphabetically by primary name
+    return a.names[0].localeCompare(b.names[0]);
+  });
+
+  const list = document.createElement("ul");
+
+  matchingSites.forEach((site, index) => {
+    const li = document.createElement("li");
+    li.textContent = site.names[0];
+    li.dataset.index = index;
+    li.addEventListener("click", () => handleSiteSelection(site,"country").catch(console.error));
+    list.appendChild(li);
+  });
+
+  id_siteList.appendChild(list);
+
+  // Highlight the first item
+  updateHighlight();
 }
+
 
 
 

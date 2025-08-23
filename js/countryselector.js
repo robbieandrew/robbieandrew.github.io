@@ -83,7 +83,7 @@ function displayCountryImages(isoCode) {
 
 // Autocompletion code -----------------------------------------
 
-function scoreMatch(variant, input) {
+/*function scoreMatch(variant, input) {
   const lowerVariant = variant.toLowerCase();
   const lowerInput = input.toLowerCase();
   
@@ -91,6 +91,21 @@ function scoreMatch(variant, input) {
     return 100 - lowerVariant.length; // Prioritize shorter, exact matches
   } else if (lowerVariant.includes(lowerInput)) {
     return 50 - lowerVariant.indexOf(lowerInput); // Prioritize earlier matches
+  }
+  return 0; // No match
+}*/
+function scoreMatch(variant, input) {
+  const lowerVariant = variant.toLowerCase();
+  const lowerInput = input.toLowerCase();
+  
+  if (lowerVariant === lowerInput) {
+    return 200; // Highest score for an exact match
+  }
+  
+  if (lowerVariant.startsWith(lowerInput)) {
+    return 150 - lowerVariant.length; // Strong priority for matches that start with the input
+  } else if (lowerVariant.includes(lowerInput)) {
+    return 50 - lowerVariant.indexOf(lowerInput); // Lower priority for partial matches
   }
   return 0; // No match
 }
