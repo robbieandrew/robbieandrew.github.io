@@ -1,5 +1,5 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200.000 674.916">
-<title>Romania:  new passenger car sales by type: Half-Yearly</title>
+<title>Romania: new passenger car sales by type: Half-Yearly</title>
 <style type="text/css">
   #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
          fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
@@ -40,6 +40,10 @@ text:hover + .dl_el {display:block;}
   #lines:hover .pl_5:hover .pll {stroke-width:3;}
   #lines:hover .pl_5:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_5:hover .thick {stroke-width:12;}
+  #lines:hover .pl_6:hover .pl {opacity:1;}
+  #lines:hover .pl_6:hover .pll {stroke-width:3;}
+  #lines:hover .pl_6:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_6:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
@@ -54,12 +58,15 @@ text:hover + .dl_el {display:block;}
     <polyline class="pl pll" points="193.2,495.7 288.4,456.4 383.6,459.0 478.8,439.1 574.0,477.1 669.2,501.6 764.4,513.9" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="193.2,322.5 288.4,300.2 383.6,257.4 478.8,223.4 574.0,137.8 669.2,137.0 764.4,97.8" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="193.2,560.2 288.4,560.2 383.6,560.2 478.8,560.2 574.0,560.2 669.2,560.2 764.4,560.2" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_4" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="193.2,218.9 288.4,130.7 383.6,167.3 478.8,215.0 574.0,157.3 669.2,254.4 764.4,329.1" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="193.2,322.5 288.4,300.2 383.6,257.4 478.8,223.4 574.0,137.8 669.2,137.0 764.4,97.8" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_5" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="193.2,218.9 288.4,130.7 383.6,167.3 478.8,215.0 574.0,157.3 669.2,254.4 764.4,329.1" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_6" viewBox="0 0 1200.000 674.916">
     <polyline class="pl pll" points="193.2,447.8 288.4,435.2 383.6,437.9 478.8,446.4 574.0,382.2 669.2,471.4 764.4,467.2" stroke="#7B6E57" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
@@ -104,7 +111,22 @@ text:hover + .dl_el {display:block;}
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_3" class="pl pll" stroke="#919452" stroke-width="1.80"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#77AC30" stroke-width="1.80"/>
+    <text class="pl" transform="translate(937.2,560.2)" dy="7.6" font-size="25.20" fill="#77AC30" stroke="none">Plugin Hybrid</text>
+<polyline class="pl" points="910.8,560.2 911.9,560.2 913.0,560.2 914.0,560.2 914.9,560.2 915.8,560.2 916.6,560.2 917.4,560.2 918.1,560.2 918.8,560.2 919.5,560.2 920.1,560.2 920.7,560.2 921.3,560.2 921.9,560.2 922.5,560.2 923.1,560.2 923.7,560.2 924.3,560.2 924.9,560.2 925.6,560.2 926.3,560.2 927.0,560.2 927.8,560.2 928.6,560.2 929.5,560.2 930.4,560.2 931.4,560.2 932.5,560.2 933.6,560.2" stroke="#77AC30" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <g class="pl pll" fill="#77AC30" stroke="none" stroke-width="1.800">
+      <circle cx="193.2" cy="560.2" r="2.7" />
+      <circle cx="288.4" cy="560.2" r="2.7" />
+      <circle cx="383.6" cy="560.2" r="2.7" />
+      <circle cx="478.8" cy="560.2" r="2.7" />
+      <circle cx="574.0" cy="560.2" r="2.7" />
+      <circle cx="669.2" cy="560.2" r="2.7" />
+      <circle cx="764.4" cy="560.2" r="2.7" />
+    </g>
+  </g>
+  <g class="pl_4">
+    <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_4" class="pl pll" stroke="#919452" stroke-width="1.80"/>
     <text class="pl" transform="translate(937.2,97.8)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-Plugin Hybrid</text>
     <g class="pl pll" fill="#919452" stroke="none" stroke-width="1.800">
       <circle cx="193.2" cy="322.5" r="2.7" />
@@ -116,9 +138,9 @@ text:hover + .dl_el {display:block;}
       <circle cx="764.4" cy="97.8" r="2.7" />
     </g>
   </g>
-  <g class="pl_4">
-    <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_4" class="pl pll" stroke="#7B553E" stroke-width="1.80"/>
+  <g class="pl_5">
+    <use xlink:href="#line_5" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_5" class="pl pll" stroke="#7B553E" stroke-width="1.80"/>
     <text class="pl" transform="translate(937.2,329.1)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">Petrol</text>
     <g class="pl pll" fill="#7B553E" stroke="none" stroke-width="1.800">
       <circle cx="193.2" cy="218.9" r="2.7" />
@@ -130,9 +152,9 @@ text:hover + .dl_el {display:block;}
       <circle cx="764.4" cy="329.1" r="2.7" />
     </g>
   </g>
-  <g class="pl_5">
-    <use xlink:href="#line_5" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_5" class="pl pll" stroke="#7B6E57" stroke-width="1.80"/>
+  <g class="pl_6">
+    <use xlink:href="#line_6" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_6" class="pl pll" stroke="#7B6E57" stroke-width="1.80"/>
     <text class="pl" transform="translate(937.2,473.8)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">Diesel</text>
 <polyline class="pl" points="910.8,467.2 911.9,467.2 913.0,467.3 914.0,467.4 914.9,467.5 915.8,467.7 916.6,467.9 917.4,468.2 918.1,468.4 918.8,468.7 919.5,469.0 920.1,469.3 920.7,469.7 921.3,470.0 921.9,470.3 922.5,470.7 923.1,471.0 923.7,471.4 924.3,471.7 924.9,472.0 925.6,472.3 926.3,472.6 927.0,472.9 927.8,473.1 928.6,473.3 929.5,473.5 930.4,473.6 931.4,473.8 932.5,473.8 933.6,473.8" stroke="#7B6E57" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <g class="pl pll" fill="#7B6E57" stroke="none" stroke-width="1.800">
@@ -150,8 +172,8 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(431.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2023</text>
     <text class="pl" transform="translate(621.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2024</text>
     <text class="pl" transform="translate(812.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
-    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none" xml:space="preserve">Romania:  new passenger car sales by type: Half-Yearly</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: ACEA   &#9679;   Through June 2025</text>
+    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Romania: new passenger car sales by type: Half-Yearly</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: ACEA   &#9679;   Through July 2025</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
