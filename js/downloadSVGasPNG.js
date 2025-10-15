@@ -82,6 +82,186 @@ function downloadSVGasPNG(svgObject) {
   });
 }
 
+function downloadSVGasPDF(svgObject) {
+  try {
+	const { jsPDF } = window.jspdf;
+    const svg = svgObject.contentDocument.querySelector('svg');
+
+    // Clone so we can safely manipulate
+    const clonedSvg = svg.cloneNode(true);
+	const defs = clonedSvg.querySelector('defs');
+	
+	// --- UTILITY FUNCTION: Extract CSS Property from Style Block ---
+    // This is necessary because getComputedStyle() doesn't work reliably on detached clones.
+    function getStyleProperty(selector, propertyName) {
+        const styleBlock = clonedSvg.querySelector('style')?.textContent;
+        if (!styleBlock) return null;
+
+        // Simple regex to find the rule for the selector
+        const ruleMatch = styleBlock.match(new RegExp(`\\s*${selector}\\s*\\{([^}]+)\\}`, 'i'));
+        if (!ruleMatch || !ruleMatch[1]) return null;
+
+        const declarationBlock = ruleMatch[1];
+        
+        // Regex to find the property within the rule
+        const propMatch = declarationBlock.match(new RegExp(`\\s*${propertyName}\\s*:\\s*([^;\\s]+)[;\\s]`, 'i'));
+        
+        // Return the captured value if found
+        return propMatch ? propMatch[1].trim() : null;
+    }
+    
+    // --- 1. Targeted Removal (Clean-up) ---
+	// These things are normally invisible anyway, and some appear to confuse svg2pdf
+    clonedSvg.querySelectorAll('foreignObject, .marker, .dl_el, .twitlink').forEach(el => el.remove());
+
+    // --- 2. Fix invisible polylines) ---
+	// The issue is that polylines are implemented in the defs section and then used later, and svg2pdf isn't handling that well. So here we simply make them normal polylines.
+    const lineUseElements = clonedSvg.querySelectorAll('use.pll'); 
+    lineUseElements.forEach(useEl => {
+        const href = useEl.getAttribute('xlink:href') || useEl.getAttribute('href');
+        if (href && defs) {
+            const symbolId = href.substring(1); 
+            const symbol = defs.querySelector(`#${symbolId}`);
+            
+            if (symbol) {
+                const polylineTemplate = symbol.querySelector('polyline');
+                if (polylineTemplate) {
+                    const newPolyline = polylineTemplate.cloneNode(true);
+                    const strokeColor = useEl.getAttribute('stroke');
+                    const strokeWidth = useEl.getAttribute('stroke-width') || '0.90';
+                    
+                    if (strokeColor) {
+                        newPolyline.setAttribute('stroke', strokeColor);
+                    }
+                    newPolyline.setAttribute('stroke-width', strokeWidth);
+                    newPolyline.setAttribute('fill', 'none');
+                    newPolyline.setAttribute('opacity', '1');
+                    
+                    useEl.parentNode.replaceChild(newPolyline, useEl);
+                }
+            }
+        }
+    });
+
+	// APPLY STYLES DIRECTLY TO TEXT ELEMENTS
+	// svg2pdf isn't always using the styling correctly, so apply directly to each element
+    // Get the primary font-family from the #main block (Helvetica,Arial,sans-serif)
+    const mainFontFamily = getStyleProperty('#main', 'font-family') || 'Helvetica, Arial, sans-serif';
+    const tickLabelFill = getStyleProperty('.ticklabel', 'fill');
+
+    // Y-axis Labels (class="ticklabel") and the Footer Text
+    clonedSvg.querySelectorAll('text.ticklabel, text:not([class])').forEach(textEl => {
+        // Construct the style string for maximum specificity
+        let style = `font-family:${mainFontFamily};`;
+        if (textEl.classList.contains('ticklabel') && tickLabelFill) {
+            style += ` fill:${tickLabelFill};`;
+        }
+        
+        // Apply to style attribute, overriding any CSS or conversion default
+        textEl.setAttribute('style', style); 
+    });
+    // b) X-axis/Legend Labels (text class="pl")
+    clonedSvg.querySelectorAll('text.pl').forEach(textEl => {
+        // Force font and opacity to ensure they are rendered correctly by svg2pdf
+        textEl.setAttribute('font-family', mainFontFamily);
+        textEl.setAttribute('opacity', '1'); 
+    });
+
+	// SPECIFIC FIXES TO SOME TEXT ELEMENTS
+	clonedSvg.querySelectorAll('text').forEach(textEl => {
+        let textContent = textEl.innerHTML;
+		// The tspans used for the subscript-2 are upsetting svg2pdf. I tried a bunch of different solutions, but none worked. So here just replace with a normal CO2.
+		const complexCO2Pattern = /(CO)(<tspan[^>]*dy="0\.2em"[^>]*><tspan[^>]*style="font-size:70%"[^>]*>2<\/tspan><\/tspan><tspan[^>]*dy="-0\.2em"[^>]*> <\/tspan>)/gi;
+        if (complexCO2Pattern.test(textContent)) {
+            // Replace with a simplified structure: CO + TSPAN using baseline-shift="sub"
+            // This is the cleanest SVG way to achieve subscript without relying on complex dy logic.
+            textContent = textContent.replace(complexCO2Pattern, 'CO2 '); 
+        }
+        // Footer sanitization (Only applies to elements that originally contained <a> tags)
+        if (textEl.querySelector('a')) {
+            // Strip the <a> tags
+            textContent = textContent.replace(/<a[^>]*>(.*?)<\/a>/gi, (match, p1) => p1);
+            // Replace the bullet character (● or &#9679;). I think the problem is that svg2pdf isn't handling encoded characters like &#9679; or /u2022, and just having the character directly fixes it.
+            textContent = textContent.replace(/●|&#9679;/g, '•'); 
+        }
+        textEl.innerHTML = textContent;
+    });
+
+	// HORIZONTAL GRID-LINES ARE TOO LIGHT. No idea why, but the fix is just to replace the colour and remove the opactity style. This is hard-wired to the specific grey I use for grid lines.
+    if (defs) {
+        // Find all grid line paths using a comma-separated selector
+        const gridLines = defs.querySelectorAll('path#line_x, path#line_y'); 
+        
+        // Iterate over the resulting list and apply the fix to each one
+        gridLines.forEach(gridLine => {
+            // Force stroke color to a light grey that visually matches 15% opacity on a dark line
+            gridLine.setAttribute('stroke', '#DEDEDE'); 
+            // Remove the problematic opacity attribute
+            gridLine.removeAttribute('stroke-opacity');
+        });
+    } 
+
+
+/*  // Save the modified internal SVG to a file for debugging
+	const svgData = new XMLSerializer().serializeToString(clonedSvg);
+    const svgBlob = new Blob([svgData], { type: 'image/svg+xml' });
+    const svgUrl = URL.createObjectURL(svgBlob);
+    
+    const downloadLink = document.createElement('a');
+    downloadLink.href = svgUrl;
+    downloadLink.download = 'debug_modified.svg'; // The file name to save as
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+    
+    // Release the temporary URL
+    URL.revokeObjectURL(svgUrl); 
+*/
+
+    // Determine dimensions from viewBox or width/height attributes
+    let width, height;
+    if (svg.hasAttribute("viewBox")) {
+      const viewBox = svg.getAttribute("viewBox").split(/\s+|,/).map(Number);
+      width = viewBox[2];
+      height = viewBox[3];
+    } else if (svg.hasAttribute("width") && svg.hasAttribute("height")) {
+      width = parseFloat(svg.getAttribute("width"));
+      height = parseFloat(svg.getAttribute("height"));
+    } else {
+      const rect = svg.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+    }
+
+    // Create PDF with same size as SVG
+    const pdf = new jsPDF({
+      orientation: width > height ? 'l' : 'p',
+      unit: 'pt',
+      format: [width, height]
+    });
+
+	pdf.svg(clonedSvg, {
+      x: 0,
+      y: 0,
+      width: width,
+      height: height
+    })
+    .then(() => {
+        // Save must be inside the .then() block because conversion is asynchronous
+        const filename = (svgObject.getAttribute('data') || 'output.svg').split('/').pop().replace('.svg', '');
+        pdf.save(filename + '.pdf');
+    })
+    .catch(error => {
+        console.warn("Error during SVG to PDF conversion (pdf.svg()):", error);
+    });
+
+  } catch (error) {
+    console.warn("Error exporting SVG to vector PDF", error);
+  }
+}
+
+
+
 function isIOSorIPadOS() {
   return (
     /iPad|iPhone|iPod/.test(navigator.userAgent) ||
@@ -89,30 +269,18 @@ function isIOSorIPadOS() {
   );
 }
 
-function showToastBelowElement(anchorElement, message, duration = 2000) {
+function showToastBelowElement(anchorElement, message, duration = 20000) {
   const rect = anchorElement.getBoundingClientRect();
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
 
   const toast = document.createElement('div');
+  toast.classList.add('toast-message');
   toast.textContent = message;
-  toast.style.position = 'absolute';
-  toast.style.top = `${rect.bottom + scrollTop + 4}px`; // 4px spacing below the element
-  toast.style.background = 'rgba(0,0,0,0.85)';
-  toast.style.color = 'white';
-  toast.style.padding = '0.4rem 0.8rem';
-  toast.style.borderRadius = '6px';
-  toast.style.fontSize = '0.85rem';
-  toast.style.boxShadow = '0 2px 6px rgba(0,0,0,0.25)';
-  toast.style.zIndex = 10000;
-  toast.style.opacity = '0';
-  toast.style.transition = 'opacity 0.2s ease';
 
-//  toast.style.left = `${rect.left + scrollLeft}px`; // left-aligned with element above
   const anchorCenter = rect.left + scrollLeft + (rect.width / 2);
   toast.style.left = `${anchorCenter}px`;
-  toast.style.transform = 'translateX(-50%)';
-  toast.style.textAlign = 'center';
+  toast.style.top = `${rect.bottom + scrollTop + 4}px`; // 4px spacing below the element
 
   document.body.appendChild(toast);
   requestAnimationFrame(() => {
@@ -125,7 +293,7 @@ function showToastBelowElement(anchorElement, message, duration = 2000) {
   }, duration);
 }
 
-function createDownloadLink(svgObject) {
+function createPNGDownloadLink(svgObject) {
   const downloadLink = document.createElement('a');
   downloadLink.href = '#';
   downloadLink.textContent = 'Download as PNG';
@@ -133,6 +301,18 @@ function createDownloadLink(svgObject) {
   downloadLink.addEventListener('click', (e) => {
     e.preventDefault(); // prevent browser trying to navigate to https://.../#
     downloadSVGasPNG(svgObject);
+  });
+  return downloadLink;
+}
+
+function createPDFDownloadLink(svgObject) {
+  const downloadLink = document.createElement('a');
+  downloadLink.href = '#';
+  downloadLink.textContent = 'Download as PDF';
+  downloadLink.className = 'simple-button';
+  downloadLink.addEventListener('click', (e) => {
+    e.preventDefault(); // prevent browser trying to navigate to https://.../#
+    downloadSVGasPDF(svgObject);
   });
   return downloadLink;
 }
@@ -297,7 +477,8 @@ function addSVGbuttons(svgObject) {
   linkContainer.classList.add("svg-button-group");*/
 
   // Create the download and copy links
-  const downloadLink = createDownloadLink(svgObject);
+  const downloadPNGLink = createPNGDownloadLink(svgObject);
+  const downloadPDFLink = createPDFDownloadLink(svgObject);
   const copyLink = createCopyLink(svgObject);
   const enlargeLink = createEnlargeLink(svgObject);
   const alttextLink = createAltTextLink(svgObject);
@@ -318,7 +499,7 @@ function addSVGbuttons(svgObject) {
     else if (linktext === 'Copy to clipboard') hasCopy = true;
     else if (linktext === 'Enlarge this figure') hasEnlarge = true;
     else if (linktext === 'View as PNG') {
-      linkContainer.replaceChild(downloadLink, link);
+      linkContainer.replaceChild(downloadPNGLink, link);
       hasDownload = true;
     } else if (linktext === 'Alt') hasALT = true;
 	else if (linktext === 'Download data') hasData = true;
@@ -326,7 +507,8 @@ function addSVGbuttons(svgObject) {
 
   if (!hasData && dataLink) linkContainer.appendChild(dataLink);
   if (!hasEnlarge && enlargeLink) linkContainer.appendChild(enlargeLink);
-  if (!hasDownload && downloadLink) linkContainer.appendChild(downloadLink);
+  if (!hasDownload && downloadPNGLink) linkContainer.appendChild(downloadPNGLink);
+  if (!hasDownload && downloadPDFLink) linkContainer.appendChild(downloadPDFLink);
   if (!hasCopy && !isIOSorIPadOS() && copyLink) linkContainer.appendChild(copyLink);
   if (!hasALT && alttextLink) linkContainer.appendChild(alttextLink);
 }

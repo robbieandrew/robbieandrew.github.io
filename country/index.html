@@ -154,37 +154,6 @@ async function handleSiteSelection(site,arg_name) {
     loadSiteImages(site.iso, "country/img");
   }}
 
-/*function searchSites() {
-  const input = document.getElementById("id_siteInput");
-  const id_siteList = document.getElementById("id_siteList");
-  id_siteList.innerHTML = "";
-  highlightedIndex = 0;
-
-  if (!input.value) return;
-
-  // case-insensitive matching
-  const matchingSites = sitesData.filter(site =>
-    site.names.some(name => name.toLowerCase().includes(input.value.toLowerCase()))
-  );
-
-  if (!matchingSites.length) return;
-
-  const list = document.createElement("ul");
-
-  matchingSites.forEach((site, index) => {
-    const li = document.createElement("li");
-    li.textContent = site.names[0];
-    li.dataset.index = index;
-    li.addEventListener("click", () => handleSiteSelection(site,"country").catch(console.error));
-    list.appendChild(li);
-  });
-
-  id_siteList.appendChild(list);
-
-  // Highlight the first item
-  updateHighlight();
-}*/
-
 function searchSites() {
   const input = document.getElementById("id_siteInput");
   const id_siteList = document.getElementById("id_siteList");

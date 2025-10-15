@@ -5,29 +5,7 @@
     const parts = url_path.startsWith('/') ? url_path.substring(1).split('/') : url_path.split('/');
 	// obtaining the list of data files could sometimes take a while, allowing some SVGs to already be loaded before it's finished. In that case we can't add an event listener to process the SVG after it's loaded, because it's already loaded. So below we handle these two cases: SVG already loaded, then process it; SVG not yet loaded, add an event listener.
 	const loaded = await loadSiteDataFiles("data",parts[0]);
-/*    document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-	  svgObject.addEventListener("load", function () {
-		// Add a PNG download link for every SVG on the page
-        addSVGbuttons(svgObject);
-		addSVGmetadata(svgObject);
-		
-		// Insert every SVG's title element text as data-title in the object, for better visibility to search engines
-        let svgDoc = svgObject.contentDocument;
-        if (svgDoc) {
-          let titleElement = svgDoc.querySelector("title");
-          if (titleElement) {
-            let titleText = titleElement.textContent.trim();
-            svgObject.setAttribute("data-title", titleText);
-          }
-        }
 
-		// Add a class to the parent div
-        let container = svgObject.closest("div");
-        if (container) {
-          container.classList.add("figure-group");
-        }
-	  });
-	});*/
 	document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
 	  function handleSVGLoad() {
 		addSVGbuttons(svgObject);
@@ -57,3 +35,4 @@
 	});
 	
   });
+
