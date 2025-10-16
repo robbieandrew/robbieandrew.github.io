@@ -269,7 +269,7 @@ function isIOSorIPadOS() {
   );
 }
 
-function showToastBelowElement(anchorElement, message, duration = 20000) {
+function showToastBelowElement(anchorElement, message, duration = 2000) {
   const rect = anchorElement.getBoundingClientRect();
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
