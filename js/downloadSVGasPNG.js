@@ -114,21 +114,29 @@ function downloadSVGasPDF(svgObject) {
 	// These things are normally invisible anyway, and some appear to confuse svg2pdf
     clonedSvg.querySelectorAll('foreignObject, .marker, .dl_el, .twitlink').forEach(el => el.remove());
 
-    // --- 2. Fix invisible polylines) ---
-	// The issue is that polylines are implemented in the defs section and then used later, and svg2pdf isn't handling that well. So here we simply make them normal polylines.
-    const lineUseElements = clonedSvg.querySelectorAll('use.pll'); 
-    lineUseElements.forEach(useEl => {
-        const href = useEl.getAttribute('xlink:href') || useEl.getAttribute('href');
-        if (href && defs) {
-            const symbolId = href.substring(1); 
-            const symbol = defs.querySelector(`#${symbolId}`);
+// --- 2. Fix polylines ---
+// The issue is that polylines are implemented in the defs section and then used later, and svg2pdf isn't handling that well. So here we simply make them normal polylines.
+const lineUseElements = clonedSvg.querySelectorAll('use.pll'); 
+lineUseElements.forEach(useEl => {
+    const href = useEl.getAttribute('xlink:href') || useEl.getAttribute('href');
+    if (href && defs) {
+        const symbolId = href.substring(1); 
+        const symbol = defs.querySelector(`#${symbolId}`);
+        
+        if (symbol) {
+            const polylineTemplates = symbol.querySelectorAll('polyline'); // Use querySelectorAll
             
-            if (symbol) {
-                const polylineTemplate = symbol.querySelector('polyline');
-                if (polylineTemplate) {
+            if (polylineTemplates.length > 0) {
+                // Get attributes from the <use> element
+                const strokeColor = useEl.getAttribute('stroke');
+                const strokeWidth = useEl.getAttribute('stroke-width') || '0.90';
+                const parent = useEl.parentNode;
+                
+                // Track the *last* polyline inserted so we can insert the next one after it.
+                let lastInsertedNode = useEl; // Start by referencing the <use> element itself
+                
+                polylineTemplates.forEach(polylineTemplate => {
                     const newPolyline = polylineTemplate.cloneNode(true);
-                    const strokeColor = useEl.getAttribute('stroke');
-                    const strokeWidth = useEl.getAttribute('stroke-width') || '0.90';
                     
                     if (strokeColor) {
                         newPolyline.setAttribute('stroke', strokeColor);
@@ -137,11 +145,23 @@ function downloadSVGasPDF(svgObject) {
                     newPolyline.setAttribute('fill', 'none');
                     newPolyline.setAttribute('opacity', '1');
                     
-                    useEl.parentNode.replaceChild(newPolyline, useEl);
-                }
+                    // The core fix: Insert *after* the previous node (or replace the first node)
+                    if (lastInsertedNode === useEl) {
+                        // This is the first polyline: Replace the original <use> element.
+                        parent.replaceChild(newPolyline, useEl);
+                    } else {
+                        // This is a subsequent polyline: Insert it *after* the one we just inserted.
+                        // We achieve 'insert after' by inserting *before* the next sibling of the reference node.
+                        parent.insertBefore(newPolyline, lastInsertedNode.nextSibling); 
+                    }
+                    
+                    // Crucial update: Set the newly inserted polyline as the reference for the next iteration.
+                    lastInsertedNode = newPolyline; 
+                });
             }
         }
-    });
+    }
+});
 
 	// APPLY STYLES DIRECTLY TO TEXT ELEMENTS
 	// svg2pdf isn't always using the styling correctly, so apply directly to each element
@@ -181,9 +201,10 @@ function downloadSVGasPDF(svgObject) {
         if (textEl.querySelector('a')) {
             // Strip the <a> tags
             textContent = textContent.replace(/<a[^>]*>(.*?)<\/a>/gi, (match, p1) => p1);
-            // Replace the bullet character (● or &#9679;). I think the problem is that svg2pdf isn't handling encoded characters like &#9679; or /u2022, and just having the character directly fixes it.
-            textContent = textContent.replace(/●|&#9679;/g, '•'); 
         }
+		// Replace the bullet character (● or &#9679;). I think the problem is that svg2pdf isn't handling encoded characters like &#9679; or /u2022, and just having the character directly fixes it.
+		textContent = textContent.replace(/●|&#9679;/g, '•'); 
+		
         textEl.innerHTML = textContent;
     });
 
