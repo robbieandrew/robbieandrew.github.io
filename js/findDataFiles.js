@@ -141,6 +141,7 @@ function getCachedImageFolders(partialPath) {
 
 /* loadSiteImages
 Obtains the URLs of all images for the given country, and displays them on the page. The list of images is obtained from api.github.com and cached, to prevent calling the API too often.
+e.g. loadSiteImages(site.iso, "country/img");
 */
 function loadSiteImages(siteCode,partialPath) {
   // caching is to prevent issues with too much use of the github.com API
