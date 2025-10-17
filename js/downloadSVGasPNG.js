@@ -306,6 +306,11 @@ function createPNGDownloadLink(svgObject) {
 }
 
 function createPDFDownloadLink(svgObject) {
+  if (typeof window.jspdf === 'undefined') {
+    // Return null if jspdf is not available
+    return null;
+  }
+
   const downloadLink = document.createElement('a');
   downloadLink.href = '#';
   downloadLink.textContent = 'Download as PDF';
@@ -508,7 +513,7 @@ function addSVGbuttons(svgObject) {
   if (!hasData && dataLink) linkContainer.appendChild(dataLink);
   if (!hasEnlarge && enlargeLink) linkContainer.appendChild(enlargeLink);
   if (!hasDownload && downloadPNGLink) linkContainer.appendChild(downloadPNGLink);
-//  if (!hasDownload && downloadPDFLink) linkContainer.appendChild(downloadPDFLink);
+  if (!hasDownload && downloadPDFLink) linkContainer.appendChild(downloadPDFLink);
   if (!hasCopy && !isIOSorIPadOS() && copyLink) linkContainer.appendChild(copyLink);
   if (!hasALT && alttextLink) linkContainer.appendChild(alttextLink);
 }
