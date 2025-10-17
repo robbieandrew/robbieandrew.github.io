@@ -211,16 +211,16 @@ function displayImages(siteCode, imageData) {
     imageContainer.appendChild(div);
   });
   
-    // Add a buttons for every SVG on the page
+    // Add buttons for every SVG on the page
 	let warnedAboutMissingJS = false;
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
       svgObject.addEventListener('load', () => {
 		addSVGbuttons(svgObject);
 		if (typeof addSVGmetadata === 'function') {
 		  addSVGmetadata(svgObject);
-		} else if (!warnedAboutMissingJS) {
+		} else if (!warnedAboutMissingJS) { // Only warn once
           console.warn("addSVGmetadata is not defined (include svg-metadata.js!)");
-          warnedAboutMissingJS = true;
+          warnedAboutMissingJS = true; 
 		}
 	  });
 	  // Add a class to the parent div
