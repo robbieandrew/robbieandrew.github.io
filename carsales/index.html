@@ -29,6 +29,24 @@
 
 	<h1>Collected vehicle registration data</h1>
 	<p>Download <a href="data/all_carsales_monthly.csv">all monthly data in one file</a>.</p>
+	
+    <p id="toggle-button">Show list of recent updates</p>
+    <div id="updates-container">
+        <table id="updates-table">
+            <thead>
+                <tr>
+                    <th>Geography</th>
+                    <th>Latest data</th>
+                    <th>Updated on</th>
+                </tr>
+            </thead>
+            <tbody id="updates-tbody">
+                <tr><td colspan="3">Loading updates...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+	<script src="js/vehicle-updates-viewer.js"></script>
 
 	<div class="selector-container">
 	  <div class="button-group frequency-selector-container">

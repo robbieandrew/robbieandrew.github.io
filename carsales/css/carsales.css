@@ -102,3 +102,30 @@
     height: 20px;
   }
 }
+
+
+/* vehicle updates table */
+#updates-container {
+	margin-top: 10px;
+	display: none; /* Starts hidden */
+	text-align: center; 
+}
+#toggle-button {
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+}
+#updates-table {
+	border-collapse: collapse; 
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto; 
+}
+#updates-table th, #updates-table td {
+	border: 1px solid #ddd;
+	padding: 4px 8px;
+	text-align: left;
+}
+#updates-table th {
+	background-color: #f2f2f2;
+}

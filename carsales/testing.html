@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recent Updates Viewer - Table View</title>
+    <style>
+        /* CSS updates for font and centering */
+        body {
+            font-family: Arial, Helvetica, sans-serif; /* Non-serif font */
+        }
+        #updates-container {
+            margin-top: 10px;
+            display: none; /* Starts hidden */
+            text-align: center; 
+        }
+        #toggle-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        #updates-table {
+            border-collapse: collapse; 
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto; 
+        }
+        #updates-table th, #updates-table td {
+            border: 1px solid #ddd;
+            padding: 4px 8px;
+            text-align: left;
+        }
+        #updates-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="toggle-button">Click to view recent updates</p>
+
+    <div id="updates-container">
+        <table id="updates-table">
+            <thead>
+                <tr>
+                    <th>Geography</th>
+                    <th>Latest data</th>
+                    <th>Updated on</th>
+                </tr>
+            </thead>
+            <tbody id="updates-tbody">
+                <tr><td colspan="3">Loading updates...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+	<script src="js/vehicle-updates-viewer.js"></script>
+</body>
+</html>
