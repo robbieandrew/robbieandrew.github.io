@@ -88,8 +88,10 @@ function fetchGitHubImages(siteCode,partialPath) {
         .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
 		// Generate a URL to access the file via the webpage, rather than github.com
 		// First find the final subfolder of partialPath. The files should be formatted as e.g. img/example.svg, but partialPath might be e.g. country/img
-		const publicFolder = partialPath.replace(/\/$/, "").split("/").pop();
-		.map(file => siteCode ? `${publicFolder}/${siteCode}/${file.name}` : `${publicFolder}/${file.name}`);
+		.map(file => {
+		  const publicFolder = partialPath.replace(/\/$/, "").split("/").pop();
+		  return siteCode ? `${publicFolder}/${siteCode}/${file.name}` : `${publicFolder}/${file.name}`;
+		});
 //        .map(file => `img/${siteCode}/${file.name}`);
 
       if (imageUrls.length === 0) {
