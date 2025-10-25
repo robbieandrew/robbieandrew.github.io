@@ -27,7 +27,9 @@ async function loadSiteDataFiles(siteCode, partialPath) {
 
 function fetchGitHubDataFiles(siteCode,partialPath) {
   console.log("Looking for data files under: ",partialPath)
-  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
+  const folder = siteCode ? `${partialPath}/${siteCode}` : partialPath;
+  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${folder}`;
+//  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
 
   return fetch(githubApiUrl)
     .then(response => {
@@ -61,7 +63,9 @@ function fetchGitHubDataFiles(siteCode,partialPath) {
    Get the list of all images (specifically their URLs) in the country's subfolder
    Because I cannot get a directory listing of, e.g., robbieandrew.github.io/country/img/DEU, I instead get the list of files in that folder using GitHub's API, then map the path back to github.io. */
 function fetchGitHubImages(siteCode,partialPath) {
-  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
+  const folder = siteCode ? `${partialPath}/${siteCode}` : partialPath;
+  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${folder}`;
+//  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
 
   return fetch(githubApiUrl)
     .then(response => {
@@ -82,11 +86,14 @@ function fetchGitHubImages(siteCode,partialPath) {
       const imageUrls = files
         .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
 		// Generate a URL to access the file via the webpage, rather than github.com
-        .map(file => `img/${siteCode}/${file.name}`);
+		.map(file => siteCode ? `img/${siteCode}/${file.name}` : `img/${file.name}`);
+//        .map(file => `img/${siteCode}/${file.name}`);
 
       if (imageUrls.length === 0) {
         throw new Error(`No valid images found in ${siteCode} folder.`);
       }
+
+      console.log(`Full list of image files found for ${siteCode}: ${imageUrls}`);
 
       return imageUrls;
     })
