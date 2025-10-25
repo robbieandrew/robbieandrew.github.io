@@ -1,3 +1,5 @@
+/* I use "siteCode" for webpages that have a search functionality to show multiple sites/countries on a single page. For webpages that do not have this functionality, and only show a single site/country, then siteCode should be null.
+   I use "partialPath" to indicate the main folder, e.g. country/img or norway/img. This can never be null. */
 
 function updateHighlight() {
   const items = document.querySelectorAll("#id_siteList li");
@@ -5,8 +7,6 @@ function updateHighlight() {
     item.classList.toggle("highlighted", index === highlightedIndex);
   });
 }
-
-
 
 async function loadSiteDataFiles(siteCode, partialPath) {
   try {
@@ -61,6 +61,7 @@ function fetchGitHubDataFiles(siteCode,partialPath) {
 
 /* fetchGitHubImages
    Get the list of all images (specifically their URLs) in the country's subfolder
+   If the required images are in the folder https://robbieandrew.github.io/country/img/DEU then siteCode is DEU and partialPath is country/img.
    Because I cannot get a directory listing of, e.g., robbieandrew.github.io/country/img/DEU, I instead get the list of files in that folder using GitHub's API, then map the path back to github.io. */
 function fetchGitHubImages(siteCode,partialPath) {
   const folder = siteCode ? `${partialPath}/${siteCode}` : partialPath;
@@ -86,7 +87,9 @@ function fetchGitHubImages(siteCode,partialPath) {
       const imageUrls = files
         .filter(file => file.name.match(/\.(jpg|png|gif|svg)$/i)) // Only images
 		// Generate a URL to access the file via the webpage, rather than github.com
-		.map(file => siteCode ? `img/${siteCode}/${file.name}` : `img/${file.name}`);
+		// First find the final subfolder of partialPath. The files should be formatted as e.g. img/example.svg, but partialPath might be e.g. country/img
+		const publicFolder = partialPath.replace(/\/$/, "").split("/").pop();
+		.map(file => siteCode ? `${publicFolder}/${siteCode}/${file.name}` : `${publicFolder}/${file.name}`);
 //        .map(file => `img/${siteCode}/${file.name}`);
 
       if (imageUrls.length === 0) {
