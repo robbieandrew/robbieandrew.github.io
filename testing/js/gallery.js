@@ -84,8 +84,7 @@ function displayOrderedImages(orderedFilenames, availableImageUrls) {
 
     if (fullUrl) {
       const div = document.createElement("div");
-      // Use Tailwind/PureCSS classes for responsiveness (from HTML file)
-      div.className = "pure-u-1 sm:pure-u-1-2 md:pure-u-1-3 lg:pure-u-1-4 p-2";
+      div.className = "pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2";
 
       if (filename.toLowerCase().endsWith(".svg")) {
         const object = document.createElement("object");
@@ -135,7 +134,7 @@ async function initGallery() {
   const csvPath = `${MAIN_PATH}/${ORDER_CSV_FILENAME}`;
   const imageFolderPath = `${MAIN_PATH}/img`
   
-  const rawCsvUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${csvPath}`;
+  const rawCsvUrl = `https://raw.githubusercontent.com/robbieandrew/robbieandrew.github.io/refs/heads/master/${csvPath}`;
   
   // 1. Get the image order from the CSV file
   const orderedFilenames = await fetchCSVOrder(rawCsvUrl);
