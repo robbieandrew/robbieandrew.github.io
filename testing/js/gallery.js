@@ -135,9 +135,7 @@ async function initGallery() {
   const csvPath = `${MAIN_PATH}/${ORDER_CSV_FILENAME}`;
   const imageFolderPath = `${MAIN_PATH}/img`
   
-  // To fetch the raw content of the CSV, we assume a standard GitHub Pages structure.
-  // NOTE: This assumes your repository name is 'robbieandrew.github.io' and the branch is 'main'.
-  const rawCsvUrl = `https://raw.githubusercontent.com/robbieandrew/robbieandrew.github.io/main/${csvPath}`;
+  const rawCsvUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${csvPath}`;
   
   // 1. Get the image order from the CSV file
   const orderedFilenames = await fetchCSVOrder(rawCsvUrl);
