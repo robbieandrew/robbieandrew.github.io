@@ -483,7 +483,6 @@ function createDataDownloadLink(svgObject) {
 */
 function addSVGbuttons(svgObject) {
   const container = svgObject.parentNode;
-  // let linkContainer = svgObject.nextElementSibling;
   let linkContainer = container.querySelector('.svg-button-group');
   
   if (!linkContainer || !linkContainer.matches('p') || !linkContainer.classList.contains('svg-button-group')) {
@@ -492,15 +491,6 @@ function addSVGbuttons(svgObject) {
     linkContainer.classList.add("svg-button-group");
     container.insertBefore(linkContainer, svgObject.nextSibling);
     }
-
-/*  // Ensure the link container (p or div) exists
-  if (!linkContainer || (!linkContainer.matches('p') && !linkContainer.matches('div'))) {
-    linkContainer = document.createElement('p');
-    container.insertBefore(linkContainer, svgObject.nextSibling);
-  }
-
-  // Add a class to the button group to allow styling
-  linkContainer.classList.add("svg-button-group");*/
 
   // Create the download and copy links
   const downloadPNGLink = createPNGDownloadLink(svgObject);
@@ -542,18 +532,75 @@ function addSVGbuttons(svgObject) {
 function reloadSVGs() {
   // Get all object tags with the class "fig"
   const svgObjects = document.querySelectorAll('object.fig');
-
   svgObjects.forEach(obj => {
     // Get the original URL
     const originalData = obj.getAttribute('data');
-
     // Check if the URL already has a cache-busting parameter
     const url = new URL(originalData, window.location.href);
-
     // Append a new timestamp parameter to the URL
     url.searchParams.set('v', new Date().getTime());
-
     // Update the data attribute, which forces a reload
     obj.setAttribute('data', url.toString());
   });
+}
+
+function createDropdownButton(svgObject, links) {
+  if (!links || links.length === 0) return null;
+
+  // 1. Create the main button element
+  const dropdownButton = document.createElement('a');
+  dropdownButton.href = '#';
+  dropdownButton.textContent = 'Downloads...';
+  // Use the same class as the simple-button for consistent styling
+  dropdownButton.className = 'simple-button dropdown-toggle'; 
+  
+  // 2. Create the hidden container for the links
+  const dropdownContent = document.createElement('div');
+  dropdownContent.classList.add('dropdown-content');
+  
+  // 3. Populate the container with the actual links
+  links.forEach(link => {
+    // Modify links to be block elements for a cleaner dropdown list
+    link.classList.remove('simple-button');
+    link.classList.add('dropdown-item'); 
+    dropdownContent.appendChild(link);
+  });
+  
+  // 4. Create a wrapper to hold both the button and the content
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('dropdown-wrapper');
+  wrapper.appendChild(dropdownButton);
+  wrapper.appendChild(dropdownContent);
+
+  // 5. Add the click handler to toggle the dropdown
+  dropdownButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    // Toggle a class on the wrapper to show/hide the content
+    wrapper.classList.toggle('open'); 
+    
+    // Add a quick fix to close all other dropdowns
+    document.querySelectorAll('.dropdown-wrapper.open').forEach(otherWrapper => {
+      if (otherWrapper !== wrapper) {
+        otherWrapper.classList.remove('open');
+      }
+    });
+
+    // Optional: Close dropdown when clicking outside
+    function closeDropdown(event) {
+        if (!wrapper.contains(event.target)) {
+            wrapper.classList.remove('open');
+            document.removeEventListener('click', closeDropdown);
+        }
+    }
+    // Only add listener if we're opening it
+    if (wrapper.classList.contains('open')) {
+        setTimeout(() => { // Small delay to avoid immediate closure
+            document.addEventListener('click', closeDropdown);
+        }, 0);
+    } else {
+        document.removeEventListener('click', closeDropdown);
+    }
+  });
+
+  return wrapper;
 }

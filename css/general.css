@@ -86,3 +86,42 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
 .discreet-btn:hover {
   opacity: 1; /* Button becomes fully visible on hover */
 }
+
+/* Add these styles to general.css */
+.dropdown-wrapper {
+  position: relative; /* Essential for dropdown positioning */
+  display: inline-block;
+  margin: 1px;
+}
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+  top: 100%; /* Position right below the button */
+  left: 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 4px 0;
+}
+
+.dropdown-wrapper.open .dropdown-content {
+  display: block; /* Show when 'open' class is toggled */
+}
+
+.dropdown-item {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block; /* Make each link take a full line */
+  font-size: 0.9em; /* Slightly larger font than the button */
+  /* Remove the border from simple-button */
+  border: none; 
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
