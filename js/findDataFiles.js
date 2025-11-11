@@ -223,7 +223,7 @@ function displayImages(siteCode, imageData) {
 
     if (title) {
         const titleElement = document.createElement("h3");
-        titleElement.textContent = title; 
+		titleElement.innerHTML = title.replace(/CO2/g, 'CO<span class="subb">2</span>'); 
         titleElement.className = "figure-title"; 
         div.appendChild(titleElement);
     }

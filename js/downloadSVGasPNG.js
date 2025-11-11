@@ -481,7 +481,7 @@ function createDataDownloadLink(svgObject) {
 	  b. If there is no such link, append the new link within the existing <p> tag
 	  c. If there is no <p> tag following the SVG object, simply append the new download link within the parent of the SVG object.
 */
-function addSVGbuttons(svgObject) {
+/*function addSVGbuttons(svgObject) {
   const container = svgObject.parentNode;
   let linkContainer = container.querySelector('.svg-button-group');
   
@@ -527,6 +527,100 @@ function addSVGbuttons(svgObject) {
   if (!hasDownload && downloadPDFLink) linkContainer.appendChild(downloadPDFLink);
   if (!hasCopy && !isIOSorIPadOS() && copyLink) linkContainer.appendChild(copyLink);
   if (!hasALT && alttextLink) linkContainer.appendChild(alttextLink);
+}*/
+
+function addSVGbuttons(svgObject) {
+  const container = svgObject.parentNode;
+  let linkContainer = container.querySelector('.svg-button-group');
+  
+  if (!linkContainer || !linkContainer.matches('p') || !linkContainer.classList.contains('svg-button-group')) {
+    // If it doesn't exist, create a new one
+    linkContainer = document.createElement('p');
+    linkContainer.classList.add("svg-button-group");
+    container.insertBefore(linkContainer, svgObject.nextSibling);
+  }
+
+  // --- 1. Create All Potential Links ---
+  const downloadPNGLink = createPNGDownloadLink(svgObject);
+  const downloadPDFLink = createPDFDownloadLink(svgObject);
+  const dataLink = createDataDownloadLink(svgObject);
+  
+  // These links are non-download, always shown individually
+  const enlargeLink = createEnlargeLink(svgObject);
+  const alttextLink = createAltTextLink(svgObject);
+  const copyLink = !isIOSorIPadOS() ? createCopyLink(svgObject) : null;
+
+  // --- 2. Separate into Link Groups ---
+  const downloadButtons = [];
+  if (downloadPNGLink) downloadButtons.push(downloadPNGLink);
+  if (downloadPDFLink) downloadButtons.push(downloadPDFLink);
+  if (dataLink) downloadButtons.push(dataLink); // Data is a form of download
+
+  const allButtons = [enlargeLink, copyLink, alttextLink];
+  
+  // --- 3. Check Existing Links (To avoid duplicates and handle replacement) ---
+  const existingLinksText = Array.from(linkContainer.querySelectorAll('a')).map(a => a.textContent.trim());
+
+  // Function to check if a link based on its text already exists
+  const isExisting = (text) => existingLinksText.includes(text);
+
+
+  // --- 4. Render Buttons ---
+  // B. Download links: Consolidate if count > 2
+  const downloadOptionCount = downloadButtons.length;
+  const THRESHOLD = 3; 
+  let hasDownloadGroup = existingLinksText.includes('Downloads...'); 
+  
+  // Clean up any existing individual download links if a group is being created
+  if (downloadOptionCount >= THRESHOLD || hasDownloadGroup) {
+      ['Download as PNG', 'Download as PDF', 'Download data', 'View as PNG']
+        .forEach(text => {
+          const existing = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === text);
+          if (existing) existing.remove();
+        });
+  }
+
+
+  if (downloadOptionCount >= THRESHOLD) {
+    const dropdownWrapper = createDropdownButton(svgObject, downloadButtons);
+    if (!hasDownloadGroup) {
+        linkContainer.appendChild(dropdownWrapper);
+    } else {
+        // If a dropdown already exists, we should probably replace it, 
+        // but for simplicity here we just ensure the new one is added 
+        // and rely on the cleanup above to remove the old *individual* links.
+        // A more robust solution might find and replace the existing .dropdown-wrapper.
+    }
+
+  } else {
+    // Render individually if 2 or fewer download options
+    for (const link of downloadButtons) {
+      if (link && !isExisting(link.textContent.trim())) {
+        linkContainer.appendChild(link);
+      }
+    }
+  }
+
+  // A. Non-download links (Always rendered individually)
+  for (const link of allButtons) {
+    if (link && !isExisting(link.textContent.trim())) {
+      // Handle the 'View as PNG' replacement case for the PNG link only
+      if (link.textContent.trim() === 'Download as PNG' && existingLinksText.includes('View as PNG')) {
+        const viewLink = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === 'View as PNG');
+        if (viewLink) linkContainer.replaceChild(link, viewLink);
+      } else {
+        linkContainer.appendChild(link);
+      }
+    }
+  }
+
+
+
+  // A small cleanup to remove the 'Download...' button if the options drop below the threshold
+  if (downloadOptionCount < THRESHOLD && hasDownloadGroup) {
+    const existingDropdown = linkContainer.querySelector('.dropdown-wrapper');
+    if (existingDropdown) existingDropdown.remove();
+  }
 }
 
 function reloadSVGs() {
@@ -550,7 +644,7 @@ function createDropdownButton(svgObject, links) {
   // 1. Create the main button element
   const dropdownButton = document.createElement('a');
   dropdownButton.href = '#';
-  dropdownButton.textContent = 'Downloads...';
+  dropdownButton.textContent = 'Download...';
   // Use the same class as the simple-button for consistent styling
   dropdownButton.className = 'simple-button dropdown-toggle'; 
   

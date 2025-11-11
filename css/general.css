@@ -34,7 +34,7 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
 
 .simple-button {
   display: inline-block;
-  margin: 1px;
+  margin: 1px 1px 0 1px;
   padding: 4px 6px 3px 6px;
   background-color: #CEECFF;
   color: #333;
@@ -97,15 +97,15 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
 .dropdown-content {
   display: none; /* Hidden by default */
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
+  background-color: #CEECFF;
+  min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 10;
   top: 100%; /* Position right below the button */
   left: 0;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  padding: 4px 0;
+  border: 1px solid #000;
+  margin: 0;
 }
 
 .dropdown-wrapper.open .dropdown-content {
@@ -117,11 +117,12 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   padding: 6px 16px;
   text-decoration: none;
   display: block; /* Make each link take a full line */
-  font-size: 0.9em; /* Slightly larger font than the button */
+  font-size: 0.6em; 
   /* Remove the border from simple-button */
-  border: none; 
+  /*border: none; */
 }
 
 .dropdown-item:hover {
-  background-color: #f1f1f1;
+  background-color: #93D4FF;
 }
+
