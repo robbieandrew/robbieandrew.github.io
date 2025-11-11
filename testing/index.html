@@ -34,6 +34,48 @@
 <script src="../js/svg-handler.js"></script>
 
 <script>
+/* parseCSVForImageOrder
+   Parses the web_lookup.csv content to create a list of ordered image filenames
+   based on the "New Filename" column.
+*/
+function parseCSVForImageOrder(csvContent) {
+  // Use the file content directly. Split into lines, skipping the header (first line).
+  const lines = csvContent.trim().split('\n').slice(1);
+  const imageOrderMap = new Map();
+  const fileOrder = [];
+  
+  // The columns we are interested in are:
+  // PNG (Index 1) - used to determine file extension (jpg, png, svg)
+  // New Filename (Index 4) - used to determine the base name
+  
+  lines.forEach(line => {
+    // Regex to split by comma, ignoring commas inside quoted fields
+    const columns = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g).map(col => col.replace(/"/g, ''));
+
+    // Ensure the line has enough columns for the data we need (at least 5 columns)
+    if (columns && columns.length >= 5) {
+      const pngFilename = columns[1].trim();
+      const newFilenameBase = columns[4].trim();
+      
+      if (newFilenameBase && pngFilename) {
+        // Extract the extension from the PNG column
+        const extensionMatch = pngFilename.match(/\.(jpg|png|gif|svg)$/i);
+        const extension = extensionMatch ? extensionMatch[0] : '';
+        
+        // The expected image filename, e.g., AtmosConc.png or country_waterfall.jpg
+        const fullImageFilename = newFilenameBase + extension;
+
+        // Store the expected full filename in the correct order
+        fileOrder.push(fullImageFilename);
+        
+        // Use a map for quick lookup and to check for duplicates
+        imageOrderMap.set(fullImageFilename, true);
+      }
+    }
+  });
+
+  return { fileOrder, imageOrderMap };
+}
 /* loadPageImagesFromCSV
    Fetches all images in a folder and displays them, sorted by the
    order specified in the CSV content provided.
