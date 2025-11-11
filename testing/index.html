@@ -126,7 +126,7 @@ async function initializeImagePage() {
     if (csvContent) {
         await loadPageImagesFromCSV('testing/img', csvContent);
     } else {
-        displayErrorMessage("Could not load image configuration file.");
+        displayErrorMessage("Failed to load image configuration file.");
     }
 }
 
