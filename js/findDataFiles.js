@@ -197,25 +197,47 @@ function displayImages(siteCode, imageData) {
   const imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = ""; // Remove previous images
 
-  if (!imageData[siteCode] || imageData[siteCode].length === 0) {
+  const figures = imageData[siteCode]; 
+
+  if (!figures || figures.length === 0) {
     console.error(`No images found for ${siteCode}`);
     return;
   }
 
-  imageData[siteCode].forEach(image => {
+  const isNewFormat = (typeof figures[0] === 'object' && figures[0] !== null && 'url' in figures[0]);
+
+  figures.forEach(figure => {
+	  
+    let url;
+    let title = null;
+
+    if (isNewFormat) {
+        url = figure.url;
+        title = figure.title;
+    } else {
+        url = figure;
+    }
+	  
     const div = document.createElement("div");
     div.className = "pure-u-1 pure-u-md-1-2 pure-u-lg-1-3";
 
-    if (image.endsWith(".svg")) {
+    if (title) {
+        const titleElement = document.createElement("h3");
+        titleElement.textContent = title; 
+        titleElement.className = "figure-title"; 
+        div.appendChild(titleElement);
+    }
+
+    if (url.endsWith(".svg")) {
       const object = document.createElement("object");
-      object.setAttribute('data', image);
+      object.setAttribute('data', url);
       object.type = "image/svg+xml";
       object.className = "fig";
 
       div.appendChild(object);
     } else {
       const img = document.createElement("img");
-      img.src = image;
+      img.src = url;
       img.style.width = "200px";
 
       div.appendChild(img);

@@ -13,6 +13,11 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/svg2pdf.js@2.6.0/dist/svg2pdf.umd.min.js"></script> 
+  <style>
+  h3 {
+    margin: 0;
+  }
+  </style>
 </head>
 
 <body>
@@ -35,61 +40,72 @@
 
 <script>
 /* parseCSVForImageOrder
-   Parses the web_lookup.csv content to create a list of ordered image filenames
-   based on the "New Filename" column.
+   Parses the web_lookup.csv content to create a list of ordered objects,
+   each containing the filename (with .svg) and its corresponding title.
 */
 function parseCSVForImageOrder(csvContent) {
-  // Use the file content directly. Split into lines, skipping the header (first line).
-  const lines = csvContent.trim().split('\n').slice(1);
+  const lines = csvContent.trim().split('\n');
+  if (lines.length < 2) {
+    console.error("CSV content is empty or only has a header.");
+    return { fileOrder: [], imageOrderMap: new Map() };
+  }
+
+  // Helper to split a CSV line, handling quotes
+  const splitLine = (line) => line.split(',').map(col => col.replace(/"/g, '').trim());
+    
+  // 1. Determine the required column indices from the header row
+  const header = splitLine(lines[0]);
+  const newFilenameIndex = header.indexOf("New Filename");
+  const titleIndex = header.indexOf("Title"); // <-- New: Find 'Title' index
+
+  if (newFilenameIndex === -1 || titleIndex === -1) {
+    console.error("Required columns 'New Filename' or 'Title' not found in the CSV header.");
+    return { fileOrder: [], imageOrderMap: new Map() };
+  }
+
+  const fileOrderData = []; // <-- New: Stores objects { filename, title }
   const imageOrderMap = new Map();
-  const fileOrder = [];
   
-  // The columns we are interested in are:
-  // PNG (Index 1) - used to determine file extension (jpg, png, svg)
-  // New Filename (Index 4) - used to determine the base name
+  // 2. Process data rows (starting from index 1)
+  const dataLines = lines.slice(1);
   
-  lines.forEach(line => {
-    // Regex to split by comma, ignoring commas inside quoted fields
-    const columns = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g).map(col => col.replace(/"/g, ''));
+  dataLines.forEach(line => {
+    const columns = splitLine(line);
 
-    // Ensure the line has enough columns for the data we need (at least 5 columns)
-    if (columns && columns.length >= 5) {
-      const pngFilename = columns[1].trim();
-      const newFilenameBase = columns[4].trim();
+    // Ensure the row has enough columns for both indices
+    if (columns.length > Math.max(newFilenameIndex, titleIndex)) {
       
-      if (newFilenameBase && pngFilename) {
-        // Extract the extension from the PNG column
-        const extensionMatch = pngFilename.match(/\.(jpg|png|gif|svg)$/i);
-        const extension = extensionMatch ? extensionMatch[0] : '';
-        
-        // The expected image filename, e.g., AtmosConc.png or country_waterfall.jpg
-        const fullImageFilename = newFilenameBase + extension;
+      const newFilenameBase = columns[newFilenameIndex];
+      const title = columns[titleIndex]; // <-- New: Get the title
 
-        // Store the expected full filename in the correct order
-        fileOrder.push(fullImageFilename);
-        
-        // Use a map for quick lookup and to check for duplicates
-        imageOrderMap.set(fullImageFilename, true);
+      if (newFilenameBase) {
+        const fullImageFilename = `${newFilenameBase}.svg`;
+
+        if (!imageOrderMap.has(fullImageFilename)) {
+          // Store an object with both the filename and the title
+          fileOrderData.push({ 
+            filename: fullImageFilename, 
+            title: title || 'Untitled Figure' // Use a fallback title
+          });
+          imageOrderMap.set(fullImageFilename, true);
+        }
       }
     }
   });
 
-  return { fileOrder, imageOrderMap };
+  return { fileOrderData, imageOrderMap }; // <-- Modified: returns fileOrderData
 }
-/* loadPageImagesFromCSV
-   Fetches all images in a folder and displays them, sorted by the
-   order specified in the CSV content provided.
-   
-   @param partialPath {string} e.g. 'country/img'
-   @param csvContent {string} The raw content of the web_lookup.csv file
-*/
+</script>
+<script>
+// ... findDataFiles.js (inside loadPageImagesFromCSV function)
+
 async function loadPageImagesFromCSV(partialPath, csvContent) {
-    // For a single-site page, siteCode is null.
     const siteCode = null; 
     
-    // 1. Get the desired order from the CSV
-    const { fileOrder, imageOrderMap } = parseCSVForImageOrder(csvContent);
-    console.log("Desired image order (full filenames):", fileOrder);
+    // 1. Get the desired order and titles from the CSV
+    // CHANGE HERE: Destructure fileOrderData instead of fileOrder
+    const { fileOrderData } = parseCSVForImageOrder(csvContent); 
+    console.log("Desired image order and titles:", fileOrderData);
 
     // 2. Fetch all available images from GitHub
     const allImageUrls = await fetchGitHubImages(siteCode, partialPath);
@@ -99,47 +115,46 @@ async function loadPageImagesFromCSV(partialPath, csvContent) {
         return;
     }
 
-    // 3. Sort the images
-    const sortedImageUrls = [];
-    const unsortedImageUrls = [];
+    // 3. Sort the images AND store titles in a final structure
+    const imageMetadataMap = new Map(); // Maps filename to its URL and title: { url, title }
     
     // Get the final folder name (e.g., 'img') to extract the simple filename from the URL
     const publicFolder = partialPath.replace(/\/$/, "").split("/").pop();
     
-    // Create a map of URL to image filename for easier sorting
-    const imageUrlToFilenameMap = new Map();
+    // Populate the map with fetched images, keyed by simple filename (e.g., AtmosConc.svg)
     allImageUrls.forEach(url => {
-        // Extract just the filename (e.g., AtmosConc.png) from the full URL (e.g., img/AtmosConc.png)
         const filename = url.replace(`${publicFolder}/`, '');
-        imageUrlToFilenameMap.set(filename, url);
+        imageMetadataMap.set(filename, { url, title: null }); // Title is null initially
     });
 
+    const finalSortedUrlsWithTitles = []; // <-- New structure: list of {url, title} objects
+
     // a) Add images listed in the CSV in the correct order
-    fileOrder.forEach(filename => {
-        const url = imageUrlToFilenameMap.get(filename);
-        if (url) {
-            sortedImageUrls.push(url);
-            // Remove from the map so we only process remaining images later
-            imageUrlToFilenameMap.delete(filename); 
+    fileOrderData.forEach(item => { // item is { filename, title }
+        const metadata = imageMetadataMap.get(item.filename);
+        if (metadata) {
+            // Found a match: store URL and the title from the CSV
+            finalSortedUrlsWithTitles.push({ url: metadata.url, title: item.title }); 
+            imageMetadataMap.delete(item.filename); // Remove from map
         }
     });
 
     // b) Add remaining images (not listed in CSV) to the end
-    // The map now only contains images not in the CSV, keyed by filename
-    // We sort the remaining by filename for a consistent "last" order
-    const remainingFilenames = Array.from(imageUrlToFilenameMap.keys()).sort();
+    const remainingFilenames = Array.from(imageMetadataMap.keys()).sort();
     
     remainingFilenames.forEach(filename => {
-        unsortedImageUrls.push(imageUrlToFilenameMap.get(filename));
+        const metadata = imageMetadataMap.get(filename);
+        // Add remaining images with a default title
+        finalSortedUrlsWithTitles.push({ url: metadata.url, title: `Unlisted Image: ${filename}` });
     });
     
-    const finalSortedUrls = sortedImageUrls.concat(unsortedImageUrls);
-    console.log("Final sorted image URLs:", finalSortedUrls);
+    console.log("Final sorted image data:", finalSortedUrlsWithTitles);
 
     // 4. Display the sorted images
-    // Since 'displayImages' expects data keyed by siteCode, we adapt.
-    const imageData = { [siteCode]: finalSortedUrls };
-    displayImages(siteCode, imageData);
+    // We need to pass the full list of objects to displayImages, not just a list of URLs
+    const imageData = { [siteCode]: finalSortedUrlsWithTitles };
+    // We will update displayImages to understand this new structure
+    displayImages(siteCode, imageData); 
 }
 </script>
 
