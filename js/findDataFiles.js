@@ -238,7 +238,9 @@ function displayImages(siteCode, imageData) {
     } else {
       const img = document.createElement("img");
       img.src = url;
-      img.style.width = "200px";
+      img.style.width = "90%";
+	  img.style.display = "block";
+	  img.style.margin = "0 auto";
 
       div.appendChild(img);
     }
