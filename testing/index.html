@@ -32,7 +32,107 @@
 <script src="../js/findDataFiles.js"></script>
 <script src="../js/downloadSVGasPNG.js"></script>
 <script src="../js/svg-handler.js"></script>
-<script src="js/gallery.js"></script>
+
+<script>
+/* loadPageImagesFromCSV
+   Fetches all images in a folder and displays them, sorted by the
+   order specified in the CSV content provided.
+   
+   @param partialPath {string} e.g. 'country/img'
+   @param csvContent {string} The raw content of the web_lookup.csv file
+*/
+async function loadPageImagesFromCSV(partialPath, csvContent) {
+    // For a single-site page, siteCode is null.
+    const siteCode = null; 
+    
+    // 1. Get the desired order from the CSV
+    const { fileOrder, imageOrderMap } = parseCSVForImageOrder(csvContent);
+    console.log("Desired image order (full filenames):", fileOrder);
+
+    // 2. Fetch all available images from GitHub
+    const allImageUrls = await fetchGitHubImages(siteCode, partialPath);
+
+    if (!allImageUrls || allImageUrls.length === 0) {
+        displayErrorMessage(`No images found in folder ${partialPath}.`);
+        return;
+    }
+
+    // 3. Sort the images
+    const sortedImageUrls = [];
+    const unsortedImageUrls = [];
+    
+    // Get the final folder name (e.g., 'img') to extract the simple filename from the URL
+    const publicFolder = partialPath.replace(/\/$/, "").split("/").pop();
+    
+    // Create a map of URL to image filename for easier sorting
+    const imageUrlToFilenameMap = new Map();
+    allImageUrls.forEach(url => {
+        // Extract just the filename (e.g., AtmosConc.png) from the full URL (e.g., img/AtmosConc.png)
+        const filename = url.replace(`${publicFolder}/`, '');
+        imageUrlToFilenameMap.set(filename, url);
+    });
+
+    // a) Add images listed in the CSV in the correct order
+    fileOrder.forEach(filename => {
+        const url = imageUrlToFilenameMap.get(filename);
+        if (url) {
+            sortedImageUrls.push(url);
+            // Remove from the map so we only process remaining images later
+            imageUrlToFilenameMap.delete(filename); 
+        }
+    });
+
+    // b) Add remaining images (not listed in CSV) to the end
+    // The map now only contains images not in the CSV, keyed by filename
+    // We sort the remaining by filename for a consistent "last" order
+    const remainingFilenames = Array.from(imageUrlToFilenameMap.keys()).sort();
+    
+    remainingFilenames.forEach(filename => {
+        unsortedImageUrls.push(imageUrlToFilenameMap.get(filename));
+    });
+    
+    const finalSortedUrls = sortedImageUrls.concat(unsortedImageUrls);
+    console.log("Final sorted image URLs:", finalSortedUrls);
+
+    // 4. Display the sorted images
+    // Since 'displayImages' expects data keyed by siteCode, we adapt.
+    const imageData = { [siteCode]: finalSortedUrls };
+    displayImages(siteCode, imageData);
+}
+</script>
+
+<script>
+/**
+ * Fetches the raw text content of a CSV file.
+ * @param {string} csvFilePath - The relative path to the CSV file (e.g., 'web_lookup.csv').
+ * @returns {Promise<string|null>} The raw CSV content as a string, or null on error.
+ */
+async function fetchCSVContent(csvFilePath) {
+    try {
+        const response = await fetch(csvFilePath);
+        if (!response.ok) {
+            console.error(`Failed to fetch CSV: ${response.status} ${response.statusText}`);
+            return null;
+        }
+        return await response.text();
+    } catch (error) {
+        console.error("Fetch error for CSV file:", error);
+        return null;
+    }
+}
+async function initializeImagePage() {
+    const csvContent = await fetchCSVContent('web_lookup.csv');
+
+    if (csvContent) {
+        await loadPageImagesFromCSV('testing/img', csvContent);
+    } else {
+        displayErrorMessage("Could not load image configuration file.");
+    }
+}
+
+// Call the initialization function when the page loads
+initializeImagePage();
+</script>
 
 </body>
 
