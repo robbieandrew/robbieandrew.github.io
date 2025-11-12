@@ -29,7 +29,6 @@ function fetchGitHubDataFiles(siteCode,partialPath) {
   console.log("Looking for data files under: ",partialPath)
   const folder = siteCode ? `${partialPath}/${siteCode}` : partialPath;
   const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${folder}`;
-//  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
 
   return fetch(githubApiUrl)
     .then(response => {
@@ -114,7 +113,7 @@ function fetchGitHubImages(siteCode,partialPath) {
 function getCachedImageFolders(partialPath) {
   const cleanPath = partialPath.replace(/[^\w-]/g, '_');
   const CACHE_KEY = `imageFolderList_${cleanPath}`;
-  const CACHE_DURATION = 1 * 60 * 1000; // 30 minutes
+  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
   const now = Date.now();
 
   const cached = localStorage.getItem(CACHE_KEY);
@@ -241,6 +240,7 @@ function displayImages(siteCode, imageData) {
       img.style.width = "90%";
 	  img.style.display = "block";
 	  img.style.margin = "0 auto";
+	  img.className = "downloadableimg";
 
       div.appendChild(img);
     }
@@ -266,5 +266,16 @@ function displayImages(siteCode, imageData) {
         container.classList.add("figure-group");
       }
     });
+	// Add buttons for every IMG element on the page that we've added dynamically (indicated by the class)
+    document.querySelectorAll('img.downloadableimg').forEach(imgElement => {
+      imgElement.addEventListener('load', () => {
+		addIMGbuttons(imgElement);
+	  });
+      let container = imgElement.closest("div");
+      if (container) {
+        container.classList.add("figure-group");
+      }
+    });
+	
 }
 

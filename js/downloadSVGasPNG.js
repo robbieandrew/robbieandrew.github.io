@@ -1,4 +1,4 @@
-
+/* */
 
 function renderSVGtoPNGBlob(svgObject, callback) {
   try {
@@ -12,7 +12,7 @@ function renderSVGtoPNGBlob(svgObject, callback) {
 
     // Create a canvas element (bitmap)
     const canvas = document.createElement('canvas');
-	// To improve antialiasing in the final render, first convert to raster at double the desired resolution before later scaling down again
+  // To improve antialiasing in the final render, first convert to raster at double the desired resolution before later scaling down again
     const scale = 2;
     canvas.width = 1852 * scale;
     // Maintain aspect ratio
@@ -30,10 +30,10 @@ function renderSVGtoPNGBlob(svgObject, callback) {
     // Create a bitmap from the SVG
     const img = new Image();
     img.onload = function () {
-	  // First draw a white background
+    // First draw a white background
       ctx.fillStyle = 'white';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-	  // Then draw the image on the canvas
+    // Then draw the image on the canvas
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       DOMURL.revokeObjectURL(svgUrl);
       // Create a smaller canvas for the final output
@@ -41,7 +41,7 @@ function renderSVGtoPNGBlob(svgObject, callback) {
       finalCanvas.width = canvas.width / scale;
       finalCanvas.height = canvas.height / scale;
       const finalCtx = finalCanvas.getContext('2d');
-	  // Draw the high-resolution canvas onto the smaller canvas
+    // Draw the high-resolution canvas onto the smaller canvas
       finalCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height,
                          0, 0, finalCanvas.width, finalCanvas.height);
 
@@ -56,8 +56,50 @@ function renderSVGtoPNGBlob(svgObject, callback) {
   }
 }
 
+function renderIMGtoPNGBlob(imgElement, callback) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  const img = new Image();
+  img.crossOrigin = 'Anonymous'; // Crucial for loading external images securely
+
+  img.onload = () => {
+    try {
+      // Set canvas dimensions based on the loaded image/element size
+      canvas.width = img.naturalWidth || imgElement.width || 300;
+      canvas.height = img.naturalHeight || imgElement.height || 150;
+      // Draw image to canvas
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      // Convert canvas to PNG Blob and call the user's callback
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          console.error('Canvas to Blob conversion failed for IMG.');
+        }
+        callback(blob); 
+      }, 'image/png');
+    } catch (e) {
+      console.error('Error drawing IMG to canvas:', e);
+      callback(null);
+    }
+  };
+  img.onerror = (e) => {
+    console.error('IMG loading failed (CORS or invalid source):', e);
+    callback(null);
+  };
+  img.src = imgElement.src;
+}
+
 function copySVGasPNG(svgObject, anchorElement) {
+  if (!navigator.clipboard || !window.ClipboardItem) {
+  showToastBelowElement(anchorElement, 'Clipboard API not supported by your browser.');
+  return;
+  }
+
   renderSVGtoPNGBlob(svgObject, async (blob) => {
+  if (!blob) {
+    showToastBelowElement(anchorElement, 'Failed to process image data.');
+    return;
+  }
     try {
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
       showToastBelowElement(anchorElement,'Copied to clipboard as PNG!');
@@ -67,6 +109,39 @@ function copySVGasPNG(svgObject, anchorElement) {
     }
   });
 }
+
+function copyElementAsPNG(element, anchorElement) {
+  if (!navigator.clipboard || !window.ClipboardItem) {
+    showToastBelowElement(anchorElement, 'Clipboard API not supported by your browser.');
+    return;
+  }
+  const tagName = element.tagName.toUpperCase();
+  let renderFunction;
+
+  if (tagName === 'IMG') {
+    renderFunction = renderIMGtoPNGBlob;
+  } else if (tagName === 'OBJECT') {
+    renderFunction = renderSVGtoPNGBlob;
+  } else {
+    showToastBelowElement(anchorElement, `Unsupported element type: ${tagName}.`);
+    console.error('Unsupported element type for PNG conversion:', tagName);
+    return;
+  }
+  renderFunction(element, async (blob) => {
+    if (!blob) {
+      showToastBelowElement(anchorElement, 'Failed to process image data.');
+      return;
+    }
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+      showToastBelowElement(anchorElement, 'Copied to clipboard as PNG!');
+    } catch (err) {
+      console.error('Clipboard write failed', err);
+      showToastBelowElement(anchorElement, 'Failed to copy image to clipboard.');
+    }
+  });
+}
+
 
 function downloadSVGasPNG(svgObject) {
   renderSVGtoPNGBlob(svgObject, (blob) => {
@@ -82,16 +157,18 @@ function downloadSVGasPNG(svgObject) {
   });
 }
 
+/* downloadSVGasPDF
+   Convert the SVG to PDF format for download. Various very specific handling of the SVG file format output by gcpSaveSVG.m */
 function downloadSVGasPDF(svgObject) {
   try {
-	const { jsPDF } = window.jspdf;
+    const { jsPDF } = window.jspdf;
     const svg = svgObject.contentDocument.querySelector('svg');
 
     // Clone so we can safely manipulate
     const clonedSvg = svg.cloneNode(true);
-	const defs = clonedSvg.querySelector('defs');
-	
-	// --- UTILITY FUNCTION: Extract CSS Property from Style Block ---
+    const defs = clonedSvg.querySelector('defs');
+  
+    // --- UTILITY FUNCTION: Extract CSS Property from Style Block ---
     // This is necessary because getComputedStyle() doesn't work reliably on detached clones.
     function getStyleProperty(selector, propertyName) {
         const styleBlock = clonedSvg.querySelector('style')?.textContent;
@@ -111,60 +188,60 @@ function downloadSVGasPDF(svgObject) {
     }
     
     // --- 1. Targeted Removal (Clean-up) ---
-	// These things are normally invisible anyway, and some appear to confuse svg2pdf
+    // These things are normally invisible anyway, and some appear to confuse svg2pdf
     clonedSvg.querySelectorAll('foreignObject, .marker, .dl_el, .twitlink').forEach(el => el.remove());
 
-// --- 2. Fix polylines ---
-// The issue is that polylines are implemented in the defs section and then used later, and svg2pdf isn't handling that well. So here we simply make them normal polylines.
-const lineUseElements = clonedSvg.querySelectorAll('use.pll'); 
-lineUseElements.forEach(useEl => {
-    const href = useEl.getAttribute('xlink:href') || useEl.getAttribute('href');
-    if (href && defs) {
-        const symbolId = href.substring(1); 
-        const symbol = defs.querySelector(`#${symbolId}`);
-        
-        if (symbol) {
-            const polylineTemplates = symbol.querySelectorAll('polyline'); // Use querySelectorAll
-            
-            if (polylineTemplates.length > 0) {
-                // Get attributes from the <use> element
-                const strokeColor = useEl.getAttribute('stroke');
-                const strokeWidth = useEl.getAttribute('stroke-width') || '0.90';
-                const parent = useEl.parentNode;
-                
-                // Track the *last* polyline inserted so we can insert the next one after it.
-                let lastInsertedNode = useEl; // Start by referencing the <use> element itself
-                
-                polylineTemplates.forEach(polylineTemplate => {
-                    const newPolyline = polylineTemplate.cloneNode(true);
-                    
-                    if (strokeColor) {
-                        newPolyline.setAttribute('stroke', strokeColor);
-                    }
-                    newPolyline.setAttribute('stroke-width', strokeWidth);
-                    newPolyline.setAttribute('fill', 'none');
-                    newPolyline.setAttribute('opacity', '1');
-                    
-                    // The core fix: Insert *after* the previous node (or replace the first node)
-                    if (lastInsertedNode === useEl) {
-                        // This is the first polyline: Replace the original <use> element.
-                        parent.replaceChild(newPolyline, useEl);
-                    } else {
-                        // This is a subsequent polyline: Insert it *after* the one we just inserted.
-                        // We achieve 'insert after' by inserting *before* the next sibling of the reference node.
-                        parent.insertBefore(newPolyline, lastInsertedNode.nextSibling); 
-                    }
-                    
-                    // Crucial update: Set the newly inserted polyline as the reference for the next iteration.
-                    lastInsertedNode = newPolyline; 
-                });
-            }
-        }
-    }
-});
+    // --- 2. Fix polylines ---
+    // The issue is that polylines are implemented in the defs section and then used later, and svg2pdf isn't handling that well. So here we simply make them normal polylines.
+    const lineUseElements = clonedSvg.querySelectorAll('use.pll'); 
+    lineUseElements.forEach(useEl => {
+		const href = useEl.getAttribute('xlink:href') || useEl.getAttribute('href');
+		if (href && defs) {
+			const symbolId = href.substring(1); 
+			const symbol = defs.querySelector(`#${symbolId}`);
+			
+			if (symbol) {
+				const polylineTemplates = symbol.querySelectorAll('polyline'); // Use querySelectorAll
+				
+				if (polylineTemplates.length > 0) {
+					// Get attributes from the <use> element
+					const strokeColor = useEl.getAttribute('stroke');
+					const strokeWidth = useEl.getAttribute('stroke-width') || '0.90';
+					const parent = useEl.parentNode;
+					
+					// Track the *last* polyline inserted so we can insert the next one after it.
+					let lastInsertedNode = useEl; // Start by referencing the <use> element itself
+					
+					polylineTemplates.forEach(polylineTemplate => {
+						const newPolyline = polylineTemplate.cloneNode(true);
+						
+						if (strokeColor) {
+							newPolyline.setAttribute('stroke', strokeColor);
+						}
+						newPolyline.setAttribute('stroke-width', strokeWidth);
+						newPolyline.setAttribute('fill', 'none');
+						newPolyline.setAttribute('opacity', '1');
+						
+						// The core fix: Insert *after* the previous node (or replace the first node)
+						if (lastInsertedNode === useEl) {
+							// This is the first polyline: Replace the original <use> element.
+							parent.replaceChild(newPolyline, useEl);
+						} else {
+							// This is a subsequent polyline: Insert it *after* the one we just inserted.
+							// We achieve 'insert after' by inserting *before* the next sibling of the reference node.
+							parent.insertBefore(newPolyline, lastInsertedNode.nextSibling); 
+						}
+						
+						// Crucial update: Set the newly inserted polyline as the reference for the next iteration.
+						lastInsertedNode = newPolyline; 
+					});
+				}
+			}
+		}
+	});
 
-	// APPLY STYLES DIRECTLY TO TEXT ELEMENTS
-	// svg2pdf isn't always using the styling correctly, so apply directly to each element
+    // APPLY STYLES DIRECTLY TO TEXT ELEMENTS
+    // svg2pdf isn't always using the styling correctly, so apply directly to each element
     // Get the primary font-family from the #main block (Helvetica,Arial,sans-serif)
     const mainFontFamily = getStyleProperty('#main', 'font-family') || 'Helvetica, Arial, sans-serif';
     const tickLabelFill = getStyleProperty('.ticklabel', 'fill');
@@ -187,11 +264,11 @@ lineUseElements.forEach(useEl => {
         textEl.setAttribute('opacity', '1'); 
     });
 
-	// SPECIFIC FIXES TO SOME TEXT ELEMENTS
-	clonedSvg.querySelectorAll('text').forEach(textEl => {
+    // SPECIFIC FIXES TO SOME TEXT ELEMENTS
+    clonedSvg.querySelectorAll('text').forEach(textEl => {
         let textContent = textEl.innerHTML;
-		// The tspans used for the subscript-2 are upsetting svg2pdf. I tried a bunch of different solutions, but none worked. So here just replace with a normal CO2.
-		const complexCO2Pattern = /(CO)(<tspan[^>]*dy="0\.2em"[^>]*><tspan[^>]*style="font-size:70%"[^>]*>2<\/tspan><\/tspan><tspan[^>]*dy="-0\.2em"[^>]*> <\/tspan>)/gi;
+    // The tspans used for the subscript-2 are upsetting svg2pdf. I tried a bunch of different solutions, but none worked. So here just replace with a normal CO2.
+    const complexCO2Pattern = /(CO)(<tspan[^>]*dy="0\.2em"[^>]*><tspan[^>]*style="font-size:70%"[^>]*>2<\/tspan><\/tspan><tspan[^>]*dy="-0\.2em"[^>]*> <\/tspan>)/gi;
         if (complexCO2Pattern.test(textContent)) {
             // Replace with a simplified structure: CO + TSPAN using baseline-shift="sub"
             // This is the cleanest SVG way to achieve subscript without relying on complex dy logic.
@@ -202,13 +279,13 @@ lineUseElements.forEach(useEl => {
             // Strip the <a> tags
             textContent = textContent.replace(/<a[^>]*>(.*?)<\/a>/gi, (match, p1) => p1);
         }
-		// Replace the bullet character (● or &#9679;). I think the problem is that svg2pdf isn't handling encoded characters like &#9679; or /u2022, and just having the character directly fixes it.
-		textContent = textContent.replace(/●|&#9679;/g, '•'); 
-		
+    // Replace the bullet character (● or &#9679;). I think the problem is that svg2pdf isn't handling encoded characters like &#9679; or /u2022, and just having the character directly fixes it.
+    textContent = textContent.replace(/●|&#9679;/g, '•'); 
+    
         textEl.innerHTML = textContent;
     });
 
-	// HORIZONTAL GRID-LINES ARE TOO LIGHT. No idea why, but the fix is just to replace the colour and remove the opactity style. This is hard-wired to the specific grey I use for grid lines.
+    // HORIZONTAL GRID-LINES ARE TOO LIGHT. No idea why, but the fix is just to replace the colour and remove the opacity style. This is hard-wired to the specific grey I use for grid lines.
     if (defs) {
         // Find all grid line paths using a comma-separated selector
         const gridLines = defs.querySelectorAll('path#line_x, path#line_y'); 
@@ -222,9 +299,8 @@ lineUseElements.forEach(useEl => {
         });
     } 
 
-
 /*  // Save the modified internal SVG to a file for debugging
-	const svgData = new XMLSerializer().serializeToString(clonedSvg);
+  const svgData = new XMLSerializer().serializeToString(clonedSvg);
     const svgBlob = new Blob([svgData], { type: 'image/svg+xml' });
     const svgUrl = URL.createObjectURL(svgBlob);
     
@@ -261,7 +337,7 @@ lineUseElements.forEach(useEl => {
       format: [width, height]
     });
 
-	pdf.svg(clonedSvg, {
+    pdf.svg(clonedSvg, {
       x: 0,
       y: 0,
       width: width,
@@ -326,6 +402,56 @@ function createPNGDownloadLink(svgObject) {
   return downloadLink;
 }
 
+function createIMGDownloadLink(imgelement) {
+  // Ensure the argument is a valid element object before proceeding
+  if (!imgelement || !imgelement.tagName) {
+    return null;
+  }
+  
+  if (imgelement.tagName.toUpperCase() !== 'IMG') {
+    return null;
+  }
+
+  const downloadLink = document.createElement('a');
+  downloadLink.href = '#';
+  downloadLink.className = 'simple-button';
+
+    try {
+      const sourceUrl = imgelement.src;
+      let fileExtension = 'FILE';
+      let suggestedFilename = 'image'; 
+
+	  const filenameMatch = sourceUrl.match(/([^/\\&\?]+)(\?.*)?$/i);
+      
+      if (filenameMatch) {
+        suggestedFilename = filenameMatch[1]; 
+        
+        // Look for the last dot in the captured filename
+        const extMatch = suggestedFilename.match(/\.([a-z0-9]+)$/i); 
+        
+        if (extMatch) {
+          fileExtension = extMatch[1].toUpperCase(); // E.g., "PNG"
+        } else {
+          // If a dot followed by characters wasn't found, keep the 'FILE' fallback
+          // This ensures the link text is accurate.
+        }
+      } else {
+        // Fallback if the URL structure is too complex
+        suggestedFilename = 'image.file';
+      }
+
+      // Configure the download link
+      downloadLink.textContent = `Download as ${fileExtension}`;
+      downloadLink.href = sourceUrl;
+      downloadLink.download = suggestedFilename; 
+
+    } catch (e) {
+      console.error("Error processing IMG element for download link:", e);
+    }
+
+  return downloadLink;
+}
+
 function createPDFDownloadLink(svgObject) {
   if (typeof window.jspdf === 'undefined') {
     // Return null if jspdf is not available
@@ -343,7 +469,47 @@ function createPDFDownloadLink(svgObject) {
   return downloadLink;
 }
 
-function createEnlargeLink(svgObject) {
+function createEnlargeLink(element) {
+  // 1. Determine the URL based on the element type
+  let imageURL;
+  const tagName = element.tagName.toUpperCase();
+
+  if (tagName === 'OBJECT') {
+    // For SVG loaded as an <object>, the URL is in the 'data' attribute.
+    imageURL = element.data;
+  } else if (tagName === 'IMG') {
+    // For <img> elements, the URL is in the 'src' attribute.
+    imageURL = element.src;
+  } else {
+    // Log a warning if it's an unsupported element type and return null or throw.
+    console.warn(`Unsupported element type for enlargement link: ${tagName}`);
+    return null; 
+  }
+
+  // If no URL is found, we also stop here.
+  if (!imageURL) {
+    console.warn(`${tagName} element has no URL to open.`);
+    return null;
+  }
+
+  // 2. Create the link element
+  const enlargeLink = document.createElement('a');
+  enlargeLink.href = '#'; // Use '#' as a placeholder, as the navigation is handled by JS
+  enlargeLink.textContent = 'Enlarge this figure';
+  enlargeLink.className = 'simple-button';
+
+  // 3. Add the click handler
+  enlargeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Use the determined imageURL from step 1
+    window.open(imageURL, '_blank');
+  });
+
+  return enlargeLink;
+}
+
+/*function createEnlargeLink(svgObject) {
   const enlargeLink = document.createElement('a');
   const imageURL = svgObject.data;
   enlargeLink.href = '#' ;
@@ -360,19 +526,20 @@ function createEnlargeLink(svgObject) {
     }
   });
   return enlargeLink;
-}
+}*/
 
-function createCopyLink(svgObject) {
+function createCopyLink(element) {
   const copyLink = document.createElement('a');
   copyLink.href = '#';
   copyLink.textContent = 'Copy to clipboard';
   copyLink.className = 'simple-button';
   copyLink.addEventListener('click', (e) => {
     e.preventDefault();
-    copySVGasPNG(svgObject, copyLink);
+    copyElementAsPNG(element, copyLink);
   });
   return copyLink;
 }
+
 
 function createAltTextLink(svgObject) {
   const altLink = document.createElement('a');
@@ -382,8 +549,8 @@ function createAltTextLink(svgObject) {
   if (!svgDoc) return null;
   const titleEl = svgDoc.querySelector("title");
   if (!titleEl) {
-	  console.error("SVG object has no 'title' element: ",svgURL.split('/').pop());
-	  return null;
+    console.error("SVG object has no 'title' element: ",svgURL.split('/').pop());
+    return null;
   }
   altLink.href = '#';
   altLink.textContent = 'Alt';
@@ -395,7 +562,7 @@ function createAltTextLink(svgObject) {
 
     navigator.clipboard.writeText(altText)
       .then(() => {
-		showToastBelowElement(altLink,'Copied simple alt text to clipboard!');
+    showToastBelowElement(altLink,'Copied simple alt text to clipboard!');
         console.log("Copied to clipboard:", altText);
       })
       .catch(err => {
@@ -428,7 +595,7 @@ function createDataDownloadLink(svgObject) {
     isoCode = urlParts[imgIndex + 1] + "/" ; // The element immediately following 'img' is the isoCode
   }
   else {
-	isoCode = "" ;
+  isoCode = "" ;
   }
   
   if (typeof availableDataFiles === 'undefined' || !Array.isArray(availableDataFiles)) {
@@ -441,7 +608,7 @@ function createDataDownloadLink(svgObject) {
 
   if (availableDataFiles.length === 0) {
     console.log("createDataDownloadLink: availableDataFiles is empty!");
-	return null;
+  return null;
   }
   
   for (const name of candidateFilenames) {
@@ -451,7 +618,7 @@ function createDataDownloadLink(svgObject) {
 
       const link = document.createElement('a');
       link.href = "#";
-	  link.className = 'simple-button';
+    link.className = 'simple-button';
       link.textContent = 'Download data';
       link.addEventListener('click', (event) => {
         event.preventDefault();
@@ -472,63 +639,6 @@ function createDataDownloadLink(svgObject) {
   return null;
 }
 
-
-
-/* Given an SVG object,
-   1. Create a link that will generate a PNG file and download it
-   2. Add this link into the parent of the SVG object as:
-      a. If there is already a link "View as PNG", replace that link with the new one
-	  b. If there is no such link, append the new link within the existing <p> tag
-	  c. If there is no <p> tag following the SVG object, simply append the new download link within the parent of the SVG object.
-*/
-/*function addSVGbuttons(svgObject) {
-  const container = svgObject.parentNode;
-  let linkContainer = container.querySelector('.svg-button-group');
-  
-  if (!linkContainer || !linkContainer.matches('p') || !linkContainer.classList.contains('svg-button-group')) {
-    // If it doesn't exist, create a new one
-    linkContainer = document.createElement('p');
-    linkContainer.classList.add("svg-button-group");
-    container.insertBefore(linkContainer, svgObject.nextSibling);
-    }
-
-  // Create the download and copy links
-  const downloadPNGLink = createPNGDownloadLink(svgObject);
-  const downloadPDFLink = createPDFDownloadLink(svgObject);
-  const copyLink = createCopyLink(svgObject);
-  const enlargeLink = createEnlargeLink(svgObject);
-  const alttextLink = createAltTextLink(svgObject);
-  const dataLink = createDataDownloadLink(svgObject);
-
-  // Add buttons, but only if they're not already there
-  let hasDownload = false;
-  let hasCopy = false;
-  let hasEnlarge = false;
-  let hasALT = false ;
-  let hasData = false ;
-  const links = linkContainer.querySelectorAll('a');
-
-  // Check for existing links
-  for (const link of links) {
-	const linktext = link.textContent.trim();
-    if (linktext === 'Download as PNG') hasDownload = true;
-    else if (linktext === 'Copy to clipboard') hasCopy = true;
-    else if (linktext === 'Enlarge this figure') hasEnlarge = true;
-    else if (linktext === 'View as PNG') {
-      linkContainer.replaceChild(downloadPNGLink, link);
-      hasDownload = true;
-    } else if (linktext === 'Alt') hasALT = true;
-	else if (linktext === 'Download data') hasData = true;
-  }
-
-  if (!hasData && dataLink) linkContainer.appendChild(dataLink);
-  if (!hasEnlarge && enlargeLink) linkContainer.appendChild(enlargeLink);
-  if (!hasDownload && downloadPNGLink) linkContainer.appendChild(downloadPNGLink);
-  if (!hasDownload && downloadPDFLink) linkContainer.appendChild(downloadPDFLink);
-  if (!hasCopy && !isIOSorIPadOS() && copyLink) linkContainer.appendChild(copyLink);
-  if (!hasALT && alttextLink) linkContainer.appendChild(alttextLink);
-}*/
-
 function addSVGbuttons(svgObject) {
   const container = svgObject.parentNode;
   let linkContainer = container.querySelector('.svg-button-group');
@@ -544,8 +654,6 @@ function addSVGbuttons(svgObject) {
   const downloadPNGLink = createPNGDownloadLink(svgObject);
   const downloadPDFLink = createPDFDownloadLink(svgObject);
   const dataLink = createDataDownloadLink(svgObject);
-  
-  // These links are non-download, always shown individually
   const enlargeLink = createEnlargeLink(svgObject);
   const alttextLink = createAltTextLink(svgObject);
   const copyLink = !isIOSorIPadOS() ? createCopyLink(svgObject) : null;
@@ -564,11 +672,10 @@ function addSVGbuttons(svgObject) {
   // Function to check if a link based on its text already exists
   const isExisting = (text) => existingLinksText.includes(text);
 
-
   // --- 4. Render Buttons ---
-  // B. Download links: Consolidate if count > 2
+  // Download links: Consolidate if count >= THRESHOLD
   const downloadOptionCount = downloadButtons.length;
-  const THRESHOLD = 3; 
+  const THRESHOLD = 300; 
   let hasDownloadGroup = existingLinksText.includes('Downloads...'); 
   
   // Clean up any existing individual download links if a group is being created
@@ -579,7 +686,6 @@ function addSVGbuttons(svgObject) {
           if (existing) existing.remove();
         });
   }
-
 
   if (downloadOptionCount >= THRESHOLD) {
     const dropdownWrapper = createDropdownButton(svgObject, downloadButtons);
@@ -601,7 +707,7 @@ function addSVGbuttons(svgObject) {
     }
   }
 
-  // A. Non-download links (Always rendered individually)
+  // Non-download links (Always rendered individually)
   for (const link of allButtons) {
     if (link && !isExisting(link.textContent.trim())) {
       // Handle the 'View as PNG' replacement case for the PNG link only
@@ -614,7 +720,94 @@ function addSVGbuttons(svgObject) {
     }
   }
 
+  // A small cleanup to remove the 'Download...' button if the options drop below the threshold
+  if (downloadOptionCount < THRESHOLD && hasDownloadGroup) {
+    const existingDropdown = linkContainer.querySelector('.dropdown-wrapper');
+    if (existingDropdown) existingDropdown.remove();
+  }
+}
 
+function addIMGbuttons(imgElement) {
+  const container = imgElement.parentNode;
+  let linkContainer = container.querySelector('.img-button-group');
+  
+  if (!linkContainer || !linkContainer.matches('p') || !linkContainer.classList.contains('img-button-group')) {
+    // If it doesn't exist, create a new one
+    linkContainer = document.createElement('p');
+    linkContainer.classList.add("img-button-group");
+    container.insertBefore(linkContainer, imgElement.nextSibling);
+  }
+
+  // --- 1. Create All Potential Links ---
+  const downloadIMGLink = createIMGDownloadLink(imgElement);
+//  const downloadPDFLink = createPDFDownloadLink(imgElement);
+//  const dataLink = createDataDownloadLink(imgElement);
+  const enlargeLink = createEnlargeLink(imgElement);
+//  const alttextLink = createAltTextLink(imgElement);
+  const copyLink = !isIOSorIPadOS() ? createCopyLink(imgElement) : null;
+
+  // --- 2. Separate into Link Groups ---
+  const downloadButtons = [];
+  if (downloadIMGLink) downloadButtons.push(downloadIMGLink);
+//  if (downloadPDFLink) downloadButtons.push(downloadPDFLink);
+//  if (dataLink) downloadButtons.push(dataLink); // Data is a form of download
+
+//  const allButtons = [enlargeLink, copyLink, alttextLink];
+  const allButtons = [enlargeLink, copyLink];
+  
+  // --- 3. Check Existing Links (To avoid duplicates and handle replacement) ---
+  const existingLinksText = Array.from(linkContainer.querySelectorAll('a')).map(a => a.textContent.trim());
+
+  // Function to check if a link based on its text already exists
+  const isExisting = (text) => existingLinksText.includes(text);
+
+  // --- 4. Render Buttons ---
+  // Download links: Consolidate if count >= THRESHOLD
+  const downloadOptionCount = downloadButtons.length;
+  const THRESHOLD = 300; 
+  let hasDownloadGroup = existingLinksText.includes('Downloads...'); 
+  
+  // Clean up any existing individual download links if a group is being created
+  if (downloadOptionCount >= THRESHOLD || hasDownloadGroup) {
+      ['Download as PNG', 'Download as PDF', 'Download data', 'View as PNG']
+        .forEach(text => {
+          const existing = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === text);
+          if (existing) existing.remove();
+        });
+  }
+
+  if (downloadOptionCount >= THRESHOLD) {
+    const dropdownWrapper = createDropdownButton(svgObject, downloadButtons);
+    if (!hasDownloadGroup) {
+        linkContainer.appendChild(dropdownWrapper);
+    } else {
+        // If a dropdown already exists, we should probably replace it, 
+        // but for simplicity here we just ensure the new one is added 
+        // and rely on the cleanup above to remove the old *individual* links.
+        // A more robust solution might find and replace the existing .dropdown-wrapper.
+    }
+
+  } else {
+    // Render individually if 2 or fewer download options
+    for (const link of downloadButtons) {
+      if (link && !isExisting(link.textContent.trim())) {
+        linkContainer.appendChild(link);
+      }
+    }
+  }
+
+  // Non-download links (Always rendered individually)
+  for (const link of allButtons) {
+    if (link && !isExisting(link.textContent.trim())) {
+      // Handle the 'View as PNG' replacement case for the PNG link only
+      if (link.textContent.trim() === 'Download as PNG' && existingLinksText.includes('View as PNG')) {
+        const viewLink = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === 'View as PNG');
+        if (viewLink) linkContainer.replaceChild(link, viewLink);
+      } else {
+        linkContainer.appendChild(link);
+      }
+    }
+  }
 
   // A small cleanup to remove the 'Download...' button if the options drop below the threshold
   if (downloadOptionCount < THRESHOLD && hasDownloadGroup) {
@@ -622,6 +815,7 @@ function addSVGbuttons(svgObject) {
     if (existingDropdown) existingDropdown.remove();
   }
 }
+
 
 function reloadSVGs() {
   // Get all object tags with the class "fig"
