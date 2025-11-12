@@ -7,7 +7,7 @@
   <base target="_blank">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
-  <title>Test page</title>
+  <title>Global Carbon Project figures</title>
   <script src="../js/html-include.js"></script>
   <link rel="stylesheet" href="../css/general.css">
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -33,8 +33,15 @@
   <main>
     <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
 
-	<h1>Testing</h1>
-	<button id="updateSVGsBtn" class="discreet-btn" onclick="reloadSVGs()">Update SVGs</button>
+	<h1>Figures from the Global Carbon Budget 2025</h1>
+	<p><a href="https://doi.org/10.5281/zenodo.5569234">Download the entire fossil CO<span class="subb">2</span> dataset (1750&ndash;2024) and its documentation from the Zenodo archive</a></p>
+	<p>Full scientific documentation is available in <a href="XXXXX">Friedlingstein et al. 2025</a>.</p>
+	<div style="font-size:120%;font-family:'PT Sans Narrow',sans-serif;margin:auto;max-width:800px">
+		<div style="float:left; margin:0px 0px 10px"><a href="http://www.globalcarbonproject.org/carbonbudget/20/presentation.htm" target="_blank"><img loading="lazy" src="img/powerpoint.png" width="150"></a></div>
+		<div style="float:left; max-width:600px; margin:0px 10px 10px">These figures appear in the Global Carbon Project's <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">2025 release</a>. For additional details, and explanations of all figures, please view the full presentation available <a href="http://www.globalcarbonproject.org/carbonbudget/25/presentation.htm">here</a>. For alternative visualisations of our data, see the <a href="http://www.globalcarbonatlas.org">Global Carbon Atlas</a> and <a href="https://ourworldindata.org/explorers/co2">Our World in Data</a>.</div>
+		<div style="clear:both"></div><br>
+	</div>
+
     <div id="imageContainer" class="pure-g">
     </div>
 
@@ -103,6 +110,7 @@ function parseCSVForImageOrder(csvContent) {
   return { fileOrderData, imageOrderMap }; 
 }
 </script>
+
 <script>
 /* loadPageImagesFromCSV
    Fetches all images in a folder and displays them, sorted by the
