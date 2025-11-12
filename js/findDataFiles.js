@@ -114,7 +114,7 @@ function fetchGitHubImages(siteCode,partialPath) {
 function getCachedImageFolders(partialPath) {
   const cleanPath = partialPath.replace(/[^\w-]/g, '_');
   const CACHE_KEY = `imageFolderList_${cleanPath}`;
-  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
+  const CACHE_DURATION = 1 * 60 * 1000; // 30 minutes
   const now = Date.now();
 
   const cached = localStorage.getItem(CACHE_KEY);

@@ -1,6 +1,6 @@
 Slide number,PNG,CSV,Title,New Filename,Include in GtC
 8,s53_AtmosConc.png,53_data.csv,Atmospheric CO2 concentration,AtmosConc,FALSE
-9,CarbonCycle2023.jpg,,Perturbation of the carbon cycle,global_perturbation,TRUE
+9,CarbonCycle2025.png,,Perturbation of the carbon cycle,global_perturbation,TRUE
 11,s09_FossilFuel_and_Cement_emissions_1990_inccarbonation.png,09_FossilFuel_and_Cement_emissions_1990_inccarbonation_data.csv,Global fossil CO2 emissions,FossilFuel_and_Cement_emissions_1990,TRUE
 12,s11_Projections_inccarbonation.png,11_Projections_inccarbonation_data.csv,Regional projections,Projections,TRUE
 13,s80_siamese_waterfall_regions_inccarbonation.png,,Contributions to change: Countries,country_waterfall,TRUE
@@ -20,59 +20,56 @@ Slide number,PNG,CSV,Title,New Filename,Include in GtC
 27,s60_KayaFigures_IND_growth.png,60_KayaFigures_IND_growth_data.csv,Kaya decomposition: India,Kaya_India,FALSE
 27,s60_KayaFigures_ROW_growth.png,60_KayaFigures_ROW_growth_data.csv,Kaya decomposition: ROW,Kaya_ROW,FALSE
 27,s60_KayaFigures_WLD_growth.png,60_KayaFigures_WLD_growth_data.csv,Kaya decomposition: World,Kaya_World,FALSE
-28,s70_Cumulative_finalyear.png,,Historical emissions,Historical,TRUE
-30,s20_Coal_Oil_Gas_Cement_WLD_inccarbonation.png,20_Coal_Oil_Gas_Cement_WLD_inccarbonation_data.csv,"Global emissions from coal, oil, gas and cement",Coal_Oil_Gas_Cement,TRUE
-31,s81_siamese_waterfall_categories_inccarbonation.png,,Contributions to change: Categories,category_waterfall,TRUE
-32,s16a_CO2growthbars.png,16a_CO2growthbars_data.csv,"Global emissions from coal, oil, gas and cement",CO2growthbars_category,TRUE
-33,s22_EnergyLines_wBio__EJ.png,22_EnergyLines_wBio__EJ_data.csv,Global energy use by category,Global_energy,FALSE
-35,s20_Coal_Oil_Gas_Cement_CHN_withForecast.png,20_Coal_Oil_Gas_Cement_CHN_withForecast_data.csv,China,Category_China,TRUE
-36,s20_Coal_Oil_Gas_Cement_USA_withForecast.png,20_Coal_Oil_Gas_Cement_USA_withForecast_data.csv,USA,Category_USA,TRUE
-37,s20_Coal_Oil_Gas_Cement_EU27_withForecast.png,20_Coal_Oil_Gas_Cement_EU27_withForecast_data.csv,European Union,Category_EU27,TRUE
+28,decliningCO2.png,,Decarbonising countries,Decarbonisation,FALSE
+29,s70_Cumulative_finalyear.png,,Historical emissions,Historical,TRUE
+31,s20_Coal_Oil_Gas_Cement_WLD_inccarbonation.png,20_Coal_Oil_Gas_Cement_WLD_inccarbonation_data.csv,"Global emissions from coal, oil, gas and cement",Coal_Oil_Gas_Cement,TRUE
+32,s81_siamese_waterfall_categories_inccarbonation.png,,Contributions to change: Categories,category_waterfall,TRUE
+33,s16a_CO2growthbars.png,16a_CO2growthbars_data.csv,"Global emissions from coal, oil, gas and cement",CO2growthbars_category,TRUE
+34,s22_EnergyLines_wBio__EJ.png,22_EnergyLines_wBio__EJ_data.csv,Global energy use by category,Global_energy,FALSE
+36,s20_Coal_Oil_Gas_Cement_CHN_withForecast.png,20_Coal_Oil_Gas_Cement_CHN_withForecast_data.csv,China,Category_China,TRUE
+37,s20_Coal_Oil_Gas_Cement_USA_withForecast.png,20_Coal_Oil_Gas_Cement_USA_withForecast_data.csv,USA,Category_USA,TRUE
 38,s20_Coal_Oil_Gas_Cement_IND_withForecast.png,20_Coal_Oil_Gas_Cement_IND_withForecast_data.csv,India,Category_India,TRUE
-39,s20_Coal_Oil_Gas_Cement_ROW_withForecast.png,20_Coal_Oil_Gas_Cement_ROW_withForecast_data.csv,Rest of World,Category_ROW,TRUE
-41,s99_CementEmissions_and_Carbonation.png,99_CementEmissions_and_Carbonation_data.csv,Cement carbonation uptake,Carbonation,TRUE
-43,s96_ELUCsubnet.png,96_ELUCsubnet_data.csv,Land-use change sub-components 1,LUC_subcomp_net,TRUE
-44,s96_ELUCsubs.png,96_ELUCsubs_data.csv,Land-use change sub-components 2,LUC_subcomp,TRUE
-45,Figure6_4panels_b.png,,Land-use change grid,LUC_grid,TRUE
-47,s40_FF_emissions_and_LandUse_change_tot_inccarbonation.png,40_FF_emissions_and_LandUse_change_tot_inccarbonation_data.csv,Global fossil and LUC emissions,FF_emissions_and_LandUse_change_tot,TRUE
-51,s45_Global_Sources_and_Sinks.png,45_data.csv,Global carbon budget,Global_Sources_and_Sinks,TRUE
-52,Figure4_Panelled_Components.png,,Global carbon budget,ESSD21_Fig04,TRUE
-53,Figure6_4panels.png,,Maps of sources and sinks,source_sink_maps,TRUE
-54,Figure4_GATM.png,,Growth rate of atmospheric CO2,ESSD21_Fig4b,TRUE
-55,s80_AirborneFraction.png,,Airborne fraction,airborne_fraction,FALSE
-56,Figure10_SOCEAN.png,,Ocean carbon sink,ESSD21_Fig09,TRUE
-57,Figure8_SLAND.png,,Terrestrial carbon sink,ESSD21_Fig07,TRUE
-58,Figure11_process_maps.png,,Land and ocean sink attribution,SinkAttribution,TRUE
-59,Figure13_inversions_with_GCB_land_ocean_20241025.png,,Land and ocean sinks,LandOceanSinks,TRUE
-60,Figure13_regionalbudget.png,,Latitudinal variability of fluxes,ESSD21_Fig12,TRUE
-61,Figure4_BIM.png,,Carbon imbalance,ESSD21_Fig4e,TRUE
-62,s52_Waterfall_sources_and_sinks_1850.png,,Changes to atmospheric CO2 since 1850,Waterfall_sources_and_sinks,FALSE
-63,RCB2024.png,,Remaining carbon budget,RemainingCarbonBudget,TRUE
-64,linearpathways.png,linearpathways_data.csv,Remaining carbon budget,LinearPathways,TRUE
-69,change_by_fuel_finalyears.png,,Changes in final years,ChangesFinalYears,TRUE
-70,s16a_CO2growthbars_withRegions_bunkers.png,16a_CO2growthbars_withRegions_bunkers_data.csv,Global CO2 emissions by region,CO2growthbars,TRUE
-71,s16a_CO2growthbars_withGlobal_percapita_withRegions_forecast.png,16a_CO2growthbars_withGlobal_percapita_withRegions_forecast_data.csv,Global CO2 emissions per capita,CO2growthbars_percapita,TRUE
-72,Selected__perGDPPPP_withforecast_CHN-USA-IND-EU27.png,Selected__perGDPPPP_withforecast_CHN-USA-IND-EU27_data.csv,Emissions intensity of the top four emitters,Top_FF_Emitters_perGDP,TRUE
-73,ERL_Fig1b_Kaya_GCPstyle.png,ERL_Fig1b_Kaya_data.csv,Kaya decomposition,Kaya,FALSE
-74,s25_skyline_GDP-PPP.png,25_skyline_GDP-PPP_data.csv,Emissions intensity and GDP by country,skyline_GDP-PPP,TRUE
-75,s31_skyline_population.png,31_skyline_population_data.csv,Emissions per capita and population by country,skyline_population,TRUE
-76,s15_AlternativeRankings.png,15_AlternativeRankings_data.csv,Comparing perspectives on emissions,AlternativeRankings,TRUE
-77,s17_Emissions_by_Country_OECD.png,17_OECD_data.csv,Emissions by country,Emissions_by_Country_OECD,TRUE
-78,s19a_Continent.png,19a_Continent_data.csv,Emissions by continent,Continents,TRUE
-79,s19a_Continent_percapita.png,19a_Continent_percapita_data.csv,Per-capita emissions by continent,Continents_percapita,TRUE
-81,s34_prodcons_top4.png,34_prodcons_top4_data.csv,Consumption-based emissions for the top four,prodcons_top4,TRUE
-82,s34_prodcons_top4_percapita.png,34_prodcons_top4_percapita_data.csv,Per capita Consumption-based emissions,prodcons_top4_percapita,TRUE
-83,s35_ConsumptionEmissions_OECD.png,35_ConsumptionEmissions_OECD_data.csv,Consumption-based emissions for OECD,ConsumptionEmissions_OECD,TRUE
-84,LUC_tradeflows.png,,Embodied land-use change,LUC_embodiedtradeflows,FALSE
-86,s41_Total_Emissions_by_source.png,41_data.csv,Global emissions by source,Total_Emissions_by_source,TRUE
-87,s42_Cumulative_by_source.png,42_data.csv,Share of global emissions by source,Cumulative_by_source,TRUE
-88,s18_Cumulative_by_country.png,18_data.csv,Cumulative share of emissions by country,Cumulative_by_country,TRUE
-89,s19_Cumulative_by_continent.png,19_data.csv,Cumulative share of emissions by continent,Cumulative_by_continent,TRUE
-91,s22_EnergyBars__EJ.png,22_EnergyBars__EJ_data.csv,Changes in global energy consumption,EnergyChanges_EJ,FALSE
-92,s22_EnergyBars_China_EJ.png,22_EnergyBars_China_EJ_data.csv,Energy use: China,EnergyBars_China_EJ,FALSE
-93,s22_EnergyBars_USA_EJ.png,22_EnergyBars_USA_EJ_data.csv,Energy use: USA,EnergyBars_US_EJ,FALSE
-94,s22_EnergyBars_EU27_EJ.png,22_EnergyBars_EU27_EJ_data.csv,Energy use: European Union (28),EnergyBars_EU27_EJ,FALSE
-95,s22_EnergyBars_India_EJ.png,22_EnergyBars_India_EJ_data.csv,Energy use: India,EnergyBars_India_EJ,FALSE
+39,s20_Coal_Oil_Gas_Cement_EU27_withForecast.png,20_Coal_Oil_Gas_Cement_EU27_withForecast_data.csv,European Union,Category_EU27,TRUE
+40,s20_Coal_Oil_Gas_Cement_JPN_withForecast.png,20_Coal_Oil_Gas_Cement_JPN_withForecast_data.csv,Japan,Category_Japan,TRUE
+41,s20_Coal_Oil_Gas_Cement_ROW_withForecast.png,20_Coal_Oil_Gas_Cement_ROW_withForecast_data.csv,Rest of World,Category_ROW,TRUE
+43,s99_CementEmissions_and_Carbonation.png,99_CementEmissions_and_Carbonation_data.csv,Cement carbonation uptake,Carbonation,TRUE
+45,s96_ELUCsubnet.png,96_ELUCsubnet_data.csv,Land-use change sub-components 1,LUC_subcomp_net,TRUE
+46,s96_ELUCsubs.png,96_ELUCsubs_data.csv,Land-use change sub-components 2,LUC_subcomp,TRUE
+47,Figure6_4panels_b.png,,Land-use change grid,LUC_grid,TRUE
+49,s40_FF_emissions_and_LandUse_change_tot_inccarbonation.png,40_FF_emissions_and_LandUse_change_tot_inccarbonation_data.csv,Global fossil and LUC emissions,FF_emissions_and_LandUse_change_tot,TRUE
+53,s45_Global_Sources_and_Sinks.png,45_data.csv,Global carbon budget,Global_Sources_and_Sinks,TRUE
+54,Figure4_Panelled_Components_GtCO2_Nature_correction_whitebg.png,,Global carbon budget,ESSD21_Fig04,TRUE
+55,Figure6_4panels.png,,Maps of sources and sinks,source_sink_maps,TRUE
+56,Figure4_Panelled_Components_GtCO2_Nature_correction_whitebg_panel_c.png,,Growth rate of atmospheric CO2,ESSD21_Fig04c,TRUE
+57,s80_AirborneFraction.png,,Airborne fraction,airborne_fraction,FALSE
+58,Figure10_SLAND_SOCEAN_Nature_correction_GtCO2_panel_b.png,,Ocean carbon sink,ESSD21_Fig10b,TRUE
+59,Figure10_SLAND_SOCEAN_Nature_correction_GtCO2_panel_a.png,,Terrestrial carbon sink,ESSD21_Fig10a,TRUE
+60,Figure12_process_maps_v2.png,,Land and ocean sink attribution,ESSD21_Fig12,TRUE
+61,Figure11_2024_anomaly_maps_SLAND_SOCEAN.png,,The 2023-24 El Niño,ESSD21_Fig11,FALSE
+62,Figure13_inversions_with_GCB_land_ocean_20251029.png,,Land and ocean sinks,ESSD21_Fig13,TRUE
+63,Figure14_regionalbudget_GtCO2_whitebg.png,,Latitudinal variability of fluxes,ESSD21_Fig14,TRUE
+64,Figure4_Panelled_Components_GtCO2_Nature_correction_whitebg_panel_f.png,,Carbon imbalance,ESSD21_Fig4e,TRUE
+65,s52_Waterfall_sources_and_sinks_1850.png,,Changes to atmospheric CO2 since 1850,Waterfall_sources_and_sinks,FALSE
+66,RCB2025.png,,Remaining carbon budget,RemainingCarbonBudget,TRUE
+67,linearpathways.png,linearpathways_data.csv,Remaining carbon budget,LinearPathways,TRUE
+72,change_by_fuel_finalyears.png,,Changes in final years,ChangesFinalYears,TRUE
+73,s16a_CO2growthbars_withRegions_bunkers.png,16a_CO2growthbars_withRegions_bunkers_data.csv,Global CO2 emissions by region,CO2growthbars,TRUE
+74,s16a_CO2growthbars_withGlobal_percapita_withRegions_forecast.png,16a_CO2growthbars_withGlobal_percapita_withRegions_forecast_data.csv,Global CO2 emissions per capita,CO2growthbars_percapita,TRUE
+75,Selected__perGDPPPP_withforecast_CHN-USA-IND-EU27.png,Selected__perGDPPPP_withforecast_CHN-USA-IND-EU27_data.csv,Emissions intensity of the top four emitters,Top_FF_Emitters_perGDP,TRUE
+76,ERL_Fig1b_Kaya_GCPstyle.png,ERL_Fig1b_Kaya_data.csv,Kaya decomposition,Kaya,FALSE
+77,s25_skyline_GDP-PPP.png,25_skyline_GDP-PPP_data.csv,Emissions intensity and GDP by country,skyline_GDP-PPP,TRUE
+78,s31_skyline_population.png,31_skyline_population_data.csv,Emissions per capita and population by country,skyline_population,TRUE
+79,s15_AlternativeRankings.png,15_AlternativeRankings_data.csv,Comparing perspectives on emissions,AlternativeRankings,TRUE
+80,s17_Emissions_by_Country_OECD.png,17_OECD_data.csv,Emissions by country,Emissions_by_Country_OECD,TRUE
+81,s19a_Continent.png,19a_Continent_data.csv,Emissions by continent,Continents,TRUE
+82,s19a_Continent_percapita.png,19a_Continent_percapita_data.csv,Per-capita emissions by continent,Continents_percapita,TRUE
+84,s34_prodcons_top4.png,34_prodcons_top4_data.csv,Consumption-based emissions for the top four,prodcons_top4,TRUE
+85,s34_prodcons_top4_percapita.png,34_prodcons_top4_percapita_data.csv,Per capita Consumption-based emissions,prodcons_top4_percapita,TRUE
+86,s35_ConsumptionEmissions_OECD.png,35_ConsumptionEmissions_OECD_data.csv,Consumption-based emissions for OECD,ConsumptionEmissions_OECD,TRUE
+88,s41_Total_Emissions_by_source.png,41_data.csv,Global emissions by source,Total_Emissions_by_source,TRUE
+89,s42_Cumulative_by_source.png,42_data.csv,Share of global emissions by source,Cumulative_by_source,TRUE
+90,s18_Cumulative_by_country.png,18_data.csv,Cumulative share of emissions by country,Cumulative_by_country,TRUE
+91,s19_Cumulative_by_continent.png,19_data.csv,Cumulative share of emissions by continent,Cumulative_by_continent,TRUE
 -1,s22_EnergyLines_wBio__EJ_percapita.png,22_EnergyLines_wBio__EJ_percapita_data.csv,Global energy use by category,Global_energy_percapita,FALSE
 -1,s22_EnergyBars_WorldChinaUSAEU27IndiaROW1_GJ_percapita.png,22_EnergyBars_WorldChinaUSAEU27IndiaROW1_GJ_percapita_data.csv,Per capita energy use,EnergyBars_percapita,FALSE
 -1,s99_Waterfall_ppm_finalyear.png,,Changes to atmospheric CO2 two years,Waterfall_sources_and_sinks_2yr,FALSE
