@@ -103,7 +103,8 @@ function parseCSVForImageOrder(csvContent) {
       
       const newFilenameBase = columns[newFilenameIndex];
       const title = columns[titleIndex]; 
-
+      const slideNumber = columns[slideNumberIndex];
+	  
       if (newFilenameBase) {
         // Store the base name without an extension
         if (!imageOrderMap.has(newFilenameBase)) { 
