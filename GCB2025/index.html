@@ -171,7 +171,8 @@ async function loadPageImagesFromCSV(partialPath, csvContent) {
         const metadata = availableImageMap.get(item.baseFilename);
         if (metadata) {
             // Found a match: store full URL and the title from the CSV
-			const fullTitle = `${item.slideNumber}: ${item.title}`;
+            const prefix = (item.slideNumber === "-1") ? "Extra" : item.slideNumber;
+            const fullTitle = `${prefix}: ${item.title}`;
             finalSortedUrlsWithTitles.push({ url: metadata.url, title: fullTitle }); 
             // Remove from the available map so we can track unlisted images
             availableImageMap.delete(item.baseFilename); 
