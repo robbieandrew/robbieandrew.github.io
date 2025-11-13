@@ -26,6 +26,9 @@
   .pure-u-md-1-2 h3 {
   	font-size: 100%;
   }
+  #explain-button {
+    color: #6c757d;
+  }
   </style>
 </head>
 
@@ -39,6 +42,18 @@
 	<div style="font-size:120%;font-family:'PT Sans Narrow',sans-serif;margin:auto;max-width:800px">
 		<div style="float:left; margin:0px 0px 10px"><a href="http://www.globalcarbonproject.org/carbonbudget/20/presentation.htm" target="_blank"><img loading="lazy" src="siteimg/powerpoint.png" width="150"></a></div>
 		<div style="float:left; max-width:600px; margin:0px 10px 10px">These figures appear in the Global Carbon Project's <a href="http://www.globalcarbonproject.org/carbonbudget/" target="_blank">2025 release</a>. For additional details, and explanations of all figures, please view the full presentation available <a href="http://www.globalcarbonproject.org/carbonbudget/25/presentation.htm">here</a>. For alternative visualisations of our data, see the <a href="http://www.globalcarbonatlas.org">Global Carbon Atlas</a> and <a href="https://ourworldindata.org/explorers/co2">Our World in Data</a>.</div>
+		<div style="clear:both"></div><br>
+
+		<div style="float:left; margin:0px 0px 10px"><img loading="lazy" src="siteimg/CC_setBY.png" width="150"></div>
+		<div style="float:left; max-width:600px; margin:0px 10px 10px">
+			<div>
+				All figures and data are released under the Creative Commons Attribution 4.0 International license.
+				<button id="explain-button" onclick="toggleLicensingDetails()">Explain</button>
+			</div>
+			<div id="licensing-details" style="display: none;">
+				Our intention is that these figures and data are used. That's why they're released under the Creative Commons Attribution 4.0 International license. Simply put, you may freely copy and modify these figures and data, and use them in both commercial and non-commercial works, as long as you give credit to the Global Carbon Project.<br>If you're just posting a figure or using a figure in a presentation, and it already says at the bottom that it's by the Global Carbon Project, then you're good to go! If you use the data or modify the figure then you will need to make a little more effort.<br>For details on the license, visit the <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons website</a>. Suggested citation for use in a book: "Used with permission of the Global Carbon Project under the Creative Commons Attribution 4.0 International license."
+			</div>
+		</div>
 		<div style="clear:both"></div><br>
 	</div>
 
@@ -228,6 +243,21 @@ async function initializeImagePage() {
 
 // Call the initialization function when the page loads
 initializeImagePage();
+</script>
+
+<script>
+function toggleLicensingDetails() {
+    const details = document.getElementById('licensing-details');
+    const button = document.getElementById('explain-button');
+
+    if (details.style.display === 'none') {
+        details.style.display = 'block'; // Or 'inline'/'inline-block' depending on desired layout
+        button.textContent = 'Hide explanation';
+    } else {
+        details.style.display = 'none';
+        button.textContent = 'Explain';
+    }
+}
 </script>
 
 </body>
