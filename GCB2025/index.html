@@ -69,11 +69,10 @@ function parseCSVForImageOrder(csvContent) {
   // Helper to split a CSV line, handling quotes
   const splitLine = (line) => {
     const columns = line.match(/(?:"([^"]*(?:""[^"]*)*)"|([^,]*))(?:,|$)/g);
-  
     if (columns) {
       return columns.map(col => {
       return col.replace(/^(,)|(,)$/g, '') // Remove surrounding commas
-                .replace(/^"|"$/g, '')    // Remove surrounding quotes
+                .replace(/^"|"$/g, '')     // Remove surrounding quotes
                 .trim();
       });
     }
