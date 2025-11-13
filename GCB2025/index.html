@@ -83,7 +83,8 @@ function parseCSVForImageOrder(csvContent) {
   const header = splitLine(lines[0]);
   const newFilenameIndex = header.indexOf("New Filename");
   const titleIndex = header.indexOf("Title"); 
-
+  const slideNumberIndex = header.indexOf("Slide number");
+  
   if (newFilenameIndex === -1 || titleIndex === -1) {
     console.error("Required columns 'New Filename' or 'Title' not found in the CSV header.");
     return { fileOrderData: [], imageOrderMap: new Map() };
@@ -107,8 +108,9 @@ function parseCSVForImageOrder(csvContent) {
         // Store the base name without an extension
         if (!imageOrderMap.has(newFilenameBase)) { 
           fileOrderData.push({ 
-            baseFilename: newFilenameBase, // <-- Stores just the base name
-            title: title || 'Untitled Figure' 
+            baseFilename: newFilenameBase,
+            title: title || 'Untitled Figure',
+			slideNumber: slideNumber
           });
           imageOrderMap.set(newFilenameBase, true);
         }
@@ -168,7 +170,8 @@ async function loadPageImagesFromCSV(partialPath, csvContent) {
         const metadata = availableImageMap.get(item.baseFilename);
         if (metadata) {
             // Found a match: store full URL and the title from the CSV
-            finalSortedUrlsWithTitles.push({ url: metadata.url, title: item.title }); 
+			const fullTitle = `${item.slideNumber}: ${item.title}`;
+            finalSortedUrlsWithTitles.push({ url: metadata.url, title: fullTitle }); 
             // Remove from the available map so we can track unlisted images
             availableImageMap.delete(item.baseFilename); 
         }
