@@ -237,7 +237,7 @@ function displayImages(siteCode, imageData) {
     } else {
       const img = document.createElement("img");
       img.src = url;
-      img.style.width = "90%";
+      img.style.width = "100%";
 	  img.style.display = "block";
 	  img.style.margin = "0 auto";
 	  img.className = "downloadableimg";
@@ -269,6 +269,19 @@ function displayImages(siteCode, imageData) {
 	// Add buttons for every IMG element on the page that we've added dynamically (indicated by the class)
     document.querySelectorAll('img.downloadableimg').forEach(imgElement => {
       imgElement.addEventListener('load', () => {
+        const width = imgElement.naturalWidth;
+        const height = imgElement.naturalHeight;
+        const aspectRatio = width / height;
+
+        // Check if the image is 'near square'. 
+        // A ratio close to 1 (e.g., between 0.8 and 1.25) suggests a square shape.
+        if (aspectRatio >= 0.8 && aspectRatio <= 1.25) {
+            // If it's square, reduce the width to prevent excessive vertical space.
+            // For example, reduce it to 50% or 60% of the container width.
+            imgElement.style.width = "60%"; 
+            imgElement.style.margin = "0 auto"; // Re-center it
+        }
+
 		addIMGbuttons(imgElement);
 	  });
       let container = imgElement.closest("div");
