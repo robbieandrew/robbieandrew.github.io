@@ -205,7 +205,7 @@ async function initializeImagePage() {
     const csvContent = await fetchCSVContent('web_lookup.csv');
 
     if (csvContent) {
-        await loadPageImagesFromCSV('testing/img', csvContent);
+        await loadPageImagesFromCSV('GCB2025/img', csvContent);
     } else {
         displayErrorMessage("Failed to load image configuration file.");
     }
