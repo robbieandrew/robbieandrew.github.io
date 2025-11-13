@@ -157,7 +157,7 @@ e.g. loadSiteImages(site.iso, "country/img");
 function loadSiteImages(siteCode,partialPath) {
   // caching is to prevent issues with too much use of the github.com API
   const CACHE_KEY = `imageCache_${partialPath}`;
-  const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
+  const CACHE_DURATION = 1 * 60 * 1000; // 30 minutes
 
   let cachedData = localStorage.getItem(CACHE_KEY);
   let imageData = cachedData ? JSON.parse(cachedData) : { data: {}, timestamps: {} };
