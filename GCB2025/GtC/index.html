@@ -238,7 +238,7 @@ async function fetchCSVContent(csvFilePath) {
     }
 }
 async function initializeImagePage() {
-    const csvContent = await fetchCSVContent('web_lookup.csv');
+    const csvContent = await fetchCSVContent('/GCB2025/web_lookup.csv');
 
     if (csvContent) {
         await loadPageImagesFromCSV('GCB2025/GtC/img', csvContent);
