@@ -67,8 +67,19 @@ function parseCSVForImageOrder(csvContent) {
   }
 
   // Helper to split a CSV line, handling quotes
-  const splitLine = (line) => line.split(',').map(col => col.replace(/"/g, '').trim());
-    
+  const splitLine = (line) => {
+    const columns = line.match(/(?:"([^"]*(?:""[^"]*)*)"|([^,]*))(?:,|$)/g);
+  
+    if (columns) {
+      return columns.map(col => {
+      return col.replace(/^(,)|(,)$/g, '') // Remove surrounding commas
+                .replace(/^"|"$/g, '')    // Remove surrounding quotes
+                .trim();
+      });
+    }
+    return []; // Return empty array if no matches
+  };
+
   // 1. Determine the required column indices from the header row
   const header = splitLine(lines[0]);
   const newFilenameIndex = header.indexOf("New Filename");
