@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@robbie_andrew">
+    <meta name="twitter:title" content="Figures from the Global Carbon Budget 2025">
+    <meta name="twitter:description" content="The Global Carbon Budget 2025 was released on 13 November 2025. This page presents all of the figures in the Budget's presentation materials, in a variety of formats and often with data files.">
+    <meta name="twitter:image" content="https://robbieandrew.github.io/GCB2025/siteimg/FossilFuel_and_Cement_emissions_1990.png">  
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Global Carbon Project figures</title>
+  <script src="../js/html-include.js"></script>
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/svg2pdf.js@2.6.0/dist/svg2pdf.umd.min.js"></script> 
+  <style>
+  h3 {
+    margin-top: 0.5em;
+	margin-bottom: 0;
+	font-weight: normal;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  }
+  .pure-u-lg-1-3 h3 {
+  	font-size: 150%;
+  }
+  .pure-u-md-1-2 h3 {
+  	font-size: 100%;
+  }
+  #explain-button {
+    color: #6c757d;
+  }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+
+	<h1>Figures from the Global Carbon Budget 2025 (Supplementary in units of Carbon)</h1>
+	<p><a href="https://doi.org/10.5281/zenodo.5569234">Download the entire fossil CO<span class="subb">2</span> dataset (1750&ndash;2024) and its documentation from the Zenodo archive</a></p>
+	<p>Full scientific documentation is available in <a href="https://doi.org/10.18160/GCP-2025">Friedlingstein et al. 2025</a>.</p>
+	<div style="font-size:120%;font-family:'PT Sans Narrow',sans-serif;margin:auto;max-width:800px">
+		<div style="float:left; margin:0px 0px 10px"><a href="https://globalcarbonbudget.org/gcb-2025/" target="_blank"><img loading="lazy" src="siteimg/powerpoint.png" width="150"></a></div>
+		<div style="float:left; max-width:600px; margin:0px 10px 10px">These figures appear in the Global Carbon Project's <a href="https://globalcarbonbudget.org/gcb-2025/" target="_blank">2025 release</a>. For additional details, and explanations of all figures, please view the full presentation available <a href="https://globalcarbonbudget.org/gcb-2025/">here</a>. For alternative visualisations of our data, see the <a href="http://www.globalcarbonatlas.org">Global Carbon Atlas</a> and <a href="https://ourworldindata.org/explorers/co2">Our World in Data</a>.</div>
+		<div style="clear:both"></div><br>
+
+		<div style="float:left; margin:0px 0px 10px"><img loading="lazy" src="siteimg/CC_setBY.png" width="150"></div>
+		<div style="float:left; max-width:600px; margin:0px 10px 10px">
+			<div>
+				All figures and data are released under the Creative Commons Attribution 4.0 International license.
+				<button id="explain-button" onclick="toggleLicensingDetails()">Explain</button>
+			</div>
+			<div id="licensing-details" style="display: none;">
+				Our intention is that these figures and data are used. That's why they're released under the Creative Commons Attribution 4.0 International license. Simply put, you may freely copy and modify these figures and data, and use them in both commercial and non-commercial works, as long as you give credit to the Global Carbon Project.<br>If you're just posting a figure or using a figure in a presentation, and it already says at the bottom that it's by the Global Carbon Project, then you're good to go! If you use the data or modify the figure then you will need to make a little more effort.<br>For details on the license, visit the <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons website</a>. Suggested citation for use in a book: "Used with permission of the Global Carbon Project under the Creative Commons Attribution 4.0 International license."
+			</div>
+		</div>
+		<div style="clear:both"></div><br>
+	</div>
+
+    <div id="imageContainer" class="pure-g">
+    </div>
+
+	
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+  </main>
+
+<script src="../js/svg-metadata.js"></script>
+<script src="../js/findDataFiles.js"></script>
+<script src="../js/downloadSVGasPNG.js"></script>
+<script src="../js/svg-handler.js"></script>
+
+<script>
+/* parseCSVForImageOrder
+   Parses the web_lookup.csv content to create a list of ordered objects,
+   each containing the base filename (no extension) and its corresponding title.
+*/
+function parseCSVForImageOrder(csvContent) {
+  const lines = csvContent.trim().split('\n');
+  if (lines.length < 2) {
+    console.error("CSV content is empty or only has a header.");
+    return { fileOrderData: [], imageOrderMap: new Map() };
+  }
+
+  // Helper to split a CSV line, handling quotes
+  const splitLine = (line) => {
+    const columns = line.match(/(?:"([^"]*(?:""[^"]*)*)"|([^,]*))(?:,|$)/g);
+    if (columns) {
+      return columns.map(col => {
+      return col.replace(/^(,)|(,)$/g, '') // Remove surrounding commas
+                .replace(/^"|"$/g, '')     // Remove surrounding quotes
+                .trim();
+      });
+    }
+    return []; // Return empty array if no matches
+  };
+
+  // 1. Determine the required column indices from the header row
+  const header = splitLine(lines[0]);
+  const newFilenameIndex = header.indexOf("New Filename");
+  const titleIndex = header.indexOf("Title"); 
+  const slideNumberIndex = header.indexOf("Slide number");
+  
+  if (newFilenameIndex === -1 || titleIndex === -1) {
+    console.error("Required columns 'New Filename' or 'Title' not found in the CSV header.");
+    return { fileOrderData: [], imageOrderMap: new Map() };
+  }
+
+  const fileOrderData = []; // Stores objects { baseFilename, title }
+  const imageOrderMap = new Map(); // Map tracks base filenames to prevent duplicates
+  
+  // 2. Process data rows (starting from index 1)
+  const dataLines = lines.slice(1);
+  
+  dataLines.forEach(line => {
+    const columns = splitLine(line);
+
+    if (columns.length > Math.max(newFilenameIndex, titleIndex)) {
+      
+      const newFilenameBase = columns[newFilenameIndex];
+      const title = columns[titleIndex]; 
+      const slideNumber = columns[slideNumberIndex];
+	  
+      if (newFilenameBase) {
+        // Store the base name without an extension
+        if (!imageOrderMap.has(newFilenameBase)) { 
+          fileOrderData.push({ 
+            baseFilename: newFilenameBase,
+            title: title || 'Untitled Figure',
+			slideNumber: slideNumber
+          });
+          imageOrderMap.set(newFilenameBase, true);
+        }
+      }
+    }
+  });
+
+  // The map is not strictly needed outside this function but is returned for consistency
+  return { fileOrderData, imageOrderMap }; 
+}
+</script>
+
+<script>
+/* loadPageImagesFromCSV
+   Fetches all images in a folder and displays them, sorted by the
+   base filename matching the CSV order, regardless of extension.
+*/
+async function loadPageImagesFromCSV(partialPath, csvContent) {
+    const siteCode = null; 
+    
+    // 1. Get the desired order and titles from the CSV
+    const { fileOrderData } = parseCSVForImageOrder(csvContent); 
+    
+    // 2. Fetch all available images from GitHub
+    const allImageUrls = await fetchGitHubImages(siteCode, partialPath);
+
+    if (!allImageUrls || allImageUrls.length === 0) {
+        displayErrorMessage(`No images found in folder ${partialPath}.`);
+        return;
+    }
+
+    // Map: "baseFilename" -> { url, filename } for all available images
+    const availableImageMap = new Map(); 
+    const publicFolder = partialPath.replace(/\/$/, "").split("/").pop();
+    
+    allImageUrls.forEach(url => {
+        // Example URL: "img/AtmosConc.svg"
+        const filename = url.replace(`${publicFolder}/`, ''); 
+        
+        // Base Filename: "AtmosConc" (strips any extension like .svg, .png, .jpg, etc.)
+        const baseFilename = filename.replace(/\.[^/.]+$/, "").trim(); 
+        
+        // Store the full URL, keyed by the base filename.
+        // If multiple extensions exist (e.g., .svg and .png for "AtmosConc"), the first one found will be used.
+        if (!availableImageMap.has(baseFilename)) {
+            availableImageMap.set(baseFilename, { url, filename });
+        }
+    });
+
+	console.log('CSV Base Names (expected to match):', fileOrderData.map(item => item.baseFilename));
+    console.log('Available Image Base Names (keys in map):', Array.from(availableImageMap.keys()));
+
+    const finalSortedUrlsWithTitles = []; 
+
+    // a) Add images listed in the CSV in the correct order
+    fileOrderData.forEach(item => { // item is { baseFilename, title }
+        const metadata = availableImageMap.get(item.baseFilename);
+        if (metadata) {
+            // Found a match: store full URL and the title from the CSV
+            const prefix = (item.slideNumber === "-1") ? "Extra" : item.slideNumber;
+            const fullTitle = `${prefix}: ${item.title}`;
+            finalSortedUrlsWithTitles.push({ url: metadata.url, title: fullTitle }); 
+            // Remove from the available map so we can track unlisted images
+            availableImageMap.delete(item.baseFilename); 
+        }
+    });
+
+    // b) Add remaining images (not listed in CSV) to the end
+    const remainingFilenames = Array.from(availableImageMap.keys()).sort();
+    
+    remainingFilenames.forEach(baseFilename => {
+        const metadata = availableImageMap.get(baseFilename);
+        // Use the full filename (with extension) for the unlisted title for clarity
+        finalSortedUrlsWithTitles.push({ 
+            url: metadata.url, 
+            title: `Unlisted Image: ${metadata.filename}` 
+        });
+    });
+    
+    // 4. Display the sorted images
+    const imageData = { [siteCode]: finalSortedUrlsWithTitles };
+    displayImages(siteCode, imageData); 
+}
+</script>
+
+<script>
+/**
+ * Fetches the raw text content of a CSV file.
+ * @param {string} csvFilePath - The relative path to the CSV file (e.g., 'web_lookup.csv').
+ * @returns {Promise<string|null>} The raw CSV content as a string, or null on error.
+ */
+async function fetchCSVContent(csvFilePath) {
+    try {
+        const response = await fetch(csvFilePath);
+        if (!response.ok) {
+            console.error(`Failed to fetch CSV: ${response.status} ${response.statusText}`);
+            return null;
+        }
+        return await response.text();
+    } catch (error) {
+        console.error("Fetch error for CSV file:", error);
+        return null;
+    }
+}
+async function initializeImagePage() {
+    const csvContent = await fetchCSVContent('web_lookup.csv');
+
+    if (csvContent) {
+        await loadPageImagesFromCSV('GCB2025/GtC/img', csvContent);
+    } else {
+        displayErrorMessage("Failed to load image configuration file.");
+    }
+}
+
+// Call the initialization function when the page loads
+initializeImagePage();
+</script>
+
+<script>
+function toggleLicensingDetails() {
+    const details = document.getElementById('licensing-details');
+    const button = document.getElementById('explain-button');
+
+    if (details.style.display === 'none') {
+        details.style.display = 'block'; // Or 'inline'/'inline-block' depending on desired layout
+        button.textContent = 'Hide explanation';
+    } else {
+        details.style.display = 'none';
+        button.textContent = 'Explain';
+    }
+}
+</script>
+
+</body>
+
+</html>
