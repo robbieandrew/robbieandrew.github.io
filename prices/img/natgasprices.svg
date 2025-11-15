@@ -1,0 +1,179 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200.000 674.916">
+<title>Monthly natural gas price</title>
+<style type="text/css">
+  #main {font-family:Helvetica,Arial,sans-serif; font-size:27.00px;
+         fill-opacity:1; fill:#000000; stroke:none; stroke-linejoin:round; stroke-linecap:round; stroke-width:1.00;}
+  a:hover {text-decoration: underline;}
+  .marker {stroke-opacity:0;fill-opacity:0;}
+  .marker:hover {stroke-opacity:0.5; fill-opacity:1;}
+  .ticklabel {font-size:27.00px;fill:#808080;stroke:none;font-family:Helvetica}
+  .ytl {text-anchor:end;}
+  .dp1 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#000000;}
+  .dp2 {pointer-events:none;font-size:70%;text-anchor:middle;fill:#FFFFFF;}
+  .numtip {pointer-events:none;}
+  .cc {opacity:0.25;}
+.dl_fe {background-color:#FDFFDF;display:flex;margin:auto;align-items:center}
+.dl_fe_p {font-size:20px;text-align:center;margin:3px}
+.dl_el {display:none;pointer-events:none;}
+.cc:hover + .dl_el {display:block;}
+text:hover + .dl_el {display:block;}
+  #lines .pl {transition: all 0.2s ease;}
+  #lines:hover .pl {opacity:0.3;}
+  #lines:hover .thick {stroke-width:1;}
+  #lines:hover .pl_1:hover .pl {opacity:1;}
+  #lines:hover .pl_1:hover .pll {stroke-width:3;}
+  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_1:hover .thick {stroke-width:12;}
+  #lines:hover .pl_2:hover .pl {opacity:1;}
+  #lines:hover .pl_2:hover .pll {stroke-width:3;}
+  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_2:hover .thick {stroke-width:12;}
+</style>
+<defs>
+  <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
+  <path id="line_y" d="M 0,53.993 v 506.187" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
+  <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
+  <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
+  <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
+  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="143.4,526.2 147.5,523.4 151.3,526.4 155.2,533.0 159.2,534.8 163.1,533.9 167.1,529.8 171.1,530.9 175.1,532.9 179.1,535.5 183.1,538.5 187.1,536.6 191.0,533.4 195.1,531.7 198.9,534.4 202.8,535.1 206.8,533.3 210.7,532.9 214.7,531.4 218.7,532.3 222.7,534.5 226.7,535.5 230.7,537.6 234.7,539.7 238.6,540.2 242.7,543.2 246.6,544.2 250.5,546.5 254.5,547.9 258.4,544.8 262.4,544.6 266.4,541.5 270.4,542.2 274.4,542.2 278.3,539.2 282.3,537.8 286.3,539.0 290.3,539.1 294.1,539.1 298.0,536.1 302.0,533.8 305.9,534.6 309.9,536.0 313.9,537.3 317.9,538.5 321.9,537.3 325.9,536.9 329.9,537.3 333.8,533.4 337.9,530.4 341.7,522.4 345.6,529.3 349.6,530.9 353.5,531.3 357.5,531.3 361.5,534.8 365.5,535.6 369.5,535.4 373.5,536.3 377.5,534.2 381.4,538.5 385.5,541.4 389.3,542.2 393.2,542.5 397.2,543.9 401.1,542.2 405.1,542.7 409.1,542.3 413.1,542.7 417.1,543.4 421.1,545.5 425.1,547.0 429.0,548.0 433.1,545.8 437.0,547.8 440.9,549.4 444.9,548.1 448.8,548.0 452.8,543.9 456.8,542.5 460.8,542.5 464.8,541.4 468.7,541.5 472.7,544.4 476.7,537.5 480.7,539.5 484.5,542.3 488.4,541.9 492.4,540.7 496.3,540.4 500.3,541.6 504.3,541.4 508.3,542.0 512.3,541.4 516.3,542.1 520.3,541.3 524.2,542.7 528.3,535.8 532.1,543.3 536.0,543.1 540.0,542.6 543.9,542.5 547.9,541.5 551.9,542.3 555.9,541.5 559.9,541.3 563.9,539.4 567.9,534.1 571.8,535.0 575.9,540.7 579.7,543.0 583.6,541.6 587.6,543.4 591.5,543.6 595.5,545.0 599.5,545.2 603.5,546.1 607.5,543.9 611.5,545.4 615.5,543.4 619.4,546.0 623.5,547.3 627.4,548.1 631.3,548.8 635.3,549.2 639.2,549.1 643.2,550.0 647.2,549.2 651.2,545.6 655.2,548.0 659.1,546.0 663.1,543.8 667.1,544.1 671.1,543.3 674.9,528.1 678.8,544.0 682.8,543.7 686.7,541.9 690.7,539.7 694.7,536.1 698.7,534.6 702.7,527.8 706.7,525.5 710.7,528.4 714.6,536.6 718.7,532.8 722.5,530.7 726.4,529.3 730.4,518.9 734.3,508.7 738.3,511.6 742.3,514.3 746.3,504.6 750.3,511.1 754.3,524.6 758.3,526.8 762.2,525.4 766.3,539.5 770.1,545.1 774.0,545.6 778.0,546.5 781.9,546.6 785.9,546.4 789.9,544.0 793.9,543.8 797.9,543.5 801.9,541.3 805.9,543.0 809.8,544.2 813.9,540.1 817.8,549.3 821.7,550.7 825.7,550.1 829.6,546.7 833.6,544.3 837.6,547.1 841.6,547.6 845.6,545.9 849.5,546.2 853.5,546.9 857.5,541.1 861.5,534.2 865.3,533.5 869.2,534.1 873.2,538.7 877.1,540.5 881.1,541.1 885.1,540.0 889.1,541.8 893.1,541.4 897.1,539.9" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_2" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="143.4,509.5 147.5,504.5 151.3,504.5 155.2,503.7 159.2,512.6 163.1,514.2 167.1,511.2 171.1,509.3 175.1,506.7 179.1,507.8 183.1,507.7 187.1,505.8 191.0,504.9 195.1,499.4 198.9,501.0 202.8,500.9 206.8,494.6 210.7,495.0 214.7,495.3 218.7,490.6 222.7,491.8 226.7,491.5 230.7,487.9 234.7,488.6 238.6,487.2 242.7,487.7 246.6,489.8 250.5,484.4 254.5,487.9 258.4,486.5 262.4,487.5 266.4,489.8 270.4,489.4 274.4,490.1 278.3,486.9 282.3,485.3 286.3,485.6 290.3,485.1 294.1,485.7 298.0,485.1 302.0,478.7 305.9,482.4 309.9,484.8 313.9,486.8 317.9,486.5 321.9,489.0 325.9,488.2 329.9,487.9 333.8,487.1 337.9,486.8 341.7,488.7 345.6,491.3 349.6,492.3 353.5,495.6 357.5,498.4 361.5,501.5 365.5,502.3 369.5,501.7 373.5,498.4 377.5,503.9 381.4,498.0 385.5,501.7 389.3,507.9 393.2,507.9 397.2,517.3 401.1,517.9 405.1,518.0 409.1,517.8 413.1,520.0 417.1,520.5 421.1,522.0 425.1,525.4 429.0,528.0 433.1,532.4 437.0,535.1 440.9,535.4 444.9,535.1 448.8,532.8 452.8,530.1 456.8,530.6 460.8,534.6 464.8,533.3 468.7,526.4 472.7,524.2 476.7,525.9 480.7,521.3 484.5,521.9 488.4,528.5 492.4,528.5 496.3,528.2 500.3,529.3 504.3,528.5 508.3,525.5 512.3,522.5 516.3,521.1 520.3,517.8 524.2,515.0 528.3,518.0 532.1,517.7 536.0,517.8 540.0,516.3 543.9,512.8 547.9,513.0 551.9,512.1 555.9,509.0 559.9,499.9 563.9,504.6 567.9,507.9 571.8,509.7 575.9,514.2 579.7,522.2 583.6,527.4 587.6,529.0 591.5,532.7 595.5,537.5 599.5,537.3 603.5,536.9 607.5,533.6 611.5,528.2 615.5,527.6 619.4,530.9 623.5,537.2 627.4,541.8 631.3,543.0 635.3,546.8 639.2,550.2 643.2,549.1 647.2,548.8 651.2,542.1 655.2,535.2 659.1,529.2 663.1,529.6 667.1,523.1 671.1,514.2 674.9,521.2 678.8,521.4 682.8,515.0 686.7,503.8 690.7,495.0 694.7,481.0 698.7,462.6 702.7,415.7 706.7,363.7 710.7,385.4 714.6,319.6 718.7,381.4 722.5,387.9 726.4,291.9 730.4,356.4 734.3,375.6 738.3,347.8 742.3,235.4 746.3,117.0 750.3,186.2 754.3,313.3 758.3,334.1 762.2,332.1 766.3,432.5 770.1,455.5 774.0,472.8 778.0,474.6 781.9,496.2 785.9,494.7 789.9,499.8 793.9,489.4 797.9,487.1 801.9,468.0 805.9,468.5 809.8,487.4 813.9,499.7 817.8,508.6 821.7,506.1 825.7,502.7 829.6,496.1 833.6,491.4 837.6,494.7 841.6,481.9 845.6,485.6 849.5,478.4 853.5,472.1 857.5,472.5 861.5,467.4 865.3,463.1 869.2,476.4 873.2,486.8 877.1,486.4 881.1,481.9 885.1,486.7 889.1,489.6 893.1,489.8 897.1,491.3" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+</defs>
+<g id="main">
+<use xlink:href="#line_y" transform="translate(145.6,0)"/>
+<use xlink:href="#line_y" transform="translate(193.2,0)"/>
+<use xlink:href="#line_y" transform="translate(240.8,0)"/>
+<use xlink:href="#line_y" transform="translate(288.4,0)"/>
+<use xlink:href="#line_y" transform="translate(336.0,0)"/>
+<use xlink:href="#line_y" transform="translate(383.6,0)"/>
+<use xlink:href="#line_y" transform="translate(431.2,0)"/>
+<use xlink:href="#line_y" transform="translate(478.8,0)"/>
+<use xlink:href="#line_y" transform="translate(526.4,0)"/>
+<use xlink:href="#line_y" transform="translate(574.0,0)"/>
+<use xlink:href="#line_y" transform="translate(621.6,0)"/>
+<use xlink:href="#line_y" transform="translate(669.2,0)"/>
+<use xlink:href="#line_y" transform="translate(716.8,0)"/>
+<use xlink:href="#line_y" transform="translate(764.4,0)"/>
+<use xlink:href="#line_y" transform="translate(812.0,0)"/>
+<use xlink:href="#line_y" transform="translate(859.6,0)"/>
+<use xlink:href="#line_y" transform="translate(907.2,0)"/>
+<use xlink:href="#line_x" transform="translate(0,560.2)"/>
+<use xlink:href="#line_x" transform="translate(0,496.9)"/>
+<use xlink:href="#line_x" transform="translate(0,433.6)"/>
+<use xlink:href="#line_x" transform="translate(0,370.4)"/>
+<use xlink:href="#line_x" transform="translate(0,307.1)"/>
+<use xlink:href="#line_x" transform="translate(0,243.8)"/>
+<use xlink:href="#line_x" transform="translate(0,180.5)"/>
+<use xlink:href="#line_x" transform="translate(0,117.3)"/>
+<use xlink:href="#line_x" transform="translate(0,54.0)"/>
+<use xlink:href="#tick_y" transform="translate(0,560.2)"/>
+<use xlink:href="#tick_y" transform="translate(0,496.9)"/>
+<use xlink:href="#tick_y" transform="translate(0,433.6)"/>
+<use xlink:href="#tick_y" transform="translate(0,370.4)"/>
+<use xlink:href="#tick_y" transform="translate(0,307.1)"/>
+<use xlink:href="#tick_y" transform="translate(0,243.8)"/>
+<use xlink:href="#tick_y" transform="translate(0,180.5)"/>
+<use xlink:href="#tick_y" transform="translate(0,117.3)"/>
+<use xlink:href="#tick_y" transform="translate(0,54.0)"/>
+<use xlink:href="#tick_x" transform="translate(145.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(193.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(240.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(288.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(336.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(383.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(431.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(478.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(526.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(574.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(621.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(669.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(716.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(764.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(812.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(859.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(907.2,0)"/>
+<polyline points="145.6,53.993 145.6,560.180 907.2,560.180" stroke="#808080" stroke-width="0.90" fill="none"/>
+<text class="ticklabel ytl" transform="translate(128.8,568.3)">0</text>
+<text class="ticklabel ytl" transform="translate(128.8,505.0)">10</text>
+<text class="ticklabel ytl" transform="translate(128.8,441.7)">20</text>
+<text class="ticklabel ytl" transform="translate(128.8,378.5)">30</text>
+<text class="ticklabel ytl" transform="translate(128.8,315.2)">40</text>
+<text class="ticklabel ytl" transform="translate(128.8,251.9)">50</text>
+<text class="ticklabel ytl" transform="translate(128.8,188.6)">60</text>
+<text class="ticklabel ytl" transform="translate(128.8,125.4)">70</text>
+<text class="ticklabel ytl" transform="translate(128.8,62.1)">80</text>
+<g id="lines">
+  <g class="pl_1">
+    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_1" class="pl pll" stroke="#D95319" stroke-width="2.70"/>
+    <text class="pl" transform="translate(925.2,539.9)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">USA</text>
+  </g>
+  <g class="pl_2">
+    <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#0072BD" stroke-width="2.70"/>
+    <text class="pl" transform="translate(925.2,491.3)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Europe</text>
+  </g>
+</g>
+    <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly natural gas price</text>
+    <text class="pl" transform="translate(130.0,80.3)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">($/mmbtu)</text>
+    <text class="pl" transform="translate(157.6,60.4)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">Monthly prices in nominal US dollars</text>
+    <text class="pl" transform="translate(169.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2010</text>
+    <text class="pl" transform="translate(217.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2011</text>
+    <text class="pl" transform="translate(264.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2012</text>
+    <text class="pl" transform="translate(312.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2013</text>
+    <text class="pl" transform="translate(359.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2014</text>
+    <text class="pl" transform="translate(407.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2015</text>
+    <text class="pl" transform="translate(455.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2016</text>
+    <text class="pl" transform="translate(502.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2017</text>
+    <text class="pl" transform="translate(550.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2018</text>
+    <text class="pl" transform="translate(597.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2019</text>
+    <text class="pl" transform="translate(645.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2020</text>
+    <text class="pl" transform="translate(693.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2021</text>
+    <text class="pl" transform="translate(740.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2022</text>
+    <text class="pl" transform="translate(788.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2023</text>
+    <text class="pl" transform="translate(835.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2024</text>
+    <text class="pl" transform="translate(883.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: World Bank   &#9679;   Data through: October 2025</text>
+<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
+  <g class="dl_el" transform="translate(154.6,578.4)">
+    <g class="dl_el_balloon">
+      <foreignObject x="0" y="0" width="120" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:60px">
+      <p class="dl_fe_p">Find me on BlueSky</p>
+      </div>
+	    </foreignObject>
+      <path stroke="#000" fill="#FDFFDF" d="M0,60H60l5,5l5,-5H120"/>
+    </g>
+  </g>
+<g>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
+  <g transform="translate(124.0,652.4) scale(0.24)">
+  <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
+     <circle fill="none" cx="37.79" cy="28.5" r="28.84" stroke="#BFBFBF" stroke-width="5.5"/>
+     <path fill="#BFBFBF" d="M37.16,23.19 l-4.29,2.23c-0.458-0.951-1.02-1.62-1.69-2c-0.667-0.38-1.29-0.571-1.86-0.571c-2.86,0-4.29,1.89-4.29,5.66 c0,1.71,0.36,3.08,1.09,4.11c0.724,1.03,1.79,1.54,3.2,1.54c1.87,0,3.18-0.915,3.94-2.74l3.94,2 c-0.838,1.56-2,2.79-3.49,3.69c-1.48,0.896-3.12,1.34-4.91,1.34c-2.86,0-5.16-0.875-6.92-2.63 c-1.75-1.75-2.63-4.19-2.63-7.31c0-3.05,0.886-5.47,2.66-7.26c1.77-1.79,4.01-2.69,6.72-2.69 C32.6,18.56,35.44,20.1,37.16,23.19z
+              M55.61,23.19l-4.23,2.23c-0.457-0.951-1.02-1.62-1.69-2 c-0.668-0.38-1.31-0.571-1.91-0.571c-2.86,0-4.29,1.89-4.29,5.66c0,1.71,0.363,3.08,1.09,4.11 c0.723,1.03,1.79,1.54,3.2,1.54c1.87,0,3.18-0.915,3.94-2.74l4,2c-0.875,1.56-2.06,2.79-3.54,3.69 c-1.49,0.9-3.11,1.34-4.86,1.34c-2.9,0-5.21-0.875-6.94-2.63c-1.74-1.75-2.6-4.19-2.6-7.31 c0-3.05,0.885-5.47,2.66-7.26c1.77-1.79,4.01-2.69,6.71-2.69C51.12,18.56,53.944,20.1,55.61,23.19z"/>
+  </g></g>
+  <g transform="translate(140.2,652.4) scale(0.24)">
+  <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
+     <circle fill="none" cx="37.79" cy="28.5" r="28.84" stroke="#BFBFBF" stroke-width="5.5"/>
+     <path fill="#BFBFBF" d="M46.129,20.557v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557 c0-0.572,0.2-1.057,0.599-1.457c0.401-0.399,0.887-0.6,1.457-0.6h13.144c0.533,0,1.01,0.2,1.428,0.6 C45.918,19.5,46.129,19.986,46.129,20.557z
+              M33.042,12.329c0-3.008,1.485-4.514,4.458-4.514s4.457,1.504,4.457,4.514 c0,2.971-1.486,4.457-4.457,4.457S33.042,15.3,33.042,12.329z"/>
+  </g></g>
+  </a>
+</g>
+  <g class="dl_el" transform="translate(69.1,548.4)">
+    <g class="dl_el_balloon">
+      <foreignObject x="0" y="0" width="250" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:90px">
+      <p class="dl_fe_p">CC-BY: Material may be freely re-used as long as you credit the author</p>
+      </div>
+	    </foreignObject>
+      <path stroke="#000" fill="#FDFFDF" d="M0,90H70l5,5l5,-5H250"/>
+    </g>
+  </g>
+</g>
+</svg>
