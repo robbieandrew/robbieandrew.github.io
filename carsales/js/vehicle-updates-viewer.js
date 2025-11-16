@@ -51,30 +51,70 @@ async function fetchAndProcessUpdates() {
  */
 function toggleUpdates() {
     const container = document.getElementById('updates-container');
-    const toggleButton = document.getElementById('toggle-button');
+    const toggleUpdatesButton = document.getElementById('toggle-button');
     
     const isHidden = container.style.display === 'none' || container.style.display === '';
 
     if (isHidden) {
         // If it's hidden, show it and change text to "hide"
         container.style.display = 'block';
-        toggleButton.textContent = 'Hide list of recent updates'; 
+        toggleUpdatesButton.textContent = 'Hide list of recent updates'; 
     } else {
         // If it's visible, hide it and change text to "show"
         container.style.display = 'none';
-        toggleButton.textContent = 'Show list of recent updates';
+        toggleUpdatesButton.textContent = 'Show list of recent updates';
     }
 }
 
 /**
+ * Shows the specified container and hides all others, updating button text.
+ * @param {string} contentId The ID of the container to show ('updates-container' or 'notes-container').
+ */
+function toggleContent(contentId) {
+    const updatesContainer = document.getElementById('updates-container');
+    const notesContainer = document.getElementById('notes-container');
+
+    const updatesButton = document.getElementById('toggle-updates-button');
+    const notesButton = document.getElementById('toggle-notes-button');
+
+    const targetContainer = document.getElementById(contentId);
+    
+    // Check if the target container is already visible
+    const isVisible = targetContainer.style.display === 'block';
+
+    // 1. Hide both containers initially
+    updatesContainer.style.display = 'none';
+    notesContainer.style.display = 'none';
+
+    // 2. Reset both button texts/states (assuming they start hidden)
+    updatesButton.textContent = 'Show list of recent updates';
+    notesButton.textContent = 'Show explanatory notes';
+
+
+    if (!isVisible) {
+        // 3. If it was hidden, show the target container and update its button text
+        targetContainer.style.display = 'block';
+        
+        if (contentId === 'updates-container') {
+            updatesButton.textContent = 'Hide list of recent updates';
+        } else if (contentId === 'notes-container') {
+            notesButton.textContent = 'Hide explanatory notes';
+        }
+    }
+    // If 'isVisible' is true, we simply hide it (steps 1 and 2 cover this).
+}
+
+/**
  * Main function to load data and set up event listeners.
- * Renamed from init() for specificity.
  */
 async function setupUpdateViewer() {
-    const toggleButton = document.getElementById('toggle-button');
+    // Renamed for clarity:
+    const toggleUpdatesButton = document.getElementById('toggle-updates-button'); 
+    const toggleNotesButton = document.getElementById('toggle-notes-button'); // NEW button ID
+
     const tableBody = document.getElementById('updates-tbody');
     
-    // 1. Load and display data
+    // 1. Load and display data (no change)
     const tableData = await fetchAndProcessUpdates();
     
     tableBody.innerHTML = ''; 
@@ -90,10 +130,12 @@ async function setupUpdateViewer() {
         
         tableBody.appendChild(tr);
     });
-
-    // 2. Set up the click handler
-    toggleButton.addEventListener('click', toggleUpdates);
+    
+    // 2. Set up the click handlers (updated)
+    toggleUpdatesButton.addEventListener('click', () => toggleContent('updates-container'));
+    toggleNotesButton.addEventListener('click', () => toggleContent('notes-container'));
 }
 
 // Run the setup function when the script loads
 setupUpdateViewer();
+

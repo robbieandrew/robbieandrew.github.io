@@ -110,10 +110,15 @@
 	display: none; /* Starts hidden */
 	text-align: center; 
 }
-#toggle-button {
+.toggle-button {
 	cursor: pointer;
 	color: blue;
 	text-decoration: underline;
+	display: inline-block;
+	margin-top: 0;
+}
+#controls-container {
+	text-align: center;
 }
 #updates-table {
 	border-collapse: collapse; 
@@ -128,4 +133,16 @@
 }
 #updates-table th {
 	background-color: #f2f2f2;
+}
+#notes-container p {
+    text-align: left;
+	max-width: 800px;
+}
+#notes-container ul {
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 10px;
+    display: block; 
 }

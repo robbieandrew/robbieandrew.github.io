@@ -30,7 +30,12 @@
 	<h1>Collected vehicle registration data</h1>
 	<p>Download <a href="data/all_carsales_monthly.csv">all monthly data in one file</a>.</p>
 	
-    <p id="toggle-button">Show list of recent updates</p>
+<div id="controls-container">
+    <p id="toggle-updates-button" class="toggle-button" style="margin-right: 20px;">Show list of recent updates</p>
+    <p id="toggle-notes-button" class="toggle-button">Show explanatory notes</p>
+</div>
+
+<div id="content-container">
     <div id="updates-container">
         <table id="updates-table">
             <thead>
@@ -45,6 +50,43 @@
             </tbody>
         </table>
     </div>
+
+    <div id="notes-container" style="display: none;">
+        <p>Data are collated from the sources indicated immediately above each chart, largely automatically, but with some manual intervention. In some cases a VPN is required to access data, and this is indicated with the word "geofenced". In many cases data are updated within 24 hours of the source being updated.</p>
+        <ul>
+		    <li>There is a differences between new registrations and new sales. In most cases the data on this page represent registrations, and in most cases this is near-coincident with sale. However, in some places, dealers will pre-register vehicles to get ahead of policy changes, and this leads at these times to registrations preceding actual sales to customers.</li>
+            <li>In some cases data are presented both for new registrations of new cars and for the sum of new and used cars. Some smaller countries (e.g. Netherlands, Denmark) can have a large share of cars newly added to the fleet entering the country as used vehicles imported from other countries. These are new (i.e. first-time) registrations of used cars. From the perspective of the change of the fleet towards low-emission drivetrains, accounting for these used imports is important.</li>
+		    <li>Some sources (e.g. Indonesia) only provide data as tables in PDF documents, so automatic extraction is used in cases where data must be aggregated or manual transcription where only a few data points are required. Generally this works well, but occasionally things go awry. This can be both in the official export to PDF, where data might be lost, and in the processing of poorly constructed PDF files.</li>
+			<li>The workflow for identifying updated data sources doesn't always catch revisions, and this can be a problem with sources that only report the most recent month. If you spot any numbers that don't look right when compared with official sources, let me know.</li>
+			<li>Data collation for some of the countries here has required considerable manual effort to find and assemble historical data, but with that work in the past, updating is generally relatively painless.</li>
+		</ul>
+		<p>Spikes or jumps in data can have several causes:</p>
+		<ul>
+			<li>In the UK and Ireland, there is a common pattern of purchasing according to when licence plate patterns change, twice a year.</li>
+			<li>In Iceland, businesses appear to make purchases once a year.</li>
+			<li>In China, end-of-year employee bonuses and sales campaigns lead to significant peaks in the final months of the year.</li>
+			<li>In all countries, significant changes in policy will lead to anticipation effects: either bulk registrations/sales before an increase in costs or reduction in availability, or a sharp decline before the expected introduction of decreased costs. We see this particularly with government incentives for electric vehicles, which sometimes change sharply from one day to the next.</li>
+			<li>And of course, the availability of specific, popular models can lead to a surge, as we saw in Indonesia in October 2025 with the arrival of BYD's Atto 1. This also encompasses Tesla's quarterly delivery to some markets, noticeable in Norway's statistics.</li>
+        </ul>
+        <p>Please feel free to contact me if you have questions. And if you know of reliable data sources for countries not listed on this page, let me know!</p>
+    </div>
+</div>
+
+<!--    <p id="toggle-button">Show list of recent updates</p>
+    <div id="updates-container">
+        <table id="updates-table">
+            <thead>
+                <tr>
+                    <th>Geography</th>
+                    <th>Latest data</th>
+                    <th>Updated on</th>
+                </tr>
+            </thead>
+            <tbody id="updates-tbody">
+                <tr><td colspan="3">Loading updates...</td></tr>
+            </tbody>
+        </table>
+    </div>-->
 
 	<script src="js/vehicle-updates-viewer.js"></script>
 
