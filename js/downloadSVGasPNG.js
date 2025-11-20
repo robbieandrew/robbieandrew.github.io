@@ -452,23 +452,35 @@ function createIMGDownloadLink(imgelement) {
   return downloadLink;
 }
 
-function createPDFDownloadLink(svgObject) {
-  if (typeof window.jspdf === 'undefined') {
-    // Return null if jspdf is not available
-    return null;
-  }
+function createPDFDownloadLink(element) {
+  const tagName = element.tagName.toUpperCase();
 
-  const downloadLink = document.createElement('a');
-  downloadLink.href = '#';
-  downloadLink.textContent = 'Download as PDF';
-  downloadLink.className = 'simple-button';
-  downloadLink.addEventListener('click', (e) => {
-    e.preventDefault(); // prevent browser trying to navigate to https://.../#
-    downloadSVGasPDF(svgObject);
-  });
-  return downloadLink;
+  if (tagName === 'OBJECT') {
+    if (typeof window.jspdf === 'undefined') {
+      // Return null if jspdf is not available
+      return null;
+    }
+
+    const downloadLink = document.createElement('a');
+    downloadLink.href = '#';
+    downloadLink.textContent = 'Download as PDF';
+    downloadLink.className = 'simple-button';
+    downloadLink.addEventListener('click', (e) => {
+      e.preventDefault(); // prevent browser trying to navigate to https://.../#
+      downloadSVGasPDF(element);
+    });
+    return downloadLink;
+  } else if (tagName === 'IMG') {
+	// One day I'll finish this. I want to check whether a file exists under pdf/ with the same name as the image file under img/. Requires fetch, cache, etc.
+    console.warn(`Unsupported element type in createPDFDownloadLink: ${tagName}`);
+    return null; 
+  } else {
+    console.warn(`Unsupported element type in createPDFDownloadLink: ${tagName}`);
+    return null; 
+  }
 }
 
+/* Return a link element that will open the object/img in a new tab and that can be added to the page */
 function createEnlargeLink(element) {
   // 1. Determine the URL based on the element type
   let imageURL;
@@ -501,8 +513,6 @@ function createEnlargeLink(element) {
   // 3. Add the click handler
   enlargeLink.addEventListener('click', (e) => {
     e.preventDefault();
-
-    // Use the determined imageURL from step 1
     window.open(imageURL, '_blank');
   });
 

@@ -65,7 +65,6 @@ function fetchGitHubDataFiles(siteCode,partialPath) {
 function fetchGitHubImages(siteCode,partialPath) {
   const folder = siteCode ? `${partialPath}/${siteCode}` : partialPath;
   const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${folder}`;
-//  const githubApiUrl = `https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/${partialPath}/${siteCode}`;
 
   return fetch(githubApiUrl)
     .then(response => {
@@ -91,7 +90,6 @@ function fetchGitHubImages(siteCode,partialPath) {
 		  const publicFolder = partialPath.replace(/\/$/, "").split("/").pop();
 		  return siteCode ? `${publicFolder}/${siteCode}/${file.name}` : `${publicFolder}/${file.name}`;
 		});
-//        .map(file => `img/${siteCode}/${file.name}`);
 
       if (imageUrls.length === 0) {
         throw new Error(`No valid images found in ${siteCode} folder.`);
