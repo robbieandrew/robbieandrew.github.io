@@ -39,17 +39,19 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_y" transform="translate(0,231.7)"/>
 <use xlink:href="#tick_y" transform="translate(0,142.9)"/>
 <use xlink:href="#tick_y" transform="translate(0,54.0)"/>
-<use xlink:href="#tick_x" transform="translate(221.8,0)"/>
-<use xlink:href="#tick_x" transform="translate(374.1,0)"/>
-<use xlink:href="#tick_x" transform="translate(526.4,0)"/>
-<use xlink:href="#tick_x" transform="translate(678.7,0)"/>
-<use xlink:href="#tick_x" transform="translate(831.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(209.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(336.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(462.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(589.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(716.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(843.7,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
-<text class="ticklabel xtl" transform="translate(221.8,629.0)" text-anchor="middle">2020</text>
-<text class="ticklabel xtl" transform="translate(374.1,629.0)" text-anchor="middle">2021</text>
-<text class="ticklabel xtl" transform="translate(526.4,629.0)" text-anchor="middle">2022</text>
-<text class="ticklabel xtl" transform="translate(678.7,629.0)" text-anchor="middle">2023</text>
-<text class="ticklabel xtl" transform="translate(831.0,629.0)" text-anchor="middle">2024</text>
+<text class="ticklabel xtl" transform="translate(209.1,629.0)" text-anchor="middle">2020</text>
+<text class="ticklabel xtl" transform="translate(336.0,629.0)" text-anchor="middle">2021</text>
+<text class="ticklabel xtl" transform="translate(462.9,629.0)" text-anchor="middle">2022</text>
+<text class="ticklabel xtl" transform="translate(589.9,629.0)" text-anchor="middle">2023</text>
+<text class="ticklabel xtl" transform="translate(716.8,629.0)" text-anchor="middle">2024</text>
+<text class="ticklabel xtl" transform="translate(843.7,629.0)" text-anchor="middle">2025</text>
 <text class="ticklabel ytl" transform="translate(128.8,595.3)">-1.5</text>
 <text class="ticklabel ytl" transform="translate(128.8,506.4)">-1.0</text>
 <text class="ticklabel ytl" transform="translate(128.8,417.5)">-0.5</text>
@@ -66,22 +68,32 @@ text:hover + .dl_el {display:block;}
 <g stroke="#000" stroke-width="0.90" fill="#BF4D4D"  clip-path="url(#axis_clip)">
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#0073BF"  clip-path="url(#axis_clip)">
-  <polygon points="160.8,528.5 160.8,320.6 282.7,320.6 282.7,528.5 160.8,528.5"/>
-  <polygon points="313.2,174.8 313.2,320.6 435.0,320.6 435.0,174.8 313.2,174.8"/>
-  <polygon points="465.5,139.3 465.5,320.6 587.3,320.6 587.3,139.3 465.5,139.3"/>
-  <polygon points="617.8,194.4 617.8,320.6 739.6,320.6 739.6,194.4 617.8,194.4"/>
-  <polygon points="770.1,388.1 770.1,320.6 892.0,320.6 892.0,388.1 770.1,388.1"/>
+  <polygon class="pl" points="158.3,528.5 158.3,320.6 259.8,320.6 259.8,528.5 158.3,528.5"/>
+  <polygon class="pl" points="285.2,146.4 285.2,320.6 386.8,320.6 386.8,146.4 285.2,146.4"/>
+  <polygon class="pl" points="412.2,167.7 412.2,320.6 513.7,320.6 513.7,167.7 412.2,167.7"/>
+  <polygon class="pl" points="539.1,194.4 539.1,320.6 640.6,320.6 640.6,194.4 539.1,194.4"/>
+  <polygon class="pl" points="666.0,357.9 666.0,320.6 767.6,320.6 767.6,357.9 666.0,357.9"/>
+  <polygon class="pl" points="793.0,135.7 793.0,308.1 894.5,308.1 894.5,135.7 793.0,135.7"/>
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#6298C6"  clip-path="url(#axis_clip)">
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#7B553E"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="793.0,308.1 793.0,320.6 894.5,320.6 894.5,308.1 793.0,308.1"/>
 </g>
-    <text class="pl" transform="translate(945.6,331.8)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
-    <text class="pl" transform="translate(945.6,305.9)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
-    <text class="pl" transform="translate(945.6,357.7)" dy="8.1" font-size="27.00" fill="#0073BF" stroke="none">Hydro</text>
-<polyline class="pl" points="910.8,320.6 912.4,320.6 913.8,320.7 915.2,320.9 916.4,321.2 917.6,321.5 918.8,321.8 919.8,322.2 920.8,322.7 921.7,323.2 922.7,323.7 923.5,324.2 924.4,324.8 925.2,325.3 926.0,325.9 926.8,326.5 927.6,327.1 928.4,327.7 929.3,328.2 930.1,328.7 931.1,329.3 932.0,329.7 933.0,330.2 934.0,330.6 935.2,331.0 936.4,331.3 937.6,331.5 939.0,331.7 940.4,331.8 942.0,331.8" stroke="#7B553E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,320.6 912.4,320.5 913.8,320.4 915.2,320.1 916.4,319.8 917.6,319.4 918.8,319.0 919.8,318.4 920.8,317.9 921.7,317.2 922.7,316.6 923.5,315.9 924.4,315.1 925.2,314.4 926.0,313.6 926.8,312.9 927.6,312.1 928.4,311.4 929.3,310.7 930.1,310.0 931.1,309.3 932.0,308.7 933.0,308.1 934.0,307.6 935.2,307.1 936.4,306.7 937.6,306.4 939.0,306.1 940.4,306.0 942.0,305.9" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,354.4 912.4,354.4 913.8,354.4 915.2,354.5 916.4,354.5 917.6,354.6 918.8,354.7 919.8,354.9 920.8,355.0 921.7,355.1 922.7,355.3 923.5,355.4 924.4,355.6 925.2,355.8 926.0,356.0 926.8,356.1 927.6,356.3 928.4,356.5 929.3,356.7 930.1,356.8 931.1,357.0 932.0,357.1 933.0,357.2 934.0,357.4 935.2,357.5 936.4,357.6 937.6,357.6 939.0,357.7 940.4,357.7 942.0,357.7" stroke="#0073BF" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(945.6,324.2)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
+    <text class="pl" transform="translate(945.6,298.3)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
+    <text class="pl" transform="translate(945.6,221.9)" dy="8.1" font-size="27.00" fill="#0073BF" stroke="none">Hydro</text>
+    <text class="pl" transform="translate(945.6,174.7)" dy="8.1" font-size="27.00" fill="#BF4D4D" stroke="none">Nuclear</text>
+    <text class="pl" transform="translate(945.6,148.7)" dy="8.1" font-size="27.00" fill="#598C1A" stroke="none">Wind</text>
+    <text class="pl" transform="translate(945.6,122.8)" dy="8.1" font-size="27.00" fill="#EDB021" stroke="none">Solar</text>
+    <text class="pl" transform="translate(945.6,96.8)" dy="8.1" font-size="27.00" fill="#404040" stroke="none">Oil</text>
+<polyline class="pl" points="910.8,314.4 912.4,314.4 913.8,314.5 915.2,314.7 916.4,314.9 917.6,315.1 918.8,315.5 919.8,315.8 920.8,316.2 921.7,316.6 922.7,317.1 923.5,317.5 924.4,318.0 925.2,318.5 926.0,319.0 926.8,319.5 927.6,320.1 928.4,320.6 929.3,321.0 930.1,321.5 931.1,322.0 932.0,322.4 933.0,322.8 934.0,323.1 935.2,323.4 936.4,323.7 937.6,323.9 939.0,324.1 940.4,324.2 942.0,324.2" stroke="#7B553E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,308.1 912.4,308.1 913.8,308.0 915.2,307.8 916.4,307.6 917.6,307.4 918.8,307.1 919.8,306.7 920.8,306.3 921.7,305.9 922.7,305.4 923.5,305.0 924.4,304.5 925.2,304.0 926.0,303.5 926.8,303.0 927.6,302.5 928.4,302.0 929.3,301.5 930.1,301.0 931.1,300.5 932.0,300.1 933.0,299.7 934.0,299.4 935.2,299.1 936.4,298.8 937.6,298.6 939.0,298.4 940.4,298.3 942.0,298.3" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,135.7 912.4,135.9 913.8,136.3 915.2,136.9 916.4,137.8 917.6,138.8 918.8,140.1 919.8,141.5 920.8,143.0 921.7,144.7 922.7,146.4 923.5,148.3 924.4,150.2 925.2,152.2 926.0,154.2 926.8,156.2 927.6,158.2 928.4,160.2 929.3,162.1 930.1,164.0 931.1,165.7 932.0,167.4 933.0,168.9 934.0,170.3 935.2,171.6 936.4,172.6 937.6,173.5 939.0,174.1 940.4,174.5 942.0,174.7" stroke="#BF4D4D" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,135.7 912.4,135.8 913.8,135.9 915.2,136.1 916.4,136.4 917.6,136.8 918.8,137.2 919.8,137.7 920.8,138.2 921.7,138.7 922.7,139.3 923.5,139.9 924.4,140.6 925.2,141.2 926.0,141.9 926.8,142.6 927.6,143.2 928.4,143.9 929.3,144.5 930.1,145.2 931.1,145.7 932.0,146.3 933.0,146.8 934.0,147.3 935.2,147.7 936.4,148.0 937.6,148.3 939.0,148.5 940.4,148.7 942.0,148.7" stroke="#598C1A" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,135.7 912.4,135.7 913.8,135.6 915.2,135.4 916.4,135.1 917.6,134.7 918.8,134.3 919.8,133.8 920.8,133.3 921.7,132.8 922.7,132.2 923.5,131.6 924.4,130.9 925.2,130.3 926.0,129.6 926.8,128.9 927.6,128.3 928.4,127.6 929.3,127.0 930.1,126.3 931.1,125.8 932.0,125.2 933.0,124.7 934.0,124.2 935.2,123.8 936.4,123.5 937.6,123.2 939.0,123.0 940.4,122.8 942.0,122.8" stroke="#EDB021" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,135.7 912.4,135.6 913.8,135.2 915.2,134.6 916.4,133.7 917.6,132.7 918.8,131.4 919.8,130.0 920.8,128.5 921.7,126.8 922.7,125.1 923.5,123.2 924.4,121.3 925.2,119.3 926.0,117.3 926.8,115.3 927.6,113.3 928.4,111.3 929.3,109.4 930.1,107.5 931.1,105.8 932.0,104.1 933.0,102.5 934.0,101.1 935.2,99.9 936.4,98.9 937.6,98.0 939.0,97.4 940.4,97.0 942.0,96.8" stroke="#404040" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(843.7,627.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">Jan-Jun</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Annual changes in Tajikistan's power generation</text>
 <text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: EMBER</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
@@ -96,7 +108,7 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>

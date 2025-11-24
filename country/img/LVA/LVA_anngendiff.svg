@@ -54,16 +54,16 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_x" transform="translate(793.0,0)"/>
 <use xlink:href="#tick_x" transform="translate(869.1,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
-<text class="ticklabel xtl" transform="translate(183.7,629.0)" text-anchor="middle">2015</text>
-<text class="ticklabel xtl" transform="translate(259.8,629.0)" text-anchor="middle">2016</text>
-<text class="ticklabel xtl" transform="translate(336.0,629.0)" text-anchor="middle">2017</text>
-<text class="ticklabel xtl" transform="translate(412.2,629.0)" text-anchor="middle">2018</text>
-<text class="ticklabel xtl" transform="translate(488.3,629.0)" text-anchor="middle">2019</text>
-<text class="ticklabel xtl" transform="translate(564.5,629.0)" text-anchor="middle">2020</text>
-<text class="ticklabel xtl" transform="translate(640.6,629.0)" text-anchor="middle">2021</text>
-<text class="ticklabel xtl" transform="translate(716.8,629.0)" text-anchor="middle">2022</text>
-<text class="ticklabel xtl" transform="translate(793.0,629.0)" text-anchor="middle">2023</text>
-<text class="ticklabel xtl" transform="translate(869.1,629.0)" text-anchor="middle">2024</text>
+<text class="ticklabel xtl" transform="translate(183.7,629.0)" text-anchor="middle">2016</text>
+<text class="ticklabel xtl" transform="translate(259.8,629.0)" text-anchor="middle">2017</text>
+<text class="ticklabel xtl" transform="translate(336.0,629.0)" text-anchor="middle">2018</text>
+<text class="ticklabel xtl" transform="translate(412.2,629.0)" text-anchor="middle">2019</text>
+<text class="ticklabel xtl" transform="translate(488.3,629.0)" text-anchor="middle">2020</text>
+<text class="ticklabel xtl" transform="translate(564.5,629.0)" text-anchor="middle">2021</text>
+<text class="ticklabel xtl" transform="translate(640.6,629.0)" text-anchor="middle">2022</text>
+<text class="ticklabel xtl" transform="translate(716.8,629.0)" text-anchor="middle">2023</text>
+<text class="ticklabel xtl" transform="translate(793.0,629.0)" text-anchor="middle">2024</text>
+<text class="ticklabel xtl" transform="translate(869.1,629.0)" text-anchor="middle">2025</text>
 <text class="ticklabel ytl" transform="translate(128.8,595.3)">-2.0</text>
 <text class="ticklabel ytl" transform="translate(128.8,528.6)">-1.5</text>
 <text class="ticklabel ytl" transform="translate(128.8,462.0)">-1.0</text>
@@ -74,63 +74,64 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel ytl" transform="translate(128.8,128.7)">1.5</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">2.0 TWh</text>
 <g stroke="#000" stroke-width="0.90" fill="#EDB021"  clip-path="url(#axis_clip)">
-  <polygon points="153.2,269.6 153.2,269.7 214.1,269.7 214.1,269.6 153.2,269.6"/>
-  <polygon points="229.4,323.1 229.4,323.1 290.3,323.1 290.3,323.1 229.4,323.1"/>
-  <polygon points="305.5,73.3 305.5,73.4 366.5,73.4 366.5,73.3 305.5,73.3"/>
-  <polygon points="381.7,174.3 381.7,174.4 442.6,174.4 442.6,174.3 381.7,174.3"/>
-  <polygon points="457.9,310.0 457.9,310.2 518.8,310.2 518.8,310.0 457.9,310.0"/>
-  <polygon points="534.0,252.3 534.0,252.5 594.9,252.5 594.9,252.3 534.0,252.3"/>
-  <polygon points="610.2,301.3 610.2,301.6 671.1,301.6 671.1,301.3 610.2,301.3"/>
-  <polygon points="686.3,299.4 686.3,308.5 747.3,308.5 747.3,299.4 686.3,299.4"/>
-  <polygon points="762.5,148.5 762.5,170.3 823.4,170.3 823.4,148.5 762.5,148.5"/>
+  <polygon class="pl" points="153.2,323.1 153.2,323.1 214.1,323.1 214.1,323.1 153.2,323.1"/>
+  <polygon class="pl" points="229.4,73.3 229.4,73.4 290.3,73.4 290.3,73.3 229.4,73.3"/>
+  <polygon class="pl" points="305.5,174.3 305.5,174.4 366.5,174.4 366.5,174.3 305.5,174.3"/>
+  <polygon class="pl" points="381.7,310.0 381.7,310.2 442.6,310.2 442.6,310.0 381.7,310.0"/>
+  <polygon class="pl" points="457.9,252.3 457.9,252.5 518.8,252.5 518.8,252.3 457.9,252.3"/>
+  <polygon class="pl" points="534.0,301.3 534.0,301.6 594.9,301.6 594.9,301.3 534.0,301.3"/>
+  <polygon class="pl" points="610.2,299.4 610.2,308.5 671.1,308.5 671.1,299.4 610.2,299.4"/>
+  <polygon class="pl" points="686.3,148.5 686.3,170.3 747.3,170.3 747.3,148.5 686.3,148.5"/>
+  <polygon class="pl" points="838.7,320.3 838.7,320.6 899.6,320.6 899.6,320.3 838.7,320.3"/>
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#598C1A"  clip-path="url(#axis_clip)">
-  <polygon points="153.2,269.7 153.2,270.7 214.1,270.7 214.1,269.7 153.2,269.7"/>
-  <polygon points="229.4,323.1 229.4,320.6 290.3,320.6 290.3,323.1 229.4,323.1"/>
-  <polygon points="305.5,73.4 305.5,76.3 366.5,76.3 366.5,73.4 305.5,73.4"/>
-  <polygon points="381.7,582.7 381.7,579.0 442.6,579.0 442.6,582.7 381.7,582.7"/>
-  <polygon points="457.9,310.2 457.9,314.4 518.8,314.4 518.8,310.2 457.9,310.2"/>
-  <polygon points="534.0,252.5 534.0,255.5 594.9,255.5 594.9,252.5 534.0,252.5"/>
-  <polygon points="610.2,325.3 610.2,320.6 671.1,320.6 671.1,325.3 610.2,325.3"/>
-  <polygon points="686.3,308.5 686.3,314.9 747.3,314.9 747.3,308.5 686.3,308.5"/>
-  <polygon points="762.5,170.3 762.5,180.9 823.4,180.9 823.4,170.3 762.5,170.3"/>
-  <polygon points="838.7,319.6 838.7,320.6 899.6,320.6 899.6,319.6 838.7,319.6"/>
+  <polygon class="pl" points="153.2,323.1 153.2,320.6 214.1,320.6 214.1,323.1 153.2,323.1"/>
+  <polygon class="pl" points="229.4,73.4 229.4,76.3 290.3,76.3 290.3,73.4 229.4,73.4"/>
+  <polygon class="pl" points="305.5,582.7 305.5,579.0 366.5,579.0 366.5,582.7 305.5,582.7"/>
+  <polygon class="pl" points="381.7,310.2 381.7,314.4 442.6,314.4 442.6,310.2 381.7,310.2"/>
+  <polygon class="pl" points="457.9,252.5 457.9,255.5 518.8,255.5 518.8,252.5 457.9,252.5"/>
+  <polygon class="pl" points="534.0,325.3 534.0,320.6 594.9,320.6 594.9,325.3 534.0,325.3"/>
+  <polygon class="pl" points="610.2,308.5 610.2,314.9 671.1,314.9 671.1,308.5 610.2,308.5"/>
+  <polygon class="pl" points="686.3,170.3 686.3,180.9 747.3,180.9 747.3,170.3 686.3,170.3"/>
+  <polygon class="pl" points="762.5,319.6 762.5,320.6 823.4,320.6 823.4,319.6 762.5,319.6"/>
+  <polygon class="pl" points="838.7,420.2 838.7,415.5 899.6,415.5 899.6,420.2 838.7,420.2"/>
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#0073BF"  clip-path="url(#axis_clip)">
-  <polygon points="153.2,335.5 153.2,320.6 214.1,320.6 214.1,335.5 153.2,335.5"/>
-  <polygon points="229.4,211.9 229.4,302.8 290.3,302.8 290.3,211.9 229.4,211.9"/>
-  <polygon points="305.5,76.3 305.5,320.6 366.5,320.6 366.5,76.3 305.5,76.3"/>
-  <polygon points="381.7,579.0 381.7,320.6 442.6,320.6 442.6,579.0 381.7,579.0"/>
-  <polygon points="457.9,364.2 457.9,321.4 518.8,321.4 518.8,364.2 457.9,364.2"/>
-  <polygon points="534.0,255.5 534.0,320.6 594.9,320.6 594.9,255.5 534.0,255.5"/>
-  <polygon points="610.2,301.6 610.2,315.5 671.1,315.5 671.1,301.6 610.2,301.6"/>
-  <polygon points="686.3,314.9 686.3,320.6 747.3,320.6 747.3,314.9 686.3,314.9"/>
-  <polygon points="762.5,180.9 762.5,320.6 823.4,320.6 823.4,180.9 762.5,180.9"/>
-  <polygon points="838.7,398.8 838.7,320.6 899.6,320.6 899.6,398.8 838.7,398.8"/>
+  <polygon class="pl" points="153.2,211.9 153.2,302.8 214.1,302.8 214.1,211.9 153.2,211.9"/>
+  <polygon class="pl" points="229.4,76.3 229.4,320.6 290.3,320.6 290.3,76.3 229.4,76.3"/>
+  <polygon class="pl" points="305.5,579.0 305.5,320.6 366.5,320.6 366.5,579.0 305.5,579.0"/>
+  <polygon class="pl" points="381.7,364.2 381.7,321.4 442.6,321.4 442.6,364.2 381.7,364.2"/>
+  <polygon class="pl" points="457.9,255.5 457.9,320.6 518.8,320.6 518.8,255.5 457.9,255.5"/>
+  <polygon class="pl" points="534.0,301.6 534.0,315.5 594.9,315.5 594.9,301.6 534.0,301.6"/>
+  <polygon class="pl" points="610.2,314.9 610.2,320.6 671.1,320.6 671.1,314.9 610.2,314.9"/>
+  <polygon class="pl" points="686.3,180.9 686.3,320.6 747.3,320.6 747.3,180.9 686.3,180.9"/>
+  <polygon class="pl" points="762.5,398.8 762.5,320.6 823.4,320.6 823.4,398.8 762.5,398.8"/>
+  <polygon class="pl" points="838.7,415.5 838.7,333.6 899.6,333.6 899.6,415.5 838.7,415.5"/>
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#6298C6"  clip-path="url(#axis_clip)">
-  <polygon points="153.2,270.7 153.2,320.6 214.1,320.6 214.1,270.7 153.2,270.7"/>
-  <polygon points="229.4,302.8 229.4,320.6 290.3,320.6 290.3,302.8 229.4,302.8"/>
-  <polygon points="305.5,430.3 305.5,320.6 366.5,320.6 366.5,430.3 305.5,430.3"/>
-  <polygon points="381.7,174.4 381.7,319.7 442.6,319.7 442.6,174.4 381.7,174.4"/>
-  <polygon points="457.9,314.4 457.9,320.6 518.8,320.6 518.8,314.4 457.9,314.4"/>
-  <polygon points="534.0,451.8 534.0,320.6 594.9,320.6 594.9,451.8 534.0,451.8"/>
-  <polygon points="610.2,315.5 610.2,320.6 671.1,320.6 671.1,315.5 610.2,315.5"/>
-  <polygon points="686.3,432.9 686.3,320.6 747.3,320.6 747.3,432.9 686.3,432.9"/>
+  <polygon class="pl" points="153.2,302.8 153.2,320.6 214.1,320.6 214.1,302.8 153.2,302.8"/>
+  <polygon class="pl" points="229.4,430.3 229.4,320.6 290.3,320.6 290.3,430.3 229.4,430.3"/>
+  <polygon class="pl" points="305.5,174.4 305.5,319.7 366.5,319.7 366.5,174.4 305.5,174.4"/>
+  <polygon class="pl" points="381.7,314.4 381.7,320.6 442.6,320.6 442.6,314.4 381.7,314.4"/>
+  <polygon class="pl" points="457.9,451.8 457.9,320.6 518.8,320.6 518.8,451.8 457.9,451.8"/>
+  <polygon class="pl" points="534.0,315.5 534.0,320.6 594.9,320.6 594.9,315.5 534.0,315.5"/>
+  <polygon class="pl" points="610.2,432.9 610.2,320.6 671.1,320.6 671.1,432.9 610.2,432.9"/>
+  <polygon class="pl" points="838.7,333.6 838.7,320.6 899.6,320.6 899.6,333.6 838.7,333.6"/>
 </g>
 <g stroke="#000" stroke-width="0.90" fill="#7B553E"  clip-path="url(#axis_clip)">
-  <polygon points="381.7,319.7 381.7,320.6 442.6,320.6 442.6,319.7 381.7,319.7"/>
-  <polygon points="457.9,321.4 457.9,320.6 518.8,320.6 518.8,321.4 457.9,321.4"/>
+  <polygon class="pl" points="305.5,319.7 305.5,320.6 366.5,320.6 366.5,319.7 305.5,319.7"/>
+  <polygon class="pl" points="381.7,321.4 381.7,320.6 442.6,320.6 442.6,321.4 381.7,321.4"/>
 </g>
-    <text class="pl" transform="translate(945.6,343.2)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
-    <text class="pl" transform="translate(945.6,317.3)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
-    <text class="pl" transform="translate(945.6,369.1)" dy="8.1" font-size="27.00" fill="#0073BF" stroke="none">Hydro</text>
-    <text class="pl" transform="translate(945.6,291.4)" dy="8.1" font-size="27.00" fill="#598C1A" stroke="none">Wind</text>
-    <text class="pl" transform="translate(945.6,398.8)" dy="8.1" font-size="27.00" fill="#EDB021" stroke="none">Solar</text>
-<polyline class="pl" points="910.8,320.6 912.4,320.7 913.8,320.9 915.2,321.3 916.4,321.8 917.6,322.4 918.8,323.1 919.8,323.9 920.8,324.8 921.7,325.8 922.7,326.8 923.5,327.9 924.4,329.0 925.2,330.1 926.0,331.3 926.8,332.5 927.6,333.6 928.4,334.8 929.3,335.9 930.1,337.0 931.1,338.0 932.0,339.0 933.0,339.9 934.0,340.7 935.2,341.4 936.4,342.0 937.6,342.5 939.0,342.9 940.4,343.1 942.0,343.2" stroke="#7B553E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,320.6 912.4,320.6 913.8,320.5 915.2,320.5 916.4,320.4 917.6,320.3 918.8,320.2 919.8,320.1 920.8,320.0 921.7,319.8 922.7,319.7 923.5,319.5 924.4,319.4 925.2,319.2 926.0,319.0 926.8,318.9 927.6,318.7 928.4,318.5 929.3,318.4 930.1,318.2 931.1,318.1 932.0,317.9 933.0,317.8 934.0,317.7 935.2,317.6 936.4,317.5 937.6,317.4 939.0,317.3 940.4,317.3 942.0,317.3" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,359.7 912.4,359.7 913.8,359.8 915.2,360.0 916.4,360.2 917.6,360.5 918.8,360.8 919.8,361.1 920.8,361.5 921.7,361.9 922.7,362.3 923.5,362.7 924.4,363.2 925.2,363.7 926.0,364.2 926.8,364.7 927.6,365.1 928.4,365.6 929.3,366.1 930.1,366.5 931.1,367.0 932.0,367.4 933.0,367.7 934.0,368.1 935.2,368.4 936.4,368.6 937.6,368.8 939.0,369.0 940.4,369.1 942.0,369.1" stroke="#0073BF" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,320.1 912.4,320.0 913.8,319.7 915.2,319.3 916.4,318.6 917.6,317.8 918.8,316.9 919.8,315.9 920.8,314.8 921.7,313.5 922.7,312.2 923.5,310.9 924.4,309.4 925.2,308.0 926.0,306.5 926.8,305.0 927.6,303.5 928.4,302.1 929.3,300.7 930.1,299.3 931.1,298.0 932.0,296.7 933.0,295.6 934.0,294.6 935.2,293.7 936.4,292.9 937.6,292.3 939.0,291.8 940.4,291.5 942.0,291.4" stroke="#598C1A" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(945.6,322.7)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
+    <text class="pl" transform="translate(945.6,348.6)" dy="8.1" font-size="27.00" fill="#6298C6" stroke="none">Natural gas</text>
+    <text class="pl" transform="translate(945.6,374.6)" dy="8.1" font-size="27.00" fill="#0073BF" stroke="none">Hydro</text>
+    <text class="pl" transform="translate(945.6,417.8)" dy="8.1" font-size="27.00" fill="#598C1A" stroke="none">Wind</text>
+    <text class="pl" transform="translate(945.6,296.8)" dy="8.1" font-size="27.00" fill="#EDB021" stroke="none">Solar</text>
+<polyline class="pl" points="910.8,320.6 912.4,320.6 913.8,320.6 915.2,320.6 916.4,320.7 917.6,320.8 918.8,320.8 919.8,320.9 920.8,321.0 921.7,321.1 922.7,321.2 923.5,321.3 924.4,321.4 925.2,321.5 926.0,321.6 926.8,321.7 927.6,321.8 928.4,321.9 929.3,322.0 930.1,322.1 931.1,322.2 932.0,322.3 933.0,322.4 934.0,322.5 935.2,322.5 936.4,322.6 937.6,322.6 939.0,322.7 940.4,322.7 942.0,322.7" stroke="#7B553E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,327.1 912.4,327.2 913.8,327.4 915.2,327.8 916.4,328.2 917.6,328.8 918.8,329.5 919.8,330.3 920.8,331.1 921.7,332.0 922.7,333.0 923.5,334.1 924.4,335.1 925.2,336.2 926.0,337.3 926.8,338.4 927.6,339.5 928.4,340.6 929.3,341.7 930.1,342.7 931.1,343.7 932.0,344.6 933.0,345.5 934.0,346.3 935.2,346.9 936.4,347.5 937.6,348.0 939.0,348.4 940.4,348.6 942.0,348.6" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,374.6 912.4,374.6 913.8,374.6 915.2,374.6 916.4,374.6 917.6,374.6 918.8,374.6 919.8,374.6 920.8,374.6 921.7,374.6 922.7,374.6 923.5,374.6 924.4,374.6 925.2,374.6 926.0,374.6 926.8,374.6 927.6,374.6 928.4,374.6 929.3,374.6 930.1,374.6 931.1,374.6 932.0,374.6 933.0,374.6 934.0,374.6 935.2,374.6 936.4,374.6 937.6,374.6 939.0,374.6 940.4,374.6 942.0,374.6" stroke="#0073BF" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,320.4 912.4,320.4 913.8,320.1 915.2,319.7 916.4,319.2 917.6,318.6 918.8,317.8 919.8,317.0 920.8,316.0 921.7,315.0 922.7,313.9 923.5,312.8 924.4,311.6 925.2,310.4 926.0,309.2 926.8,308.0 927.6,306.8 928.4,305.6 929.3,304.4 930.1,303.3 931.1,302.2 932.0,301.2 933.0,300.2 934.0,299.4 935.2,298.6 936.4,298.0 937.6,297.5 939.0,297.1 940.4,296.9 942.0,296.8" stroke="#EDB021" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(869.1,627.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">Jan-Aug</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Annual changes in Latvia's power generation</text>
 <text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: <a href="https://www.iea.org/data-and-statistics" target="_blank" style="fill:#BFBFBF">IEA</a></text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
@@ -145,7 +146,7 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
