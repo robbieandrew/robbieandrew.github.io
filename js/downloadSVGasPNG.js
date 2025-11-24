@@ -835,10 +835,12 @@ function reloadSVGs() {
     const originalData = obj.getAttribute('data');
     // Check if the URL already has a cache-busting parameter
     const url = new URL(originalData, window.location.href);
+    console.log(`Adding cache-bust to ${url}`);
     // Append a new timestamp parameter to the URL
     url.searchParams.set('v', new Date().getTime());
     // Update the data attribute, which forces a reload
     obj.setAttribute('data', url.toString());
+	console.log("New URL: ",url.toString())
   });
 }
 
