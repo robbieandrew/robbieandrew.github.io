@@ -482,6 +482,40 @@ function createPDFDownloadLink(element) {
 
 /* Return a link element that will open the object/img in a new tab and that can be added to the page */
 function createEnlargeLink(element) {
+  // 1. Create the link element
+  const enlargeLink = document.createElement('a');
+  enlargeLink.href = '#';
+  enlargeLink.textContent = 'Enlarge this figure';
+  enlargeLink.className = 'simple-button';
+
+  // 2. Add the click handler
+  enlargeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // Read the current URL on click
+    let imageURL;
+    const tagName = element.tagName.toUpperCase();
+
+    if (tagName === 'OBJECT') {
+      // READ CURRENT VALUE on click
+      imageURL = element.data;
+    } else if (tagName === 'IMG') {
+      // READ CURRENT VALUE on click
+      imageURL = element.src;
+    } 
+
+    if (imageURL) {
+      window.open(imageURL, '_blank');
+    } else {
+      console.warn(`${tagName} element has no URL to open.`);
+    }
+  });
+
+  return enlargeLink;
+}
+/* Backed up the previous version of the function 28 November 2025.
+   Delete this if everything is still working next time I see this! */
+/*function createEnlargeLink(element) {
   // 1. Determine the URL based on the element type
   let imageURL;
   const tagName = element.tagName.toUpperCase();
@@ -517,7 +551,7 @@ function createEnlargeLink(element) {
   });
 
   return enlargeLink;
-}
+}*/
 
 /*function createEnlargeLink(svgObject) {
   const enlargeLink = document.createElement('a');
@@ -576,7 +610,7 @@ function createAltTextLink(svgObject) {
         console.log("Copied to clipboard:", altText);
       })
       .catch(err => {
-        showToastBelowElement(altLink,'Failed to alt text to clipboard.');
+        showToastBelowElement(altLink,'Failed to copy alt text to clipboard.');
         console.error("Failed to copy:", err);
       });
   });
