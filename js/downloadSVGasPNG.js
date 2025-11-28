@@ -497,10 +497,8 @@ function createEnlargeLink(element) {
     const tagName = element.tagName.toUpperCase();
 
     if (tagName === 'OBJECT') {
-      // READ CURRENT VALUE on click
       imageURL = element.data;
     } else if (tagName === 'IMG') {
-      // READ CURRENT VALUE on click
       imageURL = element.src;
     } 
 
@@ -587,6 +585,43 @@ function createCopyLink(element) {
 
 function createAltTextLink(svgObject) {
   const altLink = document.createElement('a');
+
+  altLink.href = '#';
+  altLink.textContent = 'Alt';
+  altLink.className = 'simple-button';
+  altLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const svgDoc = svgObject.contentDocument;
+    if (!svgDoc) {
+	  console.error("SVG document missing!");
+	  return null;
+	}
+    const titleEl = svgDoc.querySelector("title");
+    if (!titleEl) {
+      const svgURL = svgObject.data;
+      console.error("SVG object has no 'title' element: ",svgURL.split('/').pop());
+      return null;
+    }
+    const titleText = titleEl.textContent.trim() || "Untitled graph";
+    const altText = `Graph showing: ${titleText}`;
+
+    navigator.clipboard.writeText(altText)
+      .then(() => {
+    showToastBelowElement(altLink,'Copied simple alt text to clipboard!');
+        console.log("Copied to clipboard:", altText);
+      })
+      .catch(err => {
+        showToastBelowElement(altLink,'Failed to copy alt text to clipboard.');
+        console.error("Failed to copy:", err);
+      });
+  });
+  return altLink;
+}
+
+/* Backed up the previous version of the function 28 November 2025.
+   Delete this if everything is still working next time I see this! */
+/*function createAltTextLink(svgObject) {
+  const altLink = document.createElement('a');
   const svgDoc = svgObject.contentDocument;
   const svgURL = svgObject.data;
 
@@ -615,7 +650,7 @@ function createAltTextLink(svgObject) {
       });
   });
   return altLink;
-}
+}*/
 
 // Only implemented for country/index.html
 function createDataDownloadLink(svgObject) {
