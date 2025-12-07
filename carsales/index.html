@@ -86,22 +86,6 @@
     </div>
 </div>
 
-<!--    <p id="toggle-button">Show list of recent updates</p>
-    <div id="updates-container">
-        <table id="updates-table">
-            <thead>
-                <tr>
-                    <th>Geography</th>
-                    <th>Latest data</th>
-                    <th>Updated on</th>
-                </tr>
-            </thead>
-            <tbody id="updates-tbody">
-                <tr><td colspan="3">Loading updates...</td></tr>
-            </tbody>
-        </table>
-    </div>-->
-
 	<script src="js/vehicle-updates-viewer.js"></script>
 
 	<div class="selector-container">
@@ -236,66 +220,39 @@ function makeCountrySelector() {
   // Initialize the count to n (Since 'All' is the default)
   selectedCountSpan.textContent = totalCountries;
 
-/*
-  // Filter graphs based on selection
-  selectElement.addEventListener('change', function() {
-    const selectedOptions = Array.from(this.selectedOptions).map(option => option.value);
-    const countries = document.querySelectorAll('.country');
+  selectElement.addEventListener('change', function () {
+    let selectedOptions = Array.from(this.selectedOptions).map(option => option.value);
 
-    countries.forEach(country => {
-      if (selectedOptions.includes('all') || selectedOptions.includes(country.dataset.country)) {
-        country.style.display = 'block';
-      } else {
-        country.style.display = 'none';
-      }
-    });
-
-    // Ensure "All" behaves properly
+    // If "All" and others are selected, deselect "All"
     if (selectedOptions.length > 1 && selectedOptions.includes('all')) {
-      this.querySelector('option[value="all"]').selected = false;
-    }
-    
-    if (selectedOptions.length === 0) {
-      this.querySelector('option[value="all"]').selected = true;
-      countries.forEach(c => c.style.display = 'block');
-    }
-	// Ensure that all countries' charts are based on the current filters
-	updateCharts();
-  });
-*/
-selectElement.addEventListener('change', function () {
-  let selectedOptions = Array.from(this.selectedOptions).map(option => option.value);
-
-  // If "All" and others are selected, deselect "All"
-  if (selectedOptions.length > 1 && selectedOptions.includes('all')) {
     this.querySelector('option[value="all"]').selected = false;
     selectedOptions = selectedOptions.filter(value => value !== 'all');
-  }
+    }
 
-  const countries = document.querySelectorAll('.country');
+    const countries = document.querySelectorAll('.country');
 
-  if (selectedOptions.length === 0) {
+    if (selectedOptions.length === 0) {
     // If nothing selected, default back to "All"
     this.querySelector('option[value="all"]').selected = true;
     selectedOptions = ['all'];
-  }
+    }
 
-  countries.forEach(country => {
+    countries.forEach(country => {
     if (selectedOptions.includes('all') || selectedOptions.includes(country.dataset.country)) {
       country.style.display = 'block';
     } else {
       country.style.display = 'none';
     }
+    });
+
+    // Update chart content
+    updateCharts();
+
+    // Update count display
+    const selectedCountSpan = document.getElementById("selectedCount");
+    const totalCount = countrySelector.options.length - 1;
+    selectedCountSpan.textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
   });
-
-  // Update chart content
-  updateCharts();
-
-  // Update count display
-  const selectedCountSpan = document.getElementById("selectedCount");
-  const totalCount = countrySelector.options.length - 1;
-  selectedCountSpan.textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
-});
 
 };
 
@@ -355,7 +312,7 @@ function makeCountryDiv(entry) {
           <object data="${svgPath}" type="image/svg+xml" class="fig"></object>
         `;
 
-        // Add options (enlarge and download)
+        // Add data download button
         countryDiv.innerHTML += `
           <p class="svg-button-group"><a href="${csvPath}" class="simple-button" download>Download data</a></p>
         `;
@@ -363,6 +320,7 @@ function makeCountryDiv(entry) {
 }
 
 function populateCountries() {
+  console.log('populateCountries()')
   // The data.json file is critical: it determines which countries are shown, and includes additional metadata
   // on source(s) and any dedicated web page for the country.
   fetch('https://robbieandrew.github.io/carsales/data.json')
@@ -381,9 +339,11 @@ function populateCountries() {
 
 	  makeCountrySelector();
 	  filterListen();
+	  console.log('  adding buttons')
       // Add a PNG download link for every SVG on the page
       document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-        svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
+//        svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
+		addSVGbuttons(svgObject)
 		// Add a class to the parent div
         let container = svgObject.closest("div");
         if (container) {
@@ -429,7 +389,7 @@ function setupSortButtons() {
   });
 
   // Default sorting (Alphabetical)
-  sortCountries('alphabetical');
+//  sortCountries('alphabetical');
 }
 
 let bevShareData = {};

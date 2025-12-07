@@ -511,64 +511,6 @@ function createEnlargeLink(element) {
 
   return enlargeLink;
 }
-/* Backed up the previous version of the function 28 November 2025.
-   Delete this if everything is still working next time I see this! */
-/*function createEnlargeLink(element) {
-  // 1. Determine the URL based on the element type
-  let imageURL;
-  const tagName = element.tagName.toUpperCase();
-
-  if (tagName === 'OBJECT') {
-    // For SVG loaded as an <object>, the URL is in the 'data' attribute.
-    imageURL = element.data;
-  } else if (tagName === 'IMG') {
-    // For <img> elements, the URL is in the 'src' attribute.
-    imageURL = element.src;
-  } else {
-    // Log a warning if it's an unsupported element type and return null or throw.
-    console.warn(`Unsupported element type for enlargement link: ${tagName}`);
-    return null; 
-  }
-
-  // If no URL is found, we also stop here.
-  if (!imageURL) {
-    console.warn(`${tagName} element has no URL to open.`);
-    return null;
-  }
-
-  // 2. Create the link element
-  const enlargeLink = document.createElement('a');
-  enlargeLink.href = '#'; // Use '#' as a placeholder, as the navigation is handled by JS
-  enlargeLink.textContent = 'Enlarge this figure';
-  enlargeLink.className = 'simple-button';
-
-  // 3. Add the click handler
-  enlargeLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.open(imageURL, '_blank');
-  });
-
-  return enlargeLink;
-}*/
-
-/*function createEnlargeLink(svgObject) {
-  const enlargeLink = document.createElement('a');
-  const imageURL = svgObject.data;
-  enlargeLink.href = '#' ;
-  enlargeLink.textContent = 'Enlarge this figure';
-  enlargeLink.className = 'simple-button';
-  enlargeLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const currentURL = svgObject.data;
-
-    if (currentURL) {
-      window.open(currentURL, '_blank');
-    } else {
-      console.warn('SVG object has no data URL to open.');
-    }
-  });
-  return enlargeLink;
-}*/
 
 function createCopyLink(element) {
   const copyLink = document.createElement('a');
@@ -618,40 +560,6 @@ function createAltTextLink(svgObject) {
   return altLink;
 }
 
-/* Backed up the previous version of the function 28 November 2025.
-   Delete this if everything is still working next time I see this! */
-/*function createAltTextLink(svgObject) {
-  const altLink = document.createElement('a');
-  const svgDoc = svgObject.contentDocument;
-  const svgURL = svgObject.data;
-
-  if (!svgDoc) return null;
-  const titleEl = svgDoc.querySelector("title");
-  if (!titleEl) {
-    console.error("SVG object has no 'title' element: ",svgURL.split('/').pop());
-    return null;
-  }
-  altLink.href = '#';
-  altLink.textContent = 'Alt';
-  altLink.className = 'simple-button';
-  altLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const titleText = titleEl.textContent.trim() || "Untitled graph";
-    const altText = `Graph showing: ${titleText}`;
-
-    navigator.clipboard.writeText(altText)
-      .then(() => {
-    showToastBelowElement(altLink,'Copied simple alt text to clipboard!');
-        console.log("Copied to clipboard:", altText);
-      })
-      .catch(err => {
-        showToastBelowElement(altLink,'Failed to copy alt text to clipboard.');
-        console.error("Failed to copy:", err);
-      });
-  });
-  return altLink;
-}*/
-
 // Only implemented for country/index.html
 function createDataDownloadLink(svgObject) {
   const svgURL = svgObject.data;
@@ -659,6 +567,8 @@ function createDataDownloadLink(svgObject) {
     console.log("SVG object has no data URL.");
     return null;
   }
+
+  console.log('    createDataDownloadLink()')
 
   const urlParts = svgURL.split('/');
 
@@ -679,6 +589,7 @@ function createDataDownloadLink(svgObject) {
   
   if (typeof availableDataFiles === 'undefined' || !Array.isArray(availableDataFiles)) {
     // No data file list available. Skipping data link.
+	console.log('      No data file list available!')
     return null;
   }
 
@@ -697,7 +608,7 @@ function createDataDownloadLink(svgObject) {
 
       const link = document.createElement('a');
       link.href = "#";
-    link.className = 'simple-button';
+      link.className = 'simple-button';
       link.textContent = 'Download data';
       link.addEventListener('click', (event) => {
         event.preventDefault();
@@ -732,16 +643,19 @@ function addSVGbuttons(svgObject) {
   // --- 1. Create All Potential Links ---
   const downloadPNGLink = createPNGDownloadLink(svgObject);
   const downloadPDFLink = createPDFDownloadLink(svgObject);
-  const dataLink = createDataDownloadLink(svgObject);
+  const downloadDataLink = createDataDownloadLink(svgObject);
   const enlargeLink = createEnlargeLink(svgObject);
   const alttextLink = createAltTextLink(svgObject);
   const copyLink = !isIOSorIPadOS() ? createCopyLink(svgObject) : null;
+
+//  console.log('links created');
+
 
   // --- 2. Separate into Link Groups ---
   const downloadButtons = [];
   if (downloadPNGLink) downloadButtons.push(downloadPNGLink);
   if (downloadPDFLink) downloadButtons.push(downloadPDFLink);
-  if (dataLink) downloadButtons.push(dataLink); // Data is a form of download
+  if (downloadDataLink) downloadButtons.push(downloadDataLink); // Data is a form of download
 
   const allButtons = [enlargeLink, copyLink, alttextLink];
   
@@ -820,7 +734,7 @@ function addIMGbuttons(imgElement) {
   // --- 1. Create All Potential Links ---
   const downloadIMGLink = createIMGDownloadLink(imgElement);
 //  const downloadPDFLink = createPDFDownloadLink(imgElement);
-//  const dataLink = createDataDownloadLink(imgElement);
+//  const downloadDataLink = createDataDownloadLink(imgElement);
   const enlargeLink = createEnlargeLink(imgElement);
 //  const alttextLink = createAltTextLink(imgElement);
   const copyLink = !isIOSorIPadOS() ? createCopyLink(imgElement) : null;
@@ -829,7 +743,7 @@ function addIMGbuttons(imgElement) {
   const downloadButtons = [];
   if (downloadIMGLink) downloadButtons.push(downloadIMGLink);
 //  if (downloadPDFLink) downloadButtons.push(downloadPDFLink);
-//  if (dataLink) downloadButtons.push(dataLink); // Data is a form of download
+//  if (downloadDataLink) downloadButtons.push(downloadDataLink); // Data is a form of download
 
 //  const allButtons = [enlargeLink, copyLink, alttextLink];
   const allButtons = [enlargeLink, copyLink];
