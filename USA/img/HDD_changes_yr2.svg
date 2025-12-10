@@ -35,10 +35,10 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="559.5,634.4 559.5,54.0" stroke="#808080" fill="none" />
+    <polyline class="pl pll" points="542.3,634.4 542.3,54.0" stroke="#808080" fill="none" />
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="178.7,510.0 211.8,537.9 244.9,529.0 278.1,528.1 311.2,528.0 344.3,533.3 377.4,533.8 410.5,534.0 443.6,534.7 476.7,534.1 509.8,534.4 543.0,533.9 576.1,489.9 609.2,336.8 642.3,117.1 675.4,298.3 708.5,368.5 741.6,378.7 774.7,390.1 807.9,409.9 841.0,406.3 874.1,473.5 907.2,472.5" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="177.3,510.0 209.1,537.9 240.8,529.0 272.5,528.1 304.3,528.0 336.0,533.3 367.7,533.8 399.5,534.0 431.2,534.7 462.9,534.1 494.7,534.4 526.4,533.9 558.1,489.9 589.9,336.8 621.6,117.1 653.3,298.3 685.1,368.5 716.8,378.7 748.5,390.1 780.3,409.9 812.0,406.3 843.7,473.5 875.5,472.5 907.2,391.3" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -54,53 +54,55 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_y" transform="translate(0,267.3)"/>
 <use xlink:href="#tick_y" transform="translate(0,160.6)"/>
 <use xlink:href="#tick_y" transform="translate(0,54.0)"/>
-<use xlink:href="#tick_x" transform="translate(178.7,0)"/>
-<use xlink:href="#tick_x" transform="translate(211.8,0)"/>
-<use xlink:href="#tick_x" transform="translate(244.9,0)"/>
-<use xlink:href="#tick_x" transform="translate(278.1,0)"/>
-<use xlink:href="#tick_x" transform="translate(311.2,0)"/>
-<use xlink:href="#tick_x" transform="translate(344.3,0)"/>
-<use xlink:href="#tick_x" transform="translate(377.4,0)"/>
-<use xlink:href="#tick_x" transform="translate(410.5,0)"/>
-<use xlink:href="#tick_x" transform="translate(443.6,0)"/>
-<use xlink:href="#tick_x" transform="translate(476.7,0)"/>
-<use xlink:href="#tick_x" transform="translate(509.8,0)"/>
-<use xlink:href="#tick_x" transform="translate(543.0,0)"/>
-<use xlink:href="#tick_x" transform="translate(576.1,0)"/>
-<use xlink:href="#tick_x" transform="translate(609.2,0)"/>
-<use xlink:href="#tick_x" transform="translate(642.3,0)"/>
-<use xlink:href="#tick_x" transform="translate(675.4,0)"/>
-<use xlink:href="#tick_x" transform="translate(708.5,0)"/>
-<use xlink:href="#tick_x" transform="translate(741.6,0)"/>
-<use xlink:href="#tick_x" transform="translate(774.7,0)"/>
-<use xlink:href="#tick_x" transform="translate(807.9,0)"/>
-<use xlink:href="#tick_x" transform="translate(841.0,0)"/>
-<use xlink:href="#tick_x" transform="translate(874.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(177.3,0)"/>
+<use xlink:href="#tick_x" transform="translate(209.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(240.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(272.5,0)"/>
+<use xlink:href="#tick_x" transform="translate(304.3,0)"/>
+<use xlink:href="#tick_x" transform="translate(336.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(367.7,0)"/>
+<use xlink:href="#tick_x" transform="translate(399.5,0)"/>
+<use xlink:href="#tick_x" transform="translate(431.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(462.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(494.7,0)"/>
+<use xlink:href="#tick_x" transform="translate(526.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(558.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(589.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(621.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(653.3,0)"/>
+<use xlink:href="#tick_x" transform="translate(685.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(716.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(748.5,0)"/>
+<use xlink:href="#tick_x" transform="translate(780.3,0)"/>
+<use xlink:href="#tick_x" transform="translate(812.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(843.7,0)"/>
+<use xlink:href="#tick_x" transform="translate(875.5,0)"/>
 <use xlink:href="#tick_x" transform="translate(907.2,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
-<text class="ticklabel xtl" transform="translate(178.7,629.0)" text-anchor="middle">J</text>
-<text class="ticklabel xtl" transform="translate(211.8,629.0)" text-anchor="middle">F</text>
-<text class="ticklabel xtl" transform="translate(244.9,629.0)" text-anchor="middle">M</text>
-<text class="ticklabel xtl" transform="translate(278.1,629.0)" text-anchor="middle">A</text>
-<text class="ticklabel xtl" transform="translate(311.2,629.0)" text-anchor="middle">M</text>
-<text class="ticklabel xtl" transform="translate(344.3,629.0)" text-anchor="middle">J</text>
-<text class="ticklabel xtl" transform="translate(377.4,629.0)" text-anchor="middle">J</text>
-<text class="ticklabel xtl" transform="translate(410.5,629.0)" text-anchor="middle">A</text>
-<text class="ticklabel xtl" transform="translate(443.6,629.0)" text-anchor="middle">S</text>
-<text class="ticklabel xtl" transform="translate(476.7,629.0)" text-anchor="middle">O</text>
-<text class="ticklabel xtl" transform="translate(509.8,629.0)" text-anchor="middle">N</text>
-<text class="ticklabel xtl" transform="translate(543.0,629.0)" text-anchor="middle">D</text>
-<text class="ticklabel xtl" transform="translate(576.1,629.0)" text-anchor="middle">J</text>
-<text class="ticklabel xtl" transform="translate(609.2,629.0)" text-anchor="middle">F</text>
-<text class="ticklabel xtl" transform="translate(642.3,629.0)" text-anchor="middle">M</text>
-<text class="ticklabel xtl" transform="translate(675.4,629.0)" text-anchor="middle">A</text>
-<text class="ticklabel xtl" transform="translate(708.5,629.0)" text-anchor="middle">M</text>
-<text class="ticklabel xtl" transform="translate(741.6,629.0)" text-anchor="middle">J</text>
-<text class="ticklabel xtl" transform="translate(774.7,629.0)" text-anchor="middle">J</text>
-<text class="ticklabel xtl" transform="translate(807.9,629.0)" text-anchor="middle">A</text>
-<text class="ticklabel xtl" transform="translate(841.0,629.0)" text-anchor="middle">S</text>
-<text class="ticklabel xtl" transform="translate(874.1,629.0)" text-anchor="middle">O</text>
-<text class="ticklabel xtl" transform="translate(907.2,629.0)" text-anchor="middle">N</text>
+<text class="ticklabel xtl" transform="translate(177.3,629.0)" text-anchor="middle">J</text>
+<text class="ticklabel xtl" transform="translate(209.1,629.0)" text-anchor="middle">F</text>
+<text class="ticklabel xtl" transform="translate(240.8,629.0)" text-anchor="middle">M</text>
+<text class="ticklabel xtl" transform="translate(272.5,629.0)" text-anchor="middle">A</text>
+<text class="ticklabel xtl" transform="translate(304.3,629.0)" text-anchor="middle">M</text>
+<text class="ticklabel xtl" transform="translate(336.0,629.0)" text-anchor="middle">J</text>
+<text class="ticklabel xtl" transform="translate(367.7,629.0)" text-anchor="middle">J</text>
+<text class="ticklabel xtl" transform="translate(399.5,629.0)" text-anchor="middle">A</text>
+<text class="ticklabel xtl" transform="translate(431.2,629.0)" text-anchor="middle">S</text>
+<text class="ticklabel xtl" transform="translate(462.9,629.0)" text-anchor="middle">O</text>
+<text class="ticklabel xtl" transform="translate(494.7,629.0)" text-anchor="middle">N</text>
+<text class="ticklabel xtl" transform="translate(526.4,629.0)" text-anchor="middle">D</text>
+<text class="ticklabel xtl" transform="translate(558.1,629.0)" text-anchor="middle">J</text>
+<text class="ticklabel xtl" transform="translate(589.9,629.0)" text-anchor="middle">F</text>
+<text class="ticklabel xtl" transform="translate(621.6,629.0)" text-anchor="middle">M</text>
+<text class="ticklabel xtl" transform="translate(653.3,629.0)" text-anchor="middle">A</text>
+<text class="ticklabel xtl" transform="translate(685.1,629.0)" text-anchor="middle">M</text>
+<text class="ticklabel xtl" transform="translate(716.8,629.0)" text-anchor="middle">J</text>
+<text class="ticklabel xtl" transform="translate(748.5,629.0)" text-anchor="middle">J</text>
+<text class="ticklabel xtl" transform="translate(780.3,629.0)" text-anchor="middle">A</text>
+<text class="ticklabel xtl" transform="translate(812.0,629.0)" text-anchor="middle">S</text>
+<text class="ticklabel xtl" transform="translate(843.7,629.0)" text-anchor="middle">O</text>
+<text class="ticklabel xtl" transform="translate(875.5,629.0)" text-anchor="middle">N</text>
+<text class="ticklabel xtl" transform="translate(907.2,629.0)" text-anchor="middle">D</text>
 <text class="ticklabel ytl" transform="translate(128.8,595.3)">3950</text>
 <text class="ticklabel ytl" transform="translate(128.8,488.6)">4000</text>
 <text class="ticklabel ytl" transform="translate(128.8,382.0)">4050</text>
@@ -116,34 +118,35 @@ text:hover + .dl_el {display:block;}
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#0072BD" stroke-width="0.90"/>
     <g class="pl pll" fill="none" stroke="#0072BD" stroke-width="0.900">
-      <circle cx="178.7" cy="510.0" r="5.4" />
-      <circle cx="211.8" cy="537.9" r="5.4" />
-      <circle cx="244.9" cy="529.0" r="5.4" />
-      <circle cx="278.1" cy="528.1" r="5.4" />
-      <circle cx="311.2" cy="528.0" r="5.4" />
-      <circle cx="344.3" cy="533.3" r="5.4" />
-      <circle cx="377.4" cy="533.8" r="5.4" />
-      <circle cx="410.5" cy="534.0" r="5.4" />
-      <circle cx="443.6" cy="534.7" r="5.4" />
-      <circle cx="476.7" cy="534.1" r="5.4" />
-      <circle cx="509.8" cy="534.4" r="5.4" />
-      <circle cx="543.0" cy="533.9" r="5.4" />
-      <circle cx="576.1" cy="489.9" r="5.4" />
-      <circle cx="609.2" cy="336.8" r="5.4" />
-      <circle cx="642.3" cy="117.1" r="5.4" />
-      <circle cx="675.4" cy="298.3" r="5.4" />
-      <circle cx="708.5" cy="368.5" r="5.4" />
-      <circle cx="741.6" cy="378.7" r="5.4" />
-      <circle cx="774.7" cy="390.1" r="5.4" />
-      <circle cx="807.9" cy="409.9" r="5.4" />
-      <circle cx="841.0" cy="406.3" r="5.4" />
-      <circle cx="874.1" cy="473.5" r="5.4" />
-      <circle cx="907.2" cy="472.5" r="5.4" />
+      <circle cx="177.3" cy="510.0" r="5.4" />
+      <circle cx="209.1" cy="537.9" r="5.4" />
+      <circle cx="240.8" cy="529.0" r="5.4" />
+      <circle cx="272.5" cy="528.1" r="5.4" />
+      <circle cx="304.3" cy="528.0" r="5.4" />
+      <circle cx="336.0" cy="533.3" r="5.4" />
+      <circle cx="367.7" cy="533.8" r="5.4" />
+      <circle cx="399.5" cy="534.0" r="5.4" />
+      <circle cx="431.2" cy="534.7" r="5.4" />
+      <circle cx="462.9" cy="534.1" r="5.4" />
+      <circle cx="494.7" cy="534.4" r="5.4" />
+      <circle cx="526.4" cy="533.9" r="5.4" />
+      <circle cx="558.1" cy="489.9" r="5.4" />
+      <circle cx="589.9" cy="336.8" r="5.4" />
+      <circle cx="621.6" cy="117.1" r="5.4" />
+      <circle cx="653.3" cy="298.3" r="5.4" />
+      <circle cx="685.1" cy="368.5" r="5.4" />
+      <circle cx="716.8" cy="378.7" r="5.4" />
+      <circle cx="748.5" cy="390.1" r="5.4" />
+      <circle cx="780.3" cy="409.9" r="5.4" />
+      <circle cx="812.0" cy="406.3" r="5.4" />
+      <circle cx="843.7" cy="473.5" r="5.4" />
+      <circle cx="875.5" cy="472.5" r="5.4" />
+      <circle cx="907.2" cy="391.3" r="5.4" />
     </g>
   </g>
 </g>
-    <text class="pl" transform="translate(174.2,580.4)" dy="0.0" font-size="18.00" fill="#808080" stroke="none">2024</text>
-    <text class="pl" transform="translate(571.5,580.4)" dy="0.0" font-size="18.00" fill="#808080" stroke="none">2025</text>
+    <text class="pl" transform="translate(173.5,580.4)" dy="0.0" font-size="18.00" fill="#808080" stroke="none">2024</text>
+    <text class="pl" transform="translate(554.3,580.4)" dy="0.0" font-size="18.00" fill="#808080" stroke="none">2025</text>
 <polyline class="pl" points="979.2,580.4 979.2,580.5 979.2,580.6 979.2,580.8 979.2,581.1 979.1,581.4 979.1,581.8 979.1,582.3 979.0,582.8 978.9,583.4 978.8,584.1 978.7,584.8 978.5,585.5 978.3,586.3 978.1,587.1 977.8,588.0 977.5,588.9 977.2,589.8 976.8,590.7 976.4,591.7 975.9,592.7 975.4,593.7 974.9,594.7 974.2,595.8 973.6,596.8 972.8,597.8 972.0,598.8 971.2,599.9 970.2,600.9 969.2,601.9 968.2,602.9 967.0,603.9 965.8,604.8 964.5,605.7 963.2,606.6 961.7,607.5 960.2,608.3 958.5,609.1 956.8,609.8 955.0,610.5 953.1,611.2 951.1,611.8 949.0,612.3 946.8,612.8 944.4,613.2 942.0,613.5 939.5,613.8 936.8,614.0 934.1,614.1 931.2,614.2" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <polyline class="pl" points="939.2,619.6 931.2,614.2 938.3,607.6" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <text class="pl" transform="translate(955.2,573.7)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">STEO edition</text>
