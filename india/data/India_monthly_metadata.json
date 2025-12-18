@@ -1417,12 +1417,34 @@
 		},
 		{
 			"name": "CEM.PRD.OEA",
-			"title": "Cement production",
-			"type": "number",
 			"organisation": "Office of the Economic Advisor",
-			"source": "Eight Core Industries",
 			"URI": "https://eaindustry.nic.in/",
+			"source": "Index of Eight Core Industries",
+			"type": "number",
 			"geography": "India",
+			"units": "thousands of tonnes"
+		},
+		{
+			"name": "CEM.PRD.ABS",
+			"title": "Monthly Abstract of Statistics",
+			"organisation": "Central Statistical Organisation",
+			"geography": "India",
+			"type": "number",
+			"units": "thousands of tonnes"
+		},
+		{
+			"name": "CEM.PRD.MOS",
+			"URL": "https://www.mospi.gov.in/publications-reports",
+			"organisation": "MOSPI",
+			"units": "thousands of tonnes"
+		},
+		{
+			"name": "CEM.PRD",
+			"unit": "kt",
+			"organisation": "MOSPI and OEA",
+			"geography": "India",
+			"type": "number",
+			"source": "MOSPI Infrastructure Review, MOSPI Statistics Abstracts, and OEA Index of Eight Core Industries",
 			"units": "thousands of tonnes"
 		},
 		{
