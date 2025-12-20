@@ -545,7 +545,9 @@ function createAltTextLink(svgObject) {
       return null;
     }
     const titleText = titleEl.textContent.trim() || "Untitled graph";
-    const altText = `Graph showing: ${titleText}`;
+    const pageURL = window.location.href;
+    const altText = `Graph showing: ${titleText} (Source: ${pageURL})`;
+
 
     navigator.clipboard.writeText(altText)
       .then(() => {
