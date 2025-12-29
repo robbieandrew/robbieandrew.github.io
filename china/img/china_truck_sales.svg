@@ -48,6 +48,10 @@ text:hover + .dl_el {display:block;}
   #lines:hover .pl_7:hover .pll {stroke-width:3;}
   #lines:hover .pl_7:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_7:hover .thick {stroke-width:12;}
+  #lines:hover .pl_8:hover .pl {opacity:1;}
+  #lines:hover .pl_8:hover .pll {stroke-width:3;}
+  #lines:hover .pl_8:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_8:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
@@ -56,26 +60,31 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="585.1,587.2 593.9,587.2 602.7,586.1 611.8,587.2 620.9,587.2 630.0,587.2 639.1,586.9 648.3,587.2 657.4,585.0 666.5,586.1 675.6,586.5 684.7,587.2 693.9,586.9 702.8,587.2 711.7,586.8 720.8,587.0 729.9,586.5 738.9,586.0 748.0,586.8 757.2,586.8 766.3,586.6 775.4,585.4 784.4,585.3 793.5,585.6 802.7,587.2 811.5,586.0 820.3,586.0 829.4,585.4 838.5,585.4 847.6,585.8 856.7,586.0 865.9,586.2 875.0,579.6" stroke="#A2142F" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="485.1,364.9 493.9,209.1 503.0,334.0 512.1,278.9" stroke="#A2142F" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="539.5,310.4" stroke="#A2142F" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="575.9,375.3 585.1,407.1 593.9,196.1 602.7,92.3 611.8,259.6 620.9,302.3 630.0,323.6 639.1,358.4 648.3,354.9 657.4,357.1 666.5,371.9 675.6,366.3 684.7,406.9 693.9,404.3 702.8,473.8 711.7,278.0 720.8,329.6 729.9,264.2 738.9,404.4 748.0,418.8 757.2,421.9 766.3,385.5 775.4,373.8 784.4,315.3 793.5,244.8 802.7,442.3 811.5,416.3 820.3,316.8 829.4,312.4 838.5,328.2 847.6,300.0 856.7,329.7 865.9,341.2 875.0,313.7 884.1,367.0 893.2,363.2" stroke="#A2142F" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="258.7,587.2 267.6,587.2 276.5,587.1 285.6,587.2 294.7,587.2 303.7,587.2 312.8,587.1 322.0,587.2 331.1,587.2 340.2,587.1 349.2,587.2 358.3,587.1 367.5,587.2 376.3,587.1 385.1,586.2 394.2,586.0 403.3,586.6 412.4,586.9 421.5,585.7 430.7,586.7 439.8,586.9 448.9,586.8 458.0,585.2 467.1,584.6 476.3,587.0 485.1,587.0 493.9,586.2 503.0,587.0 512.1,586.8 521.2,581.7 530.3,585.9 539.5,584.9 548.6,584.3 557.7,584.3 566.8,581.7 575.9,576.9 585.1,586.4 593.9,586.9 602.7,585.6 611.8,585.9 620.9,584.0 630.0,581.5 639.1,582.5 648.3,582.6 657.4,585.2 666.5,583.7 675.6,579.8 684.7,573.7 693.9,586.0 702.8,586.9 711.7,584.0 720.8,584.3 729.9,581.8 738.9,582.5 748.0,578.6 757.2,579.4 766.3,583.3 775.4,580.3 784.4,580.6 793.5,579.4 802.7,586.7 811.5,585.9 820.3,577.7 829.4,585.9 838.5,586.2 847.6,583.2 856.7,584.0 865.9,585.0 875.0,586.1" stroke="#4DBEEE" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="585.1,587.2 593.9,587.2 602.7,586.6 611.8,587.2 620.9,587.2 630.0,587.2 639.1,587.0 648.3,587.2 657.4,586.0 666.5,586.6 675.6,586.8 684.7,587.2 693.9,587.0 702.8,587.2 711.7,586.9 720.8,587.1 729.9,586.8 738.9,586.5 748.0,586.9 757.2,586.9 766.3,586.9 775.4,586.2 784.4,586.1 793.5,586.3 802.7,587.2 811.5,586.5 820.3,586.5 829.4,586.2 838.5,586.2 847.6,586.4 856.7,586.5 865.9,586.6 875.0,582.9 884.1,586.0 893.2,586.3" stroke="#4DBEEE" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="585.1,576.5 593.9,577.8 602.7,576.5 611.8,571.2 620.9,573.8 630.0,569.8 639.1,575.2 648.3,569.8 657.4,572.5 666.5,569.8 675.6,563.2 684.7,553.9 693.9,566.7 702.8,577.0 711.7,558.6 720.8,564.5 729.9,561.0 738.9,556.4 748.0,558.0 757.2,557.7 766.3,552.2 775.4,551.4 784.4,547.4 793.5,512.5 802.7,550.8 811.5,552.3 820.3,527.9 829.4,522.8 838.5,523.1 847.6,512.9 856.7,521.1 865.9,513.9 875.0,485.3" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="258.7,587.2 267.6,587.2 276.5,587.1 285.6,587.2 294.7,587.2 303.7,587.2 312.8,587.2 322.0,587.2 331.1,587.2 340.2,587.2 349.2,587.2 358.3,587.2 367.5,587.2 376.3,587.2 385.1,586.6 394.2,586.5 403.3,586.8 412.4,587.0 421.5,586.3 430.7,586.9 439.8,587.0 448.9,587.0 458.0,586.1 467.1,585.7 476.3,587.1 485.1,587.1 493.9,586.6 503.0,587.1 512.1,587.0 521.2,584.0 530.3,586.4 539.5,585.9 548.6,585.5 557.7,585.5 566.8,584.0 575.9,581.3 585.1,586.7 593.9,587.0 602.7,586.3 611.8,586.4 620.9,585.4 630.0,583.9 639.1,584.5 648.3,584.6 657.4,586.1 666.5,585.2 675.6,582.9 684.7,579.5 693.9,586.5 702.8,587.0 711.7,585.3 720.8,585.5 729.9,584.1 738.9,584.5 748.0,582.2 757.2,582.7 766.3,585.0 775.4,583.3 784.4,583.4 793.5,582.7 802.7,586.9 811.5,586.5 820.3,581.8 829.4,586.5 838.5,586.6 847.6,584.9 856.7,585.4 865.9,585.9 875.0,586.6 884.1,585.5 893.2,582.7" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_4" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="367.5,586.2 376.3,586.8 385.1,584.5 394.2,585.4 403.3,585.8 412.4,584.5 421.5,582.8 430.7,582.2 439.8,580.1 448.9,577.4 458.0,572.5 467.1,559.2 476.3,571.2 485.1,580.9 493.9,577.4 503.0,580.1 512.1,576.1 521.2,577.8 530.3,578.2 539.5,576.1 548.6,577.8 557.7,580.5 566.8,579.2 575.9,561.5 585.1,579.2 593.9,580.5 602.7,575.2 611.8,573.8 620.9,577.8 630.0,572.5 639.1,572.5 648.3,569.8 657.4,563.2 666.5,563.2 675.6,557.9 684.7,551.2 693.9,560.9 702.8,570.7 711.7,548.6 720.8,551.7 729.9,550.1 738.9,530.5 748.0,537.3 757.2,540.8 766.3,521.2 775.4,520.9 784.4,500.7 793.5,468.5 802.7,530.1 811.5,515.5 820.3,456.2 829.4,443.2 838.5,452.5 847.6,425.9 856.7,435.2 865.9,427.2 875.0,375.8" stroke="#7E2F8E" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="585.1,581.1 593.9,581.8 602.7,581.1 611.8,578.0 620.9,579.6 630.0,577.3 639.1,580.3 648.3,577.3 657.4,578.8 666.5,577.3 675.6,573.5 684.7,568.1 693.9,575.5 702.8,581.3 711.7,570.8 720.8,574.2 729.9,572.2 738.9,569.6 748.0,570.5 757.2,570.3 766.3,567.2 775.4,566.7 784.4,564.5 793.5,544.5 802.7,566.4 811.5,567.3 820.3,553.3 829.4,550.4 838.5,550.6 847.6,544.7 856.7,549.4 865.9,545.3 875.0,529.0 884.1,543.8 893.2,531.2" stroke="#7E2F8E" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_5" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="585.1,568.5 593.9,571.2 602.7,564.5 611.8,557.9 620.9,564.5 630.0,555.2 639.1,560.5 648.3,552.5 657.4,548.5 666.5,545.9 675.6,533.9 684.7,517.9 693.9,540.4 702.8,560.5 711.7,520.0 720.8,529.0 729.9,523.9 738.9,499.7 748.0,508.2 757.2,511.4 766.3,486.3 775.4,485.1 784.4,461.0 793.5,393.9 802.7,492.5 811.5,480.7 820.3,397.9 829.4,379.2 838.5,388.6 847.6,352.6 856.7,369.9 865.9,353.9 875.0,273.9" stroke="#EDB120" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="367.5,586.6 376.3,586.9 385.1,585.7 394.2,586.2 403.3,586.4 412.4,585.7 421.5,584.7 430.7,584.4 439.8,583.1 448.9,581.6 458.0,578.8 467.1,571.2 476.3,578.0 485.1,583.6 493.9,581.6 503.0,583.1 512.1,580.9 521.2,581.8 530.3,582.1 539.5,580.9 548.6,581.8 557.7,583.4 566.8,582.6 575.9,572.5 585.1,582.6 593.9,583.4 602.7,580.3 611.8,579.6 620.9,581.8 630.0,578.8 639.1,578.8 648.3,577.3 657.4,573.5 666.5,573.5 675.6,570.4 684.7,566.6 693.9,572.2 702.8,577.8 711.7,565.1 720.8,566.9 729.9,566.0 738.9,554.8 748.0,558.7 757.2,560.7 766.3,549.5 775.4,549.3 784.4,537.8 793.5,519.4 802.7,554.5 811.5,546.2 820.3,512.3 829.4,504.9 838.5,510.2 847.6,495.0 856.7,500.3 865.9,495.8 875.0,466.8 884.1,480.5 893.2,434.8" stroke="#B8705A" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_6" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="185.7,585.9" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
-    <polyline class="pl pll" points="258.7,584.5 267.6,586.6 276.5,585.8 285.6,585.8 294.7,585.2 303.7,584.5 312.8,583.2 322.0,583.2 331.1,583.2 340.2,584.5 349.2,584.5 358.3,583.2 367.5,584.5 376.3,585.8 385.1,583.2 394.2,583.2 403.3,582.1 412.4,581.8 421.5,577.8 430.7,576.5 439.8,572.5 448.9,569.8 458.0,563.2 467.1,547.2 476.3,556.5 485.1,573.8 493.9,567.2 503.0,572.5 512.1,562.9 521.2,555.2 530.3,568.5 539.5,563.2 548.6,563.2 557.7,564.5 566.8,559.2 575.9,505.9 585.1,568.5 593.9,571.2 602.7,561.9 611.8,556.5 620.9,561.9 630.0,549.8 639.1,555.6 648.3,548.4 657.4,544.5 666.5,541.4 675.6,525.9 684.7,504.7 693.9,538.9 702.8,560.2 711.7,516.4 720.8,526.0 729.9,517.9 738.9,493.9 748.0,499.2 757.2,503.2 766.3,481.9 775.4,476.5 784.4,452.5 793.5,384.6 802.7,492.5 811.5,478.3 820.3,387.2 829.4,376.2 838.5,385.9 847.6,347.2 856.7,365.9 865.9,349.9 875.0,265.9" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="585.1,576.5 593.9,578.0 602.7,574.2 611.8,570.4 620.9,574.2 630.0,568.9 639.1,571.9 648.3,567.4 657.4,565.1 666.5,563.6 675.6,556.7 684.7,547.6 693.9,560.5 702.8,572.0 711.7,548.8 720.8,553.9 729.9,551.0 738.9,537.2 748.0,542.0 757.2,543.9 766.3,529.5 775.4,528.9 784.4,515.1 793.5,476.7 802.7,533.1 811.5,526.3 820.3,479.0 829.4,468.4 838.5,473.7 847.6,453.1 856.7,463.0 865.9,453.9 875.0,408.2 884.1,437.1 893.2,380.0" stroke="#EDB120" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_7" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="149.9,527.2 158.7,509.9 167.5,423.2 176.6,440.6 185.7,413.9 194.8,66.0 203.9,547.2 213.1,571.2 222.2,560.5 231.3,513.9 240.4,456.5 249.5,469.9 258.7,512.5 267.6,575.2 276.5,324.6 285.6,273.9 294.7,375.2 303.7,404.6 312.8,423.2 322.0,388.6 331.1,443.2 340.2,443.2 349.2,456.5 358.3,517.9 367.5,541.9 376.3,513.9 385.1,395.2 394.2,477.9 403.3,491.2 412.4,511.2 421.5,535.2 430.7,555.2 439.8,561.9 448.9,565.8 458.0,557.9 467.1,564.5 476.3,553.8 485.1,549.6 493.9,535.7 503.0,551.7 512.1,537.9 521.2,524.2 530.3,531.4 539.5,549.0 548.6,548.3 557.7,567.5 566.8,560.3 575.9,539.4 585.1,543.8 593.9,501.1 602.7,460.2 611.8,452.5 620.9,436.6 630.0,419.2 639.1,445.9 648.3,335.2 657.4,259.3 666.5,276.6 675.6,384.6 684.7,505.3 693.9,502.3 702.8,459.3 711.7,196.6 720.8,235.3 729.9,308.6 738.9,371.2 748.0,348.6 757.2,423.2 766.3,461.5 775.4,468.8 784.4,435.2 793.5,459.8 802.7,484.9 811.5,351.2 820.3,299.3 829.4,359.2 838.5,400.6 847.6,407.2 856.7,400.6 865.9,364.6 875.0,275.3" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="185.7,586.4" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="258.7,585.7 267.6,586.9 276.5,586.4 285.6,586.4 294.7,586.0 303.7,585.7 312.8,584.9 322.0,584.9 331.1,584.9 340.2,585.7 349.2,585.7 358.3,584.9 367.5,585.7 376.3,586.4 385.1,584.9 394.2,584.9 403.3,584.3 412.4,584.1 421.5,581.8 430.7,581.1 439.8,578.8 448.9,577.3 458.0,573.5 467.1,564.3 476.3,569.7 485.1,579.6 493.9,575.8 503.0,578.8 512.1,573.3 521.2,568.9 530.3,576.5 539.5,573.5 548.6,573.5 557.7,574.2 566.8,571.2 575.9,540.7 585.1,576.5 593.9,578.0 602.7,572.7 611.8,569.7 620.9,572.7 630.0,565.8 639.1,569.1 648.3,565.0 657.4,562.8 666.5,561.0 675.6,552.1 684.7,540.1 693.9,559.6 702.8,571.8 711.7,546.8 720.8,552.2 729.9,547.6 738.9,533.9 748.0,536.9 757.2,539.2 766.3,527.0 775.4,524.0 784.4,510.2 793.5,471.4 802.7,533.1 811.5,524.9 820.3,472.9 829.4,466.6 838.5,472.1 847.6,450.1 856.7,460.7 865.9,451.6 875.0,403.6 884.1,434.1 893.2,374.7" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_8" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="149.9,552.9 158.7,543.0 167.5,493.5 176.6,503.4 185.7,488.2 194.8,289.4 203.9,564.3 213.1,578.0 222.2,571.9 231.3,545.3 240.4,512.5 249.5,520.1 258.7,544.5 267.6,580.3 276.5,437.1 285.6,408.2 294.7,466.1 303.7,482.8 312.8,493.5 322.0,473.7 331.1,504.9 340.2,504.9 349.2,512.5 358.3,547.6 367.5,561.3 376.3,545.3 385.1,477.5 394.2,524.7 403.3,532.3 412.4,543.8 421.5,557.5 430.7,568.9 439.8,572.7 448.9,575.0 458.0,570.4 467.1,574.2 476.3,568.1 485.1,565.7 493.9,557.8 503.0,566.9 512.1,559.0 521.2,551.2 530.3,555.3 539.5,565.4 548.6,565.0 557.7,575.9 566.8,571.8 575.9,559.9 585.1,562.4 593.9,538.0 602.7,514.6 611.8,510.2 620.9,501.1 630.0,491.2 639.1,506.4 648.3,443.2 657.4,399.8 666.5,409.7 675.6,471.4 684.7,540.4 693.9,538.7 702.8,514.1 711.7,364.0 720.8,386.1 729.9,428.0 738.9,463.8 748.0,450.8 757.2,493.5 766.3,515.4 775.4,519.5 784.4,500.3 793.5,514.4 802.7,528.7 811.5,452.4 820.3,422.7 829.4,456.9 838.5,480.5 847.6,484.3 856.7,480.5 865.9,460.0 875.0,408.9 884.1,426.5 893.2,439.4" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -88,22 +97,20 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#line_y" transform="translate(798.4,0)"/>
 <use xlink:href="#line_y" transform="translate(907.2,0)"/>
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
-<use xlink:href="#line_x" transform="translate(0,520.5)"/>
-<use xlink:href="#line_x" transform="translate(0,453.9)"/>
-<use xlink:href="#line_x" transform="translate(0,387.2)"/>
-<use xlink:href="#line_x" transform="translate(0,320.6)"/>
-<use xlink:href="#line_x" transform="translate(0,253.9)"/>
-<use xlink:href="#line_x" transform="translate(0,187.3)"/>
-<use xlink:href="#line_x" transform="translate(0,120.6)"/>
+<use xlink:href="#line_x" transform="translate(0,511.0)"/>
+<use xlink:href="#line_x" transform="translate(0,434.8)"/>
+<use xlink:href="#line_x" transform="translate(0,358.7)"/>
+<use xlink:href="#line_x" transform="translate(0,282.5)"/>
+<use xlink:href="#line_x" transform="translate(0,206.3)"/>
+<use xlink:href="#line_x" transform="translate(0,130.2)"/>
 <use xlink:href="#line_x" transform="translate(0,54.0)"/>
 <use xlink:href="#tick_y" transform="translate(0,587.2)"/>
-<use xlink:href="#tick_y" transform="translate(0,520.5)"/>
-<use xlink:href="#tick_y" transform="translate(0,453.9)"/>
-<use xlink:href="#tick_y" transform="translate(0,387.2)"/>
-<use xlink:href="#tick_y" transform="translate(0,320.6)"/>
-<use xlink:href="#tick_y" transform="translate(0,253.9)"/>
-<use xlink:href="#tick_y" transform="translate(0,187.3)"/>
-<use xlink:href="#tick_y" transform="translate(0,120.6)"/>
+<use xlink:href="#tick_y" transform="translate(0,511.0)"/>
+<use xlink:href="#tick_y" transform="translate(0,434.8)"/>
+<use xlink:href="#tick_y" transform="translate(0,358.7)"/>
+<use xlink:href="#tick_y" transform="translate(0,282.5)"/>
+<use xlink:href="#tick_y" transform="translate(0,206.3)"/>
+<use xlink:href="#tick_y" transform="translate(0,130.2)"/>
 <use xlink:href="#tick_y" transform="translate(0,54.0)"/>
 <use xlink:href="#tick_x" transform="translate(145.6,0)"/>
 <use xlink:href="#tick_x" transform="translate(254.4,0)"/>
@@ -115,54 +122,60 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_x" transform="translate(907.2,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
 <text class="ticklabel ytl" transform="translate(128.8,595.3)">0</text>
-<text class="ticklabel ytl" transform="translate(128.8,528.6)">5</text>
-<text class="ticklabel ytl" transform="translate(128.8,462.0)">10</text>
-<text class="ticklabel ytl" transform="translate(128.8,395.3)">15</text>
-<text class="ticklabel ytl" transform="translate(128.8,328.7)">20</text>
-<text class="ticklabel ytl" transform="translate(128.8,262.0)">25</text>
-<text class="ticklabel ytl" transform="translate(128.8,195.4)">30</text>
-<text class="ticklabel ytl" transform="translate(128.8,128.7)">35</text>
-<text class="ticklabel ytl" transform="translate(128.8,62.1)">40 000</text>
+<text class="ticklabel ytl" transform="translate(128.8,519.1)">10</text>
+<text class="ticklabel ytl" transform="translate(128.8,442.9)">20</text>
+<text class="ticklabel ytl" transform="translate(128.8,366.8)">30</text>
+<text class="ticklabel ytl" transform="translate(128.8,290.6)">40</text>
+<text class="ticklabel ytl" transform="translate(128.8,214.4)">50</text>
+<text class="ticklabel ytl" transform="translate(128.8,138.3)">60</text>
+<text class="ticklabel ytl" transform="translate(128.8,62.1)">70 000</text>
 <g id="lines">
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#A2142F" stroke-width="0.90"/>
-    <text class="pl" transform="translate(945.6,564.1)" dy="7.0" font-size="23.40" fill="#A2142F" stroke="none">Hybrid</text>
-<polyline class="pl" points="910.8,579.6 912.4,579.6 913.8,579.4 915.2,579.2 916.4,578.8 917.6,578.4 918.8,577.9 919.8,577.4 920.8,576.8 921.7,576.1 922.7,575.4 923.5,574.6 924.4,573.9 925.2,573.1 926.0,572.3 926.8,571.5 927.6,570.7 928.4,569.9 929.3,569.1 930.1,568.4 931.1,567.7 932.0,567.0 933.0,566.4 934.0,565.8 935.2,565.3 936.4,564.9 937.6,564.6 939.0,564.3 940.4,564.2 942.0,564.1" stroke="#A2142F" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(945.6,349.3)" dy="7.0" font-size="23.40" fill="#A2142F" stroke="none">Diesel</text>
+<polyline class="pl" points="910.8,363.2 912.4,363.2 913.8,363.1 915.2,362.8 916.4,362.5 917.6,362.1 918.8,361.7 919.8,361.2 920.8,360.6 921.7,360.0 922.7,359.4 923.5,358.8 924.4,358.1 925.2,357.4 926.0,356.6 926.8,355.9 927.6,355.2 928.4,354.5 929.3,353.8 930.1,353.1 931.1,352.5 932.0,351.9 933.0,351.4 934.0,350.9 935.2,350.4 936.4,350.0 937.6,349.7 939.0,349.5 940.4,349.4 942.0,349.3" stroke="#A2142F" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#4DBEEE" stroke-width="0.90"/>
-    <text class="pl" transform="translate(945.6,587.2)" dy="7.0" font-size="23.40" fill="#4DBEEE" stroke="none">Hydrogen fuel-cell</text>
-<polyline class="pl" points="910.8,586.1 912.4,586.1 913.8,586.2 915.2,586.2 916.4,586.2 917.6,586.2 918.8,586.3 919.8,586.3 920.8,586.3 921.7,586.4 922.7,586.4 923.5,586.5 924.4,586.5 925.2,586.6 926.0,586.6 926.8,586.7 927.6,586.7 928.4,586.8 929.3,586.8 930.1,586.9 931.1,586.9 932.0,587.0 933.0,587.0 934.0,587.1 935.2,587.1 936.4,587.1 937.6,587.1 939.0,587.2 940.4,587.2 942.0,587.2" stroke="#4DBEEE" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(945.6,587.2)" dy="7.0" font-size="23.40" fill="#4DBEEE" stroke="none">Hybrid</text>
+<polyline class="pl" points="910.8,586.3 912.4,586.3 913.8,586.3 915.2,586.3 916.4,586.3 917.6,586.3 918.8,586.4 919.8,586.4 920.8,586.4 921.7,586.5 922.7,586.5 923.5,586.6 924.4,586.6 925.2,586.7 926.0,586.7 926.8,586.7 927.6,586.8 928.4,586.8 929.3,586.9 930.1,586.9 931.1,587.0 932.0,587.0 933.0,587.0 934.0,587.1 935.2,587.1 936.4,587.1 937.6,587.1 939.0,587.2 940.4,587.2 942.0,587.2" stroke="#4DBEEE" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#77AC30" stroke-width="0.90"/>
-    <text class="pl" transform="translate(945.6,485.3)" dy="7.0" font-size="23.40" fill="#77AC30" stroke="none">Battery-swapping BEV</text>
+    <text class="pl" transform="translate(945.6,563.9)" dy="7.0" font-size="23.40" fill="#77AC30" stroke="none">Hydrogen fuel-cell</text>
+<polyline class="pl" points="910.8,582.7 912.4,582.6 913.8,582.4 915.2,582.1 916.4,581.7 917.6,581.2 918.8,580.6 919.8,579.9 920.8,579.2 921.7,578.4 922.7,577.5 923.5,576.6 924.4,575.7 925.2,574.7 926.0,573.8 926.8,572.8 927.6,571.8 928.4,570.9 929.3,569.9 930.1,569.0 931.1,568.2 932.0,567.4 933.0,566.6 934.0,565.9 935.2,565.3 936.4,564.8 937.6,564.4 939.0,564.1 940.4,563.9 942.0,563.9" stroke="#77AC30" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
   <g class="pl_4">
     <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_4" class="pl pll" stroke="#7E2F8E" stroke-width="0.90"/>
-    <text class="pl" transform="translate(945.6,375.8)" dy="7.0" font-size="23.40" fill="#7E2F8E" stroke="none">Rechargeable BEV</text>
+    <text class="pl" transform="translate(945.6,531.2)" dy="7.0" font-size="23.40" fill="#7E2F8E" stroke="none">Battery-swapping BEV</text>
   </g>
   <g class="pl_5">
     <use xlink:href="#line_5" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_5" class="pl pll" stroke="#EDB120" stroke-width="0.90"/>
-    <text class="pl" transform="translate(945.6,271.7)" dy="7.0" font-size="23.40" fill="#EDB120" stroke="none">BEV</text>
-<polyline class="pl" points="910.8,273.9 912.4,273.9 913.8,273.9 915.2,273.9 916.4,273.8 917.6,273.8 918.8,273.7 919.8,273.6 920.8,273.5 921.7,273.4 922.7,273.3 923.5,273.2 924.4,273.1 925.2,273.0 926.0,272.9 926.8,272.8 927.6,272.6 928.4,272.5 929.3,272.4 930.1,272.3 931.1,272.2 932.0,272.1 933.0,272.0 934.0,272.0 935.2,271.9 936.4,271.8 937.6,271.8 939.0,271.7 940.4,271.7 942.0,271.7" stroke="#EDB120" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <use xlink:href="#line_5" class="pl pll" stroke="#B8705A" stroke-width="0.90"/>
+    <text class="pl" transform="translate(945.6,425.5)" dy="7.0" font-size="23.40" fill="#B8705A" stroke="none">Rechargeable BEV</text>
+<polyline class="pl" points="910.8,434.8 912.4,434.8 913.8,434.7 915.2,434.6 916.4,434.4 917.6,434.1 918.8,433.8 919.8,433.5 920.8,433.1 921.7,432.7 922.7,432.3 923.5,431.8 924.4,431.4 925.2,430.9 926.0,430.4 926.8,429.9 927.6,429.4 928.4,429.0 929.3,428.5 930.1,428.0 931.1,427.6 932.0,427.2 933.0,426.8 934.0,426.5 935.2,426.2 936.4,426.0 937.6,425.7 939.0,425.6 940.4,425.5 942.0,425.5" stroke="#B8705A" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
   <g class="pl_6">
     <use xlink:href="#line_6" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_6" class="pl pll" stroke="#D95319" stroke-width="0.90"/>
-    <text class="pl" transform="translate(945.6,248.7)" dy="7.0" font-size="23.40" fill="#D95319" stroke="none">NEV</text>
-<polyline class="pl" points="910.8,265.9 912.4,265.9 913.8,265.7 915.2,265.4 916.4,265.0 917.6,264.6 918.8,264.0 919.8,263.4 920.8,262.7 921.7,262.0 922.7,261.2 923.5,260.4 924.4,259.5 925.2,258.6 926.0,257.7 926.8,256.8 927.6,256.0 928.4,255.1 929.3,254.2 930.1,253.4 931.1,252.6 932.0,251.9 933.0,251.2 934.0,250.6 935.2,250.0 936.4,249.5 937.6,249.2 939.0,248.9 940.4,248.7 942.0,248.7" stroke="#D95319" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <use xlink:href="#line_6" class="pl pll" stroke="#EDB120" stroke-width="0.90"/>
+    <text class="pl" transform="translate(945.6,395.9)" dy="7.0" font-size="23.40" fill="#EDB120" stroke="none">BEV</text>
+<polyline class="pl" points="910.8,380.0 912.4,380.1 913.8,380.2 915.2,380.5 916.4,380.8 917.6,381.3 918.8,381.8 919.8,382.3 920.8,383.0 921.7,383.7 922.7,384.4 923.5,385.1 924.4,385.9 925.2,386.7 926.0,387.6 926.8,388.4 927.6,389.2 928.4,390.0 929.3,390.8 930.1,391.6 931.1,392.3 932.0,393.0 933.0,393.6 934.0,394.2 935.2,394.7 936.4,395.1 937.6,395.5 939.0,395.7 940.4,395.9 942.0,395.9" stroke="#EDB120" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
   <g class="pl_7">
     <use xlink:href="#line_7" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_7" class="pl pll" stroke="#0072BD" stroke-width="0.90"/>
-    <text class="pl" transform="translate(945.6,294.8)" dy="7.0" font-size="23.40" fill="#0072BD" stroke="none">LNG</text>
-<polyline class="pl" points="910.8,275.3 912.4,275.3 913.8,275.5 915.2,275.8 916.4,276.3 917.6,276.8 918.8,277.4 919.8,278.1 920.8,278.9 921.7,279.7 922.7,280.6 923.5,281.6 924.4,282.5 925.2,283.5 926.0,284.5 926.8,285.5 927.6,286.5 928.4,287.5 929.3,288.5 930.1,289.4 931.1,290.3 932.0,291.1 933.0,291.9 934.0,292.6 935.2,293.2 936.4,293.8 937.6,294.2 939.0,294.5 940.4,294.7 942.0,294.8" stroke="#0072BD" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <use xlink:href="#line_7" class="pl pll" stroke="#D95319" stroke-width="0.90"/>
+    <text class="pl" transform="translate(945.6,372.6)" dy="7.0" font-size="23.40" fill="#D95319" stroke="none">NEV</text>
+<polyline class="pl" points="910.8,374.7 912.4,374.7 913.8,374.6 915.2,374.6 916.4,374.6 917.6,374.5 918.8,374.4 919.8,374.4 920.8,374.3 921.7,374.2 922.7,374.1 923.5,374.0 924.4,373.9 925.2,373.8 926.0,373.7 926.8,373.6 927.6,373.5 928.4,373.4 929.3,373.3 930.1,373.2 931.1,373.1 932.0,373.0 933.0,372.9 934.0,372.9 935.2,372.8 936.4,372.7 937.6,372.7 939.0,372.7 940.4,372.6 942.0,372.6" stroke="#D95319" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+  </g>
+  <g class="pl_8">
+    <use xlink:href="#line_8" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_8" class="pl pll" stroke="#0072BD" stroke-width="0.90"/>
+    <text class="pl" transform="translate(945.6,448.8)" dy="7.0" font-size="23.40" fill="#0072BD" stroke="none">LNG</text>
+<polyline class="pl" points="910.8,439.4 912.4,439.4 913.8,439.5 915.2,439.7 916.4,439.9 917.6,440.1 918.8,440.4 919.8,440.8 920.8,441.2 921.7,441.6 922.7,442.0 923.5,442.4 924.4,442.9 925.2,443.4 926.0,443.9 926.8,444.3 927.6,444.8 928.4,445.3 929.3,445.8 930.1,446.2 931.1,446.6 932.0,447.0 933.0,447.4 934.0,447.7 935.2,448.0 936.4,448.3 937.6,448.5 939.0,448.7 940.4,448.7 942.0,448.8" stroke="#0072BD" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
 </g>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">China domestic sales of heavy trucks</text>
@@ -173,10 +186,10 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(635.2,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2023</text>
     <text class="pl" transform="translate(744.0,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2024</text>
     <text class="pl" transform="translate(852.8,600.7)" dy="27.0" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2025</text>
-    <text class="pl" transform="translate(895.2,60.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">NEV: New-energy vehicles</text>
-    <text class="pl" transform="translate(895.2,82.4)" dy="18.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">BEV: Battery-electric vehicles</text>
-    <text class="pl" transform="translate(895.2,104.0)" dy="18.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">LNG: Liquefied natural gas</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: First commercial vehicle network   &#9679;   Data through September 2025</text>
+    <text class="pl" transform="translate(157.6,60.7)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">NEV: New-energy vehicles</text>
+    <text class="pl" transform="translate(157.6,82.3)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">BEV: Battery-electric vehicles</text>
+    <text class="pl" transform="translate(157.6,103.9)" dy="18.0" font-size="18.00" fill="#808080" stroke="none">LNG: Liquefied natural gas</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: First Commercial Vehicle Network   &#9679;   Data through November 2025</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
