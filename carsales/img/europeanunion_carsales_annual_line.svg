@@ -52,28 +52,29 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,525.1 526.4,519.5 907.2,518.9" stroke="#828282" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,525.1 399.5,519.5 653.3,518.9 907.2,515.7" stroke="#828282" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,418.0 526.4,365.5 907.2,377.0" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,418.0 399.5,365.5 653.3,377.0 907.2,322.2" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,449.5 526.4,457.3 907.2,464.2" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,449.5 399.5,457.3 653.3,464.2 907.2,431.9" stroke="#77AC30" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_4" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,294.6 526.4,216.8 907.2,144.6" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,294.6 399.5,216.8 653.3,144.6 907.2,87.4" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_5" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,134.0 526.4,88.7 907.2,111.3" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,134.0 399.5,88.7 653.3,111.3 907.2,195.3" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_6" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,367.8 526.4,378.8 907.2,399.3" stroke="#7B6E57" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="145.6,367.8 399.5,378.8 653.3,399.3 907.2,438.8" stroke="#7B6E57" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
 <text class="ticklabel xtl" transform="translate(154.0,572.3) rotate(-90)" text-anchor="end">2022</text>
-<text class="ticklabel xtl" transform="translate(534.8,572.3) rotate(-90)" text-anchor="end">2023</text>
-<text class="ticklabel xtl" transform="translate(915.6,572.3) rotate(-90)" text-anchor="end">2024</text>
+<text class="ticklabel xtl" transform="translate(407.9,572.3) rotate(-90)" text-anchor="end">2023</text>
+<text class="ticklabel xtl" transform="translate(661.7,572.3) rotate(-90)" text-anchor="end">2024</text>
+<text class="ticklabel xtl" transform="translate(915.6,572.3) rotate(-90)" text-anchor="end">2025</text>
 <text class="ticklabel ytl" transform="translate(128.8,568.3)">0</text>
 <text class="ticklabel ytl" transform="translate(128.8,505.0)">0.50</text>
 <text class="ticklabel ytl" transform="translate(128.8,441.7)">1.00</text>
@@ -87,67 +88,73 @@ text:hover + .dl_el {display:block;}
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#828282" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,518.9)" dy="7.6" font-size="25.20" fill="#828282" stroke="none">Other</text>
+    <text class="pl" transform="translate(937.2,515.7)" dy="7.6" font-size="25.20" fill="#828282" stroke="none">Other</text>
     <g class="pl pll" fill="#828282" stroke="none" stroke-width="1.800">
       <circle cx="145.6" cy="525.1" r="2.7" />
-      <circle cx="526.4" cy="519.5" r="2.7" />
-      <circle cx="907.2" cy="518.9" r="2.7" />
+      <circle cx="399.5" cy="519.5" r="2.7" />
+      <circle cx="653.3" cy="518.9" r="2.7" />
+      <circle cx="907.2" cy="515.7" r="2.7" />
     </g>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#6298C6" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,375.6)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery Electric</text>
-<polyline class="pl" points="910.8,377.0 911.9,377.0 913.0,377.0 914.0,376.9 914.9,376.9 915.8,376.9 916.6,376.8 917.4,376.8 918.1,376.7 918.8,376.7 919.5,376.6 920.1,376.5 920.7,376.5 921.3,376.4 921.9,376.3 922.5,376.3 923.1,376.2 923.7,376.1 924.3,376.1 924.9,376.0 925.6,375.9 926.3,375.9 927.0,375.8 927.8,375.8 928.6,375.7 929.5,375.7 930.4,375.6 931.4,375.6 932.5,375.6 933.6,375.6" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(937.2,322.2)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery Electric</text>
     <g class="pl pll" fill="#6298C6" stroke="none" stroke-width="1.800">
       <circle cx="145.6" cy="418.0" r="2.7" />
-      <circle cx="526.4" cy="365.5" r="2.7" />
-      <circle cx="907.2" cy="377.0" r="2.7" />
+      <circle cx="399.5" cy="365.5" r="2.7" />
+      <circle cx="653.3" cy="377.0" r="2.7" />
+      <circle cx="907.2" cy="322.2" r="2.7" />
     </g>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#77AC30" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,464.2)" dy="7.6" font-size="25.20" fill="#77AC30" stroke="none">Plugin Hybrid</text>
+    <text class="pl" transform="translate(937.2,423.1)" dy="7.6" font-size="25.20" fill="#77AC30" stroke="none">Plugin Hybrid</text>
+<polyline class="pl" points="910.8,431.9 911.9,431.8 913.0,431.8 914.0,431.6 914.9,431.4 915.8,431.2 916.6,430.9 917.4,430.6 918.1,430.2 918.8,429.9 919.5,429.5 920.1,429.0 920.7,428.6 921.3,428.2 921.9,427.7 922.5,427.2 923.1,426.8 923.7,426.4 924.3,425.9 924.9,425.5 925.6,425.1 926.3,424.7 927.0,424.4 927.8,424.1 928.6,423.8 929.5,423.5 930.4,423.3 931.4,423.2 932.5,423.1 933.6,423.1" stroke="#77AC30" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <g class="pl pll" fill="#77AC30" stroke="none" stroke-width="1.800">
       <circle cx="145.6" cy="449.5" r="2.7" />
-      <circle cx="526.4" cy="457.3" r="2.7" />
-      <circle cx="907.2" cy="464.2" r="2.7" />
+      <circle cx="399.5" cy="457.3" r="2.7" />
+      <circle cx="653.3" cy="464.2" r="2.7" />
+      <circle cx="907.2" cy="431.9" r="2.7" />
     </g>
   </g>
   <g class="pl_4">
     <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_4" class="pl pll" stroke="#919452" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,144.6)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-Plugin Hybrid</text>
+    <text class="pl" transform="translate(937.2,87.4)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-Plugin Hybrid</text>
     <g class="pl pll" fill="#919452" stroke="none" stroke-width="1.800">
       <circle cx="145.6" cy="294.6" r="2.7" />
-      <circle cx="526.4" cy="216.8" r="2.7" />
-      <circle cx="907.2" cy="144.6" r="2.7" />
+      <circle cx="399.5" cy="216.8" r="2.7" />
+      <circle cx="653.3" cy="144.6" r="2.7" />
+      <circle cx="907.2" cy="87.4" r="2.7" />
     </g>
   </g>
   <g class="pl_5">
     <use xlink:href="#line_5" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_5" class="pl pll" stroke="#7B553E" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,111.3)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">Petrol</text>
+    <text class="pl" transform="translate(937.2,195.3)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">Petrol</text>
     <g class="pl pll" fill="#7B553E" stroke="none" stroke-width="1.800">
       <circle cx="145.6" cy="134.0" r="2.7" />
-      <circle cx="526.4" cy="88.7" r="2.7" />
-      <circle cx="907.2" cy="111.3" r="2.7" />
+      <circle cx="399.5" cy="88.7" r="2.7" />
+      <circle cx="653.3" cy="111.3" r="2.7" />
+      <circle cx="907.2" cy="195.3" r="2.7" />
     </g>
   </g>
   <g class="pl_6">
     <use xlink:href="#line_6" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_6" class="pl pll" stroke="#7B6E57" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,400.6)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">Diesel</text>
-<polyline class="pl" points="910.8,399.3 911.9,399.3 913.0,399.3 914.0,399.3 914.9,399.3 915.8,399.4 916.6,399.4 917.4,399.5 918.1,399.5 918.8,399.6 919.5,399.6 920.1,399.7 920.7,399.8 921.3,399.9 921.9,399.9 922.5,400.0 923.1,400.1 923.7,400.1 924.3,400.2 924.9,400.3 925.6,400.3 926.3,400.4 927.0,400.4 927.8,400.5 928.6,400.5 929.5,400.6 930.4,400.6 931.4,400.6 932.5,400.6 933.6,400.6" stroke="#7B6E57" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(937.2,447.6)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">Diesel</text>
+<polyline class="pl" points="910.8,438.8 911.9,438.8 913.0,438.9 914.0,439.0 914.9,439.2 915.8,439.5 916.6,439.7 917.4,440.1 918.1,440.4 918.8,440.8 919.5,441.2 920.1,441.6 920.7,442.0 921.3,442.5 921.9,442.9 922.5,443.4 923.1,443.9 923.7,444.3 924.3,444.7 924.9,445.2 925.6,445.6 926.3,445.9 927.0,446.3 927.8,446.6 928.6,446.9 929.5,447.1 930.4,447.3 931.4,447.5 932.5,447.5 933.6,447.6" stroke="#7B6E57" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <g class="pl pll" fill="#7B6E57" stroke="none" stroke-width="1.800">
       <circle cx="145.6" cy="367.8" r="2.7" />
-      <circle cx="526.4" cy="378.8" r="2.7" />
-      <circle cx="907.2" cy="399.3" r="2.7" />
+      <circle cx="399.5" cy="378.8" r="2.7" />
+      <circle cx="653.3" cy="399.3" r="2.7" />
+      <circle cx="907.2" cy="438.8" r="2.7" />
     </g>
   </g>
 </g>
-    <text class="pl" transform="translate(130.0,81.6)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">million</text>
+    <text class="pl" transform="translate(130.0,81.7)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">million</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">EUROPEAN UNION: new passenger car sales by type: Annual</text>
 <text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: ACEA</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
@@ -162,7 +169,8 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <use xlink:href="#line_y" transform="translate(145.6,0)"/>
-<use xlink:href="#line_y" transform="translate(526.4,0)"/>
+<use xlink:href="#line_y" transform="translate(399.5,0)"/>
+<use xlink:href="#line_y" transform="translate(653.3,0)"/>
 <use xlink:href="#line_y" transform="translate(907.2,0)"/>
 <use xlink:href="#line_x" transform="translate(0,560.2)"/>
 <use xlink:href="#line_x" transform="translate(0,496.9)"/>
@@ -174,7 +182,8 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#line_x" transform="translate(0,117.3)"/>
 <use xlink:href="#line_x" transform="translate(0,54.0)"/>
 <use xlink:href="#tick_x" transform="translate(145.6,0)"/>
-<use xlink:href="#tick_x" transform="translate(526.4,0)"/>
+<use xlink:href="#tick_x" transform="translate(399.5,0)"/>
+<use xlink:href="#tick_x" transform="translate(653.3,0)"/>
 <use xlink:href="#tick_x" transform="translate(907.2,0)"/>
 <use xlink:href="#tick_y" transform="translate(0,560.2)"/>
 <use xlink:href="#tick_y" transform="translate(0,496.9)"/>
