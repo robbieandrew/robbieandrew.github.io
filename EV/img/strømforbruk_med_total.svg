@@ -21,8 +21,6 @@ text:hover + .dl_el {display:block;}
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
-  <g id="mk1"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#D95319" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#D95319" stroke="#FFF"/></g>
-  <g id="mk2"><circle cx="0" cy="0" r="3.00" stroke-width="1" fill="#0072BD" stroke="#000"/><polygon class="numtip" points="0,-5 -5,-10 -30,-10 -30,-50 30,-50 30,-10 5,-10 0,-5" fill="#0072BD" stroke="#FFF"/></g>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
 </defs>
@@ -86,47 +84,47 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel ytl" transform="translate(128.8,125.4)">140</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">160 TWh</text>
 <polygon points="145.6,560.2 907.2,560.2" stroke="#808080" stroke-width="0.9000"/>
-<g stroke="none" stroke-width="0.9000"  fill="#D95319" clip-path="url(#axis_clip)">
-  <polygon points="169.4,560.2 169.4,169.1 185.7,169.1 185.7,560.2 169.4,560.2"/>
-  <polygon points="220.3,560.2 220.3,156.4 236.6,156.4 236.6,560.2 220.3,560.2"/>
-  <polygon points="271.2,560.2 271.2,92.9 287.5,92.9 287.5,560.2 271.2,560.2"/>
-  <polygon points="322.0,560.2 322.0,136.3 338.3,136.3 338.3,560.2 322.0,560.2"/>
-  <polygon points="372.9,560.2 372.9,111.0 389.2,111.0 389.2,560.2 372.9,560.2"/>
-  <polygon points="423.8,560.2 423.8,103.0 440.1,103.0 440.1,560.2 423.8,560.2"/>
-  <polygon points="474.7,560.2 474.7,88.8 490.9,88.8 490.9,560.2 474.7,560.2"/>
-  <polygon points="525.5,560.2 525.5,87.5 541.8,87.5 541.8,560.2 525.5,560.2"/>
-  <polygon points="576.4,560.2 576.4,94.9 592.7,94.9 592.7,560.2 576.4,560.2"/>
-  <polygon points="627.3,560.2 627.3,133.5 643.5,133.5 643.5,560.2 627.3,560.2"/>
-  <polygon points="678.1,560.2 678.1,72.4 694.4,72.4 694.4,560.2 678.1,560.2"/>
-  <polygon points="729.0,560.2 729.0,63.1 745.3,63.1 745.3,560.2 729.0,560.2"/>
-  <polygon points="779.9,560.2 779.9,98.5 796.2,98.5 796.2,560.2 779.9,560.2"/>
-  <polygon points="830.7,560.2 830.7,73.1 847.0,73.1 847.0,560.2 830.7,560.2"/>
-  <polygon points="881.6,560.2 881.6,63.1 897.9,63.1 897.9,560.2 881.6,560.2"/>
+<g stroke="none" stroke-width="0.9000"  fill="#404040" clip-path="url(#axis_clip)">
+  <polygon class="pl" points="169.4,560.2 169.4,169.1 185.7,169.1 185.7,560.2 169.4,560.2"/>
+  <polygon class="pl" points="220.3,560.2 220.3,156.4 236.6,156.4 236.6,560.2 220.3,560.2"/>
+  <polygon class="pl" points="271.2,560.2 271.2,92.9 287.5,92.9 287.5,560.2 271.2,560.2"/>
+  <polygon class="pl" points="322.0,560.2 322.0,136.3 338.3,136.3 338.3,560.2 322.0,560.2"/>
+  <polygon class="pl" points="372.9,560.2 372.9,111.0 389.2,111.0 389.2,560.2 372.9,560.2"/>
+  <polygon class="pl" points="423.8,560.2 423.8,103.0 440.1,103.0 440.1,560.2 423.8,560.2"/>
+  <polygon class="pl" points="474.7,560.2 474.7,88.8 490.9,88.8 490.9,560.2 474.7,560.2"/>
+  <polygon class="pl" points="525.5,560.2 525.5,87.5 541.8,87.5 541.8,560.2 525.5,560.2"/>
+  <polygon class="pl" points="576.4,560.2 576.4,94.9 592.7,94.9 592.7,560.2 576.4,560.2"/>
+  <polygon class="pl" points="627.3,560.2 627.3,133.5 643.5,133.5 643.5,560.2 627.3,560.2"/>
+  <polygon class="pl" points="678.1,560.2 678.1,72.4 694.4,72.4 694.4,560.2 678.1,560.2"/>
+  <polygon class="pl" points="729.0,560.2 729.0,63.1 745.3,63.1 745.3,560.2 729.0,560.2"/>
+  <polygon class="pl" points="779.9,560.2 779.9,98.5 796.2,98.5 796.2,560.2 779.9,560.2"/>
+  <polygon class="pl" points="830.7,560.2 830.7,73.1 847.0,73.1 847.0,560.2 830.7,560.2"/>
+  <polygon class="pl" points="881.6,560.2 881.6,63.1 897.9,63.1 897.9,560.2 881.6,560.2"/>
 </g>
-<g stroke="none" stroke-width="0.9000"  fill="#0072BD" clip-path="url(#axis_clip)">
-  <polygon points="154.9,560.2 154.9,560.2 171.2,560.2 171.2,560.2 154.9,560.2"/>
-  <polygon points="205.8,560.2 205.8,560.2 222.1,560.2 222.1,560.2 205.8,560.2"/>
-  <polygon points="256.6,560.2 256.6,560.1 272.9,560.1 272.9,560.2 256.6,560.2"/>
-  <polygon points="307.5,560.2 307.5,560.1 323.8,560.1 323.8,560.2 307.5,560.2"/>
-  <polygon points="358.4,560.2 358.4,560.0 374.7,560.0 374.7,560.2 358.4,560.2"/>
-  <polygon points="409.3,560.2 409.3,559.7 425.5,559.7 425.5,560.2 409.3,560.2"/>
-  <polygon points="460.1,560.2 460.1,559.4 476.4,559.4 476.4,560.2 460.1,560.2"/>
-  <polygon points="511.0,560.2 511.0,558.9 527.3,558.9 527.3,560.2 511.0,560.2"/>
-  <polygon points="561.9,560.2 561.9,558.3 578.1,558.3 578.1,560.2 561.9,560.2"/>
-  <polygon points="612.7,560.2 612.7,557.5 629.0,557.5 629.0,560.2 612.7,560.2"/>
-  <polygon points="663.6,560.2 663.6,556.8 679.9,556.8 679.9,560.2 663.6,560.2"/>
-  <polygon points="714.5,560.2 714.5,555.6 730.8,555.6 730.8,560.2 714.5,560.2"/>
-  <polygon points="765.3,560.2 765.3,554.3 781.6,554.3 781.6,560.2 765.3,560.2"/>
-  <polygon points="816.2,560.2 816.2,552.7 832.5,552.7 832.5,560.2 816.2,560.2"/>
-  <polygon points="867.1,560.2 867.1,552.0 883.4,552.0 883.4,560.2 867.1,560.2"/>
+<g stroke="none" stroke-width="0.9000"  fill="#7B553E" clip-path="url(#axis_clip)">
+  <polygon class="pl" points="154.9,560.2 154.9,560.2 171.2,560.2 171.2,560.2 154.9,560.2"/>
+  <polygon class="pl" points="205.8,560.2 205.8,560.2 222.1,560.2 222.1,560.2 205.8,560.2"/>
+  <polygon class="pl" points="256.6,560.2 256.6,560.1 272.9,560.1 272.9,560.2 256.6,560.2"/>
+  <polygon class="pl" points="307.5,560.2 307.5,560.1 323.8,560.1 323.8,560.2 307.5,560.2"/>
+  <polygon class="pl" points="358.4,560.2 358.4,560.0 374.7,560.0 374.7,560.2 358.4,560.2"/>
+  <polygon class="pl" points="409.3,560.2 409.3,559.7 425.5,559.7 425.5,560.2 409.3,560.2"/>
+  <polygon class="pl" points="460.1,560.2 460.1,559.4 476.4,559.4 476.4,560.2 460.1,560.2"/>
+  <polygon class="pl" points="511.0,560.2 511.0,558.9 527.3,558.9 527.3,560.2 511.0,560.2"/>
+  <polygon class="pl" points="561.9,560.2 561.9,558.3 578.1,558.3 578.1,560.2 561.9,560.2"/>
+  <polygon class="pl" points="612.7,560.2 612.7,557.5 629.0,557.5 629.0,560.2 612.7,560.2"/>
+  <polygon class="pl" points="663.6,560.2 663.6,556.8 679.9,556.8 679.9,560.2 663.6,560.2"/>
+  <polygon class="pl" points="714.5,560.2 714.5,555.6 730.8,555.6 730.8,560.2 714.5,560.2"/>
+  <polygon class="pl" points="765.3,560.2 765.3,554.3 781.6,554.3 781.6,560.2 765.3,560.2"/>
+  <polygon class="pl" points="816.2,560.2 816.2,552.7 832.5,552.7 832.5,560.2 816.2,560.2"/>
+  <polygon class="pl" points="867.1,560.2 867.1,552.0 883.4,552.0 883.4,560.2 867.1,560.2"/>
 </g>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">EV electricity consumption and total power generation in Norway</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="929.0,113.4 929.0,91.1 957.9,91.1 957.9,113.4" fill="#D95319"/>
+      <polygon class="pl" points="929.0,113.4 929.0,91.1 957.9,91.1 957.9,113.4" fill="#404040"/>
     </g>
     <text class="pl" transform="translate(966.3,103.6)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">Total generation</text>
     <g stroke="none" stroke-width="0.9000"  >
-      <polygon class="pl" points="929.0,83.4 929.0,61.2 957.9,61.2 957.9,83.4" fill="#0072BD"/>
+      <polygon class="pl" points="929.0,83.4 929.0,61.2 957.9,61.2 957.9,83.4" fill="#7B553E"/>
     </g>
     <text class="pl" transform="translate(966.3,73.6)" dy="7.3" font-size="24.30" fill="#808080" stroke="none">EV power use</text>
 <text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Own calculations / <a href="https://www.ssb.no" target="_blank" style="fill:#BFBFBF">SSB</a> / Statkraft / Statens vegvesen / Norsk elbilforening</text>
@@ -142,7 +140,7 @@ text:hover + .dl_el {display:block;}
     </g>
   </g>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
