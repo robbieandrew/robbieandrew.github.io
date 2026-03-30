@@ -40,7 +40,7 @@
 	<div style="text-align:center;">
 	  <span onclick="toggleShow('citation')">Suggested citation: <span style="text-decoration:underline;">show</span></span> | <span onclick="toggleShow('academicarticle')">Peer-reviewed article: <span style="text-decoration:underline;">show</span></span>
 	
-	  <div id="citation" style="display:none;background-color:#ACE"><p style="margin-top:1px"><em>Andrew, R. 2025: "Indian Energy and Emissions Data", available at: https://robbieandrew.github.io/india/ (last access: <span id="current-date"></span>).</em></p></div>
+	  <div id="citation" style="display:none;background-color:#ACE"><p style="margin-top:1px"><em>Andrew, R. (<span id="current-year"></span>): "Indian Energy and Emissions Data", available at: https://robbieandrew.github.io/india/ (accessed: <span id="current-date"></span>).</em></p></div>
 	  <div id="academicarticle" style="display:none;background-color:#ACE">
 	    <p style="margin-bottom:1px">These data were originally collated for preparation of the following article:</p>
 	    <p style="margin-top:1px"><em>Andrew, R. 2020: "Timely estimates of India's annual and monthly fossil CO<span class="subb">2</span> emissions", Earth System Science Data 12, 2411&ndash;2421, DOI: <a href="https://doi.org/10.5194/essd-12-2411-2020">10.5194/essd-12-2411-2020</a> (open access).</em></p>
@@ -367,6 +367,8 @@
 <script>
   document.getElementById("current-date").innerHTML =
     new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
+  document.getElementById("current-year").innerHTML =
+    new Intl.DateTimeFormat('en-GB', { year: 'numeric' }).format(new Date());
 </script>
 <script>
 function toggleShow(divname) {
@@ -410,6 +412,7 @@ window.addEventListener('load', () => {
 <script src="../js/downloadSVGasPNG.js"></script>
 <script src="../js/svg-metadata.js"></script>
 <script src="../js/svg-handler.js"></script>
+<script src="../js/citation-modal.js"></script>
 
 </body>
 
