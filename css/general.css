@@ -130,7 +130,7 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   background-color: #93D4FF;
 }
 
-/* Modal Overlay ("please cite me" popup) */
+/* ----- Modal Overlay ("please cite me" popup) ----- */
 .modal-overlay {
   position: fixed;
   z-index: 10000; /* Higher than headers */
@@ -176,4 +176,41 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   margin: 15px 0;
   font-size: 0.95em;
   line-height: 1.4;
+}
+
+/* ----- Loading spinner ----- */
+
+#page-loader {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  z-index: 10001; /* Above the citation modal */
+  transition: opacity 0.5s ease;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #0078e7; /* PureCSS Blue */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+.loader-text {
+  font-size: 13px;
+  font-family: sans-serif;
+  color: #555;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
