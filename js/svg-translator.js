@@ -17,17 +17,28 @@ async function applyTranslation(langCode) {
         return;
     }
 
-    // 2. Fetch the JSON if we haven't already
+	// 2. Fetch the JSONs if we haven't already
     if (!cachedTranslations) {
         try {
-            const response = await fetch('../data/carsales-translations.json');
-            cachedTranslations = await response.json();
+            // Fetch both files in parallel
+            const [carRes, countryRes] = await Promise.all([
+                fetch('../data/carsales-translations.json'),
+                fetch('../data/country-translations.json')
+            ]);
+
+            const carData = await carRes.json();
+            const countryData = await countryRes.json();
+
+            // Merge them into one object
+            // Note: If both files have the same key, later files will overwrite earlier files
+            cachedTranslations = { ...countryData, ...carData};
+            
         } catch (error) {
             console.error("Could not load translations:", error);
             return;
         }
     }
-
+	
     // 3. Process every SVG object on the page
     document.querySelectorAll('object[type="image/svg+xml"]').forEach(obj => {
         const svgDoc = obj.contentDocument;
