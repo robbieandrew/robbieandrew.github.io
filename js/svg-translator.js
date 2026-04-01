@@ -76,9 +76,10 @@ async function applyTranslation(langCode) {
 					// Use the original englishKey (with spaces) for the boundary test
 					const needsBoundaries = /^\w+$/.test(englishKey);
 					
-					// Build regex using the full key (e.g., "in " becomes /\bin \b/)
-					const regexString = needsBoundaries ? `\\b${escapedKey}\\b` : escapedKey;
-					const regex = new RegExp(regexString, 'g'); 
+					//// Build regex using the full key (e.g., "in " becomes /\bin \b/)
+					//const regexString = needsBoundaries ? `\\b${escapedKey}\\b` : escapedKey;
+					//const regex = new RegExp(regexString, 'g');
+					const regex = new RegExp(escapedKey, 'g');
 
 					translatedText = translatedText.replace(regex, targetWord);
 				}
