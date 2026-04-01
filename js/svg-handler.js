@@ -9,6 +9,7 @@ let availableDataFiles = [];
 
 	const svgObjects = document.querySelectorAll('object[type="image/svg+xml"]');
     let svgsToLoad = svgObjects.length;
+	console.log(`svgsToLoad: ${svgsToLoad}`);
 
     // If there are no SVGs on the page, kill the loader immediately
     if (svgsToLoad === 0) {
@@ -35,8 +36,9 @@ let availableDataFiles = [];
 		  container.classList.add("figure-group");
 		}
 		
-		// Decrement and check
+		// This SVG is done, so decrement and remove spinner if reached zero remaining
 		svgsToLoad--;
+		console.log(`svgsToLoad: ${svgsToLoad}`);
 		if (svgsToLoad <= 0) {
 			document.getElementById('page-loader')?.remove();
 		}
