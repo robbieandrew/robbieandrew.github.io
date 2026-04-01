@@ -18,30 +18,30 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
   <title>Collected vehicle registration data</title>
   <script src="../js/html-include.js"></script>
-  <link rel="stylesheet" href="css/carsales.css">
+  <link rel="stylesheet" href="css/carsales_testing.css">
   <link rel="stylesheet" href="../css/general.css">
   <link rel="stylesheet" type="text/css" href="../css/feedback.css">
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+  <script src="../js/svg-translator.js"></script>
 </head>
 
 <body>
   <main>
     <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
 
-	<div class="lang-controls" style="margin: 10px 0;">
-		<button class="pure-button" onclick="applyTranslation('no')">Norsk</button>
-		<button class="pure-button" onclick="applyTranslation('sv')">Svenska</button>
-		<button class="pure-button" onclick="applyTranslation('ja')">日本語</button>
-		<button class="pure-button" onclick="applyTranslation('en')">English</button>
-	</div>
-	<script src="../js/svg-translator.js"></script>
+    <div id="page-loader">
+      <div class="spinner"></div>
+      <span class="loader-text">Loading charts...</span>
+    </div>
 
 	<h1>Collected vehicle registration data</h1>
-	<p>Download <a href="data/all_carsales_monthly.csv">all monthly data in one file</a>.</p>
+	<p>Download <a href="data/all_carsales_monthly.csv" download>all monthly data in one file</a>.</p>
 	
-<div id="controls-container">
-    <p id="toggle-updates-button" class="toggle-button" style="margin-right: 20px;">Show list of recent updates</p>
-    <p id="toggle-notes-button" class="toggle-button">Show explanatory notes</p>
-</div>
+	<div id="controls-container">
+		<p id="toggle-updates-button" class="toggle-button" style="margin-right: 20px;">Show list of recent updates</p>
+		<p id="toggle-notes-button" class="toggle-button">Show explanatory notes</p>
+	</div>
 
 <div id="content-container">
     <div id="updates-container">
@@ -99,21 +99,57 @@
 	<script src="js/vehicle-updates-viewer.js"></script>
 
 	<div class="selector-container">
-	  <div class="button-group frequency-selector-container">
-		<button class="frequency-button" data-frequency="monthly">Monthly</button><button class="frequency-button" data-frequency="quarterly">Quarterly</button><button class="frequency-button" data-frequency="half-yearly">Half-yearly</button><button class="frequency-button" data-frequency="annual">Annual</button>
+	  <div class="selector">
+		<label for="langSelector" class="icon-translate">Chart Language</label>
+			<select id="langSelector">
+			  <option value="en" selected>English</option>
+			  <option value="da">Dansk</option>
+			  <option value="de">Deutsch</option>
+			  <option value="es">Español</option>
+			  <option value="fr">Français</option>
+			  <option value="it">Italiano</option>
+			  <option value="ja">日本語</option>
+			  <option value="no">Norsk</option>
+			  <option value="fi">Suomi</option>
+			  <option value="sv">Svenska</option>
+			  <option value="zh">中文</option>
+			</select>
 	  </div>
-	  <div class="button-group format-selector-container">
-		<button class="format-button active" data-format="relative">Relative</button><button class="format-button" data-format="absolute">Absolute</button><button class="format-button" data-format="line">Line</button>
+
+	  <div class="selector">
+		<label for="frequencySelector">Time Interval</label>
+		<select id="frequencySelector">
+		  <option value="monthly">Monthly</option>
+		  <option value="quarterly">Quarterly</option>
+		  <option value="half-yearly">Half-yearly</option>
+		  <option value="annual">Annual</option>
+		</select>
 	  </div>
-	<div class="button-group sort-selector-container">
-	  <button class="sort-button active" data-sort="alphabetical">Alphabetical</button><button class="sort-button" data-sort="bev-share">BEV Share</button>
+
+	  <div class="selector">
+		<label for="formatSelector">Display Format</label>
+		<select id="formatSelector">
+		  <option value="relative">Relative (%)</option>
+		  <option value="absolute">Absolute (Units)</option>
+		  <option value="line">Line Chart</option>
+		</select>
+	  </div>
+
+	  <div class="selector">
+		<label for="sortSelector">Sort Order</label>
+		<select id="sortSelector">
+		  <option value="alphabetical">Alphabetical</option>
+		  <option value="bev-share">BEV Share</option>
+		</select>
+	  </div>
+  
+	  <div class="selector">
+	    <label for="countrySelector">Select Countries (<span id="selectedCount">0</span>/<span id="totalCount">0</span>)</label>
+	    <select id="countrySelector" multiple>
+	    </select>
+	  </div>
 	</div>
-	<div class="selector">
-	  <label for="countrySelector">Select Countries (<span id="selectedCount">0</span>/<span id="totalCount">0</span>)</label>
-	  <select id="countrySelector" multiple>
-	  </select>
-	</div>
-	</div>
+
 	<div class="pure-g">
 	</div>
 	
@@ -129,9 +165,15 @@
 
 <script async src="https://tally.so/widgets/embed.js"></script>
 <script src="../js/downloadSVGasPNG.js" defer></script>
+<script src="../js/citation-modal.js"></script>
 
 
 <script>
+// This prevents downloadSVGasPNG.js from making guessed 404 requests
+var availableDataFiles = [];
+// Variable to track initial load. Keep this global
+let svgsToLoad = 0;
+let isInitialSetup = true;
 
 const btn = document.getElementById('tally-feedback-btn');
 
@@ -154,142 +196,178 @@ function toggleFeedback(show) {
 }
 
 function updateCharts() {
-    const chartContainers = document.querySelectorAll('.pure-u-1.pure-u-lg-1-3');
-    const activeFrequency = document.querySelector('.frequency-button.active').getAttribute('data-frequency');
-    const activeFormat = document.querySelector('.format-button.active').getAttribute('data-format');
+    const activeCountries = document.querySelectorAll('.country[style*="display: block"]');
     
-    chartContainers.forEach(container => {
-      const country = container.querySelector('.countrytitle').textContent
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g, '');
-      const objectElement = container.querySelector('object');
-      const links = container.querySelectorAll('.svg-button-group a');
-      
-      const formatSuffix = activeFormat === 'absolute' ? '_abs' :
-						   activeFormat === 'line' ? '_line' : '';
-      const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
-      const newCsvPath = `data/${country}_carsales_${activeFrequency}.csv`;
-      
-      // Update the object element
-      objectElement.setAttribute('data', newSvgPath);
-      
-      // Update the links
-      links.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href.includes('.svg')) {
-          link.setAttribute('href', newSvgPath);
-        } else if (href.includes('.csv')) {
-          link.setAttribute('href', newCsvPath);
-        }
-      });
+    // Use the Tom Select instance if available to check the value
+    const countrySelector = document.getElementById('countrySelector');
+    const tsControl = countrySelector ? countrySelector.tomselect : null;
+    const selectedValues = tsControl ? tsControl.getValue() : [];
+    const isAllSelected = Array.isArray(selectedValues) ? selectedValues.includes('all') : selectedValues === 'all';
+
+	if (isAllSelected || activeCountries.length > 10) {
+        // Reset the global counter to exactly the number of visible charts
+        svgsToLoad = activeCountries.length; 
+        showPageLoader();
+    }
+
+    const activeFrequency = document.getElementById('frequencySelector').value;
+    const activeFormat = document.getElementById('formatSelector').value;
+    const currentLang = document.getElementById('langSelector').value;
+	
+    activeCountries.forEach(container => {
+        const country = container.dataset.country.toLowerCase().replace(/\s+/g, '');
+        const wrapper = container.querySelector('.chart-wrapper');
+        const formatSuffix = activeFormat === 'absolute' ? '_abs' : activeFormat === 'line' ? '_line' : '';
+        const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
+
+        wrapper.innerHTML = ''; 
+        const newObj = document.createElement('object');
+        newObj.type = 'image/svg+xml';
+        newObj.className = 'fig';
+        newObj.data = newSvgPath;
+
+		newObj.onload = function() {
+			if (typeof applyTranslation === "function") {
+				applyTranslation(currentLang);
+			}
+			attachChartButtons(container, newObj); // This calls decrementLoader
+			newObj.onload = null;
+		};
+
+		// If the file is missing, we still need to count down
+		newObj.onerror = function() {
+			console.warn("Chart failed to load: " + newSvgPath);
+			decrementLoader(); 
+			newObj.onerror = null;
+};
+        wrapper.appendChild(newObj);
     });
 }
 
-function filterListen() {
-  const frequencyButtons = document.querySelectorAll('.frequency-button');
-  const formatButtons = document.querySelectorAll('.format-button');
-  
-  function setActiveButton(buttons, clickedButton) {
-    buttons.forEach(btn => btn.classList.remove('active'));
-    clickedButton.classList.add('active');
-  }
-  
-  // Set default active buttons
-  frequencyButtons[0].classList.add('active');
-  formatButtons[0].classList.add('active');
 
-  frequencyButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      setActiveButton(frequencyButtons, this);
-      updateCharts();
-    });
-  });
-
-  formatButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      setActiveButton(formatButtons, this);
-      updateCharts();
-    });
-  });
-
-  // Initial chart update
-  updateCharts();
-}
 
 function makeCountrySelector() {
-  const graphContainer = document.querySelectorAll('.country');
-  const selectElement = document.getElementById('countrySelector');
+    const allCountryDivs = document.querySelectorAll('.country');
+    const selectElement = document.getElementById('countrySelector');
+    const countries = new Set();
 
-  const countries = new Set();
-
-  // Collect unique country names
-  graphContainer.forEach(graph => {
-    countries.add(graph.dataset.country);
-  });
-
-  // Add "All" option first
-  selectElement.innerHTML += `<option value="all" selected>All</option>`;
-
-  // Populate the select list dynamically
-  countries.forEach(country => {
-    selectElement.innerHTML += `<option value="${country}">${country}</option>`;
-  });
-
-  const selectedCountSpan = document.getElementById("selectedCount");
-  const totalCountSpan = document.getElementById("totalCount");
-  // Calculate total countries dynamically (excluding "All" option)
-  const totalCountries = countrySelector.options.length - 1;
-  totalCountSpan.textContent = totalCountries;
-  countrySelector.addEventListener("change", function() {
-    const selectedOptions = Array.from(countrySelector.selectedOptions);
-    const isAllSelected = selectedOptions.some(option => option.value === "all");
-    if (isAllSelected) {
-      // Show full count if "All" is selected
-      selectedCountSpan.textContent = totalCountries;
-    } else {
-      // Otherwise, count normally
-      selectedCountSpan.textContent = selectedOptions.length;
-    }
-  });
-  // Initialize the count to n (Since 'All' is the default)
-  selectedCountSpan.textContent = totalCountries;
-
-  selectElement.addEventListener('change', function () {
-    let selectedOptions = Array.from(this.selectedOptions).map(option => option.value);
-
-    // If "All" and others are selected, deselect "All"
-    if (selectedOptions.length > 1 && selectedOptions.includes('all')) {
-    this.querySelector('option[value="all"]').selected = false;
-    selectedOptions = selectedOptions.filter(value => value !== 'all');
-    }
-
-    const countries = document.querySelectorAll('.country');
-
-    if (selectedOptions.length === 0) {
-    // If nothing selected, default back to "All"
-    this.querySelector('option[value="all"]').selected = true;
-    selectedOptions = ['all'];
-    }
-
-    countries.forEach(country => {
-    if (selectedOptions.includes('all') || selectedOptions.includes(country.dataset.country)) {
-      country.style.display = 'block';
-    } else {
-      country.style.display = 'none';
-    }
+    allCountryDivs.forEach(graph => {
+        countries.add(graph.dataset.country);
     });
 
-    // Update chart content
-    updateCharts();
+    // Initial setup of the <select> element
+    selectElement.innerHTML = `<option value="all">All Countries</option>`;
+    Array.from(countries).sort().forEach(country => {
+        selectElement.innerHTML += `<option value="${country}">${country}</option>`;
+    });
 
-    // Update count display
-    const selectedCountSpan = document.getElementById("selectedCount");
-    const totalCount = countrySelector.options.length - 1;
-    selectedCountSpan.textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
-  });
+    const totalCount = countries.size;
+    document.getElementById("totalCount").textContent = totalCount;
 
-};
+    const countryControl = new TomSelect("#countrySelector", {
+        plugins: ['remove_button'],
+        maxOptions: null, 
+        persist: false,
+        create: false,
+        placeholder: "Select or search...",
+        allowEmptyOption: true,
+        hideSelected: true, // This makes selected countries disappear from the list
+        
+        onItemAdd: function(value) {
+            // Logic: If you select a specific country, remove the "All Countries" pill
+            if (value !== 'all') {
+                this.removeItem('all', true); // 'true' makes it silent to avoid loops
+            }
+            this.setTextboxValue('');
+            this.refreshOptions(false);
+        },
+
+		onInitialize: function() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const countryParam = urlParams.get('country');
+
+			if (countryParam && countryParam !== 'all') {
+				// If the URL has specific countries, set them
+				const countriesToSelect = countryParam.split(',');
+				// Set the loader count to the number of countries in the URL
+				triggerMassLoad(countriesToSelect.length);
+				this.setValue(countriesToSelect);
+			} else {
+				// Otherwise, default to all
+				this.setValue('all');
+			}
+		},
+		
+		onChange: function(value) {
+            let selectedOptions = Array.isArray(value) ? value : [value];
+            
+            if (selectedOptions.length > 1 && selectedOptions[selectedOptions.length - 1] === 'all') {
+                triggerMassLoad(allCountryDivs.length);
+                this.clear(true);
+                this.addItem('all', true);
+                selectedOptions = ['all'];
+                this.close();
+                this.blur();
+            } 
+            else if (selectedOptions.length === 0 || (selectedOptions.length === 1 && selectedOptions[0] === "")) {
+                triggerMassLoad(allCountryDivs.length);
+                this.setValue('all', true);
+                selectedOptions = ['all'];
+                this.blur();
+            }
+
+            const url = new URL(window.location);
+            url.searchParams.set('country', selectedOptions.includes('all') ? 'all' : selectedOptions.join(','));
+            window.history.pushState({}, '', url);
+
+            const activeFreq = document.getElementById('frequencySelector').value;
+            const activeFormat = document.getElementById('formatSelector').value;
+            const formatSuffix = activeFormat === 'absolute' ? '_abs' : activeFormat === 'line' ? '_line' : '';
+            const currentLang = document.getElementById('langSelector').value;
+
+            allCountryDivs.forEach(div => {
+                const isVisible = selectedOptions.includes('all') || selectedOptions.includes(div.dataset.country);
+                const wrapper = div.querySelector('.chart-wrapper');
+                
+                if (isVisible) {
+                    div.style.display = 'block';
+                    const cleanName = div.dataset.country.toLowerCase().replace(/\s+/g, '');
+                    const targetPath = `img/${cleanName}_carsales_${activeFreq}${formatSuffix}.svg`;
+                    const currentObj = wrapper.querySelector('object'); // This defines currentObj
+                    
+                    if (!currentObj || currentObj.getAttribute('data') !== targetPath) {
+                        wrapper.innerHTML = ''; 
+                        const newObj = document.createElement('object');
+                        newObj.type = 'image/svg+xml';
+                        newObj.className = 'fig';
+                        newObj.data = targetPath;
+                        
+                        newObj.onload = function() {
+                            if (typeof applyTranslation === "function") applyTranslation(currentLang);
+                            attachChartButtons(div, newObj);
+                            newObj.onload = null; 
+                        };
+                        wrapper.appendChild(newObj);
+                    } 
+                    else {
+                        // Only decrement the loader if we are NOT in the initial page setup.
+                        // During initial setup, the 'onload' events handle the countdown.
+                        if (!isInitialSetup && svgsToLoad > 0) {
+                            svgsToLoad--;
+                            if (svgsToLoad === 0) hidePageLoader();
+                        }
+                    }
+                } else {
+                    div.style.display = 'none';
+                    wrapper.innerHTML = ''; 
+                }
+            });
+            
+            document.getElementById("selectedCount").textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
+			}
+	});
+}
+
 
 // Used to fetch JSON data from embedded script element while testing offline
 function fakeFetch() {
@@ -299,6 +377,7 @@ function fakeFetch() {
                 resolve(jsonData); // Resolve the promise with the JSON data
             });
         }
+		
 function makeCountryDiv(entry) {
         const countryName = entry.country;
         const countryId = countryName.toLowerCase().replace(/\s+/g, '');  // Lowercase and remove spaces
@@ -322,12 +401,6 @@ function makeCountryDiv(entry) {
         }
         if (entry.sources) {
           detailsHtml += `Data: `;
-//          entry.sources.forEach((source, index) => {
-//          detailsHtml += `<a href="${source.url}">${source.name}</a>`;
-//            if (index < entry.sources.length - 1) {
-//              detailsHtml += ' ';
-//            }
-//          });
 		  entry.sources.forEach((source, index) => {
 		    detailsHtml += `<a href="${source.url}">${source.name}</a>`;
 		    if (source.geofenced) {
@@ -343,88 +416,146 @@ function makeCountryDiv(entry) {
         countryDiv.innerHTML += detailsHtml;
 
         // Embed the SVG graph
-        countryDiv.innerHTML += `
-          <object data="${svgPath}" type="image/svg+xml" class="fig"></object>
-        `;
-
-        // Add data download button
-        countryDiv.innerHTML += `
-          <p class="svg-button-group"><a href="${csvPath}" class="simple-button" download>Download data</a></p>
-        `;
+		countryDiv.innerHTML += `<div class="chart-wrapper"></div>`;
+		
 	return countryDiv;
 }
 
 function populateCountries() {
-  console.log('populateCountries()')
-  // The data.json file is critical: it determines which countries are shown, and includes additional metadata
-  // on source(s) and any dedicated web page for the country.
   fetch('https://robbieandrew.github.io/carsales/data.json')
     .then(response => response.json())
-//	fakeFetch() // can replace previous two lines
     .then(data => {
-      const graphContainer = document.querySelector('.pure-g');
+        const graphContainer = document.querySelector('.pure-g');
 
-	  // Sort countries by name
-	  data.sort((a, b) => a.country.localeCompare(b.country));
+        // 1. Sort countries by name
+        data.sort((a, b) => a.country.localeCompare(b.country));
 
-      data.forEach(entry => {
-        // Append to main graph container
-        graphContainer.appendChild(makeCountryDiv(entry));
-      });
+        // 2. IMPORTANT: Set the global counter and show loader BEFORE creating objects
+        triggerMassLoad(data.length);
 
-	  makeCountrySelector();
-	  filterListen();
-	  console.log('  adding buttons')
-      // Add a PNG download link for every SVG on the page
-      document.querySelectorAll('object[type="image/svg+xml"]').forEach(svgObject => {
-//        svgObject.addEventListener('load', () => addSVGbuttons(svgObject));
-		addSVGbuttons(svgObject)
-		// Add a class to the parent div
-        let container = svgObject.closest("div");
-        if (container) {
-          container.classList.add("figure-group");
-        }
-      });
+        data.forEach(entry => {
+            // Append the empty containers to the page
+            graphContainer.appendChild(makeCountryDiv(entry));
+        });
+
+        // 3. Initialize the selector
+        makeCountrySelector();
+		
+        // 4. Signal that the DOM is ready for the second script
+        window.dispatchEvent(new Event('countriesPopulated'));
     })
-    .catch(error => console.error('Error loading JSON:', error));
-};
+    .catch(error => {
+        console.error('Error loading JSON:', error);
+        hidePageLoader(); // Hide spinner if the initial data fetch fails
+    });
+}
+
+function attachChartButtons(container, svgObject) {
+    // 1. If buttons already exist, we still need to decrement the counter
+    if (container.querySelector('.svg-button-group')) {
+        decrementLoader();
+        return; 
+    }
+
+    // 2. Add the standard buttons (PNG/Clipboard)
+    if (typeof addSVGbuttons === "function") {
+        addSVGbuttons(svgObject);
+    }
+
+    // 3. Add the "Download Data" button
+    let buttonGroup = container.querySelector('.svg-button-group');
+    if (buttonGroup) {
+        const countryId = container.dataset.country.toLowerCase().replace(/\s+/g, '');
+        const activeFreq = document.getElementById('frequencySelector').value;
+        const csvPath = `data/${countryId}_carsales_${activeFreq}.csv`;
+        
+        const dataBtn = document.createElement('a');
+        dataBtn.href = csvPath;
+        dataBtn.className = 'simple-button';
+        dataBtn.setAttribute('download', '');
+        dataBtn.textContent = 'Download data';
+        buttonGroup.appendChild(dataBtn);
+    }
+
+    // 4. Always decrement at the end of a successful attachment
+    decrementLoader();
+}
+
+// Helper function to handle the countdown safely
+function decrementLoader() {
+    if (typeof svgsToLoad !== 'undefined' && svgsToLoad > 0) {
+        svgsToLoad--;
+        if (svgsToLoad === 0) {
+            hidePageLoader();
+        }
+    }
+}
+
+// Helper functions for the spinner
+function showPageLoader() {
+    const loader = document.getElementById('page-loader');
+    const controls = document.querySelector('.selector-container'); // Or your specific selector container
+    
+    if (loader && controls) {
+        // 1. Get the bounding box of the selectors
+        const rect = controls.getBoundingClientRect();
+        
+        // 2. Set the loader's top to the middle of the selectors
+        // We use rect.top (relative to viewport) + half the height
+        const targetTop = rect.top + (rect.height / 2);
+        
+        // 3. Apply the position (offsetting by half the loader's height to center it)
+        loader.style.top = `${targetTop}px`;
+        loader.style.transform = 'translate(-50%, -50%)'; // Center both axes
+        
+        // 4. Show it
+        loader.style.display = 'flex';
+        // Force a reflow for the transition to work
+        loader.offsetHeight; 
+        loader.style.opacity = '1';
+    }
+}
+
+function hidePageLoader() {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => { loader.style.display = 'none'; }, 500);
+    }
+}
+
+function triggerMassLoad(count) {
+    console.log("Triggering mass load for " + count + " items.");
+    svgsToLoad = count; 
+    if (count > 0) {
+        showPageLoader();
+    } else {
+        hidePageLoader();
+    }
+}
 
 function sortCountries(method) {
   const graphContainer = document.querySelector('.pure-g');
   const countryDivs = Array.from(graphContainer.children);
 
-  if (method === 'bev-share') {
-    countryDivs.sort((a, b) => {
+  // 1. Sort the array of elements in memory
+  countryDivs.sort((a, b) => {
+    if (method === 'bev-share') {
       const countryA = a.getAttribute('data-country');
       const countryB = b.getAttribute('data-country');
+      // Sort descending (highest share first)
       return (bevShareData[countryB] || 0) - (bevShareData[countryA] || 0);
-    });
-  } else {
-    countryDivs.sort((a, b) => {
+    } else {
+      // Sort ascending (A-Z)
       return a.getAttribute('data-country').localeCompare(b.getAttribute('data-country'));
-    });
-  }
-
-  countryDivs.forEach(div => graphContainer.appendChild(div));
-}
-
-function setupSortButtons() {
-  const sortButtons = document.querySelectorAll('.sort-button');
-
-  function setActiveSortButton(clickedButton) {
-    sortButtons.forEach(btn => btn.classList.remove('active'));
-    clickedButton.classList.add('active');
-    sortCountries(clickedButton.getAttribute('data-sort'));
-  }
-
-  sortButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      setActiveSortButton(this);
-    });
+    }
   });
 
-  // Default sorting (Alphabetical)
-//  sortCountries('alphabetical');
+  // 2. Apply a CSS 'order' value to each div based on its new position
+  // This moves them visually without "re-inserting" them into the DOM
+  countryDivs.forEach((div, index) => {
+    div.style.order = index;
+  });
 }
 
 let bevShareData = {};
@@ -440,11 +571,103 @@ fetch('https://robbieandrew.github.io/carsales/data/latest_bev_share.json')
   })
   .catch(error => console.error('Error loading BEV share data:', error));
 
+function setupLanguagePersistence() {
+    const langSelect = document.getElementById('langSelector');
+    
+    // 1. On page load: Check URL for ?lang=XX
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang) {
+        langSelect.value = urlLang;
+        applyTranslation(urlLang);
+    }
+
+    // 2. On change: Update URL and translate
+    langSelect.addEventListener('change', function() {
+        const newLang = this.value;
+        
+        // Update URL without reloading page
+        const url = new URL(window.location);
+        url.searchParams.set('lang', newLang);
+        window.history.pushState({}, '', url);
+        
+        applyTranslation(newLang);
+    });
+}
+
+window.addEventListener('resize', () => {
+    const loader = document.getElementById('page-loader');
+    // Only update if the loader is currently visible
+    if (loader && loader.style.opacity === '1') {
+        showPageLoader();
+    }
+});
 // Fetch JSON and generate HTML dynamically
 window.onload = function() {
 	populateCountries();
-	setupSortButtons();
+    setupLanguagePersistence();
 };
+</script>
+
+<script>
+window.addEventListener('countriesPopulated', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    const urlArgs = {
+        lang: urlParams.get('lang') || 'en',
+        freq: urlParams.get('freq') || 'monthly',
+        type: urlParams.get('type') || 'relative',
+        sort: urlParams.get('sort') || 'alphabetical'
+    };
+
+    const updateURL = (key, value) => {
+        const url = new URL(window.location);
+        url.searchParams.set(key, value);
+        window.history.pushState({}, '', url);
+    };
+
+    // Mapping of selector IDs to their URL parameter keys
+    const selectorConfig = {
+        '#langSelector': 'lang',
+        '#frequencySelector': 'freq',
+        '#formatSelector': 'type',
+        '#sortSelector': 'sort'
+    };
+
+    Object.keys(selectorConfig).forEach(id => {
+        const key = selectorConfig[id];
+        const el = document.querySelector(id);
+        
+        if (el) {
+            // Initialize TomSelect
+            const ts = new TomSelect(id, {
+                create: false,
+                hideSelected: false,
+                controlInput: null,
+                onChange: function(value) {
+                    updateURL(key, value);
+                    // Trigger the specific UI updates
+                    if (id === '#langSelector') applyTranslation(value);
+                    if (id === '#frequencySelector' || id === '#formatSelector') updateCharts();
+                    if (id === '#sortSelector') sortCountries(value);
+					this.blur();
+                }
+            });
+            // Set initial value from URL
+            ts.setValue(urlArgs[key]);
+        }
+    });
+
+    // Final sorting based on initial URL state
+    sortCountries(urlArgs.sort);
+
+	// This ensures that all initial "onChange" triggers from 
+    // ALL selectors have finished before we allow the loader to be dismissed.
+    setTimeout(() => {
+        isInitialSetup = false;
+    }, 100);
+});
+
 </script>
 
 </body>

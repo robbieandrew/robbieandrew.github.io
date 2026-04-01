@@ -1,3 +1,4 @@
+
 (function() {
   // Dynamically get the page title from the <title> tag
   const pageTitle = document.title || "Data Downloads";
@@ -12,7 +13,7 @@
         <p>If you use these data in your work, <strong>please consider providing a citation:</strong></p>
 
         <div class="citation-box">
-          <em>Andrew, R. ${new Date().getFullYear()}: "${pageTitle}", available at: ${window.location.href.split('#')[0]} (accessed: ${new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date())})</em>
+          <em>Andrew, R. ${new Date().getFullYear()}: "${pageTitle}", available at: ${window.location.href.split('#')[0].split('?')[0]} (accessed: ${new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date())})</em>
         </div>
 
         <p>Questions? Feedback? Reach out via the <a href="https://forms.gle/jeuyvoeXqBQMnsGX8">contact form</a>.</p>

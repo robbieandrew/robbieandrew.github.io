@@ -146,3 +146,44 @@
     padding-right: 10px;
     display: block; 
 }
+
+
+/* translation icon */
+.icon-translate:before {
+    content: "文/A "; /* The two-script symbol */
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-right: 5px;
+    color: #555;
+}
+
+/* for the Tom Select 'Pills' */
+.ts-control {
+    border-radius: 2px !important; /* Matches Pure.css style */
+    padding: 8px !important;
+}
+
+.selector-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.selector label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Update this in carsales.css to match your existing 'selector' style */
+#langSelector {
+    width: 100%; /* Matches the country selector's width logic */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 0; /* Removing radius to match your sharp-edged buttons */
+    background-color: white;
+    font-family: inherit;
+}
