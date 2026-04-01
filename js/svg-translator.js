@@ -54,7 +54,7 @@ async function applyTranslation(langCode) {
 		} else if (langCode === 'ko') {
 			svgDoc.querySelectorAll('text, tspan').forEach(t => {
 				t.style.fontFamily = '"Malgun Gothic", "Apple SD Gothic Neo", "NanumGothic", sans-serif';
-				t.style.letterSpacing = '-0.02em'; // Slightly tighter spacing
+				t.style.letterSpacing = '-0.05em'; // Slightly tighter spacing
 			});
 		} else {
             svgDoc.querySelectorAll('text, tspan').forEach(t => {
