@@ -1,295 +1,62 @@
 {
-  "Monthly sales of": {
-    "fr": "Ventes mensuelles de",
-    "es": "Ventas mensuales de"
-  },
-  "Quarterly sales of": {
-    "fr": "Ventes trimestrielles de",
-    "es": "Ventas trimestrales de"
-  },
-  "Half-Yearly sales of": {
-    "fr": "Ventes semestrielles de",
-    "es": "Ventas semestrales de"
-  },
-  "Annual sales of": {
-    "fr": "Ventes annuelles de",
-    "es": "Ventas anuales de"
-  },
-  "new passenger cars: ": {
-    "fr": "VP neuves : ",
-    "es": "turismos nuevos: "
-  },
-  "new light-duty vehicles: ": {
-    "fr": "VL neufs : ",
-    "es": "vehículos ligeros nuevos: "
-  },
-  "new light commercial vehicles: ": {
-    "fr": "VUL neufs : ",
-    "es": "comerciales ligeras nuevas: "
-  },
-  "new heavy duty vehicles: ": {
-    "fr": "PL neufs : ",
-    "es": "vehículos pesados nuevos: "
-  },
-  "Monthly sales of new ": {
-    "no": "Månedlig salg av nye ",
-    "sv": "Månatlig försäljning av nya ",
-    "ja": "月次 新車",
-    "zh": "月度新",
-    "de": "Monatliche Neuzulassungen von ",
-    "da": "Månedlig salg af nye ",
-    "fi": "Kuukausittainen uusien ",
-    "it": "Vendite mensili di nuove "
-  },
-  "Quarterly sales of new ": {
-    "no": "Kvartalsvis salg av nye ",
-    "sv": "Kvartalsvis försäljning av nya ",
-    "ja": "四半期別 新車",
-    "zh": "季度新",
-    "de": "Vierteljährliche Neuzulassungen von ",
-    "da": "Kvartalsvis salg af nye ",
-    "fi": "Neljännesvuosittainen uusien ",
-    "it": "Vendite trimestrali di nuove "
-  },
-  "Half-Yearly sales of new ": {
-    "no": "Halvårlig salg av nye ",
-    "sv": "Halvårsvis försäljning av nya ",
-    "ja": "半期別 新車",
-    "zh": "半年度新",
-    "de": "Halbjährliche Neuzulassungen von ",
-    "da": "Halvårlig salg af nye ",
-    "fi": "Puolivuosittain: uusien ",
-    "it": "Vendite semestrali di nuove "
-  },
-  "Annual sales of new ": {
-    "no": "Årlig salg av nye ",
-    "sv": "Årlig försäljning av nya ",
-    "ja": "年次 新車",
-    "zh": "年度新",
-    "de": "Jährliche Neuzulassungen von ",
-    "da": "Årlig salg af nye ",
-    "fi": "Vuosittainen uusien ",
-    "it": "Vendite annuali di nuove "
-  },
-  "passenger cars": {
-    "no": "personbiler",
-    "sv": "personbilar",
-    "ja": "乗用車販売台数",
-    "zh": "乘用车销量",
-    "de": "Personenkraftwagen",
-    "da": "personbiler",
-    "fi": "henkilöautojen myynti",
-    "it": "autovetture"
-  },
-  "light-duty vehicles": {
-    "no": "lette kjøretøy",
-    "sv": "lätta fordon",
-    "ja": "小型車販売台数",
-    "zh": "轻型车销量",
-    "de": "leichten Fahrzeugen",
-    "da": "lette køretøjer",
-    "fi": "kevyiden ajoneuvojen myynti",
-    "it": "veicoli leggeri"
-  },
-  "light commercial vehicles": {
-    "no": "lette nyttekjøretøy",
-    "sv": "lätta nyttofordon",
-    "ja": "軽商用車販売台数",
-    "zh": "轻型商用车销量",
-    "de": "leichten Nutzfahrzeugen",
-    "da": "lette erhvervskøretøjer",
-    "fi": "kevyiden hyötyajoneuvojen myynti",
-    "it": "veicoli commerciali leggeri"
-  },
-  "heavy duty vehicles": {
-    "no": "tunge kjøretøy",
-    "sv": "tunga fordon",
-    "ja": "大型車販売台数",
-    "zh": "重型车销量",
-    "de": "schweren Nutzfahrzeugen",
-    "da": "tunge køretøjer",
-    "fi": "raskaiden ajoneuvojen myynti",
-    "it": "veicoli industriali pesanti"
-  },
-  "Others": { 
-    "no": "Andre", "sv": "Övriga", "ja": "その他", 
-    "fr": "Autres", "zh": "其他", "de": "Andere", "es": "Otros", "da": "Andre", "fi": "Muut", "it": "Altri" 
-  },
-  " in ": { 
-    "no": " i ", "sv": " i ", "ja": " ", 
-    "fr": " en ", "zh": " 于 ", "de": " in ", "es": " en ", "da": " i ", "fi": " kohteessa ", "it": " in " 
-  },
-  "Battery electric": { 
-    "no": "Elbil", "sv": "Elbil (batteri)", "ja": "BEV (電気自動車)", 
-    "fr": "Électrique à batterie", "zh": "纯电动", "de": "Batterieelektrisch", "es": "Eléctrico de batería", "da": "Batteri-elektrisk", "fi": "Täyssähkö", "it": "Elettrico a batteria" 
-  },
-  "Plugin hybrid": { 
-    "no": "Ladbar hybrid", "sv": "Laddhybrid", "ja": "PHEV", 
-    "fr": "Hybride rechargeable", "zh": "插电式混动", "de": "Plug-in-Hybrid", "es": "Híbrido enchufable", "da": "Plugin-hybrid", "fi": "Lataushybridi", "it": "Ibrido plug-in" 
-  },
-  "Non-plugin hybrid": { 
-    "no": "Ikke-ladbar hybrid", "sv": "Elhybrid (ej laddbar)", "ja": "HEV (ハイブリッド)", 
-    "fr": "Hybride non rechargeable", "zh": "油电混动", "de": "Nicht-Plug-in-Hybrid", "es": "Híbrido no enchufable", "da": "Ikke-plugin-hybrid", "fi": "Itselataava hybridi", "it": "Ibrido non plug-in" 
-  },
-  "LPG / LPG blend": { 
-    "no": "LPG / LPG-blanding", "sv": "Gasol / Gasolblandning", "ja": "LPG / LPG混合", 
-    "fr": "GPL / mélange GPL", "zh": "LPG / 液化石油气混合", "de": "LPG / LPG-Mischung", "es": "GLP / mezcla de GLP", "da": "LPG / LPG-blanding", "fi": "LPG / LPG-seos", "it": "GPL / miscela di GPL" 
-  },
-  "LPG": { 
-    "no": "LPG", "sv": "Gasol", "ja": "LPG", 
-    "fr": "GPL", "zh": "液化石油气", "de": "LPG", "es": "GLP", "da": "LPG", "fi": "LPG", "it": "GPL" 
-  },
-  "Petrol": { 
-    "no": "Bensin", "sv": "Bensin", "ja": "ガソリン", 
-    "fr": "Essence", "zh": "汽油", "de": "Benzin", "es": "Gasolina", "da": "Benzin", "fi": "Bensiini", "it": "Benzina" 
-  },
-  "Diesel": { 
-    "no": "Diesel", "sv": "Diesel", "ja": "ディーゼル", 
-    "fr": "Diesel", "zh": "柴油", "de": "Diesel", "es": "Diésel", "da": "Diesel", "fi": "Diesel", "it": "Diesel" 
-  },
-  "Hydrogen": { 
-    "no": "Hydrogen", "sv": "Vätgas", "ja": "水素", 
-    "fr": "Hydrogène", "zh": "氢气", "de": "Wasserstoff", "es": "Hidrógeno", "da": "Brint", "fi": "Vety", "it": "Idrogeno" 
-  },
-  "Ethanol/Petrol": { 
-    "no": "Etanol/Bensin", "sv": "Etanol/Bensin", "ja": "エタノール/ガソリン", 
-    "fr": "Éthanol/Essence", "zh": "乙醇/汽油", "de": "Ethanol/Benzin", "es": "Etanol/Gasolina", "da": "Ethanol/Benzin", "fi": "Etanoli/Bensiini", "it": "Etanolo/Benzina" 
-  },
-  "Hybrid": { 
-    "no": "Hybrid", "sv": "Hybrid", "ja": "ハイブリッド", 
-    "fr": "Hybride", "zh": "混合动力", "de": "Hybrid", "es": "Híbrido", "da": "Hybrid", "fi": "Hybridi", "it": "Ibrido" 
-  },
-  "Internal combustion engine": { 
-    "no": "Forbrenningsmotor", "sv": "Förbränningsmotor", "ja": "内燃機関 (ICE)", 
-    "fr": "Moteur à combustion interne", "zh": "内燃机", "de": "Verbrennungsmotor", "es": "Motor de combustión interna", "da": "Forbrændingsmotor", "fi": "Polttomoottori", "it": "Motore a combustione interna" 
-  },
-  "Source data are quarterly": { 
-    "no": "Kildedata er kvartalsvise", "sv": "Källdata är kvartalsvis", "ja": "出典データは四半期ベース", 
-    "fr": "Données source trimestrielles", "zh": "原始数据为季度数据", "de": "Quelldaten sind vierteljährlich", "es": "Los datos de origen son trimestrales", "da": "Kildedata er kvartalsvise", "fi": "Lähdetiedot ovat neljännesvuosittaisia", "it": "I dati di origine sono trimestrali" 
-  },
-  "Includes light commercial": { 
-    "no": "Inkluderer lette nyttekjøretøy", "sv": "Inklusive lätta nyttofordon", "ja": "軽商用車を含む", 
-    "fr": "Comprend les utilitaires légers", "zh": "包括轻型商用车", "de": "Inklusive leichter Nutzfahrzeuge", "es": "Incluye comerciales ligeros", "da": "Inkluderer lette erhvervskøretøjer", "fi": "Sisältää kevyet hyötyajoneuvot", "it": "Include i veicoli commerciali leggeri" 
-  },
-  "Light- and medium-duty vehicles": { 
-    "no": "Lette og mellomtunge kjøretøy", "sv": "Lätta och medeltunga fordon", "ja": "小型・中型車", 
-    "fr": "VÉ légers et moyens", "zh": "轻型和中型车辆", "de": "Leichte und mittelschwere Fahrzeuge", "es": "Vehículos ligeros y medianos", "da": "Lette og mellemtunge køretøjer", "fi": "Kevyet ja keskiraskaat ajoneuvot", "it": "Veicoli leggeri e medi" 
-  },
-  "light-duty vehicle": {
-    "no": "lett kjøretøy","sv": "lätt fordon","ja": "小型車",
-    "fr": "véhicule léger","zh": "轻型车","de": "leichtes Fahrzeug","es": "vehículo ligero","da": "let køretøj","fi": "kevyt ajoneuvo","it": "veicolo leggero"
-  },
-  "new light-duty vehicle sales": {
-    "fr": "ventes de VL neufs",
-    "es": "ventas de vehículos ligeros nuevos",
-    "it": "vendite di nuovi veicoli leggeri",
-    "de": "Neuzulassungen leichter Fahrzeuge"
-  },
-  "new passenger car sales": {
-    "fr": "ventes de VP neuves",
-    "es": "ventas de turismos nuevos",
-    "it": "vendite di nuove autovetture",
-    "de": "PKW-Neuzulassungen"
-  },
-  "All vehicle types": { 
-    "no": "Alle kjøretøytyper", "sv": "Alla fordonstyper", "ja": "全車種", 
-    "fr": "Tous types de véhicules", "zh": "所有车辆类型", "de": "Alle Fahrzeugtypen", "es": "Todos los tipos de vehículos", "da": "Alle køretøjstyper", "fi": "Kaikki ajoneuvotyypit", "it": "Tutti i tipi di veicolo" 
-  },
-  "Includes commercial vehicles": { 
-    "no": "Inkluderer nyttekjøretøy", "sv": "Inklusive nyttofordon", "ja": "商用車を含む", 
-    "fr": "Comprend les véhicules commerciaux", "zh": "包括商用车", "de": "Inklusive Nutzfahrzeuge", "es": "Incluye vehículos comerciales", "da": "Inkluderer erhvervskøretøjer", "fi": "Sisältää hyötyajoneuvot", "it": "Include i veicoli commerciali" 
-  },
-  "Wholesale": { 
-    "no": "Grossistsalg", "sv": "Partihandel", "ja": "卸売", 
-    "fr": "Vente en gros", "zh": "批发", "de": "Großhandel", "es": "Venta al por mayor", "da": "Engrossalg", "fi": "Tukkumyynti", "it": "Vendita all'ingrosso" 
-  },
-  "Net imports before": { 
-    "no": "Nettoimport før", "sv": "Nettoimport före", "ja": "以前の純輸入", 
-    "fr": "Importations nettes avant", "zh": "之前的净进口", "de": "Nettoimporte vor", "es": "Importaciones netas antes de", "da": "Nettoimport før", "fi": "Nettotuonti ennen", "it": "Importazioni nette prima di" 
-  },
-  "Includes used imports": { 
-    "no": "Inkluderer bruktimport", "sv": "Inklusive begagnad import", "ja": "中古輸入車を含む", 
-    "fr": "Comprend les importations d'occasion", "zh": "包括二手进口", "de": "Inklusive Gebrauchtimporte", "es": "Incluye importaciones de usados", "da": "Inkluderer brugtimport", "fi": "Sisältää käytettyjen tuonnin", "it": "Include importazioni di usati" 
-  },
-  "New only": { 
-    "no": "Kun nye", "sv": "Endast nya", "ja": "新車のみ", 
-    "fr": "Neuf uniquement", "zh": "仅限新车", "de": "Nur neue", "es": "Solo nuevos", "da": "Kun nye", "fi": "Vain uudet", "it": "Solo nuove" 
-  },
-  "Reported by trade partners": { 
-    "no": "Rapportert av handelspartnere", "sv": "Rapporterat av handelspartner", "ja": "貿易パートナーによる報告", 
-    "fr": "Signalé par les partenaires commerciaux", "zh": "由贸易伙伴报告", "de": "Von Handelspartnern gemeldet", "es": "Reportado por socios comerciales", "da": "Rapporteret af handelspartnere", "fi": "Kauppakumppanien ilmoittama", "it": "Segnalato dai partner commerciali" 
-  },
-  "January": { 
-    "no": "januar", "sv": "januari", "ja": "1月", 
-    "fr": "janvier", "zh": "一月", "de": "Januar", "es": "enero", "da": "januar", "fi": "tammikuu", "it": "gennaio" 
-  },
-  "February": { 
-    "no": "februar", "sv": "februari", "ja": "2月", 
-    "fr": "février", "zh": "二月", "de": "Februar", "es": "febrero", "da": "februar", "fi": "helmikuu", "it": "febbraio" 
-  },
-  "March": { 
-    "no": "mars", "sv": "mars", "ja": "3月", 
-    "fr": "mars", "zh": "三月", "de": "März", "es": "marzo", "da": "marts", "fi": "maaliskuu", "it": "marzo" 
-  },
-  "April": { 
-    "no": "april", "sv": "april", "ja": "4月", 
-    "fr": "avril", "zh": "四月", "de": "April", "es": "abril", "da": "april", "fi": "huhtikuu", "it": "aprile" 
-  },
-  "May": { 
-    "no": "mai", "sv": "maj", "ja": "5月", 
-    "fr": "mai", "zh": "五月", "de": "Mai", "es": "mayo", "da": "maj", "fi": "toukokuu", "it": "maggio" 
-  },
-  "June": { 
-    "no": "juni", "sv": "juni", "ja": "6月", 
-    "fr": "juin", "zh": "六月", "de": "Juni", "es": "junio", "da": "juni", "fi": "kesäkuu", "it": "giugno" 
-  },
-  "July": { 
-    "no": "juli", "sv": "juli", "ja": "7月", 
-    "fr": "juillet", "zh": "七月", "de": "Juli", "es": "julio", "da": "juli", "fi": "heinäkuu", "it": "luglio" 
-  },
-  "August": { 
-    "no": "august", "sv": "august", "ja": "8月", 
-    "fr": "août", "zh": "八月", "de": "August", "es": "agosto", "da": "august", "fi": "elokuu", "it": "agosto" 
-  },
-  "September": { 
-    "no": "september", "sv": "september", "ja": "9月", 
-    "fr": "septembre", "zh": "九月", "de": "September", "es": "septiembre", "da": "september", "fi": "syyskuu", "it": "settembre" 
-  },
-  "October": { 
-    "no": "oktober", "sv": "oktober", "ja": "10月", 
-    "fr": "octobre", "zh": "十月", "de": "Oktober", "es": "octubre", "da": "oktober", "fi": "lokakuu", "it": "ottobre" 
-  },
-  "November": { 
-    "no": "november", "sv": "november", "ja": "11月", 
-    "fr": "novembre", "zh": "十一月", "de": "November", "es": "noviembre", "da": "november", "fi": "marraskuu", "it": "novembre" 
-  },
-  "December": { 
-    "no": "desember", "sv": "december", "ja": "12月", 
-    "fr": "décembre", "zh": "十二月", "de": "Dezember", "es": "diciembre", "da": "december", "fi": "joulukuu", "it": "dicembre" 
-  },
-  "Through ": { 
-    "no": "t.o.m. ", "sv": "t.o.m. ", "ja": "まで ", 
-    "fr": "Jusqu'à ", "zh": "直到 ", "de": "Bis einschließlich ", "es": "Hasta ", "da": "t.o.m. ", "fi": "asti ", "it": "Fino a " 
-  },
-  "so far": {
-    "no": "hittil i", "sv": "hittills under", "ja": "現在まで", 
-    "fr": "jusqu'à présent", "zh": "目前为止", "de": "bislang", "es": "hasta ahora", "da": "hidtil i", "fi": "tähän asti", "it": "finora" 
-  },
-  "Data: ": {
-    "no": "Kilde: ", "sv": "Källa: ", "ja": "出典: ", 
-    "fr": "Données : ", "zh": "数据： ", "de": "Daten: ", "es": "Datos: ", "da": "Data: ", "fi": "Tiedot: ", "it": "Dati: " 
-  },
-  " via ": {
-    "no": " via ", "sv": " via ", "ja": " 経由 ", 
-    "fr": " via ", "zh": " 经由 ", "de": " via ", "es": " vía ", "da": " via ", "fi": " kautta ", "it": " via " 
-  },
-  " ● ": {
-    "no": " ● ", "sv": " ● ", "ja": " | ", 
-    "fr": " ● ", "zh": " | ", "de": " ● ", "es": " ● ", "da": " ● ", "fi": " ● ", "it": " ● " 
-  },
-  "(includes plug-ins)": {
-    "no": "", "sv": "", "ja": "", 
-    "fr": "", "zh": "", "de": "", "es": "", "da": "", "fi": "", "it": "" 
-  }
+  "Monthly sales of": { "fr": "Ventes mensuelles de", "es": "Ventas mensuales de", "ko": "월간 판매량: ", "pl": "Miesięczna sprzedaż: " },
+  "Quarterly sales of": { "fr": "Ventes trimestrielles de", "es": "Ventas trimestrales de", "ko": "분기별 판매량: ", "pl": "Kwartalna sprzedaż: " },
+  "Half-Yearly sales of": { "fr": "Ventes semestrielles de", "es": "Ventas semestrales de", "ko": "반기별 판매량: ", "pl": "Półroczna sprzedaż: " },
+  "Annual sales of": { "fr": "Ventes annuelles de", "es": "Ventas anuales de", "ko": "연간 판매량: ", "pl": "Roczna sprzedaż: " },
+  "new passenger cars: ": { "fr": "VP neuves : ", "es": "turismos nuevos: ", "ko": "신규 승용차: ", "pl": "nowych samochodów osobowych: " },
+  "new light-duty vehicles: ": { "fr": "VL neufs : ", "es": "vehículos ligeros nuevos: ", "ko": "신규 경형 자동차: ", "pl": "nowych lekkich pojazdów: " },
+  "new light commercial vehicles: ": { "fr": "VUL neufs : ", "es": "comerciales ligeras nuevas: ", "ko": "신규 경상용차: ", "pl": "nowych lekkich samochodów dostawczych: " },
+  "new heavy duty vehicles: ": { "fr": "PL neufs : ", "es": "vehículos pesados nuevos: ", "ko": "신규 대형 자동차: ", "pl": "nowych ciężkich pojazdów: " },
+  "Monthly sales of new ": { "no": "Månedlig salg av nye ", "sv": "Månatlig försäljning av nya ", "ja": "月次 新車", "zh": "月度新", "de": "Monatliche Neuzulassungen von ", "da": "Månedlig salg af nye ", "fi": "Kuukausittainen uusien ", "it": "Vendite mensili di nuove ", "ko": "월간 신차 ", "pl": "Miesięczna sprzedaż nowych " },
+  "Quarterly sales of new ": { "no": "Kvartalsvis salg av nye ", "sv": "Kvartalsvis försäljning av nya ", "ja": "四半期別 新車", "zh": "季度新", "de": "Vierteljährliche Neuzulassungen von ", "da": "Kvartalsvis salg af nye ", "fi": "Neljännesvuosittainen uusien ", "it": "Vendite trimestrali di nuove ", "ko": "분기별 신차 ", "pl": "Kwartalna sprzedaż nowych " },
+  "Half-Yearly sales of new ": { "no": "Halvårlig salg av nye ", "sv": "Halvårsvis försäljning av nya ", "ja": "半期別 新車", "zh": "半年度新", "de": "Halbjährliche Neuzulassungen von ", "da": "Halvårlig salg af nye ", "fi": "Puolivuosittain: uusien ", "it": "Vendite semestrali di nuove ", "ko": "반기별 신차 ", "pl": "Półroczna sprzedaż nowych " },
+  "Annual sales of new ": { "no": "Årlig salg av nye ", "sv": "Årlig försäljning av nya ", "ja": "年次 新車", "zh": "年度新", "de": "Jährliche Neuzulassungen von ", "da": "Årlig salg af nye ", "fi": "Vuosittainen uusien ", "it": "Vendite annuali di nuove ", "ko": "연간 신차 ", "pl": "Roczna sprzedaż nowych " },
+  "passenger cars": { "no": "personbiler", "sv": "personbilar", "ja": "乗用車販売台数", "zh": "乘用车销量", "de": "Personenkraftwagen", "da": "personbiler", "fi": "henkilöautojen myynti", "it": "autovetture", "ko": "승용차 판매량", "pl": "samochodów osobowych" },
+  "light-duty vehicles": { "no": "lette kjøretøy", "sv": "lätta fordon", "ja": "小型車販売台数", "zh": "轻型车销量", "de": "leichten Fahrzeugen", "da": "lette køretøjer", "fi": "kevyiden ajoneuvojen myynti", "it": "veicoli leggeri", "ko": "경형 자동차 판매량", "pl": "lekkich pojazdów" },
+  "light commercial vehicles": { "no": "lette nyttekjøretøy", "sv": "lätta nyttofordon", "ja": "軽商用車販売台数", "zh": "轻型商用车销量", "de": "leichten Nutzfahrzeugen", "da": "lette erhvervskøretøjer", "fi": "kevyiden hyötyajoneuvojen myynti", "it": "veicoli commerciali leggeri", "ko": "경상용차 판매량", "pl": "lekkich samochodów dostawczych" },
+  "heavy duty vehicles": { "no": "tunge kjøretøy", "sv": "tunga fordon", "ja": "大型車販売台数", "zh": "重型车销量", "de": "schweren Nutzfahrzeugen", "da": "tunge køretøjer", "fi": "raskaiden ajoneuvojen myynti", "it": "veicoli industriali pesanti", "ko": "대형 자동차 판매량", "pl": "ciężkich pojazdów" },
+  "Others": { "no": "Andre", "sv": "Övriga", "ja": "その他", "fr": "Autres", "zh": "其他", "de": "Andere", "es": "Otros", "da": "Andre", "fi": "Muut", "it": "Altri", "ko": "기타", "pl": "Inne" },
+  " in ": { "no": " i ", "sv": " i ", "ja": " ", "fr": " en ", "zh": " 于 ", "de": " in ", "es": " en ", "da": " i ", "fi": " kohteessa ", "it": " in ", "ko": " - ", "pl": " w " },
+  "Battery electric": { "no": "Elbil", "sv": "Elbil (batteri)", "ja": "BEV (電気自動車)", "fr": "Électrique à batterie", "zh": "纯电动", "de": "Batterieelektrisch", "es": "Eléctrico de batería", "da": "Batteri-elektrisk", "fi": "Täyssähkö", "it": "Elettrico a batteria", "ko": "배터리 전기차(BEV)", "pl": "Elektryczne (akumulatorowe)" },
+  "Plugin hybrid": { "no": "Ladbar hybrid", "sv": "Laddhybrid", "ja": "PHEV", "fr": "Hybride rechargeable", "zh": "插电式混动", "de": "Plug-in-Hybrid", "es": "Híbrido enchufable", "da": "Plugin-hybrid", "fi": "Lataushybridi", "it": "Ibrido plug-in", "ko": "플러그인 하이브리드(PHEV)", "pl": "Hybrydy typu Plug-in" },
+  "Non-plugin hybrid": { "no": "Ikke-ladbar hybrid", "sv": "Elhybrid (ej laddbar)", "ja": "HEV (ハイブリッド)", "fr": "Hybride non rechargeable", "zh": "油电混动", "de": "Nicht-Plug-in-Hybrid", "es": "Híbrido no enchufable", "da": "Ikke-plugin-hybrid", "fi": "Itselataava hybridi", "it": "Ibrido non plug-in", "ko": "하이브리드(HEV)", "pl": "Hybrydy (bez wtyczki)" },
+  "LPG / LPG blend": { "no": "LPG / LPG-blanding", "sv": "Gasol / Gasolblandning", "ja": "LPG / LPG混合", "fr": "GPL / mélange GPL", "zh": "LPG / 液化石油气混合", "de": "LPG / LPG-Mischung", "es": "GLP / mezcla de GLP", "da": "LPG / LPG-blanding", "fi": "LPG / LPG-seos", "it": "GPL / miscela di GPL", "ko": "LPG / LPG 혼합유", "pl": "LPG / mieszanka LPG" },
+  "LPG": { "no": "LPG", "sv": "Gasol", "ja": "LPG", "fr": "GPL", "zh": "液化石油气", "de": "LPG", "es": "GLP", "da": "LPG", "fi": "LPG", "it": "GPL", "ko": "LPG", "pl": "LPG" },
+  "Petrol": { "no": "Bensin", "sv": "Bensin", "ja": "ガソリン", "fr": "Essence", "zh": "汽油", "de": "Benzin", "es": "Gasolina", "da": "Benzin", "fi": "Bensiini", "it": "Benzina", "ko": "가솔린", "pl": "Benzyna" },
+  "Diesel": { "no": "Diesel", "sv": "Diesel", "ja": "ディーゼル", "fr": "Diesel", "zh": "柴油", "de": "Diesel", "es": "Diésel", "da": "Diesel", "fi": "Diesel", "it": "Diesel", "ko": "디젤", "pl": "Diesel" },
+  "Hydrogen": { "no": "Hydrogen", "sv": "Vätgas", "ja": "水素", "fr": "Hydrogène", "zh": "氢气", "de": "Wasserstoff", "es": "Hidrógeno", "da": "Brint", "fi": "Vety", "it": "Idrogeno", "ko": "수소", "pl": "Wodór" },
+  "Ethanol/Petrol": { "no": "Etanol/Bensin", "sv": "Etanol/Bensin", "ja": "エタノール/ガソリン", "fr": "Éthanol/Essence", "zh": "乙醇/汽油", "de": "Ethanol/Benzin", "es": "Etanol/Gasolina", "da": "Ethanol/Benzin", "fi": "Etanoli/Bensiini", "it": "Etanolo/Benzina", "ko": "에탄올/가솔린", "pl": "Etanol/Benzyna" },
+  "Hybrid": { "no": "Hybrid", "sv": "Hybrid", "ja": "ハイブリッド", "fr": "Hybride", "zh": "混合动力", "de": "Hybrid", "es": "Híbrido", "da": "Hybrid", "fi": "Hybridi", "it": "Ibrido", "ko": "하이브리드", "pl": "Hybryda" },
+  "Internal combustion engine": { "no": "Forbrenningsmotor", "sv": "Förbränningsmotor", "ja": "内燃機関 (ICE)", "fr": "Moteur à combustion interne", "zh": "内燃机", "de": "Verbrennungsmotor", "es": "Motor de combustión interna", "da": "Forbrændingsmotor", "fi": "Polttomoottori", "it": "Motore a combustione interna", "ko": "내연기관 (ICE)", "pl": "Silnik spalinowy (ICE)" },
+  "Source data are quarterly": { "no": "Kildedata er kvartalsvise", "sv": "Källdata är kvartalsvis", "ja": "出典データは四半期ベース", "fr": "Données source trimestrielles", "zh": "原始数据为季度数据", "de": "Quelldaten sind vierteljährlich", "es": "Los datos de origen son trimestrales", "da": "Kildedata er kvartalsvise", "fi": "Lähdetiedot ovat neljännesvuosittaisia", "it": "I dati di origine sono trimestrali", "ko": "소스 데이터는 분기별 데이터임", "pl": "Dane źródłowe są kwartalne" },
+  "Includes light commercial": { "no": "Inkluderer lette nyttekjøretøy", "sv": "Inklusive lätta nyttofordon", "ja": "軽商用車を含む", "fr": "Comprend les utilitaires légers", "zh": "包括轻型商用车", "de": "Inklusive leichter Nutzfahrzeuge", "es": "Incluye comerciales ligeros", "da": "Inkluderer lette erhvervskøretøjer", "fi": "Sisältää kevyet hyötyajoneuvot", "it": "Include i veicoli commerciali leggeri", "ko": "경상용차 포함", "pl": "Obejmuje lekkie pojazdy dostawcze" },
+  "Light- and medium-duty vehicles": { "no": "Lette og mellomtunge kjøretøy", "sv": "Lätta och medeltunga fordon", "ja": "小型・中型車", "fr": "VÉ légers et moyens", "zh": "轻型和中型车辆", "de": "Leichte und mittelschwere Fahrzeuge", "es": "Vehículos ligeros y medianos", "da": "Lette og mellemtunge køretøjer", "fi": "Kevyet ja keskiraskaat ajoneuvot", "it": "Veicoli leggeri e medi", "ko": "경형 및 중형 자동차", "pl": "Lekkie i średnie pojazdy" },
+  "light-duty vehicle": { "no": "lett kjøretøy", "sv": "lätt fordon", "ja": "小型車", "fr": "véhicule léger", "zh": "轻型车", "de": "leichtes Fahrzeug", "es": "vehículo ligero", "da": "let køretøj", "fi": "kevyt ajoneuvo", "it": "veicolo ligero", "ko": "경형 자동차", "pl": "lekki pojazd" },
+  "new light-duty vehicle sales": { "fr": "ventes de VL neufs", "es": "ventas de vehículos ligeros nuevos", "it": "vendite di nuovi veicoli leggeri", "de": "Neuzulassungen leichter Fahrzeuge", "ko": "신규 경형 자동차 판매량", "pl": "sprzedaż nowych lekkich pojazdów" },
+  "new passenger car sales": { "fr": "ventes de VP neuves", "es": "ventas de turismos nuevos", "it": "vendite di nuove autovetture", "de": "PKW-Neuzulassungen", "ko": "신규 승용차 판매량", "pl": "sprzedaż nowych samochodów osobowych" },
+  "All vehicle types": { "no": "Alle kjøretøytyper", "sv": "Alla fordonstyper", "ja": "全車種", "fr": "Tous types de véhicules", "zh": "所有车辆类型", "de": "Alle Fahrzeugtypen", "es": "Todos los types de vehículos", "da": "Alle køretøjstyper", "fi": "Kaikki ajoneuvotyypit", "it": "Tutti i tipi di veicolo", "ko": "모든 차종", "pl": "Wszystkie typy pojazdów" },
+  "Includes commercial vehicles": { "no": "Inkluderer nyttekjøretøy", "sv": "Inklusive nyttofordon", "ja": "商用車を含む", "fr": "Comprend les véhicules commerciaux", "zh": "包括商用车", "de": "Inklusive Nutzfahrzeuge", "es": "Incluye vehículos comerciales", "da": "Inkluderer erhvervskøretøjer", "fi": "Sisältää hyötyajoneuvot", "it": "Include i veicoli commerciali", "ko": "상용차 포함", "pl": "Obejmuje pojazdy użytkowe" },
+  "Wholesale": { "no": "Grossistsalg", "sv": "Partihandel", "ja": "卸売", "fr": "Vente en gros", "zh": "批发", "de": "Großhandel", "es": "Venta al por mayor", "da": "Engrossalg", "fi": "Tukkumyynti", "it": "Vendita all'ingrosso", "ko": "도매", "pl": "Sprzedaż hurtowa" },
+  "Net imports before": { "no": "Nettoimport før", "sv": "Nettoimport före", "ja": "以前の純輸入", "fr": "Importations nettes avant", "zh": "之前的净进口", "de": "Nettoimporte vor", "es": "Importaciones netas antes de", "da": "Nettoimport før", "fi": "Nettotuonti ennen", "it": "Importazioni nette prima di", "ko": "이전 순수입", "pl": "Import netto przed" },
+  "Includes used imports": { "no": "Inkluderer bruktimport", "sv": "Inklusive begagnad import", "ja": "中古輸入車を含む", "fr": "Comprend les importations d'occasion", "zh": "包括二手进口", "de": "Inklusive Gebrauchtimporte", "es": "Incluye importaciones de usados", "da": "Inkluderer brugtimport", "fi": "Sisältää käytettyjen tuonnin", "it": "Include importazioni di usati", "ko": "중고 수입차 포함", "pl": "Obejmuje import używanych" },
+  "New only": { "no": "Kun nye", "sv": "Endast nya", "ja": "新車のみ", "fr": "Neuf uniquement", "zh": "仅限新车", "de": "Nur neue", "es": "Solo nuevos", "da": "Kun nye", "fi": "Vain uudet", "it": "Solo nuove", "ko": "신차 한정", "pl": "Tylko nowe" },
+  "Reported by trade partners": { "no": "Rapportert av handelspartnere", "sv": "Rapporterat av handelspartner", "ja": "貿易パートナーによる報告", "fr": "Signalé par les partenaires commerciaux", "zh": "由贸易伙伴报告", "de": "Von Handelspartnern gemeldet", "es": "Reportado por socios comerciales", "da": "Rapporteret af handelspartnere", "fi": "Kauppakumppanien ilmoittama", "it": "Segnalato dai partner commerciali", "ko": "거래 파트너에 의해 보고됨", "pl": "Zgłoszone przez partnerów handlowych" },
+  "January": { "no": "januar", "sv": "januari", "ja": "1月", "fr": "janvier", "zh": "一月", "de": "Januar", "es": "enero", "da": "januar", "fi": "tammikuu", "it": "gennaio", "ko": "1월", "pl": "styczeń" },
+  "February": { "no": "februar", "sv": "februari", "ja": "2月", "fr": "février", "zh": "二月", "de": "Februar", "es": "febrero", "da": "februar", "fi": "helmikuu", "it": "febbraio", "ko": "2월", "pl": "luty" },
+  "March": { "no": "mars", "sv": "mars", "ja": "3月", "fr": "mars", "zh": "三月", "de": "März", "es": "marzo", "da": "marts", "fi": "maaliskuu", "it": "marzo", "ko": "3월", "pl": "marzec" },
+  "April": { "no": "april", "sv": "april", "ja": "4月", "fr": "avril", "zh": "四月", "de": "April", "es": "abril", "da": "april", "fi": "huhtikuu", "it": "aprile", "ko": "4월", "pl": "kwiecień" },
+  "May": { "no": "mai", "sv": "maj", "ja": "5月", "fr": "mai", "zh": "五月", "de": "Mai", "es": "mayo", "da": "maj", "fi": "toukokuu", "it": "maggio", "ko": "5월", "pl": "maj" },
+  "June": { "no": "juni", "sv": "juni", "ja": "6月", "fr": "juin", "zh": "六月", "de": "Juni", "es": "junio", "da": "juni", "fi": "kesäkuu", "it": "giugno", "ko": "6월", "pl": "czerwiec" },
+  "July": { "no": "juli", "sv": "juli", "ja": "7月", "fr": "juillet", "zh": "七月", "de": "Juli", "es": "julio", "da": "juli", "fi": "heinäkuu", "it": "luglio", "ko": "7월", "pl": "lipiec" },
+  "August": { "no": "august", "sv": "august", "ja": "8月", "fr": "août", "zh": "八월", "de": "August", "es": "agosto", "da": "august", "fi": "elokuu", "it": "agosto", "ko": "8월", "pl": "sierpień" },
+  "September": { "no": "september", "sv": "september", "ja": "9月", "fr": "septembre", "zh": "九月", "de": "September", "es": "septiembre", "da": "september", "fi": "syyskuu", "it": "settembre", "ko": "9월", "pl": "wrzesień" },
+  "October": { "no": "oktober", "sv": "oktober", "ja": "10月", "fr": "octobre", "zh": "十月", "de": "Oktober", "es": "octubre", "da": "oktober", "fi": "lokakuu", "it": "ottobre", "ko": "10월", "pl": "październik" },
+  "November": { "no": "november", "sv": "november", "ja": "11月", "fr": "novembre", "zh": "十一月", "de": "November", "es": "noviembre", "da": "november", "fi": "marraskuu", "it": "novembre", "ko": "11월", "pl": "listopad" },
+  "December": { "no": "desember", "sv": "december", "ja": "12월", "fr": "décembre", "zh": "十二월", "de": "Dezember", "es": "diciembre", "da": "december", "fi": "joulukuu", "it": "dicembre", "ko": "12월", "pl": "grudzień" },
+  "Through ": { "no": "t.o.m. ", "sv": "t.o.m. ", "ja": "まで ", "fr": "Jusqu'à ", "zh": "直到 ", "de": "Bis einschließlich ", "es": "Hasta ", "da": "t.o.m. ", "fi": "asti ", "it": "Fino a ", "ko": "~", "pl": "Do " },
+  "so far": { "no": "hittil i", "sv": "hittills under", "ja": "現在まで", "fr": "jusqu'à présent", "zh": "目前为止", "de": "bislang", "es": "hasta ahora", "da": "hidtil i", "fi": "tähän asti", "it": "finora", "ko": "현재까지", "pl": "jak dotąd" },
+  "Data: ": { "no": "Kilde: ", "sv": "Källa: ", "ja": "出典: ", "fr": "Données : ", "zh": "数据： ", "de": "Daten: ", "es": "Datos: ", "da": "Data: ", "fi": "Tiedot: ", "it": "Dati: ", "ko": "데이터: ", "pl": "Dane: " },
+  " via ": { "no": " via ", "sv": " via ", "ja": " 経由 ", "fr": " via ", "zh": " 经由 ", "de": " via ", "es": " vía ", "da": " via ", "fi": " kautta ", "it": " via ", "ko": " (출처: ", "pl": " przez " },
+  " ● ": { "no": " ● ", "sv": " ● ", "ja": " | ", "fr": " ● ", "zh": " | ", "de": " ● ", "es": " ● ", "da": " ● ", "fi": " ● ", "it": " ● ", "ko": " ● ", "pl": " ● " },
+  "(includes plug-ins)": { "no": "", "sv": "", "ja": "", "fr": "", "zh": "", "de": "", "es": "", "da": "", "fi": "", "it": "", "ko": "(플러그인 포함)", "pl": "(zawiera plug-iny)" }
 }
-

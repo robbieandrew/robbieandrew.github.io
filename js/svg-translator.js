@@ -49,9 +49,14 @@ async function applyTranslation(langCode) {
         if (langCode === 'ja') {
             svgDoc.querySelectorAll('text, tspan').forEach(t => {
                 t.style.fontFamily = '"Yu Gothic UI", "Meiryo UI", "Hiragino Kaku Gothic ProN", sans-serif';
-                t.style.letterSpacing = '-0.05em';
+                t.style.letterSpacing = '-0.05em'; // Slightly tighter spacing
             });
-        } else {
+		} else if (langCode === 'ko') {
+			svgDoc.querySelectorAll('text, tspan').forEach(t => {
+				t.style.fontFamily = '"Malgun Gothic", "Apple SD Gothic Neo", "NanumGothic", sans-serif';
+				t.style.letterSpacing = '-0.02em'; // Slightly tighter spacing
+			});
+		} else {
             svgDoc.querySelectorAll('text, tspan').forEach(t => {
                 t.style.fontFamily = ''; 
                 t.style.letterSpacing = 'normal'; 
