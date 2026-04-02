@@ -1,3 +1,5 @@
+// A Greedy, multi-pass string replacement engine
+// April 2026
 let cachedTranslations = null;
 
 // Helper to escape special regex characters like . / ( ) +
@@ -68,28 +70,38 @@ async function applyTranslation(langCode) {
                 el.setAttribute('data-orig-text', el.textContent);
             }
             
-            let translatedText = el.getAttribute('data-orig-text');
-            const sortedKeys = Object.keys(cachedTranslations).sort((a, b) => b.length - a.length);
+		let textToProcess = el.getAttribute('data-orig-text');
+		const sortedKeys = Object.keys(cachedTranslations).sort((a, b) => b.length - a.length);
+		const replacementsMap = new Map();
+		let count = 0;
 
-			for (let englishKey of sortedKeys) {
-				const targetWord = cachedTranslations[englishKey][langCode];
-				
-				if (targetWord !== undefined) {
-					// Do not use .trim() here. We need the exact key, including spaces.
-					const escapedKey = escapeRegExp(englishKey); 
-					
-					// Use the original englishKey (with spaces) for the boundary test
-					const needsBoundaries = /^\w+$/.test(englishKey);
-					
-					//// Build regex using the full key (e.g., "in " becomes /\bin \b/)
-					//const regexString = needsBoundaries ? `\\b${escapedKey}\\b` : escapedKey;
-					//const regex = new RegExp(regexString, 'g');
-					const regex = new RegExp(escapedKey, 'g');
+		for (let englishKey of sortedKeys) {
+			const targetWord = cachedTranslations[englishKey][langCode];
+			
+			if (targetWord !== undefined) {
+				const escapedKey = escapeRegExp(englishKey); 
+				const regex = new RegExp(escapedKey, 'g');
 
-					translatedText = translatedText.replace(regex, targetWord);
+				// If a match is found, replace it with a unique placeholder like {{0}}
+				// This prevents the loop from seeing "Hybride" and turning it into "Hybridee"
+				// That is, any text that is matched and translated will not be translated again.
+				if (regex.test(textToProcess)) {
+					textToProcess = textToProcess.replace(regex, () => {
+						const placeholder = `{{TR_${count}}}`;
+						replacementsMap.set(placeholder, targetWord);
+						count++;
+						return placeholder;
+					});
 				}
 			}
-            el.textContent = translatedText;
+		}
+
+		// Final Pass: Replace placeholders with the actual translated text
+		replacementsMap.forEach((actualTranslation, placeholder) => {
+			textToProcess = textToProcess.replace(new RegExp(escapeRegExp(placeholder), 'g'), actualTranslation);
+		});
+
+		el.textContent = textToProcess;
         });
     });
 }
