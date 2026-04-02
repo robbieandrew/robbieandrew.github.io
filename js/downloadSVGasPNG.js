@@ -636,6 +636,8 @@ function createDataDownloadLink(svgObject) {
 }
 
 function addSVGbuttons(svgObject) {
+  const svgTitle = svgObject.contentDocument?.querySelector('title')?.textContent.trim() ?? svgObject.getAttribute('data');
+  
   const container = svgObject.parentNode;
   let linkContainer = container.querySelector('.svg-button-group');
   
@@ -646,14 +648,37 @@ function addSVGbuttons(svgObject) {
     container.insertBefore(linkContainer, svgObject.nextSibling);
   }
 
-  // --- 1. Create All Potential Links ---
+  const existingLinks = Array.from(linkContainer.querySelectorAll('a'));
+  const existingLinksText = existingLinks.map(a => a.textContent.trim());
+
+/*  // --- 1. Create All Potential Links ---
   const downloadPNGLink = createPNGDownloadLink(svgObject);
   const downloadPDFLink = createPDFDownloadLink(svgObject);
   const downloadDataLink = createDataDownloadLink(svgObject);
   const enlargeLink = createEnlargeLink(svgObject);
   const alttextLink = createAltTextLink(svgObject);
-  const copyLink = !isIOSorIPadOS() ? createCopyLink(svgObject) : null;
+  const copyLink = !isIOSorIPadOS() ? createCopyLink(svgObject) : null;*/
 
+	let downloadPNGLink, downloadPDFLink, downloadDataLink, enlargeLink, alttextLink, copyLink;
+
+	if (!existingLinksText.includes('Download as PNG')) {
+	  downloadPNGLink = createPNGDownloadLink(svgObject);
+	}
+	if (!existingLinksText.includes('Download as PDF')) {
+	  downloadPDFLink = createPDFDownloadLink(svgObject);
+	}
+	if (!existingLinksText.includes('Download data')) {
+	  downloadDataLink = createDataDownloadLink(svgObject);
+	}
+	if (!existingLinksText.includes('Enlarge this figure')) {
+	  enlargeLink = createEnlargeLink(svgObject);
+	}
+	if (!existingLinksText.includes('Alt')) {
+	  alttextLink = createAltTextLink(svgObject);
+	}
+	if (!isIOSorIPadOS() && !existingLinksText.includes('Copy to clipboard')) {
+	  copyLink = createCopyLink(svgObject);
+	}
 //  console.log('links created');
 
 
@@ -665,9 +690,6 @@ function addSVGbuttons(svgObject) {
 
   const allButtons = [enlargeLink, copyLink, alttextLink];
   
-  // --- 3. Check Existing Links (To avoid duplicates and handle replacement) ---
-  const existingLinksText = Array.from(linkContainer.querySelectorAll('a')).map(a => a.textContent.trim());
-
   // Function to check if a link based on its text already exists
   const isExisting = (text) => existingLinksText.includes(text);
 
@@ -681,7 +703,7 @@ function addSVGbuttons(svgObject) {
   if (downloadOptionCount >= THRESHOLD || hasDownloadGroup) {
       ['Download as PNG', 'Download as PDF', 'Download data', 'View as PNG']
         .forEach(text => {
-          const existing = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === text);
+          const existing = existingLinks.find(a => a.textContent.trim() === text);
           if (existing) existing.remove();
         });
   }
@@ -711,7 +733,7 @@ function addSVGbuttons(svgObject) {
     if (link && !isExisting(link.textContent.trim())) {
       // Handle the 'View as PNG' replacement case for the PNG link only
       if (link.textContent.trim() === 'Download as PNG' && existingLinksText.includes('View as PNG')) {
-        const viewLink = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === 'View as PNG');
+        const viewLink = existingLinks.find(a => a.textContent.trim() === 'View as PNG');
         if (viewLink) linkContainer.replaceChild(link, viewLink);
       } else {
         linkContainer.appendChild(link);
@@ -755,7 +777,8 @@ function addIMGbuttons(imgElement) {
   const allButtons = [enlargeLink, copyLink];
   
   // --- 3. Check Existing Links (To avoid duplicates and handle replacement) ---
-  const existingLinksText = Array.from(linkContainer.querySelectorAll('a')).map(a => a.textContent.trim());
+  const existingLinks = Array.from(linkContainer.querySelectorAll('a'));
+  const existingLinksText = existingLinks.map(a => a.textContent.trim());
 
   // Function to check if a link based on its text already exists
   const isExisting = (text) => existingLinksText.includes(text);
@@ -770,7 +793,7 @@ function addIMGbuttons(imgElement) {
   if (downloadOptionCount >= THRESHOLD || hasDownloadGroup) {
       ['Download as PNG', 'Download as PDF', 'Download data', 'View as PNG']
         .forEach(text => {
-          const existing = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === text);
+          const existing = existingLinks.find(a => a.textContent.trim() === text);
           if (existing) existing.remove();
         });
   }

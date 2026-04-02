@@ -234,7 +234,7 @@ function updateCharts() {
 		// Only reset the loader if we are actually changing things after the first load
         if (!isInitialSetup) {
             window.svgsToLoad = activeCountries.length; 
-			console.log(`1. svgsToLoad is now ${window.svgsToLoad}`)
+			console.log(`updateCharts: svgsToLoad is now ${window.svgsToLoad}`)
             showPageLoader();
         }
     }
@@ -470,7 +470,7 @@ function makeCountryDiv(entry) {
 	countryDiv.innerHTML += detailsHtml;
 
 	// Embed the SVG graph
-	countryDiv.innerHTML += `<div class="chart-wrapper"></div>`;
+	countryDiv.innerHTML += `<div class="chart-wrapper" data-bwignore></div>`;
 		
 	return countryDiv;
 }
@@ -502,6 +502,7 @@ function populateCountries() {
 }
 
 function attachChartButtons(container, svgObject) {
+
     // 1. If buttons already exist, we still need to decrement the counter
     if (container.querySelector('.svg-button-group')) {
         decrementLoader();
