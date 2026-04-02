@@ -564,13 +564,17 @@ function createAltTextLink(svgObject) {
 
 // Only implemented for country/index.html
 function createDataDownloadLink(svgObject) {
+  // Check if data download should be skipped globally
+  if (typeof availableDataFiles === 'string' && availableDataFiles === "SkipDataDownloadLink") {
+    return null;
+  }
   const svgURL = svgObject.data;
   if (!svgURL) {
     console.log("SVG object has no data URL.");
     return null;
   }
 
-  console.log('    createDataDownloadLink()')
+//  console.log('    createDataDownloadLink()')
 
   const urlParts = svgURL.split('/');
 

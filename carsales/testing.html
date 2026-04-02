@@ -102,20 +102,19 @@
 	  <div class="selector">
 		<label for="langSelector" class="icon-translate">Chart Language</label>
 			<select id="langSelector">
-			  <option value="en" selected>English</option>
 			  <option value="da">Dansk</option>
 			  <option value="de">Deutsch</option>
+			  <option value="en" selected>English</option>
 			  <option value="es">Español</option>
+			  <option value="fi">Suomi</option>
 			  <option value="fr">Français</option>
 			  <option value="it">Italiano</option>
 			  <option value="ja">日本語</option>
+			  <option value="ko">한국어</option>
 			  <option value="no">Norsk</option>
-			  <option value="fi">Suomi</option>
+			  <option value="pl">Polski</option>
 			  <option value="sv">Svenska</option>
 			  <option value="zh">中文</option>
-			  <option value="zh">中文</option>
-			  <option value="ko">한국어</option>
-			  <option value="pl">Polski</option>
 			</select>
 	  </div>
 
@@ -171,8 +170,8 @@
 
 
 <script>
-// This prevents downloadSVGasPNG.js from making guessed 404 requests
-var availableDataFiles = [];
+// This prevents downloadSVGasPNG.js from making guessed requests
+var availableDataFiles = "SkipDataDownloadLink";
 // Variable to track initial load. Keep this global
 let svgsToLoad = 0;
 let isInitialSetup = true;
