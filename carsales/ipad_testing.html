@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@robbie_andrew">
+    <meta name="og:title" content="Collected vehicle registration data">
+    <meta name="twitter:title" content="Collected vehicle registration data">
+    <meta name="description" content="Frequently updated charts and data for new vehicle registrations across countries.">
+    <meta name="og:description" content="Frequently updated charts and data for new vehicle registrations across countries.">
+    <meta name="twitter:description" content="Frequently updated charts and data for new vehicle registrations across countries.">
+    <meta property="og:image" content="https://robbieandrew.github.io/carsales/img/webpage_thumbnail.png">  
+    <meta name="twitter:image" content="https://robbieandrew.github.io/carsales/img/webpage_thumbnail.png">  
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Collected vehicle registration data</title>
+  <script src="../js/html-include.js"></script>
+  <link rel="stylesheet" href="css/carsales.css">
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" type="text/css" href="../css/feedback.css">
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+  <script src="../js/svg-translator.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+
+    <div id="page-loader">
+      <div class="spinner"></div>
+      <span class="loader-text">Loading charts...</span>
+    </div>
+
+	<h1>Collected vehicle registration data</h1>
+	<p>Download <a href="data/all_carsales_monthly.csv" download>all monthly data in one file</a>. All figures and data are licenced under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>.</p>
+	
+	<div id="controls-container">
+		<p id="toggle-updates-button" class="toggle-button" style="margin-right: 20px;">Show list of recent updates</p>
+		<p id="toggle-notes-button" class="toggle-button">Show explanatory notes</p>
+	</div>
+
+<div id="content-container">
+    <div id="updates-container">
+        <table id="updates-table">
+            <thead>
+                <tr>
+                    <th>Geography</th>
+                    <th>Latest data</th>
+                    <th>Updated on</th>
+                </tr>
+            </thead>
+            <tbody id="updates-tbody">
+                <tr><td colspan="3">Loading updates...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="notes-container" style="display: none;">
+        <p>Data are collated from the sources indicated immediately above each chart, largely automatically, but with some manual intervention. In some cases a VPN is required to access data, and this is indicated with the word "geofenced". In many cases data are updated within 24 hours of the source being updated.</p>
+        <ul>
+		    <li>There is a difference between new registrations and new sales. In most cases the data on this page represent registrations, and in most cases this is near-coincident with sale. However, in some places, dealers will pre-register vehicles to get ahead of policy changes, and this leads at these times to registrations preceding actual sales to customers.</li>
+            <li>In some cases data are presented both for new registrations of new cars and for the sum of new and used cars. Some smaller countries (e.g. Netherlands, Denmark) can have a large share of cars newly added to the fleet entering the country as used vehicles imported from other countries. These are new (i.e. first-time) registrations of used cars. From the perspective of the change of the fleet towards low-emission drivetrains, accounting for these used imports is important.</li>
+		    <li>Some sources (e.g. Indonesia) only provide data as tables in PDF documents, so automatic extraction is used in cases where data must be aggregated or manual transcription where only a few data points are required. Generally this works well, but occasionally things go awry. This can be both in the official export to PDF, where data might be missing, and in the processing of poorly constructed PDF files.</li>
+			<li>The workflow for identifying updated data sources doesn't always catch revisions, and this can be a problem with sources that only report the most recent month. If you spot any numbers that don't look right when compared with official sources, let me know.</li>
+			<li>Data collation for some of the countries here has required considerable manual effort to find and assemble historical data, but with that work in the past, updating is generally relatively painless.</li>
+			<li>In some cases (e.g. Nepal), no official sources are available, so I fall back to trade statistics, knowing that the country doesn't manufacture its own vehicles. However, trade statistics are not always complete, so these must be treated as indicative and of lower quality than data for other countries.</li>
+			<li>Wholesale data often include exports. In the case of Indonesia, wholesale data represent flows from domestic factories and imports to domestic dealers, excluding exports. Because Indonesia's retail data (dealer to consumer) are not broken down by fuel type, I use wholesale data here.</li>
+		</ul>
+		<p>Terms</p>
+		<ul>
+			<li>ICE: Internal combustion engine</li>
+			<li>BEV: Battery electric vehicle</li>
+			<li>FCEV: Fuel cell electric vehicle (hydrogen)</li>
+			<li>HEV: Hybrid electric vehicle</li>
+			<li>PHEV: Plug-in hybrid electric vehicle</li>
+			<li>MHEV: Mild hybrid electric vehicle (ICE with a very small electric motor)</li>
+			<li>EREV: Extended-range electric vehicle (BEV with a small ICE for extra range)</li>
+			<li>LPG: Liquefied petroleum gas</li>
+			<li>EV: Electric vehicle (may refer to BEVs and FCEVs, but sometimes includes hybrids)</li>
+			<li>ZEV: Zero-emission vehicle (ditto)</li>
+		</ul>
+		<p>Data from ACEA include mild hybrids in the 'hybrids' category.</p>
+		<p>Spikes or jumps in data can have several causes:</p>
+		<ul>
+			<li>In the UK and Ireland, there is a common pattern of purchasing according to when licence plate patterns change, twice a year.</li>
+			<li>In Iceland, businesses appear to make purchases once a year.</li>
+			<li>In China, end-of-year employee bonuses and sales campaigns to achieve annual sales targets lead to significant peaks in the final months of the year.</li>
+			<li>In all countries, significant changes in policy will lead to anticipation effects: either bulk registrations/sales before an increase in costs or reduction in availability, or a sharp decline before the expected introduction of decreased costs. We see this particularly with government incentives for electric vehicles, which sometimes change sharply from one day to the next.</li>
+			<li>And of course, the availability of specific, popular models can lead to a surge, as we saw in Indonesia in October 2025 with the arrival of BYD's Atto 1. This also encompasses Tesla's quarterly delivery to some markets, noticeable in Norway's statistics.</li>
+        </ul>
+        <p>Please feel free to contact me if you have questions. And if you know of reliable data sources for countries not listed on this page, let me know!</p>
+    </div>
+</div>
+
+	<script src="js/vehicle-updates-viewer.js"></script>
+
+	<div class="selector-container">
+	  <div class="selector">
+		<label for="langSelector" class="icon-translate">Chart Language</label>
+			<select id="langSelector">
+			  <option value="da">Dansk</option>
+			  <option value="de">Deutsch</option>
+			  <option value="en" selected>English</option>
+			  <option value="es">Español</option>
+			  <option value="fi">Suomi</option>
+			  <option value="fr">Français</option>
+			  <option value="it">Italiano</option>
+			  <option value="ja">日本語</option>
+			  <option value="ko">한국어</option>
+			  <option value="no">Norsk</option>
+			  <option value="pl">Polski</option>
+			  <option value="sv">Svenska</option>
+			  <option value="zh">中文</option>
+			</select>
+	  </div>
+
+	  <div class="selector">
+		<label for="frequencySelector">Time Interval</label>
+		<select id="frequencySelector">
+		  <option value="monthly">Monthly</option>
+		  <option value="quarterly">Quarterly</option>
+		  <option value="half-yearly">Half-yearly</option>
+		  <option value="annual">Annual</option>
+		</select>
+	  </div>
+
+	  <div class="selector">
+		<label for="formatSelector">Display Format</label>
+		<select id="formatSelector">
+		  <option value="relative">Relative (%)</option>
+		  <option value="absolute">Absolute (Units)</option>
+		  <option value="line">Line Chart</option>
+		</select>
+	  </div>
+
+	  <div class="selector">
+		<label for="sortSelector">Sort Order</label>
+		<select id="sortSelector">
+		  <option value="alphabetical">Alphabetical</option>
+		  <option value="bev-share">BEV Share</option>
+		</select>
+	  </div>
+  
+	  <div class="selector">
+	    <label for="countrySelector">Select Countries (<span id="selectedCount">0</span>/<span id="totalCount">0</span>)</label>
+	    <select id="countrySelector" multiple>
+	    </select>
+	  </div>
+	</div>
+
+	<div class="pure-g">
+	</div>
+	
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+  </main>
+  
+<button id="tally-feedback-btn" data-tally-open="nGV8gZ" data-tally-hide-title="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-auto-close="3000">
+  <span class="btn-emoji">👋</span>
+  <span class="btn-text">Two-second feedback!</span>
+  <span class="btn-close" onclick="event.stopPropagation(); toggleFeedback(false)">✕</span>
+</button>
+
+<script async src="https://tally.so/widgets/embed.js"></script>
+<script src="../js/downloadSVGasPNG.js" defer></script>
+<script src="../js/citation-modal.js"></script>
+
+
+<script>
+// This prevents downloadSVGasPNG.js from making guessed requests
+var availableDataFiles = "SkipDataDownloadLink";
+// Variable to track initial load. Keep this global
+let svgsToLoad = 0;
+let isInitialSetup = true;
+
+const btn = document.getElementById('tally-feedback-btn');
+
+btn.addEventListener('click', function(e) {
+  // Only apply this logic on mobile
+  if (window.innerWidth <= 600) {
+    if (!btn.classList.contains('expanded')) {
+      e.preventDefault(); // Stop Tally from opening
+      e.stopPropagation();
+      btn.classList.add('expanded');
+    }
+  }
+});
+
+function toggleFeedback(show) {
+  const btn = document.getElementById('tally-feedback-btn');
+  if (!show) {
+    btn.classList.remove('expanded');
+  }
+}
+
+function updateCharts() {
+    const activeCountries = document.querySelectorAll('.country[style*="display: block"]');
+    
+    // Use the Tom Select instance if available to check the value
+    const countrySelector = document.getElementById('countrySelector');
+    const tsControl = countrySelector ? countrySelector.tomselect : null;
+    const selectedValues = tsControl ? tsControl.getValue() : [];
+    const isAllSelected = Array.isArray(selectedValues) ? selectedValues.includes('all') : selectedValues === 'all';
+
+	if (isAllSelected || activeCountries.length > 10) {
+        // Reset the global counter to exactly the number of visible charts
+        svgsToLoad = activeCountries.length; 
+        showPageLoader();
+    }
+
+    const activeFrequency = document.getElementById('frequencySelector').value;
+    const activeFormat = document.getElementById('formatSelector').value;
+    const currentLang = document.getElementById('langSelector').value;
+	
+    activeCountries.forEach(container => {
+        const country = container.dataset.country.toLowerCase().replace(/\s+/g, '');
+        const wrapper = container.querySelector('.chart-wrapper');
+        const formatSuffix = activeFormat === 'absolute' ? '_abs' : activeFormat === 'line' ? '_line' : '';
+        const newSvgPath = `img/${country}_carsales_${activeFrequency}${formatSuffix}.svg`;
+
+        wrapper.innerHTML = ''; 
+        const newObj = document.createElement('object');
+        newObj.type = 'image/svg+xml';
+        newObj.className = 'fig';
+        newObj.data = newSvgPath;
+
+		newObj.onload = function() {
+			if (typeof applyTranslation === "function") {
+				applyTranslation(currentLang);
+			}
+			attachChartButtons(container, newObj); // This calls decrementLoader
+			newObj.onload = null;
+		};
+
+		// If the file is missing, we still need to count down
+		newObj.onerror = function() {
+			console.warn("Chart failed to load: " + newSvgPath);
+			decrementLoader(); 
+			newObj.onerror = null;
+};
+        wrapper.appendChild(newObj);
+    });
+}
+
+
+
+function makeCountrySelector() {
+    const allCountryDivs = document.querySelectorAll('.country');
+    const selectElement = document.getElementById('countrySelector');
+    const countries = new Set();
+
+    allCountryDivs.forEach(graph => {
+        countries.add(graph.dataset.country);
+    });
+
+    // Initial setup of the <select> element
+    selectElement.innerHTML = `<option value="all">All Countries</option>`;
+    Array.from(countries).sort().forEach(country => {
+        selectElement.innerHTML += `<option value="${country}">${country}</option>`;
+    });
+
+    const totalCount = countries.size;
+    document.getElementById("totalCount").textContent = totalCount;
+
+    const countryControl = new TomSelect("#countrySelector", {
+        plugins: ['remove_button'],
+        maxOptions: null, 
+        persist: false,
+        create: false,
+        placeholder: "Select or search...",
+        allowEmptyOption: true,
+        hideSelected: true, // This makes selected countries disappear from the list
+        
+        onItemAdd: function(value) {
+            // Logic: If you select a specific country, remove the "All Countries" pill
+            if (value !== 'all') {
+                this.removeItem('all', true); // 'true' makes it silent to avoid loops
+            }
+            this.setTextboxValue('');
+            this.refreshOptions(false);
+        },
+
+		onInitialize: function() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const countryParam = urlParams.get('country');
+
+			if (countryParam && countryParam !== 'all') {
+				// If the URL has specific countries, set them
+				const countriesToSelect = countryParam.split(',');
+				// Set the loader count to the number of countries in the URL
+				triggerMassLoad(countriesToSelect.length);
+				this.setValue(countriesToSelect);
+			} else {
+				// Otherwise, default to all
+				this.setValue('all');
+			}
+		},
+		
+		onChange: function(value) {
+            let selectedOptions = Array.isArray(value) ? value : [value];
+            
+            if (selectedOptions.length > 1 && selectedOptions[selectedOptions.length - 1] === 'all') {
+                triggerMassLoad(allCountryDivs.length);
+                this.clear(true);
+                this.addItem('all', true);
+                selectedOptions = ['all'];
+                this.close();
+//                this.blur();
+            } 
+            else if (selectedOptions.length === 0 || (selectedOptions.length === 1 && selectedOptions[0] === "")) {
+                triggerMassLoad(allCountryDivs.length);
+                this.setValue('all', true);
+                selectedOptions = ['all'];
+//                this.blur();
+            }
+
+            const url = new URL(window.location);
+            url.searchParams.set('country', selectedOptions.includes('all') ? 'all' : selectedOptions.join(','));
+            window.history.pushState({}, '', url);
+
+            const activeFreq = document.getElementById('frequencySelector').value;
+            const activeFormat = document.getElementById('formatSelector').value;
+            const formatSuffix = activeFormat === 'absolute' ? '_abs' : activeFormat === 'line' ? '_line' : '';
+            const currentLang = document.getElementById('langSelector').value;
+
+            allCountryDivs.forEach(div => {
+                const isVisible = selectedOptions.includes('all') || selectedOptions.includes(div.dataset.country);
+                const wrapper = div.querySelector('.chart-wrapper');
+                
+                if (isVisible) {
+                    div.style.display = 'block';
+                    const cleanName = div.dataset.country.toLowerCase().replace(/\s+/g, '');
+                    const targetPath = `img/${cleanName}_carsales_${activeFreq}${formatSuffix}.svg`;
+                    const currentObj = wrapper.querySelector('object'); // This defines currentObj
+                    
+                    if (!currentObj || currentObj.getAttribute('data') !== targetPath) {
+                        wrapper.innerHTML = ''; 
+                        const newObj = document.createElement('object');
+                        newObj.type = 'image/svg+xml';
+                        newObj.className = 'fig';
+                        newObj.data = targetPath;
+                        
+                        newObj.onload = function() {
+                            if (typeof applyTranslation === "function") applyTranslation(currentLang);
+                            attachChartButtons(div, newObj);
+                            newObj.onload = null; 
+                        };
+                        wrapper.appendChild(newObj);
+                    } 
+                    else {
+                        // Only decrement the loader if we are NOT in the initial page setup.
+                        // During initial setup, the 'onload' events handle the countdown.
+                        if (!isInitialSetup && svgsToLoad > 0) {
+                            svgsToLoad--;
+                            if (svgsToLoad === 0) hidePageLoader();
+                        }
+                    }
+                } else {
+                    div.style.display = 'none';
+                    wrapper.innerHTML = ''; 
+                }
+            });
+            
+            document.getElementById("selectedCount").textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
+			}
+	});
+}
+
+
+// Used to fetch JSON data from embedded script element while testing offline
+function fakeFetch() {
+            return new Promise((resolve) => {
+                // Simulate fetching JSON data (from the script tag in this case)
+                const jsonData = JSON.parse(document.getElementById('json-data').textContent);
+                resolve(jsonData); // Resolve the promise with the JSON data
+            });
+        }
+		
+function makeCountryDiv(entry) {
+        const countryName = entry.country;
+        const countryId = countryName.toLowerCase().replace(/\s+/g, '');  // Lowercase and remove spaces
+
+        // Generate paths for SVG and CSV
+        const svgPath = `img/${countryId}_carsales_monthly.svg`;
+        const csvPath = `data/${countryId}_carsales_monthly.csv`;
+
+        // Create country graph container
+        const countryDiv = document.createElement('div');
+        countryDiv.className = 'pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 country';
+        countryDiv.setAttribute('data-country', countryName);
+
+        // Add country title
+        countryDiv.innerHTML += `<div class="countrytitle">${countryName}</div>`;
+
+        // Build the details section dynamically
+        let detailsHtml = '<div class="details">';
+        if (entry.dedicatedPage) {
+          detailsHtml += `<a href="${entry.dedicatedPage}">Dedicated page</a> | `;
+        }
+        if (entry.sources) {
+          detailsHtml += `Data: `;
+		  entry.sources.forEach((source, index) => {
+		    detailsHtml += `<a href="${source.url}">${source.name}</a>`;
+		    if (source.geofenced) {
+			  detailsHtml += ' (geofenced)';
+		    }
+		    if (index < entry.sources.length - 1) {
+			  detailsHtml += ' ';
+		    }
+		  });
+
+        }
+        detailsHtml += '</div>';
+        countryDiv.innerHTML += detailsHtml;
+
+        // Embed the SVG graph
+		countryDiv.innerHTML += `<div class="chart-wrapper"></div>`;
+		
+	return countryDiv;
+}
+
+function populateCountries() {
+  fetch('https://robbieandrew.github.io/carsales/data.json')
+    .then(response => response.json())
+    .then(data => {
+        const graphContainer = document.querySelector('.pure-g');
+
+        // 1. Sort countries by name
+        data.sort((a, b) => a.country.localeCompare(b.country));
+
+        // 2. IMPORTANT: Set the global counter and show loader BEFORE creating objects
+        triggerMassLoad(data.length);
+
+        data.forEach(entry => {
+            // Append the empty containers to the page
+            graphContainer.appendChild(makeCountryDiv(entry));
+        });
+
+        // 3. Initialize the selector
+        makeCountrySelector();
+		
+        // 4. Signal that the DOM is ready for the second script
+        window.dispatchEvent(new Event('countriesPopulated'));
+    })
+    .catch(error => {
+        console.error('Error loading JSON:', error);
+        hidePageLoader(); // Hide spinner if the initial data fetch fails
+    });
+}
+
+function attachChartButtons(container, svgObject) {
+    // 1. If buttons already exist, we still need to decrement the counter
+    if (container.querySelector('.svg-button-group')) {
+        decrementLoader();
+        return; 
+    }
+
+    // 2. Add the standard buttons (PNG/Clipboard)
+    if (typeof addSVGbuttons === "function") {
+        addSVGbuttons(svgObject);
+    }
+
+    // 3. Add the "Download Data" button
+    let buttonGroup = container.querySelector('.svg-button-group');
+    if (buttonGroup) {
+        const countryId = container.dataset.country.toLowerCase().replace(/\s+/g, '');
+        const activeFreq = document.getElementById('frequencySelector').value;
+        const csvPath = `data/${countryId}_carsales_${activeFreq}.csv`;
+        
+        const dataBtn = document.createElement('a');
+        dataBtn.href = csvPath;
+        dataBtn.className = 'simple-button';
+        dataBtn.setAttribute('download', '');
+        dataBtn.textContent = 'Download data';
+        buttonGroup.appendChild(dataBtn);
+    }
+
+    // 4. Always decrement at the end of a successful attachment
+    decrementLoader();
+}
+
+// Helper function to handle the countdown safely
+function decrementLoader() {
+    if (typeof svgsToLoad !== 'undefined' && svgsToLoad > 0) {
+        svgsToLoad--;
+        if (svgsToLoad === 0) {
+            hidePageLoader();
+        }
+    }
+}
+
+// Helper functions for the spinner
+function showPageLoader() {
+    const loader = document.getElementById('page-loader');
+    const controls = document.querySelector('.selector-container'); // Or your specific selector container
+    
+    if (loader && controls) {
+        // 1. Get the bounding box of the selectors
+        const rect = controls.getBoundingClientRect();
+        
+        // 2. Set the loader's top to the middle of the selectors
+        // We use rect.top (relative to viewport) + half the height
+        const targetTop = rect.top + (rect.height / 2);
+        
+        // 3. Apply the position (offsetting by half the loader's height to center it)
+        loader.style.top = `${targetTop}px`;
+        loader.style.transform = 'translate(-50%, -50%)'; // Center both axes
+        
+        // 4. Show it
+        loader.style.display = 'flex';
+        // Force a reflow for the transition to work
+        loader.offsetHeight; 
+        loader.style.opacity = '1';
+    }
+}
+
+function hidePageLoader() {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => { loader.style.display = 'none'; }, 500);
+    }
+}
+
+function triggerMassLoad(count) {
+    console.log("Triggering mass load for " + count + " items.");
+    svgsToLoad = count; 
+    if (count > 0) {
+        showPageLoader();
+    } else {
+        hidePageLoader();
+    }
+}
+
+function sortCountries(method) {
+  const graphContainer = document.querySelector('.pure-g');
+  const countryDivs = Array.from(graphContainer.children);
+
+  // 1. Sort the array of elements in memory
+  countryDivs.sort((a, b) => {
+    if (method === 'bev-share') {
+      const countryA = a.getAttribute('data-country');
+      const countryB = b.getAttribute('data-country');
+      // Sort descending (highest share first)
+      return (bevShareData[countryB] || 0) - (bevShareData[countryA] || 0);
+    } else {
+      // Sort ascending (A-Z)
+      return a.getAttribute('data-country').localeCompare(b.getAttribute('data-country'));
+    }
+  });
+
+  // 2. Apply a CSS 'order' value to each div based on its new position
+  // This moves them visually without "re-inserting" them into the DOM
+  countryDivs.forEach((div, index) => {
+    div.style.order = index;
+  });
+}
+
+let bevShareData = {};
+
+// Fetch BEV share data
+fetch('https://robbieandrew.github.io/carsales/data/latest_bev_share.json')
+  .then(response => response.json())
+  .then(data => {
+    bevShareData = data.reduce((acc, item) => {
+      acc[item.country] = item.BEVshare;
+      return acc;
+    }, {});
+  })
+  .catch(error => console.error('Error loading BEV share data:', error));
+
+function setupLanguagePersistence() {
+    const langSelect = document.getElementById('langSelector');
+    
+    // 1. On page load: Check URL for ?lang=XX
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang) {
+        langSelect.value = urlLang;
+        applyTranslation(urlLang);
+    }
+
+    // 2. On change: Update URL and translate
+    langSelect.addEventListener('change', function() {
+        const newLang = this.value;
+        
+        // Update URL without reloading page
+        const url = new URL(window.location);
+        url.searchParams.set('lang', newLang);
+        window.history.pushState({}, '', url);
+        
+        applyTranslation(newLang);
+    });
+}
+
+window.addEventListener('resize', () => {
+    const loader = document.getElementById('page-loader');
+    // Only update if the loader is currently visible
+    if (loader && loader.style.opacity === '1') {
+        showPageLoader();
+    }
+});
+// Fetch JSON and generate HTML dynamically
+window.onload = function() {
+	populateCountries();
+    setupLanguagePersistence();
+};
+</script>
+
+<script>
+window.addEventListener('countriesPopulated', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    const urlArgs = {
+        lang: urlParams.get('lang') || 'en',
+        freq: urlParams.get('freq') || 'monthly',
+        type: urlParams.get('type') || 'relative',
+        sort: urlParams.get('sort') || 'alphabetical'
+    };
+
+    const updateURL = (key, value) => {
+        const url = new URL(window.location);
+        url.searchParams.set(key, value);
+        window.history.pushState({}, '', url);
+    };
+
+    // Mapping of selector IDs to their URL parameter keys
+    const selectorConfig = {
+        '#langSelector': 'lang',
+        '#frequencySelector': 'freq',
+        '#formatSelector': 'type',
+        '#sortSelector': 'sort'
+    };
+
+    Object.keys(selectorConfig).forEach(id => {
+        const key = selectorConfig[id];
+        const el = document.querySelector(id);
+        
+        if (el) {
+            // Initialize TomSelect
+            const ts = new TomSelect(id, {
+                create: false,
+                hideSelected: false,
+                controlInput: null,
+                onChange: function(value) {
+                    updateURL(key, value);
+                    // Trigger the specific UI updates
+                    if (id === '#langSelector') applyTranslation(value);
+                    if (id === '#frequencySelector' || id === '#formatSelector') updateCharts();
+                    if (id === '#sortSelector') sortCountries(value);
+//					this.blur();
+                }
+            });
+            // Set initial value from URL
+            ts.setValue(urlArgs[key]);
+        }
+    });
+
+    // Final sorting based on initial URL state
+    sortCountries(urlArgs.sort);
+
+	// This ensures that all initial "onChange" triggers from 
+    // ALL selectors have finished before we allow the loader to be dismissed.
+    setTimeout(() => {
+        isInitialSetup = false;
+    }, 100);
+});
+
+</script>
+
+</body>
+
+</html>
