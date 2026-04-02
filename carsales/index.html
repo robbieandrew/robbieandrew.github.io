@@ -178,6 +178,13 @@ let isInitialSetup = true;
 
 const btn = document.getElementById('tally-feedback-btn');
 
+// Global detection: Modern iPads + older iPads/iPhones
+const isTouchDevice = (
+  ('ontouchstart' in window) || 
+  (navigator.maxTouchPoints > 0) || 
+  (navigator.msMaxTouchPoints > 0)
+);
+
 btn.addEventListener('click', function(e) {
   // Only apply this logic on mobile
   if (window.innerWidth <= 600) {
@@ -300,71 +307,77 @@ function makeCountrySelector() {
 		},
 		
 		onChange: function(value) {
-            let selectedOptions = Array.isArray(value) ? value : [value];
-            
-            if (selectedOptions.length > 1 && selectedOptions[selectedOptions.length - 1] === 'all') {
-                triggerMassLoad(allCountryDivs.length);
-                this.clear(true);
-                this.addItem('all', true);
-                selectedOptions = ['all'];
-                this.close();
-                this.blur();
-            } 
-            else if (selectedOptions.length === 0 || (selectedOptions.length === 1 && selectedOptions[0] === "")) {
-                triggerMassLoad(allCountryDivs.length);
-                this.setValue('all', true);
-                selectedOptions = ['all'];
-                this.blur();
-            }
+			setTimeout(() => {
+				let selectedOptions = Array.isArray(value) ? value : [value];
+				
+				if (selectedOptions.length > 1 && selectedOptions[selectedOptions.length - 1] === 'all') {
+					triggerMassLoad(allCountryDivs.length);
+					this.clear(true);
+					this.addItem('all', true);
+					selectedOptions = ['all'];
+					this.close();
+					if (!isTouchDevice) {
+						this.blur();
+					}
+				} 
+				else if (selectedOptions.length === 0 || (selectedOptions.length === 1 && selectedOptions[0] === "")) {
+					triggerMassLoad(allCountryDivs.length);
+					this.setValue('all', true);
+					selectedOptions = ['all'];
+					if (!isTouchDevice) {
+						this.blur();
+					}
+				}
 
-            const url = new URL(window.location);
-            url.searchParams.set('country', selectedOptions.includes('all') ? 'all' : selectedOptions.join(','));
-            window.history.pushState({}, '', url);
+				const url = new URL(window.location);
+				url.searchParams.set('country', selectedOptions.includes('all') ? 'all' : selectedOptions.join(','));
+				window.history.pushState({}, '', url);
 
-            const activeFreq = document.getElementById('frequencySelector').value;
-            const activeFormat = document.getElementById('formatSelector').value;
-            const formatSuffix = activeFormat === 'absolute' ? '_abs' : activeFormat === 'line' ? '_line' : '';
-            const currentLang = document.getElementById('langSelector').value;
+				const activeFreq = document.getElementById('frequencySelector').value;
+				const activeFormat = document.getElementById('formatSelector').value;
+				const formatSuffix = activeFormat === 'absolute' ? '_abs' : activeFormat === 'line' ? '_line' : '';
+				const currentLang = document.getElementById('langSelector').value;
 
-            allCountryDivs.forEach(div => {
-                const isVisible = selectedOptions.includes('all') || selectedOptions.includes(div.dataset.country);
-                const wrapper = div.querySelector('.chart-wrapper');
-                
-                if (isVisible) {
-                    div.style.display = 'block';
-                    const cleanName = div.dataset.country.toLowerCase().replace(/\s+/g, '');
-                    const targetPath = `img/${cleanName}_carsales_${activeFreq}${formatSuffix}.svg`;
-                    const currentObj = wrapper.querySelector('object'); // This defines currentObj
-                    
-                    if (!currentObj || currentObj.getAttribute('data') !== targetPath) {
-                        wrapper.innerHTML = ''; 
-                        const newObj = document.createElement('object');
-                        newObj.type = 'image/svg+xml';
-                        newObj.className = 'fig';
-                        newObj.data = targetPath;
-                        
-                        newObj.onload = function() {
-                            if (typeof applyTranslation === "function") applyTranslation(currentLang);
-                            attachChartButtons(div, newObj);
-                            newObj.onload = null; 
-                        };
-                        wrapper.appendChild(newObj);
-                    } 
-                    else {
-                        // Only decrement the loader if we are NOT in the initial page setup.
-                        // During initial setup, the 'onload' events handle the countdown.
-                        if (!isInitialSetup && svgsToLoad > 0) {
-                            svgsToLoad--;
-                            if (svgsToLoad === 0) hidePageLoader();
-                        }
-                    }
-                } else {
-                    div.style.display = 'none';
-                    wrapper.innerHTML = ''; 
-                }
-            });
-            
-            document.getElementById("selectedCount").textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
+				allCountryDivs.forEach(div => {
+					const isVisible = selectedOptions.includes('all') || selectedOptions.includes(div.dataset.country);
+					const wrapper = div.querySelector('.chart-wrapper');
+					
+					if (isVisible) {
+						div.style.display = 'block';
+						const cleanName = div.dataset.country.toLowerCase().replace(/\s+/g, '');
+						const targetPath = `img/${cleanName}_carsales_${activeFreq}${formatSuffix}.svg`;
+						const currentObj = wrapper.querySelector('object'); // This defines currentObj
+						
+						if (!currentObj || currentObj.getAttribute('data') !== targetPath) {
+							wrapper.innerHTML = ''; 
+							const newObj = document.createElement('object');
+							newObj.type = 'image/svg+xml';
+							newObj.className = 'fig';
+							newObj.data = targetPath;
+							
+							newObj.onload = function() {
+								if (typeof applyTranslation === "function") applyTranslation(currentLang);
+								attachChartButtons(div, newObj);
+								newObj.onload = null; 
+							};
+							wrapper.appendChild(newObj);
+						} 
+						else {
+							// Only decrement the loader if we are NOT in the initial page setup.
+							// During initial setup, the 'onload' events handle the countdown.
+							if (!isInitialSetup && svgsToLoad > 0) {
+								svgsToLoad--;
+								if (svgsToLoad === 0) hidePageLoader();
+							}
+						}
+					} else {
+						div.style.display = 'none';
+						wrapper.innerHTML = ''; 
+					}
+				});
+				
+				document.getElementById("selectedCount").textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
+				}, 10); // iPad safety
 			}
 	});
 }
@@ -651,7 +664,9 @@ window.addEventListener('countriesPopulated', function() {
                     if (id === '#langSelector') applyTranslation(value);
                     if (id === '#frequencySelector' || id === '#formatSelector') updateCharts();
                     if (id === '#sortSelector') sortCountries(value);
-					this.blur();
+					if (!isTouchDevice) {
+						this.blur();
+					}
                 }
             });
             // Set initial value from URL
