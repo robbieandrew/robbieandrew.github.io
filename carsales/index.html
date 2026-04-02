@@ -395,6 +395,7 @@ function makeCountrySelector() {
 							newObj.data = targetPath;
 							
 							newObj.onload = function() {
+								console.log(`[${performance.now().toFixed(0)}ms] SVG loaded: ${newObj.getAttribute('data')}`);
 								if (typeof applyTranslation === "function") applyTranslation(currentLang);
 								attachChartButtons(div, newObj); // This calls decrementLoader()
 								newObj.onload = null; 
@@ -470,7 +471,7 @@ function makeCountryDiv(entry) {
 	countryDiv.innerHTML += detailsHtml;
 
 	// Embed the SVG graph
-	countryDiv.innerHTML += `<div class="chart-wrapper" data-bwignore></div>`;
+	countryDiv.innerHTML += `<div class="chart-wrapper"></div>`;
 		
 	return countryDiv;
 }
@@ -502,7 +503,10 @@ function populateCountries() {
 }
 
 function attachChartButtons(container, svgObject) {
-
+	const svgTitle = (svgObject.contentDocument?.querySelector('title')?.textContent.trim() ?? svgObject.getAttribute('data'))
+    .replace(/[^a-zA-Z0-9_-]/g, '_');
+	console.log(`[${performance.now().toFixed(0)}ms] onload fired for: ${svgTitle}`);
+	
     // 1. If buttons already exist, we still need to decrement the counter
     if (container.querySelector('.svg-button-group')) {
         decrementLoader();
@@ -511,7 +515,9 @@ function attachChartButtons(container, svgObject) {
 
     // 2. Add the standard buttons (PNG/Clipboard)
     if (typeof addSVGbuttons === "function") {
+        console.time(`addSVGbuttons-${svgTitle}`);
         addSVGbuttons(svgObject);
+        console.timeEnd(`addSVGbuttons-${svgTitle}`);
     }
 
     // 3. Add the "Download Data" button
@@ -607,7 +613,7 @@ function hidePageLoader() {
 function triggerMassLoad(count) {
     console.log("Triggering mass load for " + count + " items.");
     window.svgsToLoad = count; // global scope
-	console.log(`1. svgsToLoad is now ${window.svgsToLoad}`)
+	console.log(`triggerMassLoad: svgsToLoad is now ${window.svgsToLoad}`)
     if (count > 0) {
 		showPageLoader();
 	} else {
