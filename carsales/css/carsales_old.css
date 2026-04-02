@@ -1,0 +1,189 @@
+    h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
+	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
+	.subb {font-size: 70%;line-height:normal;}
+	.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;}
+	.countrytitle {width:85%;text-align:center;font-size:120%}
+	.details {width:85%;text-align:center;font-size:70%}
+	.options {width:85%;text-align:center;font-size:70%;margin-top:5px;margin-bottom:25px}
+
+.selector-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  position: relative;
+  padding: 15px 10px;
+}
+
+/* Top and bottom lines */
+/*.button-group::before,
+.button-group::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: black;
+}*/
+
+.button-group::before {
+  top: 0;
+}
+
+.button-group::after {
+  bottom: 0;
+}
+
+/* Vertical lines on sides */
+.button-group {
+/*  background-image: 
+    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px)),
+    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px));
+  background-position: left, right;
+  background-size: 2px 100%;
+  background-repeat: no-repeat;*/
+}
+
+.frequency-button, .format-button, .sort-button {
+  padding: 8px 12px;
+  margin: 0px;
+  border: 2px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.frequency-button.active, .format-button.active, .sort-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+#countrySelector {
+  width: 100%;
+  height: 120px;
+  overflow-y: auto;
+}
+
+/* For screens smaller than 768px (tablet and mobile) */
+@media screen and (max-width: 768px) {
+  .frequency-button, .format-button, .sort-button {
+    padding: 8px 16px; /* Adjust button padding for smaller screens */
+    font-size: 14px;   /* Reduce font size */
+  }
+  .button-group {
+    padding: 10px; /* Less padding around button group */
+  }
+  .selector-container {
+    gap: 20px;  /* Reduce the gap between buttons on smaller screens */
+  }
+  #countrySelector {
+    height: 20px;
+  }
+}
+/* For screens smaller than 480px (mobile phones) */
+@media screen and (max-width: 480px) {
+  .frequency-button, .format-button, .sort-button {
+    padding: 4px 8px; /* Even smaller padding for mobile */
+    font-size: 12px;   /* Reduce font size more for mobile */
+  }
+  .button-group {
+    padding: 4px; /* Smaller padding for button group */
+  }
+  .selector-container {
+    gap: 10px; /* Further reduce gap for mobile screens */
+  }
+  #countrySelector {
+    height: 20px;
+  }
+}
+
+
+/* vehicle updates table */
+#updates-container {
+	margin-top: 10px;
+	display: none; /* Starts hidden */
+	text-align: center; 
+}
+.toggle-button {
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+	display: inline-block;
+	margin-top: 0;
+}
+#controls-container {
+	text-align: center;
+}
+#updates-table {
+	border-collapse: collapse; 
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto; 
+}
+#updates-table th, #updates-table td {
+	border: 1px solid #ddd;
+	padding: 4px 8px;
+	text-align: left;
+}
+#updates-table th {
+	background-color: #f2f2f2;
+}
+#notes-container p {
+    text-align: left;
+	max-width: 800px;
+}
+#notes-container ul {
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 10px;
+    display: block; 
+}
+
+
+/* translation icon */
+.icon-translate:before {
+    content: "文/A "; /* The two-script symbol */
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-right: 5px;
+    color: #555;
+}
+
+/* for the Tom Select 'Pills' */
+.ts-control {
+    border-radius: 2px !important; /* Matches Pure.css style */
+    padding: 8px !important;
+}
+
+.selector-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.selector label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Update this in carsales.css to match your existing 'selector' style */
+#langSelector {
+    width: 100%; /* Matches the country selector's width logic */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 0; /* Removing radius to match your sharp-edged buttons */
+    background-color: white;
+    font-family: inherit;
+}

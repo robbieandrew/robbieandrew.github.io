@@ -1,3 +1,4 @@
+
     h1,h2,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
 	.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
 	.subb {font-size: 70%;line-height:normal;}
@@ -6,101 +7,105 @@
 	.details {width:85%;text-align:center;font-size:70%}
 	.options {width:85%;text-align:center;font-size:70%;margin-top:5px;margin-bottom:25px}
 
-.selector-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 20px;
-}
-
-.button-group {
-  position: relative;
-  padding: 15px 10px;
-}
-
-/* Top and bottom lines */
-/*.button-group::before,
-.button-group::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: black;
-}*/
-
-.button-group::before {
-  top: 0;
-}
-
-.button-group::after {
-  bottom: 0;
-}
-
-/* Vertical lines on sides */
-.button-group {
-/*  background-image: 
-    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px)),
-    linear-gradient(to bottom, black 15px, transparent 15px, transparent calc(100% - 15px), black calc(100% - 15px));
-  background-position: left, right;
-  background-size: 2px 100%;
-  background-repeat: no-repeat;*/
-}
-
-.frequency-button, .format-button, .sort-button {
-  padding: 8px 12px;
-  margin: 0px;
-  border: 2px solid #007bff;
-  background-color: white;
-  color: #007bff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.frequency-button.active, .format-button.active, .sort-button.active {
-  background-color: #007bff;
-  color: white;
-}
-
 #countrySelector {
   width: 100%;
-  height: 120px;
-  overflow-y: auto;
 }
 
-/* For screens smaller than 768px (tablet and mobile) */
-@media screen and (max-width: 768px) {
-  .frequency-button, .format-button, .sort-button {
-    padding: 8px 16px; /* Adjust button padding for smaller screens */
-    font-size: 14px;   /* Reduce font size */
-  }
-  .button-group {
-    padding: 10px; /* Less padding around button group */
-  }
-  .selector-container {
-    gap: 20px;  /* Reduce the gap between buttons on smaller screens */
-  }
-  #countrySelector {
-    height: 20px;
-  }
+.pure-g {
+  display: flex;
+  flex-wrap: wrap;
 }
-/* For screens smaller than 480px (mobile phones) */
-@media screen and (max-width: 480px) {
-  .frequency-button, .format-button, .sort-button {
-    padding: 4px 8px; /* Even smaller padding for mobile */
-    font-size: 12px;   /* Reduce font size more for mobile */
-  }
-  .button-group {
-    padding: 4px; /* Smaller padding for button group */
-  }
-  .selector-container {
-    gap: 10px; /* Further reduce gap for mobile screens */
-  }
-  #countrySelector {
-    height: 20px;
-  }
+
+/* TOM SELECT */
+/* --- UNIVERSAL SELECTOR STYLE --- */
+.ts-control {
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    background-color: #fff !important;
+    cursor: pointer;
+	box-sizing: border-box;
+	min-height: 40px !important;
+}
+
+/* Ensure the search input doesn't create extra height/width when empty */
+.ts-wrapper .ts-control input {
+    width: auto !important;
+    max-width: 100%;
+    margin: 0 4px !important;
+}
+
+/* Ensure the dropdown results update instantly without ghosting */
+.ts-dropdown {
+    transition: none !important;
+}
+/* Ensure selected items stay visible in the dropdown for single-selects (Lang, Freq, etc) */
+.ts-control:not(.multi) + .ts-dropdown .option.selected {
+    display: block !important;
+    background: #f0f7ff;
+    color: #0078e7;
+    font-weight: bold;
+}
+
+/* For the Country Selector (Multi-select): 
+   Hide selected countries from the list so they don't duplicate, 
+   BUT ALWAYS KEEP "All Countries" visible in the list. */
+.multi + .ts-dropdown .option.selected:not([data-value="all"]) {
+    display: none !important;
+}
+
+/* --- 3. Country Selector (Vertical Growth) --- */
+#countrySelector + .ts-wrapper .ts-control {
+    display: flex;
+    flex-wrap: wrap; /* This forces pills to next line */
+    gap: 4px;
+    min-height: 40px;
+    max-height: 150px; /* Limits how far it can grow vertically */
+    overflow-y: auto; /* Adds scrollbar if it exceeds max-height */
+	align-items: flex-start;
+}
+
+/* Keep the pill style ONLY for the country selector */
+#countrySelector + .ts-wrapper .ts-control .item {
+    background-color: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 3px !important;
+    padding: 2px 8px !important;
+    font-size: 0.85em;
+	margin: 0 !important;
+}
+
+.selector {
+    /* Set a standard width for the single-choice dropdowns */
+    width: 180px; 
+}
+
+/* Specific rule for the Country Selector to be wider but capped */
+.selector:last-child {
+    width: 100%;
+    max-width: 500px;
+}
+/* --- SINGLE-SELECT ONLY (Plain Text) --- */
+.selector:not(:last-child) .ts-control {
+    display: block !important; /* Switch from flex to block to prevent wrapping */
+    white-space: nowrap;       /* Prevent text from ever breaking into two lines */
+    overflow: hidden;
+    text-overflow: ellipsis;    /* If it's too long, it will just cut off gracefully */
+    height: 40px;              /* Fix the height so it can't grow */
+    line-height: 22px;         /* Vertically centers the text */
+}
+
+.selector:not(:last-child) .ts-control .item {
+    display: inline !important; /* Force it to act like regular text */
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Ensure the input (search cursor) doesn't push things around */
+.selector:not(:last-child) .ts-control input {
+    display: none !important; 
 }
 
 
@@ -147,6 +152,37 @@
     display: block; 
 }
 
+.selector-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* CRITICAL: Aligns all boxes to the top line */
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.selector {
+    display: flex;
+    flex-direction: column; /* Keeps label above the box */
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.selector label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+    text-align: left;
+}
+.selector label {
+  display: block;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left; /* Better for grouping */
+}
 
 /* translation icon */
 .icon-translate:before {
@@ -157,33 +193,9 @@
     color: #555;
 }
 
-/* for the Tom Select 'Pills' */
-.ts-control {
-    border-radius: 2px !important; /* Matches Pure.css style */
-    padding: 8px !important;
-}
 
-.selector-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: flex-end;
-}
-
-.selector label {
-    display: block;
-    font-size: 0.9em;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #444;
-}
-
-/* Update this in carsales.css to match your existing 'selector' style */
-#langSelector {
-    width: 100%; /* Matches the country selector's width logic */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 0; /* Removing radius to match your sharp-edged buttons */
-    background-color: white;
-    font-family: inherit;
+/* Hints to the browser not to keep decoded images in long-term cache */
+.fig {
+    image-rendering: auto;
+    content-visibility: auto;
 }
