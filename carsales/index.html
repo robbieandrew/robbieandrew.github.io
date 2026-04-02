@@ -172,13 +172,14 @@
 <script>
 // This prevents downloadSVGasPNG.js from making guessed requests
 var availableDataFiles = "SkipDataDownloadLink";
-// Variable to track initial load. Keep this global
+// Variable to track initial load. Must be global
 let svgsToLoad = 0;
 let isInitialSetup = true;
 
 const btn = document.getElementById('tally-feedback-btn');
 
 // Global detection: Modern iPads + older iPads/iPhones
+// I have to be careful with some steps because on iPad it creates a race condition and hangs
 const isTouchDevice = (
   ('ontouchstart' in window) || 
   (navigator.maxTouchPoints > 0) || 
@@ -385,52 +386,52 @@ function makeCountrySelector() {
 
 // Used to fetch JSON data from embedded script element while testing offline
 function fakeFetch() {
-            return new Promise((resolve) => {
-                // Simulate fetching JSON data (from the script tag in this case)
-                const jsonData = JSON.parse(document.getElementById('json-data').textContent);
-                resolve(jsonData); // Resolve the promise with the JSON data
-            });
-        }
+	return new Promise((resolve) => {
+		// Simulate fetching JSON data (from the script tag in this case)
+		const jsonData = JSON.parse(document.getElementById('json-data').textContent);
+		resolve(jsonData); // Resolve the promise with the JSON data
+	});
+}
 		
 function makeCountryDiv(entry) {
-        const countryName = entry.country;
-        const countryId = countryName.toLowerCase().replace(/\s+/g, '');  // Lowercase and remove spaces
+	const countryName = entry.country;
+	const countryId = countryName.toLowerCase().replace(/\s+/g, '');  // Lowercase and remove spaces
 
-        // Generate paths for SVG and CSV
-        const svgPath = `img/${countryId}_carsales_monthly.svg`;
-        const csvPath = `data/${countryId}_carsales_monthly.csv`;
+	// Generate paths for SVG and CSV
+	const svgPath = `img/${countryId}_carsales_monthly.svg`;
+	const csvPath = `data/${countryId}_carsales_monthly.csv`;
 
-        // Create country graph container
-        const countryDiv = document.createElement('div');
-        countryDiv.className = 'pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 country';
-        countryDiv.setAttribute('data-country', countryName);
+	// Create country graph container
+	const countryDiv = document.createElement('div');
+	countryDiv.className = 'pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 country';
+	countryDiv.setAttribute('data-country', countryName);
 
-        // Add country title
-        countryDiv.innerHTML += `<div class="countrytitle">${countryName}</div>`;
+	// Add country title
+	countryDiv.innerHTML += `<div class="countrytitle">${countryName}</div>`;
 
-        // Build the details section dynamically
-        let detailsHtml = '<div class="details">';
-        if (entry.dedicatedPage) {
-          detailsHtml += `<a href="${entry.dedicatedPage}">Dedicated page</a> | `;
-        }
-        if (entry.sources) {
-          detailsHtml += `Data: `;
-		  entry.sources.forEach((source, index) => {
-		    detailsHtml += `<a href="${source.url}">${source.name}</a>`;
-		    if (source.geofenced) {
-			  detailsHtml += ' (geofenced)';
-		    }
-		    if (index < entry.sources.length - 1) {
-			  detailsHtml += ' ';
-		    }
-		  });
+	// Build the details section dynamically
+	let detailsHtml = '<div class="details">';
+	if (entry.dedicatedPage) {
+	  detailsHtml += `<a href="${entry.dedicatedPage}">Dedicated page</a> | `;
+	}
+	if (entry.sources) {
+	  detailsHtml += `Data: `;
+	  entry.sources.forEach((source, index) => {
+		detailsHtml += `<a href="${source.url}">${source.name}</a>`;
+		if (source.geofenced) {
+		  detailsHtml += ' (geofenced)';
+		}
+		if (index < entry.sources.length - 1) {
+		  detailsHtml += ' ';
+		}
+	  });
 
-        }
-        detailsHtml += '</div>';
-        countryDiv.innerHTML += detailsHtml;
+	}
+	detailsHtml += '</div>';
+	countryDiv.innerHTML += detailsHtml;
 
-        // Embed the SVG graph
-		countryDiv.innerHTML += `<div class="chart-wrapper"></div>`;
+	// Embed the SVG graph
+	countryDiv.innerHTML += `<div class="chart-wrapper"></div>`;
 		
 	return countryDiv;
 }
