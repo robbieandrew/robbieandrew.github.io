@@ -173,9 +173,9 @@
 // This prevents downloadSVGasPNG.js from making guessed requests
 var availableDataFiles = "SkipDataDownloadLink";
 // Variable to track initial load. Must be global
-let svgsToLoad = 0;
+window.svgsToLoad = 0;
 let isInitialSetup = true;
-
+let tsInstances = [];
 const btn = document.getElementById('tally-feedback-btn');
 
 // Global detection: Modern iPads + older iPads/iPhones
@@ -185,6 +185,23 @@ const isTouchDevice = (
   (navigator.maxTouchPoints > 0) || 
   (navigator.msMaxTouchPoints > 0)
 );
+
+// Global safety timer
+let loaderSafetyTimeout;
+
+function startLoaderTimeout() {
+    // If the loader is still there after 25 seconds, force it away.
+    loaderSafetyTimeout = setTimeout(() => {
+        const loader = document.getElementById('page-loader');
+        if (loader && loader.style.display !== 'none') {
+            console.warn("Loader safety timeout: Forcing page reveal.");
+            hidePageLoader();
+        }
+    }, 25000); 
+}
+// Call immediately on page load
+startLoaderTimeout();
+
 
 btn.addEventListener('click', function(e) {
   // Only apply this logic on mobile
@@ -214,9 +231,12 @@ function updateCharts() {
     const isAllSelected = Array.isArray(selectedValues) ? selectedValues.includes('all') : selectedValues === 'all';
 
 	if (isAllSelected || activeCountries.length > 10) {
-        // Reset the global counter to exactly the number of visible charts
-        svgsToLoad = activeCountries.length; 
-        showPageLoader();
+		// Only reset the loader if we are actually changing things after the first load
+        if (!isInitialSetup) {
+            window.svgsToLoad = activeCountries.length; 
+			console.log(`1. svgsToLoad is now ${window.svgsToLoad}`)
+            showPageLoader();
+        }
     }
 
     const activeFrequency = document.getElementById('frequencySelector').value;
@@ -308,37 +328,54 @@ function makeCountrySelector() {
 		},
 		
 		onChange: function(value) {
+			const control = this;
+			// Small delay to ensure TomSelect has updated the UI/URL state
 			setTimeout(() => {
 				let selectedOptions = Array.isArray(value) ? value : [value];
 				
-				if (selectedOptions.length > 1 && selectedOptions[selectedOptions.length - 1] === 'all') {
-					triggerMassLoad(allCountryDivs.length);
-					this.clear(true);
-					this.addItem('all', true);
-					selectedOptions = ['all'];
-					this.close();
-					if (!isTouchDevice) {
-						this.blur();
-					}
-				} 
-				else if (selectedOptions.length === 0 || (selectedOptions.length === 1 && selectedOptions[0] === "")) {
-					triggerMassLoad(allCountryDivs.length);
-					this.setValue('all', true);
-					selectedOptions = ['all'];
-					if (!isTouchDevice) {
-						this.blur();
+				// FORCE CLEANUP: If 'all' is present with other items, prioritize
+				if (selectedOptions.length > 1) {
+					if (selectedOptions[selectedOptions.length - 1] === 'all') {
+						// If 'all' was the LAST thing added, remove everything else
+						control.clear(true);
+						control.addItem('all', true);
+						selectedOptions = ['all'];
+					} else if (selectedOptions.includes('all')) {
+						// If a specific country was added while 'all' existed, remove 'all'
+						control.removeItem('all', true);
+						selectedOptions = selectedOptions.filter(opt => opt !== 'all');
 					}
 				}
+				
+				const allDivsArray = Array.from(allCountryDivs);
+				
+				// 1. Calculate exactly how many charts will be processed in this cycle
+				// This includes all countries if "all" is selected, or a specific subset.
+				const visibleDivsCount = allDivsArray.filter(div => 
+					selectedOptions.includes('all') || selectedOptions.includes(div.dataset.country)
+				).length;
 
+				// 2. Set the global counter and show the loader
+				// We use triggerMassLoad for large batches to show the spinner
+				if (visibleDivsCount > 10) {
+					triggerMassLoad(visibleDivsCount);
+				} else {
+					// Still set the variable so decrementLoader doesn't log "is zero"
+					window.svgsToLoad = visibleDivsCount;
+				}
+
+				// 3. Update the URL to reflect the current selection
 				const url = new URL(window.location);
 				url.searchParams.set('country', selectedOptions.includes('all') ? 'all' : selectedOptions.join(','));
 				window.history.pushState({}, '', url);
 
+				// 4. Get current settings for the chart paths
 				const activeFreq = document.getElementById('frequencySelector').value;
 				const activeFormat = document.getElementById('formatSelector').value;
 				const formatSuffix = activeFormat === 'absolute' ? '_abs' : activeFormat === 'line' ? '_line' : '';
 				const currentLang = document.getElementById('langSelector').value;
 
+				// 5. The main loop to show/hide and load charts
 				allCountryDivs.forEach(div => {
 					const isVisible = selectedOptions.includes('all') || selectedOptions.includes(div.dataset.country);
 					const wrapper = div.querySelector('.chart-wrapper');
@@ -347,8 +384,9 @@ function makeCountrySelector() {
 						div.style.display = 'block';
 						const cleanName = div.dataset.country.toLowerCase().replace(/\s+/g, '');
 						const targetPath = `img/${cleanName}_carsales_${activeFreq}${formatSuffix}.svg`;
-						const currentObj = wrapper.querySelector('object'); // This defines currentObj
+						const currentObj = wrapper.querySelector('object');
 						
+						// If the object doesn't exist or has the wrong data path, create/replace it
 						if (!currentObj || currentObj.getAttribute('data') !== targetPath) {
 							wrapper.innerHTML = ''; 
 							const newObj = document.createElement('object');
@@ -358,29 +396,30 @@ function makeCountrySelector() {
 							
 							newObj.onload = function() {
 								if (typeof applyTranslation === "function") applyTranslation(currentLang);
-								attachChartButtons(div, newObj);
+								attachChartButtons(div, newObj); // This calls decrementLoader()
 								newObj.onload = null; 
 							};
 							wrapper.appendChild(newObj);
 						} 
 						else {
-							// Only decrement the loader if we are NOT in the initial page setup.
-							// During initial setup, the 'onload' events handle the countdown.
-							if (!isInitialSetup && svgsToLoad > 0) {
-								svgsToLoad--;
-								if (svgsToLoad === 0) hidePageLoader();
-							}
+							// Chart is already correct, just count it as "done"
+							decrementLoader();
 						}
 					} else {
+						// Country is hidden, clear it and count it as "done"
 						div.style.display = 'none';
-						wrapper.innerHTML = ''; 
+						wrapper.innerHTML = '';
+						decrementLoader();
 					}
 				});
 				
+				// Update the counter text in the label
 				document.getElementById("selectedCount").textContent = selectedOptions.includes('all') ? totalCount : selectedOptions.length;
-				}, 10); // iPad safety
-			}
+
+			}, 10); // Small delay for iPad/Mobile stability
+		}
 	});
+	tsInstances.push(countryControl);
 }
 
 
@@ -445,9 +484,6 @@ function populateCountries() {
         // 1. Sort countries by name
         data.sort((a, b) => a.country.localeCompare(b.country));
 
-        // 2. IMPORTANT: Set the global counter and show loader BEFORE creating objects
-        triggerMassLoad(data.length);
-
         data.forEach(entry => {
             // Append the empty containers to the page
             graphContainer.appendChild(makeCountryDiv(entry));
@@ -498,35 +534,54 @@ function attachChartButtons(container, svgObject) {
 
 // Helper function to handle the countdown safely
 function decrementLoader() {
-    if (typeof svgsToLoad !== 'undefined' && svgsToLoad > 0) {
-        svgsToLoad--;
-        if (svgsToLoad === 0) {
+	if (typeof window.svgsToLoad === 'undefined') console.log('window.svgsToLoad is undefined!');
+	if (typeof window.svgsToLoad !== 'undefined' && window.svgsToLoad == 0) console.log('window.svgsToLoad is zero!');
+    if (typeof window.svgsToLoad !== 'undefined' && window.svgsToLoad > 0) {
+        window.svgsToLoad--;
+        console.log(`Charts remaining: ${window.svgsToLoad}`);
+		if (window.svgsToLoad === 0) {
             hidePageLoader();
         }
+    } else {
+        // If it's already 0, ensure the loader is hidden
+		console.log('svgsToLoad is zero: hiding the spinner')
+        hidePageLoader();
     }
 }
 
 // Helper functions for the spinner
 function showPageLoader() {
     const loader = document.getElementById('page-loader');
-    const controls = document.querySelector('.selector-container'); // Or your specific selector container
-    
+    const controls = document.querySelector('.selector-container');
+
+	// Disable all TomSelect instances
+    tsInstances.forEach(ts => ts.disable());
+	
     if (loader && controls) {
-        // 1. Get the bounding box of the selectors
+		console.log('Showing the loading spinner')
+		// 1. Lock the UI
+        document.body.classList.add('loading-active');
+        if (document.activeElement && document.activeElement.blur) {
+            document.activeElement.blur();
+        }
+
+        // 2. Get the current position of the selectors
         const rect = controls.getBoundingClientRect();
         
-        // 2. Set the loader's top to the middle of the selectors
-        // We use rect.top (relative to viewport) + half the height
+        // 3. Horizontal: Always exactly 50% of the viewport width
+        loader.style.left = '50%';
+        
+        // 4. Vertical: Center of the selector container
+        // rect.top is relative to the viewport, which works perfectly with fixed positioning
         const targetTop = rect.top + (rect.height / 2);
-        
-        // 3. Apply the position (offsetting by half the loader's height to center it)
         loader.style.top = `${targetTop}px`;
-        loader.style.transform = 'translate(-50%, -50%)'; // Center both axes
         
-        // 4. Show it
+        // 5. Transform ensures the center of the SPINNER sits on that (50%, targetTop) point
+        loader.style.transform = 'translate(-50%, -50%)';
+        
+        // 6. Reveal
         loader.style.display = 'flex';
-        // Force a reflow for the transition to work
-        loader.offsetHeight; 
+        void loader.offsetWidth; // Force reflow
         loader.style.opacity = '1';
     }
 }
@@ -534,17 +589,27 @@ function showPageLoader() {
 function hidePageLoader() {
     const loader = document.getElementById('page-loader');
     if (loader) {
+        if (loaderSafetyTimeout) {
+			clearTimeout(loaderSafetyTimeout);
+		}
         loader.style.opacity = '0';
-        setTimeout(() => { loader.style.display = 'none'; }, 500);
+        setTimeout(() => {
+			loader.style.display = 'none';
+			// 1. Release the browser-level click shield
+            document.body.classList.remove('loading-active');
+            // 2. Enable all selectors
+            tsInstances.forEach(ts => ts.enable());
+		}, 500);
+		isInitialSetup = false;
     }
 }
-
 function triggerMassLoad(count) {
     console.log("Triggering mass load for " + count + " items.");
-    svgsToLoad = count; 
+    window.svgsToLoad = count; // global scope
+	console.log(`1. svgsToLoad is now ${window.svgsToLoad}`)
     if (count > 0) {
-        showPageLoader();
-    } else {
+		showPageLoader();
+	} else {
         hidePageLoader();
     }
 }
@@ -672,6 +737,7 @@ window.addEventListener('countriesPopulated', function() {
             });
             // Set initial value from URL
             ts.setValue(urlArgs[key]);
+			tsInstances.push(ts);
         }
     });
 
@@ -682,7 +748,7 @@ window.addEventListener('countriesPopulated', function() {
     // ALL selectors have finished before we allow the loader to be dismissed.
     setTimeout(() => {
         isInitialSetup = false;
-    }, 100);
+    }, 1000);
 });
 
 </script>

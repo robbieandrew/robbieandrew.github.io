@@ -16,6 +16,13 @@
   flex-wrap: wrap;
 }
 
+/* While the loading class is on the body, the selectors are untouchable */
+body.loading-active .selector-container {
+    pointer-events: none !important;
+    cursor: wait;
+    opacity: 0.7; /* Optional: gives a visual hint that they are locked */
+}
+
 /* TOM SELECT */
 /* --- UNIVERSAL SELECTOR STYLE --- */
 .ts-control {

@@ -181,24 +181,15 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
 /* ----- Loading spinner ----- */
 #page-loader {
   position: fixed;
-  left: 50%;
-  /* JS will handle 'top' and 'transform' */
-  
+  z-index: 20000;
   display: none; 
   opacity: 0;
-  
-  /* Larger, more visible pill */
   background: rgba(255, 255, 255, 0.98);
   padding: 12px 24px; 
   border-radius: 30px;
-  
-  /* Thicker, more colorful border for the pill itself */
   border: 2px solid #0078e7; 
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  
-  display: flex;
   align-items: center;
-  z-index: 20000;
   transition: opacity 0.4s ease;
   pointer-events: none;
 }
