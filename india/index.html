@@ -365,10 +365,15 @@
     <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
 </main>
 
-<button id="tally-feedback-btn" data-tally-open="3ybLbW" data-tally-hide-title="1" data-tally-emoji-text="&#x1F44B;" data-tally-emoji-animation="wave" data-tally-auto-close="3000" >Leave super-quick feedback!</button>
+
+<button id="tally-feedback-btn" data-tally-open="3ybLbW" data-tally-hide-title="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-auto-close="3000">
+  <span class="btn-emoji">👋</span>
+  <span class="btn-text">Two-second feedback!</span>
+</button>
+<script src="../js/feedback.js"></script>
 
 
-  
+
 <script>
   document.getElementById("current-date").innerHTML =
     new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
