@@ -28,12 +28,29 @@ text:hover + .dl_el {display:block;}
   #areas:hover .pg_2:hover .pll {stroke-width:3;}
   #areas:hover .pg_2:hover .pldlm {stroke-width:2;}
   #areas:hover .pg_2:hover .thick {stroke-width:12;}
+  #lines .pl {transition: all 0.2s ease;}
+  #lines:hover .pl {opacity:0.3;}
+  #lines:hover .thick {stroke-width:1;}
+  #lines:hover .pl_1:hover .pl {opacity:1;}
+  #lines:hover .pl_1:hover .pll {stroke-width:3;}
+  #lines:hover .pl_1:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_1:hover .thick {stroke-width:12;}
+  #lines:hover .pl_2:hover .pl {opacity:1;}
+  #lines:hover .pl_2:hover .pll {stroke-width:3;}
+  #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_2:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
   <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
+  <symbol id="line_1" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="145.6,169.1 208.3,150.8 270.9,143.4 333.6,133.2 396.2,124.3 458.9,116.2 521.5,80.3 584.2,70.3 646.9,59.5 709.5,98.5 772.2,114.1 834.8,106.8 897.5,99.0" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_2" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="145.6,553.1 208.3,547.9 270.9,545.6 333.6,537.4 396.2,533.1 458.9,532.2 521.5,523.6 584.2,522.5 646.9,514.1 709.5,514.7 772.2,516.2 834.8,510.7 897.5,504.9" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
 </defs>
 <g id="main">
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
@@ -47,20 +64,20 @@ text:hover + .dl_el {display:block;}
 <use xlink:href="#tick_y" transform="translate(0,187.3)"/>
 <use xlink:href="#tick_y" transform="translate(0,54.0)"/>
 <use xlink:href="#tick_x" transform="translate(145.6,0)"/>
-<use xlink:href="#tick_x" transform="translate(262.8,0)"/>
-<use xlink:href="#tick_x" transform="translate(379.9,0)"/>
-<use xlink:href="#tick_x" transform="translate(497.1,0)"/>
-<use xlink:href="#tick_x" transform="translate(614.3,0)"/>
-<use xlink:href="#tick_x" transform="translate(731.4,0)"/>
-<use xlink:href="#tick_x" transform="translate(848.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(270.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(396.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(521.5,0)"/>
+<use xlink:href="#tick_x" transform="translate(646.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(772.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(897.5,0)"/>
 <polyline points="145.6,53.993 145.6,587.177 907.2,587.177" stroke="#808080" stroke-width="0.90" fill="none"/>
 <text class="ticklabel xtl" transform="translate(145.6,629.0)" text-anchor="middle">2010</text>
-<text class="ticklabel xtl" transform="translate(262.8,629.0)" text-anchor="middle">2012</text>
-<text class="ticklabel xtl" transform="translate(379.9,629.0)" text-anchor="middle">2014</text>
-<text class="ticklabel xtl" transform="translate(497.1,629.0)" text-anchor="middle">2016</text>
-<text class="ticklabel xtl" transform="translate(614.3,629.0)" text-anchor="middle">2018</text>
-<text class="ticklabel xtl" transform="translate(731.4,629.0)" text-anchor="middle">2020</text>
-<text class="ticklabel xtl" transform="translate(848.6,629.0)" text-anchor="middle">2022</text>
+<text class="ticklabel xtl" transform="translate(270.9,629.0)" text-anchor="middle">2012</text>
+<text class="ticklabel xtl" transform="translate(396.2,629.0)" text-anchor="middle">2014</text>
+<text class="ticklabel xtl" transform="translate(521.5,629.0)" text-anchor="middle">2016</text>
+<text class="ticklabel xtl" transform="translate(646.9,629.0)" text-anchor="middle">2018</text>
+<text class="ticklabel xtl" transform="translate(772.2,629.0)" text-anchor="middle">2020</text>
+<text class="ticklabel xtl" transform="translate(897.5,629.0)" text-anchor="middle">2022</text>
 <text class="ticklabel ytl" transform="translate(128.8,595.3)">0</text>
 <text class="ticklabel ytl" transform="translate(128.8,462.0)">0.5</text>
 <text class="ticklabel ytl" transform="translate(128.8,328.7)">1.0</text>
@@ -68,20 +85,29 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">2.0 Mt</text>
 <g id="areas">
   <g class="pg_2">
-    <polygon class="pl" points="145.6,169.1 204.2,150.8 262.8,143.4 321.4,133.2 379.9,124.3 438.5,116.2 497.1,80.3 555.7,70.3 614.3,59.5 672.9,98.5 731.4,114.1 790.0,106.8 848.6,99.0 848.6,504.9 790.0,510.7 731.4,516.2 672.9,514.7 614.3,514.1 555.7,522.5 497.1,523.6 438.5,532.2 379.9,533.1 321.4,537.4 262.8,545.6 204.2,547.9 145.6,553.1" stroke="#000" stroke-width="0.9000"  fill="#D97B53" clip-path="url(#axis_clip)"/>
-    <text class="pl" transform="translate(925.2,295.2)" dy="6.5" font-size="21.60" fill="#D97B53" stroke="none">Residential: Stationary</text>
-    <text class="pl" transform="translate(925.2,301.4)" dy="21.6" font-size="21.60" fill="#D97B53" stroke="none">combustion</text>
+    <polygon class="pl" points="145.6,169.1 208.3,150.8 270.9,143.4 333.6,133.2 396.2,124.3 458.9,116.2 521.5,80.3 584.2,70.3 646.9,59.5 709.5,98.5 772.2,114.1 834.8,106.8 897.5,99.0 897.5,504.9 834.8,510.7 772.2,516.2 709.5,514.7 646.9,514.1 584.2,522.5 521.5,523.6 458.9,532.2 396.2,533.1 333.6,537.4 270.9,545.6 208.3,547.9 145.6,553.1" stroke="none" stroke-width="0.9000"  fill="#D97B53" clip-path="url(#axis_clip)"/>
   </g>
   <g class="pg_1">
-    <polygon class="pl" points="145.6,553.1 204.2,547.9 262.8,545.6 321.4,537.4 379.9,533.1 438.5,532.2 497.1,523.6 555.7,522.5 614.3,514.1 672.9,514.7 731.4,516.2 790.0,510.7 848.6,504.9 848.6,587.2 145.6,587.2" stroke="#000" stroke-width="0.9000"  fill="#3988BD" clip-path="url(#axis_clip)"/>
-    <text class="pl" transform="translate(925.2,539.3)" dy="6.5" font-size="21.60" fill="#3988BD" stroke="none">Commercial/institutional:</text>
-    <text class="pl" transform="translate(925.2,545.5)" dy="21.6" font-size="21.60" fill="#3988BD" stroke="none">Stationary combustion</text>
+    <polygon class="pl" points="145.6,553.1 208.3,547.9 270.9,545.6 333.6,537.4 396.2,533.1 458.9,532.2 521.5,523.6 584.2,522.5 646.9,514.1 709.5,514.7 772.2,516.2 834.8,510.7 897.5,504.9 897.5,587.2 145.6,587.2" stroke="none" stroke-width="0.9000"  fill="#3988BD" clip-path="url(#axis_clip)"/>
   </g>
 </g>
+<g id="lines">
+  <g class="pl_1">
+    <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_1" class="pl pll" stroke="#000" stroke-width="0.90"/>
+  </g>
+  <g class="pl_2">
+    <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#000" stroke-width="0.90"/>
+  </g>
+</g>
+    <text class="pl" transform="translate(925.2,539.3)" dy="6.5" font-size="21.60" fill="#3988BD" stroke="none">Commercial/institutional:</text>
+    <text class="pl" transform="translate(925.2,302.0)" dy="6.5" font-size="21.60" fill="#D97B53" stroke="none">Residential: Stationary</text>
+    <text class="pl" transform="translate(925.2,545.5)" dy="21.6" font-size="21.60" fill="#3988BD" stroke="none">Stationary</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Annual CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"> </tspan>emissions from biomass combustion: Guinea-Bissau</text>
-<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: UNFCCC</text>
+<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: <a href="https://unfccc.int/" target="_blank" style="fill:#BFBFBF">UNFCCC</a></text>
 <g>
-<a href="https://creativecommons.org/licenses/by/4.0/">
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
   <g><circle fill="#FFF" cx="37.79" cy="28.5" r="28.84"/>
