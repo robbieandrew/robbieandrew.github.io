@@ -143,7 +143,8 @@
 		<label for="sortSelector">Sort Order</label>
 		<select id="sortSelector">
 		  <option value="alphabetical">Alphabetical</option>
-		  <option value="bev-share">BEV Share</option>
+		  <option value="bev-share">BEV share</option>
+		  <option value="last-updated">Last updated</option>
 		</select>
 	  </div>
   
@@ -171,6 +172,22 @@
 <script src="../js/downloadSVGasPNG.js" defer></script>
 <script src="../js/citation-modal.js"></script>
 
+
+<script>
+// Granular debug controls
+const DEBUG_CONFIG = {
+    spinner: false,   // Only see logs related to the loader/spinner
+    charts: false,   // Hide chart-loading logs
+    general: true   // Hide everything else
+};
+
+// Updated wrapper function
+function log(category, ...args) {
+    if (DEBUG_CONFIG[category]) {
+        console.log(`[${category.toUpperCase()}]`, ...args);
+    }
+}
+</script>
 
 <script>
 // This prevents downloadSVGasPNG.js from making guessed requests
@@ -237,7 +254,7 @@ function updateCharts() {
 		// Only reset the loader if we are actually changing things after the first load
         if (!isInitialSetup) {
             window.svgsToLoad = activeCountries.length; 
-			console.log(`updateCharts: svgsToLoad is now ${window.svgsToLoad}`)
+			log('general',`updateCharts: svgsToLoad is now ${window.svgsToLoad}`)
             showPageLoader();
         }
     }
@@ -398,7 +415,7 @@ function makeCountrySelector() {
 							newObj.data = targetPath;
 							
 							newObj.onload = function() {
-								console.log(`[${performance.now().toFixed(0)}ms] SVG loaded: ${newObj.getAttribute('data')}`);
+								log('charts',`[${performance.now().toFixed(0)}ms] SVG loaded: ${newObj.getAttribute('data')}`);
 								if (typeof applyTranslation === "function") applyTranslation(currentLang);
 								attachChartButtons(div, newObj); // This calls decrementLoader()
 								newObj.onload = null; 
@@ -508,7 +525,7 @@ function populateCountries() {
 function attachChartButtons(container, svgObject) {
 	const svgTitle = (svgObject.contentDocument?.querySelector('title')?.textContent.trim() ?? svgObject.getAttribute('data'))
     .replace(/[^a-zA-Z0-9_-]/g, '_');
-	console.log(`[${performance.now().toFixed(0)}ms] onload fired for: ${svgTitle}`);
+	log('charts',`[${performance.now().toFixed(0)}ms] onload fired for: ${svgTitle}`);
 	
     // 1. If buttons already exist, we still need to decrement the counter
     if (container.querySelector('.svg-button-group')) {
@@ -544,17 +561,17 @@ function attachChartButtons(container, svgObject) {
 
 // Helper function to handle the countdown safely
 function decrementLoader() {
-	if (typeof window.svgsToLoad === 'undefined') console.log('window.svgsToLoad is undefined!');
-	if (typeof window.svgsToLoad !== 'undefined' && window.svgsToLoad == 0) console.log('window.svgsToLoad is zero!');
+	if (typeof window.svgsToLoad === 'undefined') log('spinner','window.svgsToLoad is undefined!');
+	if (typeof window.svgsToLoad !== 'undefined' && window.svgsToLoad == 0) log('spinner','window.svgsToLoad is zero!');
     if (typeof window.svgsToLoad !== 'undefined' && window.svgsToLoad > 0) {
         window.svgsToLoad--;
-        console.log(`Charts remaining: ${window.svgsToLoad}`);
+        log('spinner',`Charts remaining: ${window.svgsToLoad}`);
 		if (window.svgsToLoad === 0) {
             hidePageLoader();
         }
     } else {
         // If it's already 0, ensure the loader is hidden
-		console.log('svgsToLoad is zero: hiding the spinner')
+		log('spinner','svgsToLoad is zero: hiding the spinner')
         hidePageLoader();
     }
 }
@@ -568,7 +585,7 @@ function showPageLoader() {
     tsInstances.forEach(ts => ts.disable());
 	
     if (loader && controls) {
-		console.log('Showing the loading spinner')
+		log('spinner','Showing the loading spinner')
 		// 1. Lock the UI
         document.body.classList.add('loading-active');
         if (document.activeElement && document.activeElement.blur) {
@@ -614,9 +631,9 @@ function hidePageLoader() {
     }
 }
 function triggerMassLoad(count) {
-    console.log("Triggering mass load for " + count + " items.");
+    log('spinner',"Triggering mass load for " + count + " items.");
     window.svgsToLoad = count; // global scope
-	console.log(`triggerMassLoad: svgsToLoad is now ${window.svgsToLoad}`)
+	log('spinner',`triggerMassLoad: svgsToLoad is now ${window.svgsToLoad}`)
     if (count > 0) {
 		showPageLoader();
 	} else {
@@ -630,14 +647,19 @@ function sortCountries(method) {
 
   // 1. Sort the array of elements in memory
   countryDivs.sort((a, b) => {
+	const countryA = a.getAttribute('data-country');
+	const countryB = b.getAttribute('data-country');
+	
     if (method === 'bev-share') {
-      const countryA = a.getAttribute('data-country');
-      const countryB = b.getAttribute('data-country');
       // Sort descending (highest share first)
       return (bevShareData[countryB] || 0) - (bevShareData[countryA] || 0);
+    } else if (method === 'last-updated') {
+      const tsA = (window.lastUpdatedData && window.lastUpdatedData[countryA]) || 0;
+      const tsB = (window.lastUpdatedData && window.lastUpdatedData[countryB]) || 0;
+      return tsB - tsA; // Most recently updated first
     } else {
       // Sort ascending (A-Z)
-      return a.getAttribute('data-country').localeCompare(b.getAttribute('data-country'));
+      return countryA.localeCompare(countryB);
     }
   });
 
@@ -751,9 +773,16 @@ window.addEventListener('countriesPopulated', function() {
         }
     });
 
-    // Final sorting based on initial URL state
-    sortCountries(urlArgs.sort);
-
+	// Final sorting based on initial URL state
+	if (urlArgs.sort === 'last-updated') {
+		if (window.lastUpdatedData) {
+			sortCountries(urlArgs.sort);
+		} else {
+			window.addEventListener('updatesLoaded', () => sortCountries(urlArgs.sort));
+		}
+	} else {
+		sortCountries(urlArgs.sort);
+	}
 	// This ensures that all initial "onChange" triggers from 
     // ALL selectors have finished before we allow the loader to be dismissed.
     setTimeout(() => {

@@ -38,6 +38,12 @@ async function fetchAndProcessUpdates() {
             return [geography, latestData, updatedOn];
         });
 
+		// Expose update timestamps globally for use by sortCountries()
+		window.lastUpdatedData = {};
+		updates.forEach(item => {
+			window.lastUpdatedData[item.dataset] = new Date(item.timestamp).getTime();
+		});
+		
         return tableData;
 
     } catch (error) {
@@ -114,7 +120,7 @@ async function setupUpdateViewer() {
 
     const tableBody = document.getElementById('updates-tbody');
     
-    // 1. Load and display data (no change)
+    // 1. Load and display data
     const tableData = await fetchAndProcessUpdates();
     
     tableBody.innerHTML = ''; 
@@ -134,6 +140,9 @@ async function setupUpdateViewer() {
     // 2. Set up the click handlers (updated)
     toggleUpdatesButton.addEventListener('click', () => toggleContent('updates-container'));
     toggleNotesButton.addEventListener('click', () => toggleContent('notes-container'));
+	
+	// Notify that update dates are loaded
+	window.dispatchEvent(new Event('updatesLoaded'));
 }
 
 // Run the setup function when the script loads
