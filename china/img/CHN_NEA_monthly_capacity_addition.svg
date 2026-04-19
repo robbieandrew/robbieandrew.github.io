@@ -28,6 +28,10 @@ text:hover + .dl_el {display:block;}
   #lines:hover .pl_2:hover .pll {stroke-width:3;}
   #lines:hover .pl_2:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_2:hover .thick {stroke-width:12;}
+  #lines:hover .pl_3:hover .pl {opacity:1;}
+  #lines:hover .pl_3:hover .pll {stroke-width:3;}
+  #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_3:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
@@ -35,10 +39,13 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="209.1,627.7 209.1,54.0" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="177.3,627.7 177.3,54.0" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="558.1,627.7 558.1,54.0" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="526.4,627.7 526.4,54.0" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+  </symbol>
+  <symbol id="line_3" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="875.5,627.7 875.5,54.0" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </symbol>
 </defs>
 <g id="main">
@@ -70,165 +77,170 @@ text:hover + .dl_el {display:block;}
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#808080" stroke-width="0.90"/>
   </g>
+  <g class="pl_3">
+    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#808080" stroke-width="0.90"/>
+  </g>
 </g>
 <polygon points="145.6,560.2 907.2,560.2" stroke="#808080" stroke-width="0.9000"/>
 <g stroke="none" stroke-width="0.9000"  fill="#EDB021" clip-path="url(#axis_clip)">
-  <polygon class="pl" points="168.7,560.2 168.7,449.5 173.8,449.5 173.8,560.2 168.7,560.2"/>
-  <polygon class="pl" points="200.4,560.2 200.4,297.6 205.5,297.6 205.5,560.2 200.4,560.2"/>
-  <polygon class="pl" points="232.2,560.2 232.2,365.9 237.2,365.9 237.2,560.2 232.2,560.2"/>
-  <polygon class="pl" points="263.9,560.2 263.9,498.6 269.0,498.6 269.0,560.2 263.9,560.2"/>
-  <polygon class="pl" points="295.6,560.2 295.6,502.4 300.7,502.4 300.7,560.2 295.6,560.2"/>
-  <polygon class="pl" points="327.4,560.2 327.4,461.4 332.4,461.4 332.4,560.2 327.4,560.2"/>
-  <polygon class="pl" points="359.1,560.2 359.1,446.2 364.2,446.2 364.2,560.2 359.1,560.2"/>
-  <polygon class="pl" points="390.8,560.2 390.8,448.5 395.9,448.5 395.9,560.2 390.8,560.2"/>
-  <polygon class="pl" points="422.6,560.2 422.6,475.2 427.6,475.2 427.6,560.2 422.6,560.2"/>
-  <polygon class="pl" points="454.3,560.2 454.3,456.1 459.4,456.1 459.4,560.2 454.3,560.2"/>
-  <polygon class="pl" points="486.0,560.2 486.0,458.0 491.1,458.0 491.1,560.2 486.0,560.2"/>
-  <polygon class="pl" points="517.8,560.2 517.8,432.5 522.8,432.5 522.8,560.2 517.8,560.2"/>
-  <polygon class="pl" points="549.5,560.2 549.5,214.3 554.6,214.3 554.6,560.2 549.5,560.2"/>
-  <polygon class="pl" points="581.2,560.2 581.2,359.9 586.3,359.9 586.3,560.2 581.2,560.2"/>
-  <polygon class="pl" points="613.0,560.2 613.0,458.4 618.0,458.4 618.0,560.2 613.0,560.2"/>
-  <polygon class="pl" points="644.7,560.2 644.7,328.7 649.8,328.7 649.8,560.2 644.7,560.2"/>
-  <polygon class="pl" points="676.4,560.2 676.4,92.5 681.5,92.5 681.5,560.2 676.4,560.2"/>
-  <polygon class="pl" points="708.2,560.2 708.2,481.3 713.2,481.3 713.2,560.2 708.2,560.2"/>
-  <polygon class="pl" points="739.9,560.2 739.9,511.7 745.0,511.7 745.0,560.2 739.9,560.2"/>
-  <polygon class="pl" points="771.6,560.2 771.6,521.6 776.7,521.6 776.7,560.2 771.6,560.2"/>
-  <polygon class="pl" points="803.4,560.2 803.4,513.2 808.4,513.2 808.4,560.2 803.4,560.2"/>
-  <polygon class="pl" points="835.1,560.2 835.1,491.0 840.2,491.0 840.2,560.2 835.1,560.2"/>
-  <polygon class="pl" points="866.8,560.2 866.8,453.8 871.9,453.8 871.9,560.2 866.8,560.2"/>
-  <polygon class="pl" points="898.6,560.2 898.6,355.0 903.6,355.0 903.6,560.2 898.6,560.2"/>
+  <polygon class="pl" points="168.7,560.2 168.7,297.6 173.8,297.6 173.8,560.2 168.7,560.2"/>
+  <polygon class="pl" points="200.4,560.2 200.4,365.9 205.5,365.9 205.5,560.2 200.4,560.2"/>
+  <polygon class="pl" points="232.2,560.2 232.2,498.6 237.2,498.6 237.2,560.2 232.2,560.2"/>
+  <polygon class="pl" points="263.9,560.2 263.9,502.4 269.0,502.4 269.0,560.2 263.9,560.2"/>
+  <polygon class="pl" points="295.6,560.2 295.6,461.4 300.7,461.4 300.7,560.2 295.6,560.2"/>
+  <polygon class="pl" points="327.4,560.2 327.4,446.2 332.4,446.2 332.4,560.2 327.4,560.2"/>
+  <polygon class="pl" points="359.1,560.2 359.1,448.5 364.2,448.5 364.2,560.2 359.1,560.2"/>
+  <polygon class="pl" points="390.8,560.2 390.8,475.2 395.9,475.2 395.9,560.2 390.8,560.2"/>
+  <polygon class="pl" points="422.6,560.2 422.6,456.1 427.6,456.1 427.6,560.2 422.6,560.2"/>
+  <polygon class="pl" points="454.3,560.2 454.3,458.0 459.4,458.0 459.4,560.2 454.3,560.2"/>
+  <polygon class="pl" points="486.0,560.2 486.0,432.5 491.1,432.5 491.1,560.2 486.0,560.2"/>
+  <polygon class="pl" points="517.8,560.2 517.8,214.3 522.8,214.3 522.8,560.2 517.8,560.2"/>
+  <polygon class="pl" points="549.5,560.2 549.5,359.9 554.6,359.9 554.6,560.2 549.5,560.2"/>
+  <polygon class="pl" points="581.2,560.2 581.2,458.4 586.3,458.4 586.3,560.2 581.2,560.2"/>
+  <polygon class="pl" points="613.0,560.2 613.0,328.7 618.0,328.7 618.0,560.2 613.0,560.2"/>
+  <polygon class="pl" points="644.7,560.2 644.7,92.5 649.8,92.5 649.8,560.2 644.7,560.2"/>
+  <polygon class="pl" points="676.4,560.2 676.4,481.3 681.5,481.3 681.5,560.2 676.4,560.2"/>
+  <polygon class="pl" points="708.2,560.2 708.2,511.7 713.2,511.7 713.2,560.2 708.2,560.2"/>
+  <polygon class="pl" points="739.9,560.2 739.9,521.6 745.0,521.6 745.0,560.2 739.9,560.2"/>
+  <polygon class="pl" points="771.6,560.2 771.6,513.2 776.7,513.2 776.7,560.2 771.6,560.2"/>
+  <polygon class="pl" points="803.4,560.2 803.4,491.0 808.4,491.0 808.4,560.2 803.4,560.2"/>
+  <polygon class="pl" points="835.1,560.2 835.1,453.8 840.2,453.8 840.2,560.2 835.1,560.2"/>
+  <polygon class="pl" points="866.8,560.2 866.8,355.0 871.9,355.0 871.9,560.2 866.8,560.2"/>
+  <polygon class="pl" points="898.6,560.2 898.6,397.7 903.6,397.7 903.6,560.2 898.6,560.2"/>
 </g>
 <g stroke="none" stroke-width="0.9000"  fill="#598C1A" clip-path="url(#axis_clip)">
-  <polygon class="pl" points="163.8,560.2 163.8,515.5 168.9,515.5 168.9,560.2 163.8,560.2"/>
-  <polygon class="pl" points="195.5,560.2 195.5,415.9 200.6,415.9 200.6,560.2 195.5,560.2"/>
-  <polygon class="pl" points="227.3,560.2 227.3,514.6 232.4,514.6 232.4,560.2 227.3,560.2"/>
-  <polygon class="pl" points="259.0,560.2 259.0,528.3 264.1,528.3 264.1,560.2 259.0,560.2"/>
-  <polygon class="pl" points="290.7,560.2 290.7,553.1 295.8,553.1 295.8,560.2 290.7,560.2"/>
-  <polygon class="pl" points="322.5,560.2 322.5,544.9 327.6,544.9 327.6,560.2 322.5,560.2"/>
-  <polygon class="pl" points="354.2,560.2 354.2,531.5 359.3,531.5 359.3,560.2 354.2,560.2"/>
-  <polygon class="pl" points="385.9,560.2 385.9,540.8 391.0,540.8 391.0,560.2 385.9,560.2"/>
-  <polygon class="pl" points="417.7,560.2 417.7,542.5 422.8,542.5 422.8,560.2 417.7,560.2"/>
-  <polygon class="pl" points="449.4,560.2 449.4,532.2 454.5,532.2 454.5,560.2 449.4,560.2"/>
-  <polygon class="pl" points="481.1,560.2 481.1,526.7 486.2,526.7 486.2,560.2 481.1,560.2"/>
-  <polygon class="pl" points="512.9,560.2 512.9,529.8 518.0,529.8 518.0,560.2 512.9,560.2"/>
-  <polygon class="pl" points="544.6,560.2 544.6,415.9 549.7,415.9 549.7,560.2 544.6,560.2"/>
-  <polygon class="pl" points="576.3,560.2 576.3,513.9 581.4,513.9 581.4,560.2 576.3,560.2"/>
-  <polygon class="pl" points="608.1,560.2 608.1,532.1 613.2,532.1 613.2,560.2 608.1,560.2"/>
-  <polygon class="pl" points="639.8,560.2 639.8,530.7 644.9,530.7 644.9,560.2 639.8,560.2"/>
-  <polygon class="pl" points="671.5,560.2 671.5,427.1 676.6,427.1 676.6,560.2 671.5,560.2"/>
-  <polygon class="pl" points="703.3,560.2 703.3,534.3 708.4,534.3 708.4,560.2 703.3,560.2"/>
-  <polygon class="pl" points="735.0,560.2 735.0,548.7 740.1,548.7 740.1,560.2 735.0,560.2"/>
-  <polygon class="pl" points="766.7,560.2 766.7,539.2 771.8,539.2 771.8,560.2 766.7,560.2"/>
-  <polygon class="pl" points="798.5,560.2 798.5,547.1 803.6,547.1 803.6,560.2 798.5,560.2"/>
-  <polygon class="pl" points="830.2,560.2 830.2,515.6 835.3,515.6 835.3,560.2 830.2,560.2"/>
-  <polygon class="pl" points="861.9,560.2 861.9,498.2 867.0,498.2 867.0,560.2 861.9,560.2"/>
-  <polygon class="pl" points="893.7,560.2 893.7,371.0 898.8,371.0 898.8,560.2 893.7,560.2"/>
+  <polygon class="pl" points="163.8,560.2 163.8,415.9 168.9,415.9 168.9,560.2 163.8,560.2"/>
+  <polygon class="pl" points="195.5,560.2 195.5,514.6 200.6,514.6 200.6,560.2 195.5,560.2"/>
+  <polygon class="pl" points="227.3,560.2 227.3,528.3 232.4,528.3 232.4,560.2 227.3,560.2"/>
+  <polygon class="pl" points="259.0,560.2 259.0,553.1 264.1,553.1 264.1,560.2 259.0,560.2"/>
+  <polygon class="pl" points="290.7,560.2 290.7,544.9 295.8,544.9 295.8,560.2 290.7,560.2"/>
+  <polygon class="pl" points="322.5,560.2 322.5,531.5 327.6,531.5 327.6,560.2 322.5,560.2"/>
+  <polygon class="pl" points="354.2,560.2 354.2,540.8 359.3,540.8 359.3,560.2 354.2,560.2"/>
+  <polygon class="pl" points="385.9,560.2 385.9,542.5 391.0,542.5 391.0,560.2 385.9,560.2"/>
+  <polygon class="pl" points="417.7,560.2 417.7,532.2 422.8,532.2 422.8,560.2 417.7,560.2"/>
+  <polygon class="pl" points="449.4,560.2 449.4,526.7 454.5,526.7 454.5,560.2 449.4,560.2"/>
+  <polygon class="pl" points="481.1,560.2 481.1,529.8 486.2,529.8 486.2,560.2 481.1,560.2"/>
+  <polygon class="pl" points="512.9,560.2 512.9,415.9 518.0,415.9 518.0,560.2 512.9,560.2"/>
+  <polygon class="pl" points="544.6,560.2 544.6,513.9 549.7,513.9 549.7,560.2 544.6,560.2"/>
+  <polygon class="pl" points="576.3,560.2 576.3,532.1 581.4,532.1 581.4,560.2 576.3,560.2"/>
+  <polygon class="pl" points="608.1,560.2 608.1,530.7 613.2,530.7 613.2,560.2 608.1,560.2"/>
+  <polygon class="pl" points="639.8,560.2 639.8,427.1 644.9,427.1 644.9,560.2 639.8,560.2"/>
+  <polygon class="pl" points="671.5,560.2 671.5,534.3 676.6,534.3 676.6,560.2 671.5,560.2"/>
+  <polygon class="pl" points="703.3,560.2 703.3,548.7 708.4,548.7 708.4,560.2 703.3,560.2"/>
+  <polygon class="pl" points="735.0,560.2 735.0,539.2 740.1,539.2 740.1,560.2 735.0,560.2"/>
+  <polygon class="pl" points="766.7,560.2 766.7,547.1 771.8,547.1 771.8,560.2 766.7,560.2"/>
+  <polygon class="pl" points="798.5,560.2 798.5,515.6 803.6,515.6 803.6,560.2 798.5,560.2"/>
+  <polygon class="pl" points="830.2,560.2 830.2,498.2 835.3,498.2 835.3,560.2 830.2,560.2"/>
+  <polygon class="pl" points="861.9,560.2 861.9,371.0 867.0,371.0 867.0,560.2 861.9,560.2"/>
+  <polygon class="pl" points="893.7,560.2 893.7,506.3 898.8,506.3 898.8,560.2 893.7,560.2"/>
 </g>
 <g stroke="none" stroke-width="0.9000"  fill="#BF4D4D" clip-path="url(#axis_clip)">
-  <polygon class="pl" points="158.9,560.2 158.9,560.2 164.0,560.2 164.0,560.2 158.9,560.2"/>
-  <polygon class="pl" points="190.7,560.2 190.7,559.4 195.7,559.4 195.7,560.2 190.7,560.2"/>
+  <polygon class="pl" points="158.9,560.2 158.9,559.4 164.0,559.4 164.0,560.2 158.9,560.2"/>
+  <polygon class="pl" points="190.7,560.2 190.7,560.2 195.7,560.2 195.7,560.2 190.7,560.2"/>
   <polygon class="pl" points="222.4,560.2 222.4,560.2 227.5,560.2 227.5,560.2 222.4,560.2"/>
   <polygon class="pl" points="254.1,560.2 254.1,560.2 259.2,560.2 259.2,560.2 254.1,560.2"/>
-  <polygon class="pl" points="285.9,560.2 285.9,560.2 290.9,560.2 290.9,560.2 285.9,560.2"/>
-  <polygon class="pl" points="317.6,560.2 317.6,554.3 322.7,554.3 322.7,560.2 317.6,560.2"/>
+  <polygon class="pl" points="285.9,560.2 285.9,554.3 290.9,554.3 290.9,560.2 285.9,560.2"/>
+  <polygon class="pl" points="317.6,560.2 317.6,560.2 322.7,560.2 322.7,560.2 317.6,560.2"/>
   <polygon class="pl" points="349.3,560.2 349.3,560.2 354.4,560.2 354.4,560.2 349.3,560.2"/>
   <polygon class="pl" points="381.1,560.2 381.1,560.2 386.1,560.2 386.1,560.2 381.1,560.2"/>
   <polygon class="pl" points="412.8,560.2 412.8,560.2 417.9,560.2 417.9,560.2 412.8,560.2"/>
   <polygon class="pl" points="444.5,560.2 444.5,560.2 449.6,560.2 449.6,560.2 444.5,560.2"/>
   <polygon class="pl" points="476.3,560.2 476.3,560.2 481.3,560.2 481.3,560.2 476.3,560.2"/>
-  <polygon class="pl" points="508.0,560.2 508.0,560.2 513.1,560.2 513.1,560.2 508.0,560.2"/>
-  <polygon class="pl" points="539.7,560.2 539.7,546.3 544.8,546.3 544.8,560.2 539.7,560.2"/>
+  <polygon class="pl" points="508.0,560.2 508.0,546.3 513.1,546.3 513.1,560.2 508.0,560.2"/>
+  <polygon class="pl" points="539.7,560.2 539.7,560.2 544.8,560.2 544.8,560.2 539.7,560.2"/>
   <polygon class="pl" points="571.5,560.2 571.5,560.2 576.5,560.2 576.5,560.2 571.5,560.2"/>
   <polygon class="pl" points="603.2,560.2 603.2,560.2 608.3,560.2 608.3,560.2 603.2,560.2"/>
   <polygon class="pl" points="634.9,560.2 634.9,560.2 640.0,560.2 640.0,560.2 634.9,560.2"/>
-  <polygon class="pl" points="666.7,560.2 666.7,560.2 671.7,560.2 671.7,560.2 666.7,560.2"/>
-  <polygon class="pl" points="698.4,560.2 698.4,559.8 703.5,559.8 703.5,560.2 698.4,560.2"/>
-  <polygon class="pl" points="730.1,560.2 730.1,560.0 735.2,560.0 735.2,560.2 730.1,560.2"/>
-  <polygon class="pl" points="761.9,560.2 761.9,560.2 766.9,560.2 766.9,560.2 761.9,560.2"/>
-  <polygon class="pl" points="793.6,560.2 793.6,552.4 798.7,552.4 798.7,560.2 793.6,560.2"/>
+  <polygon class="pl" points="666.7,560.2 666.7,559.8 671.7,559.8 671.7,560.2 666.7,560.2"/>
+  <polygon class="pl" points="698.4,560.2 698.4,560.0 703.5,560.0 703.5,560.2 698.4,560.2"/>
+  <polygon class="pl" points="730.1,560.2 730.1,560.2 735.2,560.2 735.2,560.2 730.1,560.2"/>
+  <polygon class="pl" points="761.9,560.2 761.9,552.4 766.9,552.4 766.9,560.2 761.9,560.2"/>
+  <polygon class="pl" points="793.6,560.2 793.6,560.2 798.7,560.2 798.7,560.2 793.6,560.2"/>
   <polygon class="pl" points="825.3,560.2 825.3,560.2 830.4,560.2 830.4,560.2 825.3,560.2"/>
   <polygon class="pl" points="857.1,560.2 857.1,560.2 862.1,560.2 862.1,560.2 857.1,560.2"/>
-  <polygon class="pl" points="888.8,560.2 888.8,560.2 893.9,560.2 893.9,560.2 888.8,560.2"/>
+  <polygon class="pl" points="888.8,560.2 888.8,553.9 893.9,553.9 893.9,560.2 888.8,560.2"/>
 </g>
 <g stroke="none" stroke-width="0.9000"  fill="#7A543D" clip-path="url(#axis_clip)">
-  <polygon class="pl" points="154.0,560.2 154.0,533.1 159.1,533.1 159.1,560.2 154.0,560.2"/>
-  <polygon class="pl" points="185.8,560.2 185.8,502.1 190.9,502.1 190.9,560.2 185.8,560.2"/>
-  <polygon class="pl" points="217.5,560.2 217.5,540.5 222.6,540.5 222.6,560.2 217.5,560.2"/>
-  <polygon class="pl" points="249.2,560.2 249.2,547.7 254.3,547.7 254.3,560.2 249.2,560.2"/>
-  <polygon class="pl" points="281.0,560.2 281.0,553.3 286.1,553.3 286.1,560.2 281.0,560.2"/>
-  <polygon class="pl" points="312.7,560.2 312.7,544.4 317.8,544.4 317.8,560.2 312.7,560.2"/>
-  <polygon class="pl" points="344.4,560.2 344.4,540.0 349.5,540.0 349.5,560.2 344.4,560.2"/>
-  <polygon class="pl" points="376.2,560.2 376.2,532.4 381.3,532.4 381.3,560.2 376.2,560.2"/>
-  <polygon class="pl" points="407.9,560.2 407.9,540.7 413.0,540.7 413.0,560.2 407.9,560.2"/>
-  <polygon class="pl" points="439.6,560.2 439.6,539.2 444.7,539.2 444.7,560.2 439.6,560.2"/>
-  <polygon class="pl" points="471.4,560.2 471.4,522.9 476.5,522.9 476.5,560.2 471.4,560.2"/>
-  <polygon class="pl" points="503.1,560.2 503.1,518.2 508.2,518.2 508.2,560.2 503.1,560.2"/>
-  <polygon class="pl" points="534.8,560.2 534.8,508.6 539.9,508.6 539.9,560.2 534.8,560.2"/>
-  <polygon class="pl" points="566.6,560.2 566.6,541.8 571.7,541.8 571.7,560.2 566.6,560.2"/>
-  <polygon class="pl" points="598.3,560.2 598.3,547.1 603.4,547.1 603.4,560.2 598.3,560.2"/>
-  <polygon class="pl" points="630.0,560.2 630.0,538.3 635.1,538.3 635.1,560.2 630.0,560.2"/>
-  <polygon class="pl" points="661.8,560.2 661.8,548.0 666.9,548.0 666.9,560.2 661.8,560.2"/>
-  <polygon class="pl" points="693.5,560.2 693.5,473.5 698.6,473.5 698.6,560.2 693.5,560.2"/>
-  <polygon class="pl" points="725.2,560.2 725.2,499.0 730.3,499.0 730.3,560.2 725.2,560.2"/>
-  <polygon class="pl" points="757.0,560.2 757.0,520.9 762.1,520.9 762.1,560.2 757.0,560.2"/>
-  <polygon class="pl" points="788.7,560.2 788.7,514.3 793.8,514.3 793.8,560.2 788.7,560.2"/>
-  <polygon class="pl" points="820.4,560.2 820.4,503.0 825.5,503.0 825.5,560.2 820.4,560.2"/>
-  <polygon class="pl" points="852.2,560.2 852.2,522.1 857.3,522.1 857.3,560.2 852.2,560.2"/>
-  <polygon class="pl" points="883.9,560.2 883.9,475.2 889.0,475.2 889.0,560.2 883.9,560.2"/>
+  <polygon class="pl" points="154.0,560.2 154.0,502.1 159.1,502.1 159.1,560.2 154.0,560.2"/>
+  <polygon class="pl" points="185.8,560.2 185.8,540.5 190.9,540.5 190.9,560.2 185.8,560.2"/>
+  <polygon class="pl" points="217.5,560.2 217.5,547.7 222.6,547.7 222.6,560.2 217.5,560.2"/>
+  <polygon class="pl" points="249.2,560.2 249.2,553.3 254.3,553.3 254.3,560.2 249.2,560.2"/>
+  <polygon class="pl" points="281.0,560.2 281.0,544.4 286.1,544.4 286.1,560.2 281.0,560.2"/>
+  <polygon class="pl" points="312.7,560.2 312.7,540.0 317.8,540.0 317.8,560.2 312.7,560.2"/>
+  <polygon class="pl" points="344.4,560.2 344.4,532.4 349.5,532.4 349.5,560.2 344.4,560.2"/>
+  <polygon class="pl" points="376.2,560.2 376.2,540.7 381.3,540.7 381.3,560.2 376.2,560.2"/>
+  <polygon class="pl" points="407.9,560.2 407.9,539.2 413.0,539.2 413.0,560.2 407.9,560.2"/>
+  <polygon class="pl" points="439.6,560.2 439.6,522.9 444.7,522.9 444.7,560.2 439.6,560.2"/>
+  <polygon class="pl" points="471.4,560.2 471.4,518.2 476.5,518.2 476.5,560.2 471.4,560.2"/>
+  <polygon class="pl" points="503.1,560.2 503.1,508.6 508.2,508.6 508.2,560.2 503.1,560.2"/>
+  <polygon class="pl" points="534.8,560.2 534.8,541.8 539.9,541.8 539.9,560.2 534.8,560.2"/>
+  <polygon class="pl" points="566.6,560.2 566.6,547.1 571.7,547.1 571.7,560.2 566.6,560.2"/>
+  <polygon class="pl" points="598.3,560.2 598.3,538.3 603.4,538.3 603.4,560.2 598.3,560.2"/>
+  <polygon class="pl" points="630.0,560.2 630.0,548.0 635.1,548.0 635.1,560.2 630.0,560.2"/>
+  <polygon class="pl" points="661.8,560.2 661.8,473.5 666.9,473.5 666.9,560.2 661.8,560.2"/>
+  <polygon class="pl" points="693.5,560.2 693.5,499.0 698.6,499.0 698.6,560.2 693.5,560.2"/>
+  <polygon class="pl" points="725.2,560.2 725.2,520.9 730.3,520.9 730.3,560.2 725.2,560.2"/>
+  <polygon class="pl" points="757.0,560.2 757.0,514.3 762.1,514.3 762.1,560.2 757.0,560.2"/>
+  <polygon class="pl" points="788.7,560.2 788.7,503.0 793.8,503.0 793.8,560.2 788.7,560.2"/>
+  <polygon class="pl" points="820.4,560.2 820.4,522.1 825.5,522.1 825.5,560.2 820.4,560.2"/>
+  <polygon class="pl" points="852.2,560.2 852.2,475.2 857.3,475.2 857.3,560.2 852.2,560.2"/>
+  <polygon class="pl" points="883.9,560.2 883.9,501.9 889.0,501.9 889.0,560.2 883.9,560.2"/>
 </g>
 <g stroke="none" stroke-width="0.9000"  fill="#0073BF" clip-path="url(#axis_clip)">
-  <polygon class="pl" points="149.2,560.2 149.2,554.6 154.2,554.6 154.2,560.2 149.2,560.2"/>
-  <polygon class="pl" points="180.9,560.2 180.9,559.2 186.0,559.2 186.0,560.2 180.9,560.2"/>
-  <polygon class="pl" points="212.6,560.2 212.6,555.5 217.7,555.5 217.7,560.2 212.6,560.2"/>
-  <polygon class="pl" points="244.4,560.2 244.4,555.4 249.4,555.4 249.4,560.2 244.4,560.2"/>
-  <polygon class="pl" points="276.1,560.2 276.1,551.3 281.2,551.3 281.2,560.2 276.1,560.2"/>
-  <polygon class="pl" points="307.8,560.2 307.8,555.7 312.9,555.7 312.9,560.2 307.8,560.2"/>
-  <polygon class="pl" points="339.6,560.2 339.6,554.6 344.6,554.6 344.6,560.2 339.6,560.2"/>
-  <polygon class="pl" points="371.3,560.2 371.3,554.1 376.4,554.1 376.4,560.2 371.3,560.2"/>
-  <polygon class="pl" points="403.0,560.2 403.0,558.6 408.1,558.6 408.1,560.2 403.0,560.2"/>
-  <polygon class="pl" points="434.8,560.2 434.8,550.7 439.8,550.7 439.8,560.2 434.8,560.2"/>
-  <polygon class="pl" points="466.5,560.2 466.5,558.5 471.6,558.5 471.6,560.2 466.5,560.2"/>
-  <polygon class="pl" points="498.2,560.2 498.2,554.1 503.3,554.1 503.3,560.2 498.2,560.2"/>
-  <polygon class="pl" points="530.0,560.2 530.0,540.6 535.0,540.6 535.0,560.2 530.0,560.2"/>
-  <polygon class="pl" points="561.7,560.2 561.7,553.4 566.8,553.4 566.8,560.2 561.7,560.2"/>
-  <polygon class="pl" points="593.4,560.2 593.4,558.7 598.5,558.7 598.5,560.2 593.4,560.2"/>
-  <polygon class="pl" points="625.2,560.2 625.2,559.4 630.2,559.4 630.2,560.2 625.2,560.2"/>
-  <polygon class="pl" points="656.9,560.2 656.9,555.5 662.0,555.5 662.0,560.2 656.9,560.2"/>
-  <polygon class="pl" points="688.6,560.2 688.6,553.5 693.7,553.5 693.7,560.2 688.6,560.2"/>
-  <polygon class="pl" points="720.4,560.2 720.4,551.8 725.4,551.8 725.4,560.2 720.4,560.2"/>
-  <polygon class="pl" points="752.1,560.2 752.1,557.2 757.2,557.2 757.2,560.2 752.1,560.2"/>
-  <polygon class="pl" points="783.8,560.2 783.8,556.9 788.9,556.9 788.9,560.2 783.8,560.2"/>
-  <polygon class="pl" points="815.6,560.2 815.6,554.9 820.6,554.9 820.6,560.2 815.6,560.2"/>
-  <polygon class="pl" points="847.3,560.2 847.3,555.0 852.4,555.0 852.4,560.2 847.3,560.2"/>
-  <polygon class="pl" points="879.0,560.2 879.0,544.4 884.1,544.4 884.1,560.2 879.0,560.2"/>
+  <polygon class="pl" points="149.2,560.2 149.2,559.2 154.2,559.2 154.2,560.2 149.2,560.2"/>
+  <polygon class="pl" points="180.9,560.2 180.9,555.5 186.0,555.5 186.0,560.2 180.9,560.2"/>
+  <polygon class="pl" points="212.6,560.2 212.6,555.4 217.7,555.4 217.7,560.2 212.6,560.2"/>
+  <polygon class="pl" points="244.4,560.2 244.4,551.3 249.4,551.3 249.4,560.2 244.4,560.2"/>
+  <polygon class="pl" points="276.1,560.2 276.1,555.7 281.2,555.7 281.2,560.2 276.1,560.2"/>
+  <polygon class="pl" points="307.8,560.2 307.8,554.6 312.9,554.6 312.9,560.2 307.8,560.2"/>
+  <polygon class="pl" points="339.6,560.2 339.6,554.1 344.6,554.1 344.6,560.2 339.6,560.2"/>
+  <polygon class="pl" points="371.3,560.2 371.3,558.6 376.4,558.6 376.4,560.2 371.3,560.2"/>
+  <polygon class="pl" points="403.0,560.2 403.0,550.7 408.1,550.7 408.1,560.2 403.0,560.2"/>
+  <polygon class="pl" points="434.8,560.2 434.8,558.5 439.8,558.5 439.8,560.2 434.8,560.2"/>
+  <polygon class="pl" points="466.5,560.2 466.5,554.1 471.6,554.1 471.6,560.2 466.5,560.2"/>
+  <polygon class="pl" points="498.2,560.2 498.2,540.6 503.3,540.6 503.3,560.2 498.2,560.2"/>
+  <polygon class="pl" points="530.0,560.2 530.0,553.4 535.0,553.4 535.0,560.2 530.0,560.2"/>
+  <polygon class="pl" points="561.7,560.2 561.7,558.7 566.8,558.7 566.8,560.2 561.7,560.2"/>
+  <polygon class="pl" points="593.4,560.2 593.4,559.4 598.5,559.4 598.5,560.2 593.4,560.2"/>
+  <polygon class="pl" points="625.2,560.2 625.2,555.5 630.2,555.5 630.2,560.2 625.2,560.2"/>
+  <polygon class="pl" points="656.9,560.2 656.9,553.5 662.0,553.5 662.0,560.2 656.9,560.2"/>
+  <polygon class="pl" points="688.6,560.2 688.6,551.8 693.7,551.8 693.7,560.2 688.6,560.2"/>
+  <polygon class="pl" points="720.4,560.2 720.4,557.2 725.4,557.2 725.4,560.2 720.4,560.2"/>
+  <polygon class="pl" points="752.1,560.2 752.1,556.9 757.2,556.9 757.2,560.2 752.1,560.2"/>
+  <polygon class="pl" points="783.8,560.2 783.8,554.9 788.9,554.9 788.9,560.2 783.8,560.2"/>
+  <polygon class="pl" points="815.6,560.2 815.6,555.0 820.6,555.0 820.6,560.2 815.6,560.2"/>
+  <polygon class="pl" points="847.3,560.2 847.3,544.4 852.4,544.4 852.4,560.2 847.3,560.2"/>
+  <polygon class="pl" points="879.0,560.2 879.0,554.2 884.1,554.2 884.1,560.2 879.0,560.2"/>
 </g>
-    <text class="pl" transform="translate(161.5,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">N</text>
-    <text class="pl" transform="translate(193.2,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">D</text>
-    <text class="pl" transform="translate(224.9,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J/F</text>
-    <text class="pl" transform="translate(256.7,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
-    <text class="pl" transform="translate(288.4,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
-    <text class="pl" transform="translate(320.1,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
+    <text class="pl" transform="translate(161.5,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">D</text>
+    <text class="pl" transform="translate(193.2,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J/F</text>
+    <text class="pl" transform="translate(224.9,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
+    <text class="pl" transform="translate(256.7,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
+    <text class="pl" transform="translate(288.4,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
+    <text class="pl" transform="translate(320.1,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J</text>
     <text class="pl" transform="translate(351.9,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J</text>
-    <text class="pl" transform="translate(383.6,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J</text>
-    <text class="pl" transform="translate(415.3,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
-    <text class="pl" transform="translate(447.1,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">S</text>
-    <text class="pl" transform="translate(478.8,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">O</text>
-    <text class="pl" transform="translate(510.5,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">N</text>
-    <text class="pl" transform="translate(542.3,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">D</text>
-    <text class="pl" transform="translate(574.0,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J/F</text>
-    <text class="pl" transform="translate(605.7,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
-    <text class="pl" transform="translate(637.5,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
-    <text class="pl" transform="translate(669.2,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
+    <text class="pl" transform="translate(383.6,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
+    <text class="pl" transform="translate(415.3,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">S</text>
+    <text class="pl" transform="translate(447.1,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">O</text>
+    <text class="pl" transform="translate(478.8,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">N</text>
+    <text class="pl" transform="translate(510.5,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">D</text>
+    <text class="pl" transform="translate(542.3,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J/F</text>
+    <text class="pl" transform="translate(574.0,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
+    <text class="pl" transform="translate(605.7,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
+    <text class="pl" transform="translate(637.5,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">M</text>
+    <text class="pl" transform="translate(669.2,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J</text>
     <text class="pl" transform="translate(700.9,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J</text>
-    <text class="pl" transform="translate(732.7,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J</text>
-    <text class="pl" transform="translate(764.4,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
-    <text class="pl" transform="translate(796.1,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">S</text>
-    <text class="pl" transform="translate(827.9,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">O</text>
-    <text class="pl" transform="translate(859.6,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">N</text>
-    <text class="pl" transform="translate(891.3,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">D</text>
-    <text class="pl" transform="translate(169.4,614.2)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2023</text>
-    <text class="pl" transform="translate(383.6,614.2)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2024</text>
-    <text class="pl" transform="translate(740.6,614.2)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2025</text>
+    <text class="pl" transform="translate(732.7,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">A</text>
+    <text class="pl" transform="translate(764.4,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">S</text>
+    <text class="pl" transform="translate(796.1,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">O</text>
+    <text class="pl" transform="translate(827.9,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">N</text>
+    <text class="pl" transform="translate(859.6,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">D</text>
+    <text class="pl" transform="translate(891.3,580.4)" dy="5.4" font-size="18.00" fill="#808080" stroke="none" text-anchor="middle">J/F</text>
+    <text class="pl" transform="translate(153.5,614.2)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2023</text>
+    <text class="pl" transform="translate(351.9,614.2)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2024</text>
+    <text class="pl" transform="translate(700.9,614.2)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2025</text>
+    <text class="pl" transform="translate(899.3,614.2)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="middle">2026</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly power generation capacity addition in China</text>
     <g stroke="none" stroke-width="0.9000"  >
       <polygon class="pl" points="929.0,206.0 929.0,183.3 957.9,183.3 957.9,206.0" fill="#EDB021"/>
