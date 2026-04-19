@@ -129,6 +129,15 @@ body.loading-active .selector-container {
 	display: inline-block;
 	margin-top: 0;
 }
+#toggle-updates-button::before {
+    content: "📅 ";
+    display: inline-block;
+}
+
+#toggle-notes-button::before {
+    content: "💡 ";
+    display: inline-block;
+}
 #controls-container {
 	text-align: center;
 }
