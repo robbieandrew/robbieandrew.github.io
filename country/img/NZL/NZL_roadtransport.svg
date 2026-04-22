@@ -40,13 +40,13 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,587.1 167.4,587.1 189.1,587.1 210.9,587.1 232.6,587.1 254.4,587.1 276.2,587.1 297.9,587.1 319.7,587.1 341.4,587.1 363.2,587.1 385.0,471.0 406.7,461.5 428.5,458.3 450.2,457.3 472.0,448.0 493.8,443.8 515.5,438.2 537.3,434.7 559.0,438.6 580.8,428.0 602.6,423.8 624.3,423.6 646.1,423.1 667.8,415.6 689.6,411.2 711.4,411.8 733.1,391.6 754.9,383.8 776.6,397.8 798.4,403.3 820.2,387.4 841.9,387.5 863.7,385.4" stroke="#7E2F8E" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,587.1 167.4,587.1 189.1,587.1 210.9,587.1 232.6,587.1 254.4,587.1 276.2,587.1 297.9,587.1 319.7,587.1 341.4,587.1 363.2,587.1 385.0,471.0 406.7,461.5 428.5,458.3 450.2,457.3 472.0,448.0 493.8,443.8 515.5,438.2 537.3,434.7 559.0,438.6 580.8,428.0 602.6,423.8 624.3,423.6 646.1,423.1 667.8,415.6 689.6,411.2 711.4,411.8 733.1,391.6 754.9,383.8 776.6,397.8 798.4,403.3 820.2,387.4 841.9,387.5 863.7,385.4 885.4,385.0" stroke="#7E2F8E" stroke-width="1.80" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="385.0,508.1 406.7,505.0 428.5,503.4 450.2,503.5 472.0,501.3 493.8,499.0 515.5,496.0 537.3,493.7 559.0,493.2 580.8,488.2 602.6,487.0 624.3,486.6 646.1,485.4 667.8,480.3 689.6,474.2 711.4,469.7 733.1,456.1 754.9,448.4 776.6,453.9 798.4,457.8 820.2,449.2 841.9,447.0 863.7,443.7" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="385.0,508.1 406.7,505.0 428.5,503.4 450.2,503.5 472.0,501.3 493.8,499.0 515.5,496.0 537.3,493.7 559.0,493.2 580.8,488.2 602.6,487.0 624.3,486.6 646.1,485.4 667.8,480.3 689.6,474.2 711.4,469.7 733.1,456.1 754.9,448.4 776.6,453.9 798.4,457.8 820.2,449.2 841.9,447.0 863.7,443.7 885.4,443.6" stroke="#D95319" stroke-width="1.80" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="145.6,232.2 167.4,228.3 189.1,212.6 210.9,195.2 232.6,172.6 254.4,138.3 276.2,127.7 297.9,110.0 319.7,98.5 341.4,87.7 363.2,76.5 385.0,266.4 406.7,251.2 428.5,235.8 450.2,221.4 472.0,226.4 493.8,222.9 515.5,216.1 537.3,222.0 559.0,226.3 580.8,222.5 602.6,230.8 624.3,239.5 646.1,244.1 667.8,238.8 689.6,228.2 711.4,221.5 733.1,209.4 754.9,212.1 776.6,218.9 798.4,265.7 820.2,258.9 841.9,274.5 863.7,267.4" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,232.2 167.4,228.3 189.1,212.6 210.9,195.2 232.6,172.6 254.4,138.3 276.2,127.7 297.9,110.0 319.7,98.5 341.4,87.7 363.2,76.5 385.0,266.4 406.7,251.2 428.5,235.8 450.2,221.4 472.0,226.4 493.8,222.9 515.5,216.1 537.3,222.0 559.0,226.3 580.8,222.5 602.6,230.8 624.3,239.5 646.1,244.1 667.8,238.8 689.6,228.2 711.4,221.5 733.1,209.4 754.9,212.1 776.6,218.9 798.4,265.7 820.2,258.9 841.9,274.5 863.7,267.4 885.4,270.2" stroke="#0072BD" stroke-width="1.80" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -112,7 +112,6 @@ text:hover + .dl_el {display:block;}
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#7E2F8E" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,385.4)" dy="6.5" font-size="21.60" fill="#7E2F8E" stroke="none">Heavy-duty trucks/buses</text>
     <g class="pl pll" fill="#7E2F8E" stroke="#7E2F8E" stroke-width="1.800">
       <circle cx="145.6" cy="587.1" r="2.7" />
       <circle cx="167.4" cy="587.1" r="2.7" />
@@ -148,12 +147,12 @@ text:hover + .dl_el {display:block;}
       <circle cx="820.2" cy="387.4" r="2.7" />
       <circle cx="841.9" cy="387.5" r="2.7" />
       <circle cx="863.7" cy="385.4" r="2.7" />
+      <circle cx="885.4" cy="385.0" r="2.7" />
     </g>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#D95319" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,443.7)" dy="6.5" font-size="21.60" fill="#D95319" stroke="none">Light-duty trucks</text>
     <g class="pl pll" fill="#D95319" stroke="#D95319" stroke-width="1.800">
       <circle cx="385.0" cy="508.1" r="2.7" />
       <circle cx="406.7" cy="505.0" r="2.7" />
@@ -178,12 +177,12 @@ text:hover + .dl_el {display:block;}
       <circle cx="820.2" cy="449.2" r="2.7" />
       <circle cx="841.9" cy="447.0" r="2.7" />
       <circle cx="863.7" cy="443.7" r="2.7" />
+      <circle cx="885.4" cy="443.6" r="2.7" />
     </g>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#0072BD" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,267.4)" dy="6.5" font-size="21.60" fill="#0072BD" stroke="none">Cars</text>
     <g class="pl pll" fill="#0072BD" stroke="#0072BD" stroke-width="1.800">
       <circle cx="145.6" cy="232.2" r="2.7" />
       <circle cx="167.4" cy="228.3" r="2.7" />
@@ -219,12 +218,16 @@ text:hover + .dl_el {display:block;}
       <circle cx="820.2" cy="258.9" r="2.7" />
       <circle cx="841.9" cy="274.5" r="2.7" />
       <circle cx="863.7" cy="267.4" r="2.7" />
+      <circle cx="885.4" cy="270.2" r="2.7" />
     </g>
   </g>
 </g>
+    <text class="pl" transform="translate(925.2,270.2)" dy="6.5" font-size="21.60" fill="#0072BD" stroke="none">Cars</text>
+    <text class="pl" transform="translate(925.2,443.6)" dy="6.5" font-size="21.60" fill="#D95319" stroke="none">Light-duty trucks</text>
+    <text class="pl" transform="translate(925.2,385.0)" dy="6.5" font-size="21.60" fill="#7E2F8E" stroke="none">Heavy-duty trucks/buses</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Emissions from road transport: New Zealand</text>
-    <text class="pl" transform="translate(130.0,81.7)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
-<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: <a href="https://unfccc.int/" target="_blank" style="fill:#BFBFBF">UNFCCC</a> (2025)   &#9679;   Data through 2023</text>
+    <text class="pl" transform="translate(130.0,81.6)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">CO<tspan dy="0.2em"><tspan style="font-size:70%">2</tspan></tspan><tspan dy="-0.2em"></tspan></text>
+<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">CICERO   &#9679;   Data: <a href="https://unfccc.int/" target="_blank" style="fill:#BFBFBF">UNFCCC</a> (2026)   &#9679;   Data through 2024</text>
 <g>
 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
