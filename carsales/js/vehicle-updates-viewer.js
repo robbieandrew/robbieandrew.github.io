@@ -17,7 +17,8 @@ async function fetchAndProcessUpdates() {
         let updates = lines.map(line => JSON.parse(line));
         
         // Sort in reverse order (latest update first)
-        updates.reverse(); 
+        updates.reverse();
+		updates = updates.slice(0, 30); // Only most recent 30
 
         const tableData = updates.map(item => {
             // Column 1: Geography
@@ -41,8 +42,29 @@ async function fetchAndProcessUpdates() {
 		// Expose update timestamps globally for use by sortCountries()
 		window.lastUpdatedData = {};
 		updates.forEach(item => {
-			window.lastUpdatedData[item.dataset] = new Date(item.timestamp).getTime();
+			const ts = new Date(item.timestamp).getTime();
+			if (!window.lastUpdatedData[item.dataset] || ts > window.lastUpdatedData[item.dataset]) {
+				window.lastUpdatedData[item.dataset] = ts;
+			}
 		});
+		
+		// Handle ACEA countries, for which there's only one update record in carupdates.json
+		const aceaTimestamp = window.lastUpdatedData['ACEA: Multiple European countries'];
+
+		if (aceaTimestamp) {
+			const dataResponse = await fetch('data.json');
+			const countries = await dataResponse.json();
+			
+			countries.forEach(country => {
+				const isAcea = country.sources.some(s => s.url.includes('acea.auto'));
+				if (isAcea && !window.lastUpdatedData[country.country]) {
+					window.lastUpdatedData[country.country] = aceaTimestamp;
+				}
+			});
+		}
+		
+		console.log('ACEA timestamp:', aceaTimestamp);
+		console.log('lastUpdatedData after ACEA:', window.lastUpdatedData);
 		
         return tableData;
 

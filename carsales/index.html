@@ -656,6 +656,7 @@ function sortCountries(method) {
       return (bevShareData[countryB] || 0) - (bevShareData[countryA] || 0);
     } else if (method === 'last-updated') {
       const tsA = (window.lastUpdatedData && window.lastUpdatedData[countryA]) || 0;
+	  console.log(`Looking up "${countryA}": ${tsA}`);
       const tsB = (window.lastUpdatedData && window.lastUpdatedData[countryB]) || 0;
       return tsB - tsA; // Most recently updated first
     } else {
@@ -669,6 +670,8 @@ function sortCountries(method) {
   countryDivs.forEach((div, index) => {
     div.style.order = index;
   });
+  
+  console.log('Sort applied:', countryDivs.map(d => `${d.getAttribute('data-country')}: order ${d.style.order}`));
 }
 
 let bevShareData = {};
@@ -779,7 +782,10 @@ window.addEventListener('countriesPopulated', function() {
 		if (window.lastUpdatedData) {
 			sortCountries(urlArgs.sort);
 		} else {
-			window.addEventListener('updatesLoaded', () => sortCountries(urlArgs.sort));
+			window.addEventListener('updatesLoaded', function() {
+				console.log('updatesLoaded fired, sorting now');
+				sortCountries(urlArgs.sort);
+			});
 		}
 	} else {
 		sortCountries(urlArgs.sort);
