@@ -1,6 +1,6 @@
 
 
-const NDJSON_FILE_PATH = 'https://robbieandrew.github.io/carsales/carupdates_30.json'; 
+const NDJSON_FILE_PATH = 'https://robbieandrew.github.io/carsales/carupdates_recent.json'; 
         
 /**
  * Fetches the NDJSON file and processes the data into table row elements.
