@@ -138,7 +138,7 @@ function toggleContent(contentId) {
 async function setupUpdateViewer() {
     // Renamed for clarity:
     const toggleUpdatesButton = document.getElementById('toggle-updates-button'); 
-    const toggleNotesButton = document.getElementById('toggle-notes-button'); // NEW button ID
+    const toggleNotesButton = document.getElementById('toggle-notes-button');
 
     const tableBody = document.getElementById('updates-tbody');
     
@@ -159,7 +159,7 @@ async function setupUpdateViewer() {
         tableBody.appendChild(tr);
     });
     
-    // 2. Set up the click handlers (updated)
+    // 2. Set up the click handlers
     toggleUpdatesButton.addEventListener('click', () => toggleContent('updates-container'));
     toggleNotesButton.addEventListener('click', () => toggleContent('notes-container'));
 	
