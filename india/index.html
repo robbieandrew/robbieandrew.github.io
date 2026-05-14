@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Remember to edit index_master.html not index.html!! -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@robbie_andrew">
+    <meta name="twitter:title" content="Indian energy and emissions data">
+    <meta name="twitter:description" content="A collection of frequently updated data and charts depicting the rapidly changing energy and emissions situation in India.">
+    <meta name="twitter:image" content="https://robbieandrew.github.io/india/img/CO2_all_2008.png">  
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" type="text/css" href="../css/feedback.css">
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <title>Indian energy and emissions data</title>
+  <script src="../js/html-include.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+
+    <div id="page-loader">
+      <div class="spinner"></div>
+      <span class="loader-text">Loading charts...</span>
+    </div>
+
+	<p>Jump to section: 
+	<a href="https://robbieandrew.github.io/india/index.html#activity" target="_self">Activity data</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#coal_imports" target="_self">Coal imports</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#capacity" target="_self">Power capacity</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#daily_power" target="_self">Daily power</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#state_power" target="_self">State-level</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#coal_stocks" target="_self">Coal stocks</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#climate_data" target="_self">Climate</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#vehicles" target="_self">Vehicle sales</a> | 
+	<a href="https://robbieandrew.github.io/india/index.html#emissions" target="_self">Emissions</a>
+	</p>
+	<h1 style="margin-bottom:0px">Indian energy and emissions data</h1>
+	<p style="margin-top:2px">Last update: 14 May 2026</p>
+
+	<div style="text-align:center;">
+	  <span onclick="toggleShow('citation')">Suggested citation: <span style="text-decoration:underline;">show</span></span> | <span onclick="toggleShow('academicarticle')">Peer-reviewed article: <span style="text-decoration:underline;">show</span></span>
+	
+	  <div id="citation" style="display:none;background-color:#ACE"><p style="margin-top:1px"><em>Andrew, R. (<span id="current-year"></span>): "Indian Energy and Emissions Data", available at: https://robbieandrew.github.io/india/ (accessed: <span id="current-date"></span>).</em></p></div>
+	  <div id="academicarticle" style="display:none;background-color:#ACE">
+	    <p style="margin-bottom:1px">These data were originally collated for preparation of the following article:</p>
+	    <p style="margin-top:1px"><em>Andrew, R. 2020: "Timely estimates of India's annual and monthly fossil CO<span class="subb">2</span> emissions", Earth System Science Data 12, 2411&ndash;2421, DOI: <a href="https://doi.org/10.5194/essd-12-2411-2020">10.5194/essd-12-2411-2020</a> (open access).</em></p>
+	  </div>
+	</div>
+	
+    <div class="pure-g" style="margin-left:auto;margin-right:auto;max-width:1100px;display:block">
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Coal production: Total</span>
+        <div>March 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">113.7</div><span style="font-size:20px;margin-bottom:18px">Mt</span></div>
+        <div><span><mark>Third-highest ever</mark></span></div>
+        <div><span style="font-weight:700">down -4.1%</span>&nbsp;<span>from March 2025</span></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Coal imports</span>
+        <div>March 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">20.2</div><span style="font-size:20px;margin-bottom:18px">Mt</span></div>
+        <div></div>
+        <div><span style="font-weight:700">down -2.9%</span>&nbsp;<span>from March 2025</span></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Solar power generation</span>
+        <div>April 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">19.0</div><span style="font-size:20px;margin-bottom:18px">TWh</span></div>
+        <div><span><mark>Highest ever</mark></span></div>
+        <div><span style="font-weight:700">up 27.3%</span>&nbsp;<span>from April 2025</span></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Wind power generation</span>
+        <div>April 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">6.4</div><span style="font-size:20px;margin-bottom:18px">TWh</span></div>
+        <div><span><mark>Highest ever for April</mark></span></div>
+        <div><span style="font-weight:700">up 5.9%</span>&nbsp;<span>from April 2025</span></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Power demand</span>
+        <div>April 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">154.0</div><span style="font-size:20px;margin-bottom:18px">TWh</span></div>
+        <div><span><mark>Second-highest ever</mark></span></div>
+        <div><span style="font-weight:700">up 4.4%</span>&nbsp;<span>from April 2025</span></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Non-fossil power generation</span>
+        <div>April 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">26.3</div><span style="font-size:20px;margin-bottom:18px">%</span></div>
+        <div><span><mark>Second-highest ever for April</mark></span></div>
+        <div><span style="font-weight:700">up 2.6pp</span>&nbsp;<span>from April 2025</span></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Diesel consumption</span>
+        <div>April 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">8.33</div><span style="font-size:20px;margin-bottom:18px">Mt</span></div>
+        <div><span><mark>Highest ever for April</mark></span></div>
+        <div><span style="font-weight:700">up 0.9%</span>&nbsp;<span>from April 2025</span></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-xxl-1-6 pure-u-lg-1-4 pure-u-md-1-3 pure-u-sm-1-2">
+        <div style="margin:15px">
+        <span style="font-weight:700">Population</span>
+        <div>May 2026</div>
+        <div style="display:flex;align-items:flex-end;webkit-box-align:end;flex-wrap:wrap"><div style="font-size:80px;font-weight:700">1.47</div><span style="font-size:20px;margin-bottom:18px"> billion</span></div>
+        <div><span><mark>Highest in the world</mark> (probably*)</span></div>
+        <div><span style="font-weight:700"></span>&nbsp;<span></span></div>
+        </div>
+      </div>
+    </div>
+
+	<p>The figures here show just some examples of the data present in the CSV files. See also <a href="https://doi.org/10.5281/zenodo.7781513">Indian energy: Archive materials</a>.</p>
+	<p>* The last time India counted its population in a census was in 2011; the next census is expected to commence in 2027.</p>
+	
+	<h2 id="activity">Monthly activity data</h2>
+	<p>211 monthly time series in one file.</p>
+	<p>These monthly data cover coal, oil, natural gas, cement production, and more, and are collated from many different sources as described in the JSON metadata file.</p>
+	<p><a href="data/India_monthly_data.csv" download>CSV data file</a> | <a href="data/India_monthly_metadata.json">JSON metadata file</a> | <a href="data/India_monthly_data.zip" download>Zip archive (both files)</a></p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/monthly_coal_full.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/monthly_petrcons_tonnes.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/quarterly_GDP_growth.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/generation_shares.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/monthly_gas.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/gas_consumption.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_gas_supply_demand.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_genchanges.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_petrcons_others.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_retail_fuel_prices.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/ethanol_blending_rate.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+
+	<h2 id="coal_imports">Monthly coal import data</h2>
+	<p>Monthly imports of coal by HS code and country (top 16 countries and total) in tonnes, from the Directorate General of Commercial Intelligence and Statistics (DGCIS) and Department of Commerce (DOC).</p>
+	<p><a href="data/india_coal_imports_data.csv" download>CSV data file</a> | <a href="data/india_coal_imports_metadata.json">JSON metadata file</a> | <a href="data/india_coal_imports_data.zip" download>Zip archive (both files)</a></p>
+	</div>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/coal_imports_DGCIS.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/coal_imports_DOC.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/coal_price.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>	
+	
+	<h2 id="capacity">National electricity capacity data</h2>
+	<p><a href="data/India_capacity_data.csv" download>CSV data file</a></p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/capacity.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/renewables_capacity_long.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/annual_capacity_additions_all.svg" type="image/svg+xml" class="fig"></object>
+		<p class="svg-button-group"><a class="simple-button" href="data/India_capacity_additions_annual_data.csv" download>Download data</a></p>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/annual_capacity_additions_all_FY.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/capacity_monthly.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/fossil_share.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/capacity_utilisation_MA.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/renewables_CUF_MA.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_renewables_underconstruction.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/outstandingdues.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_state_power_demand_monthly.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_state_power_demand_monthly_percap.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/FGD_MW.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/FGD_units.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/coal_import_share.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_merit.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+
+	<h2 id="daily_power">Daily electricity generation data</h2>
+	<p>There are two sources of daily electricity generation data. POSOCO covers the national grid, while CEA has a slightly broader coverage and therefore shows higher numbers. However, CEA data were not published in some periods during the pandemic.</p>
+	<p>Note that India's reporting typically uses units of MU and BU, short for "million units" and "billion units", respectively, where one unit is 1 kWh, and therefore 1 BU is 1 TWh.</p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <h2>GRID-INDIA (POSOCO)</h2>
+		<p>Generation by type and demand at regional level and demand at state level.</p>
+		<p>Data are available from 31 March 2013, although 25 days are missing because of missing or unreadable reports.</p>
+		<p><a href="data/POSOCO_data.csv" download>CSV data file</a> | <a href="data/POSOCO_metadata.json">JSON metadata file</a> | <a href="data/POSOCO_data.zip" download>Zip archive (both files)</a></p>
+		<object data="img/POSOCO_coal_total.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <h2>CEA</h2>
+		<p>Generation by type at national level.</p>
+		<p>Data are available from 1 April 2018, although 76 days are missing. Breakdown by renewable type is available from 1 July 2019, with 24 days missing.</p>
+		<p><a href="data/CEA_DGR_data.csv" download>CSV data file</a> | <a href="data/CEA_DGR_metadata.json">JSON metadata file</a> | <a href="data/CEA_DGR_data.zip" download>Zip archive (both files)</a></p>
+		<object data="img/CEA_DGR.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	</div>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/POSOCO_coal.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/POSOCO_natural_gas.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/POSOCO_hydro.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/POSOCO_wind.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/POSOCO_solar.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/POSOCO_total.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+	
+	
+	<h2 id="state_power">State electricity capacity and generation data</h2>
+	<p>See also <a href="https://zenodo.org/record/4542834">https://zenodo.org/record/4542834</a>.</p>
+	<p><a href="data/India_capacity_conventional_detail.csv" download>Conventional capacity CSV data file</a> | <a href="data/India_generation_conventional_detail.csv" download>Conventional generation CSV data file</a> | <a href="data/India_capacity_renewable_detail.csv" download>Renewables capacity CSV data file</a></p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/state_thermal_capacity.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/Gujarat_capacity.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+	
+	
+	
+	<h2 id="coal_stocks">CEA: Daily power station coal stocks</h2>
+	<p>The raw data include many gaps and a number of implausible spikes. The CSV file here includes both the raw data and a processed series that fills gaps and removes spikes. For details, see <a href="https://essd.copernicus.org/articles/12/2411/2020/essd-12-2411-2020-supplement.pdf#page=8">my paper from 2020</a>.</p>
+	<p><a href="data/stocks_linkage_daily_data.csv" download>CSV data file</a> | <a href="data/stocks_linkage_daily_metadata.json">JSON metadata file</a> | <a href="data/stocks_linkage_daily_data.zip" download>Zip archive (both files)</a></p>
+	<div class="pure-g">
+	  <div class="pure-u-1">
+		<object data="img/stocks_linkage_daily_interp.svg" type="image/svg+xml" class="fig"></object>
+	  </div>
+    </div>
+
+
+	<h2 id="climate_data">Climate data</h2>
+	<p>The <a href="https://www.imdpune.gov.in/lrfindex.php">India Meteorological Department</a> publishes daily 0.5&deg;x0.5&deg; grids of maximum daily temperatures over India starting in 2015 and 0.25&deg;x0.25&deg; grids of daily rainfall starting in 1901.</p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <a href="img/india_halfdeg.png"><img loading="lazy" class="pure-img" src="img/india_halfdeg.png" title="Click for high-res PNG"></a>
+	    </div>
+	  <div class="pure-u-1 pure-u-lg-1-2" id="vid_temperature">
+	    <!--<video class="pure-img" width="100%" autoplay muted loop controls><source src="img/india_halfdeg.mp4" type="video/mp4"></video>-->
+	    </div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <a href="img/india_rainfall.png"><img loading="lazy" class="pure-img" src="img/india_rainfall.png" title="Click for high-res PNG"></a>
+	    </div>
+	  <div class="pure-u-1 pure-u-lg-1-2" id="vid_rainfall">
+	    <!--<video class="pure-img" width="100%" autoplay muted loop controls><source src="img/india_rainfall.mp4" type="video/mp4"></video>-->
+	    </div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/india_monthly_rainfall.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+	
+	<h2 id="vehicles">New vehicle registrations</h2>
+	<p><a href="data/vahan_data.csv" download>CSV datafile</a></p>
+	<p>For other countries and more figure formats, view my <a href="https://robbieandrew.github.io/carsales/">global page</a>.</p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/india_vehicles_area_motorcar.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/india_vehicles_area_twowheeler.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/india_vehicles_area_threewheeler.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+	
+	<h2 id="coal_stocks">Monthly Aluminium Production</h2>
+	<div class="pure-g">
+	  <div class="pure-u-1">
+		<object data="img/aluminium_production.svg" type="image/svg+xml" class="fig"></object>
+	  </div>
+    </div>
+	
+	<h2 id="emissions">Monthly CO<span class="subb">2</span> emissions</h2>
+	<p>These are my estimates based on the activity data presented above and using the method described in detail in <a href="https://doi.org/10.5194/essd-12-2411-2020">the paper</a>.</br><a href="https://carbonmonitor.org">Carbon Monitor</a> also produce estimates, but their monthly totals are highly affected by large seasonal swings in the residential sector, based on an assumption that about half of household emissions are from use of fossil fuels for heating, which is contradicted by available evidence. When I remove the residential sector from their emissions estimates, they match the trend of my estimates much more closely.</p>
+	<p><a href="data/india_co2_emissions_data.csv" download>CSV data file</a> | <a href="data/india_co2_emissions_metadata.json">JSON metadata file</a> | <a href="data/india_co2_emissions_data.zip" download>Zip archive (both files)</a></p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+		<object data="img/CO2_all_2008.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+		<object data="img/INDIA_CICERO_CM.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	</div>
+
+	<h2>Cement production</h2>
+	<p>India publishes cement production monthly, but for estimating emissions it's the amount of cement clinker that is important, and national statistics are not kept. Here I've assembled data from a number of sources to try to constrain estimates on clinker production.</p>
+	<p>These data are annual, while monthly cement production statistics are included in the "Monthly activity data" file (above).</p>
+	<p>See also "Global CO<span class="subb">2</span> emissions from cement production" at <a href="https://doi.org/10.5281/zenodo.831454">https://doi.org/10.5281/zenodo.831454</a>.</p>
+	<p><a href="data/india_cement_data_all.xlsx" download>Excel data file</a></p>
+
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+</main>
+
+<button id="tally-feedback-btn" data-tally-open="nGV8gZ" data-tally-hide-title="1" data-tally-emoji-text="&#x1F44B;" data-tally-emoji-animation="wave" data-tally-auto-close="3000">
+  <span class="btn-emoji">&#x1F44B;</span>
+  <span class="btn-text">Two-second feedback!</span>
+</button>
+<script src="../js/feedback.js"></script>
+
+
+  
+<script>
+  document.getElementById("current-date").innerHTML =
+    new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
+  document.getElementById("current-year").innerHTML =
+    new Intl.DateTimeFormat('en-GB', { year: 'numeric' }).format(new Date());
+</script>
+<script>
+function toggleShow(divname) {
+  var x = document.getElementById(divname);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<script>
+// load videos (>5MB files) after the page load is otherwise complete
+window.addEventListener('load', () => {
+  const videos = [
+    { id: 'vid_temperature', src: 'img/india_halfdeg.mp4' },
+    { id: 'vid_rainfall', src: 'img/india_rainfall.mp4' }
+  ];
+
+  videos.forEach(item => {
+    const container = document.getElementById(item.id);
+
+    const video = document.createElement('video');
+    video.className = 'pure-img';
+    video.style.width = '100%';
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.controls = true;
+
+    const source = document.createElement('source');
+    source.src = item.src;
+    source.type = 'video/mp4';
+
+    video.appendChild(source);
+    container.appendChild(video);
+  });
+});
+</script>
+<script src="../js/findDataFiles.js"></script>
+<script src="../js/downloadSVGasPNG.js"></script>
+<script src="../js/svg-metadata.js"></script>
+<script src="../js/svg-handler.js"></script>
+<script src="../js/citation-modal.js"></script>
+
+</body>
+
+</html>

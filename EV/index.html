@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@robbie_andrew">
+    <meta name="twitter:title" content="Norway EV sales and related data">
+    <meta name="twitter:description" content="Frequently updated charts and data for the vehicle transition in Norway.">
+    <meta name="twitter:image" content="https://robbieandrew.github.io/EV/img/bilsalg.png">  
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Norway EV sales data</title>
+  <script src="../js/html-include.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="../css/general.css">
+</head>
+
+<body>
+  <main>
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+
+	<h1>Norway EV sales and related data</h1>
+
+	<h2>New vehicle sales</h2>
+	<p>These data have been collated from data from Statens vegvesen (SVV) hosted by <a href="https://hotell.difi.no/?dataset=vegvesen/kjoretoyinfo2">Digitaliseringsdirektoratet</a> and from <a href="https://ofv.no" target="_blank">ofv.no</a>.</p>
+	<p>Monthly data on breakdown of engine types of new and used vehicle registrations in Norway from 1990: <a href="data/bilsalg_data.csv">CSV data file</a></p>
+	<p>For data on other countries, see my <a href="https://robbieandrew.github.io/carsales/">Collected vehicle registration data</a> page.</p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/bilsalg.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/bilsalg_annual.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	</div>
+	  <p>Deliveries to Norway of Teslas occur every third month, leading to very spikey sales statistics. Smoothing over three months gives a clearer picture of the trend.</p>	
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/bilsalg_abs.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/bilsalg_abs_3ma.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/bilsalg_abs_stacked.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/new_and_used_with_shares.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/salesbymfr.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/salesbymfr_share.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/carsperperson.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/weight_by_drivetrain_smoothed.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/weight_by_make_all.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/naeringsandel.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/number_by_make_with_inset.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+
+
+	<div style="max-width:900px;margin-left:auto;margin-right:auto">
+		<p>Note that the headline data from OFV used here include hydrogen vehicles in with BEVs: the number of hydrogen vehicles is very small, with an all-time high of 14 in December 2017.</p>
+		<p>For statistics on the car fleet, see <a href="https://elbil.no/om-elbil/elbilstatistikk/elbilbestand/">elbil.no's website</a></p>
+		<p>For daily stats on EV sales by model, see <a href="https://elbilstatistikk.no/">elbilstatistikk.no</a></p>
+		<p>For some insight into how EV incentives received an early boost in Norway, see <a href="https://twitter.com/robbie_andrew/status/1347866954569232384">this Twitter thread</a>.</p>
+	</div>
+	
+	<h2 style="margin-bottom:0">An early history of Norway's interest in electric vehicles</h2>
+	<div style="max-width: 800px; margin: 0 auto">
+	<p style="margin: 0">Largely based on the book "Elbil på norsk" by Asphjell, Asphjell, and Kvisle, 2013, but some of the story is <a href="https://ems.dimu.org/file/0136LRyafEJC?filename=NVM%2000-G-09319-Artikkel%20om%20Think%20i%20%C3%A5rbok%202019.pdf">reproduced here</a></p>
+	<ul>
+      <li>1973: Lars Ringdal, founder of plastic company Bakelittfabrikken AS in Aurskog, built his first electric car with a motor from a washing machine and a glass-fibre body</li>
+      <li>1989: Bakelittfabrikken applies for funds for a pilot study to look at the opportunity to develop an entirely Norwegian city car by combining its plastic production technology with an aluminium frame produced by Norsk Hydro</li>
+      <li>1990: Norway exempts electric vehicles from import tariffs</li>
+      <li>1990: With positive results from the pilot study, the company PIVCO AS was founded (PIVCO: Personal Independent Vehicle Company)</li>
+      <li>1993: First complete prototype tested: PIV1</li>
+      <li>1994: 12 PIV2's are presented at the Winter Olympics in Lillehammer, raising considerable interest</li>
+      <li>1994/95: BART (Bay Area Rapid Transportation in San Francisco) orders 50 PIV3's</li>
+      <li>1995: Norway exempts electric vehicles from annual registration charges</li>
+      <li>1996: Charging stations installed at 13 hotels in central Oslo along with 6 petrol stations</li>
+      <li>1996: Norway exempts electric vehicles from road tolls</li>
+      <li>1997: PIVCO switches to steel chassis for strength required to meet regulatory testing</li>
+      <li>1998: PIVCO's cars rebranded as TH!NK</li>
+      <li>1999: Norway makes parking in public parking areas free for electric vehicles</li>
+      <li>1999: Ford Motor Company buys 51% of newly established Think Nordic AS, realising it would be cheaper than developing their own technology to meet California's toughened rules</li>
+      <li>2001: Norway exempts electric vehicles from sales tax</li>
+      <li>2002: US car companies win in court against the Californian regulations, and a few days later Ford announced its intention to sell Think</li>
+      <li>2003: Think is sold to Swiss company Kamkorp</li>
+      <li>2006: After several tough years, Think is sold back into Norwegian hands</li>
+      <li>2006: Martin Eberhard, founder of Tesla, visits Think and suggests cooperation, but the Think team decline, believing that Tesla's plans were unlikely to bear fruit</li>
+      <li>2008: Think presents the concept car Ox, with five seats, 200km range, glass roof, over-the-air software updates and three screens</li>
+      <li>2008: Global Financial Crisis leads directly to a difficult financial situation for Think</li>
+	  <li>2011: Nissan Leaf arrives</li>
+      <li>2011: Think goes bankrupt</li>
+	</ul>
+	</div>
+
+	<h2>Electric vehicle incentives in Norway</h2>
+	<div class="pure-u-1 pure-u-lg-1-2">
+			<div><video style="margin:0" width="100%" autoplay controls loop>
+			<source src="img/elbiler.mp4" type="video/mp4">
+			Your browser does not support the video tag. Please upgrade!</video></div>
+	</div>
+
+	<div style="max-width:900px;margin-left:auto;margin-right:auto">
+	<p>(The following information is extracted verbatim from <a href="https://www.toi.no/getfile.php/1368504-1630928367/Publikasjoner/T%C3%98I%20rapporter/2021/1846-2021/1846-2021_Summary.pdf" target="_blank">Fridstrøm & Østli, 2021</a>)</p>
+<p>As of 2021 in Norway, there are a dozen different taxes, subsidies and regulations with a  bearing on automobile technology choice and climate footprint: </p>
+<ul>
+<li>VAT, with exemptions for zero exhaust emission vehicles (ZEVs), i.e. battery and fuel cell electric cars (BEVs, FCEVs)</li>
+<li>One-off registration tax, calculated as the sum of three variable components, based on curb weight, CO2 and NOX emissions, with ZEVs totally exempt and plug-in hybrid electric vehicles (PHEVs) subject to a reduced weight component </li>
+<li>Annual ownership (circulation) tax, with lower rates for ZEVs  </li>
+<li>Fuel tax, calculated as the sum of a CO2 component and a road use component  </li>
+<li>Road toll, with ZEVs exempt or enjoying at least 50 percent discount  </li>
+<li>Reregistration tax on used vehicle transactions, with ZEVs exempt </li>
+<li>Ferry fares, differentiated between ZEVs and internal combustion engine (ICE) vehicles  </li>
+<li>Parking fees, likewise differentiated  </li>
+<li>Income tax on private use of company cars, likewise differentiated  </li>
+<li>Government support for fast charging and hydrogen refueling facilities  </li>
+<li>Free parking and recharging for BEVs in public parking lots </li>
+<li>Bus lanes open to ZEVs, with some exceptions </li>
+</div>
+
+	<h2>Distance travelled (Source: <a href="https://www.ssb.no/en/transport-og-reiseliv/landtransport/statistikk/kjorelengder">SSB</a>)</h2>
+	<p>It's one thing to have a high fraction of EVs in sales of new cars, but how much are those cars displacing travel in cars with internal combustion engines? Distance travelled statistics go some way to answering that question. Note, for example, that the average car with an electric motor is driven further each year than the average car with only an internal combustion engine.</p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/kjørelengder_lines.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/kjørelengder.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-3">
+	    <object data="img/avg_dist_driven.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+
+	<h2>Road transport's energy consumption</h2>
+	<p>While the car fleet's emissions change gradually as the fleet becomes more electric, changes in the share of biofuel in the market can have more immediate effects.</p>
+	<p>In many countries biofuels are subsidised to make them more competitive with fossil fuels. In Norway this takes the form of exemption from the CO<span class="subb">2</span> tax that fossil fuels face as well as a requirement that biofuels meet a specific share of fuels sold for road transport.</p>
+	<p>Note that here 'biofuels' refers to liquid bioenergy used as transport fuel (e.g. biodiesel), while 'bioenergy' includes all energy carriers from (recent) biological sources. Palm oil residues were reclassified from 'waste' to 'byproduct' from 1 January 2017, and diesel made directly from palm oil was <a href="https://www.tu.no/artikler/norge-forst-ut-forbyr-salg-av-biodrivstoff-med-palmeolje-fra-2020/454861">effectively banned</a> from 1 January 2020.</p>
+	<div class="pure-g">
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/feedstock_origins.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/feedstocks.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/krav.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/NORenergy.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/NORenergy_road.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/strømforbruk.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/strømforbruk_med_total.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/avoided_emissions.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/NORenergy_bioenergy.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/fuelsales.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+	  <div class="pure-u-1 pure-u-lg-1-2">
+	    <object data="img/energistasjoner.svg" type="image/svg+xml" class="fig"></object>
+		</div>
+    </div>
+
+	<h2>Selected reports and studies</h2>
+	<h3>Motor vehicle demographics (2022)</h3>
+	<p>Lasse Fridstrøm, <a href="https://www.toi.no/getfile.php?mmfileid=72976">TØI Report 1888/2022</a> (in Norwegian)</p>
+	<p>Demographic concepts and methods may help understand the dynamics of the motor vehicle population, or its inertia. Relying on a stock-flow cohort model of the Norwegian vehicle fleet, we generate, for seven different vehicle categories, age pyramids, survival curves, and life expectancy estimates, along with algorithms predicting vehicle stocks, aggregate annual mileage, energy consumption, emissions to air, and end-of-life scrapping. Distinguishing among eleven different powertrains, the model may serve as a decision support tool for long term energy and climate policy formulation.</p>
+	
+	<h3>Slow, fast or extra fast: Exploring decarbonization pathways for road transportation in Norway (2021)</h3>
+	<p>Lasse Fridstrøm and Vegard Østli, <a href="https://www.toi.no/getfile.php?mmfileid=68510">TØI Report 1846/2021</a> (in Norwegian)</p>
+	<p>Relying on a stock-flow projection model of the Norwegian motor vehicle fleet, we explore certain pathways for decarbonization of domestic road transportation. In our most optimistic scenario, CO2 emissions on the road will come down by 36 percent between 2005 and 2030, before taking account of biofuel use. To achieve a 50 per cent reduction, a biofuel blend-in of 27 percent in 2030 will suffice. The most pessimistic scenario suggests a mere 20 percent emissions cut between 2005 and 2030. In this case, to halve emissions, the biofuel blend-in would have to increase to 47 percent in 2030. A most important incentive is the exemption from value added tax (VAT) for battery electric vehicles (BEVs). Reintroducing VAT on BEVs will reduce their sales by an estimated 30 to 40 percent in 2030.</p>
+	
+	<h3>Who goes electric? Characteristics of electric car ownership in Norway 2011-2017 (2020)</h3>
+	<p>Elisabeth Fevang et al., <a href="https://www.toi.no/getfile.php?mmfileid=53659">TØI Report 1780/2020</a> (in English)</p>
+	<p>This report characterizes owners of electric vehicles and other passenger cars in Norway based on data from matched administrative registers containing persons and households covering the period 2011-2017. This is the first time such data has been used in a research project on electric vehicles and policies to stimulate purchase and ownership of electric vehicles. We find that electric vehicle owners are more likely to be families with children, live in central areas and have high income and higher education compared to other car owners. Those who face road tolls on their commute to work are also more likely to have an electric vehicle. Over time, owners of electric vehicles have become more similar to other vehicle owners. Those who buy an electric vehicle are more likely than other car buyers to keep their old car, but also this difference has decreased over time.</p>
+
+	<h3>Reforming Motor Vehicle Taxation in Norway (2019)</h3>
+	<p>Lasse Fridstrøm, <a href="https://www.toi.no/getfile.php?mmfileid=51124">TØI Report 1708/2019</a> (in Norwegian)</p>
+	<p>The unprecedented speed at which Norwegian automobile buyers have embraced battery electric technology has taken observers, policy makers, stakeholders and even protagonists by surprise. Vehicle electrification in Norway is brought about, not by generous subsidization, but by charging stiff taxes on conventional cars. Zero emission passenger cars are wholly exempt of registration tax, annual ownership tax, fuel tax and even value added tax. They are partly exempt of road toll, ferry fares, parking fees and income tax on private use of company cars. As businesses and consumers respond to these fiscal incentives, the tax revenue dwindles, and the market correction effect of fuel tax is more or less obliterated. To curb the negative external effects of tomorrow’s rising road use demand, a brand new vehicle taxation system is needed. A satellite based system of marginal cost road pricing would do the trick, improving on the present motor vehicle taxation system on at least nine different accounts.</p>
+
+	<h2>Links to data</h2>
+	<div style="text-align:center">
+	<p>Let me know if you have other links that would fit here.</p>
+	<ul style="display: inline-block;text-align: left">
+	<li><a href="https://alternative-fuels-observatory.ec.europa.eu/transport-mode/road/norway/vehicles-and-fleet">alternative-fuels-observatory.ec.europa.eu</a>: EU statistics</li>
+	<li><a href='https://www.trafa.se/vagtrafik/fordon/'>www.trafa.se</a>: Swedish statistics</li>
+	<li><a href="https://eu-evs.com/">eu-evs.com</a>: Site connected to APIs of various European countries</li>
+	<li><a href="https://www.vegvesen.no/fag/fokusomrader/baerekraftig-mobilitet/nullutslippsmalene/">www.vegvesen.no</a>: Official Norwegian statistics</li>
+	<li><a href="https://vahan.parivahan.gov.in/vahan4dashboard">vahan.parivahan.gov.in</a>: Official Indian vehicles registration statistics (currently not available outside of India)</li>
+	<li><a href="https://www.anl.gov/esia/reference/light-duty-electric-drive-vehicles-monthly-sales-updates-historical-data">www.anl.gov</a>: US data collated by Argonne National Laboratory</li>
+	<li><a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2010002501">statcan.gc.ca</a>: Official Canadian statistics</li>
+	<li><a href="https://www.transport.govt.nz/statistics-and-insights/fleet-statistics">www.transport.govt.nz</a>: Official New Zealand statistics</li>
+	<li><a href="http://data.cpcaauto.com/FuelMarket">cpcaauto.com</a>: China Passenger Car Association</li>
+	<li><a href="https://www.oxfordenergy.org/wpcms/wp-content/uploads/2024/02/Presentation-China-EVs-Feb-2024.pdf">oxfordenergy.org</a>: Analysis of China's EV market through 2023</li>
+	</ul>
+	</div>
+	
+    <div id="header" data-include="https://robbieandrew.github.io/inc/header.html"><p>&nbsp;</p></div>
+  </main>
+
+<script src="../js/findDataFiles.js"></script>
+<script src="../js/downloadSVGasPNG.js"></script>
+<script src="../js/svg-metadata.js"></script>
+<script src="../js/svg-handler.js"></script>
+
+</body>
+
+</html>

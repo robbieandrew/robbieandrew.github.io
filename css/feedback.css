@@ -1,0 +1,90 @@
+#tally-feedback-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  z-index: 10000;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  
+  /* BASE STATE (Mobile): Small Circle */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+
+  /* Entrance Animation Initial State */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+}
+
+/* Make it visible for both Mobile and Desktop */
+#tally-feedback-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Hide text by default (Mobile) */
+.btn-text {
+  display: none;
+  opacity: 0;
+  max-width: 0;
+  transition: opacity 0.6s ease, max-width 0.8s ease, margin 0.8s ease;
+}
+
+/* DESKTOP OVERRIDES */
+@media (min-width: 601px) {
+  #tally-feedback-btn {
+    /* Start as a Pill on Desktop */
+    width: var(--btn-expanded-width, 230px); /* 230px as fallback */
+	min-width: unset; 
+    max-width: unset;
+    border-radius: 6px;
+    padding: 0 16px;
+  }
+
+  #tally-feedback-btn .btn-text {
+    display: inline-block;
+    opacity: 1;
+    max-width: 250px;
+    margin-left: 8px;
+  }
+
+  /* DESKTOP AUTO-SHRUNK STATE */
+  #tally-feedback-btn.is-shrunk {
+    width: 40px;
+    min-width: 40px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  #tally-feedback-btn.is-shrunk .btn-text {
+    opacity: 0;
+    max-width: 0;
+    margin: 0;
+  }
+
+  /* Re-expand on hover (Desktop Only) */
+  #tally-feedback-btn.is-shrunk:hover {
+    width: var(--btn-expanded-width, 230px);
+    min-width: unset;
+    border-radius: 6px;
+    padding: 0 16px;
+  }
+  #tally-feedback-btn.is-shrunk:hover .btn-text {
+    opacity: 1;
+    max-width: 250px;
+    margin-left: 8px;
+  }
+}

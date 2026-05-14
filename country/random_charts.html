@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <title>Country page</title>
+  <script src="../js/html-include.js"></script>
+  <link rel="stylesheet" href="css/country.css">
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  
+#progress-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #3498db;
+  transition: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+#progress-bar {
+  height: 4px; /* Progress bar height */
+  background-color: #4caf50;
+}
+
+#svg-container {
+  flex: 1; /* This takes up the remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent scrollbars */
+  margin-top: 4px; /* Space for the progress bar */
+}
+
+#svg-viewer {
+  max-height: 100%; /* Ensure the SVG scales within the container */
+  max-width: 100%;  /* Maintain aspect ratio */
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+#footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#footer p {
+  margin: 0;
+}
+
+#footer a {
+  display: block;
+  margin-top: 5px;
+}
+
+#qr-code {
+  margin-left: 15px; /* Space between the text and the QR code */
+  width: 80px;
+  height: 80px;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+  <main>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+<div id="page-container">
+  <div id="svg-container">
+    <object id="svg-viewer" type="image/svg+xml" data=""></object>
+  </div>
+
+  <div id="footer">
+    <div id="footer-content">
+      <p>All charts available on Robbie Andrew's web page:</br><a href="https://robbieandrew.github.io/country/" target="_blank">https://robbieandrew.github.io/country/</a></p>
+      <img src="./qr-code.png" alt="QR Code to Robbie Andrew's page" id="qr-code">
+    </div>
+  </div>
+</div>
+
+
+
+  </main>
+
+<script>
+const GITHUB_API_BASE = "https://api.github.com/repos/robbieandrew/robbieandrew.github.io/contents/country/img";
+const RAW_BASE = "https://robbieandrew.github.io/country/img/";
+const LIST_URL = "https://robbieandrew.github.io/country/svg-list.txt";
+const DISPLAY_DURATION = 20000;
+
+let svgList = [];
+let currentIndex = -1;
+
+function startProgressBar() {
+  const bar = document.getElementById("progress-bar");
+  bar.style.transition = "none";
+  bar.style.width = "0%";
+
+  // Trigger a reflow to reset the transition
+  void bar.offsetWidth;
+
+  bar.style.transition = `width ${DISPLAY_DURATION}ms linear`;
+  bar.style.width = "100%";
+}
+
+async function fetchSubfolders() {
+  const response = await fetch(GITHUB_API_BASE);
+  const data = await response.json();
+  return data
+    .filter(entry => entry.type === "dir")
+    .map(folder => folder.name);
+}
+
+async function fetchSVGsFromFolder(folderName) {
+  const url = `${GITHUB_API_BASE}/${folderName}`;
+  const response = await fetch(url);
+  if (!response.ok) return [];
+
+  const files = await response.json();
+  return files
+    .filter(file => file.name.endsWith(".svg"))
+    .map(file => `${RAW_BASE}${folderName}/${file.name}`);
+}
+
+async function loadSVGListFromFile() {
+  const response = await fetch(LIST_URL);
+  if (!response.ok) {
+    console.error("Failed to load SVG list file.");
+    return;
+  }
+
+  const text = await response.text();
+  svgList = text
+    .split("\n")
+    .map(line => line.trim())
+    .filter(line => line.length > 0 && !line.startsWith("#")) // skip blanks/comments
+    .map(path => RAW_BASE + path);
+}
+
+function showRandomSVG() {
+  if (svgList.length === 0) return;
+  let newIndex;
+  do {
+    newIndex = Math.floor(Math.random() * svgList.length);
+  } while (newIndex === currentIndex && svgList.length > 1);
+  currentIndex = newIndex;
+  document.getElementById("svg-viewer").data = svgList[currentIndex];
+  startProgressBar();
+}
+
+async function init() {
+  await loadSVGListFromFile();
+  if (svgList.length === 0) {
+    console.error("No SVGs found.");
+    return;
+  }
+  showRandomSVG();
+  setInterval(showRandomSVG, DISPLAY_DURATION);
+}
+
+init();
+</script>
+
+</body>
+
+</html>

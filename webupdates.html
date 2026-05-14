@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent updates on robbieandrew.github.io</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: calc(100% - 40px);
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f0f8ff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Event</th>
+				<th>Folder</th>
+                <th>Files</th>
+                <th>Page</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <script>
+        async function loadNDJSON() {
+//            const response = await fetch('webupdates.json');
+			// Use a "cache-busting query parameter". The query parameter essentially tells the browser not to use the cached version because it uses the entire URL including the query parameter when looking in the cache.
+			const response = await fetch(`webupdates.json?t=${new Date().getTime()}`);
+            const text = await response.text();
+            const lines = text.trim().split('\n');
+            const tbody = document.getElementById('table-body');
+            
+			let lastDate = null; // Track the last processed date
+
+			lines.reverse().forEach(line => {
+				const record = JSON.parse(line);                
+				const fullDate = new Date(record.timestamp);
+				const currentDate = fullDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+				// Insert separator row if date changes
+				if (lastDate && lastDate !== currentDate) {
+					const separatorRow = document.createElement('tr');
+					separatorRow.innerHTML = `<td colspan="5" style="background-color: #f0f0f0; height: 7px;"></td>`;
+					tbody.appendChild(separatorRow);
+				}
+
+				const row = document.createElement('tr');
+                
+                const timestamp = document.createElement('td');
+                timestamp.textContent = new Date(record.timestamp).toLocaleString('en-GB', {day: 'numeric',month: 'long',year: 'numeric',hour: '2-digit',minute: '2-digit',second: '2-digit'});
+                row.appendChild(timestamp);
+                
+                const event = document.createElement('td');
+                event.textContent = record.event;
+                row.appendChild(event);
+                
+                const folder = document.createElement('td');
+				// Display folder if available, otherwise leave blank
+                folder.textContent = record.folder ? record.folder : ""; 
+                row.appendChild(folder);
+
+                const files = document.createElement('td');
+                files.innerHTML = record.files.map(file => {
+                    const filename = file.split('/').pop(); // Extract filename from path
+                    return `<div><a href="${file}" target="_blank">${filename}</a></div>`;
+                }).join('');
+                row.appendChild(files);
+                
+                const url = document.createElement('td');
+                url.innerHTML = `<a href="${record.URL}" target="_blank">${record.URL}</a>`;
+                row.appendChild(url);
+                
+                tbody.appendChild(row);
+				
+				lastDate = currentDate; // Update last processed date
+            });
+        }
+        
+        loadNDJSON();
+    </script>
+</body>
+</html>

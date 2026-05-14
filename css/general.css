@@ -1,0 +1,228 @@
+h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:auto;margin-right:auto;max-width:1000px;display:block;}
+
+.toast-message {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.fig {max-width:800px;display:block;margin-left:auto;margin-right:auto;}
+.subb {font-size: 70%;line-height:normal;}
+.supp {font-size: 70%;line-height:normal;position:relative;top:-3px;}  
+
+.chart-metadata {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.simple-button {
+  display: inline-block;
+  margin: 1px 1px 0 1px;
+  padding: 4px 6px 3px 6px;
+  background-color: #CEECFF;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.6em;
+  border-radius: 4px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.simple-button:hover {
+  background-color: #93D4FF;
+}
+
+@media (hover: hover) and (pointer: fine) {
+/* Only enable this hover effect on devices that aren't touch */
+	.figure-group {
+	  transition: background-color 0.3s ease;
+	  border: 1px solid transparent;
+	  box-sizing: border-box;
+	  border-radius: 8px;
+	}
+	.figure-group:has(.svg-button-group a:hover) {
+	  background-color: #F4F4F4;
+	  border: 1px solid #333;
+	}
+	.figure-group:has(.img-button-group a:hover) {
+	  background-color: #F4F4F4;
+	  border: 1px solid #333;
+	}
+}
+
+.discreet-btn {
+  /* Positions the button relative to the viewport */
+  position: absolute;
+  top: 10px; /* Distance from the top of the window */
+  right: 10px; /* Distance from the right of the window */
+  
+  /* Styling to make it discreet */
+  background-color: #f0f0f0; /* Light gray background */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Spacing inside the button */
+  font-size: 12px; /* Smaller font size */
+  cursor: pointer; /* Changes mouse to a pointer on hover */
+  
+  /* Hides the button until the user hovers over the area */
+  opacity: 0.1; 
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+/* Hover effect */
+.discreet-btn:hover {
+  opacity: 1; /* Button becomes fully visible on hover */
+}
+
+/* Add these styles to general.css */
+.dropdown-wrapper {
+  position: relative; /* Essential for dropdown positioning */
+  display: inline-block;
+  margin: 1px;
+}
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #CEECFF;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+  top: 100%; /* Position right below the button */
+  left: 0;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin: 0;
+}
+
+.dropdown-wrapper.open .dropdown-content {
+  display: block; /* Show when 'open' class is toggled */
+}
+
+.dropdown-item {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block; /* Make each link take a full line */
+  font-size: 0.6em; 
+  /* Remove the border from simple-button */
+  /*border: none; */
+}
+
+.dropdown-item:hover {
+  background-color: #93D4FF;
+}
+
+/* ----- Modal Overlay ("please cite me" popup) ----- */
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 10000; /* Higher than headers */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  animation: modal-fade-in 0.3s ease;
+}
+
+/* Modal Box */
+.modal-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 550px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: inherit;
+  color: #333;
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-close:hover { color: #000; }
+
+.citation-box {
+  background: #f0f4f8;
+  padding: 12px;
+  border-left: 4px solid #0078e7; /* PureCSS primary blue */
+  margin: 15px 0;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+/* ----- Loading spinner ----- */
+#page-loader {
+  position: fixed;
+  z-index: 20000;
+  display: none; 
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 12px 24px; 
+  border-radius: 30px;
+  border: 2px solid #0078e7; 
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  align-items: center;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.spinner {
+  /* 50% larger than previous 18px */
+  width: 28px;
+  height: 28px;
+  
+  /* Thicker borders for visibility */
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0078e7; 
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite; /* Slightly faster spin feels more "active" */
+  margin-right: 15px;
+}
+
+.loader-text {
+  /* Larger and bolder text */
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
