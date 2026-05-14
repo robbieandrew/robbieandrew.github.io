@@ -660,7 +660,7 @@ function sortCountries(method) {
 let bevShareData = {};
 
 // Fetch BEV share data
-fetch('https://robbieandrew.github.io/trucksales/data/latest_bev_share.json')
+fetch(`https://robbieandrew.github.io/${DATASET}/data/latest_bev_share.json`)
   .then(response => response.json())
   .then(data => {
     bevShareData = data.reduce((acc, item) => {
