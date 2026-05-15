@@ -2,6 +2,13 @@ let tweetMap = new Map();
 let currentViewTweets = []; // Store whatever is currently in the timeline
 const ASSET_BASE = "https://raw.githubusercontent.com/robbieandrew/twitter_assets/main/";
 
+function formatDate(createdAt) {
+    const date = new Date(createdAt);
+    const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    const day = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    return `${time} · ${day}`;
+}
+
 async function init() {
     const response = await fetch('tweets.json');
     const tweets = await response.json();
@@ -145,7 +152,7 @@ function renderTimeline(tweetsToRender, pushToHistory = false) {
             <div class="content">
                 <p>${linkifyText(tweet.full_text)}</p>
                 ${mediaHtml}
-                <div class="date">${tweet.created_at}</div>
+                <div class="date">${formatDate(tweet.created_at)}</div>
             </div>
         `;
         container.appendChild(tweetDiv);
@@ -232,7 +239,7 @@ function renderThreadView(threadArray, pushToHistory = true) {
                 <div class="content">
                     <p>${linkifyText(tweet.full_text)}</p>
                     ${mediaHtml}
-                    <div class="date">${tweet.created_at}</div>
+                    <div class="date">${formatDate(tweet.created_at)}</div>
                 </div>
                 <div class="stats">
                     <div class="stat-item"><strong>${tweet.retweet_count || 0}</strong> Retweets</div>
