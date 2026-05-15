@@ -1,0 +1,182 @@
+:root {
+    --twitter-blue: #1DA1F2;
+    --bg-gray: #E6ECF0;
+    --border-gray: #E1E8ED;
+    --thread-line: #CCD6DD;
+    --text-black: #14171A;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--text-black);
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.top-nav {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-gray);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border-gray);
+    background: #F5F8FA;
+}
+
+/* Individual Tweet Card */
+.tweet {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid var(--border-gray);
+    margin-bottom: 1px; /* Overlap borders like the old timeline */
+    position: relative;
+}
+
+.tweet.is-thread-child::before {
+    content: "";
+    position: absolute;
+    left: 30px; /* Aligns with avatar center */
+    top: -15px;
+    bottom: 100%;
+    width: 2px;
+    background-color: var(--thread-line);
+}
+
+.graph-img {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border-gray);
+    margin-top: 10px;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #657786;
+    margin-top: 5px;
+}
+
+/* Add this to your style.css */
+.tweet {
+    transition: opacity 0.2s ease-in-out;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* The container for the whole thread */
+.thread-wrapper {
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid var(--border-gray);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Connect the tweets with a line */
+.thread-tweet {
+    position: relative;
+    padding-left: 60px; /* Space for the vertical line */
+}
+
+.thread-tweet::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--thread-line);
+}
+
+/* Remove the line from the very last tweet in the thread */
+.thread-tweet:last-child::before {
+    display: none;
+}
+
+/* Style for external OEmbed tweets */
+.external-tweet {
+    padding: 10px;
+    background: #f8f9fa;
+}
+
+.is-clickable {
+    cursor: pointer;
+}
+
+.is-clickable:hover {
+    background-color: #f5f8fa;
+}
+
+.back-btn {
+    background: var(--twitter-blue);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.external-tweet {
+    border-bottom: 1px solid var(--border-gray);
+}
+
+/* The Classic Twitter Logo - Using an SVG placeholder */
+.logo-box {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background: #ccc; 
+    object-fit: cover; /* Keeps the aspect ratio of your photo */
+    display: block;    /* Prevents weird spacing issues */
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats {
+    display: flex;
+    margin-top: 12px;
+    border-top: 1px solid var(--border-gray);
+    padding-top: 10px;
+    font-size: 0.9em;
+    color: #657786;
+}
+
+.stat-item {
+    margin-right: 20px;
+}
+
+.stat-item strong {
+    color: var(--text-black);
+}
