@@ -117,6 +117,46 @@ function linkifyText(text) {
     return text;
 }
 
+/**
+ * Renders a single tweet as a DOM element.
+ * @param {object} tweet - The raw tweet object.
+ * @param {object} options
+ * @param {boolean} options.inThread - Applies thread styling and removes click-to-expand.
+ */
+function renderTweet(tweet, { inThread = false } = {}) {
+    const tweetDiv = document.createElement('div');
+    tweetDiv.className = inThread ? 'tweet thread-tweet' : 'tweet is-clickable';
+    if (!inThread) tweetDiv.setAttribute('data-id', tweet.id_str);
+
+    let mediaHtml = '';
+    if (tweet.extended_entities?.media) {
+        tweet.extended_entities.media.forEach(m => {
+            const imageUrl = getAssetUrl(tweet.id_str, m.media_url_https);
+            mediaHtml += `<img src="${imageUrl}" class="graph-img">`;
+        });
+    }
+
+    tweetDiv.innerHTML = `
+        <div class="tweet-header">
+            <img src="img/avatar.jpg" class="avatar" alt="profile">
+            <div class="user-info">
+                <strong>Robbie Andrew</strong>
+                <span>@robbie_andrew</span>
+            </div>
+        </div>
+        <div class="content">
+            <p>${linkifyText(tweet.full_text)}</p>
+            ${mediaHtml}
+            <div class="date">${formatDate(tweet.created_at)}</div>
+        </div>
+        <div class="stats">
+            <div class="stat-item"><strong>${tweet.retweet_count || 0}</strong> Retweets</div>
+            <div class="stat-item"><strong>${tweet.favorite_count || 0}</strong> Likes</div>
+        </div>
+    `;
+    return tweetDiv;
+}
+
 function renderTimeline(tweetsToRender, pushToHistory = false) {
     currentViewTweets = tweetsToRender;
     const container = document.getElementById('tweet-container');
@@ -127,35 +167,7 @@ function renderTimeline(tweetsToRender, pushToHistory = false) {
     }
 
     tweetsToRender.forEach(t => {
-        const tweet = t.tweet || t;
-        const tweetDiv = document.createElement('div');
-
-        tweetDiv.className = 'tweet is-clickable';
-        tweetDiv.setAttribute('data-id', tweet.id_str);
-
-        let mediaHtml = '';
-        if (tweet.extended_entities && tweet.extended_entities.media) {
-            tweet.extended_entities.media.forEach(m => {
-                const imageUrl = getAssetUrl(tweet.id_str, m.media_url_https);
-                mediaHtml += `<img src="${imageUrl}" class="graph-img">`;
-            });
-        }
-
-        tweetDiv.innerHTML = `
-            <div class="tweet-header">
-                <img src="img/avatar.jpg" class="avatar" alt="profile">
-                <div class="user-info">
-                    <strong>Robbie Andrew</strong>
-                    <span>@robbie_andrew</span>
-                </div>
-            </div>
-            <div class="content">
-                <p>${linkifyText(tweet.full_text)}</p>
-                ${mediaHtml}
-                <div class="date">${formatDate(tweet.created_at)}</div>
-            </div>
-        `;
-        container.appendChild(tweetDiv);
+        container.appendChild(renderTweet(t.tweet || t));
     });
 }
 
@@ -217,35 +229,8 @@ function renderThreadView(threadArray, pushToHistory = true) {
             tweetDiv.className = 'external-tweet';
             tweetDiv.innerHTML = item.html;
         } else {
-            tweetDiv.className = 'tweet thread-tweet';
-            const tweet = item.tweet || item;
-
-            let mediaHtml = '';
-            if (tweet.extended_entities?.media) {
-                tweet.extended_entities.media.forEach(m => {
-                    const imageUrl = getAssetUrl(tweet.id_str, m.media_url_https);
-                    mediaHtml += `<img src="${imageUrl}" class="graph-img">`;
-                });
-            }
-
-            tweetDiv.innerHTML = `
-                <div class="tweet-header">
-                    <img src="img/avatar.jpg" class="avatar" alt="profile">
-                    <div class="user-info">
-                        <strong>Robbie Andrew</strong>
-                        <span>@robbie_andrew</span>
-                    </div>
-                </div>
-                <div class="content">
-                    <p>${linkifyText(tweet.full_text)}</p>
-                    ${mediaHtml}
-                    <div class="date">${formatDate(tweet.created_at)}</div>
-                </div>
-                <div class="stats">
-                    <div class="stat-item"><strong>${tweet.retweet_count || 0}</strong> Retweets</div>
-                    <div class="stat-item"><strong>${tweet.favorite_count || 0}</strong> Likes</div>
-                </div>
-            `;
+            wrapper.appendChild(renderTweet(item.tweet || item, { inThread: true }));
+            return;
         }
         wrapper.appendChild(tweetDiv);
     });
