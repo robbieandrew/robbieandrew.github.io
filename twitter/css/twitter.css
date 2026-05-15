@@ -33,6 +33,7 @@ body {
     border-radius: 20px;
     border: 1px solid var(--border-gray);
     background: #F5F8FA;
+    box-sizing: border-box;
 }
 
 /* Individual Tweet Card */
@@ -40,14 +41,14 @@ body {
     background: #fff;
     padding: 15px;
     border: 1px solid var(--border-gray);
-    margin-bottom: 1px; /* Overlap borders like the old timeline */
+    margin-bottom: 1px;
     position: relative;
 }
 
 .tweet.is-thread-child::before {
     content: "";
     position: absolute;
-    left: 30px; /* Aligns with avatar center */
+    left: 30px;
     top: -15px;
     bottom: 100%;
     width: 2px;
@@ -67,7 +68,16 @@ body {
     margin-top: 5px;
 }
 
-/* Add this to your style.css */
+/* Links inside tweet text */
+.content p a {
+    color: var(--twitter-blue);
+    text-decoration: none;
+}
+
+.content p a:hover {
+    text-decoration: underline;
+}
+
 .tweet {
     transition: opacity 0.2s ease-in-out;
     animation: fadeIn 0.3s;
@@ -90,7 +100,7 @@ body {
 /* Connect the tweets with a line */
 .thread-tweet {
     position: relative;
-    padding-left: 60px; /* Space for the vertical line */
+    padding-left: 60px;
 }
 
 .thread-tweet::before {
@@ -103,7 +113,6 @@ body {
     background: var(--thread-line);
 }
 
-/* Remove the line from the very last tweet in the thread */
 .thread-tweet:last-child::before {
     display: none;
 }
@@ -112,6 +121,7 @@ body {
 .external-tweet {
     padding: 10px;
     background: #f8f9fa;
+    border-bottom: 1px solid var(--border-gray);
 }
 
 .is-clickable {
@@ -133,11 +143,6 @@ body {
     font-weight: bold;
 }
 
-.external-tweet {
-    border-bottom: 1px solid var(--border-gray);
-}
-
-/* The Classic Twitter Logo - Using an SVG placeholder */
 .logo-box {
     display: flex;
     justify-content: center;
@@ -155,10 +160,11 @@ body {
     height: 48px;
     border-radius: 50%;
     margin-right: 12px;
-    background: #ccc; 
-    object-fit: cover; /* Keeps the aspect ratio of your photo */
-    display: block;    /* Prevents weird spacing issues */
+    background: #ccc;
+    object-fit: cover;
+    display: block;
 }
+
 .user-info {
     display: flex;
     flex-direction: column;

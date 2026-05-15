@@ -11,7 +11,9 @@ async function init() {
     });
 
     const defaultTweets = tweets.slice(0, 20);
-    renderTimeline(defaultTweets); 
+    // Set the initial history state so popstate can restore the timeline view
+    history.replaceState({ view: 'timeline' }, '', '');
+    renderTimeline(defaultTweets);
 }
 
 async function getExternalTweetEmbed(tweetId) {
@@ -34,7 +36,6 @@ async function fetchFullThread(targetTweetId) {
     let currentId = targetTweetId;
 
     // 1. CLIMB UP (Find all parents)
-    // This stays mostly the same, but we use a loop to ensure we get to the very top
     while (currentId) {
         let tweet = tweetMap.get(currentId);
         if (tweet) {
@@ -43,7 +44,7 @@ async function fetchFullThread(targetTweetId) {
         } else {
             const externalHtml = await getExternalTweetEmbed(currentId);
             ancestors.unshift({ isExternal: true, html: externalHtml });
-            break; 
+            break;
         }
     }
 
@@ -56,48 +57,75 @@ async function fetchFullThread(targetTweetId) {
         let replies = Array.from(tweetMap.values())
             .filter(t => t.in_reply_to_status_id_str === parentId)
             .sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
-        
+
         replies.forEach(reply => {
             descendants.push(reply);
-            queue.push(reply.id_str); // Add this reply to the queue to find ITS replies
+            queue.push(reply.id_str);
         });
     }
 
-    // Combine them (Removing the duplicate targetTweetId which is in both ancestors and descendants)
-    // We use a Map or Set to ensure unique IDs
     const fullConversation = [...ancestors, ...descendants];
     const uniqueMap = new Map();
     fullConversation.forEach(t => uniqueMap.set(t.id_str || 'ext-' + Math.random(), t));
-    
+
     return Array.from(uniqueMap.values());
 }
 
 function getAssetUrl(tweetId, originalUrl) {
-    // 1. Get the original filename (e.g., "GhZhNxaWoAA-MGf.jpg")
     const originalFilename = originalUrl.split('/').pop();
-    
-    // 2. Reconstruct the archive's filename format: [TweetID]-[Filename]
     const archiveFilename = `${tweetId}-${originalFilename}`;
-    
-    // 3. Get the first three characters for the subfolder (e.g., "187")
     const prefix = archiveFilename.substring(0, 3);
-    
-    // 4. Return the full path to your GitHub repo
     return `${ASSET_BASE}${prefix}/${archiveFilename}`;
 }
 
-function renderTimeline(tweetsToRender) {
-	currentViewTweets = tweetsToRender; // Save the state!
+/**
+ * Converts plain-text URLs in tweet text into clickable <a> tags.
+ * Also handles @mentions and #hashtags.
+ */
+function linkifyText(text) {
+    // Escape any existing HTML entities first to prevent XSS
+    text = text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+    // URLs (http/https)
+    text = text.replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+    );
+
+    // @mentions
+    text = text.replace(
+        /@(\w+)/g,
+        '<a href="https://twitter.com/$1" target="_blank" rel="noopener noreferrer">@$1</a>'
+    );
+
+    // #hashtags
+    text = text.replace(
+        /#(\w+)/g,
+        '<a href="https://twitter.com/hashtag/$1" target="_blank" rel="noopener noreferrer">#$1</a>'
+    );
+
+    return text;
+}
+
+function renderTimeline(tweetsToRender, pushToHistory = false) {
+    currentViewTweets = tweetsToRender;
     const container = document.getElementById('tweet-container');
     container.innerHTML = '';
+
+    if (pushToHistory) {
+        history.pushState({ view: 'timeline' }, '', '');
+    }
 
     tweetsToRender.forEach(t => {
         const tweet = t.tweet || t;
         const tweetDiv = document.createElement('div');
-        
+
         tweetDiv.className = 'tweet is-clickable';
         tweetDiv.setAttribute('data-id', tweet.id_str);
-        
+
         let mediaHtml = '';
         if (tweet.extended_entities && tweet.extended_entities.media) {
             tweet.extended_entities.media.forEach(m => {
@@ -106,7 +134,6 @@ function renderTimeline(tweetsToRender) {
             });
         }
 
-        // ADDED: The header with the avatar image link
         tweetDiv.innerHTML = `
             <div class="tweet-header">
                 <img src="img/avatar.jpg" class="avatar" alt="profile">
@@ -116,7 +143,7 @@ function renderTimeline(tweetsToRender) {
                 </div>
             </div>
             <div class="content">
-                <p>${tweet.full_text}</p>
+                <p>${linkifyText(tweet.full_text)}</p>
                 ${mediaHtml}
                 <div class="date">${tweet.created_at}</div>
             </div>
@@ -129,113 +156,107 @@ function renderTimeline(tweetsToRender) {
 let debounceTimer;
 
 document.getElementById('search-bar').addEventListener('input', (e) => {
-    // 1. Stop any timer currently running from a previous keystroke
     clearTimeout(debounceTimer);
 
     const term = e.target.value.toLowerCase();
 
-    // 2. Immediate Reset: If they clear the box, show the default latest tweets
     if (term.length === 0) {
         renderTimeline(Array.from(tweetMap.values()).slice(0, 20));
         return;
     }
 
-    // 3. The "Min 3" Barrier: If it's too short, do nothing and wait
     if (term.length < 3) return;
 
-    // 4. The Debounce: Wait 300ms before doing the "heavy lifting"
     debounceTimer = setTimeout(() => {
-        console.log(`Searching for: ${term}...`); // Optional: to see it in action in the console
-        
         const filtered = Array.from(tweetMap.values())
             .filter(t => t.full_text.toLowerCase().includes(term));
-            
+
         renderTimeline(filtered);
-    }, 300); 
+    }, 300);
 });
 
 init();
 
 document.getElementById('tweet-container').addEventListener('click', async (e) => {
-    // Find the closest parent with the class 'tweet'
+    // Don't trigger thread view when clicking a link inside a tweet
+    if (e.target.tagName === 'A') return;
+
     const tweetEl = e.target.closest('.tweet');
-    
+
     if (tweetEl && tweetEl.classList.contains('is-clickable')) {
         const tweetId = tweetEl.getAttribute('data-id');
-        
-        // Show a loading state so you know it's working
-        tweetEl.style.opacity = '0.5'; 
-        
+        tweetEl.style.opacity = '0.5';
+
         const fullThread = await fetchFullThread(tweetId);
         renderThreadView(fullThread);
     }
 });
 
 function renderThreadView(threadArray, pushToHistory = true) {
-	// If this is a fresh click, push a state to the browser history
     if (pushToHistory) {
-        history.pushState({ view: 'thread' }, 'Thread', '');
+        history.pushState({ view: 'thread' }, '', '');
     }
 
     const container = document.getElementById('tweet-container');
     container.innerHTML = '<button onclick="history.back()" class="back-btn">← Back</button>';
-
 
     const wrapper = document.createElement('div');
     wrapper.className = 'thread-wrapper';
 
     threadArray.forEach(item => {
         const tweetDiv = document.createElement('div');
-        
+
         if (item.isExternal) {
-            // This renders the HTML we got from the X.com OEmbed API
             tweetDiv.className = 'external-tweet';
             tweetDiv.innerHTML = item.html;
-		} else {
-			tweetDiv.className = 'tweet thread-tweet';
-			const tweet = item.tweet || item;
-			
-			let mediaHtml = '';
-			if (tweet.extended_entities?.media) {
-				tweet.extended_entities.media.forEach(m => {
-					const imageUrl = getAssetUrl(tweet.id_str, m.media_url_https);
-					mediaHtml += `<img src="${imageUrl}" class="graph-img">`;
-				});
-			}
+        } else {
+            tweetDiv.className = 'tweet thread-tweet';
+            const tweet = item.tweet || item;
 
-			tweetDiv.innerHTML = `
-				<div class="tweet-header">
-					<img src="img/avatar.jpg" class="avatar" alt="profile">
-					<div class="user-info">
-						<strong>Robbie Andrew</strong>
-						<span>@robbie_andrew</span>
-					</div>
-				</div>
-				<div class="content">
-					<p>${tweet.full_text}</p>
-					${mediaHtml}
-					<div class="date">${tweet.created_at}</div>
-				</div>
-				<div class="stats">
-					<div class="stat-item"><strong>${tweet.retweet_count || 0}</strong> Retweets</div>
-					<div class="stat-item"><strong>${tweet.favorite_count || 0}</strong> Likes</div>
-				</div>
-			`;
-		}
+            let mediaHtml = '';
+            if (tweet.extended_entities?.media) {
+                tweet.extended_entities.media.forEach(m => {
+                    const imageUrl = getAssetUrl(tweet.id_str, m.media_url_https);
+                    mediaHtml += `<img src="${imageUrl}" class="graph-img">`;
+                });
+            }
+
+            tweetDiv.innerHTML = `
+                <div class="tweet-header">
+                    <img src="img/avatar.jpg" class="avatar" alt="profile">
+                    <div class="user-info">
+                        <strong>Robbie Andrew</strong>
+                        <span>@robbie_andrew</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <p>${linkifyText(tweet.full_text)}</p>
+                    ${mediaHtml}
+                    <div class="date">${tweet.created_at}</div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item"><strong>${tweet.retweet_count || 0}</strong> Retweets</div>
+                    <div class="stat-item"><strong>${tweet.favorite_count || 0}</strong> Likes</div>
+                </div>
+            `;
+        }
         wrapper.appendChild(tweetDiv);
     });
 
     container.appendChild(wrapper);
-    
-    // Trigger X.com's widget script to turn the blockquote into a real tweet
+
     if (window.twttr) {
         window.twttr.widgets.load();
     }
 }
 
 window.addEventListener('popstate', (event) => {
-    // If there is no state (meaning we are back at the home/search results)
-    if (!event.state || event.state.view !== 'thread') {
+    const state = event.state;
+    if (!state || state.view === 'timeline') {
+        // Going back to timeline (or forward to it)
         renderTimeline(currentViewTweets);
     }
+    // If state.view === 'thread', the browser's forward button was pressed
+    // but we don't re-fetch the thread here since we don't cache it.
+    // The back button inside the thread view handles this gracefully.
 });
