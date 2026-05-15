@@ -108,13 +108,10 @@ function getAssetUrl(tweetId, originalUrl) {
  * (e.g. a #fragment in an href) are never double-processed.
  */
 function linkifyText(text, urlEntities = [], mediaEntities = []) {
-    // Build a lookup from t.co URL -> { expanded_url, display_url }
     const urlMap = {};
     urlEntities.forEach(u => { urlMap[u.url] = u; });
-    // Media t.co links should be suppressed — the image renders below the text
     mediaEntities.forEach(m => { urlMap[m.url] = { display_url: 'pic.', expanded_url: '' }; });
 
-    // Helper: apply @mention and #hashtag linkification to a plain-text segment only
     function linkifySegment(segment) {
         segment = segment.replace(
             /@(\w+)/g,
@@ -127,42 +124,51 @@ function linkifyText(text, urlEntities = [], mediaEntities = []) {
         return segment;
     }
 
-    // Split text into alternating [plain, url, plain, url, ...] segments
-    // so we only run mention/hashtag replacement on the plain parts
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     const parts = [];
     let lastIndex = 0;
     let match;
 
-    // Escape HTML in the full raw text first
     const escaped = text
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
 
     while ((match = urlRegex.exec(escaped)) !== null) {
-        // Plain text before this URL
         if (match.index > lastIndex) {
             parts.push(linkifySegment(escaped.slice(lastIndex, match.index)));
         }
 
-        // The URL itself
-        const url = match[1];
-        const entity = urlMap[url];
-        if (entity) {
-            if (entity.display_url.startsWith('pic.')) {
-                // Suppress media attachment links entirely
-            } else {
-                parts.push(`<a href="${entity.expanded_url}" target="_blank" rel="noopener noreferrer">${entity.display_url}</a>`);
-            }
-        } else {
-            parts.push(`<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
-        }
+		const url = match[1];
+		const entity = urlMap[url];
+
+		if (entity) {
+			if (entity.display_url.startsWith('pic.')) {
+				// Suppress media attachment links
+			} else {
+				let finalUrl = entity.expanded_url;
+				
+				// Regex to catch both twitter.com and x.com for your username
+				// The [1] group captures the Tweet ID
+				const internalTweetMatch = finalUrl.match(/(?:twitter\.com|x\.com)\/robbie_andrew\/status\/(\d+)/i);
+
+				if (internalTweetMatch) {
+					const internalTweetId = internalTweetMatch[1];
+					// Point to your archive with the tweet parameter
+					const localUrl = `?tweet=${internalTweetId}`;
+					
+					// We remove target="_blank" so it loads in the same "app" instance
+					parts.push(`<a href="${localUrl}">${entity.display_url}</a>`);
+				} else {
+					// Standard external link
+					parts.push(`<a href="${finalUrl}" target="_blank" rel="noopener noreferrer">${entity.display_url}</a>`);
+				}
+			}
+		}
 
         lastIndex = match.index + match[0].length;
     }
 
-    // Any remaining plain text after the last URL
     if (lastIndex < escaped.length) {
         parts.push(linkifySegment(escaped.slice(lastIndex)));
     }
@@ -298,9 +304,30 @@ document.getElementById('search-bar').addEventListener('input', (e) => {
 init();
 
 document.getElementById('tweet-container').addEventListener('click', async (e) => {
-    // Don't trigger thread view when clicking a link inside a tweet
-    if (e.target.tagName === 'A') return;
+    // 1. Check if the user clicked an <a> tag (or something inside one)
+    const link = e.target.closest('a');
+    
+    if (link) {
+        const href = link.getAttribute('href');
+        
+        // If it's one of your internal archive links (e.g., ?tweet=1575435285852217344)
+        if (href && href.startsWith('?tweet=')) {
+            e.preventDefault(); // Stop the browser from doing a full page reload
+            
+            const urlParams = new URLSearchParams(href);
+            const tweetId = urlParams.get('tweet');
+            
+            // Load the thread view immediately
+            const fullThread = await fetchFullThread(tweetId);
+            renderThreadView(fullThread, true, tweetId);
+            return; // Exit here so we don't trigger the "expand" logic below
+        }
+        
+        // If it's a standard external link (X.com, etc.), do nothing and let the browser follow it
+        return; 
+    }
 
+    // 2. Existing "Expand Thread" logic for clicking the tweet body
     const tweetEl = e.target.closest('.tweet');
 
     if (tweetEl && tweetEl.classList.contains('is-clickable')) {
