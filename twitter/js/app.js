@@ -1,4 +1,7 @@
 let tweetMap = new Map();
+let currentPageSource = []; // The full filtered/sorted list we're paginating through
+let currentOffset = 0;      // How many tweets we've shown so far
+const PAGE_SIZE = 20;
 let currentViewTweets = []; // Store whatever is currently in the timeline
 const ASSET_BASE = "https://raw.githubusercontent.com/robbieandrew/twitter_assets/main/";
 
@@ -17,20 +20,20 @@ async function init() {
         tweetMap.set(item.tweet.id_str, item.tweet);
     });
 
-    const defaultTweets = tweets.slice(0, 20);
-    currentViewTweets = defaultTweets; // So Back always returns to a sensible timeline
+    const allTweets = tweets.map(item => item.tweet);
 
     const params = new URLSearchParams(window.location.search);
     const tweetId = params.get('tweet');
 
     if (tweetId && tweetMap.has(tweetId)) {
         // Arrived via a direct link — load the thread without pushing a new history entry
+        currentViewTweets = allTweets.slice(0, PAGE_SIZE); // So Back returns to a sensible timeline
         history.replaceState({ view: 'thread', tweetId }, '', `?tweet=${tweetId}`);
         const fullThread = await fetchFullThread(tweetId);
         renderThreadView(fullThread, false);
     } else {
         history.replaceState({ view: 'timeline' }, '', '');
-        renderTimeline(defaultTweets);
+        renderTimeline(allTweets);
     }
 }
 
@@ -169,7 +172,9 @@ function renderTweet(tweet, { inThread = false } = {}) {
 }
 
 function renderTimeline(tweetsToRender, pushToHistory = false) {
-    currentViewTweets = tweetsToRender;
+    currentPageSource = tweetsToRender;
+    currentViewTweets = [];
+    currentOffset = 0;
     const container = document.getElementById('tweet-container');
     container.innerHTML = '';
 
@@ -177,9 +182,30 @@ function renderTimeline(tweetsToRender, pushToHistory = false) {
         history.pushState({ view: 'timeline' }, '', '');
     }
 
-    tweetsToRender.forEach(t => {
-        container.appendChild(renderTweet(t.tweet || t));
+    appendTweets(PAGE_SIZE, container);
+}
+
+function appendTweets(count, container) {
+    container = container || document.getElementById('tweet-container');
+    // Remove existing load-more button if present
+    const existing = container.querySelector('.load-more-btn');
+    if (existing) existing.remove();
+
+    const slice = currentPageSource.slice(currentOffset, currentOffset + count);
+    slice.forEach(t => {
+        const tweet = t.tweet || t;
+        currentViewTweets.push(tweet);
+        container.appendChild(renderTweet(tweet));
     });
+    currentOffset += slice.length;
+
+    if (currentOffset < currentPageSource.length) {
+        const btn = document.createElement('button');
+        btn.className = 'load-more-btn';
+        btn.textContent = `Load more (${currentPageSource.length - currentOffset} remaining)`;
+        btn.addEventListener('click', () => appendTweets(PAGE_SIZE));
+        container.appendChild(btn);
+    }
 }
 
 

@@ -186,3 +186,22 @@ body {
 .stat-item strong {
     color: var(--text-black);
 }
+
+.load-more-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid var(--border-gray);
+    border-top: none;
+    color: var(--twitter-blue);
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s;
+}
+
+.load-more-btn:hover {
+    background: #f5f8fa;
+}
