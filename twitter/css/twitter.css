@@ -205,3 +205,16 @@ body {
 .load-more-btn:hover {
     background: #f5f8fa;
 }
+
+/* Thread indicator badge */
+.thread-badge {
+    margin-left: auto;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: var(--twitter-blue);
+    border: 1px solid var(--twitter-blue);
+    border-radius: 10px;
+    padding: 2px 8px;
+    white-space: nowrap;
+    opacity: 0.8;
+}

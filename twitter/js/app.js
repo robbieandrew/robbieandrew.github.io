@@ -101,20 +101,30 @@ function getAssetUrl(tweetId, originalUrl) {
 
 /**
  * Converts plain-text URLs in tweet text into clickable <a> tags.
+ * Uses the tweet's entities.urls to replace t.co shortlinks with real display URLs.
  * Also handles @mentions and #hashtags.
  */
-function linkifyText(text) {
-    // Escape any existing HTML entities first to prevent XSS
+function linkifyText(text, urlEntities = []) {
+    // Build a lookup from t.co URL -> { expanded_url, display_url }
+    const urlMap = {};
+    urlEntities.forEach(u => { urlMap[u.url] = u; });
+
+    // Escape HTML entities first to prevent XSS
     text = text
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
 
-    // URLs (http/https)
-    text = text.replace(
-        /(https?:\/\/[^\s]+)/g,
-        '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
-    );
+    // URLs (http/https) — replace t.co links with their expanded form if available
+    text = text.replace(/(https?:\/\/[^\s]+)/g, (match) => {
+        const entity = urlMap[match];
+        if (entity) {
+            // Media attachment URLs (pic.x.com) are redundant — the image renders below
+            if (entity.display_url.startsWith('pic.')) return '';
+            return `<a href="${entity.expanded_url}" target="_blank" rel="noopener noreferrer">${entity.display_url}</a>`;
+        }
+        return `<a href="${match}" target="_blank" rel="noopener noreferrer">${match}</a>`;
+    });
 
     // @mentions
     text = text.replace(
@@ -129,6 +139,18 @@ function linkifyText(text) {
     );
 
     return text;
+}
+
+/**
+ * Returns true if this tweet has replies in the archive,
+ * or is itself a reply to another of our own tweets.
+ */
+function getThreadInfo(tweet) {
+    const hasReplies = Array.from(tweetMap.values())
+        .some(t => t.in_reply_to_status_id_str === tweet.id_str);
+    const isReply = !!tweet.in_reply_to_status_id_str;
+    const isOwnReply = isReply && tweetMap.has(tweet.in_reply_to_status_id_str);
+    return { hasReplies, isReply, isOwnReply };
 }
 
 /**
@@ -150,6 +172,17 @@ function renderTweet(tweet, { inThread = false } = {}) {
         });
     }
 
+    const urlEntities = tweet.entities?.urls || [];
+
+    // Thread indicator (only on timeline, not inside a thread view)
+    let threadBadgeHtml = '';
+    if (!inThread) {
+        const { hasReplies, isOwnReply } = getThreadInfo(tweet);
+        if (hasReplies || isOwnReply) {
+            threadBadgeHtml = '<span class="thread-badge">Thread</span>';
+        }
+    }
+
     tweetDiv.innerHTML = `
         <div class="tweet-header">
             <img src="img/avatar.jpg" class="avatar" alt="profile">
@@ -157,9 +190,10 @@ function renderTweet(tweet, { inThread = false } = {}) {
                 <strong>Robbie Andrew</strong>
                 <span>@robbie_andrew</span>
             </div>
+            ${threadBadgeHtml}
         </div>
         <div class="content">
-            <p>${linkifyText(tweet.full_text)}</p>
+            <p>${linkifyText(tweet.full_text, urlEntities)}</p>
             ${mediaHtml}
             <div class="date">${formatDate(tweet.created_at)}</div>
         </div>
@@ -217,7 +251,7 @@ document.getElementById('search-bar').addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
 
     if (term.length === 0) {
-        renderTimeline(Array.from(tweetMap.values()).slice(0, 20));
+        renderTimeline(Array.from(tweetMap.values()));
         return;
     }
 
