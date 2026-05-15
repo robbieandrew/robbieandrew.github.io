@@ -18,9 +18,20 @@ async function init() {
     });
 
     const defaultTweets = tweets.slice(0, 20);
-    // Set the initial history state so popstate can restore the timeline view
-    history.replaceState({ view: 'timeline' }, '', '');
-    renderTimeline(defaultTweets);
+    currentViewTweets = defaultTweets; // So Back always returns to a sensible timeline
+
+    const params = new URLSearchParams(window.location.search);
+    const tweetId = params.get('tweet');
+
+    if (tweetId && tweetMap.has(tweetId)) {
+        // Arrived via a direct link — load the thread without pushing a new history entry
+        history.replaceState({ view: 'thread', tweetId }, '', `?tweet=${tweetId}`);
+        const fullThread = await fetchFullThread(tweetId);
+        renderThreadView(fullThread, false);
+    } else {
+        history.replaceState({ view: 'timeline' }, '', '');
+        renderTimeline(defaultTweets);
+    }
 }
 
 async function getExternalTweetEmbed(tweetId) {
@@ -207,13 +218,14 @@ document.getElementById('tweet-container').addEventListener('click', async (e) =
         tweetEl.style.opacity = '0.5';
 
         const fullThread = await fetchFullThread(tweetId);
-        renderThreadView(fullThread);
+        renderThreadView(fullThread, true, tweetId);
     }
 });
 
-function renderThreadView(threadArray, pushToHistory = true) {
+function renderThreadView(threadArray, pushToHistory = true, tweetId = null) {
     if (pushToHistory) {
-        history.pushState({ view: 'thread' }, '', '');
+        const url = tweetId ? `?tweet=${tweetId}` : '';
+        history.pushState({ view: 'thread', tweetId }, '', url);
     }
 
     const container = document.getElementById('tweet-container');
@@ -242,13 +254,13 @@ function renderThreadView(threadArray, pushToHistory = true) {
     }
 }
 
-window.addEventListener('popstate', (event) => {
+window.addEventListener('popstate', async (event) => {
     const state = event.state;
     if (!state || state.view === 'timeline') {
-        // Going back to timeline (or forward to it)
         renderTimeline(currentViewTweets);
+    } else if (state.view === 'thread' && state.tweetId) {
+        // Forward navigation back into a thread — re-fetch and render it
+        const fullThread = await fetchFullThread(state.tweetId);
+        renderThreadView(fullThread, false, state.tweetId);
     }
-    // If state.view === 'thread', the browser's forward button was pressed
-    // but we don't re-fetch the thread here since we don't cache it.
-    // The back button inside the thread view handles this gracefully.
 });
