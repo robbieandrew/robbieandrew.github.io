@@ -218,3 +218,35 @@ body {
     white-space: nowrap;
     opacity: 0.8;
 }
+
+/* Site header */
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0 10px;
+}
+
+.twitter-bird {
+    width: 32px;
+    height: 32px;
+    fill: var(--twitter-blue);
+    flex-shrink: 0;
+}
+
+.site-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.site-title-main {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--text-black);
+}
+
+.site-title-sub {
+    font-size: 0.8em;
+    color: #657786;
+}

@@ -103,45 +103,71 @@ function getAssetUrl(tweetId, originalUrl) {
  * Converts plain-text URLs in tweet text into clickable <a> tags.
  * Uses the tweet's entities.urls to replace t.co shortlinks with real display URLs.
  * Also handles @mentions and #hashtags.
+ *
+ * Processes text in segments so that @mentions and #hashtags inside URLs
+ * (e.g. a #fragment in an href) are never double-processed.
  */
 function linkifyText(text, urlEntities = [], mediaEntities = []) {
     // Build a lookup from t.co URL -> { expanded_url, display_url }
     const urlMap = {};
     urlEntities.forEach(u => { urlMap[u.url] = u; });
-    // Media t.co links (e.g. for attached images) should be suppressed —
-    // the image itself renders below the text, so the link is redundant
+    // Media t.co links should be suppressed — the image renders below the text
     mediaEntities.forEach(m => { urlMap[m.url] = { display_url: 'pic.', expanded_url: '' }; });
 
-    // Escape HTML entities first to prevent XSS
-    text = text
+    // Helper: apply @mention and #hashtag linkification to a plain-text segment only
+    function linkifySegment(segment) {
+        segment = segment.replace(
+            /@(\w+)/g,
+            '<a href="https://twitter.com/$1" target="_blank" rel="noopener noreferrer">@$1</a>'
+        );
+        segment = segment.replace(
+            /#(\w+)/g,
+            '<a href="https://twitter.com/hashtag/$1" target="_blank" rel="noopener noreferrer">#$1</a>'
+        );
+        return segment;
+    }
+
+    // Split text into alternating [plain, url, plain, url, ...] segments
+    // so we only run mention/hashtag replacement on the plain parts
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    // Escape HTML in the full raw text first
+    const escaped = text
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
 
-    // URLs (http/https) — replace t.co links with their expanded form if available
-    text = text.replace(/(https?:\/\/[^\s]+)/g, (match) => {
-        const entity = urlMap[match];
-        if (entity) {
-            // Media attachment URLs (pic.x.com) are redundant — the image renders below
-            if (entity.display_url.startsWith('pic.')) return '';
-            return `<a href="${entity.expanded_url}" target="_blank" rel="noopener noreferrer">${entity.display_url}</a>`;
+    while ((match = urlRegex.exec(escaped)) !== null) {
+        // Plain text before this URL
+        if (match.index > lastIndex) {
+            parts.push(linkifySegment(escaped.slice(lastIndex, match.index)));
         }
-        return `<a href="${match}" target="_blank" rel="noopener noreferrer">${match}</a>`;
-    });
 
-    // @mentions
-    text = text.replace(
-        /@(\w+)/g,
-        '<a href="https://twitter.com/$1" target="_blank" rel="noopener noreferrer">@$1</a>'
-    );
+        // The URL itself
+        const url = match[1];
+        const entity = urlMap[url];
+        if (entity) {
+            if (entity.display_url.startsWith('pic.')) {
+                // Suppress media attachment links entirely
+            } else {
+                parts.push(`<a href="${entity.expanded_url}" target="_blank" rel="noopener noreferrer">${entity.display_url}</a>`);
+            }
+        } else {
+            parts.push(`<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
+        }
 
-    // #hashtags
-    text = text.replace(
-        /#(\w+)/g,
-        '<a href="https://twitter.com/hashtag/$1" target="_blank" rel="noopener noreferrer">#$1</a>'
-    );
+        lastIndex = match.index + match[0].length;
+    }
 
-    return text;
+    // Any remaining plain text after the last URL
+    if (lastIndex < escaped.length) {
+        parts.push(linkifySegment(escaped.slice(lastIndex)));
+    }
+
+    return parts.join('');
 }
 
 /**
@@ -321,7 +347,7 @@ function renderThreadView(threadArray, pushToHistory = true, tweetId = null) {
 window.addEventListener('popstate', async (event) => {
     const state = event.state;
     if (!state || state.view === 'timeline') {
-        renderTimeline(currentViewTweets);
+        renderTimeline(currentPageSource);
     } else if (state.view === 'thread' && state.tweetId) {
         // Forward navigation back into a thread — re-fetch and render it
         const fullThread = await fetchFullThread(state.tweetId);
