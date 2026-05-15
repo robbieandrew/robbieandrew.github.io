@@ -250,3 +250,33 @@ body {
     font-size: 0.8em;
     color: #657786;
 }
+
+/* Layout for search and sort side-by-side */
+.controls-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#search-bar {
+    flex: 2; /* Search bar takes more space */
+}
+
+.ts-wrapper {
+    flex: 1; /* Sort dropdown takes less space */
+    min-width: 150px;
+}
+
+/* Ensure Tom-Select matches your style */
+.ts-control {
+    border-radius: 20px !important;
+    padding: 8px 12px !important;
+    background: #F5F8FA !important;
+    border: 1px solid var(--border-gray) !important;
+}
+
+/* Site header hover effect */
+#home-link:hover .site-title-main {
+    color: var(--twitter-blue);
+}
