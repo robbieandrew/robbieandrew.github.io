@@ -104,10 +104,13 @@ function getAssetUrl(tweetId, originalUrl) {
  * Uses the tweet's entities.urls to replace t.co shortlinks with real display URLs.
  * Also handles @mentions and #hashtags.
  */
-function linkifyText(text, urlEntities = []) {
+function linkifyText(text, urlEntities = [], mediaEntities = []) {
     // Build a lookup from t.co URL -> { expanded_url, display_url }
     const urlMap = {};
     urlEntities.forEach(u => { urlMap[u.url] = u; });
+    // Media t.co links (e.g. for attached images) should be suppressed —
+    // the image itself renders below the text, so the link is redundant
+    mediaEntities.forEach(m => { urlMap[m.url] = { display_url: 'pic.', expanded_url: '' }; });
 
     // Escape HTML entities first to prevent XSS
     text = text
@@ -173,6 +176,7 @@ function renderTweet(tweet, { inThread = false } = {}) {
     }
 
     const urlEntities = tweet.entities?.urls || [];
+    const mediaEntities = tweet.entities?.media || [];
 
     // Thread indicator (only on timeline, not inside a thread view)
     let threadBadgeHtml = '';
@@ -193,7 +197,7 @@ function renderTweet(tweet, { inThread = false } = {}) {
             ${threadBadgeHtml}
         </div>
         <div class="content">
-            <p>${linkifyText(tweet.full_text, urlEntities)}</p>
+            <p>${linkifyText(tweet.full_text, urlEntities, mediaEntities)}</p>
             ${mediaHtml}
             <div class="date">${formatDate(tweet.created_at)}</div>
         </div>
