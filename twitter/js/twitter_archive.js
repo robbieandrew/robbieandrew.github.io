@@ -122,7 +122,9 @@ async function fetchFullThread(targetTweetId) {
 }
 
 function getAssetUrl(tweetId, originalUrl) {
-    const originalFilename = originalUrl.split('/').pop();
+    // Strip query parameters (like ?tag=12) so we get the clean file extension
+    const cleanUrl = originalUrl.split('?')[0];
+    const originalFilename = cleanUrl.split('/').pop();
     const archiveFilename = `${tweetId}-${originalFilename}`;
     const prefix = archiveFilename.substring(0, 3);
     return `${ASSET_BASE}${prefix}/${archiveFilename}`;
@@ -177,7 +179,28 @@ function renderTweet(tweet, { inThread = false } = {}) {
     let mediaHtml = '';
     if (tweet.extended_entities?.media) {
         tweet.extended_entities.media.forEach(m => {
-            mediaHtml += `<img src="${getAssetUrl(tweet.id_str, m.media_url_https)}" class="graph-img">`;
+            if (m.type === 'video' || m.type === 'animated_gif') {
+                // Filter for MP4 variants
+                const mp4Variants = m.video_info?.variants?.filter(v => v.content_type === 'video/mp4') || [];
+                
+                if (mp4Variants.length > 0) {
+                    // Sort by bitrate descending to ensure you get the highest quality variant
+                    mp4Variants.sort((a, b) => (parseInt(b.bitrate) || 0) - (parseInt(a.bitrate) || 0));
+                    const videoUrl = mp4Variants[0].url;
+                    
+					mediaHtml += `
+						<video controls autoplay loop muted playsinline class="graph-video" style="max-width: 100%; margin-top: 10px; display: block; border-radius: 8px;">
+							<source src="${getAssetUrl(tweet.id_str, videoUrl)}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>`;
+				} else {
+                    // Fallback to thumbnail image if no mp4 variant is found
+                    mediaHtml += `<img src="${getAssetUrl(tweet.id_str, m.media_url_https)}" class="graph-img">`;
+                }
+            } else {
+                // Standard image rendering
+                mediaHtml += `<img src="${getAssetUrl(tweet.id_str, m.media_url_https)}" class="graph-img">`;
+            }
         });
     }
 
