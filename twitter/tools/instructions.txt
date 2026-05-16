@@ -1,0 +1,41 @@
+Instructions for serving your Twitter archive on your own website. Your mileage may vary. I'm not an expert here, and used AI a lot, and I suggest you do too rather than asking me!
+
+
+1. Download the Twitter archive. When I downloaded in January 2025, I got a single ZIP archive. In the root of that archive I see the following:
+Your archive.html
+assets/
+data/
+
+This is a fully functioning website, but not particularly useful.
+I have only used the tweets.js file and the tweets_media subfolder, both under the data folder.
+
+2. Create a new repository on GitHub called twitter_assets
+
+3. Create the local version of what the new repo will look like.
+Create a temporary folder on your computer
+Copy all files data/tweets_media/* to this temporary folder
+In a terminal (PowerShell, command prompt), cd to that temporary folder.
+Run the Python script twitter_media_organize.py, which will move the media files into subfolders. This should help with speed later.
+
+4. Make the temporary folder a git repository and upload it.
+Still in that temporary folder, execute the following commands one by one, changing your GitHub account name as appropriate:
+git init
+git add .
+git commit -m "Upload organized media archive"
+git branch -M main
+git remote add origin https://github.com/robbieandrew/twitter_assets.git
+git push -u origin main
+
+Then visit the new repo to see. It might take a few minutes to upload all the files.
+https://github.com/robbieandrew/twitter_assets
+
+5. The file tweets.js contains all of your tweets. Convert this to a pure json file by simply removing everything on the first line before the '['. Then save as tweets.json. This should be put in the root of your webpage, the same folder as index.html.
+
+6. Ensure your webpage folder is laid out identically to mine: subfolders css, img, js.
+Under the img folder, save your avatar (profile) picture as avatar.jpg
+
+7. Edit the twitter_archive.js script to ensure it points to your GitHub repo, not mine! Also ensure that your username is used, instead of mine (robbie_andrew). Links to your own tweets will show up on your page, while links to others' tweets will instead show as embedded tweets served from x.com.
+Also edit index.html to change my name to yours.
+
+Good luck!
+Robbie Andrew, 16 May 2026
