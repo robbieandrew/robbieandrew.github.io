@@ -1,3 +1,5 @@
+/* twitter_archive.js by Robbie Andrew with AI help, May 2026 */
+
 // ─── State ────────────────────────────────────────────────────────────────────
 
 let tweetMap = new Map(); // id_str → tweet object; used for O(1) lookups by tweet ID
