@@ -1,12 +1,12 @@
 /* twitter_archive.js by Robbie Andrew with AI help, May 2026 */
 
-// ─── Configuration ────────────────────────────────────────────────────────────
+// --- Configuration ------------------------------------------------------------
 
 const TWITTER_HANDLE    = 'robbie_andrew';        // Twitter/X handle (lowercase)
 const DISPLAY_NAME   = 'Robbie Andrew';           // Display name shown in the UI
 const AVATAR_SRC     = 'img/avatar.jpg';          // Path to profile avatar image
 
-// ─── State ────────────────────────────────────────────────────────────────────
+// --- State --------------------------------------------------------------------
 
 let tweetMap = new Map(); // id_str → tweet object; used for O(1) lookups by tweet ID
 let allTweets = [];         // Master copy of every tweet loaded from tweets.json
@@ -18,7 +18,7 @@ const ASSET_BASE = "https://raw.githubusercontent.com/robbieandrew/twitter_asset
 
 let debounceTimer; // Holds the setTimeout ID used to debounce search-bar input
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+// --- Helpers ------------------------------------------------------------------
 
 // Formats a tweet's creation timestamp into a human-readable string,
 // e.g. "3:45 PM · Jan 12, 2022".
@@ -29,7 +29,7 @@ function formatDate(createdAt) {
     return `${time} · ${day}`;
 }
 
-// ─── Initialisation ───────────────────────────────────────────────────────────
+// --- Initialisation -----------------------------------------------------------
 
 // Entry point: fetches tweet data, sets up UI controls, and renders the initial view.
 // If the page URL contains a ?tweet= parameter, opens that tweet's thread directly;
@@ -75,7 +75,7 @@ async function init() {
 	}
 }
 
-// ─── Filtering & Sorting ──────────────────────────────────────────────────────
+// --- Filtering & Sorting ------------------------------------------------------
 
 // Reads the current search term and sort selection, filters allTweets to those
 // whose text contains the term, sorts the results accordingly, then re-renders
@@ -102,7 +102,7 @@ function applyFiltersAndSort() {
     renderTimeline(results);
 }
 
-// ─── External Tweet Embedding ─────────────────────────────────────────────────
+// --- External Tweet Embedding -------------------------------------------------
 
 // Fetches an oEmbed HTML snippet for a tweet that isn't in the local archive.
 // Falls back to a styled error card with a link to X.com if the request fails
@@ -140,7 +140,7 @@ async function getExternalTweetEmbed(tweetId, contextTweet = null) {
 	}
 }
 
-// ─── Thread Construction ──────────────────────────────────────────────────────
+// --- Thread Construction ------------------------------------------------------
 
 // Builds the full conversation containing targetTweetId by walking both
 // directions of the reply chain:
@@ -191,7 +191,7 @@ async function fetchFullThread(targetTweetId) {
     return Array.from(uniqueMap.values());
 }
 
-// ─── Asset URLs ───────────────────────────────────────────────────────────────
+// --- Asset URLs ---------------------------------------------------------------
 
 // Constructs the GitHub raw URL for a locally archived media file.
 // Files are organised into sub-directories by the first 3 characters of their
@@ -206,7 +206,7 @@ function getAssetUrl(tweetId, originalUrl) {
     return `${ASSET_BASE}${prefix}/${archiveFilename}`;
 }
 
-// ─── Text Processing ──────────────────────────────────────────────────────────
+// --- Text Processing ----------------------------------------------------------
 
 // Converts raw tweet text into HTML by:
 //   1. HTML-escaping special characters to prevent injection.
@@ -269,7 +269,7 @@ function linkifyText(text, urlEntities = [], mediaEntities = []) {
     return parts.join('');
 }
 
-// ─── Thread Badge ─────────────────────────────────────────────────────────────
+// --- Thread Badge -------------------------------------------------------------
 
 // Determines whether a tweet belongs to a thread so a badge can be shown.
 // hasReplies  – at least one other tweet in the archive replies to this one.
@@ -280,7 +280,7 @@ function getThreadInfo(tweet) {
     return { hasReplies, isOwnReply };
 }
 
-// ─── Tweet Rendering ──────────────────────────────────────────────────────────
+// --- Tweet Rendering ----------------------------------------------------------
 
 // Creates and returns a DOM element for a single tweet.
 // When inThread is false (timeline view), the element is clickable and carries
@@ -401,7 +401,7 @@ function renderTweet(tweet, { inThread = false } = {}) {
     return tweetDiv;
 }
 
-// ─── Timeline Rendering ────────────────────────────────────────────────────────
+// --- Timeline Rendering --------------------------------------------------------
 
 // Replaces the timeline container with a fresh page of tweets from tweetsToRender,
 // resetting pagination state so subsequent "Load more" clicks page through the
@@ -441,7 +441,7 @@ function appendTweets(count, container) {
     }
 }
 
-// ─── Event Listeners ──────────────────────────────────────────────────────────
+// --- Event Listeners ----------------------------------------------------------
 
 // Debounce search input so applyFiltersAndSort only fires 300 ms after
 // the user stops typing, avoiding excessive re-renders on every keystroke.
@@ -475,7 +475,7 @@ document.getElementById('tweet-container').addEventListener('click', async (e) =
     }
 });
 
-// ─── Thread View ───────────────────────────────────────────────────────────────
+// --- Thread View ---------------------------------------------------------------
 
 // Replaces the tweet container with a full thread view for threadArray.
 // Prepends a Back button for navigation. External placeholder items (tweets not
@@ -505,7 +505,7 @@ function renderThreadView(threadArray, pushToHistory = true, tweetId = null) {
     if (window.twttr) window.twttr.widgets.load();
 }
 
-// ─── Quote Tweet Inset ─────────────────────────────────────────────────────────
+// --- Quote Tweet Inset ---------------------------------------------------------
 
 // Builds a compact inset card for a quoted tweet from the local archive.
 // Clicking the inset navigates into that tweet's thread view.
@@ -549,7 +549,7 @@ function renderQuoteTweetInset(quotedTweet) {
     return div;
 }
 
-// ─── Lightbox ─────────────────────────────────────────────────────────────────
+// --- Lightbox -----------------------------------------------------------------
 
 // Creates and attaches a <dialog>-based lightbox to the document.
 // The lightbox can be closed by clicking the ✕ button, clicking outside the
@@ -582,7 +582,7 @@ function openLightbox(src) {
     dialog.showModal();
 }
 
-// ─── Browser History Navigation ────────────────────────────────────────────────
+// --- Browser History Navigation ------------------------------------------------
 
 // Handles the browser back/forward buttons.
 // Restores either the full timeline (with current search/sort applied)
@@ -597,6 +597,6 @@ window.addEventListener('popstate', async (event) => {
     }
 });
 
-// ─── Bootstrap ────────────────────────────────────────────────────────────────
+// --- Bootstrap ----------------------------------------------------------------
 
 init();
