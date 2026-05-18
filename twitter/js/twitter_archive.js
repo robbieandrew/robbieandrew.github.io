@@ -1,5 +1,11 @@
 /* twitter_archive.js by Robbie Andrew with AI help, May 2026 */
 
+// ─── Configuration ────────────────────────────────────────────────────────────
+
+const TWITTER_HANDLE    = 'robbie_andrew';        // Twitter/X handle (lowercase)
+const DISPLAY_NAME   = 'Robbie Andrew';           // Display name shown in the UI
+const AVATAR_SRC     = 'img/avatar.jpg';          // Path to profile avatar image
+
 // ─── State ────────────────────────────────────────────────────────────────────
 
 let tweetMap = new Map(); // id_str → tweet object; used for O(1) lookups by tweet ID
@@ -244,7 +250,7 @@ function linkifyText(text, urlEntities = [], mediaEntities = []) {
 		);
 		if (internalTweetMatch) {
 			const [, username, statusId] = internalTweetMatch;
-			if (username.toLowerCase() === 'robbie_andrew') {
+			if (username.toLowerCase() === TWITTER_HANDLE) {
 				// Own tweet — link within the archive for SPA navigation
 				parts.push(`<a href="?tweet=${statusId}">${entity.display_url}</a>`);
 			} else {
@@ -322,8 +328,8 @@ function renderTweet(tweet, { inThread = false } = {}) {
 
     tweetDiv.innerHTML = `
         <div class="tweet-header">
-            <img src="img/avatar.jpg" class="avatar" alt="profile">
-            <div class="user-info"><strong>Robbie Andrew</strong><span>@robbie_andrew</span></div>
+            <img src="${AVATAR_SRC}" class="avatar" alt="profile">
+            <div class="user-info"><strong>${DISPLAY_NAME}</strong><span>@${TWITTER_HANDLE}</span></div>
             ${threadBadgeHtml}
         </div>
         <div class="content">
@@ -429,7 +435,7 @@ function appendTweets(count, container) {
     if (currentOffset < currentPageSource.length) {
         const btn = document.createElement('button');
         btn.className = 'load-more-btn';
-        btn.textContent = `Load more (${currentPageSource.length - currentOffset} remaining)`;
+        btn.textContent = `Load ${PAGE_SIZE} more (${currentPageSource.length - currentOffset} remaining)`;
         btn.onclick = () => appendTweets(PAGE_SIZE);
         container.appendChild(btn);
     }
@@ -503,7 +509,7 @@ function renderThreadView(threadArray, pushToHistory = true, tweetId = null) {
 
 // Builds a compact inset card for a quoted tweet from the local archive.
 // Clicking the inset navigates into that tweet's thread view.
-// Only used for own (robbie_andrew) tweets; external quote tweets use oEmbed.
+// Only used for own tweets; external quote tweets use oEmbed.
 function renderQuoteTweetInset(quotedTweet) {
     const div = document.createElement('div');
     div.className = 'quote-tweet-inset';
@@ -524,9 +530,9 @@ function renderQuoteTweetInset(quotedTweet) {
 
     div.innerHTML = `
         <div class="quote-header">
-            <img src="img/avatar.jpg" class="avatar avatar-sm" alt="profile">
-            <strong>Robbie Andrew</strong>
-            <span>@robbie_andrew</span>
+            <img src="${AVATAR_SRC}" class="avatar avatar-sm" alt="profile">
+            <strong>${DISPLAY_NAME}</strong>
+            <span>@${TWITTER_HANDLE}</span>
             <span class="quote-date">· ${formatDate(quotedTweet.created_at)}</span>
         </div>
         <div class="quote-body">
