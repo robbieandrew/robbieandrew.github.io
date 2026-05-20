@@ -110,6 +110,16 @@ function applyFiltersAndSort() {
 // contextTweet is the local tweet that links to this external one; its
 // in_reply_to_screen_name is used to build a better fallback card.
 async function getExternalTweetEmbed(tweetId, contextTweet = null) {
+    const tweetUrl = contextTweet?.in_reply_to_screen_name
+        ? `https://x.com/${contextTweet.in_reply_to_screen_name}/status/${tweetId}`
+        : `https://x.com/i/status/${tweetId}`;
+
+    return `<blockquote class="twitter-tweet" data-conversation="none">
+        <a href="${tweetUrl}"></a>
+    </blockquote>`;
+}
+// Originally used CORS proxy, but that was the AI getting carried away. Unnecessary.
+/*async function getExternalTweetEmbed(tweetId, contextTweet = null) {
     try {
         const url = `https://publish.twitter.com/oembed?url=https://twitter.com/x/status/${tweetId}&hide_thread=true&omit_script=true`;
         const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
@@ -138,7 +148,7 @@ async function getExternalTweetEmbed(tweetId, contextTweet = null) {
 			<a href="${tweetUrl}" target="_blank">Try viewing on X.com ↗</a>
 		</div>`;
 	}
-}
+}*/
 
 // --- Thread Construction ------------------------------------------------------
 
