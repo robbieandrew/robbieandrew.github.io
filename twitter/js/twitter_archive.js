@@ -118,37 +118,6 @@ async function getExternalTweetEmbed(tweetId, contextTweet = null) {
         <a href="${tweetUrl}"></a>
     </blockquote>`;
 }
-// Originally used CORS proxy, but that was the AI getting carried away. Unnecessary.
-/*async function getExternalTweetEmbed(tweetId, contextTweet = null) {
-    try {
-        const url = `https://publish.twitter.com/oembed?url=https://twitter.com/x/status/${tweetId}&hide_thread=true&omit_script=true`;
-        const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
-        if (!response.ok) throw new Error('oEmbed failed');
-        const data = await response.json();
-        return data.html;
-	} catch (e) {
-		// Build an author header if we can infer who wrote the tweet
-		let authorHtml = '';
-		if (contextTweet?.in_reply_to_screen_name) {
-			const name = contextTweet.in_reply_to_screen_name;
-			authorHtml = `
-				<div class="quote-header">
-					<strong>@${name}</strong>
-				</div>`;
-		}
-
-		// Use the known author handle in the fallback link when available
-		const tweetUrl = contextTweet?.in_reply_to_screen_name
-			? `https://x.com/${contextTweet.in_reply_to_screen_name}/status/${tweetId}`
-			: `https://x.com/x/status/${tweetId}`;
-
-		return `<div class="tweet external-error">
-			${authorHtml}
-			<p>⚠️ This tweet could not be loaded.</p>
-			<a href="${tweetUrl}" target="_blank">Try viewing on X.com ↗</a>
-		</div>`;
-	}
-}*/
 
 // --- Thread Construction ------------------------------------------------------
 
