@@ -393,7 +393,7 @@ function showToastBelowElement(anchorElement, message, duration = 2000) {
 function createPNGDownloadLink(svgObject) {
   const downloadLink = document.createElement('a');
   downloadLink.href = '#';
-  downloadLink.textContent = 'Download as PNG';
+  downloadLink.textContent = 'Download PNG';
   downloadLink.className = 'simple-button';
   downloadLink.addEventListener('click', (e) => {
     e.preventDefault(); // prevent browser trying to navigate to https://.../#
@@ -485,7 +485,7 @@ function createEnlargeLink(element) {
   // 1. Create the link element
   const enlargeLink = document.createElement('a');
   enlargeLink.href = '#';
-  enlargeLink.textContent = 'Enlarge this figure';
+  enlargeLink.textContent = 'Enlarge';
   enlargeLink.className = 'simple-button';
 
   // 2. Add the click handler
@@ -512,11 +512,28 @@ function createEnlargeLink(element) {
   return enlargeLink;
 }
 
+function getSVGAltText(svgObject) {
+  const svgDoc = svgObject.contentDocument;
+  const titleEl = svgDoc?.querySelector('title');
+  const titleText = titleEl?.textContent.trim() || 'Untitled graph';
+  return `Graph showing: ${titleText} (Source: ${window.location.href})`;
+}
+
 function createCopyLink(element) {
   const copyLink = document.createElement('a');
   copyLink.href = '#';
   copyLink.textContent = 'Copy to clipboard';
   copyLink.className = 'simple-button';
+
+copyLink.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round"
+         style="width:1em; height:1em; vertical-align:-0.15em; margin-right:0.3em;">
+      <rect x="9" y="9" width="13" height="13" rx="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </svg>Copy`;
+	
   copyLink.addEventListener('click', (e) => {
     e.preventDefault();
     copyElementAsPNG(element, copyLink);
@@ -524,6 +541,39 @@ function createCopyLink(element) {
   return copyLink;
 }
 
+function createEmbedLink(element) {
+  const embedLink = document.createElement('a');
+  const altText = element.tagName.toUpperCase() === 'OBJECT' ? getSVGAltText(element) : '';
+  embedLink.href = '#';
+  embedLink.className = 'simple-button';
+  embedLink.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round"
+         style="width:1em; height:1em; vertical-align:-0.15em; margin-right:0.3em;">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+    </svg>Embed`;
+
+  embedLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const url = element.tagName.toUpperCase() === 'OBJECT' ? element.data : element.src;
+
+	let altText = '';
+    if (element.tagName.toUpperCase() === 'OBJECT') {
+		const svgDoc = element.contentDocument;
+		const titleEl = svgDoc?.querySelector('title');
+		const titleText = titleEl?.textContent.trim() || 'Untitled graph';
+		altText = `Graph showing: ${titleText} (Source: ${window.location.href})`;
+    }
+
+    const embedCode = `<img src="${url}" alt="${altText}">`;
+    navigator.clipboard.writeText(embedCode)
+      .then(() => showToastBelowElement(embedLink, 'Embed code copied to clipboard!'))
+      .catch(() => showToastBelowElement(embedLink, 'Failed to copy embed code.'));
+  });
+  return embedLink;
+}
 
 function createAltTextLink(svgObject) {
   const altLink = document.createElement('a');
@@ -545,9 +595,7 @@ function createAltTextLink(svgObject) {
       return null;
     }
     const titleText = titleEl.textContent.trim() || "Untitled graph";
-    const pageURL = window.location.href;
-    const altText = `Graph showing: ${titleText} (Source: ${pageURL})`;
-
+    const altText = getSVGAltText(svgObject);
 
     navigator.clipboard.writeText(altText)
       .then(() => {
@@ -651,49 +699,45 @@ function addSVGbuttons(svgObject) {
   const existingLinks = Array.from(linkContainer.querySelectorAll('a'));
   const existingLinksText = existingLinks.map(a => a.textContent.trim());
 
-/*  // --- 1. Create All Potential Links ---
-  const downloadPNGLink = createPNGDownloadLink(svgObject);
-  const downloadPDFLink = createPDFDownloadLink(svgObject);
-  const downloadDataLink = createDataDownloadLink(svgObject);
-  const enlargeLink = createEnlargeLink(svgObject);
-  const alttextLink = createAltTextLink(svgObject);
-  const copyLink = !isIOSorIPadOS() ? createCopyLink(svgObject) : null;*/
 
-	let downloadPNGLink, downloadPDFLink, downloadDataLink, enlargeLink, alttextLink, copyLink;
+	let downloadPNGLink, downloadPDFLink, downloadDataLink, enlargeLink, alttextLink, copyLink, embedLink;
 
-	if (!existingLinksText.includes('Download as PNG')) {
+	if (!existingLinksText.includes('Download PNG')) {
 	  downloadPNGLink = createPNGDownloadLink(svgObject);
 	}
-	if (!existingLinksText.includes('Download as PDF')) {
+	if (!existingLinksText.includes('Download PDF')) {
 	  downloadPDFLink = createPDFDownloadLink(svgObject);
 	}
 	if (!existingLinksText.includes('Download data')) {
 	  downloadDataLink = createDataDownloadLink(svgObject);
 	}
-	if (!existingLinksText.includes('Enlarge this figure')) {
+	if (!existingLinksText.includes('Enlarge')) {
 	  enlargeLink = createEnlargeLink(svgObject);
 	}
 	if (!existingLinksText.includes('Alt')) {
 	  alttextLink = createAltTextLink(svgObject);
 	}
-	if (!isIOSorIPadOS() && !existingLinksText.includes('Copy to clipboard')) {
+	if (!isIOSorIPadOS() && !existingLinksText.includes('Copy')) {
 	  copyLink = createCopyLink(svgObject);
+	}
+	if (!isIOSorIPadOS() && !existingLinksText.includes('Embed')) {
+	  embedLink = createEmbedLink(svgObject);
 	}
 //  console.log('links created');
 
 
-  // --- 2. Separate into Link Groups ---
+  // --- Separate into Link Groups ---
   const downloadButtons = [];
   if (downloadPNGLink) downloadButtons.push(downloadPNGLink);
   if (downloadPDFLink) downloadButtons.push(downloadPDFLink);
   if (downloadDataLink) downloadButtons.push(downloadDataLink); // Data is a form of download
 
-  const allButtons = [enlargeLink, copyLink, alttextLink];
+  const allButtons = [enlargeLink, copyLink, alttextLink, embedLink];
   
   // Function to check if a link based on its text already exists
   const isExisting = (text) => existingLinksText.includes(text);
 
-  // --- 4. Render Buttons ---
+  // --- Render Buttons ---
   // Download links: Consolidate if count >= THRESHOLD
   const downloadOptionCount = downloadButtons.length;
   const THRESHOLD = 300; 
@@ -701,7 +745,7 @@ function addSVGbuttons(svgObject) {
   
   // Clean up any existing individual download links if a group is being created
   if (downloadOptionCount >= THRESHOLD || hasDownloadGroup) {
-      ['Download as PNG', 'Download as PDF', 'Download data', 'View as PNG']
+      ['Download PNG', 'Download PDF', 'Download data', 'View as PNG']
         .forEach(text => {
           const existing = existingLinks.find(a => a.textContent.trim() === text);
           if (existing) existing.remove();
@@ -732,7 +776,7 @@ function addSVGbuttons(svgObject) {
   for (const link of allButtons) {
     if (link && !isExisting(link.textContent.trim())) {
       // Handle the 'View as PNG' replacement case for the PNG link only
-      if (link.textContent.trim() === 'Download as PNG' && existingLinksText.includes('View as PNG')) {
+      if (link.textContent.trim() === 'Download PNG' && existingLinksText.includes('View as PNG')) {
         const viewLink = existingLinks.find(a => a.textContent.trim() === 'View as PNG');
         if (viewLink) linkContainer.replaceChild(link, viewLink);
       } else {
@@ -791,7 +835,7 @@ function addIMGbuttons(imgElement) {
   
   // Clean up any existing individual download links if a group is being created
   if (downloadOptionCount >= THRESHOLD || hasDownloadGroup) {
-      ['Download as PNG', 'Download as PDF', 'Download data', 'View as PNG']
+      ['Download PNG', 'Download PDF', 'Download data', 'View as PNG']
         .forEach(text => {
           const existing = existingLinks.find(a => a.textContent.trim() === text);
           if (existing) existing.remove();
@@ -822,7 +866,7 @@ function addIMGbuttons(imgElement) {
   for (const link of allButtons) {
     if (link && !isExisting(link.textContent.trim())) {
       // Handle the 'View as PNG' replacement case for the PNG link only
-      if (link.textContent.trim() === 'Download as PNG' && existingLinksText.includes('View as PNG')) {
+      if (link.textContent.trim() === 'Download PNG' && existingLinksText.includes('View as PNG')) {
         const viewLink = Array.from(linkContainer.querySelectorAll('a')).find(a => a.textContent.trim() === 'View as PNG');
         if (viewLink) linkContainer.replaceChild(link, viewLink);
       } else {
