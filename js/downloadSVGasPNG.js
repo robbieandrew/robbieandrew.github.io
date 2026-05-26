@@ -550,7 +550,7 @@ function createEmbedLink(element) {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
          fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round"
-         style="width:1em; height:1em; vertical-align:-0.15em; margin-right:0.3em;">
+         style="width:1em; height:1em; vertical-align:-0.15em; margin-right:0.3em; line-height:0;">
       <polyline points="16 18 22 12 16 6"/>
       <polyline points="8 6 2 12 8 18"/>
     </svg>Embed`;
