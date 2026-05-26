@@ -547,12 +547,13 @@ function createEmbedLink(element) {
   embedLink.href = '#';
   embedLink.className = 'simple-button';
   embedLink.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26"
          fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round"
          style="width:1em; height:1em; vertical-align:-0.15em; margin-right:0.3em; line-height:0;">
-      <polyline points="16 18 22 12 16 6"/>
-      <polyline points="8 6 2 12 8 18"/>
+      <polyline points="19 18 25 12 19 6"/>
+      <polyline points="7 18 1 12 7 6"/>
+	  <polyline points="10 21 16 3"/>
     </svg>Embed`;
 
   embedLink.addEventListener('click', (e) => {
