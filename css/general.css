@@ -44,6 +44,9 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   border: 1px solid #333;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  display:inline-flex; 
+  align-items:center; 
+  vertical-align:middle; 
 }
 .simple-button:hover {
   background-color: #93D4FF;
