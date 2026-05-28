@@ -463,7 +463,7 @@ function createPDFDownloadLink(element) {
 
     const downloadLink = document.createElement('a');
     downloadLink.href = '#';
-    downloadLink.textContent = 'Download as PDF';
+    downloadLink.textContent = 'Download PDF';
     downloadLink.className = 'simple-button';
     downloadLink.addEventListener('click', (e) => {
       e.preventDefault(); // prevent browser trying to navigate to https://.../#
