@@ -225,6 +225,16 @@ function makeCountrySelector() {
 					
 					if (isVisible) {
 						div.style.display = 'block';
+
+						// With fewer than 3 charts shown, switch from 3 columns to 2 columns
+						if (visibleDivsCount < 3) {
+							div.classList.remove('pure-u-lg-1-3');
+							div.classList.add('pure-u-lg-1-2');
+						} else {
+							div.classList.remove('pure-u-lg-1-2');
+							div.classList.add('pure-u-lg-1-3');
+						}
+
 						const cleanName = div.dataset.country.toLowerCase().replace(/\s+/g, '');
 						const targetPath = `img/${cleanName}_${DATASET}_${activeFreq}${formatSuffix}.svg`;
 						const currentObj = wrapper.querySelector('object');
