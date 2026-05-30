@@ -568,7 +568,7 @@ function createEmbedLink(element) {
 		altText = `Graph showing: ${titleText} (Source: ${window.location.href})`;
     }
 
-    const embedCode = `<img src="${url}" alt="${altText}">`;
+	const embedCode = `<object type="image/svg+xml" data="${url}"></object>`;
     navigator.clipboard.writeText(embedCode)
       .then(() => showToastBelowElement(embedLink, 'Embed code copied to clipboard!'))
       .catch(() => showToastBelowElement(embedLink, 'Failed to copy embed code.'));
