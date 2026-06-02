@@ -133,29 +133,11 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   background-color: #93D4FF;
 }
 
-/* ----- Modal Overlay ("please cite me" popup) ----- */
-@keyframes modal-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
 
-.modal-overlay {
-  position: fixed;
-  z-index: 10000; /* Higher than headers */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(2px);
-  animation: modal-fade-in 0.3s ease;
-}
 
-/* Modal Box */
-.modal-content {
+
+/* ----- Citation toast (top-right notification) ----- */
+.citation-toast-content {
   background-color: #fff;
   padding: 25px;
   border-radius: 8px;
@@ -167,7 +149,7 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   color: #333;
 }
 
-.modal-close {
+.citation-toast-close {
   position: absolute;
   right: 15px;
   top: 10px;
@@ -176,7 +158,7 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   color: #999;
 }
 
-.modal-close:hover { color: #000; }
+.citation-toast-close:hover { color: #000; }
 
 .citation-box {
   background: #f0f4f8;
@@ -186,6 +168,49 @@ h1,h2,h3,p {text-align:center;padding-left:10px;padding-right:10px;margin-left:a
   font-size: 0.95em;
   line-height: 1.4;
 }
+
+#citationToast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
+  max-width: 550px;
+  width: 90%;
+  opacity: 0;
+  transform: translateY(-16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+#citationToast.toast-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#citationToast .citation-toast-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+@media (max-width: 600px) {
+  #citationToast {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    transform: translateY(16px);
+  }
+  #citationToast.toast-visible {
+    transform: translateY(0);
+  }
+  #citationToast .citation-toast-content {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+
+
 
 /* ----- Loading spinner ----- */
 #page-loader {
