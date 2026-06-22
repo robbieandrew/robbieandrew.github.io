@@ -1,0 +1,69 @@
+{
+  "_comment": "Slot-based title assembly. Each language entry in 'assembly' is an ordered list of slot keys. Omit optional slots; the assembler skips undefined ones cleanly.",
+
+  "slots": {
+
+    "period": {
+      "Monthly":    { "no":"Månedlige","sv":"Månatliga","da":"Månedlige","de":"Monatliche","fr":"mensuelles","es":"mensuales","it":"mensili","pl_m":"Miesięczny","pl_f":"Miesięczna","pl_fp":"Miesięczne","fi_s":"Kuukausittainen","fi_p":"Kuukausittaiset","zh":"月度","ko":"월간","ja":"月次" },
+      "Quarterly":  { "no":"Kvartalsvise","sv":"Kvartalsvisa","da":"Kvartalsvise","de":"Vierteljährliche","fr":"trimestrielles","es":"trimestrales","it":"trimestrali","pl_m":"Kwartalny","pl_f":"Kwartalna","pl_fp":"Kwartalne","fi_s":"Neljännesvuosittainen","fi_p":"Neljännesvuosittaiset","zh":"季度","ko":"분기별","ja":"四半期別" },
+      "Half-Yearly":{ "no":"Halvårlige","sv":"Halvårsvisa","da":"Halvårlige","de":"Halbjährliche","fr":"semestrielles","es":"semestrales","it":"semestrali","pl_m":"Półroczny","pl_f":"Półroczna","pl_fp":"Półroczne","fi_s":"Puolivuosittainen","fi_p":"Puolivuosittaiset","zh":"半年度","ko":"반기별","ja":"半期別" },
+      "Annual":     { "no":"Årlige","sv":"Årliga","da":"Årlige","de":"Jährliche","fr":"annuelles","es":"anuales","it":"annuali","pl_m":"Roczny","pl_f":"Roczna","pl_fp":"Roczne","fi_s":"Vuosittainen","fi_p":"Vuosittaiset","zh":"年度","ko":"연간","ja":"年次" }
+    },
+
+    "metric": {
+      "sales": {
+        "no":"salg av","sv":"försäljning av","da":"salg af",
+        "de":"Verkäufe von",
+        "fr":"Ventes","es":"Ventas","it":"Vendite","pl":"sprzedaż","pl_gender":"f",
+        "fi":"myynti","fi_number":"s",
+        "zh":"销量","ko":"판매량","ja":"販売台数"
+      },
+      "imports": {
+        "no":"import av","sv":"import av","da":"import af","de":"Einfuhren von","fr":"Importations","es":"Importaciones","it":"Importazioni","pl":"import","pl_gender":"m","fi":"tuonti","fi_number":"s","zh":"进口","ko":"수입량","ja":"輸入"
+      },
+      "registrations": {
+        "no":"nyregistreringer av","sv":"registreringar av","da":"registreringer af","de":"Neuzulassungen von","fr":"Immatriculations","es":"Matriculaciones","it":"Immatricolazioni","pl":"rejestracje","pl_gender":"fp","fi":"ensirekisteröinnit","fi_number":"p","zh":"注册","ko":"등록","ja":"登録台数"
+      }
+    },
+
+    "vehicle_condition": {
+      "new": {
+        "no":"nye","sv":"nya","da":"nye","de":"neuen","fr_m":"neufs","fr_f":"neuves","es":"nuevos","it_m":"nuovi","it_f":"nuove","pl":"nowych","fi":"uusien","zh":"新","ko":"신규","ja":"新規"
+      },
+      "used": {
+        "no":"brukte","sv":"begagnade","da":"brugte","de":"gebrauchten","fr_m":"d'occasion","fr_f":"d'occasion","es":"usados","it_m":"usati","it_f":"usate","pl":"używanych","fi":"käytettyjen","zh":"二手","ko":"중고","ja":"中古"
+      }
+    },
+
+    "vehicle": {
+      "passenger cars":              { "no":"personbiler","sv":"personbilar","da":"personbiler","de":"Personenkraftwagen","fr":"voitures particulières","fr_gender":"f","es":"turismos","it":"autovetture","it_gender":"f","pl":"samochodów osobowych","fi":"henkilöautojen","zh":"乘用车","ko":"승용차","ja":"乗用車" },
+      "light-duty vehicles":         { "no":"lette kjøretøy","sv":"lätta fordon","da":"lette køretøjer","de":"leichten Fahrzeugen","fr":"véhicules légers","fr_gender":"m","es":"vehículos ligeros","it":"veicoli leggeri","it_gender":"m","pl":"lekkich pojazdów","fi":"kevyiden ajoneuvojen","zh":"轻型车","ko":"경형 자동차","ja":"小型車" },
+      "light commercial vehicles":   { "no":"lette nyttekjøretøy","sv":"lätta nyttofordon","da":"lette erhvervskøretøjer","de":"leichten Nutzfahrzeugen","fr":"véhicules utilitaires légers","fr_gender":"m","es":"comerciales ligeras","it":"veicoli commerciali leggeri","it_gender":"m","pl":"lekkich samochodów dostawczych","fi":"kevyiden hyötyajoneuvojen","zh":"轻型商用车","ko":"경상용차","ja":"軽商用車" },
+      "heavy-duty vehicles":         { "no":"tunge kjøretøy","sv":"tunga fordon","da":"tunge køretøjer","de":"schweren Nutzfahrzeugen","fr":"poids lourds","fr_gender":"m","es":"vehículos pesados","it":"veicoli pesanti","it_gender":"m","pl":"ciężkich pojazdów","fi":"raskaiden ajoneuvojen","zh":"重型车","ko":"대형 자동차","ja":"大型車" }
+    },
+
+    "separator": {
+      "_default": ": ",
+      "ja": "",
+      "zh": "",
+      "ko": ""
+    }
+  },
+
+  "assembly": {
+    "_default": "{period} {metric} {vehicle_condition?} {vehicle}{separator}{country}",
+
+    "de": "{period} {metric} {vehicle_condition?} {vehicle}{separator}{country}",
+	"fr": "{metric} {period} de {vehicle}{vehicle_condition?}{separator}{country}",
+	"es": "{metric} {period} de {vehicle}{vehicle_condition?}{separator}{country}",
+	"it": "{metric} {period} di {vehicle}{vehicle_condition?}{separator}{country}",
+    "pl": "{period} {metric} {vehicle_condition?} {vehicle}{separator}{country}",
+    "no": "{period} {metric} {vehicle_condition?} {vehicle}{separator}{country}",
+    "sv": "{period} {metric} {vehicle_condition?} {vehicle}{separator}{country}",
+    "da": "{period} {metric} {vehicle_condition?} {vehicle}{separator}{country}",
+    "fi": "{period} {vehicle_condition?} {vehicle} {metric}{separator}{country}",
+    "ko": "{country} {vehicle} {vehicle_condition?} {period} {metric}",
+    "zh": "{period}{metric}{vehicle_condition?}{vehicle}：{country}",
+    "ja": "{period} {vehicle}{vehicle_condition?}{metric}（{country}）"
+  }
+}
