@@ -40,13 +40,13 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="240.8,558.6 304.3,559.4 367.7,558.6 431.2,558.2 494.7,557.3 558.1,556.3 621.6,555.1 685.1,550.6 748.5,542.7" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="240.8,558.6 304.3,559.4 367.7,558.6 431.2,558.2 494.7,557.3 558.1,556.3 621.6,555.1 685.1,550.6 748.5,542.7 812.0,525.7" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="240.8,542.6 304.3,538.9 367.7,539.2 431.2,528.7 494.7,518.9 558.1,517.8 621.6,519.8 685.1,509.5 748.5,494.7" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="240.8,542.6 304.3,538.9 367.7,539.2 431.2,528.7 494.7,518.9 558.1,517.8 621.6,519.8 685.1,509.5 748.5,494.7 812.0,470.7" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="240.8,171.9 304.3,167.7 367.7,114.5 431.2,149.7 494.7,210.7 558.1,244.5 621.6,282.6 685.1,270.7 748.5,205.1" stroke="#7B6E57" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="240.8,171.9 304.3,167.7 367.7,114.5 431.2,149.7 494.7,210.7 558.1,244.5 621.6,282.6 685.1,270.7 748.5,205.1 812.0,183.1" stroke="#7B6E57" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -63,7 +63,7 @@ text:hover + .dl_el {display:block;}
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#6298C6" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,542.7)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
+    <text class="pl" transform="translate(925.2,525.7)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
     <g class="pl pll" fill="#6298C6" stroke="none" stroke-width="1.800">
       <circle cx="240.8" cy="558.6" r="2.7" />
       <circle cx="304.3" cy="559.4" r="2.7" />
@@ -74,13 +74,14 @@ text:hover + .dl_el {display:block;}
       <circle cx="621.6" cy="555.1" r="2.7" />
       <circle cx="685.1" cy="550.6" r="2.7" />
       <circle cx="748.5" cy="542.7" r="2.7" />
+      <circle cx="812.0" cy="525.7" r="2.7" />
     </g>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#919452" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,494.7)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Hybrid</text>
-    <text class="pl" transform="translate(1007.6,494.7)" dy="5.4" font-size="18.00" fill="#919452" stroke="none">(includes plug-ins)</text>
+    <text class="pl" transform="translate(925.2,470.7)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Hybrid</text>
+    <text class="pl" transform="translate(925.2,486.0)" dy="18.0" font-size="18.00" fill="#919452" stroke="none">(includes plug-ins)</text>
     <g class="pl pll" fill="#919452" stroke="none" stroke-width="1.800">
       <circle cx="240.8" cy="542.6" r="2.7" />
       <circle cx="304.3" cy="538.9" r="2.7" />
@@ -91,12 +92,13 @@ text:hover + .dl_el {display:block;}
       <circle cx="621.6" cy="519.8" r="2.7" />
       <circle cx="685.1" cy="509.5" r="2.7" />
       <circle cx="748.5" cy="494.7" r="2.7" />
+      <circle cx="812.0" cy="470.7" r="2.7" />
     </g>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#7B6E57" stroke-width="1.80"/>
-    <text class="pl" transform="translate(925.2,205.1)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">ICE</text>
+    <text class="pl" transform="translate(925.2,183.1)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">ICE</text>
     <g class="pl pll" fill="#7B6E57" stroke="none" stroke-width="1.800">
       <circle cx="240.8" cy="171.9" r="2.7" />
       <circle cx="304.3" cy="167.7" r="2.7" />
@@ -107,6 +109,7 @@ text:hover + .dl_el {display:block;}
       <circle cx="621.6" cy="282.6" r="2.7" />
       <circle cx="685.1" cy="270.7" r="2.7" />
       <circle cx="748.5" cy="205.1" r="2.7" />
+      <circle cx="812.0" cy="183.1" r="2.7" />
     </g>
   </g>
 </g>
@@ -117,7 +120,7 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(716.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
     <text class="pl" transform="translate(843.7,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2026</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Half-Yearly sales of new passenger cars: Ecuador</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: AEADE   &#9679;   Includes commercial vehicles   &#9679;   Through May 2026</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: AEADE   &#9679;   Includes commercial vehicles   &#9679;   Through June 2026</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
