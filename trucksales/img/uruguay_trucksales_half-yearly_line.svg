@@ -32,6 +32,10 @@ text:hover + .dl_el {display:block;}
   #lines:hover .pl_3:hover .pll {stroke-width:3;}
   #lines:hover .pl_3:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_3:hover .thick {stroke-width:12;}
+  #lines:hover .pl_4:hover .pl {opacity:1;}
+  #lines:hover .pl_4:hover .pll {stroke-width:3;}
+  #lines:hover .pl_4:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_4:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
@@ -43,10 +47,13 @@ text:hover + .dl_el {display:block;}
     <polyline class="pl pll" points="193.2,553.7 288.4,554.0 383.6,554.3 478.8,556.5 574.0,551.7 669.2,553.4 764.4,543.0" stroke="#6298C6" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="193.2,555.7 288.4,555.4 383.6,557.1 478.8,553.7 574.0,555.7 669.2,555.7 764.4,560.2" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="193.2,560.2 288.4,560.2 383.6,560.2 478.8,560.2 574.0,560.2 669.2,560.2 764.4,560.2" stroke="#919452" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="193.2,211.5 288.4,158.6 383.6,239.6 478.8,99.3 574.0,174.6 669.2,154.9 764.4,134.4" stroke="#7B6E57" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="193.2,555.7 288.4,555.4 383.6,557.1 478.8,553.7 574.0,555.7 669.2,555.7 764.4,560.2" stroke="#7B553E" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_4" viewBox="0 0 1200.000 674.916">
+    <polyline class="pl pll" points="193.2,211.5 288.4,158.6 383.6,239.6 478.8,99.3 574.0,174.6 669.2,154.9 764.4,134.1" stroke="#7B6E57" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -64,8 +71,8 @@ text:hover + .dl_el {display:block;}
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#6298C6" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,535.1)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
-<polyline class="pl" points="910.8,543.0 911.9,543.0 913.0,542.9 914.0,542.8 914.9,542.6 915.8,542.4 916.6,542.2 917.4,541.9 918.1,541.6 918.8,541.2 919.5,540.9 920.1,540.5 920.7,540.1 921.3,539.7 921.9,539.3 922.5,538.9 923.1,538.5 923.7,538.1 924.3,537.7 924.9,537.3 925.6,536.9 926.3,536.6 927.0,536.3 927.8,536.0 928.6,535.8 929.5,535.5 930.4,535.4 931.4,535.2 932.5,535.2 933.6,535.1" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(937.2,511.2)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
+<polyline class="pl" points="910.8,543.0 911.9,542.9 913.0,542.6 914.0,542.1 914.9,541.4 915.8,540.5 916.6,539.5 917.4,538.4 918.1,537.1 918.8,535.7 919.5,534.3 920.1,532.8 920.7,531.2 921.3,529.6 921.9,527.9 922.5,526.3 923.1,524.6 923.7,523.0 924.3,521.5 924.9,519.9 925.6,518.5 926.3,517.1 927.0,515.9 927.8,514.7 928.6,513.7 929.5,512.8 930.4,512.1 931.4,511.6 932.5,511.3 933.6,511.2" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <g class="pl pll" fill="#6298C6" stroke="none" stroke-width="1.800">
       <circle cx="193.2" cy="553.7" r="2.7" />
       <circle cx="288.4" cy="554.0" r="2.7" />
@@ -78,7 +85,23 @@ text:hover + .dl_el {display:block;}
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_2" class="pl pll" stroke="#7B553E" stroke-width="1.80"/>
+    <use xlink:href="#line_2" class="pl pll" stroke="#919452" stroke-width="1.80"/>
+    <text class="pl" transform="translate(937.2,535.7)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Hybrid</text>
+<polyline class="pl" points="910.8,560.2 911.9,560.1 913.0,559.8 914.0,559.4 914.9,558.9 915.8,558.2 916.6,557.5 917.4,556.6 918.1,555.6 918.8,554.6 919.5,553.4 920.1,552.3 920.7,551.1 921.3,549.8 921.9,548.6 922.5,547.3 923.1,546.0 923.7,544.8 924.3,543.6 924.9,542.4 925.6,541.3 926.3,540.2 927.0,539.3 927.8,538.4 928.6,537.6 929.5,537.0 930.4,536.4 931.4,536.0 932.5,535.8 933.6,535.7" stroke="#919452" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(1019.6,535.7)" dy="5.4" font-size="18.00" fill="#919452" stroke="none">(includes plug-ins)</text>
+    <g class="pl pll" fill="#919452" stroke="none" stroke-width="1.800">
+      <circle cx="193.2" cy="560.2" r="2.7" />
+      <circle cx="288.4" cy="560.2" r="2.7" />
+      <circle cx="383.6" cy="560.2" r="2.7" />
+      <circle cx="478.8" cy="560.2" r="2.7" />
+      <circle cx="574.0" cy="560.2" r="2.7" />
+      <circle cx="669.2" cy="560.2" r="2.7" />
+      <circle cx="764.4" cy="560.2" r="2.7" />
+    </g>
+  </g>
+  <g class="pl_3">
+    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_3" class="pl pll" stroke="#7B553E" stroke-width="1.80"/>
     <text class="pl" transform="translate(937.2,560.2)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">Petrol</text>
     <g class="pl pll" fill="#7B553E" stroke="none" stroke-width="1.800">
       <circle cx="193.2" cy="555.7" r="2.7" />
@@ -90,10 +113,10 @@ text:hover + .dl_el {display:block;}
       <circle cx="764.4" cy="560.2" r="2.7" />
     </g>
   </g>
-  <g class="pl_3">
-    <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
-    <use xlink:href="#line_3" class="pl pll" stroke="#7B6E57" stroke-width="1.80"/>
-    <text class="pl" transform="translate(937.2,134.4)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">Diesel</text>
+  <g class="pl_4">
+    <use xlink:href="#line_4" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_4" class="pl pll" stroke="#7B6E57" stroke-width="1.80"/>
+    <text class="pl" transform="translate(937.2,134.1)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">Diesel</text>
     <g class="pl pll" fill="#7B6E57" stroke="none" stroke-width="1.800">
       <circle cx="193.2" cy="211.5" r="2.7" />
       <circle cx="288.4" cy="158.6" r="2.7" />
@@ -101,7 +124,7 @@ text:hover + .dl_el {display:block;}
       <circle cx="478.8" cy="99.3" r="2.7" />
       <circle cx="574.0" cy="174.6" r="2.7" />
       <circle cx="669.2" cy="154.9" r="2.7" />
-      <circle cx="764.4" cy="134.4" r="2.7" />
+      <circle cx="764.4" cy="134.1" r="2.7" />
     </g>
   </g>
 </g>
@@ -110,7 +133,7 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(621.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
     <text class="pl" transform="translate(812.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2026</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Half-Yearly sales of new heavy-duty vehicles: Uruguay</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: ACAU   &#9679;   Through June 2026</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: ACAU   &#9679;   Through July 2026</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
