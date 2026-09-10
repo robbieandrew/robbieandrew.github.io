@@ -1,6 +1,20 @@
 /**
- * Normalizes an asset or route URL relative to Vite's configured BASE_URL.
- * Supports root domain (/), subpath (/repo-name/), and relative (./) hosting.
+ * Returns the base prefix for assets and routes depending on whether
+ * the app is served from the repository root (e.g., localhost) or
+ * a GitHub Pages subpath (/robbieandrew.github.io/).
+ */
+export function getBasePrefix() {
+  if (typeof window === 'undefined') return '/';
+  const pathname = window.location.pathname;
+  if (pathname.startsWith('/robbieandrew.github.io')) {
+    return '/robbieandrew.github.io/';
+  }
+  return '/';
+}
+
+/**
+ * Normalizes an asset or route URL relative to domain/base path.
+ * Supports root domain (/), GitHub Pages (/robbieandrew.github.io/), and external URLs.
  */
 export function getAssetUrl(path) {
   if (!path) return '';
@@ -13,8 +27,7 @@ export function getAssetUrl(path) {
     return path;
   }
 
-  const rawBase = import.meta.env.BASE_URL || '/';
-  const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+  const base = getBasePrefix();
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
 
   return `${base}${cleanPath}`;

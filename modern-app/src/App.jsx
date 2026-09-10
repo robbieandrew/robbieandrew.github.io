@@ -60,16 +60,68 @@ export const ROUTE_CONFIG = [
   { id: 'fossilco2', path: '/fossilco2', aliases: ['/extraction'] },
 ];
 
-export function getRouteFromPath(pathname = window.location.pathname) {
-  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
-  let clean = pathname.toLowerCase().replace(/\/$/, '') || '/';
+export const PAGE_TO_PATH = Object.fromEntries(
+  ROUTE_CONFIG.map((r) => [r.id, r.path])
+);
+
+export function getRepoBase() {
+  if (typeof window === 'undefined') return '';
+  const pathname = window.location.pathname;
+  if (pathname.startsWith('/robbieandrew.github.io')) {
+    return '/robbieandrew.github.io';
+  }
+  return '';
+}
+
+export function getRouteFromLocation() {
+  if (typeof window === 'undefined') return 'home';
+
+  // 1. Check URL hash (e.g. #/india, #india, #gcb)
+  const hash = window.location.hash;
+  if (hash && hash.length > 1) {
+    let cleanHash = hash.slice(1).toLowerCase();
+    if (cleanHash.startsWith('/')) cleanHash = cleanHash.slice(1);
+    cleanHash = '/' + cleanHash.split('?')[0].replace(/\/$/, '');
+    for (const route of ROUTE_CONFIG) {
+      if (cleanHash === route.path) return route.id;
+      if (route.aliases && route.aliases.includes(cleanHash)) return route.id;
+      if ('/' + route.id === cleanHash) return route.id;
+    }
+  }
+
+  // 2. Check query redirect from 404.html (e.g. ?p=/india or ?/india)
+  const search = window.location.search;
+  if (search) {
+    let routeQuery = '';
+    if (search.startsWith('?/')) {
+      routeQuery = search.slice(1).split('&')[0];
+    } else {
+      const params = new URLSearchParams(search);
+      routeQuery = params.get('p') || '';
+    }
+    if (routeQuery) {
+      if (!routeQuery.startsWith('/')) routeQuery = '/' + routeQuery;
+      routeQuery = routeQuery.toLowerCase().replace(/\/$/, '');
+      for (const route of ROUTE_CONFIG) {
+        if (routeQuery === route.path) return route.id;
+        if (route.aliases && route.aliases.includes(routeQuery)) return route.id;
+      }
+    }
+  }
+
+  // 3. Check pathname
+  const base = getRepoBase();
+  let clean = window.location.pathname.toLowerCase();
   if (base && clean.startsWith(base.toLowerCase())) {
     clean = clean.slice(base.length) || '/';
   }
+  clean = clean.replace(/\/$/, '') || '/';
+
   for (const route of ROUTE_CONFIG) {
     if (clean === route.path) return route.id;
     if (route.aliases && route.aliases.includes(clean)) return route.id;
   }
+
   return 'home';
 }
 
@@ -101,29 +153,53 @@ const CARD_TO_PAGE_MAP = {
 };
 
 export default function App() {
-  const [activePage, setActivePage] = useState(() => getRouteFromPath());
+  const [activePage, setActivePage] = useState(() => getRouteFromLocation());
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedCard, setSelectedCard] = useState(null);
   const [isUpdatesOpen, setIsUpdatesOpen] = useState(false);
 
-  // Sync URL changes via browser Back/Forward (popstate)
+  // Sync URL changes via browser Back/Forward (popstate) and hash changes
   useEffect(() => {
-    const handlePopState = () => {
-      setActivePage(getRouteFromPath());
+    const handleLocationChange = () => {
+      setActivePage(getRouteFromLocation());
     };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
   }, []);
 
-  // Update browser URL and state with GitHub Pages subpath support
+  // Clean up redirect query parameter from 404 fallback if present
+  useEffect(() => {
+    const search = window.location.search;
+    const base = getRepoBase();
+    if (search.startsWith('?/') || search.includes('p=')) {
+      const currentRouteId = getRouteFromLocation();
+      const path = PAGE_TO_PATH[currentRouteId] || '/';
+      const cleanPath = (base ? base : '') + (path === '/' ? '/' : path);
+      try {
+        window.history.replaceState({ pageId: currentRouteId }, '', cleanPath);
+      } catch (e) {
+        // Fallback safely if browser blocks replaceState
+      }
+    }
+  }, []);
+
+  // Update browser URL and state with GitHub Pages subpath and hash support
   const navigateTo = (pageId, query = '') => {
-    const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+    const base = getRepoBase();
     const path = PAGE_TO_PATH[pageId] || '/';
-    const fullPath = base ? `${base}${path}` : path;
+    const fullPath = (base ? base : '') + (path === '/' ? '/' : path);
     const targetUrl = query ? `${fullPath}?${query}` : fullPath;
-    if (window.location.pathname !== fullPath) {
-      window.history.pushState({ pageId }, '', targetUrl);
+    try {
+      if (window.location.pathname !== fullPath) {
+        window.history.pushState({ pageId }, '', targetUrl);
+      }
+    } catch (e) {
+      window.location.hash = '#' + (path === '/' ? '' : path);
     }
     setActivePage(pageId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -189,7 +265,7 @@ export default function App() {
 
         {activePage === 'gcb' && <GcbPage />}
         {activePage === 'country' && (
-          <CountryPage onNavigateTo={(pageId) => setActivePage(pageId)} />
+          <CountryPage onNavigateTo={(pageId) => navigateTo(pageId)} />
         )}
         {activePage === 'carsales' && <CarsalesPage />}
         {activePage === 'trucksales' && <TrucksalesPage />}

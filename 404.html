@@ -1,19 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Robbie Andrew's work: Data, charts, more</title>
-    <meta name="description" content="Robbie Andrew: Climate researcher at CICERO. Explore work on global CO2 emissions, clean energy transitions, and climate change." />
-    <meta name="keywords" content="CO2 emissions, fossil CO2, India, China, Norway, USA, Europe, New Zealand, energy, data" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-CSYHgd61.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-9R6eqSmh.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robbie Andrew: Climate Data & Work</title>
+    <script>
+      (function() {
+        var pathname = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        
+        // Handle repo subpath for GitHub Pages
+        var repo = '/robbieandrew.github.io';
+        var route = pathname;
+        if (pathname.startsWith(repo)) {
+          route = pathname.slice(repo.length);
+        }
+        if (!route.startsWith('/')) {
+          route = '/' + route;
+        }
+        
+        var base = pathname.startsWith(repo) ? repo : '';
+        var target = base + '/?p=' + encodeURIComponent(route) + (hash ? hash : '');
+        window.location.replace(target);
+      })();
+    </script>
   </head>
-  <body class="bg-[#ffffff] text-[#11181c] font-sans antialiased min-h-screen">
-    <div id="root"></div>
+  <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #ffffff; color: #11181c;">
+    <div style="text-align: center;">
+      <h2 style="margin-bottom: 8px;">Loading Robbie Andrew's Work...</h2>
+      <p style="color: #687076; font-size: 14px;">Redirecting to climate dashboard</p>
+    </div>
   </body>
 </html>
