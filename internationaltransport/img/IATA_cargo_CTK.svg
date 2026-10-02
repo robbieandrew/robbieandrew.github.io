@@ -36,104 +36,110 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="147.3,223.1 150.7,230.3 154.2,233.6 157.7,227.9 161.3,235.2 164.8,237.6 168.3,240.9 171.9,246.3 175.4,249.8 179.0,257.9 182.5,278.1 186.0,300.0 189.6,300.8 193.0,299.2 196.4,300.8 200.0,296.8 203.5,293.5 207.0,285.4 210.6,274.9 214.2,271.7 217.7,263.6 221.2,257.9 224.8,244.1 228.3,241.7 231.9,239.3 235.3,228.7 238.7,228.7 242.3,227.9 245.8,204.4 249.3,212.5 252.9,214.2 256.5,212.5 260.0,216.6 263.5,210.1 267.1,216.6 270.6,217.4 274.2,212.5 277.6,216.6 281.1,208.5 284.6,208.5 288.1,214.2 291.7,219.8 295.2,217.4 298.8,219.0 302.3,224.7 305.9,225.5 309.4,232.0 312.9,222.2 316.5,231.2 320.0,219.8 323.5,218.2 327.0,224.7 330.5,221.4 334.0,218.2 337.6,219.8 341.1,221.4 344.7,221.4 348.2,227.9 351.7,223.1 355.2,221.4 358.8,215.8 362.3,220.6 365.7,217.4 369.2,219.0 372.7,216.6 376.3,215.8 379.8,215.8 383.4,213.3 386.9,217.4 390.5,214.2 394.0,208.5 397.6,210.1 401.1,205.2 404.6,204.4 408.0,198.0 411.5,198.0 415.1,198.0 418.6,198.8 422.1,191.5 425.7,196.3 429.3,194.7 432.8,190.7 436.3,186.6 439.9,187.4 443.5,189.0 446.9,185.8 450.3,187.4 453.8,183.4 457.4,190.7 460.9,188.2 464.4,193.1 468.0,194.7 471.6,189.9 475.1,192.3 478.6,189.0 482.2,187.4 485.8,181.8 489.2,185.0 492.7,185.8 496.2,179.3 499.8,180.1 503.3,174.5 506.8,178.5 510.4,172.8 513.9,165.6 517.4,159.9 521.0,157.5 524.5,151.0 528.1,149.6 531.5,158.0 534.9,142.4 538.5,138.8 542.0,129.8 545.5,128.4 549.1,131.7 552.7,123.3 556.2,127.5 559.7,127.8 563.3,119.7 566.8,122.9 570.4,113.7 573.8,119.7 577.2,123.7 580.8,117.1 584.3,110.5 587.8,116.6 591.4,114.7 595.0,110.7 598.5,114.2 602.0,113.0 605.6,121.4 609.1,124.2 612.7,124.3 616.1,144.1 619.5,129.9 623.1,131.4 626.6,126.7 630.1,137.8 633.7,127.5 637.3,132.8 640.8,132.6 644.3,130.0 647.9,125.7 651.4,129.0 655.0,137.2 658.5,184.3 661.9,191.9 665.5,241.6 669.0,202.4 672.5,190.5 676.0,183.7 679.6,178.4 683.2,161.1 686.7,154.2 690.2,141.5 693.7,129.7 697.3,114.9 700.7,112.3 704.2,105.8 707.7,86.6 711.2,97.7 714.8,102.6 718.3,100.5 721.9,102.9 725.4,100.2 729.0,96.2 732.5,99.8 736.0,92.3 739.6,108.2 743.1,96.1 746.5,127.3 750.0,130.3 753.5,132.4 757.1,133.3 760.6,144.3 764.2,142.2 767.7,146.7 771.3,156.3 774.8,163.7 778.4,166.3 781.9,166.1 785.4,155.0 788.8,158.2 792.3,157.3 795.9,153.5 799.4,146.8 802.9,147.7 806.5,137.3 810.1,137.8 813.6,135.4 817.1,129.6 820.7,123.9 824.3,109.4 827.7,112.3 831.2,110.9 834.7,112.2 838.2,95.8 841.8,90.7 845.3,93.0 848.9,91.9 852.4,94.8 855.9,93.0 859.5,95.6 863.0,90.0 866.6,97.5 870.0,100.0 873.4,91.1 876.9,83.4 880.5,86.7 884.0,83.9 887.6,69.4 891.1,73.6" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="147.1,273.1 150.2,269.7 153.3,277.8 156.5,271.2 159.6,271.8 162.8,269.1 166.0,268.9 169.2,265.1 172.4,264.7 175.6,266.6 178.8,262.3 182.0,265.3 185.2,259.3 188.3,268.1 191.4,270.7 194.6,260.8 197.8,267.6 201.0,269.5 204.1,272.7 207.3,276.9 210.5,281.1 213.7,289.6 216.9,306.5 220.0,326.3 223.3,326.7 226.4,322.7 229.4,324.1 232.6,321.6 235.8,317.2 239.0,309.6 242.2,301.1 245.4,298.9 248.6,291.2 251.8,287.0 254.9,275.1 258.1,271.9 261.4,269.5 264.4,261.2 267.5,258.6 270.7,260.9 273.9,238.9 277.1,247.4 280.2,248.2 283.5,246.1 286.7,251.1 289.8,245.9 293.0,250.9 296.2,251.6 299.4,243.1 302.5,257.1 305.6,243.4 308.8,244.2 312.0,246.3 315.1,252.9 318.3,249.8 321.6,251.3 324.7,255.9 327.9,256.9 331.1,261.3 334.3,252.8 337.5,265.2 340.6,257.5 343.8,252.8 346.9,258.9 350.1,256.3 353.3,254.5 356.4,255.4 359.7,258.2 362.8,256.9 366.0,262.2 369.2,257.1 372.4,255.9 375.6,252.2 378.7,260.7 381.7,257.9 384.9,254.3 388.1,254.2 391.3,252.4 394.5,253.7 397.7,249.7 400.9,252.8 404.1,249.8 407.3,243.5 410.4,245.7 413.7,217.1 416.8,217.2 419.8,211.0 423.0,210.7 426.2,210.9 429.4,211.0 432.6,203.3 435.8,207.8 439.0,205.7 442.2,202.4 445.3,198.8 448.5,198.9 451.8,201.2 454.8,198.1 457.9,199.9 461.1,197.8 464.3,203.8 467.5,201.1 470.6,204.4 473.9,206.3 477.1,201.9 480.2,204.0 483.4,200.2 486.6,198.2 489.8,195.1 492.9,198.6 496.1,200.6 499.2,194.0 502.4,193.6 505.6,187.4 508.8,190.7 512.0,185.3 515.2,178.2 518.3,173.0 521.5,171.1 524.7,165.4 527.9,165.5 531.0,173.6 534.1,158.6 537.3,155.0 540.4,146.3 543.6,145.0 546.8,148.2 550.0,140.1 553.2,143.9 556.4,144.3 559.6,136.8 562.8,139.7 566.0,130.6 569.1,137.4 572.1,140.5 575.3,134.0 578.5,127.7 581.7,133.9 584.9,131.7 588.1,128.0 591.3,131.2 594.5,130.2 597.7,138.1 600.8,141.0 604.1,140.8 607.2,160.7 610.2,146.5 613.4,147.8 616.6,143.2 619.8,154.3 623.0,144.3 626.2,149.1 629.4,148.7 632.6,146.4 635.7,142.5 638.9,145.5 642.1,153.4 645.3,199.2 648.4,205.8 651.6,254.1 654.7,216.0 657.9,205.0 661.1,198.3 664.3,193.1 667.5,176.3 670.7,169.4 673.8,157.6 677.0,146.2 680.2,131.4 683.3,130.7 686.4,122.2 689.6,106.0 692.8,115.2 695.9,120.8 699.1,118.2 702.4,120.4 705.5,117.5 708.7,113.6 711.9,117.5 715.1,110.1 718.3,125.4 721.4,114.9 724.5,143.9 727.7,147.1 730.8,148.6 734.0,150.5 737.2,160.3 740.4,158.4 743.6,161.8 746.8,171.4 750.0,179.1 753.2,181.1 756.4,180.7 759.5,171.7 762.5,173.0 765.7,173.8 768.9,169.1 772.1,163.4 775.3,163.6 778.5,153.6 781.7,153.2 784.9,151.0 788.1,146.2 791.2,140.3 794.5,125.6 797.6,131.6 800.7,127.7 803.9,130.5 807.1,113.5 810.2,110.2 813.4,111.1 816.6,109.7 819.8,111.2 823.0,110.4 826.1,113.5 829.3,107.7 832.6,114.1 835.6,120.2 838.7,108.6 841.9,103.2 845.1,105.8 848.3,106.2 851.4,91.1 854.7,95.4 857.9,98.8 861.0,95.0 864.2,89.3 867.4,89.4 870.6,91.0 873.7,70.2 876.8,122.3 880.0,89.0 883.2,81.2 886.3,68.2 889.5,73.1 892.8,71.3" stroke="#D95319" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="147.3,252.4 150.7,261.3 154.2,213.5 157.7,224.9 161.3,233.8 164.8,238.7 168.3,237.0 171.9,245.1 175.4,247.6 179.0,235.4 182.5,257.3 186.0,292.9 189.6,325.3 193.0,326.9 196.4,283.2 200.0,297.8 203.5,291.3 207.0,287.2 210.6,269.4 214.2,271.9 217.7,260.5 221.2,235.4 224.8,224.1 228.3,231.4 231.9,262.9 235.3,271.9 238.7,204.6 242.3,228.9 245.8,201.4 249.3,214.4 252.9,205.4 256.5,216.8 260.0,213.5 263.5,185.2 267.1,197.3 270.6,206.3 274.2,233.8 277.6,266.2 281.1,181.1 284.6,207.9 288.1,213.5 291.7,220.0 295.2,207.9 298.8,222.5 302.3,224.1 305.9,203.0 309.4,211.9 312.9,207.9 316.5,266.2 320.0,246.7 323.5,189.2 327.0,226.5 330.5,220.0 334.0,216.0 337.6,216.0 341.1,223.3 344.7,216.8 348.2,210.3 351.7,202.2 355.2,206.3 358.8,241.1 362.3,267.0 365.7,194.1 369.2,218.4 372.7,214.4 376.3,213.5 379.8,211.9 383.4,212.7 386.9,217.6 390.5,193.3 394.0,182.0 397.6,198.2 401.1,225.7 404.6,258.1 408.0,169.0 411.5,201.4 415.1,193.3 418.6,200.6 422.1,186.8 425.7,195.7 429.3,195.7 432.8,167.4 436.3,156.9 439.9,173.0 443.5,211.9 446.9,220.0 450.3,164.1 453.8,186.8 457.4,186.0 460.9,192.5 464.4,187.6 468.0,194.9 471.6,189.2 475.1,166.6 478.6,163.3 482.2,170.6 485.8,202.2 489.2,239.5 492.7,168.2 496.2,177.1 499.8,180.3 503.3,177.1 506.8,171.4 510.4,177.1 513.9,164.1 517.4,131.7 521.0,129.3 524.5,127.7 528.1,181.6 531.5,214.1 534.9,115.9 538.5,143.5 542.0,131.4 545.5,133.6 549.1,127.8 552.7,129.0 556.2,125.2 559.7,104.7 563.3,90.5 566.8,98.7 570.4,143.9 573.8,184.6 577.2,101.5 580.8,120.8 584.3,111.2 587.8,119.7 591.4,114.5 595.0,115.0 598.5,111.0 602.0,88.6 605.6,93.4 609.1,100.7 612.7,149.9 616.1,206.3 619.5,100.9 623.1,143.8 626.6,126.6 630.1,140.6 633.7,127.3 637.3,135.5 640.8,133.2 644.3,105.3 647.9,95.5 651.4,108.2 655.0,172.4 658.5,216.6 661.9,172.0 665.5,248.5 669.0,200.8 672.5,197.6 676.0,181.3 679.6,181.7 683.2,161.6 686.7,128.5 690.2,117.2 693.7,106.1 697.3,140.4 700.7,175.5 704.2,82.5 707.7,96.4 711.2,96.6 714.8,107.9 718.3,95.4 721.9,110.0 725.4,99.8 729.0,66.4 732.5,76.1 736.0,65.8 739.6,131.0 743.1,166.5 746.5,102.9 750.0,137.9 753.5,135.0 757.1,136.3 760.6,138.3 764.2,147.0 767.7,147.0 771.3,132.3 774.8,141.9 778.4,142.7 781.9,204.0 785.4,203.3 788.8,135.4 792.3,165.0 795.9,155.8 799.4,149.7 802.9,142.3 806.5,139.7 810.1,134.8 813.6,113.2 817.1,104.9 820.7,97.5 824.3,142.2 827.7,163.1 831.2,90.3 834.7,120.6 838.2,95.8 841.8,90.1 845.3,89.4 848.9,91.0 852.4,94.9 855.9,66.5 859.5,66.9 863.0,67.9 866.6,130.4 870.0,165.1 873.4,64.7 876.9,96.4 880.5,85.5 884.0,87.4 887.6,63.6 891.1,71.7" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
+    <polyline class="pl pll" points="147.1,301.4 150.2,306.5 153.3,257.3 156.5,275.7 159.6,275.7 162.8,268.6 166.0,269.2 169.2,268.1 172.4,258.7 175.6,248.0 178.8,246.9 182.0,257.9 185.2,287.6 188.3,293.7 191.4,252.2 194.6,262.9 197.8,268.0 201.0,272.1 204.1,270.0 207.3,277.9 210.5,281.4 213.7,271.4 216.9,290.2 220.0,322.7 223.3,350.0 226.4,350.1 229.4,311.0 232.6,324.3 235.8,316.8 239.0,313.6 242.2,297.8 245.4,300.5 248.6,289.6 251.8,268.2 254.9,260.8 258.1,266.4 261.4,293.2 264.4,300.3 267.5,239.9 270.7,264.6 273.9,237.4 277.1,250.0 280.2,242.0 283.5,252.2 286.7,249.9 289.8,225.1 293.0,237.8 296.2,245.3 299.4,269.3 302.5,296.7 305.6,221.0 308.8,245.6 312.0,248.5 315.1,254.1 318.3,242.9 321.6,256.2 324.7,256.9 327.9,238.3 331.1,246.5 334.3,244.2 337.5,297.7 340.6,279.9 343.8,227.8 346.9,263.7 350.1,256.5 353.3,254.1 356.4,253.6 359.7,260.8 362.8,254.4 366.0,248.0 369.2,241.8 372.4,247.4 375.6,279.0 378.7,300.6 381.7,235.2 384.9,259.2 388.1,253.6 391.3,251.5 394.5,250.4 397.7,251.0 400.9,254.8 404.1,234.0 407.3,223.4 410.4,240.7 413.7,238.6 416.8,270.1 419.8,183.6 423.0,215.2 426.2,207.3 429.4,214.4 432.6,200.8 435.8,209.4 439.0,209.4 442.2,182.3 445.3,172.0 448.5,187.6 451.8,225.1 454.8,233.3 457.9,178.8 461.1,200.9 464.3,199.6 467.5,206.6 470.6,201.7 473.9,208.7 477.1,203.1 480.2,181.4 483.4,177.9 486.6,184.6 489.8,216.5 492.9,252.7 496.1,183.6 499.2,191.9 502.4,195.5 505.6,191.5 508.8,186.2 512.0,192.3 515.2,179.2 518.3,148.3 521.5,145.6 524.7,144.5 527.9,196.2 531.0,227.4 534.1,133.0 537.3,159.5 540.4,147.9 543.6,150.0 546.8,144.4 550.0,145.6 553.2,142.0 556.4,122.2 559.6,108.6 562.8,116.4 566.0,159.9 569.1,199.0 572.1,119.1 575.3,137.7 578.5,128.5 581.7,136.7 584.9,131.7 588.1,132.1 591.3,128.3 594.5,106.7 597.7,111.3 600.8,118.4 604.1,165.7 607.2,219.9 610.2,118.5 613.4,159.8 616.6,143.3 619.8,156.7 623.0,144.0 626.2,151.8 629.4,149.7 632.6,122.8 635.7,113.4 638.9,125.6 642.1,187.3 645.3,229.8 648.4,187.0 651.6,260.4 654.7,214.6 657.9,211.6 661.1,195.9 664.3,196.3 667.5,177.0 670.7,145.1 673.8,134.3 677.0,123.6 680.2,156.6 683.3,190.3 686.4,100.9 689.6,114.2 692.8,114.4 695.9,125.3 699.1,113.3 702.4,127.3 705.5,117.5 708.7,85.4 711.9,94.7 715.1,84.8 718.3,147.5 721.4,181.6 724.5,120.5 727.7,154.1 730.8,151.3 734.0,152.6 737.2,154.5 740.4,162.9 743.6,162.9 746.8,148.8 750.0,158.0 753.2,158.7 756.4,217.7 759.5,217.1 762.5,151.7 765.7,180.2 768.9,171.4 772.1,165.5 775.3,158.3 778.5,155.9 781.7,151.2 784.9,130.4 788.1,122.4 791.2,115.3 794.5,158.3 797.6,178.4 800.7,108.4 803.9,137.5 807.1,113.7 810.2,108.2 813.4,107.5 816.6,109.1 819.8,112.8 823.0,85.8 826.1,86.0 829.3,87.2 832.6,147.1 835.6,180.3 838.7,83.8 841.9,113.7 845.1,104.8 848.3,107.8 851.4,85.4 854.7,93.8 857.9,102.9 861.0,68.3 864.2,59.3 867.4,68.2 870.6,123.7 873.7,137.8 876.8,105.4 880.0,95.1 883.2,78.7 886.3,71.7 889.5,65.5 892.8,71.1" stroke="#0072BD" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
 <use xlink:href="#line_y" transform="translate(145.6,0)"/>
-<use xlink:href="#line_y" transform="translate(187.9,0)"/>
-<use xlink:href="#line_y" transform="translate(230.2,0)"/>
-<use xlink:href="#line_y" transform="translate(272.5,0)"/>
-<use xlink:href="#line_y" transform="translate(314.8,0)"/>
-<use xlink:href="#line_y" transform="translate(357.2,0)"/>
-<use xlink:href="#line_y" transform="translate(399.5,0)"/>
-<use xlink:href="#line_y" transform="translate(441.8,0)"/>
-<use xlink:href="#line_y" transform="translate(484.1,0)"/>
+<use xlink:href="#line_y" transform="translate(183.7,0)"/>
+<use xlink:href="#line_y" transform="translate(221.8,0)"/>
+<use xlink:href="#line_y" transform="translate(259.8,0)"/>
+<use xlink:href="#line_y" transform="translate(297.9,0)"/>
+<use xlink:href="#line_y" transform="translate(336.0,0)"/>
+<use xlink:href="#line_y" transform="translate(374.1,0)"/>
+<use xlink:href="#line_y" transform="translate(412.2,0)"/>
+<use xlink:href="#line_y" transform="translate(450.2,0)"/>
+<use xlink:href="#line_y" transform="translate(488.3,0)"/>
 <use xlink:href="#line_y" transform="translate(526.4,0)"/>
-<use xlink:href="#line_y" transform="translate(568.7,0)"/>
-<use xlink:href="#line_y" transform="translate(611.0,0)"/>
-<use xlink:href="#line_y" transform="translate(653.3,0)"/>
-<use xlink:href="#line_y" transform="translate(695.6,0)"/>
-<use xlink:href="#line_y" transform="translate(738.0,0)"/>
-<use xlink:href="#line_y" transform="translate(780.3,0)"/>
-<use xlink:href="#line_y" transform="translate(822.6,0)"/>
-<use xlink:href="#line_y" transform="translate(864.9,0)"/>
+<use xlink:href="#line_y" transform="translate(564.5,0)"/>
+<use xlink:href="#line_y" transform="translate(602.6,0)"/>
+<use xlink:href="#line_y" transform="translate(640.6,0)"/>
+<use xlink:href="#line_y" transform="translate(678.7,0)"/>
+<use xlink:href="#line_y" transform="translate(716.8,0)"/>
+<use xlink:href="#line_y" transform="translate(754.9,0)"/>
+<use xlink:href="#line_y" transform="translate(793.0,0)"/>
+<use xlink:href="#line_y" transform="translate(831.0,0)"/>
+<use xlink:href="#line_y" transform="translate(869.1,0)"/>
 <use xlink:href="#line_y" transform="translate(907.2,0)"/>
 <use xlink:href="#line_x" transform="translate(0,560.2)"/>
-<use xlink:href="#line_x" transform="translate(0,458.9)"/>
-<use xlink:href="#line_x" transform="translate(0,357.7)"/>
-<use xlink:href="#line_x" transform="translate(0,256.5)"/>
-<use xlink:href="#line_x" transform="translate(0,155.2)"/>
-<use xlink:href="#line_x" transform="translate(0,54.0)"/>
+<use xlink:href="#line_x" transform="translate(0,462.8)"/>
+<use xlink:href="#line_x" transform="translate(0,365.5)"/>
+<use xlink:href="#line_x" transform="translate(0,268.1)"/>
+<use xlink:href="#line_x" transform="translate(0,170.8)"/>
+<use xlink:href="#line_x" transform="translate(0,73.5)"/>
 <use xlink:href="#tick_y" transform="translate(0,560.2)"/>
-<use xlink:href="#tick_y" transform="translate(0,458.9)"/>
-<use xlink:href="#tick_y" transform="translate(0,357.7)"/>
-<use xlink:href="#tick_y" transform="translate(0,256.5)"/>
-<use xlink:href="#tick_y" transform="translate(0,155.2)"/>
-<use xlink:href="#tick_y" transform="translate(0,54.0)"/>
+<use xlink:href="#tick_y" transform="translate(0,462.8)"/>
+<use xlink:href="#tick_y" transform="translate(0,365.5)"/>
+<use xlink:href="#tick_y" transform="translate(0,268.1)"/>
+<use xlink:href="#tick_y" transform="translate(0,170.8)"/>
+<use xlink:href="#tick_y" transform="translate(0,73.5)"/>
 <use xlink:href="#tick_x" transform="translate(145.6,0)"/>
-<use xlink:href="#tick_x" transform="translate(187.9,0)"/>
-<use xlink:href="#tick_x" transform="translate(230.2,0)"/>
-<use xlink:href="#tick_x" transform="translate(272.5,0)"/>
-<use xlink:href="#tick_x" transform="translate(314.8,0)"/>
-<use xlink:href="#tick_x" transform="translate(357.2,0)"/>
-<use xlink:href="#tick_x" transform="translate(399.5,0)"/>
-<use xlink:href="#tick_x" transform="translate(441.8,0)"/>
-<use xlink:href="#tick_x" transform="translate(484.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(183.7,0)"/>
+<use xlink:href="#tick_x" transform="translate(221.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(259.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(297.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(336.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(374.1,0)"/>
+<use xlink:href="#tick_x" transform="translate(412.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(450.2,0)"/>
+<use xlink:href="#tick_x" transform="translate(488.3,0)"/>
 <use xlink:href="#tick_x" transform="translate(526.4,0)"/>
-<use xlink:href="#tick_x" transform="translate(568.7,0)"/>
-<use xlink:href="#tick_x" transform="translate(611.0,0)"/>
-<use xlink:href="#tick_x" transform="translate(653.3,0)"/>
-<use xlink:href="#tick_x" transform="translate(695.6,0)"/>
-<use xlink:href="#tick_x" transform="translate(738.0,0)"/>
-<use xlink:href="#tick_x" transform="translate(780.3,0)"/>
-<use xlink:href="#tick_x" transform="translate(822.6,0)"/>
-<use xlink:href="#tick_x" transform="translate(864.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(564.5,0)"/>
+<use xlink:href="#tick_x" transform="translate(602.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(640.6,0)"/>
+<use xlink:href="#tick_x" transform="translate(678.7,0)"/>
+<use xlink:href="#tick_x" transform="translate(716.8,0)"/>
+<use xlink:href="#tick_x" transform="translate(754.9,0)"/>
+<use xlink:href="#tick_x" transform="translate(793.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(831.0,0)"/>
+<use xlink:href="#tick_x" transform="translate(869.1,0)"/>
 <use xlink:href="#tick_x" transform="translate(907.2,0)"/>
 <polyline points="145.6,53.993 145.6,560.180 907.2,560.180" stroke="#808080" stroke-width="0.90" fill="none"/>
 <text class="ticklabel ytl" transform="translate(128.8,568.3)">0</text>
-<text class="ticklabel ytl" transform="translate(128.8,467.0)">5</text>
-<text class="ticklabel ytl" transform="translate(128.8,365.8)">10</text>
-<text class="ticklabel ytl" transform="translate(128.8,264.6)">15</text>
-<text class="ticklabel ytl" transform="translate(128.8,163.3)">20</text>
-<text class="ticklabel ytl" transform="translate(128.8,62.1)">25 billion</text>
+<text class="ticklabel ytl" transform="translate(128.8,470.9)">5</text>
+<text class="ticklabel ytl" transform="translate(128.8,373.6)">10</text>
+<text class="ticklabel ytl" transform="translate(128.8,276.2)">15</text>
+<text class="ticklabel ytl" transform="translate(128.8,178.9)">20</text>
+<text class="ticklabel ytl" transform="translate(128.8,81.6)">25 billion</text>
 <g id="lines">
   <g class="pl_1">
     <use xlink:href="#line_1" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_1" class="pl pll" stroke="#D95319" stroke-width="2.70"/>
-    <text class="pl" transform="translate(925.2,85.6)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Seasonally adjusted</text>
+    <text class="pl" transform="translate(925.2,84.2)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Seasonally adjusted</text>
   </g>
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#0072BD" stroke-width="0.90"/>
-    <text class="pl" transform="translate(925.2,59.7)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Actual</text>
+    <text class="pl" transform="translate(925.2,58.3)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Actual</text>
   </g>
 </g>
-    <text class="pl" transform="translate(166.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2008</text>
-    <text class="pl" transform="translate(209.1,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2009</text>
-    <text class="pl" transform="translate(251.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2010</text>
-    <text class="pl" transform="translate(293.7,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2011</text>
-    <text class="pl" transform="translate(336.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2012</text>
-    <text class="pl" transform="translate(378.3,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2013</text>
-    <text class="pl" transform="translate(420.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2014</text>
-    <text class="pl" transform="translate(462.9,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2015</text>
-    <text class="pl" transform="translate(505.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2016</text>
-    <text class="pl" transform="translate(547.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2017</text>
-    <text class="pl" transform="translate(589.9,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2018</text>
-    <text class="pl" transform="translate(632.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2019</text>
-    <text class="pl" transform="translate(674.5,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2020</text>
-    <text class="pl" transform="translate(716.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2021</text>
-    <text class="pl" transform="translate(759.1,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2022</text>
-    <text class="pl" transform="translate(801.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2023</text>
-    <text class="pl" transform="translate(843.7,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2024</text>
-    <text class="pl" transform="translate(886.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
+    <text class="pl" transform="translate(164.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2007</text>
+    <text class="pl" transform="translate(202.7,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2008</text>
+    <text class="pl" transform="translate(240.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2009</text>
+    <text class="pl" transform="translate(278.9,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2010</text>
+    <text class="pl" transform="translate(317.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2011</text>
+    <text class="pl" transform="translate(355.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2012</text>
+    <text class="pl" transform="translate(393.1,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2013</text>
+    <text class="pl" transform="translate(431.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2014</text>
+    <text class="pl" transform="translate(469.3,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2015</text>
+    <text class="pl" transform="translate(507.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2016</text>
+    <text class="pl" transform="translate(545.4,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2017</text>
+    <text class="pl" transform="translate(583.5,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2018</text>
+    <text class="pl" transform="translate(621.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2019</text>
+    <text class="pl" transform="translate(659.7,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2020</text>
+    <text class="pl" transform="translate(697.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2021</text>
+    <text class="pl" transform="translate(735.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2022</text>
+    <text class="pl" transform="translate(773.9,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2023</text>
+    <text class="pl" transform="translate(812.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2024</text>
+    <text class="pl" transform="translate(850.1,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
+    <text class="pl" transform="translate(888.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2026</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly global air cargo</text>
-    <text class="pl" transform="translate(130.0,81.7)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">tonne-km</text>
+    <text class="pl" transform="translate(130.0,101.1)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">tonne-km</text>
     <text class="pl" transform="translate(895.2,546.7)" dy="0.0" font-size="18.00" fill="#808080" stroke="none" text-anchor="end">Cargo = Freight + Mail + Unaccompanied baggage</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: IATA   &#9679;   Data through August 2025</text>
+<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: IATA   &#9679;   Data through August 2026</text>
 <text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
   <g class="dl_el" transform="translate(154.6,578.4)">
     <g class="dl_el_balloon">
