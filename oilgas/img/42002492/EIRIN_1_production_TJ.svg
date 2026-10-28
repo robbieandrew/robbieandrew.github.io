@@ -35,17 +35,17 @@ text:hover + .dl_el {display:block;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
-  <path id="line_y" d="M 0,53.993 v 506.187" stroke="#212121" stroke-opacity="0.15" stroke-width="1.00"/>
-  <path id="line_x" d="M 145.600,0 h 761.600" stroke="#212121" stroke-opacity="0.15" stroke-width="1.00"/>
+  <path id="line_y" d="M 0,53.993 v 506.187" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
+  <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="834.8,560.2 840.7,560.2 846.3,560.2 851.9,560.2 857.7,560.2 863.5,374.6 869.3,383.7" stroke="#D95319" fill="none" />
+    <polyline class="pl pll" points="834.8,560.2 840.7,560.2 846.3,560.2 851.9,560.2 857.7,560.2 863.5,374.6 869.3,383.7 875.0,389.2 880.9,425.5" stroke="#D95319" fill="none" />
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-    <polyline class="pl pll" points="834.8,560.2 840.7,560.2 846.3,560.2 851.9,560.2 857.7,560.2 863.5,97.5 869.3,95.3" stroke="#0072BD" fill="none" />
+    <polyline class="pl pll" points="834.8,560.2 840.7,560.2 846.3,560.2 851.9,560.2 857.7,560.2 863.5,97.5 869.3,95.3 875.0,83.1 880.9,166.8" stroke="#0072BD" fill="none" />
   </symbol>
 </defs>
 <g id="main">
@@ -103,12 +103,12 @@ text:hover + .dl_el {display:block;}
   <g class="pl_2">
     <use xlink:href="#line_2" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_2" class="pl pll" stroke="#D95319" stroke-width="0.90"/>
-    <text class="pl" transform="translate(925.2,383.7)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Oil</text>
+    <text class="pl" transform="translate(925.2,425.5)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Oil</text>
   </g>
   <g class="pl_3">
     <use xlink:href="#line_3" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_3" class="pl pll" stroke="#0072BD" stroke-width="0.90"/>
-    <text class="pl" transform="translate(925.2,95.3)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Natural gas</text>
+    <text class="pl" transform="translate(925.2,166.8)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Natural gas</text>
   </g>
 </g>
     <text class="pl" transform="translate(180.2,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2016</text>
@@ -123,23 +123,12 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(803.3,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
     <text class="pl" transform="translate(872.6,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2026</text>
 <polyline class="pl" points="815.5,57.0 815.5,58.3 815.6,59.6 815.8,60.8 816.1,62.0 816.5,63.1 816.9,64.2 817.4,65.2 817.9,66.2 818.5,67.1 819.2,68.1 819.9,69.0 820.7,69.8 821.5,70.6 822.3,71.5 823.2,72.2 824.2,73.0 825.2,73.7 826.2,74.5 827.2,75.2 828.3,75.9 829.4,76.6 830.5,77.3 831.6,77.9 832.7,78.6 833.9,79.3 835.1,79.9 836.2,80.6 837.4,81.3 838.6,82.0 839.8,82.7 840.9,83.4 842.1,84.1 843.2,84.9 844.4,85.6 845.5,86.4 846.6,87.2 847.6,88.1 848.7,88.9 849.7,89.8 850.7,90.7 851.6,91.7 852.5,92.7 853.4,93.7 854.2,94.8 854.9,95.9 855.7,97.1 856.3,98.3 856.9,99.6 857.5,100.9" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
-<polyline class="pl" points="859.2,91.3 857.5,100.9 848.6,97.1" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="859.2,91.3 857.5,100.9 848.5,97.1" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
     <text class="pl" transform="translate(815.5,43.5)"  font-size="18.00" fill="#000" stroke="none" text-anchor="middle">
       <tspan x="0" y="-20.2">Production</tspan><tspan x="0" y="0.0">start</tspan>
     </text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly production at Eirin</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a>   &#9679;   Data: DISKOS   &#9679;   Through June 2026</text>
-<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"><a href="https://bsky.app/profile/robbieandrew.bsky.social" style="fill:#BFBFBF" target="_blank">@robbieandrew.bsky.social</a></text>
-  <g class="dl_el" transform="translate(154.6,578.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="120" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:60px">
-      <p class="dl_fe_p">Find me on BlueSky</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,60H60l5,5l5,-5H120"/>
-    </g>
-  </g>
+<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">Robbie Andrew   &#9679;   Data: DISKOS   &#9679;   Through August 2026</text>
 <g>
 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
