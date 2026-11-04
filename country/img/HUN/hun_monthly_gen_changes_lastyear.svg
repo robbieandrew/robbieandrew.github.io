@@ -19,22 +19,26 @@ text:hover + .dl_el {display:block;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="532.8" /></clipPath>
-  <path id="line_x" d="M 145.600,0 h 761.600" stroke="#212121" stroke-opacity="0.15" stroke-width="1.00"/>
+  <path id="line_x" d="M 145.600,0 h 761.600" stroke="#262626" stroke-opacity="0.15" stroke-width="1.00"/>
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,587.177 v 6.000" stroke="#808080" stroke-width="0.90"/>
 </defs>
 <g id="main">
 <use xlink:href="#line_x" transform="translate(0,587.2)"/>
-<use xlink:href="#line_x" transform="translate(0,480.5)"/>
-<use xlink:href="#line_x" transform="translate(0,373.9)"/>
-<use xlink:href="#line_x" transform="translate(0,267.3)"/>
-<use xlink:href="#line_x" transform="translate(0,160.6)"/>
+<use xlink:href="#line_x" transform="translate(0,511.0)"/>
+<use xlink:href="#line_x" transform="translate(0,434.8)"/>
+<use xlink:href="#line_x" transform="translate(0,358.7)"/>
+<use xlink:href="#line_x" transform="translate(0,282.5)"/>
+<use xlink:href="#line_x" transform="translate(0,206.3)"/>
+<use xlink:href="#line_x" transform="translate(0,130.2)"/>
 <use xlink:href="#line_x" transform="translate(0,54.0)"/>
 <use xlink:href="#tick_y" transform="translate(0,587.2)"/>
-<use xlink:href="#tick_y" transform="translate(0,480.5)"/>
-<use xlink:href="#tick_y" transform="translate(0,373.9)"/>
-<use xlink:href="#tick_y" transform="translate(0,267.3)"/>
-<use xlink:href="#tick_y" transform="translate(0,160.6)"/>
+<use xlink:href="#tick_y" transform="translate(0,511.0)"/>
+<use xlink:href="#tick_y" transform="translate(0,434.8)"/>
+<use xlink:href="#tick_y" transform="translate(0,358.7)"/>
+<use xlink:href="#tick_y" transform="translate(0,282.5)"/>
+<use xlink:href="#tick_y" transform="translate(0,206.3)"/>
+<use xlink:href="#tick_y" transform="translate(0,130.2)"/>
 <use xlink:href="#tick_y" transform="translate(0,54.0)"/>
 <use xlink:href="#tick_x" transform="translate(177.3,0)"/>
 <use xlink:href="#tick_x" transform="translate(240.8,0)"/>
@@ -61,132 +65,156 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel xtl" transform="translate(748.5,629.0)" text-anchor="middle">Oct</text>
 <text class="ticklabel xtl" transform="translate(812.0,629.0)" text-anchor="middle">Nov</text>
 <text class="ticklabel xtl" transform="translate(875.5,629.0)" text-anchor="middle">Dec</text>
-<text class="ticklabel ytl" transform="translate(128.8,595.3)">-0.4</text>
-<text class="ticklabel ytl" transform="translate(128.8,488.6)">-0.2</text>
-<text class="ticklabel ytl" transform="translate(128.8,382.0)">0.0</text>
-<text class="ticklabel ytl" transform="translate(128.8,275.4)">0.2</text>
-<text class="ticklabel ytl" transform="translate(128.8,168.7)">0.4</text>
-<text class="ticklabel ytl" transform="translate(128.8,62.1)">0.6 TWh</text>
-<g stroke="#212121" stroke-width="0.90" fill="#808080"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,443.2 151.9,437.9 202.7,437.9 202.7,443.2 151.9,443.2"/>
-  <polygon class="pl" points="215.4,421.9 215.4,416.6 266.2,416.6 266.2,421.9 215.4,421.9"/>
-  <polygon class="pl" points="278.9,437.9 278.9,432.6 329.7,432.6 329.7,437.9 278.9,437.9"/>
-  <polygon class="pl" points="342.3,160.6 342.3,166.0 393.1,166.0 393.1,160.6 342.3,160.6"/>
-  <polygon class="pl" points="596.2,182.0 596.2,187.3 647.0,187.3 647.0,182.0 596.2,182.0"/>
-  <polygon class="pl" points="659.7,453.9 659.7,448.5 710.5,448.5 710.5,453.9 659.7,453.9"/>
-  <polygon class="pl" points="723.1,437.9 723.1,427.2 773.9,427.2 773.9,437.9 723.1,437.9"/>
-  <polygon class="pl" points="786.6,549.9 786.6,544.5 837.4,544.5 837.4,549.9 786.6,549.9"/>
+<text class="ticklabel ytl" transform="translate(128.8,595.3)">-0.6</text>
+<text class="ticklabel ytl" transform="translate(128.8,519.1)">-0.4</text>
+<text class="ticklabel ytl" transform="translate(128.8,442.9)">-0.2</text>
+<text class="ticklabel ytl" transform="translate(128.8,366.8)">0</text>
+<text class="ticklabel ytl" transform="translate(128.8,290.6)">0.2</text>
+<text class="ticklabel ytl" transform="translate(128.8,214.4)">0.4</text>
+<text class="ticklabel ytl" transform="translate(128.8,138.3)">0.6</text>
+<text class="ticklabel ytl" transform="translate(128.8,62.1)">0.8 TWh</text>
+<g stroke="#000" stroke-width="0.90" fill="#000"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,225.4 151.9,250.1 202.7,250.1 202.7,225.4 151.9,225.4"/>
+  <polygon class="pl" points="215.4,114.5 215.4,134.0 266.2,134.0 266.2,114.5 215.4,114.5"/>
+  <polygon class="pl" points="278.9,114.9 278.9,150.3 329.7,150.3 329.7,114.9 278.9,114.9"/>
+  <polygon class="pl" points="342.3,165.2 342.3,202.9 393.1,202.9 393.1,165.2 342.3,165.2"/>
+  <polygon class="pl" points="405.8,161.4 405.8,197.2 456.6,197.2 456.6,161.4 405.8,161.4"/>
+  <polygon class="pl" points="469.3,107.7 469.3,149.6 520.1,149.6 520.1,107.7 469.3,107.7"/>
+  <polygon class="pl" points="532.7,197.2 532.7,230.7 583.5,230.7 583.5,197.2 532.7,197.2"/>
+  <polygon class="pl" points="596.2,196.8 596.2,231.1 647.0,231.1 647.0,196.8 596.2,196.8"/>
+  <polygon class="pl" points="659.7,158.7 659.7,194.5 710.5,194.5 710.5,158.7 659.7,158.7"/>
+  <polygon class="pl" points="723.1,120.6 723.1,153.4 773.9,153.4 773.9,120.6 723.1,120.6"/>
+  <polygon class="pl" points="786.6,265.4 786.6,299.3 837.4,299.3 837.4,265.4 786.6,265.4"/>
+  <polygon class="pl" points="850.1,242.9 850.1,286.7 900.9,286.7 900.9,242.9 850.1,242.9"/>
 </g>
-<g stroke="#212121" stroke-width="0.90" fill="#4DBEEE"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,229.9 151.9,245.9 202.7,245.9 202.7,229.9 151.9,229.9"/>
-  <polygon class="pl" points="215.4,59.3 215.4,70.0 266.2,70.0 266.2,59.3 215.4,59.3"/>
-  <polygon class="pl" points="278.9,80.7 278.9,203.3 329.7,203.3 329.7,80.7 278.9,80.7"/>
-  <polygon class="pl" points="342.3,166.0 342.3,235.3 393.1,235.3 393.1,166.0 342.3,166.0"/>
-  <polygon class="pl" points="405.8,144.6 405.8,283.3 456.6,283.3 456.6,144.6 405.8,144.6"/>
-  <polygon class="pl" points="469.3,560.5 469.3,437.9 520.1,437.9 520.1,560.5 469.3,560.5"/>
-  <polygon class="pl" points="532.7,523.2 532.7,427.2 583.5,427.2 583.5,523.2 532.7,523.2"/>
-  <polygon class="pl" points="596.2,512.5 596.2,459.2 647.0,459.2 647.0,512.5 596.2,512.5"/>
-  <polygon class="pl" points="659.7,128.6 659.7,256.6 710.5,256.6 710.5,128.6 659.7,128.6"/>
-  <polygon class="pl" points="723.1,75.3 723.1,155.3 773.9,155.3 773.9,75.3 723.1,75.3"/>
-  <polygon class="pl" points="786.6,544.5 786.6,421.9 837.4,421.9 837.4,544.5 786.6,544.5"/>
-  <polygon class="pl" points="850.1,587.2 850.1,459.2 900.9,459.2 900.9,587.2 850.1,587.2"/>
+<g stroke="#000" stroke-width="0.90" fill="#808080"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,436.7 151.9,433.7 202.7,433.7 202.7,436.7 151.9,436.7"/>
+  <polygon class="pl" points="215.4,415.8 215.4,412.0 266.2,412.0 266.2,415.8 215.4,415.8"/>
+  <polygon class="pl" points="278.9,438.3 278.9,434.1 329.7,434.1 329.7,438.3 278.9,438.3"/>
+  <polygon class="pl" points="342.3,202.9 342.3,204.4 393.1,204.4 393.1,202.9 342.3,202.9"/>
+  <polygon class="pl" points="405.8,472.9 405.8,472.5 456.6,472.5 456.6,472.9 405.8,472.9"/>
+  <polygon class="pl" points="469.3,537.7 469.3,536.5 520.1,536.5 520.1,537.7 469.3,537.7"/>
+  <polygon class="pl" points="532.7,498.8 532.7,498.1 583.5,498.1 583.5,498.8 532.7,498.8"/>
+  <polygon class="pl" points="596.2,231.1 596.2,235.7 647.0,235.7 647.0,231.1 596.2,231.1"/>
+  <polygon class="pl" points="659.7,453.1 659.7,450.1 710.5,450.1 710.5,453.1 659.7,453.1"/>
+  <polygon class="pl" points="723.1,431.0 723.1,425.7 773.9,425.7 773.9,431.0 723.1,431.0"/>
+  <polygon class="pl" points="786.6,526.6 786.6,521.3 837.4,521.3 837.4,526.6 786.6,526.6"/>
 </g>
-<g stroke="#212121" stroke-width="0.90" fill="#D95319"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,245.9 151.9,267.3 202.7,267.3 202.7,245.9 151.9,245.9"/>
-  <polygon class="pl" points="215.4,70.0 215.4,96.6 266.2,96.6 266.2,70.0 215.4,70.0"/>
-  <polygon class="pl" points="278.9,203.3 278.9,240.6 329.7,240.6 329.7,203.3 278.9,203.3"/>
-  <polygon class="pl" points="342.3,235.3 342.3,267.3 393.1,267.3 393.1,235.3 342.3,235.3"/>
-  <polygon class="pl" points="405.8,283.3 405.8,315.3 456.6,315.3 456.6,283.3 405.8,283.3"/>
-  <polygon class="pl" points="469.3,80.7 469.3,107.3 520.1,107.3 520.1,80.7 469.3,80.7"/>
-  <polygon class="pl" points="532.7,203.3 532.7,235.3 583.5,235.3 583.5,203.3 532.7,203.3"/>
-  <polygon class="pl" points="596.2,187.3 596.2,229.9 647.0,229.9 647.0,187.3 596.2,187.3"/>
-  <polygon class="pl" points="659.7,256.6 659.7,261.9 710.5,261.9 710.5,256.6 659.7,256.6"/>
-  <polygon class="pl" points="723.1,155.3 723.1,187.3 773.9,187.3 773.9,155.3 723.1,155.3"/>
-  <polygon class="pl" points="786.6,293.9 786.6,304.6 837.4,304.6 837.4,293.9 786.6,293.9"/>
+<g stroke="#000" stroke-width="0.90" fill="#4DBEEE"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,250.1 151.9,262.7 202.7,262.7 202.7,250.1 151.9,250.1"/>
+  <polygon class="pl" points="215.4,134.0 215.4,141.6 266.2,141.6 266.2,134.0 215.4,134.0"/>
+  <polygon class="pl" points="278.9,150.3 278.9,236.8 329.7,236.8 329.7,150.3 278.9,150.3"/>
+  <polygon class="pl" points="342.3,204.4 342.3,251.7 393.1,251.7 393.1,204.4 342.3,204.4"/>
+  <polygon class="pl" points="405.8,197.2 405.8,296.2 456.6,296.2 456.6,197.2 405.8,197.2"/>
+  <polygon class="pl" points="469.3,536.5 469.3,450.8 520.1,450.8 520.1,536.5 469.3,536.5"/>
+  <polygon class="pl" points="532.7,498.1 532.7,429.9 583.5,429.9 583.5,498.1 532.7,498.1"/>
+  <polygon class="pl" points="596.2,494.6 596.2,453.1 647.0,453.1 647.0,494.6 596.2,494.6"/>
+  <polygon class="pl" points="659.7,194.5 659.7,287.8 710.5,287.8 710.5,194.5 659.7,194.5"/>
+  <polygon class="pl" points="723.1,153.4 723.1,208.2 773.9,208.2 773.9,153.4 723.1,153.4"/>
+  <polygon class="pl" points="786.6,521.3 786.6,434.8 837.4,434.8 837.4,521.3 786.6,521.3"/>
+  <polygon class="pl" points="850.1,556.7 850.1,464.2 900.9,464.2 900.9,556.7 850.1,556.7"/>
 </g>
-<g stroke="#212121" stroke-width="0.90" fill="#EDB120"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,437.9 151.9,416.6 202.7,416.6 202.7,437.9 151.9,437.9"/>
-  <polygon class="pl" points="215.4,96.6 215.4,171.3 266.2,171.3 266.2,96.6 215.4,96.6"/>
-  <polygon class="pl" points="278.9,240.6 278.9,336.6 329.7,336.6 329.7,240.6 278.9,240.6"/>
-  <polygon class="pl" points="342.3,267.3 342.3,368.6 393.1,368.6 393.1,267.3 342.3,267.3"/>
-  <polygon class="pl" points="405.8,315.3 405.8,373.9 456.6,373.9 456.6,315.3 405.8,315.3"/>
-  <polygon class="pl" points="469.3,107.3 469.3,368.6 520.1,368.6 520.1,107.3 469.3,107.3"/>
-  <polygon class="pl" points="532.7,235.3 532.7,336.6 583.5,336.6 583.5,235.3 532.7,235.3"/>
-  <polygon class="pl" points="596.2,229.9 596.2,368.6 647.0,368.6 647.0,229.9 596.2,229.9"/>
-  <polygon class="pl" points="659.7,261.9 659.7,373.9 710.5,373.9 710.5,261.9 659.7,261.9"/>
-  <polygon class="pl" points="723.1,187.3 723.1,224.6 773.9,224.6 773.9,187.3 723.1,187.3"/>
-  <polygon class="pl" points="850.1,459.2 850.1,448.5 900.9,448.5 900.9,459.2 850.1,459.2"/>
+<g stroke="#000" stroke-width="0.90" fill="#D95319"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,262.7 151.9,281.0 202.7,281.0 202.7,262.7 151.9,262.7"/>
+  <polygon class="pl" points="215.4,141.6 215.4,164.4 266.2,164.4 266.2,141.6 215.4,141.6"/>
+  <polygon class="pl" points="278.9,236.8 278.9,264.6 329.7,264.6 329.7,236.8 278.9,236.8"/>
+  <polygon class="pl" points="342.3,251.7 342.3,276.8 393.1,276.8 393.1,251.7 342.3,251.7"/>
+  <polygon class="pl" points="405.8,296.2 405.8,317.9 456.6,317.9 456.6,296.2 405.8,296.2"/>
+  <polygon class="pl" points="469.3,149.6 469.3,168.6 520.1,168.6 520.1,149.6 469.3,149.6"/>
+  <polygon class="pl" points="532.7,230.7 532.7,253.6 583.5,253.6 583.5,230.7 532.7,230.7"/>
+  <polygon class="pl" points="596.2,235.7 596.2,267.3 647.0,267.3 647.0,235.7 596.2,235.7"/>
+  <polygon class="pl" points="659.7,287.8 659.7,290.9 710.5,290.9 710.5,287.8 659.7,287.8"/>
+  <polygon class="pl" points="723.1,208.2 723.1,228.8 773.9,228.8 773.9,208.2 723.1,208.2"/>
+  <polygon class="pl" points="786.6,299.3 786.6,305.0 837.4,305.0 837.4,299.3 786.6,299.3"/>
+  <polygon class="pl" points="850.1,286.7 850.1,291.3 900.9,291.3 900.9,286.7 850.1,286.7"/>
 </g>
-<g stroke="#212121" stroke-width="0.90" fill="#77AC30"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,416.6 151.9,405.9 202.7,405.9 202.7,416.6 151.9,416.6"/>
-  <polygon class="pl" points="215.4,416.6 215.4,400.6 266.2,400.6 266.2,416.6 215.4,416.6"/>
-  <polygon class="pl" points="278.9,432.6 278.9,421.9 329.7,421.9 329.7,432.6 278.9,432.6"/>
-  <polygon class="pl" points="342.3,448.5 342.3,443.2 393.1,443.2 393.1,448.5 342.3,448.5"/>
-  <polygon class="pl" points="469.3,368.6 469.3,373.9 520.1,373.9 520.1,368.6 469.3,368.6"/>
-  <polygon class="pl" points="532.7,336.6 532.7,341.9 583.5,341.9 583.5,336.6 532.7,336.6"/>
-  <polygon class="pl" points="596.2,368.6 596.2,373.9 647.0,373.9 647.0,368.6 596.2,368.6"/>
-  <polygon class="pl" points="659.7,448.5 659.7,437.9 710.5,437.9 710.5,448.5 659.7,448.5"/>
-  <polygon class="pl" points="723.1,224.6 723.1,229.9 773.9,229.9 773.9,224.6 723.1,224.6"/>
-  <polygon class="pl" points="850.1,448.5 850.1,432.6 900.9,432.6 900.9,448.5 850.1,448.5"/>
+<g stroke="#000" stroke-width="0.90" fill="#EDB120"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,433.7 151.9,415.0 202.7,415.0 202.7,433.7 151.9,433.7"/>
+  <polygon class="pl" points="215.4,164.4 215.4,215.1 266.2,215.1 266.2,164.4 215.4,164.4"/>
+  <polygon class="pl" points="278.9,264.6 278.9,330.1 329.7,330.1 329.7,264.6 278.9,264.6"/>
+  <polygon class="pl" points="342.3,276.8 342.3,356.0 393.1,356.0 393.1,276.8 342.3,276.8"/>
+  <polygon class="pl" points="405.8,317.9 405.8,358.7 456.6,358.7 456.6,317.9 405.8,317.9"/>
+  <polygon class="pl" points="469.3,168.6 469.3,355.2 520.1,355.2 520.1,168.6 469.3,168.6"/>
+  <polygon class="pl" points="532.7,253.6 532.7,332.0 583.5,332.0 583.5,253.6 532.7,253.6"/>
+  <polygon class="pl" points="596.2,267.3 596.2,355.2 647.0,355.2 647.0,267.3 596.2,267.3"/>
+  <polygon class="pl" points="659.7,290.9 659.7,358.3 710.5,358.3 710.5,290.9 659.7,290.9"/>
+  <polygon class="pl" points="723.1,228.8 723.1,249.0 773.9,249.0 773.9,228.8 723.1,228.8"/>
+  <polygon class="pl" points="786.6,434.8 786.6,426.5 837.4,426.5 837.4,434.8 786.6,434.8"/>
+  <polygon class="pl" points="850.1,464.2 850.1,455.0 900.9,455.0 900.9,464.2 850.1,464.2"/>
 </g>
-<g stroke="#212121" stroke-width="0.90" fill="#0072BD"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,267.3 151.9,272.6 202.7,272.6 202.7,267.3 151.9,267.3"/>
-  <polygon class="pl" points="215.4,171.3 215.4,176.6 266.2,176.6 266.2,171.3 215.4,171.3"/>
-  <polygon class="pl" points="342.3,368.6 342.3,373.9 393.1,373.9 393.1,368.6 342.3,368.6"/>
-  <polygon class="pl" points="405.8,485.9 405.8,480.5 456.6,480.5 456.6,485.9 405.8,485.9"/>
-  <polygon class="pl" points="532.7,427.2 532.7,421.9 583.5,421.9 583.5,427.2 532.7,427.2"/>
-  <polygon class="pl" points="723.1,427.2 723.1,421.9 773.9,421.9 773.9,427.2 723.1,427.2"/>
+<g stroke="#000" stroke-width="0.90" fill="#77AC30"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,415.0 151.9,407.4 202.7,407.4 202.7,415.0 151.9,415.0"/>
+  <polygon class="pl" points="215.4,412.0 215.4,397.9 266.2,397.9 266.2,412.0 215.4,412.0"/>
+  <polygon class="pl" points="278.9,434.1 278.9,429.9 329.7,429.9 329.7,434.1 278.9,434.1"/>
+  <polygon class="pl" points="342.3,443.6 342.3,442.8 393.1,442.8 393.1,443.6 342.3,443.6"/>
+  <polygon class="pl" points="469.3,355.2 469.3,358.7 520.1,358.7 520.1,355.2 469.3,355.2"/>
+  <polygon class="pl" points="532.7,332.0 532.7,334.7 583.5,334.7 583.5,332.0 532.7,332.0"/>
+  <polygon class="pl" points="596.2,355.2 596.2,358.7 647.0,358.7 647.0,355.2 596.2,355.2"/>
+  <polygon class="pl" points="659.7,450.1 659.7,442.1 710.5,442.1 710.5,450.1 659.7,450.1"/>
+  <polygon class="pl" points="723.1,249.0 723.1,255.1 773.9,255.1 773.9,249.0 723.1,249.0"/>
+  <polygon class="pl" points="786.6,305.0 786.6,307.3 837.4,307.3 837.4,305.0 786.6,305.0"/>
+  <polygon class="pl" points="850.1,455.0 850.1,445.9 900.9,445.9 900.9,455.0 850.1,455.0"/>
 </g>
-<g stroke="#212121" stroke-width="0.90" fill="#7E2F8E"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,272.6 151.9,373.9 202.7,373.9 202.7,272.6 151.9,272.6"/>
-  <polygon class="pl" points="215.4,176.6 215.4,373.9 266.2,373.9 266.2,176.6 215.4,176.6"/>
-  <polygon class="pl" points="278.9,336.6 278.9,373.9 329.7,373.9 329.7,336.6 278.9,336.6"/>
-  <polygon class="pl" points="342.3,443.2 342.3,427.2 393.1,427.2 393.1,443.2 342.3,443.2"/>
-  <polygon class="pl" points="405.8,480.5 405.8,421.9 456.6,421.9 456.6,480.5 405.8,480.5"/>
-  <polygon class="pl" points="469.3,437.9 469.3,432.6 520.1,432.6 520.1,437.9 469.3,437.9"/>
-  <polygon class="pl" points="532.7,341.9 532.7,373.9 583.5,373.9 583.5,341.9 532.7,341.9"/>
-  <polygon class="pl" points="596.2,459.2 596.2,421.9 647.0,421.9 647.0,459.2 596.2,459.2"/>
-  <polygon class="pl" points="659.7,437.9 659.7,421.9 710.5,421.9 710.5,437.9 659.7,437.9"/>
-  <polygon class="pl" points="723.1,229.9 723.1,373.9 773.9,373.9 773.9,229.9 723.1,229.9"/>
-  <polygon class="pl" points="786.6,304.6 786.6,373.9 837.4,373.9 837.4,304.6 786.6,304.6"/>
-  <polygon class="pl" points="850.1,277.9 850.1,373.9 900.9,373.9 900.9,277.9 850.1,277.9"/>
+<g stroke="#000" stroke-width="0.90" fill="#0072BD"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,281.0 151.9,286.7 202.7,286.7 202.7,281.0 151.9,281.0"/>
+  <polygon class="pl" points="215.4,215.1 215.4,218.9 266.2,218.9 266.2,215.1 215.4,215.1"/>
+  <polygon class="pl" points="278.9,429.9 278.9,429.5 329.7,429.5 329.7,429.9 278.9,429.9"/>
+  <polygon class="pl" points="342.3,356.0 342.3,358.7 393.1,358.7 393.1,356.0 342.3,356.0"/>
+  <polygon class="pl" points="405.8,472.5 405.8,472.2 456.6,472.2 456.6,472.5 405.8,472.5"/>
+  <polygon class="pl" points="469.3,450.8 469.3,448.2 520.1,448.2 520.1,450.8 469.3,450.8"/>
+  <polygon class="pl" points="532.7,429.9 532.7,426.1 583.5,426.1 583.5,429.9 532.7,429.9"/>
+  <polygon class="pl" points="596.2,453.1 596.2,452.4 647.0,452.4 647.0,453.1 596.2,453.1"/>
+  <polygon class="pl" points="659.7,358.3 659.7,358.7 710.5,358.7 710.5,358.3 659.7,358.3"/>
+  <polygon class="pl" points="723.1,425.7 723.1,423.4 773.9,423.4 773.9,425.7 723.1,425.7"/>
+  <polygon class="pl" points="786.6,307.3 786.6,310.3 837.4,310.3 837.4,307.3 786.6,307.3"/>
+  <polygon class="pl" points="850.1,291.3 850.1,293.2 900.9,293.2 900.9,291.3 850.1,291.3"/>
 </g>
-<g stroke="#212121" stroke-width="0.90" fill="#7B553E"  clip-path="url(#axis_clip)">
-  <polygon class="pl" points="151.9,405.9 151.9,373.9 202.7,373.9 202.7,405.9 151.9,405.9"/>
-  <polygon class="pl" points="215.4,400.6 215.4,373.9 266.2,373.9 266.2,400.6 215.4,400.6"/>
-  <polygon class="pl" points="278.9,421.9 278.9,373.9 329.7,373.9 329.7,421.9 278.9,421.9"/>
-  <polygon class="pl" points="342.3,427.2 342.3,373.9 393.1,373.9 393.1,427.2 342.3,427.2"/>
-  <polygon class="pl" points="405.8,421.9 405.8,373.9 456.6,373.9 456.6,421.9 405.8,421.9"/>
-  <polygon class="pl" points="469.3,432.6 469.3,373.9 520.1,373.9 520.1,432.6 469.3,432.6"/>
-  <polygon class="pl" points="532.7,421.9 532.7,373.9 583.5,373.9 583.5,421.9 532.7,421.9"/>
-  <polygon class="pl" points="596.2,421.9 596.2,373.9 647.0,373.9 647.0,421.9 596.2,421.9"/>
-  <polygon class="pl" points="659.7,421.9 659.7,373.9 710.5,373.9 710.5,421.9 659.7,421.9"/>
-  <polygon class="pl" points="723.1,421.9 723.1,373.9 773.9,373.9 773.9,421.9 723.1,421.9"/>
-  <polygon class="pl" points="786.6,421.9 786.6,373.9 837.4,373.9 837.4,421.9 786.6,421.9"/>
-  <polygon class="pl" points="850.1,432.6 850.1,373.9 900.9,373.9 900.9,432.6 850.1,432.6"/>
+<g stroke="#000" stroke-width="0.90" fill="#7E2F8E"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,286.7 151.9,358.7 202.7,358.7 202.7,286.7 151.9,286.7"/>
+  <polygon class="pl" points="215.4,218.9 215.4,358.7 266.2,358.7 266.2,218.9 215.4,218.9"/>
+  <polygon class="pl" points="278.9,330.1 278.9,358.7 329.7,358.7 329.7,330.1 278.9,330.1"/>
+  <polygon class="pl" points="342.3,442.8 342.3,434.5 393.1,434.5 393.1,442.8 342.3,442.8"/>
+  <polygon class="pl" points="405.8,472.2 405.8,431.0 456.6,431.0 456.6,472.2 405.8,472.2"/>
+  <polygon class="pl" points="469.3,448.2 469.3,443.2 520.1,443.2 520.1,448.2 469.3,448.2"/>
+  <polygon class="pl" points="532.7,334.7 532.7,358.7 583.5,358.7 583.5,334.7 532.7,334.7"/>
+  <polygon class="pl" points="596.2,452.4 596.2,427.6 647.0,427.6 647.0,452.4 596.2,452.4"/>
+  <polygon class="pl" points="659.7,442.1 659.7,430.6 710.5,430.6 710.5,442.1 659.7,442.1"/>
+  <polygon class="pl" points="723.1,255.1 723.1,358.7 773.9,358.7 773.9,255.1 723.1,255.1"/>
+  <polygon class="pl" points="786.6,310.3 786.6,358.7 837.4,358.7 837.4,310.3 786.6,310.3"/>
+  <polygon class="pl" points="850.1,293.2 850.1,358.7 900.9,358.7 900.9,293.2 850.1,293.2"/>
 </g>
-<text transform="translate(945.6,403.2)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
-<text transform="translate(945.6,325.9)" dy="8.1" font-size="27.00" fill="#7E2F8E" stroke="none">Natural gas</text>
-<text transform="translate(945.6,373.9)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Hydro</text>
-<text transform="translate(945.6,434.7)" dy="8.1" font-size="27.00" fill="#77AC30" stroke="none">Wind</text>
-<text transform="translate(945.6,459.7)" dy="8.1" font-size="27.00" fill="#EDB120" stroke="none">Solar</text>
-<text transform="translate(945.6,277.9)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Other renewables</text>
-<text transform="translate(945.6,523.2)" dy="8.1" font-size="27.00" fill="#4DBEEE" stroke="none">Nuclear</text>
-<polyline class="pl" points="910.8,440.6 912.4,440.5 913.8,440.5 915.2,440.4 916.4,440.2 917.6,440.1 918.8,439.9 919.8,439.7 920.8,439.5 921.7,439.2 922.7,438.9 923.5,438.7 924.4,438.4 925.2,438.1 926.0,437.8 926.8,437.5 927.6,437.2 928.4,436.9 929.3,436.6 930.1,436.3 931.1,436.0 932.0,435.8 933.0,435.6 934.0,435.3 935.2,435.2 936.4,435.0 937.6,434.9 939.0,434.8 940.4,434.7 942.0,434.7" stroke="#77AC30" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
-<polyline class="pl" points="910.8,453.9 912.4,453.9 913.8,454.0 915.2,454.1 916.4,454.2 917.6,454.3 918.8,454.5 919.8,454.7 920.8,455.0 921.7,455.2 922.7,455.5 923.5,455.8 924.4,456.1 925.2,456.4 926.0,456.7 926.8,457.0 927.6,457.3 928.4,457.6 929.3,457.8 930.1,458.1 931.1,458.4 932.0,458.6 933.0,458.9 934.0,459.1 935.2,459.3 936.4,459.4 937.6,459.6 939.0,459.7 940.4,459.7 942.0,459.7" stroke="#EDB120" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<g stroke="#000" stroke-width="0.90" fill="#7B553E"  clip-path="url(#axis_clip)">
+  <polygon class="pl" points="151.9,407.4 151.9,358.7 202.7,358.7 202.7,407.4 151.9,407.4"/>
+  <polygon class="pl" points="215.4,397.9 215.4,358.7 266.2,358.7 266.2,397.9 215.4,397.9"/>
+  <polygon class="pl" points="278.9,429.5 278.9,358.7 329.7,358.7 329.7,429.5 278.9,429.5"/>
+  <polygon class="pl" points="342.3,434.5 342.3,358.7 393.1,358.7 393.1,434.5 342.3,434.5"/>
+  <polygon class="pl" points="405.8,431.0 405.8,358.7 456.6,358.7 456.6,431.0 405.8,431.0"/>
+  <polygon class="pl" points="469.3,443.2 469.3,358.7 520.1,358.7 520.1,443.2 469.3,443.2"/>
+  <polygon class="pl" points="532.7,426.1 532.7,358.7 583.5,358.7 583.5,426.1 532.7,426.1"/>
+  <polygon class="pl" points="596.2,427.6 596.2,358.7 647.0,358.7 647.0,427.6 596.2,427.6"/>
+  <polygon class="pl" points="659.7,430.6 659.7,358.7 710.5,358.7 710.5,430.6 659.7,430.6"/>
+  <polygon class="pl" points="723.1,423.4 723.1,358.7 773.9,358.7 773.9,423.4 723.1,423.4"/>
+  <polygon class="pl" points="786.6,426.5 786.6,358.7 837.4,358.7 837.4,426.5 786.6,426.5"/>
+  <polygon class="pl" points="850.1,445.9 850.1,358.7 900.9,358.7 900.9,445.9 850.1,445.9"/>
+</g>
+<text transform="translate(945.6,402.3)" dy="8.1" font-size="27.00" fill="#7B553E" stroke="none">Coal</text>
+<text transform="translate(945.6,331.8)" dy="8.1" font-size="27.00" fill="#7E2F8E" stroke="none">Natural gas</text>
+<text transform="translate(945.6,305.9)" dy="8.1" font-size="27.00" fill="#0072BD" stroke="none">Hydro</text>
+<text transform="translate(945.6,442.1)" dy="8.1" font-size="27.00" fill="#77AC30" stroke="none">Wind</text>
+<text transform="translate(945.6,468.0)" dy="8.1" font-size="27.00" fill="#EDB120" stroke="none">Solar</text>
+<text transform="translate(945.6,280.0)" dy="8.1" font-size="27.00" fill="#D95319" stroke="none">Other renewables</text>
+<text transform="translate(945.6,510.4)" dy="8.1" font-size="27.00" fill="#4DBEEE" stroke="none">Nuclear</text>
+<text transform="translate(945.6,358.7)" dy="8.1" font-size="27.00" fill="#808080" stroke="none">Other fossil</text>
+<text transform="translate(945.6,254.1)" dy="8.1" font-size="27.00" fill="#000" stroke="none">Other</text>
+<polyline class="pl" points="910.8,325.9 912.4,325.9 913.8,326.0 915.2,326.1 916.4,326.2 917.6,326.4 918.8,326.6 919.8,326.8 920.8,327.0 921.7,327.3 922.7,327.5 923.5,327.8 924.4,328.1 925.2,328.4 926.0,328.7 926.8,329.0 927.6,329.3 928.4,329.6 929.3,329.9 930.1,330.2 931.1,330.5 932.0,330.7 933.0,331.0 934.0,331.2 935.2,331.4 936.4,331.5 937.6,331.7 939.0,331.8 940.4,331.8 942.0,331.8" stroke="#7E2F8E" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,292.2 912.4,292.3 913.8,292.4 915.2,292.6 916.4,292.9 917.6,293.3 918.8,293.7 919.8,294.2 920.8,294.8 921.7,295.4 922.7,296.0 923.5,296.6 924.4,297.3 925.2,298.0 926.0,298.7 926.8,299.4 927.6,300.1 928.4,300.8 929.3,301.5 930.1,302.2 931.1,302.8 932.0,303.4 933.0,303.9 934.0,304.4 935.2,304.8 936.4,305.2 937.6,305.5 939.0,305.7 940.4,305.9 942.0,305.9" stroke="#0072BD" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,450.5 912.4,450.4 913.8,450.3 915.2,450.2 916.4,450.0 917.6,449.8 918.8,449.5 919.8,449.2 920.8,448.9 921.7,448.5 922.7,448.1 923.5,447.7 924.4,447.3 925.2,446.9 926.0,446.5 926.8,446.0 927.6,445.6 928.4,445.2 929.3,444.8 930.1,444.4 931.1,444.0 932.0,443.6 933.0,443.3 934.0,443.0 935.2,442.7 936.4,442.5 937.6,442.3 939.0,442.2 940.4,442.1 942.0,442.1" stroke="#77AC30" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,459.6 912.4,459.6 913.8,459.7 915.2,459.8 916.4,460.0 917.6,460.3 918.8,460.5 919.8,460.8 920.8,461.2 921.7,461.5 922.7,461.9 923.5,462.3 924.4,462.7 925.2,463.1 926.0,463.6 926.8,464.0 927.6,464.4 928.4,464.9 929.3,465.3 930.1,465.7 931.1,466.1 932.0,466.4 933.0,466.8 934.0,467.1 935.2,467.3 936.4,467.5 937.6,467.7 939.0,467.9 940.4,468.0 942.0,468.0" stroke="#EDB120" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,289.0 912.4,288.9 913.8,288.9 915.2,288.7 916.4,288.5 917.6,288.3 918.8,288.0 919.8,287.7 920.8,287.3 921.7,286.9 922.7,286.5 923.5,286.1 924.4,285.6 925.2,285.2 926.0,284.7 926.8,284.3 927.6,283.8 928.4,283.3 929.3,282.9 930.1,282.5 931.1,282.1 932.0,281.7 933.0,281.3 934.0,281.0 935.2,280.7 936.4,280.5 937.6,280.3 939.0,280.1 940.4,280.0 942.0,280.0" stroke="#D95319" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,358.7 912.4,358.7 913.8,358.7 915.2,358.7 916.4,358.7 917.6,358.7 918.8,358.7 919.8,358.7 920.8,358.7 921.7,358.7 922.7,358.7 923.5,358.7 924.4,358.7 925.2,358.7 926.0,358.7 926.8,358.7 927.6,358.7 928.4,358.7 929.3,358.7 930.1,358.7 931.1,358.7 932.0,358.7 933.0,358.7 934.0,358.7 935.2,358.7 936.4,358.7 937.6,358.7 939.0,358.7 940.4,358.7 942.0,358.7" stroke="#808080" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+<polyline class="pl" points="910.8,264.8 912.4,264.8 913.8,264.6 915.2,264.5 916.4,264.2 917.6,263.9 918.8,263.6 919.8,263.2 920.8,262.8 921.7,262.3 922.7,261.9 923.5,261.3 924.4,260.8 925.2,260.3 926.0,259.7 926.8,259.2 927.6,258.6 928.4,258.1 929.3,257.5 930.1,257.0 931.1,256.5 932.0,256.1 933.0,255.7 934.0,255.3 935.2,254.9 936.4,254.7 937.6,254.4 939.0,254.2 940.4,254.1 942.0,254.1" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
 <text transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Monthly changes in power generation: Hungary, 2025</text>
-<text transform="translate(157.6,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">@robbieandrew.bsky.social   &#9679;   Data: Ember</text>
-<text class="twitlink" transform="translate(157.6,666.1)" opacity="0" font-size="19.80" fill="#BFBFBF" stroke="none" xml:space="preserve"></text>
-  <g class="dl_el" transform="translate(154.6,578.4)">
-    <g class="dl_el_balloon">
-      <foreignObject x="0" y="0" width="120" height="500">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="dl_fe" style="height:60px">
-      <p class="dl_fe_p">Find me on BlueSky</p>
-      </div>
-	    </foreignObject>
-      <path stroke="#000" fill="#FDFFDF" d="M0,60H60l5,5l5,-5H120"/>
-    </g>
-  </g>
+<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">Robbie Andrew   &#9679;   Data: Ember</text>
 <g>
   <rect x="123.0" y="651.4" width="34" height="17" fill="#FFF" stroke="none" opacity="0.01"/>
   <g transform="translate(124.0,652.4) scale(0.24)">
