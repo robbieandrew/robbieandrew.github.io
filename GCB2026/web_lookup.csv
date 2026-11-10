@@ -9,10 +9,10 @@ Slide number,PNG,CSV,Title,New Filename,Include in GtC
 17,GLO_forecast.png,,Forecast of atmospheric concentration,GLO_forecast,FALSE
 18,MLO_weekly_GCP.png,,Mauna Loa atmospheric CO2,MLO_weekly,FALSE
 19,SSP_CO2_GlobalCarbonBudget2025.png,,Shared Socioeconomic Pathways,SSP_CO2,FALSE
-20,,,ScenarioMIP pathways,,
-,,,Fossil CO2 change map,,
-,,,Emissions avoided by clean technologies,,
-,,,Drivers of the 2026 change in emissions,,
+20,ScenarioMIPlines.png,,ScenarioMIP pathways,MIP_CO2,FALSE
+21,,,Fossil CO2 change map,Fossil_CO2_change_map,FALSE
+22,,,Emissions avoided by clean technologies,Avoided_emissions,FALSE
+23,,,Drivers of the 2026 change in emissions,Drivers_of_change,FALSE
 25,s09_FossilFuel_and_Cement_emissions_1959_inccarbonation.png,09_FossilFuel_and_Cement_emissions_1959_inccarbonation_data.csv,Global fossil CO2 emissions,FossilFuel_and_Cement_emissions_1959,TRUE
 26,s20thC_changes_FossilCO2_abs.png,,100 years of fossil CO2 emissions,AbsChanges_100yrs,TRUE
 27,s24_carbon_intensity_of_economy.png,24_data.csv,Global emissions and intensity of the economy,carbon_intensity_of_economy,TRUE
@@ -26,7 +26,7 @@ Slide number,PNG,CSV,Title,New Filename,Include in GtC
 31,s60_KayaFigures_WLD_growth.png,60_KayaFigures_WLD_growth_data.csv,Kaya decomposition: World,Kaya_World,FALSE
 32,decliningCO2.png,,Decarbonising countries,Decarbonisation,FALSE
 33,s70_Cumulative_finalyear.png,,Historical emissions,Historical,TRUE
-34,,,Historical emissions with LUC,,
+34,s70_Cumulative_finalyear_withLUC.png,,Historical emissions with LUC,Historical_with_LUC,TRUE
 36,s20_Coal_Oil_Gas_Cement_WLD_inccarbonation.png,20_Coal_Oil_Gas_Cement_WLD_inccarbonation_data.csv,"Global emissions from coal, oil, gas and cement",Coal_Oil_Gas_Cement,TRUE
 37,s81_siamese_waterfall_categories_inccarbonation.png,,Contributions to change: Categories,category_waterfall,TRUE
 38,s16a_CO2growthbars.png,16a_CO2growthbars_data.csv,"Global emissions from coal, oil, gas and cement",CO2growthbars_category,TRUE
@@ -68,17 +68,17 @@ Slide number,PNG,CSV,Title,New Filename,Include in GtC
 85,s17_Emissions_by_Country_OECD.png,17_OECD_data.csv,Emissions by country,Emissions_by_Country_OECD,TRUE
 86,s19a_Continent.png,19a_Continent_data.csv,Emissions by continent,Continents,TRUE
 87,s19a_Continent_percapita.png,19a_Continent_percapita_data.csv,Per-capita emissions by continent,Continents_percapita,TRUE
-88,,,Fossil and LUC CO2 emissions by continent,,
-89,,,Fossil and LUC CO2 emissions by continent: per capita,,
+88,,,Fossil and LUC CO2 emissions by continent,Continents_withLUC,TRUE
+89,,,Fossil and LUC CO2 emissions by continent: per capita,Continents_percapita_withLUC,TRUE
 91,s34_prodcons_top4.png,34_prodcons_top4_data.csv,Consumption-based emissions for the top four,prodcons_top4,TRUE
 92,s34_prodcons_top4_percapita.png,34_prodcons_top4_percapita_data.csv,Per capita Consumption-based emissions,prodcons_top4_percapita,TRUE
 93,s35_ConsumptionEmissions_OECD.png,35_ConsumptionEmissions_OECD_data.csv,Consumption-based emissions for OECD,ConsumptionEmissions_OECD,TRUE
 95,s41_Total_Emissions_by_source.png,41_data.csv,Global emissions by source,Total_Emissions_by_source,TRUE
 96,s42_Cumulative_by_source.png,42_data.csv,Share of global emissions by source,Cumulative_by_source,FALSE
 97,s18_Cumulative_by_country.png,18_data.csv,Cumulative share of emissions by country,Cumulative_by_country,FALSE
-98,,,Cumulative share of emissions by country with LUC,,
+98,,,Cumulative share of emissions by country with LUC,Cumulative_by_country_withLUC,FALSE
 99,s19_Cumulative_by_continent.png,19_data.csv,Cumulative share of emissions by continent,Cumulative_by_continent,FALSE
-100,,,Cumulative share of emissions by continent with LUC,,
+100,,,Cumulative share of emissions by continent with LUC,Cumulative_by_continent_withLUC,FALSE
 -1,s22_EnergyLines_wBio__EJ_percapita.png,22_EnergyLines_wBio__EJ_percapita_data.csv,Global energy use by category,Global_energy_percapita,FALSE
 -1,s22_EnergyBars_WorldChinaUSAEU27IndiaROW1_GJ_percapita.png,22_EnergyBars_WorldChinaUSAEU27IndiaROW1_GJ_percapita_data.csv,Per capita energy use,EnergyBars_percapita,FALSE
 -1,s99_Waterfall_ppm_finalyear.png,,Changes to atmospheric CO2 two years,Waterfall_sources_and_sinks_2yr,FALSE
