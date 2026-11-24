@@ -40,6 +40,10 @@ text:hover + .dl_el {display:block;}
   #areas:hover .pg_5:hover .pll {stroke-width:3;}
   #areas:hover .pg_5:hover .pldlm {stroke-width:2;}
   #areas:hover .pg_5:hover .thick {stroke-width:12;}
+  #areas:hover .pg_6:hover .pl {opacity:1;}
+  #areas:hover .pg_6:hover .pll {stroke-width:3;}
+  #areas:hover .pg_6:hover .pldlm {stroke-width:2;}
+  #areas:hover .pg_6:hover .thick {stroke-width:12;}
   #lines .pl {transition: all 0.2s ease;}
   #lines:hover .pl {opacity:0.3;}
   #lines:hover .thick {stroke-width:1;}
@@ -83,6 +87,26 @@ text:hover + .dl_el {display:block;}
   #lines:hover .pl_10:hover .pll {stroke-width:3;}
   #lines:hover .pl_10:hover .pldlm {stroke-width:2;}
   #lines:hover .pl_10:hover .thick {stroke-width:12;}
+  #lines:hover .pl_11:hover .pl {opacity:1;}
+  #lines:hover .pl_11:hover .pll {stroke-width:3;}
+  #lines:hover .pl_11:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_11:hover .thick {stroke-width:12;}
+  #lines:hover .pl_12:hover .pl {opacity:1;}
+  #lines:hover .pl_12:hover .pll {stroke-width:3;}
+  #lines:hover .pl_12:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_12:hover .thick {stroke-width:12;}
+  #lines:hover .pl_13:hover .pl {opacity:1;}
+  #lines:hover .pl_13:hover .pll {stroke-width:3;}
+  #lines:hover .pl_13:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_13:hover .thick {stroke-width:12;}
+  #lines:hover .pl_14:hover .pl {opacity:1;}
+  #lines:hover .pl_14:hover .pll {stroke-width:3;}
+  #lines:hover .pl_14:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_14:hover .thick {stroke-width:12;}
+  #lines:hover .pl_15:hover .pl {opacity:1;}
+  #lines:hover .pl_15:hover .pll {stroke-width:3;}
+  #lines:hover .pl_15:hover .pldlm {stroke-width:2;}
+  #lines:hover .pl_15:hover .thick {stroke-width:12;}
 </style>
 <defs>
   <clipPath id="axis_clip"><rect x="145.8" y="54.2" width="761.2" height="505.8" /></clipPath>
@@ -91,34 +115,49 @@ text:hover + .dl_el {display:block;}
   <path id="tick_y" d="M 145.600,0 h -6.000" stroke="#808080" stroke-width="0.90"/>
   <path id="tick_x" d="M 0,560.180 v 6.000" stroke="#808080" stroke-width="0.90"/>
   <symbol id="line_1" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,109.5 221.8,109.5 221.8,105.1 297.9,105.1 297.9,123.3 374.1,123.3 374.1,107.1 450.2,107.1 450.2,104.9 526.4,104.9 526.4,106.4 602.6,106.4 602.6,110.5 678.7,110.5 678.7,137.8 754.9,137.8 754.9,97.9 831.0,97.9 831.0,139.7 907.2,139.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,109.5 221.8,109.5 221.8,105.1 297.9,105.1 297.9,123.3 374.1,123.3 374.1,107.1 450.2,107.1 450.2,104.9 526.4,104.9 526.4,106.4 602.6,106.4 602.6,110.5 678.7,110.5 678.7,137.8 754.9,137.8 754.9,97.9 831.0,97.9 831.0,138.8 907.2,138.8" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_2" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,176.7 907.2,176.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,182.7 907.2,182.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_3" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,456.1 907.2,456.1" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,182.7 907.2,182.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_4" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,534.2 907.2,534.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,461.5 907.2,461.5" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_5" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,176.7 907.2,176.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,535.2 907.2,535.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_6" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,456.1 907.2,456.1" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,182.7 907.2,182.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_7" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,534.2 907.2,534.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,182.7 907.2,182.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_8" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,456.1 907.2,456.1" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,461.5 907.2,461.5" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_9" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,534.2 907.2,534.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,535.2 907.2,535.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
   <symbol id="line_10" viewBox="0 0 1200.000 674.916">
-<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,534.2 907.2,534.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+<polyline class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,182.7 907.2,182.7" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_11" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,461.5 907.2,461.5" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_12" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,535.2 907.2,535.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_13" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,461.5 907.2,461.5" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_14" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,535.2 907.2,535.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
+  </symbol>
+  <symbol id="line_15" viewBox="0 0 1200.000 674.916">
+<polyline class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,535.2 907.2,535.2" stroke="#000" stroke-width="0.90" stroke-opacity="1.00" fill="none" clip-path="url(#axis_clip)"/>
   </symbol>
 </defs>
 <g id="main">
@@ -129,26 +168,32 @@ text:hover + .dl_el {display:block;}
 <text class="ticklabel ytl" transform="translate(128.8,163.3)">80 %</text>
 <text class="ticklabel ytl" transform="translate(128.8,62.1)">100 %</text>
 <g id="areas">
+  <g class="pg_6">
+    <polygon class="pl" points="145.6,54.0 221.8,54.0 221.8,54.0 297.9,54.0 297.9,54.0 374.1,54.0 374.1,54.0 450.2,54.0 450.2,54.0 526.4,54.0 526.4,54.0 602.6,54.0 602.6,54.0 678.7,54.0 678.7,54.0 754.9,54.0 754.9,54.0 831.0,54.0 831.0,54.0 907.2,54.0 907.2,138.8 831.0,138.8 831.0,97.9 754.9,97.9 754.9,137.8 678.7,137.8 678.7,110.5 602.6,110.5 602.6,106.4 526.4,106.4 526.4,104.9 450.2,104.9 450.2,107.1 374.1,107.1 374.1,123.3 297.9,123.3 297.9,105.1 221.8,105.1 221.8,109.5 145.6,109.5" stroke="none" stroke-width="0.9000"  fill="#828282" clip-path="url(#axis_clip)"/>
+    <text class="pl" transform="translate(937.2,96.4)" dy="7.6" font-size="25.20" fill="#828282" stroke="none">Others</text>
+  </g>
   <g class="pg_5">
-    <polygon class="pl" points="145.6,54.0 221.8,54.0 221.8,54.0 297.9,54.0 297.9,54.0 374.1,54.0 374.1,54.0 450.2,54.0 450.2,54.0 526.4,54.0 526.4,54.0 602.6,54.0 602.6,54.0 678.7,54.0 678.7,54.0 754.9,54.0 754.9,54.0 831.0,54.0 831.0,54.0 907.2,54.0 907.2,139.7 831.0,139.7 831.0,97.9 754.9,97.9 754.9,137.8 678.7,137.8 678.7,110.5 602.6,110.5 602.6,106.4 526.4,106.4 526.4,104.9 450.2,104.9 450.2,107.1 374.1,107.1 374.1,123.3 297.9,123.3 297.9,105.1 221.8,105.1 221.8,109.5 145.6,109.5" stroke="none" stroke-width="0.9000"  fill="#828282" clip-path="url(#axis_clip)"/>
-    <text class="pl" transform="translate(925.2,96.8)" dy="7.6" font-size="25.20" fill="#828282" stroke="none">Others</text>
+    <polygon class="pl" points="145.6,109.5 221.8,109.5 221.8,105.1 297.9,105.1 297.9,123.3 374.1,123.3 374.1,107.1 450.2,107.1 450.2,104.9 526.4,104.9 526.4,106.4 602.6,106.4 602.6,110.5 678.7,110.5 678.7,137.8 754.9,137.8 754.9,97.9 831.0,97.9 831.0,138.8 907.2,138.8 907.2,182.7 831.0,182.7 831.0,141.0 754.9,141.0 754.9,168.9 678.7,168.9 678.7,135.5 602.6,135.5 602.6,136.8 526.4,136.8 526.4,139.7 450.2,139.7 450.2,161.4 374.1,161.4 374.1,171.4 297.9,171.4 297.9,156.5 221.8,156.5 221.8,148.0 145.6,148.0" stroke="none" stroke-width="0.9000"  fill="#6298C6" clip-path="url(#axis_clip)"/>
+    <text class="pl" transform="translate(937.2,159.3)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
+<polyline class="pl" points="910.8,160.7 911.9,160.7 913.0,160.7 914.0,160.7 914.9,160.7 915.8,160.6 916.6,160.6 917.4,160.5 918.1,160.5 918.8,160.4 919.5,160.3 920.1,160.3 920.7,160.2 921.3,160.1 921.9,160.1 922.5,160.0 923.1,159.9 923.7,159.8 924.3,159.8 924.9,159.7 925.6,159.6 926.3,159.6 927.0,159.5 927.8,159.5 928.6,159.4 929.5,159.4 930.4,159.3 931.4,159.3 932.5,159.3 933.6,159.3" stroke="#6298C6" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
+    <text class="pl" transform="translate(937.2,137.0)" dy="0.0" font-size="18.00" fill="#6298C6" stroke="none">8.7% in H2</text>
   </g>
   <g class="pg_4">
-    <polygon class="pl" points="145.6,109.5 221.8,109.5 221.8,105.1 297.9,105.1 297.9,123.3 374.1,123.3 374.1,107.1 450.2,107.1 450.2,104.9 526.4,104.9 526.4,106.4 602.6,106.4 602.6,110.5 678.7,110.5 678.7,137.8 754.9,137.8 754.9,97.9 831.0,97.9 831.0,139.7 907.2,139.7 907.2,176.7 831.0,176.7 831.0,141.0 754.9,141.0 754.9,168.9 678.7,168.9 678.7,135.5 602.6,135.5 602.6,136.8 526.4,136.8 526.4,139.7 450.2,139.7 450.2,161.4 374.1,161.4 374.1,171.4 297.9,171.4 297.9,156.5 221.8,156.5 221.8,148.0 145.6,148.0" stroke="none" stroke-width="0.9000"  fill="#6298C6" clip-path="url(#axis_clip)"/>
-    <text class="pl" transform="translate(925.2,158.2)" dy="7.6" font-size="25.20" fill="#6298C6" stroke="none">Battery electric</text>
-    <text class="pl" transform="translate(925.2,173.5)" dy="18.0" font-size="18.00" fill="#6298C6" stroke="none">7% in H2</text>
+    <polygon class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,182.7 907.2,182.7 907.2,182.7 831.0,182.7 831.0,141.0 754.9,141.0 754.9,168.9 678.7,168.9 678.7,135.5 602.6,135.5 602.6,136.8 526.4,136.8 526.4,139.7 450.2,139.7 450.2,161.4 374.1,161.4 374.1,171.4 297.9,171.4 297.9,156.5 221.8,156.5 221.8,148.0 145.6,148.0" stroke="none" stroke-width="0.9000"  fill="#77AC30" clip-path="url(#axis_clip)"/>
+    <text class="pl" transform="translate(937.2,184.1)" dy="7.6" font-size="25.20" fill="#77AC30" stroke="none">Plugin hybrid</text>
+<polyline class="pl" points="910.8,182.7 911.9,182.7 913.0,182.7 914.0,182.8 914.9,182.8 915.8,182.8 916.6,182.9 917.4,182.9 918.1,183.0 918.8,183.0 919.5,183.1 920.1,183.2 920.7,183.2 921.3,183.3 921.9,183.4 922.5,183.5 923.1,183.5 923.7,183.6 924.3,183.7 924.9,183.8 925.6,183.8 926.3,183.9 927.0,183.9 927.8,184.0 928.6,184.0 929.5,184.1 930.4,184.1 931.4,184.1 932.5,184.1 933.6,184.1" stroke="#77AC30" stroke-width="0.90" stroke-opacity="1.00" fill="none" />
   </g>
   <g class="pg_3">
-    <polygon class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,176.7 907.2,176.7 907.2,456.1 831.0,456.1 831.0,434.2 754.9,434.2 754.9,417.5 678.7,417.5 678.7,385.2 602.6,385.2 602.6,355.9 526.4,355.9 526.4,316.7 450.2,316.7 450.2,325.2 374.1,325.2 374.1,315.3 297.9,315.3 297.9,285.4 221.8,285.4 221.8,289.7 145.6,289.7" stroke="none" stroke-width="0.9000"  fill="#919452" clip-path="url(#axis_clip)"/>
-    <text class="pl" transform="translate(925.2,316.4)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-plugin hybrid</text>
+    <polygon class="pl" points="145.6,148.0 221.8,148.0 221.8,156.5 297.9,156.5 297.9,171.4 374.1,171.4 374.1,161.4 450.2,161.4 450.2,139.7 526.4,139.7 526.4,136.8 602.6,136.8 602.6,135.5 678.7,135.5 678.7,168.9 754.9,168.9 754.9,141.0 831.0,141.0 831.0,182.7 907.2,182.7 907.2,461.5 831.0,461.5 831.0,434.2 754.9,434.2 754.9,417.5 678.7,417.5 678.7,385.2 602.6,385.2 602.6,355.9 526.4,355.9 526.4,316.7 450.2,316.7 450.2,325.2 374.1,325.2 374.1,315.3 297.9,315.3 297.9,285.4 221.8,285.4 221.8,289.7 145.6,289.7" stroke="none" stroke-width="0.9000"  fill="#919452" clip-path="url(#axis_clip)"/>
+    <text class="pl" transform="translate(937.2,322.1)" dy="7.6" font-size="25.20" fill="#919452" stroke="none">Non-plugin hybrid</text>
   </g>
   <g class="pg_2">
-    <polygon class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,456.1 907.2,456.1 907.2,534.2 831.0,534.2 831.0,527.9 754.9,527.9 754.9,525.8 678.7,525.8 678.7,510.0 602.6,510.0 602.6,514.2 526.4,514.2 526.4,485.6 450.2,485.6 450.2,504.7 374.1,504.7 374.1,502.1 297.9,502.1 297.9,498.2 221.8,498.2 221.8,493.2 145.6,493.2" stroke="none" stroke-width="0.9000"  fill="#7B553E" clip-path="url(#axis_clip)"/>
-    <text class="pl" transform="translate(925.2,495.1)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">Petrol</text>
+    <polygon class="pl" points="145.6,289.7 221.8,289.7 221.8,285.4 297.9,285.4 297.9,315.3 374.1,315.3 374.1,325.2 450.2,325.2 450.2,316.7 526.4,316.7 526.4,355.9 602.6,355.9 602.6,385.2 678.7,385.2 678.7,417.5 754.9,417.5 754.9,434.2 831.0,434.2 831.0,461.5 907.2,461.5 907.2,535.2 831.0,535.2 831.0,527.9 754.9,527.9 754.9,525.8 678.7,525.8 678.7,510.0 602.6,510.0 602.6,514.2 526.4,514.2 526.4,485.6 450.2,485.6 450.2,504.7 374.1,504.7 374.1,502.1 297.9,502.1 297.9,498.2 221.8,498.2 221.8,493.2 145.6,493.2" stroke="none" stroke-width="0.9000"  fill="#7B553E" clip-path="url(#axis_clip)"/>
+    <text class="pl" transform="translate(937.2,498.4)" dy="7.6" font-size="25.20" fill="#7B553E" stroke="none">Petrol</text>
   </g>
   <g class="pg_1">
-    <polygon class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,534.2 907.2,534.2 907.2,560.2 145.6,560.2" stroke="none" stroke-width="0.9000"  fill="#7B6E57" clip-path="url(#axis_clip)"/>
-    <text class="pl" transform="translate(925.2,547.2)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">Diesel</text>
+    <polygon class="pl" points="145.6,493.2 221.8,493.2 221.8,498.2 297.9,498.2 297.9,502.1 374.1,502.1 374.1,504.7 450.2,504.7 450.2,485.6 526.4,485.6 526.4,514.2 602.6,514.2 602.6,510.0 678.7,510.0 678.7,525.8 754.9,525.8 754.9,527.9 831.0,527.9 831.0,535.2 907.2,535.2 907.2,560.2 145.6,560.2" stroke="none" stroke-width="0.9000"  fill="#7B6E57" clip-path="url(#axis_clip)"/>
+    <text class="pl" transform="translate(937.2,547.7)" dy="7.6" font-size="25.20" fill="#7B6E57" stroke="none">Diesel</text>
   </g>
 </g>
 <g id="lines">
@@ -192,6 +237,26 @@ text:hover + .dl_el {display:block;}
     <use xlink:href="#line_10" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
     <use xlink:href="#line_10" class="pl pll" stroke="#000" stroke-width="0.90"/>
   </g>
+  <g class="pl_11">
+    <use xlink:href="#line_11" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_11" class="pl pll" stroke="#000" stroke-width="0.90"/>
+  </g>
+  <g class="pl_12">
+    <use xlink:href="#line_12" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_12" class="pl pll" stroke="#000" stroke-width="0.90"/>
+  </g>
+  <g class="pl_13">
+    <use xlink:href="#line_13" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_13" class="pl pll" stroke="#000" stroke-width="0.90"/>
+  </g>
+  <g class="pl_14">
+    <use xlink:href="#line_14" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_14" class="pl pll" stroke="#000" stroke-width="0.90"/>
+  </g>
+  <g class="pl_15">
+    <use xlink:href="#line_15" class="thick" stroke="#000" stroke-width="3" opacity="0"/>
+    <use xlink:href="#line_15" class="pl pll" stroke="#000" stroke-width="0.90"/>
+  </g>
 </g>
     <text class="pl" transform="translate(221.8,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2022</text>
     <text class="pl" transform="translate(374.1,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2023</text>
@@ -199,7 +264,7 @@ text:hover + .dl_el {display:block;}
     <text class="pl" transform="translate(678.7,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2025</text>
     <text class="pl" transform="translate(831.0,573.0) rotate(-90)" dy="8.1" font-size="27.00" fill="#808080" stroke="none" text-anchor="end">2026</text>
     <text class="pl" transform="translate(145.6,47.2)" dy="0.0" font-size="27.00" fill="#808080" stroke="none">Half-Yearly sales of new passenger cars: Romania</text>
-<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">Robbie Andrew   &#9679;   Data: ACEA   &#9679;   Through September 2026</text>
+<text transform="translate(160.0,666.1)" font-size="19.80" font-family="Helvetica" fill="#BFBFBF" stroke="none" xml:space="preserve">Robbie Andrew   &#9679;   Data: ACEA   &#9679;   Through October 2026</text>
 <use xlink:href="#line_y" transform="translate(145.6,0)"/>
 <use xlink:href="#line_y" transform="translate(297.9,0)"/>
 <use xlink:href="#line_y" transform="translate(450.2,0)"/>
